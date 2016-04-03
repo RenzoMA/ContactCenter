@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactCenter", "ContactCenter\ContactCenter.csproj", "{4EF41D35-139A-4775-96CB-046D9DF39668}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{81564275-EB77-40A9-8E03-20FC50B43CF2}"
+	ProjectSection(SolutionItems) = preProject
+		libs\MaterialSkin.dll = libs\MaterialSkin.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
