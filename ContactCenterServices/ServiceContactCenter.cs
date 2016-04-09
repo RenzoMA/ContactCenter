@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace ContactCenterServices
 {
-    public class ServiceContactCenter
+    public class ServiceContactCenter : IServiceContactCenter
     {
-        
+        public string prueba()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

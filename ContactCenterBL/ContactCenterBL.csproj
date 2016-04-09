@@ -40,8 +40,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessInterfaces\CC\IAplicacionService.cs" />
+    <Compile Include="BusinessInterfaces\CC\IClienteService.cs" />
+    <Compile Include="BusinessInterfaces\CC\IRolService.cs" />
+    <Compile Include="BusinessInterfaces\CC\IUsuarioService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IAsientoService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IDetalleReservaService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IEstadoReservaService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IFuncionService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\ILogEmailService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IObraService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IPromocionService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IReservaService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\ITeatroService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\ITipoPromocionService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IZonaService.cs" />
+    <Compile Include="BusinessServices\CC\AplicacionService.cs" />
+    <Compile Include="BusinessServices\CC\ClienteService.cs" />
+    <Compile Include="BusinessServices\CC\RolService.cs" />
+    <Compile Include="BusinessServices\CC\TH\AsientoService.cs" />
+    <Compile Include="BusinessServices\CC\TH\DetalleReservaService.cs" />
+    <Compile Include="BusinessServices\CC\TH\EstadoReservaService.cs" />
+    <Compile Include="BusinessServices\CC\TH\FuncionService.cs" />
+    <Compile Include="BusinessServices\CC\TH\LogEmailService.cs" />
+    <Compile Include="BusinessServices\CC\TH\ObraService.cs" />
+    <Compile Include="BusinessServices\CC\TH\PromocionService.cs" />
+    <Compile Include="BusinessServices\CC\TH\ReservaService.cs" />
+    <Compile Include="BusinessServices\CC\TH\TeatroService.cs" />
+    <Compile Include="BusinessServices\CC\TH\TipoPromocionService.cs" />
+    <Compile Include="BusinessServices\CC\TH\ZonaService.cs" />
+    <Compile Include="BusinessServices\CC\UsuarioService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

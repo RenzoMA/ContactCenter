@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ContactCenterServices
+namespace ContactCenterBL.BusinessInterfaces.CC.TH
 {
-    interface IServiceContactCenter
+    interface IDetalleReservaService
     {
-         string prueba();
+
     }
 }

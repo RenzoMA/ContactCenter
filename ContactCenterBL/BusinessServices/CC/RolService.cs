@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ContactCenterBL.BusinessInterfaces.CC;
 
-namespace ContactCenterServices
+namespace ContactCenterBL.BusinessServices.CC
 {
-    interface IServiceContactCenter
+    public class RolService : IRolService
     {
-         string prueba();
+
     }
 }
