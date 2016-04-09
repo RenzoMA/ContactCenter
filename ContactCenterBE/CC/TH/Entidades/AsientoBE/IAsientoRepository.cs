@@ -9,6 +9,6 @@ namespace ContactCenterBE.CC.TH.Entidades.AsientoBE
 {
     public interface IAsientoRepository : IBaseRepository<Asiento>
     {
-
+        string ProbarMensaje();
     }
 }

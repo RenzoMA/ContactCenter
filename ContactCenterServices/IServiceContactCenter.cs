@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ContactCenterServices
 {
-    interface IServiceContactCenter
+    public interface IServiceContactCenter
     {
          string prueba();
     }

@@ -29,6 +29,11 @@ namespace ContactCenterDA.Repositories.CC.TH
             throw new NotImplementedException();
         }
 
+        public string ProbarMensaje()
+        {
+            return "MensajePrueba";
+        }
+
         public void Update(Asiento datos)
         {
             throw new NotImplementedException();

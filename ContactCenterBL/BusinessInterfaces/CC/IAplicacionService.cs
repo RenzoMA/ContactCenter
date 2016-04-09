@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ContactCenterBL.BusinessInterfaces.CC
 {
-    interface IAplicacionService
+    public interface IAplicacionService
     {
     }
 }
