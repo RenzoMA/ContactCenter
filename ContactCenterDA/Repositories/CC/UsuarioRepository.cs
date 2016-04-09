@@ -9,6 +9,7 @@ namespace ContactCenterDA.Repositories.CC
 {
     public class UsuarioRepository : IUsuarioRepository
     {
+        //Prueba
         public void Delete(int id)
         {
             throw new NotImplementedException();
