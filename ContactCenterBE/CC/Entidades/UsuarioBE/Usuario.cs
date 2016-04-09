@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ContactCenterBE.CC.Entidades.RolBE;
 
-namespace ContactCenterBE.CC.Entidades
+namespace ContactCenterBE.CC.Entidades.UsuarioBE
 {
-    public class UsuarioBE
+    public class Usuario
     {
         public int IdUsuario { get; set; }
         public string Nombre { get; set; }
@@ -15,6 +16,6 @@ namespace ContactCenterBE.CC.Entidades
         public string Correo { get; set; }
         public String Login { get; set; }
         public String Contraseña { get; set; }
-        public RolBE Rol { get; set; }
+        public Rol Rol { get; set; }
     }
 }

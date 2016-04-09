@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ContactCenterBE.CC.Base
+namespace ContactCenterBE.Base
 {
     public class BaseEntity
     {

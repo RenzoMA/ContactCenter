@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ContactCenterBE.CC.Base;
+using ContactCenterBE.Base;
 
-namespace ContactCenterBE.CC.TH.Entidades
+namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
 {
-    public class EstadoReservaBE : BaseEntity
+    public class EstadoReserva : BaseEntity
     {
         public int IdEstadoReserva { get; set; }
         public string Nombre { get; set; }

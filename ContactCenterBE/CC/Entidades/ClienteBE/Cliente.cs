@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ContactCenterBE.CC.Base;
+using ContactCenterBE.Base;
 
 
-namespace ContactCenterBE.CC.Entidades
+namespace ContactCenterBE.CC.Entidades.CLienteBE
 {
-    public class ClienteBE : BaseEntity
+    public class Cliente : BaseEntity
     {
         public int IdCliente { get; set; }
         public string Nombre { get; set; }

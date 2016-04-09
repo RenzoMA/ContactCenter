@@ -40,22 +40,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CC\Entidades\AplicacionBE.cs" />
-    <Compile Include="CC\Base\BaseEntity.cs" />
-    <Compile Include="CC\Entidades\ClienteBE.cs" />
-    <Compile Include="CC\Entidades\RolBE.cs" />
-    <Compile Include="CC\Entidades\UsuarioBE.cs" />
-    <Compile Include="CC\TH\Entidades\AsientoBE.cs" />
-    <Compile Include="CC\TH\Entidades\DetalleReservaBE.cs" />
-    <Compile Include="CC\TH\Entidades\EstadoReservaBE.cs" />
-    <Compile Include="CC\TH\Entidades\FuncionBE.cs" />
-    <Compile Include="CC\TH\Entidades\LogEmailBE.cs" />
-    <Compile Include="CC\TH\Entidades\ObraBE.cs" />
-    <Compile Include="CC\TH\Entidades\PromocionBE.cs" />
-    <Compile Include="CC\TH\Entidades\ReservaBE.cs" />
-    <Compile Include="CC\TH\Entidades\TeatroBE.cs" />
-    <Compile Include="CC\TH\Entidades\TipoPromocionBE.cs" />
-    <Compile Include="CC\TH\Entidades\ZonaBE.cs" />
+    <Compile Include="Base\IBaseRepository.cs" />
+    <Compile Include="CC\Entidades\AplicacionBE\Aplicacion.cs" />
+    <Compile Include="Base\BaseEntity.cs" />
+    <Compile Include="CC\Entidades\ClienteBE\Cliente.cs" />
+    <Compile Include="CC\Entidades\AplicacionBE\IAplicacionRepository.cs" />
+    <Compile Include="CC\Entidades\ClienteBE\IClienteRepository.cs" />
+    <Compile Include="CC\Entidades\RolBE\IRolRepository.cs" />
+    <Compile Include="CC\Entidades\UsuarioBE\IUsuarioRepository.cs" />
+    <Compile Include="CC\Entidades\RolBE\Rol.cs" />
+    <Compile Include="CC\Entidades\UsuarioBE\Usuario.cs" />
+    <Compile Include="CC\TH\Entidades\AsientoBE\Asiento.cs" />
+    <Compile Include="CC\TH\Entidades\AsientoBE\IAsientoRepository.cs" />
+    <Compile Include="CC\TH\Entidades\FuncionBE\IFuncionRepository.cs" />
+    <Compile Include="CC\TH\Entidades\LogEmailBE\ILogEmailRepository.cs" />
+    <Compile Include="CC\TH\Entidades\ObraBE\IObraRepository.cs" />
+    <Compile Include="CC\TH\Entidades\PromocionBE\IPromocionRepository.cs" />
+    <Compile Include="CC\TH\Entidades\PromocionBE\ITipoPromocionRepository.cs" />
+    <Compile Include="CC\TH\Entidades\ReservaBE\DetalleReserva.cs" />
+    <Compile Include="CC\TH\Entidades\ReservaBE\EstadoReserva.cs" />
+    <Compile Include="CC\TH\Entidades\FuncionBE\Funcion.cs" />
+    <Compile Include="CC\TH\Entidades\LogEmailBE\LogEmail.cs" />
+    <Compile Include="CC\TH\Entidades\ObraBE\Obra.cs" />
+    <Compile Include="CC\TH\Entidades\PromocionBE\Promocion.cs" />
+    <Compile Include="CC\TH\Entidades\ReservaBE\IDetalleReservaRepository.cs" />
+    <Compile Include="CC\TH\Entidades\ReservaBE\IEstadoReservaRepository.cs" />
+    <Compile Include="CC\TH\Entidades\ReservaBE\IReservaRepository.cs" />
+    <Compile Include="CC\TH\Entidades\ReservaBE\Reserva.cs" />
+    <Compile Include="CC\TH\Entidades\TeatroBE\ITeatroRepository.cs" />
+    <Compile Include="CC\TH\Entidades\TeatroBE\Teatro.cs" />
+    <Compile Include="CC\TH\Entidades\PromocionBE\TipoPromocion.cs" />
+    <Compile Include="CC\TH\Entidades\ZonaBE\IZonaRepository.cs" />
+    <Compile Include="CC\TH\Entidades\ZonaBE\Zona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

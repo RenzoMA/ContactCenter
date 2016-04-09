@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ContactCenterBE.CC.Base;
+using ContactCenterBE.Base;
+using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 
-namespace ContactCenterBE.CC.TH.Entidades
+namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
 {
-    public class DetalleReservaBE : BaseEntity
+    public class DetalleReserva : BaseEntity
     {
         public int IdDetalleReserva { get; set; }
         public Single Precio { get; set; }
         public string Estado { get; set; }
-        public AsientoBE Asiento { get; set; }
+        public Asiento Asiento { get; set; }
 
     }
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ContactCenterBE.CC.Base;
+using ContactCenterBE.Base;
 
-namespace ContactCenterBE.CC.TH.Entidades
+namespace ContactCenterBE.CC.TH.Entidades.PromocionBE
 {
-    public class TipoPromocionBE : BaseEntity
+    public class TipoPromocion : BaseEntity
     {
         public int IdTipoPromocion { get; set; }
         public string Descripcion { get; set; }

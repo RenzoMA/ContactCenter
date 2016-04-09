@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ContactCenterBE.CC.Base;
+using ContactCenterBE.Base;
+using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 
-namespace ContactCenterBE.CC.TH.Entidades
+namespace ContactCenterBE.CC.TH.Entidades.ObraBE
 {
-    public class ObraBE : BaseEntity
+    public class Obra : BaseEntity
     {
         public int IdObra { get; set; }
         public string Nombre { get; set; }
@@ -16,6 +17,6 @@ namespace ContactCenterBE.CC.TH.Entidades
         public Single Precio { get; set; }
         public string Descripcion { get; set; }
         public string Estado { get; set; }
-        public TeatroBE Teatro { get; set; }
+        public Teatro Teatro { get; set; }
 }
 }
