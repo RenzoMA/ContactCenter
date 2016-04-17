@@ -5,21 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBL.BusinessInterfaces.CC.TH;
 using ContactCenterBL.BusinessServices.CC.TH;
+using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Configuration;
 
 namespace ContactCenterServices
 {
     public class ServiceContactCenter : IServiceContactCenter
     {
-        private readonly IAsientoService asientoService;
 
-        public ServiceContactCenter()
+        private IAsientoService _asientoService;
+        public ServiceContactCenter(IAsientoService asientoService)
         {
-            asientoService = new AsientoService();
+            _asientoService = asientoService;
         }
-        
+
+        public void Dispose()
+        {
+            _asientoService = null;
+        }
+
         public string prueba()
         {
-            return asientoService.probarMensaje();
+            return _asientoService.probarMensaje();
         }
+
     }
 }

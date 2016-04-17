@@ -17,9 +17,9 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         #endregion
 
         #region Constructor
-        public AsientoService()
+        public AsientoService(IAsientoRepository _asientoRepository)
         {
-            asientoRepository = new AsientoRepository();
+            asientoRepository = _asientoRepository;
         }
         #endregion
 
