@@ -38,7 +38,6 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public string ProbarMensaje()
         {
-            cnx.ConnectionString = cnx.GetCnx();
             return "MensajePrueba";
         }
 

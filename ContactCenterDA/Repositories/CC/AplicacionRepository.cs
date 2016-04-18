@@ -15,52 +15,30 @@ namespace ContactCenterDA.Repositories.CC
         
         OleDbConnection cnx = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
-        OleDbDataReader dtr = default(OleDbDataReader);
+
 
         public void Delete(int id)
         {
-            try
-            {
-                cnx.ConnectionString = cnx.GetCnx();
-                cmd.CommandType = CommandType.Text;
-                string sql = String.Format("DELETE FROM CC_APLICACION WHERE IdAplicacion = {0}",
-                                            id);
-                cmd.CommandText = sql;
-                cnx.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (OleDbException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
-                }
-            }
+            String sql = "DELETE FROM CC_APLICACION WHERE IdAplicacion = @codigo";
+
+            OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
+            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, codigo);
         }
 
         public Aplicacion GetById(int id)
         {
             Aplicacion objAplicacion = null;
 
-            try
-            {
-                cnx.ConnectionString = cnx.GetCnx();
-                cmd.Connection = cnx;
-                cmd.CommandType = CommandType.Text;
-                string sql = String.Format("SELECT * FROM CC_Aplicacion WHERE IdAplicacion = {0}", id);
-                cmd.CommandText = sql;
-                cnx.Open();
-                dtr = cmd.ExecuteReader();
-                if (dtr.HasRows)
-                {
-                    dtr.Read();
+            String sql = "SELECT * FROM CC_Aplicacion WHERE IdAplicacion = @idAplicacion";
 
+            OleDbParameter codigo = UtilDA.SetParameters("@idAplicacion", OleDbType.Integer, id);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, codigo))
+            {
+                while (dtr.Read())
+                {
                     objAplicacion = new Aplicacion();
-                    objAplicacion.IdAplicacion = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("IdAplicacion")).ToString());
+                    objAplicacion.IdAplicacion = DataConvert.ToInt32(dtr["IdAplicacion"]);
                     objAplicacion.Nombre = dtr.GetValue(dtr.GetOrdinal("Nombre")).ToString();
                     objAplicacion.Version = dtr.GetValue(dtr.GetOrdinal("Version")).ToString();
                     objAplicacion.Estado = dtr.GetValue(dtr.GetOrdinal("Estado")).ToString();
@@ -69,125 +47,67 @@ namespace ContactCenterDA.Repositories.CC
                     objAplicacion.FechaModificacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaMod")).ToString());
                     objAplicacion.UsuarioModificacion = dtr.GetValue(dtr.GetOrdinal("UsuarioMod")).ToString();
 
-                    dtr.Close();
-                }
-
-                return objAplicacion;
-            }
-            catch (OleDbException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
                 }
             }
+            return objAplicacion;
+            
         }
 
         public IList<Aplicacion> GetLista()
         {
             List<Aplicacion> listaAplicacion = null;
-            try
+            String sql = "SELECT * FROM CC_Aplicacion";
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx))
             {
-                cnx.ConnectionString = cnx.GetCnx();
-                cmd.Connection = cnx;
-                cmd.CommandType = CommandType.Text;
-                string sql = String.Format("SELECT * FROM CC_Aplicacion");
-                cmd.CommandText = sql;
-                cnx.Open();
-                dtr = cmd.ExecuteReader();
-                if (dtr.HasRows)
+                while (dtr.Read())
                 {
-                    while (dtr.Read())
-                    {
-                        Aplicacion objAplicacion = new Aplicacion();
-                        objAplicacion.IdAplicacion = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("IdAplicacion")).ToString());
-                        objAplicacion.Nombre = dtr.GetValue(dtr.GetOrdinal("Nombre")).ToString();
-                        objAplicacion.Version = dtr.GetValue(dtr.GetOrdinal("Version")).ToString();
-                        objAplicacion.Estado = dtr.GetValue(dtr.GetOrdinal("Estado")).ToString();
-                        objAplicacion.FechaCreacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaCrea")).ToString());
-                        objAplicacion.UsuarioCreacion = dtr.GetValue(dtr.GetOrdinal("UsuarioCrea")).ToString();
-                        objAplicacion.FechaModificacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaMod")).ToString());
-                        objAplicacion.UsuarioModificacion = dtr.GetValue(dtr.GetOrdinal("UsuarioMod")).ToString();
-                        listaAplicacion.Add(objAplicacion);
-
-                    }
-
-                    dtr.Close();
-                }
-
-                return listaAplicacion;
-            }
-            catch (OleDbException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
+                    Aplicacion objAplicacion = new Aplicacion();
+                    objAplicacion.IdAplicacion = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("IdAplicacion")).ToString());
+                    objAplicacion.Nombre = dtr.GetValue(dtr.GetOrdinal("Nombre")).ToString();
+                    objAplicacion.Version = dtr.GetValue(dtr.GetOrdinal("Version")).ToString();
+                    objAplicacion.Estado = dtr.GetValue(dtr.GetOrdinal("Estado")).ToString();
+                    objAplicacion.FechaCreacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaCrea")).ToString());
+                    objAplicacion.UsuarioCreacion = dtr.GetValue(dtr.GetOrdinal("UsuarioCrea")).ToString();
+                    objAplicacion.FechaModificacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaMod")).ToString());
+                    objAplicacion.UsuarioModificacion = dtr.GetValue(dtr.GetOrdinal("UsuarioMod")).ToString();
+                    listaAplicacion.Add(objAplicacion);
                 }
             }
+            return listaAplicacion;
         }
 
         public void Insert(Aplicacion datos)
         {
-            cnx.ConnectionString = cnx.GetCnx();
-            cmd.Connection = cnx;
-            cmd.CommandType = CommandType.Text;
-            string sql = String.Format("INSERTO INTO CC_APLICACION(Nombre, Version, Estado, Correo, FechaCrea, UsuarioCrea, FechaMod, UsuarioMod) " +
-                                        "values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')",
-                                         datos.Nombre, datos.Version, datos.Estado, datos.Correo, datos.FechaCreacion, datos.UsuarioCreacion,
-                                         datos.FechaModificacion, datos.UsuarioModificacion);
-            cmd.CommandText = sql;
-            try
-            {
-                cnx.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (OleDbException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
-                }
-            }
+            String sql = "INSERT INTO CC_APLICACION(Nombre, Version, Estado, Correo, FechaCrea, UserCrea) " +
+                                       "values(@nombre,@version,@estado,@correo,@fechaCreacion,@UsuarioCrea)";
+
+            OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
+            OleDbParameter version = UtilDA.SetParameters("@version", OleDbType.VarChar, datos.Version);
+            OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
+            OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
+            OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCreacion", OleDbType.Date, datos.FechaCreacion);
+            OleDbParameter UsuarioCrea = UtilDA.SetParameters("@UsuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+
+            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, version, estado, correo, fechaCreacion, UsuarioCrea);
         }
 
         public void Update(Aplicacion datos)
         {
-            cnx.ConnectionString = cnx.GetCnx();
-            cmd.Connection = cnx;
-            cmd.CommandType = CommandType.Text;
-            String sql = String.Format("UPDATE CC_APLICACION SET Nombre = {0}, Version = {1}, Estado = {2}, Correo = {3}" +
-                                        "FechaCrea = {4}, UsuarioCrea = {5}, FechaMod = {6}, UsuarioMod = {7} where IdAplicacion = {8}",
-                                        datos.Nombre, datos.Version, datos.Estado, datos.Correo, datos.FechaCreacion, datos.UsuarioCreacion,
-                                        datos.FechaModificacion, datos.UsuarioModificacion, datos.IdAplicacion);
-            cmd.CommandText = sql;
-            try
-            {
-                cnx.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (OleDbException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
-                }
-            }
+            String sql = "UPDATE CC_APLICACION SET Nombre = @nombre, Version = @version, Estado = @estado, Correo = @correo," +
+                                        "FechaMod = @fechaModificacion, UsuarioMod = @UsuarioMod where IdAplicacion = @idAplicacion";
+
+            OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
+            OleDbParameter version = UtilDA.SetParameters("@version", OleDbType.VarChar, datos.Version);
+            OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
+            OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
+            OleDbParameter fechaModificacion = UtilDA.SetParameters("@fechaModificacion", OleDbType.Date, datos.FechaCreacion);
+            OleDbParameter UsuarioMod = UtilDA.SetParameters("@UsuarioMod", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter idAplicacion = UtilDA.SetParameters("@idAplicacion", OleDbType.Integer, datos.IdAplicacion);
+
+
+            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, version, estado, correo, fechaModificacion, UsuarioMod, idAplicacion);
+
         }
     }
 }

@@ -97,6 +97,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ContactCenterBE\ContactCenterBE.csproj">
+      <Project>{e4267e64-2e05-4ce7-8eca-3bb3081d3c6c}</Project>
+      <Name>ContactCenterBE</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ContactCenterServices\ContactCenterServices.csproj">
       <Project>{6c5010b3-017b-4c09-9fd3-f46808595730}</Project>
       <Name>ContactCenterServices</Name>

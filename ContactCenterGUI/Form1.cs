@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ContactCenterServices;
 using Microsoft.Practices.Unity;
+using ContactCenterBE.CC.Entidades.AplicacionBE;
 
 
 namespace ContactCenterGUI
@@ -26,7 +27,16 @@ namespace ContactCenterGUI
             // Metodo de prueba del servicio
             using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
             {
-                MessageBox.Show(servicio.prueba());
+                Aplicacion aplicacion = new Aplicacion();
+                aplicacion.Nombre = "teatros";
+                aplicacion.Correo = "renzoma89@gmail.com";
+                aplicacion.Estado = "A";
+                aplicacion.FechaCreacion = DateTime.Now;
+                aplicacion.UsuarioCreacion = "renzo";
+                aplicacion.Version = "2.5";
+
+                servicio.InsertarAplicacion(aplicacion);
+                
             }
                 
         }

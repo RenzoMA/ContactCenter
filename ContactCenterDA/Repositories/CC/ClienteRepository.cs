@@ -20,7 +20,7 @@ namespace ContactCenterDA.Repositories.CC
         {
             try
             {
-                cnx.ConnectionString = cnx.GetCnx();
+                cnx.ConnectionString = cnx.GetConexion();
                 cmd.CommandType = CommandType.Text;
                 string sql = String.Format("DELETE FROM CC_CLIENTE WHERE IdCliente = {0}",
                                             id);
@@ -47,7 +47,7 @@ namespace ContactCenterDA.Repositories.CC
 
             try
             {
-                cnx.ConnectionString = cnx.GetCnx();
+                cnx.ConnectionString = cnx.GetConexion();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.Text;
                 string sql = String.Format("SELECT * FROM CC_CLIENTE WHERE IdCliente = {0}", id);
@@ -94,7 +94,7 @@ namespace ContactCenterDA.Repositories.CC
 
             try
             {
-                cnx.ConnectionString = cnx.GetCnx();
+                cnx.ConnectionString = cnx.GetConexion();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.Text;
                 string sql = String.Format("SELECT * FROM CC_CLIENTE");
@@ -141,7 +141,7 @@ namespace ContactCenterDA.Repositories.CC
         public void Insert(Cliente datos)
         {
 
-            cnx.ConnectionString = cnx.GetCnx();
+            cnx.ConnectionString = cnx.GetConexion();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.Text;
             string sql = String.Format("INSERTO INTO CC_CLIENTE(Nombre, ApePaterno, ApeMaterno, Correo, Telefono, FechaCrea, UsuarioCrea, FechaMod, UsuarioMod) " +
@@ -169,7 +169,7 @@ namespace ContactCenterDA.Repositories.CC
 
         public void Update(Cliente datos)
         {
-            cnx.ConnectionString = cnx.GetCnx();
+            cnx.ConnectionString = cnx.GetConexion();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.Text;
             String sql = String.Format("UPDATE CC_CLIENTE SET Nombre = {0}, ApePaterno = {1}, ApeMaterno = {2}, ApePaterno = {3}, Correo = {4}" +
