@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBE.CC.Entidades.RolBE;
+using ContactCenterBE.Base;
+
 
 namespace ContactCenterBE.CC.Entidades.UsuarioBE
 {
-    public class Usuario
+    public class Usuario : BaseEntity
     {
         public int IdUsuario { get; set; }
         public string Nombre { get; set; }
