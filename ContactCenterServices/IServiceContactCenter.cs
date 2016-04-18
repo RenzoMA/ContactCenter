@@ -11,5 +11,6 @@ namespace ContactCenterServices
     {
         string prueba();
         void InsertarAplicacion(Aplicacion aplicacion);
+        List<Aplicacion> ListarAplicaciones();
     }
 }

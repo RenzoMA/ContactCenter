@@ -41,5 +41,9 @@ namespace ContactCenterServices
             return _asientoService.probarMensaje();
         }
 
+        public List<Aplicacion> ListarAplicaciones()
+        {
+            return _aplicacionService.Listar();
+        }
     }
 }

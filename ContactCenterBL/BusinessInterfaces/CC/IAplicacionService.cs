@@ -10,5 +10,6 @@ namespace ContactCenterBL.BusinessInterfaces.CC
     public interface IAplicacionService
     {
         void Insertar(Aplicacion aplicacion);
+        List<Aplicacion> Listar();
     }
 }

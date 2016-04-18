@@ -79,6 +79,7 @@ namespace ContactCenterDA.Common
         {
             try
             {
+                oleDbCommand.Connection = oleDbConnection;
                 oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
 
                 foreach (OleDbParameter parameter in parameters)
@@ -95,13 +96,7 @@ namespace ContactCenterDA.Common
             {
                 throw new Exception(ex.Message);
             }
-            finally
-            {
-                if (oleDbConnection.State == ConnectionState.Open)
-                {
-                    oleDbConnection.Close();
-                }
-            }
+            
         }
 
     }

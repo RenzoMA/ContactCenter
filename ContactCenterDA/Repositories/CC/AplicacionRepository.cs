@@ -55,7 +55,7 @@ namespace ContactCenterDA.Repositories.CC
 
         public IList<Aplicacion> GetLista()
         {
-            List<Aplicacion> listaAplicacion = null;
+            List<Aplicacion> listaAplicacion = new List<Aplicacion>();
             String sql = "SELECT * FROM CC_Aplicacion";
 
             using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx))
@@ -68,9 +68,9 @@ namespace ContactCenterDA.Repositories.CC
                     objAplicacion.Version = dtr.GetValue(dtr.GetOrdinal("Version")).ToString();
                     objAplicacion.Estado = dtr.GetValue(dtr.GetOrdinal("Estado")).ToString();
                     objAplicacion.FechaCreacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaCrea")).ToString());
-                    objAplicacion.UsuarioCreacion = dtr.GetValue(dtr.GetOrdinal("UsuarioCrea")).ToString();
-                    objAplicacion.FechaModificacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaMod")).ToString());
-                    objAplicacion.UsuarioModificacion = dtr.GetValue(dtr.GetOrdinal("UsuarioMod")).ToString();
+                    objAplicacion.UsuarioCreacion = dtr.GetValue(dtr.GetOrdinal("UserCrea")).ToString();
+                    objAplicacion.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
+                    objAplicacion.UsuarioModificacion = dtr.GetValue(dtr.GetOrdinal("UserMod")).ToString();
                     listaAplicacion.Add(objAplicacion);
                 }
             }
@@ -104,7 +104,6 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter fechaModificacion = UtilDA.SetParameters("@fechaModificacion", OleDbType.Date, datos.FechaCreacion);
             OleDbParameter UsuarioMod = UtilDA.SetParameters("@UsuarioMod", OleDbType.VarChar, datos.UsuarioCreacion);
             OleDbParameter idAplicacion = UtilDA.SetParameters("@idAplicacion", OleDbType.Integer, datos.IdAplicacion);
-
 
             UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, version, estado, correo, fechaModificacion, UsuarioMod, idAplicacion);
 

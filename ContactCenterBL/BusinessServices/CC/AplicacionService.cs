@@ -21,5 +21,10 @@ namespace ContactCenterBL.BusinessServices.CC
         {
             aplicacionRepository.Insert(aplicacion);
         }
+
+        public List<Aplicacion> Listar()
+        {
+            return aplicacionRepository.GetLista().ToList();
+        }
     }
 }

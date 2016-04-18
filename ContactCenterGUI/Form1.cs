@@ -35,10 +35,16 @@ namespace ContactCenterGUI
                 aplicacion.UsuarioCreacion = "renzo";
                 aplicacion.Version = "2.5";
 
-                servicio.InsertarAplicacion(aplicacion);
+               // servicio.InsertarAplicacion(aplicacion);
+                dataGridView1.DataSource = servicio.ListarAplicaciones();
                 
             }
                 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
