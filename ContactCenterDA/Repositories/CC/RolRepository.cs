@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using ContactCenterBE.CC.Entidades.RolBE;
 using System.Data.OleDb;
 using System.Data;
+using ContactCenterDA.Common;
 
 namespace ContactCenterDA.Repositories.CC
 {
     public class RolRepository : IRolRepository
     {
-        Access MiConex = new Access();
+        
         OleDbConnection cnx = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
         OleDbDataReader dtr = default(OleDbDataReader);
@@ -20,7 +21,7 @@ namespace ContactCenterDA.Repositories.CC
         {
             try
             {
-                cnx.ConnectionString = MiConex.GetCnx();
+                cnx.ConnectionString = cnx.GetCnx();
                 cmd.CommandType = CommandType.Text;
                 string sql = String.Format("DELETE FROM CC_ROL WHERE IdRol = {0}",
                                             id);
@@ -47,7 +48,7 @@ namespace ContactCenterDA.Repositories.CC
 
             try
             {
-                cnx.ConnectionString = MiConex.GetCnx();
+                cnx.ConnectionString = cnx.GetCnx();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.Text;
                 string sql = String.Format("SELECT * FROM CC_ROL WHERE IdRol = {0}", id);
@@ -94,7 +95,7 @@ namespace ContactCenterDA.Repositories.CC
 
             try
             {
-                cnx.ConnectionString = MiConex.GetCnx();
+                cnx.ConnectionString = cnx.GetCnx();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.Text;
                 string sql = String.Format("SELECT * FROM CC_ROL");
@@ -137,7 +138,7 @@ namespace ContactCenterDA.Repositories.CC
 
         public void Insert(Rol datos)
         {
-            cnx.ConnectionString = MiConex.GetCnx();
+            cnx.ConnectionString = cnx.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.Text;
             string sql = String.Format("INSERTO INTO CC_ROL(Nombre, Estado, FechaCrea, UsuarioCrea, FechaMod, UsuarioMod) " +
@@ -165,7 +166,7 @@ namespace ContactCenterDA.Repositories.CC
 
         public void Update(Rol datos)
         {
-            cnx.ConnectionString = MiConex.GetCnx();
+            cnx.ConnectionString = cnx.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.Text;
             String sql = String.Format("UPDATE CC_ROL SET Nombre = {0}, Estado = {1}, FechaCrea = {2}, UsuarioCrea = {3}, FechaMod = {4}, UsuarioMod = {5} where IdCliente = {6}",

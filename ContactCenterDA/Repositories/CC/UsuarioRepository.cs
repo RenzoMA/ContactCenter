@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
 using System.Data.OleDb;
 using System.Data;
+using ContactCenterDA.Common;
 
 namespace ContactCenterDA.Repositories.CC
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-        Access MiConex = new Access();
+        
         OleDbConnection cnx = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
         OleDbDataReader dtr = default(OleDbDataReader);
@@ -22,7 +23,7 @@ namespace ContactCenterDA.Repositories.CC
            
             try
             {
-                cnx.ConnectionString = MiConex.GetCnx();
+                cnx.ConnectionString = cnx.GetCnx();
                 cmd.CommandType = CommandType.Text;
                 string sql = String.Format("DELETE FROM CC_USUARIO WHERE IdUsuario = {0}",
                                             id);
@@ -49,7 +50,7 @@ namespace ContactCenterDA.Repositories.CC
 
             try
             {
-                cnx.ConnectionString = MiConex.GetCnx();
+                cnx.ConnectionString = cnx.GetCnx();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.Text;
                 string sql = String.Format("SELECT * FROM CC_USUARIO WHERE IdUsuario = {0}", id);
@@ -98,7 +99,7 @@ namespace ContactCenterDA.Repositories.CC
 
             try
             {
-                cnx.ConnectionString = MiConex.GetCnx();
+                cnx.ConnectionString = cnx.GetCnx();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.Text;
                 string sql = String.Format("SELECT * FROM CC_USUARIO");
@@ -146,7 +147,7 @@ namespace ContactCenterDA.Repositories.CC
 
         public void Insert(Usuario datos)
         {
-            cnx.ConnectionString = MiConex.GetCnx();
+            cnx.ConnectionString = cnx.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.Text;
             string sql = String.Format("INSERTO INTO CC_USUARIO(Nombre, ApePaterno, ApeMaterno, Correo, Login, Contraseña, IdRol, FechaCrea, UsuarioCre, FechaMod, UsuarioMod) " +
@@ -174,7 +175,7 @@ namespace ContactCenterDA.Repositories.CC
 
         public void Update(Usuario datos)
         {
-            cnx.ConnectionString = MiConex.GetCnx();
+            cnx.ConnectionString = cnx.GetCnx();
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.Text;
             String sql = String.Format("UPDATE CC_USUARIO SET Nombre = {0}, Estado = {1}, ApePaterno = {2}, ApeMaterno = {3}, Correo = {4}, Login = {5}, Contraseña = {6}, Rol = {7}" +
