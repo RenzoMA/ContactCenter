@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F241C18D-8D15-4650-AA86-FECC1E4024C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ContactCenterBL</RootNamespace>
+    <AssemblyName>ContactCenterBL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessInterfaces\CC\IAplicacionService.cs" />
+    <Compile Include="BusinessInterfaces\CC\IClienteService.cs" />
+    <Compile Include="BusinessInterfaces\CC\IRolService.cs" />
+    <Compile Include="BusinessInterfaces\CC\IUsuarioService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IAsientoService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IDetalleReservaService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IEstadoReservaService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IFuncionService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\ILogEmailService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IObraService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IPromocionService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IReservaService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\ITeatroService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\ITipoPromocionService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IZonaService.cs" />
+    <Compile Include="BusinessServices\CC\AplicacionService.cs" />
+    <Compile Include="BusinessServices\CC\ClienteService.cs" />
+    <Compile Include="BusinessServices\CC\RolService.cs" />
+    <Compile Include="BusinessServices\CC\TH\AsientoService.cs" />
+    <Compile Include="BusinessServices\CC\TH\DetalleReservaService.cs" />
+    <Compile Include="BusinessServices\CC\TH\EstadoReservaService.cs" />
+    <Compile Include="BusinessServices\CC\TH\FuncionService.cs" />
+    <Compile Include="BusinessServices\CC\TH\LogEmailService.cs" />
+    <Compile Include="BusinessServices\CC\TH\ObraService.cs" />
+    <Compile Include="BusinessServices\CC\TH\PromocionService.cs" />
+    <Compile Include="BusinessServices\CC\TH\ReservaService.cs" />
+    <Compile Include="BusinessServices\CC\TH\TeatroService.cs" />
+    <Compile Include="BusinessServices\CC\TH\TipoPromocionService.cs" />
+    <Compile Include="BusinessServices\CC\TH\ZonaService.cs" />
+    <Compile Include="BusinessServices\CC\UsuarioService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ContactCenterBE\ContactCenterBE.csproj">
+      <Project>{e4267e64-2e05-4ce7-8eca-3bb3081d3c6c}</Project>
+      <Name>ContactCenterBE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ContactCenterDA\ContactCenterDA.csproj">
+      <Project>{0924a9a2-121b-4fd1-9426-bac9048bf5f3}</Project>
+      <Name>ContactCenterDA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
