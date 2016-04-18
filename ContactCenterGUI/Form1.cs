@@ -23,7 +23,7 @@ namespace ContactCenterGUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            //ato chipi
             using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
             {
                 MessageBox.Show(servicio.prueba());
