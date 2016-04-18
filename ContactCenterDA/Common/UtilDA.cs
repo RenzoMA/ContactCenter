@@ -96,6 +96,13 @@ namespace ContactCenterDA.Common
             {
                 throw new Exception(ex.Message);
             }
+            finally
+            {
+                if (oleDbConnection.State == ConnectionState.Open)
+                {
+                    oleDbConnection.Close();
+                }
+            }
             
         }
 
