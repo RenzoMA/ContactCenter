@@ -23,7 +23,7 @@ namespace ContactCenterGUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //
+            // Metodo de prueba del servicio
             using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
             {
                 MessageBox.Show(servicio.prueba());
