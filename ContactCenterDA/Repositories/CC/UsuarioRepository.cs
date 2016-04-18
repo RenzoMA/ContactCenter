@@ -101,7 +101,7 @@ namespace ContactCenterDA.Repositories.CC
                 cnx.ConnectionString = MiConex.GetCnx();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.Text;
-                string sql = String.Format("SELECT * FROM CC_ROL");
+                string sql = String.Format("SELECT * FROM CC_USUARIO");
                 cmd.CommandText = sql;
                 cnx.Open();
                 dtr = cmd.ExecuteReader();

@@ -51,7 +51,7 @@ namespace ContactCenterDA.Repositories.CC
                 cnx.ConnectionString = MiConex.GetCnx();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.Text;
-                string sql = String.Format("SELECT * FROM CC_CLIENTE WHERE IdAplicacion = {0}", id);
+                string sql = String.Format("SELECT * FROM CC_Aplicacion WHERE IdAplicacion = {0}", id);
                 cmd.CommandText = sql;
                 cnx.Open();
                 dtr = cmd.ExecuteReader();
@@ -95,7 +95,7 @@ namespace ContactCenterDA.Repositories.CC
                 cnx.ConnectionString = MiConex.GetCnx();
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.Text;
-                string sql = String.Format("SELECT * FROM APLICACION");
+                string sql = String.Format("SELECT * FROM CC_Aplicacion");
                 cmd.CommandText = sql;
                 cnx.Open();
                 dtr = cmd.ExecuteReader();
