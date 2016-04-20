@@ -16,6 +16,13 @@ namespace ContactCenterDA.Repositories.CC
         OleDbConnection cnx = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
 
+        public void CloseConexion()
+        {
+            if (cnx.State == ConnectionState.Open)
+            {
+                cnx.Close();
+            }
+        }
 
         public void Delete(int id)
         {
@@ -38,17 +45,19 @@ namespace ContactCenterDA.Repositories.CC
                 while (dtr.Read())
                 {
                     objAplicacion = new Aplicacion();
-                    objAplicacion.IdAplicacion = DataConvert.ToInt32(dtr["IdAplicacion"]);
-                    objAplicacion.Nombre = dtr.GetValue(dtr.GetOrdinal("Nombre")).ToString();
-                    objAplicacion.Version = dtr.GetValue(dtr.GetOrdinal("Version")).ToString();
-                    objAplicacion.Estado = dtr.GetValue(dtr.GetOrdinal("Estado")).ToString();
-                    objAplicacion.FechaCreacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaCrea")).ToString());
-                    objAplicacion.UsuarioCreacion = dtr.GetValue(dtr.GetOrdinal("UsuarioCrea")).ToString();
-                    objAplicacion.FechaModificacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaMod")).ToString());
-                    objAplicacion.UsuarioModificacion = dtr.GetValue(dtr.GetOrdinal("UsuarioMod")).ToString();
+                    objAplicacion.IdAplicacion = DataConvert.ToInt(dtr["IdAplicacion"]);
+                    objAplicacion.Nombre = DataConvert.ToString(dtr["Nombre"]);
+                    objAplicacion.Version = DataConvert.ToString(dtr["Version"]);
+                    objAplicacion.Estado = DataConvert.ToString(dtr["Estado"]);
+                    objAplicacion.Correo = DataConvert.ToString(dtr["Correo"]);
+                    objAplicacion.FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]);
+                    objAplicacion.UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]);
+                    objAplicacion.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
+                    objAplicacion.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
 
                 }
             }
+            CloseConexion();
             return objAplicacion;
             
         }
@@ -63,17 +72,19 @@ namespace ContactCenterDA.Repositories.CC
                 while (dtr.Read())
                 {
                     Aplicacion objAplicacion = new Aplicacion();
-                    objAplicacion.IdAplicacion = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("IdAplicacion")).ToString());
-                    objAplicacion.Nombre = dtr.GetValue(dtr.GetOrdinal("Nombre")).ToString();
-                    objAplicacion.Version = dtr.GetValue(dtr.GetOrdinal("Version")).ToString();
-                    objAplicacion.Estado = dtr.GetValue(dtr.GetOrdinal("Estado")).ToString();
-                    objAplicacion.FechaCreacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaCrea")).ToString());
-                    objAplicacion.UsuarioCreacion = dtr.GetValue(dtr.GetOrdinal("UserCrea")).ToString();
+                    objAplicacion.IdAplicacion = DataConvert.ToInt(dtr["IdAplicacion"]);
+                    objAplicacion.Nombre = DataConvert.ToString(dtr["Nombre"]);
+                    objAplicacion.Version = DataConvert.ToString(dtr["Version"]);
+                    objAplicacion.Estado = DataConvert.ToString(dtr["Estado"]);
+                    objAplicacion.Correo = DataConvert.ToString(dtr["Correo"]);
+                    objAplicacion.FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]);
+                    objAplicacion.UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]);
                     objAplicacion.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
-                    objAplicacion.UsuarioModificacion = dtr.GetValue(dtr.GetOrdinal("UserMod")).ToString();
+                    objAplicacion.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
                     listaAplicacion.Add(objAplicacion);
                 }
             }
+            CloseConexion();
             return listaAplicacion;
         }
 
