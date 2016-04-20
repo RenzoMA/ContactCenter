@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
+using ContactCenterBE.CC.Entidades.UsuarioBE;
 
 namespace ContactCenterServices
 {
@@ -12,5 +13,6 @@ namespace ContactCenterServices
         string prueba();
         void InsertarAplicacion(Aplicacion aplicacion);
         List<Aplicacion> ListarAplicaciones();
+        Usuario ValidarUsuario(string login, string password);
     }
 }

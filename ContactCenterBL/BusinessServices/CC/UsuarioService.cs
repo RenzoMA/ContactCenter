@@ -4,11 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBL.BusinessInterfaces.CC;
+using ContactCenterBE.CC.Entidades.UsuarioBE;
+using ContactCenterCommon;
 
 namespace ContactCenterBL.BusinessServices.CC
 {
     public class UsuarioService : IUsuarioService
     {
 
+        private readonly IUsuarioRepository usuarioRepository;
+
+        public UsuarioService(IUsuarioRepository _usuarioRepository)
+        {
+            usuarioRepository = _usuarioRepository;
+        }
+
+        public Usuario ValidarUsuario(string login, string contraseña)
+        {
+            string passwordEncriptado = Util.Encriptar(contraseña);
+            return usuarioRepository.ValidarUsuario(login, passwordEncriptado);
+        }
     }
 }

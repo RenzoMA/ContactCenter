@@ -7,6 +7,7 @@ using ContactCenterBE.CC.Entidades.UsuarioBE;
 using System.Data.OleDb;
 using System.Data;
 using ContactCenterDA.Common;
+using ContactCenterBE.CC.Entidades.RolBE;
 
 namespace ContactCenterDA.Repositories.CC
 {
@@ -199,6 +200,39 @@ namespace ContactCenterDA.Repositories.CC
                     cnx.Close();
                 }
             }
+        }
+
+        public Usuario ValidarUsuario(string login, string password)
+        {
+            Usuario objUsuario = null;
+
+            String sql = "SELECT * FROM CC_USUARIO U INNER JOIN CC_ROL R ON R.IDROL = U.IDROL WHERE U.LOGIN = @login and U.CONTRASEÑA = @contraseña";
+
+            OleDbParameter loginParameter = UtilDA.SetParameters("@login", OleDbType.VarChar, login);
+            OleDbParameter passwordParameter = UtilDA.SetParameters("@contraseña", OleDbType.VarChar, password);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, loginParameter, passwordParameter))
+            {
+                while (dtr.Read())
+                {
+                    objUsuario = new Usuario();
+                    objUsuario.IdUsuario = DataConvert.ToInt(dtr["IdUsuario"]);
+                    objUsuario.Nombre = DataConvert.ToString(dtr["U.Nombre"]);
+                    objUsuario.ApellidoPaterno = DataConvert.ToString(dtr["ApePaterno"]);
+                    objUsuario.ApellidoMaterno = DataConvert.ToString(dtr["ApeMaterno"]);
+                    objUsuario.Correo = DataConvert.ToString(dtr["Correo"]);
+                    objUsuario.Login = DataConvert.ToString(dtr["Login"]);
+                    objUsuario.Rol = new Rol()
+                    {
+                        Estado = DataConvert.ToString(dtr["R.Estado"]),
+                        IdRol = DataConvert.ToInt(dtr["R.IdRol"]),
+                        Nombre = DataConvert.ToString(dtr["R.Nombre"])
+                    };
+
+                }
+            }
+            UtilDA.Close(cnx);
+            return objUsuario;
         }
     }
 }

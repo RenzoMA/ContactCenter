@@ -71,7 +71,13 @@ namespace ContactCenterDA.Common
                 }
             }
         }
-
+        public static void Close(OleDbConnection oleDbConnection)
+        {
+            if (oleDbConnection.State == ConnectionState.Open)
+            {
+                oleDbConnection.Close();
+            }
+        }
         public static OleDbDataReader ExecuteReader(OleDbCommand oleDbCommand, CommandType commandType, String sql, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)
         {
             try

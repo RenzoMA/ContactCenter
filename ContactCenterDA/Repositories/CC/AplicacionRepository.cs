@@ -16,13 +16,6 @@ namespace ContactCenterDA.Repositories.CC
         OleDbConnection cnx = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
 
-        public void CloseConexion()
-        {
-            if (cnx.State == ConnectionState.Open)
-            {
-                cnx.Close();
-            }
-        }
 
         public void Delete(int id)
         {
@@ -57,7 +50,7 @@ namespace ContactCenterDA.Repositories.CC
 
                 }
             }
-            CloseConexion();
+            UtilDA.Close(cnx);
             return objAplicacion;
             
         }
@@ -84,7 +77,7 @@ namespace ContactCenterDA.Repositories.CC
                     listaAplicacion.Add(objAplicacion);
                 }
             }
-            CloseConexion();
+            UtilDA.Close(cnx);
             return listaAplicacion;
         }
 
