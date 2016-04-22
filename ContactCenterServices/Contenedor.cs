@@ -31,6 +31,7 @@ namespace ContactCenterServices
             current.RegisterType<IAsientoService, AsientoService>();
             current.RegisterType<IAplicacionService, AplicacionService>();
             current.RegisterType<IUsuarioService, UsuarioService>();
+            
 
             // Entidades - DA
             current.RegisterType<IAsientoRepository, AsientoRepository>();

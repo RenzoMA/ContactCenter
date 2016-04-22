@@ -96,5 +96,11 @@ namespace ContactCenterGUI
             }
             return true;
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            txtUser.Text = "rmaldonado";
+            txtPassword.Text = "123";
+        }
     }
 }
