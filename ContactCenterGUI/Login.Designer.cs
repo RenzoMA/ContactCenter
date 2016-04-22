@@ -35,6 +35,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ep1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblMensaje = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep1)).BeginInit();
@@ -67,6 +68,7 @@
             this.txtPassword.SelectionStart = 0;
             this.txtPassword.Size = new System.Drawing.Size(175, 23);
             this.txtPassword.TabIndex = 8;
+            this.txtPassword.TabStop = false;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUser
@@ -83,6 +85,7 @@
             this.txtUser.SelectionStart = 0;
             this.txtUser.Size = new System.Drawing.Size(175, 23);
             this.txtUser.TabIndex = 7;
+            this.txtUser.TabStop = false;
             this.txtUser.UseSystemPasswordChar = false;
             // 
             // pictureBox2
@@ -109,11 +112,24 @@
             // 
             this.ep1.ContainerControl = this;
             // 
+            // lblMensaje
+            // 
+            this.lblMensaje.AutoSize = true;
+            this.lblMensaje.Depth = 0;
+            this.lblMensaje.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblMensaje.Location = new System.Drawing.Point(97, 307);
+            this.lblMensaje.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(0, 19);
+            this.lblMensaje.TabIndex = 10;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(346, 469);
+            this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUser);
@@ -128,6 +144,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ep1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -139,5 +156,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider ep1;
+        private MaterialSkin.Controls.MaterialLabel lblMensaje;
     }
 }

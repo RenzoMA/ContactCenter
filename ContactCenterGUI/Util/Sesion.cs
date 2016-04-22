@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
 
-namespace ContactCenterBL.BusinessInterfaces.CC
+namespace ContactCenterGUI.Util
 {
-    public interface IUsuarioService
+    public static class Sesion
     {
-        Usuario ValidarUsuario(string login, string contraseña);
+        public static Usuario usuario { get; set; }
     }
 }

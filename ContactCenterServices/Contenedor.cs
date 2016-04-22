@@ -12,7 +12,9 @@ using System.Diagnostics.CodeAnalysis;
 using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 using ContactCenterDA.Repositories.CC.TH;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
+using ContactCenterBE.CC.Entidades.UsuarioBE;
 using ContactCenterDA.Repositories.CC;
+
 
 namespace ContactCenterServices
 {
@@ -28,10 +30,12 @@ namespace ContactCenterServices
             // Bussiness
             current.RegisterType<IAsientoService, AsientoService>();
             current.RegisterType<IAplicacionService, AplicacionService>();
+            current.RegisterType<IUsuarioService, UsuarioService>();
 
             // Entidades - DA
             current.RegisterType<IAsientoRepository, AsientoRepository>();
             current.RegisterType<IAplicacionRepository, AplicacionRepository>();
+            current.RegisterType<IUsuarioRepository, UsuarioRepository>();
         }
     }
 }

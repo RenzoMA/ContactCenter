@@ -77,10 +77,17 @@
       <Project>{e4267e64-2e05-4ce7-8eca-3bb3081d3c6c}</Project>
       <Name>ContactCenterBE</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ContactCenterCommon\ContactCenterCommon.csproj">
+      <Project>{53decd57-c35a-4780-8a55-245e366fa6a1}</Project>
+      <Name>ContactCenterCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ContactCenterDA\ContactCenterDA.csproj">
       <Project>{0924a9a2-121b-4fd1-9426-bac9048bf5f3}</Project>
       <Name>ContactCenterDA</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

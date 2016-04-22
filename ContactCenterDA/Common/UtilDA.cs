@@ -45,13 +45,10 @@ namespace ContactCenterDA.Common
         {
             try
             {
-                if (parameters == null)
-                {
-                    parameters = new OleDbParameter[0];
-                }
                 oleDbCommand.Connection = oleDbConnection;
                 oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
                 oleDbCommand.Parameters.Clear();
+
                 foreach (OleDbParameter parameter in parameters)
                 {
                     oleDbCommand.Parameters.Add(parameter);
@@ -74,7 +71,13 @@ namespace ContactCenterDA.Common
                 }
             }
         }
-
+        public static void Close(OleDbConnection oleDbConnection)
+        {
+            if (oleDbConnection.State == ConnectionState.Open)
+            {
+                oleDbConnection.Close();
+            }
+        }
         public static OleDbDataReader ExecuteReader(OleDbCommand oleDbCommand, CommandType commandType, String sql, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)
         {
             try
@@ -95,13 +98,6 @@ namespace ContactCenterDA.Common
             catch (OleDbException ex)
             {
                 throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (oleDbConnection.State == ConnectionState.Open)
-                {
-                    oleDbConnection.Close();
-                }
             }
             
         }

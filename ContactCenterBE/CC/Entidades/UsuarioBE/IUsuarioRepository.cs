@@ -9,6 +9,6 @@ namespace ContactCenterBE.CC.Entidades.UsuarioBE
 {
     public interface IUsuarioRepository : IBaseRepository<Usuario>
     {
-
+        Usuario ValidarUsuario(string login, string password);
     }
 }

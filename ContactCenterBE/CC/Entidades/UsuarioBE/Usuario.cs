@@ -19,5 +19,6 @@ namespace ContactCenterBE.CC.Entidades.UsuarioBE
         public String Login { get; set; }
         public String Contraseña { get; set; }
         public Rol Rol { get; set; }
+        public string Estado { get; set; }
     }
 }
