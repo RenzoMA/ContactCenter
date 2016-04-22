@@ -7,14 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Animations;
+using MaterialSkin.Controls;
+
 
 namespace ContactCenterGUI
 {
-    public partial class NewTheater2 : Form
+    public partial class NewTheater2 : MaterialForm
     {
         public NewTheater2()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
