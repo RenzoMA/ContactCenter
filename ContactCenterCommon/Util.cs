@@ -25,5 +25,6 @@ namespace ContactCenterCommon
 
             return strBuilder.ToString();
         }
+
     }
 }

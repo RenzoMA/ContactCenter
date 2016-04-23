@@ -13,6 +13,7 @@ using ContactCenterServices;
 using Microsoft.Practices.Unity;
 using ContactCenterGUI.Util;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
+using ContactCenterCommon;
 
 namespace ContactCenterGUI
 {

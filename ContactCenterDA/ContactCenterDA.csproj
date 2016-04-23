@@ -65,6 +65,10 @@
       <Project>{e4267e64-2e05-4ce7-8eca-3bb3081d3c6c}</Project>
       <Name>ContactCenterBE</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ContactCenterCommon\ContactCenterCommon.csproj">
+      <Project>{53decd57-c35a-4780-8a55-245e366fa6a1}</Project>
+      <Name>ContactCenterCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="ContactCenter.accdb">

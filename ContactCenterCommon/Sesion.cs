@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
 
-namespace ContactCenterGUI.Util
+namespace ContactCenterCommon
 {
     public static class Sesion
     {

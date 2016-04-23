@@ -13,6 +13,7 @@ using ContactCenterBE.CC.Entidades.UsuarioBE;
 using ContactCenterServices;
 using Microsoft.Practices.Unity;
 using ContactCenterGUI.Util;
+using ContactCenterCommon;
 
 namespace ContactCenterGUI
 {
@@ -77,23 +78,35 @@ namespace ContactCenterGUI
         
         public async void ObtenerUsuario()
         {
-            disableControls();
-            Animacion.ShowLoader(this);
-            IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
-            Sesion.usuario = await servicio.ValidarUsuarioAsync(login, password);
-            if (Sesion.usuario != null)
+            try
             {
-                this.Hide();
-                Main main = new Main();
-                main.ShowDialog();
-                this.Close();
+                disableControls();
+                Animacion.ShowLoader(this);
+                IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+                Sesion.usuario = await servicio.ValidarUsuarioAsync(login, password);
+                if (Sesion.usuario != null)
+                {
+                    this.Hide();
+                    Main main = new Main();
+                    main.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    SetErrorIngreso();
+                }
+                
             }
-            else
+            catch (Exception ex)
             {
-                SetErrorIngreso();
+                MessageBox.Show("Ocurrio un error: " + ex.Message);
             }
-            Animacion.HideLoader(this);
-            enableControls();
+            finally
+            {
+                Animacion.HideLoader(this);
+                enableControls();
+            }
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

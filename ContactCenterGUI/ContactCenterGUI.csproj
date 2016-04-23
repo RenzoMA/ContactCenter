@@ -112,7 +112,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\Animacion.cs" />
-    <Compile Include="Util\Sesion.cs" />
     <Compile Include="TheaterApp.cs">
       <SubType>Form</SubType>
     </Compile>
