@@ -18,6 +18,11 @@ namespace ContactCenterGUI.Util
 {
     class Animacion
     {
+        private static int loaderHeight = 80;
+        private static int loaderWidth = 72;
+
+
+
         public static void ShowLoader(Form form)
         {
             PictureBox pictureBox = (PictureBox)form.Controls.Find("loader", true).ElementAtOrDefault(0);
@@ -29,9 +34,9 @@ namespace ContactCenterGUI.Util
                 pictureBox = new PictureBox();
                 pictureBox.Image = ContactCenterGUI.Properties.Resources.loading;
                 pictureBox.BackColor = System.Drawing.Color.Transparent;
-                pictureBox.Location = new System.Drawing.Point(coordenadaX - 40, coordenadaY - 36);
+                pictureBox.Location = new System.Drawing.Point(coordenadaX - loaderWidth/2, coordenadaY - loaderHeight/2);
                 pictureBox.Name = "loader";
-                pictureBox.Size = new System.Drawing.Size(80, 72);
+                pictureBox.Size = new System.Drawing.Size(loaderHeight, loaderHeight);
                 pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
                 form.Controls.Add(pictureBox);
                 pictureBox.BringToFront();
@@ -45,7 +50,7 @@ namespace ContactCenterGUI.Util
         public static void HideLoader(Form form)
         {
             PictureBox pictureBox = (PictureBox)form.Controls.Find("loader", true).ElementAt(0);
-            pictureBox.Hide();
+            form.Controls.Remove(pictureBox);
         }
     }
 }
