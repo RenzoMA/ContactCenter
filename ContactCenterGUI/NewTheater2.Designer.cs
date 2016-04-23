@@ -2011,7 +2011,7 @@
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "PLatea B";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
-            this.metroTabPage2.Click += new System.EventHandler(this.metroTabPage2_Click);
+           // this.metroTabPage2.Click += new System.EventHandler(this.metroTabPage2_Click);
             // 
             // metroTabPage3
             // 
@@ -12890,7 +12890,7 @@
             this.button1040.TabIndex = 989;
             this.button1040.Text = "80";
             this.button1040.UseVisualStyleBackColor = false;
-            this.button1040.Click += new System.EventHandler(this.button1040_Click);
+            //this.button1040.Click += new System.EventHandler(this.button1040_Click);
             // 
             // button1041
             // 
