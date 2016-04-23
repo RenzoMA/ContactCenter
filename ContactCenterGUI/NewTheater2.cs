@@ -29,5 +29,20 @@ namespace ContactCenterGUI
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void button96_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1040_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
