@@ -7,6 +7,7 @@ using ContactCenterBE.CC.Entidades.AplicacionBE;
 using System.Data.OleDb;
 using System.Data;
 using ContactCenterDA.Common;
+using ContactCenterBE.CC.Entidades.UsuarioBE;
 
 namespace ContactCenterDA.Repositories.CC
 {
@@ -110,6 +111,35 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter idAplicacion = UtilDA.SetParameters("@idAplicacion", OleDbType.Integer, datos.IdAplicacion);
 
             UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, version, estado, correo, fechaModificacion, UsuarioMod, idAplicacion);
+
+        }
+
+        public List<Aplicacion> ListarAplicacionUsuario(Usuario usuario)
+        {
+            List<Aplicacion> listaAplicacion = new List<Aplicacion>();
+            String sql = "SELECT A.IdAplicacion, A.Nombre, A.Version, A.Estado, A.Correo, A.FechaCrea, A.UserCrea, A.UserMod, A.FechaMod, A.FormInicio FROM CC_USUARIO_APLICACION UA INNER JOIN CC_APLICACION A ON A.IDAPLICACION = UA.IDAPLICACION WHERE UA.IDUSUARIO = @IDUSUARIO";
+            OleDbParameter idUsuario = UtilDA.SetParameters("@IDUSUARIO", OleDbType.VarChar, usuario.IdUsuario);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, idUsuario))
+            {
+                while (dtr.Read())
+                {
+                    Aplicacion objAplicacion = new Aplicacion();
+                    objAplicacion.IdAplicacion = DataConvert.ToInt(dtr["IdAplicacion"]);
+                    objAplicacion.Nombre = DataConvert.ToString(dtr["Nombre"]);
+                    objAplicacion.Version = DataConvert.ToString(dtr["Version"]);
+                    objAplicacion.Estado = DataConvert.ToString(dtr["Estado"]);
+                    objAplicacion.Correo = DataConvert.ToString(dtr["Correo"]);
+                    objAplicacion.FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]);
+                    objAplicacion.UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]);
+                    objAplicacion.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
+                    objAplicacion.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
+                    objAplicacion.FormInicio = DataConvert.ToString(dtr["FormInicio"]);
+                    listaAplicacion.Add(objAplicacion);
+                }
+            }
+            UtilDA.Close(cnx);
+            return listaAplicacion;
 
         }
     }

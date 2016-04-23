@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
+using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 
 
 namespace ContactCenterGUI
@@ -28,21 +29,6 @@ namespace ContactCenterGUI
         private void label2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void button96_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1040_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroTabPage2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

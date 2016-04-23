@@ -53,6 +53,11 @@ namespace ContactCenterServices
             return _aplicacionService.Listar();
         }
 
+        public List<Aplicacion> ListarAplicacionUsuario(Usuario usuario)
+        {
+            return _aplicacionService.ListarAplicacionUsuario(usuario);
+        }
+
         public Usuario ValidarUsuario(string login, string password)
         {
             return _usuarioService.ValidarUsuario(login, password);

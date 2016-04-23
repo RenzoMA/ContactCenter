@@ -15,5 +15,6 @@ namespace ContactCenterBE.CC.Entidades.AplicacionBE
         public string Version { get; set; }
         public string Correo { get; set; }
         public string Estado { get; set; }
+        public string FormInicio { get; set; }
     }
 }

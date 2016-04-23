@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
+using ContactCenterBE.CC.Entidades.UsuarioBE;
 
 namespace ContactCenterBL.BusinessInterfaces.CC
 {
@@ -11,5 +12,6 @@ namespace ContactCenterBL.BusinessInterfaces.CC
     {
         void Insertar(Aplicacion aplicacion);
         List<Aplicacion> Listar();
+        List<Aplicacion> ListarAplicacionUsuario(Usuario usuario);
     }
 }
