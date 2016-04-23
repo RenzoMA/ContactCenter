@@ -30,30 +30,5 @@ namespace ContactCenterGUI
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        private Asiento GetAsiento(int IdAsiento,List<Asiento> lista)
-        {
-            
-            foreach (Asiento asiento in lista)
-            {
-                if (asiento.IdAsiento == IdAsiento)
-                {
-                    return asiento;
-                }
-            }
-            return null;
-        }
-
-        private void CruzarBotonData(List<Asiento> lAsiento)
-        {
-            foreach (Button btn in this.Controls.OfType<Button>())
-            {
-                int IdAsiento;
-                bool isNumber = int.TryParse(btn.Name, out IdAsiento);
-                if (isNumber)
-                {
-                    btn.Tag = GetAsiento(IdAsiento, lAsiento);
-                }
-            }
-        }
     }
 }

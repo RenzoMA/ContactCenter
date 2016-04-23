@@ -28,6 +28,7 @@ namespace ContactCenterGUI
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
+            //todobien
             this.Hide();
             NewTheater2 newtheater2 = new NewTheater2();
             newtheater2.ShowDialog();
