@@ -31,11 +31,16 @@ namespace ContactCenterGUI
 
         private void Main_Load(object sender, EventArgs e)
         {
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
-            {
-                listaAplicacion = servicio.ListarAplicacionUsuario(Sesion.usuario);
-                GenerarMenu(listaAplicacion);
-            }
+            PopularPantalla();
+        }
+
+        private async void PopularPantalla()
+        {
+            Animacion.ShowLoader(this);
+            IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+            listaAplicacion = await servicio.ListarAplicacionUsuarioAsync(Sesion.usuario);
+            GenerarMenu(listaAplicacion);
+            Animacion.HideLoader(this);
         }
 
         private void LimpiarXCoordenadas()

@@ -72,5 +72,15 @@ namespace ContactCenterServices
             });
             return usuario;
         }
+
+        public async Task<List<Aplicacion>> ListarAplicacionUsuarioAsync(Usuario usuario)
+        {
+            List<Aplicacion> lAplicacion = null;
+            await Task.Run(() =>
+            {
+                lAplicacion = _aplicacionService.ListarAplicacionUsuario(usuario);
+            });
+            return lAplicacion;
+        }
     }
 }
