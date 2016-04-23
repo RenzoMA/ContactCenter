@@ -32,13 +32,13 @@
             this.btnLogin = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtUser = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ep1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblMensaje = new MaterialSkin.Controls.MaterialLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ep1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ep1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -88,6 +88,22 @@
             this.txtUser.TabStop = false;
             this.txtUser.UseSystemPasswordChar = false;
             // 
+            // ep1
+            // 
+            this.ep1.ContainerControl = this;
+            // 
+            // lblMensaje
+            // 
+            this.lblMensaje.AutoSize = true;
+            this.lblMensaje.Depth = 0;
+            this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblMensaje.Location = new System.Drawing.Point(97, 307);
+            this.lblMensaje.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(0, 18);
+            this.lblMensaje.TabIndex = 10;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ContactCenterGUI.Properties.Resources.padlock;
@@ -108,22 +124,6 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // ep1
-            // 
-            this.ep1.ContainerControl = this;
-            // 
-            // lblMensaje
-            // 
-            this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Depth = 0;
-            this.lblMensaje.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblMensaje.Location = new System.Drawing.Point(97, 307);
-            this.lblMensaje.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(0, 19);
-            this.lblMensaje.TabIndex = 10;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,9 +141,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ep1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ep1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

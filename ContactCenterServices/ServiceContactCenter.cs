@@ -62,5 +62,15 @@ namespace ContactCenterServices
         {
             return _usuarioService.ValidarUsuario(login, password);
         }
+
+        public async Task<Usuario> ValidarUsuarioAsync(string login, string password)
+        {
+            Usuario usuario = null;
+            await Task.Run(() =>
+            {
+                usuario = _usuarioService.ValidarUsuario(login, password);
+            });
+            return usuario;
+        }
     }
 }

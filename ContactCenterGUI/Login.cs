@@ -59,22 +59,41 @@ namespace ContactCenterGUI
             CapturarDatos();
             if (validar(login, password))
             {
-                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
-                {
-                    Sesion.usuario = servicio.ValidarUsuario(login, password);
-                    if (Sesion.usuario != null)
-                    {
-                        this.Hide();
-                        Main main = new Main();
-                        main.ShowDialog();
-                        this.Close();
-                    }
-                    else
-                    {
-                        SetErrorIngreso();
-                    }
-                }
+                ObtenerUsuario();
             }
+        }
+        private void disableControls()
+        {
+            txtPassword.Enabled = false;
+            txtUser.Enabled = false;
+            btnLogin.Enabled = false;
+        }
+        private void enableControls()
+        {
+            txtPassword.Enabled = true;
+            txtUser.Enabled = true;
+            btnLogin.Enabled = true;
+        }
+        
+        public async void ObtenerUsuario()
+        {
+            disableControls();
+            Animacion.ShowLoader(this);
+            IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+            Sesion.usuario = await servicio.ValidarUsuarioAsync(login, password);
+            if (Sesion.usuario != null)
+            {
+                this.Hide();
+                Main main = new Main();
+                main.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                SetErrorIngreso();
+            }
+            Animacion.HideLoader(this);
+            enableControls();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -82,7 +101,7 @@ namespace ContactCenterGUI
             Ingresar();
         }
 
-        public bool validar(string login,string password)
+        public bool validar(string login, string password)
         {
             if (login == "")
             {

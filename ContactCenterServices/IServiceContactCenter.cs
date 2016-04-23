@@ -14,6 +14,8 @@ namespace ContactCenterServices
         void InsertarAplicacion(Aplicacion aplicacion);
         List<Aplicacion> ListarAplicaciones();
         Usuario ValidarUsuario(string login, string password);
+        Task<Usuario> ValidarUsuarioAsync(string login, string password);
+
         List<Aplicacion> ListarAplicacionUsuario(Usuario usuario);
     }
 }
