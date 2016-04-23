@@ -49,7 +49,7 @@ namespace ContactCenterGUI.Util
         }
         public static void HideLoader(Form form)
         {
-            PictureBox pictureBox = (PictureBox)form.Controls.Find("loader", true).ElementAt(0);
+            PictureBox pictureBox = (PictureBox)form.Controls.Find("loader", true).ElementAtOrDefault(0);
             form.Controls.Remove(pictureBox);
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI
+﻿namespace ContactCenterGUI.Teatros
 {
     partial class NewTheater2
     {

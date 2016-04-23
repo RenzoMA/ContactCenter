@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI
+﻿namespace ContactCenterGUI.CC
 {
     partial class Login
     {

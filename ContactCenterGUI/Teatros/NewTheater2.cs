@@ -12,7 +12,7 @@ using MaterialSkin.Controls;
 using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 
 
-namespace ContactCenterGUI
+namespace ContactCenterGUI.Teatros
 {
     public partial class NewTheater2 : MaterialForm
     {

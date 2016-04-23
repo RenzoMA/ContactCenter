@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ContactCenterGUI
+namespace ContactCenterGUI.CC
 {
     public partial class Loader : Form
     {

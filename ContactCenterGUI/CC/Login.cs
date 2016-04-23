@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
@@ -15,7 +16,7 @@ using Microsoft.Practices.Unity;
 using ContactCenterGUI.Util;
 using ContactCenterCommon;
 
-namespace ContactCenterGUI
+namespace ContactCenterGUI.CC
 {
     public partial class Login : MaterialForm
     {
@@ -28,7 +29,7 @@ namespace ContactCenterGUI
             password = txtPassword.Text.Trim();
         }
 
-        public void Limpiar()
+        public void LimpiarMensajesError()
         {
             ep1.Clear();
             lblMensaje.Text = "";
@@ -54,11 +55,11 @@ namespace ContactCenterGUI
             materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.LightBlue800, MaterialSkin.Primary.LightBlue900, MaterialSkin.Primary.LightBlue500, MaterialSkin.Accent.LightBlue200, MaterialSkin.TextShade.WHITE);
         }
 
-        public void Ingresar()
+        public void IniciarSesion()
         {
-            Limpiar();
+            LimpiarMensajesError();
             CapturarDatos();
-            if (validar(login, password))
+            if (ValidarCampos(login, password))
             {
                 ObtenerUsuario();
             }
@@ -111,10 +112,10 @@ namespace ContactCenterGUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Ingresar();
+            IniciarSesion();
         }
 
-        public bool validar(string login, string password)
+        public bool ValidarCampos(string login, string password)
         {
             if (login == "")
             {

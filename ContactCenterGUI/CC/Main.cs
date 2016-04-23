@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
@@ -15,7 +16,8 @@ using ContactCenterGUI.Util;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
 using ContactCenterCommon;
 
-namespace ContactCenterGUI
+
+namespace ContactCenterGUI.CC
 {
     public partial class Main : MaterialForm
     {
@@ -37,11 +39,22 @@ namespace ContactCenterGUI
 
         private async void PopularPantalla()
         {
-            Animacion.ShowLoader(this);
-            IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
-            listaAplicacion = await servicio.ListarAplicacionUsuarioAsync(Sesion.usuario);
-            GenerarMenu(listaAplicacion);
-            Animacion.HideLoader(this);
+            try
+            {
+                Animacion.ShowLoader(this);
+                IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+                listaAplicacion = await servicio.ListarAplicacionUsuarioAsync(Sesion.usuario);
+                GenerarMenu(listaAplicacion);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error: " + ex.Message, "Aviso");
+            }
+            finally
+            {
+                Animacion.HideLoader(this);
+            }
+            
         }
 
         private void LimpiarXCoordenadas()
@@ -87,13 +100,13 @@ namespace ContactCenterGUI
             Button btnElemento = (Button)sender;
             Aplicacion aplicacion = (Aplicacion)btnElemento.Tag;
             setApplication(aplicacion);
-            changeForm(aplicacion.FormInicio, true);
+            changeForm(aplicacion.FormInicio,aplicacion.Nombre, true);
         }
 
-        void changeForm(string formName, bool hide)
+        void changeForm(string formName,string aplicacion, bool hide)
         {
             if (hide) this.Hide();
-            Type CAType = Type.GetType("ContactCenterGUI." + formName);
+            Type CAType = Type.GetType("ContactCenterGUI." + aplicacion + "."+ formName);
             Form nextForm2 = (Form)Activator.CreateInstance(CAType);
             nextForm2.ShowDialog();
             if (hide) this.Show();

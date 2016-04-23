@@ -1,6 +1,6 @@
-﻿namespace ContactCenterGUI
+﻿namespace ContactCenterGUI.CC
 {
-    partial class Main
+    partial class Loader
     {
         /// <summary>
         /// Required designer variable.
@@ -30,17 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Main
+            // Loader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 562);
-            this.MaximizeBox = false;
-            this.Name = "Main";
-            this.Sizable = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
-            this.Load += new System.EventHandler(this.Main_Load);
+            this.ClientSize = new System.Drawing.Size(617, 261);
+            this.Name = "Loader";
+            this.Text = "Loader";
+            this.Load += new System.EventHandler(this.Loader_Load);
             this.ResumeLayout(false);
 
         }
