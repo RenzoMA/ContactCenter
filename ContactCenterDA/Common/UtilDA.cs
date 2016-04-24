@@ -7,16 +7,22 @@ using System.Data.OleDb;
 using System.Data;
 using ContactCenterCommon;
 using System.IO;
+using System.Threading;
+using System.Globalization;
 
 namespace ContactCenterDA.Common
 {
     static class UtilDA
     {
-
-
         public static String GetConexion(this OleDbConnection con)
         {
-            string ruta = Directory.GetCurrentDirectory();
+
+            string ruta = System.IO.Directory.GetCurrentDirectory();
+            if (ruta.Contains("ContactCenterGUI\\bin\\Debug"))
+                ruta = ruta.Replace("ContactCenterGUI\\bin\\Debug", "ContactCenterDA");
+
+            if(ruta.Contains("ContactCenterUnitTest\\bin\\Debug"))
+                ruta = ruta.Replace("ContactCenterUnitTest\\bin\\Debug", "ContactCenterDA");
 
             string strCnx =
                 "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + ruta + "\\ContactCenter.accdb; Persist Security Info = True";
@@ -44,7 +50,7 @@ namespace ContactCenterDA.Common
             parameter.Value = value;
             return parameter;
         }
-        private static void SaveLog(OleDbException oleDbException, string sql, params OleDbParameter[] parameters)
+        private static void SaveLog(Exception oleDbException, string sql, params OleDbParameter[] parameters)
         {
             string concatParameters = string.Join(" , ",
                           parameters.Select(x => x.ParameterName + " : " + x.Value + "(" + x.OleDbType + ")").ToArray());
@@ -85,6 +91,12 @@ namespace ContactCenterDA.Common
             catch (OleDbException ex)
             {
                 SaveLog(ex, sql, parameters);
+                throw new Exception(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                SaveLog(ex, sql, parameters);
+                throw new Exception(ex.Message);
             }
             finally
             {
@@ -148,6 +160,7 @@ namespace ContactCenterDA.Common
                 oleDbCommand.CommandType = commandType;
                 oleDbCommand.CommandText = sql;
                 oleDbConnection.Open();
+                OleDbDataReader dr = oleDbCommand.ExecuteReader();
                 return oleDbCommand.ExecuteReader();
             }
             catch (OleDbException ex)
@@ -155,7 +168,11 @@ namespace ContactCenterDA.Common
                 SaveLog(ex, sql, parameters);
                 throw new Exception(ex.Message);
             }
-            
+            catch (Exception ex)
+            {
+                SaveLog(ex, sql, parameters);
+                throw new Exception(ex.Message);
+            }
         }
 
     }

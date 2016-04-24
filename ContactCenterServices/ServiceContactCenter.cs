@@ -43,10 +43,6 @@ namespace ContactCenterServices
             _aplicacionService.Insertar(aplicacion);
         }
 
-        public string prueba()
-        {
-            return _asientoService.probarMensaje();
-        }
 
         public List<Aplicacion> ListarAplicaciones()
         {

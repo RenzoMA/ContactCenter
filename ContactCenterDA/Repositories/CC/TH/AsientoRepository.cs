@@ -21,7 +21,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public void Delete(int id)
         {
-            String sql = "DELETE FROM TH_Asiento WHERE IdAsiento = @codigo";
+            String sql = "UPDATE TH_Asiento SET ESTADO = 'I' WHERE IdAsiento = @codigo";
 
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
 
@@ -108,17 +108,12 @@ namespace ContactCenterDA.Repositories.CC.TH
 
             OleDbParameter descripcion = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Descripcion);
             OleDbParameter fila = UtilDA.SetParameters("@fila", OleDbType.VarBinary, datos.Fila);
-            OleDbParameter disponible = UtilDA.SetParameters("@disponible", OleDbType.VarBinary, datos.Disponible);
+            OleDbParameter disponible = UtilDA.SetParameters("@disponible", OleDbType.VarChar, datos.Disponible);
             OleDbParameter idzona = UtilDA.SetParameters("@IdZona", OleDbType.Integer, datos.Zona.IdZona);
             OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
             OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
 
             UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, descripcion, fila, disponible, idzona, fechaCreacion, usuarioCrea);
-        }
-
-        public string ProbarMensaje()
-        {
-            return "MensajePrueba";
         }
 
         public void Update(Asiento datos)
@@ -138,4 +133,3 @@ namespace ContactCenterDA.Repositories.CC.TH
         }
     }
 }
-_

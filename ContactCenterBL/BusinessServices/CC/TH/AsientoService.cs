@@ -24,10 +24,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         #endregion
 
         #region metodos
-        public string probarMensaje()
-        {
-            return asientoRepository.ProbarMensaje();
-        }
+        
         #endregion
     }
 }

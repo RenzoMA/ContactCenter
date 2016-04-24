@@ -16,12 +16,11 @@ namespace ContactCenterDA.Repositories.CC
         
         OleDbConnection cnx = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
-        OleDbDataReader dtr = default(OleDbDataReader);
 
 
         public void Delete(int id)
         {
-            String sql = "DELETE FROM CC_USUARIO WHERE IdUsuario = @codigo";
+            String sql = "UPDATE CC_USUARIO SET ESTADO = 'I' WHERE IdUsuario = @codigo";
 
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
 

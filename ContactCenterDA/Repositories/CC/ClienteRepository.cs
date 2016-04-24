@@ -17,7 +17,7 @@ namespace ContactCenterDA.Repositories.CC
 
         public void Delete(int id)
         {
-            String sql = "DELETE * FROM CC_Cliente WHERE = @codigo";
+            String sql = "UPDATE CC_Cliente SET ESTADO = 'I' WHERE IdCliente = @codigo";
 
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
             UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, codigo);

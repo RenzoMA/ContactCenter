@@ -45,13 +45,30 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UsuarioTest.cs" />
+    <Compile Include="CC\AplicacionTest.cs" />
+    <Compile Include="CC\ClienteTest.cs" />
+    <Compile Include="GenericInterface\GenericCrud.cs" />
+    <Compile Include="CC\RolTest.cs" />
+    <Compile Include="CC\UsuarioTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TH\AsientoTest.cs" />
+    <Compile Include="TH\DetalleReservaTest.cs" />
+    <Compile Include="TH\EstadoReservaTest.cs" />
+    <Compile Include="TH\FuncionTest.cs" />
+    <Compile Include="TH\LogEmailTest.cs" />
+    <Compile Include="TH\ObraTest.cs" />
+    <Compile Include="TH\PromocionTest.cs" />
+    <Compile Include="TH\ReservaTest.cs" />
+    <Compile Include="TH\TeatroTest.cs" />
+    <Compile Include="TH\TipoPromocionTest.cs" />
+    <Compile Include="TH\ZonaTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContactCenterBE\ContactCenterBE.csproj">
