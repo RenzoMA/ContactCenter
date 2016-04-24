@@ -85,14 +85,14 @@ namespace ContactCenterDA.Repositories.CC
         public void Insert(Aplicacion datos)
         {
             String sql = "INSERT INTO CC_APLICACION(Nombre, Version, Estado, Correo, FechaCrea, UserCrea) " +
-                                       "values(@nombre,@version,@estado,@correo,@fechaCreacion,@UsuarioCrea)";
+                                       "VALUES(@nombre,@version,@estado,@correo,@fechaCrea,@usuarioCrea)";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter version = UtilDA.SetParameters("@version", OleDbType.VarChar, datos.Version);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
-            OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCreacion", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter UsuarioCrea = UtilDA.SetParameters("@UsuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
+            OleDbParameter UsuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
 
             UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, version, estado, correo, fechaCreacion, UsuarioCrea);
         }
@@ -100,14 +100,14 @@ namespace ContactCenterDA.Repositories.CC
         public void Update(Aplicacion datos)
         {
             String sql = "UPDATE CC_APLICACION SET Nombre = @nombre, Version = @version, Estado = @estado, Correo = @correo," +
-                                        "FechaMod = @fechaModificacion, UsuarioMod = @UsuarioMod where IdAplicacion = @idAplicacion";
+                                        "FechaMod = @fechaMod, UserMod = @usuarioMod WHERE IdAplicacion = @idAplicacion";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter version = UtilDA.SetParameters("@version", OleDbType.VarChar, datos.Version);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
-            OleDbParameter fechaModificacion = UtilDA.SetParameters("@fechaModificacion", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter UsuarioMod = UtilDA.SetParameters("@UsuarioMod", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter fechaModificacion = UtilDA.SetParameters("@fechaMod", OleDbType.Date, datos.FechaModificacion);
+            OleDbParameter UsuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, datos.FechaModificacion);
             OleDbParameter idAplicacion = UtilDA.SetParameters("@idAplicacion", OleDbType.Integer, datos.IdAplicacion);
 
             UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, version, estado, correo, fechaModificacion, UsuarioMod, idAplicacion);

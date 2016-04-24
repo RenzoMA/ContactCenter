@@ -17,7 +17,7 @@ namespace ContactCenterDA.Repositories.CC
 
         public void Delete(int id)
         {
-            String sql = "SELECT * FROM CC_Cliente WHERE = @codigo";
+            String sql = "DELETE * FROM CC_Cliente WHERE = @codigo";
 
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
             UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, codigo);
@@ -28,7 +28,7 @@ namespace ContactCenterDA.Repositories.CC
         {
             Cliente objCliente = null;
 
-            String sql = "SELECT * FROM CC_Cliente WHERE IdAplicacion = @idCliente";
+            String sql = "SELECT * FROM CC_Cliente WHERE idCliente = @idCliente";
 
             OleDbParameter codigo = UtilDA.SetParameters("@idCliente", OleDbType.Integer, id);
 
@@ -84,34 +84,35 @@ namespace ContactCenterDA.Repositories.CC
         public void Insert(Cliente datos)
         {
 
-            String sql = "INSERT INTO CC_Cliente(Nombre, ApePaterno, ApeMaterno, Correo, Telefono, FechaCrea, UsuarioCrea, FechaCrea) " +
-                                       "values(@nombre,@apePaterno,@apeMaterno,@correo,@telefono,@fechaCrea, @UsuarioCrea)";
+            String sql = "INSERT INTO CC_Cliente(Nombre, ApePaterno, ApeMaterno, Correo, Telefono, FechaCrea, UserCrea) " +
+                                       "VALUES(@nombre,@apePaterno,@apeMaterno,@correo,@telefono ,@fechaCrea, @usuarioCrea)";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter apePaterno = UtilDA.SetParameters("@apePaterno", OleDbType.VarChar, datos.ApellidoPaterno);
             OleDbParameter apeMaterno = UtilDA.SetParameters("@apeMaterno", OleDbType.VarChar, datos.Apellidomaterno);       
-            OleDbParameter telefeno = UtilDA.SetParameters("@telefono", OleDbType.Date, datos.Telefono);
+            OleDbParameter telefono = UtilDA.SetParameters("@telefono", OleDbType.Date, datos.Telefono);
             OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
             OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter UsuarioCrea = UtilDA.SetParameters("@UsuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter UsuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
 
-            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, telefeno, correo, fechaCrea, UsuarioCrea);
+            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, telefono, correo, fechaCrea, UsuarioCrea);
         }
 
         public void Update(Cliente datos)
         {
             String sql = "UPDATE CC_Cliente SET Nombre = @nombre, ApePaterno = @apePaterno, ApeMaterno = @apeMaterno, Correo = @correo, " +
-                                       "Telefono = @telefono, FechaMod = @fechaMod, UsuariMod = @usuarioMod";
+                                       "Telefono = @telefono, FechaMod = @fechaMod, UserMod = @usuarioMod WHERE IdCliente = @idCliente";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter apePaterno = UtilDA.SetParameters("@apePaterno", OleDbType.VarChar, datos.ApellidoPaterno);
             OleDbParameter apeMaterno = UtilDA.SetParameters("@apeMaterno", OleDbType.VarChar, datos.Apellidomaterno);
-            OleDbParameter telefeno = UtilDA.SetParameters("@telefono", OleDbType.Date, datos.Telefono);
+            OleDbParameter telefono = UtilDA.SetParameters("@telefono", OleDbType.Date, datos.Telefono);
             OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
-            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter UsuarioMod = UtilDA.SetParameters("@UsuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, datos.FechaModificacion);
+            OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, datos.UsuarioModificacion);
+            OleDbParameter idcliente = UtilDA.SetParameters("@idCliente", OleDbType.Integer, datos.IdCliente);
 
-            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, telefeno, correo, fechaMod, UsuarioMod);
+            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, telefono, correo, fechaMod, usuarioMod);
         }
     }
 }
