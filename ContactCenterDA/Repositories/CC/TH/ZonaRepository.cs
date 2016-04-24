@@ -8,6 +8,7 @@ using System.Data;
 using ContactCenterDA.Common;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
+using ContactCenterCommon;
 
 
 namespace ContactCenterDA.Repositories.CC.TH
@@ -20,11 +21,13 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Delete(int id)
         {
-            String sql = "UPDATE TH_Zona SET ESTADO = 'I' WHERE IdZona = @codigo";
+            String sql = "UPDATE TH_Zona SET ESTADO = 'I', FechaMod = @FechaMod, UserMod = @UserMod WHERE IdZona = @codigo";
 
+            OleDbParameter FechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter UserMod = UtilDA.SetParameters("@UserMod", OleDbType.Integer, Sesion.usuario.Login);
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, codigo);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, FechaMod, UserMod, codigo);
         }
 
         public Zona GetById(int id)
@@ -102,8 +105,8 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter idTeatro = UtilDA.SetParameters("@idTeatro", OleDbType.Integer, datos.Teatro.IdTeatro);
-            OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
+            OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, descripcion, estado, idTeatro, fechaCreacion, usuarioCrea);
         }
@@ -117,8 +120,8 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter idTeatro = UtilDA.SetParameters("@idTeatro", OleDbType.Integer, datos.Teatro.IdTeatro);
-            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, datos.FechaModificacion);
-            OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, datos.UsuarioModificacion);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idZona = UtilDA.SetParameters("@idZona", OleDbType.VarChar, datos.IdZona);
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, descripcion, estado, idTeatro, fechaMod, usuarioMod, idZona);

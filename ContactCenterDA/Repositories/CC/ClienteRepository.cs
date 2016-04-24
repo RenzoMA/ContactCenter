@@ -7,6 +7,7 @@ using ContactCenterBE.CC.Entidades.CLienteBE;
 using System.Data.OleDb;
 using System.Data;
 using ContactCenterDA.Common;
+using ContactCenterCommon;
 
 namespace ContactCenterDA.Repositories.CC
 {
@@ -17,10 +18,12 @@ namespace ContactCenterDA.Repositories.CC
 
         public bool Delete(int id)
         {
-            String sql = "UPDATE CC_Cliente SET ESTADO = 'I' WHERE IdCliente = @codigo";
+            String sql = "UPDATE CC_Cliente SET ESTADO = 'I', FechaMod = @FechaMod, UserMod = @UserMod WHERE IdCliente = @codigo";
 
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, codigo);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, fechaMod, userMod, codigo);
 
         }
 
@@ -92,8 +95,8 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter apeMaterno = UtilDA.SetParameters("@apeMaterno", OleDbType.VarChar, datos.Apellidomaterno);       
             OleDbParameter telefono = UtilDA.SetParameters("@telefono", OleDbType.Date, datos.Telefono);
             OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
-            OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter UsuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
+            OleDbParameter UsuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, telefono, correo, fechaCrea, UsuarioCrea);
         }
@@ -108,8 +111,8 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter apeMaterno = UtilDA.SetParameters("@apeMaterno", OleDbType.VarChar, datos.Apellidomaterno);
             OleDbParameter telefono = UtilDA.SetParameters("@telefono", OleDbType.Date, datos.Telefono);
             OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
-            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, datos.FechaModificacion);
-            OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, datos.UsuarioModificacion);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idcliente = UtilDA.SetParameters("@idCliente", OleDbType.Integer, datos.IdCliente);
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, telefono, correo, fechaMod, usuarioMod);
