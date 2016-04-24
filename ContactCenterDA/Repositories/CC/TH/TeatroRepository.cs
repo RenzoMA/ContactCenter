@@ -9,7 +9,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 {
     public class TeatroRepository : ITeatroRepository
     {
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -24,12 +24,12 @@ namespace ContactCenterDA.Repositories.CC.TH
             throw new NotImplementedException();
         }
 
-        public void Insert(Teatro datos)
+        public bool Insert(Teatro datos)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Teatro datos)
+        public bool Update(Teatro datos)
         {
             throw new NotImplementedException();
         }

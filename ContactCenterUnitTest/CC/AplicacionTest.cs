@@ -19,7 +19,7 @@ namespace ContactCenterUnitTest.CC
             Estado = "A",
             FechaCreacion = DateTime.Now,
             FormInicio = "frmMain",
-            Nombre = "Prueba",
+            Nombre = "Teatros",
             UsuarioCreacion = "rm",
             Version = "1.0",
             FechaModificacion = DateTime.Now,
@@ -55,6 +55,12 @@ namespace ContactCenterUnitTest.CC
         public void ListarAplicacionUsuario()
         {
             aplicacionRepository.ListarAplicacionUsuario(UsuarioTest.usuario);
+        }
+
+        [TestMethod]
+        public void InsertarAplicacionUsuario()
+        {
+            aplicacionRepository.InsertAplicacionUsuario(UsuarioTest.usuario.IdUsuario, AplicacionTest.aplicacion.IdAplicacion);
         }
     }
 }

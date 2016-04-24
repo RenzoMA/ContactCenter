@@ -18,9 +18,9 @@ namespace ContactCenterBL.BusinessServices.CC
             aplicacionRepository = _aplicacionRepository;
         }
 
-        public void Insertar(Aplicacion aplicacion)
+        public bool Insertar(Aplicacion aplicacion)
         {
-            aplicacionRepository.Insert(aplicacion);
+            return aplicacionRepository.Insert(aplicacion);
         }
 
         public List<Aplicacion> Listar()

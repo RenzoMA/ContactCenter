@@ -9,7 +9,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 {
     public class ObraRepository : IObraRepository
     {
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -24,12 +24,12 @@ namespace ContactCenterDA.Repositories.CC.TH
             throw new NotImplementedException();
         }
 
-        public void Insert(Obra datos)
+        public bool Insert(Obra datos)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Obra datos)
+        public bool Update(Obra datos)
         {
             throw new NotImplementedException();
         }

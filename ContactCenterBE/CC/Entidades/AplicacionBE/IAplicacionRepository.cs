@@ -11,5 +11,6 @@ namespace ContactCenterBE.CC.Entidades.AplicacionBE
     public interface IAplicacionRepository : IBaseRepository<Aplicacion>
     {
         List<Aplicacion> ListarAplicacionUsuario(Usuario usuario);
+        bool InsertAplicacionUsuario(int idUsuario, int idAplicacion);
     }
 }

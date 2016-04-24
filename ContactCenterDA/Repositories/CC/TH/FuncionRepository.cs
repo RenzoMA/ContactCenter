@@ -9,7 +9,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 {
     public class FuncionRepository : IFuncionRepository
     {
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -24,12 +24,12 @@ namespace ContactCenterDA.Repositories.CC.TH
             throw new NotImplementedException();
         }
 
-        public void Insert(Funcion datos)
+        public bool Insert(Funcion datos)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Funcion datos)
+        public bool Update(Funcion datos)
         {
             throw new NotImplementedException();
         }

@@ -16,12 +16,12 @@ namespace ContactCenterDA.Repositories.CC
         OleDbConnection cnx = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             String sql = "UPDATE CC_Rol SET ESTADO = 'I' WHERE IdRol = @codigo";
 
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
-            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, codigo);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, codigo);
         }
 
         public Rol GetById(int id)
@@ -77,7 +77,7 @@ namespace ContactCenterDA.Repositories.CC
             
         }
 
-        public void Insert(Rol datos)
+        public bool Insert(Rol datos)
         {
             String sql = "INSERT INTO CC_Rol(Nombre, Estado, FechaCrea, UserCrea) " +
                          " VALUES(@nombre, @estado, @fechaCrea, @usuarioCrea)";
@@ -87,10 +87,10 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
             OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
 
-            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, estado, fechaCrea, usuarioCrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, estado, fechaCrea, usuarioCrea);
         }
 
-        public void Update(Rol datos)
+        public bool Update(Rol datos)
         {
             String sql = "UPDATE CC_Rol SET Nombre = @nombre, Estado = @estado, FechaMod = @fechaMod, UserMod = @usuarioMod WHERE IdRol = @idRol";
 
@@ -100,7 +100,7 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, datos.UsuarioModificacion);
             OleDbParameter idRol = UtilDA.SetParameters("@idRol", OleDbType.Integer, datos.IdRol);
 
-            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, estado, fechaMod, usuarioMod, idRol);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, estado, fechaMod, usuarioMod, idRol);
         }
     }
 }

@@ -76,7 +76,7 @@ namespace ContactCenterDA.Common
 
         }
 
-        public static void ExecuteNonQuery(OleDbCommand oleDbCommand, CommandType commandType, String sql, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)
+        public static bool ExecuteNonQuery(OleDbCommand oleDbCommand, CommandType commandType, String sql, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)
         {
             try
             {
@@ -93,16 +93,61 @@ namespace ContactCenterDA.Common
                 oleDbCommand.CommandText = sql;
                 oleDbConnection.Open();
                 oleDbCommand.ExecuteNonQuery();
+                return true;
             }
             catch (OleDbException ex)
             {
                 SaveLog(ex, sql, parameters);
-                throw new Exception(ex.Message);
+                return false;
             }
             catch (Exception ex)
             {
                 SaveLog(ex, sql, parameters);
-                throw new Exception(ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (oleDbConnection.State == ConnectionState.Open)
+                {
+                    oleDbConnection.Close();
+                }
+            }
+        }
+
+        public static bool ExecuteQueryValidador(OleDbCommand oleDbCommand, CommandType commandType, String sqlValidador, String sqlEjecucion, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)
+        {
+            try
+            {
+                oleDbCommand.Connection = oleDbConnection;
+                oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
+                oleDbCommand.Parameters.Clear();
+
+                foreach (OleDbParameter parameter in parameters)
+                {
+                    oleDbCommand.Parameters.Add(parameter);
+                }
+
+                oleDbCommand.CommandType = commandType;
+                oleDbConnection.Open();
+                oleDbCommand.CommandText = sqlValidador;
+                if (!oleDbCommand.ExecuteReader().HasRows)
+                {
+                    oleDbCommand.CommandText = sqlEjecucion;
+                    oleDbCommand.ExecuteNonQuery();
+                    return true;
+                }
+                return false;
+
+            }
+            catch (OleDbException ex)
+            {
+                SaveLog(ex, sqlEjecucion, parameters);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                SaveLog(ex, sqlEjecucion, parameters);
+                return false;
             }
             finally
             {
@@ -166,7 +211,6 @@ namespace ContactCenterDA.Common
                 oleDbCommand.CommandType = commandType;
                 oleDbCommand.CommandText = sql;
                 oleDbConnection.Open();
-                OleDbDataReader dr = oleDbCommand.ExecuteReader();
                 return oleDbCommand.ExecuteReader();
             }
             catch (OleDbException ex)

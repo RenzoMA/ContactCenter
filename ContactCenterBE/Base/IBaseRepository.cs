@@ -10,8 +10,8 @@ namespace ContactCenterBE.Base
     {
         IList<T> GetLista();
         T GetById(int id);
-        void Insert(T datos);
-        void Update(T datos);
-        void Delete(int id);
+        bool Insert(T datos);
+        bool Update(T datos);
+        bool Delete(int id);
     }
 }

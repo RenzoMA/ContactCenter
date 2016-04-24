@@ -10,7 +10,7 @@ namespace ContactCenterBL.BusinessInterfaces.CC
 {
     public interface IAplicacionService
     {
-        void Insertar(Aplicacion aplicacion);
+        bool Insertar(Aplicacion aplicacion);
         List<Aplicacion> Listar();
         List<Aplicacion> ListarAplicacionUsuario(Usuario usuario);
     }

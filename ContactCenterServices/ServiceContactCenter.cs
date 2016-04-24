@@ -38,9 +38,9 @@ namespace ContactCenterServices
             _usuarioService = null;
         }
 
-        public void InsertarAplicacion(Aplicacion aplicacion)
+        public bool InsertarAplicacion(Aplicacion aplicacion)
         {
-            _aplicacionService.Insertar(aplicacion);
+            return _aplicacionService.Insertar(aplicacion);
         }
 
 

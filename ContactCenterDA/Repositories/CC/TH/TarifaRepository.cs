@@ -15,7 +15,7 @@ namespace ContactCenterDA.Repositories.CC.TH
         OleDbConnection cnx = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -30,12 +30,12 @@ namespace ContactCenterDA.Repositories.CC.TH
             throw new NotImplementedException();
         }
 
-        public void Insert(Tarifa datos)
+        public bool Insert(Tarifa datos)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Tarifa datos)
+        public bool Update(Tarifa datos)
         {
             throw new NotImplementedException();
         }
