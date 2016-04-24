@@ -28,7 +28,7 @@ namespace ContactCenterDA.Repositories.CC
         {
             Cliente objCliente = null;
 
-            String sql = "SELECT * FROM CC_Cliente WHERE idCliente = @idCliente";
+            String sql = "SELECT * FROM CC_Cliente WHERE IdCliente = @idCliente";
 
             OleDbParameter codigo = UtilDA.SetParameters("@idCliente", OleDbType.Integer, id);
 
