@@ -130,7 +130,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idAsiento = UtilDA.SetParameters("@idAsiento", OleDbType.Integer, datos.IdAsiento);
-
+            //atochipi
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, descripcion, fila, disponible, idzona, fechaMod, usuarioMod, idAsiento);
         }
     }
