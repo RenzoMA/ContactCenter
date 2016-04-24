@@ -14,6 +14,8 @@ using ContactCenterDA.Repositories.CC.TH;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
 using ContactCenterDA.Repositories.CC;
+using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
+
 
 
 namespace ContactCenterServices
@@ -31,12 +33,14 @@ namespace ContactCenterServices
             current.RegisterType<IAsientoService, AsientoService>();
             current.RegisterType<IAplicacionService, AplicacionService>();
             current.RegisterType<IUsuarioService, UsuarioService>();
+            current.RegisterType<ILogEmailService, LogEmailService>();
             
 
             // Entidades - DA
             current.RegisterType<IAsientoRepository, AsientoRepository>();
             current.RegisterType<IAplicacionRepository, AplicacionRepository>();
             current.RegisterType<IUsuarioRepository, UsuarioRepository>();
+            current.RegisterType<ILogEmailRepository, LogEmailRepository>();
         }
     }
 }
