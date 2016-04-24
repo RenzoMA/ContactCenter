@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -53,6 +54,7 @@
     <Compile Include="BusinessInterfaces\CC\TH\IObraService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\IPromocionService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\IReservaService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\ITarifaService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\ITeatroService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\ITipoPromocionService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\IZonaService.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="BusinessServices\CC\TH\ObraService.cs" />
     <Compile Include="BusinessServices\CC\TH\PromocionService.cs" />
     <Compile Include="BusinessServices\CC\TH\ReservaService.cs" />
+    <Compile Include="BusinessServices\CC\TH\TarifaService.cs" />
     <Compile Include="BusinessServices\CC\TH\TeatroService.cs" />
     <Compile Include="BusinessServices\CC\TH\TipoPromocionService.cs" />
     <Compile Include="BusinessServices\CC\TH\ZonaService.cs" />

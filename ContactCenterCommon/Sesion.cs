@@ -10,7 +10,10 @@ namespace ContactCenterCommon
 {
     public static class Sesion
     {
-        public static Usuario usuario { get; set; }
+        public static Usuario usuario = new Usuario()
+        {
+            Login = "anonymous"
+        };
         public static Aplicacion aplicacion { get; set; }
     }
 }

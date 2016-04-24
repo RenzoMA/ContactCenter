@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -67,6 +68,8 @@
     <Compile Include="CC\TH\Entidades\ReservaBE\IEstadoReservaRepository.cs" />
     <Compile Include="CC\TH\Entidades\ReservaBE\IReservaRepository.cs" />
     <Compile Include="CC\TH\Entidades\ReservaBE\Reserva.cs" />
+    <Compile Include="CC\TH\Entidades\TarifaBE\ITarifaRepository.cs" />
+    <Compile Include="CC\TH\Entidades\TarifaBE\Tarifa.cs" />
     <Compile Include="CC\TH\Entidades\TeatroBE\ITeatroRepository.cs" />
     <Compile Include="CC\TH\Entidades\TeatroBE\Teatro.cs" />
     <Compile Include="CC\TH\Entidades\PromocionBE\TipoPromocion.cs" />

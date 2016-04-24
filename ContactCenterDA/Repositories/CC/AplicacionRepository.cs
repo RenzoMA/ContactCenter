@@ -8,6 +8,7 @@ using System.Data.OleDb;
 using System.Data;
 using ContactCenterDA.Common;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
+using ContactCenterCommon;
 
 namespace ContactCenterDA.Repositories.CC
 {
@@ -17,13 +18,14 @@ namespace ContactCenterDA.Repositories.CC
         OleDbConnection cnx = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
 
-
-        public void Delete(int id)
+        public bool Delete(int id)
         {
-            String sql = "DELETE FROM CC_APLICACION WHERE IdAplicacion = @codigo";
+            String sql = "UPDATE CC_APLICACION SET ESTADO = 'I', FechaMod = @FechaMod, UserMod = @UserMod WHERE IdAplicacion = @codigo";
 
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
-            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, codigo);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, fechaMod, userMod, codigo);
         }
 
         public Aplicacion GetById(int id)
@@ -82,22 +84,23 @@ namespace ContactCenterDA.Repositories.CC
             return listaAplicacion;
         }
 
-        public void Insert(Aplicacion datos)
+        public bool Insert(Aplicacion datos)
         {
-            String sql = "INSERT INTO CC_APLICACION(Nombre, Version, Estado, Correo, FechaCrea, UserCrea) " +
-                                       "VALUES(@nombre,@version,@estado,@correo,@fechaCrea,@usuarioCrea)";
+            String sql = "INSERT INTO CC_APLICACION(Nombre, Version, Estado, Correo, FechaCrea, UserCrea,FormInicio) " +
+                                       "VALUES(@nombre,@version,@estado,@correo,@fechaCrea,@usuarioCrea,@formInicio)";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter version = UtilDA.SetParameters("@version", OleDbType.VarChar, datos.Version);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
-            OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter UsuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
+            OleDbParameter UsuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
+            OleDbParameter formInicio = UtilDA.SetParameters("@formInicio", OleDbType.VarChar, datos.FormInicio);
 
-            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, version, estado, correo, fechaCreacion, UsuarioCrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, version, estado, correo, fechaCreacion, UsuarioCrea, formInicio);
         }
 
-        public void Update(Aplicacion datos)
+        public bool Update(Aplicacion datos)
         {
             String sql = "UPDATE CC_APLICACION SET Nombre = @nombre, Version = @version, Estado = @estado, Correo = @correo," +
                                         "FechaMod = @fechaMod, UserMod = @usuarioMod WHERE IdAplicacion = @idAplicacion";
@@ -106,11 +109,11 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter version = UtilDA.SetParameters("@version", OleDbType.VarChar, datos.Version);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
-            OleDbParameter fechaModificacion = UtilDA.SetParameters("@fechaMod", OleDbType.Date, datos.FechaModificacion);
-            OleDbParameter UsuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, datos.FechaModificacion);
+            OleDbParameter fechaModificacion = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter UsuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idAplicacion = UtilDA.SetParameters("@idAplicacion", OleDbType.Integer, datos.IdAplicacion);
 
-            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, version, estado, correo, fechaModificacion, UsuarioMod, idAplicacion);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, version, estado, correo, fechaModificacion, UsuarioMod, idAplicacion);
 
         }
 
@@ -140,6 +143,21 @@ namespace ContactCenterDA.Repositories.CC
             }
             UtilDA.Close(cnx);
             return listaAplicacion;
+        }
+
+        public bool InsertAplicacionUsuario(int idUsuario, int idAplicacion)
+        {
+            string sql = "INSERT INTO CC_USUARIO_APLICACION (IdUsuario, IdAplicacion, FechaCrea, UserCrea) " +
+                         "VALUES (@idUsuario, @idAplicacion, @fechaCrea, @userCrea)";
+
+            string sqlValidador = "SELECT * FROM CC_USUARIO_APLICACION WHERE IdUsuario = @idUsuario AND IdAplicacion = @IdAplicacion";
+
+            OleDbParameter pIdUsuario = UtilDA.SetParameters("@idUsuario", OleDbType.Integer, idUsuario);
+            OleDbParameter pIdAplicacion = UtilDA.SetParameters("@idAplicacion", OleDbType.Integer, idAplicacion);
+            OleDbParameter FechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
+            OleDbParameter UserCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
+
+            return UtilDA.ExecuteQueryValidador(cmd, CommandType.Text, sqlValidador, sql, cnx, pIdUsuario, pIdAplicacion, FechaCrea, UserCrea);
 
         }
     }

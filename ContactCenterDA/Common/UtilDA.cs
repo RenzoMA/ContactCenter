@@ -6,19 +6,32 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Data;
 using ContactCenterCommon;
+using System.IO;
+using System.Threading;
+using System.Globalization;
 
 namespace ContactCenterDA.Common
 {
     static class UtilDA
     {
-
-
         public static String GetConexion(this OleDbConnection con)
         {
-            string ruta = System.IO.Directory.GetCurrentDirectory().Replace("ContactCenterGUI\\bin\\Debug", "ContactCenterDA\\");
+
+            string ruta = System.IO.Directory.GetCurrentDirectory();
+            if (ruta.Contains("TestResults"))
+            {
+                int since = ruta.LastIndexOf("TestResults");
+                ruta = ruta.Substring(0, since) + "ContactCenterDA";
+            }
+
+            if (ruta.Contains("ContactCenterGUI\\bin\\Debug"))
+                ruta = ruta.Replace("ContactCenterGUI\\bin\\Debug", "ContactCenterDA");
+
+            if(ruta.Contains("ContactCenterUnitTest\\bin\\Debug"))
+                ruta = ruta.Replace("ContactCenterUnitTest\\bin\\Debug", "ContactCenterDA");
 
             string strCnx =
-                "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + ruta + "ContactCenter.accdb; Persist Security Info = True";
+                "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + ruta + "\\ContactCenter.accdb; Persist Security Info = True";
 
             if (object.ReferenceEquals(strCnx, string.Empty))
             {
@@ -43,7 +56,7 @@ namespace ContactCenterDA.Common
             parameter.Value = value;
             return parameter;
         }
-        private static void SaveLog(OleDbException oleDbException, string sql, params OleDbParameter[] parameters)
+        private static void SaveLog(Exception oleDbException, string sql, params OleDbParameter[] parameters)
         {
             string concatParameters = string.Join(" , ",
                           parameters.Select(x => x.ParameterName + " : " + x.Value + "(" + x.OleDbType + ")").ToArray());
@@ -63,7 +76,7 @@ namespace ContactCenterDA.Common
 
         }
 
-        public static void ExecuteNonQuery(OleDbCommand oleDbCommand, CommandType commandType, String sql, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)
+        public static bool ExecuteNonQuery(OleDbCommand oleDbCommand, CommandType commandType, String sql, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)
         {
             try
             {
@@ -80,10 +93,65 @@ namespace ContactCenterDA.Common
                 oleDbCommand.CommandText = sql;
                 oleDbConnection.Open();
                 oleDbCommand.ExecuteNonQuery();
+                return true;
             }
             catch (OleDbException ex)
             {
                 SaveLog(ex, sql, parameters);
+                throw new Exception(ex.Message);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                SaveLog(ex, sql, parameters);
+                throw new Exception(ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (oleDbConnection.State == ConnectionState.Open)
+                {
+                    oleDbConnection.Close();
+                }
+            }
+        }
+
+        public static bool ExecuteQueryValidador(OleDbCommand oleDbCommand, CommandType commandType, String sqlValidador, String sqlEjecucion, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)
+        {
+            try
+            {
+                oleDbCommand.Connection = oleDbConnection;
+                oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
+                oleDbCommand.Parameters.Clear();
+
+                foreach (OleDbParameter parameter in parameters)
+                {
+                    oleDbCommand.Parameters.Add(parameter);
+                }
+
+                oleDbCommand.CommandType = commandType;
+                oleDbConnection.Open();
+                oleDbCommand.CommandText = sqlValidador;
+                if (!oleDbCommand.ExecuteReader().HasRows)
+                {
+                    oleDbCommand.CommandText = sqlEjecucion;
+                    oleDbCommand.ExecuteNonQuery();
+                    return true;
+                }
+                return false;
+
+            }
+            catch (OleDbException ex)
+            {
+                SaveLog(ex, sqlEjecucion, parameters);
+                throw new Exception(ex.Message);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                SaveLog(ex, sqlEjecucion, parameters);
+                throw new Exception(ex.Message);
+                return false;
             }
             finally
             {
@@ -154,7 +222,11 @@ namespace ContactCenterDA.Common
                 SaveLog(ex, sql, parameters);
                 throw new Exception(ex.Message);
             }
-            
+            catch (Exception ex)
+            {
+                SaveLog(ex, sql, parameters);
+                throw new Exception(ex.Message);
+            }
         }
 
     }

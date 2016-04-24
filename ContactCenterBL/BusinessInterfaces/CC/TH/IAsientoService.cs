@@ -10,6 +10,5 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
 {
     public interface IAsientoService
     {
-        string probarMensaje();
     }
 }

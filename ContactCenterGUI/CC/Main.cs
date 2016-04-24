@@ -105,11 +105,19 @@ namespace ContactCenterGUI.CC
 
         void changeForm(string formName,string aplicacion, bool hide)
         {
-            if (hide) this.Hide();
+            
             Type CAType = Type.GetType("ContactCenterGUI." + aplicacion + "."+ formName);
-            Form nextForm2 = (Form)Activator.CreateInstance(CAType);
-            nextForm2.ShowDialog();
-            if (hide) this.Show();
+            if (CAType != null)
+            {
+                if (hide) this.Hide();
+                Form nextForm2 = (Form)Activator.CreateInstance(CAType);
+                nextForm2.ShowDialog();
+                if (hide) this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Aplicación no disponible");
+            }
         }
 
         void setApplication(Aplicacion aplicacion)

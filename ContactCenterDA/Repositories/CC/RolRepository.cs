@@ -7,6 +7,7 @@ using ContactCenterBE.CC.Entidades.RolBE;
 using System.Data.OleDb;
 using System.Data;
 using ContactCenterDA.Common;
+using ContactCenterCommon;
 
 namespace ContactCenterDA.Repositories.CC
 {
@@ -16,21 +17,23 @@ namespace ContactCenterDA.Repositories.CC
         OleDbConnection cnx = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
-            String sql = "SELECT * FROM CC_Rol WHERE = @codigo";
+            String sql = "UPDATE CC_Rol SET ESTADO = 'I', FechaMod = @FechaMod, UserMod = @UserMod WHERE IdRol = @codigo";
 
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
-            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, codigo);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, fechaMod, userMod, codigo);
         }
 
         public Rol GetById(int id)
         {
             Rol objRol = null;
 
-            String sql = "SELECT * FROM CC_Rol WHERE idRol = @idRol";
+            String sql = "SELECT * FROM CC_Rol WHERE IdRol = @idRol";
 
-            OleDbParameter codigo = UtilDA.SetParameters("idRol", OleDbType.Integer, id);
+            OleDbParameter codigo = UtilDA.SetParameters("@idRol", OleDbType.Integer, id);
 
             using(var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, codigo))
             {
@@ -55,7 +58,7 @@ namespace ContactCenterDA.Repositories.CC
         {
             List<Rol> listaRol = null;
 
-            String sql = "DELETE * FROM CC_Rol";
+            String sql = "SELECT * FROM CC_Rol";
 
             using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx))
             {
@@ -77,28 +80,30 @@ namespace ContactCenterDA.Repositories.CC
             
         }
 
-        public void Insert(Rol datos)
+        public bool Insert(Rol datos)
         {
-            String sql = "INSERT INTO CC_Rol(Nombre, Estado, FechaCrea, UserMod) " +
+            String sql = "INSERT INTO CC_Rol(Nombre, Estado, FechaCrea, UserCrea) " +
                          " VALUES(@nombre, @estado, @fechaCrea, @usuarioCrea)";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
-            OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
+            OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
 
-            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, estado, fechaCrea, usuarioCrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, estado, fechaCrea, usuarioCrea);
         }
 
-        public void Update(Rol datos)
+        public bool Update(Rol datos)
         {
-            String sql = "UPDATE CC_Rol(Nombre = @nombre, Estado = @estado, FechaMod = @fechaMod, UserMod = @usuarioMod  WHERE IdRol = @idRol";
+            String sql = "UPDATE CC_Rol SET Nombre = @nombre, Estado = @estado, FechaMod = @fechaMod, UserMod = @usuarioMod WHERE IdRol = @idRol";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
-            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, datos.FechaModificacion);
-            OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, datos.UsuarioModificacion);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idRol = UtilDA.SetParameters("@idRol", OleDbType.Integer, datos.IdRol);
+
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, estado, fechaMod, usuarioMod, idRol);
         }
     }
 }

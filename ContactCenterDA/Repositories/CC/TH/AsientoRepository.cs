@@ -9,6 +9,7 @@ using System.Data;
 using ContactCenterDA.Common;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
+using ContactCenterCommon;
 
 
 namespace ContactCenterDA.Repositories.CC.TH
@@ -18,14 +19,15 @@ namespace ContactCenterDA.Repositories.CC.TH
         OleDbConnection cnx = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
 
-
-        public void Delete(int id)
+        public bool Delete(int id)
         {
-            String sql = "DELETE FROM TH_Asiento WHERE IdAsiento = @codigo";
+            String sql = "UPDATE TH_Asiento SET ESTADO = 'I', FechaMod = @FechaMod, UserMod = @UserMod WHERE IdAsiento = @codigo";
 
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
 
-            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, codigo);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, fechaMod, userMod, codigo);
         }
 
         public Asiento GetById(int id)
@@ -101,27 +103,22 @@ namespace ContactCenterDA.Repositories.CC.TH
             return listaAsiento;
         }
 
-        public void Insert(Asiento datos)
+        public bool Insert(Asiento datos)
         {
             String sql = "INSERT INTO TH_Asiento(Descripcion, Fila, Disponible, IdZona, FechaCrea, UserCrea) " +
                             "VALUES(@descripciom, @fila, @disponible, @idZona, @fechaCrea, @usuarioCrea)";
 
             OleDbParameter descripcion = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Descripcion);
             OleDbParameter fila = UtilDA.SetParameters("@fila", OleDbType.VarBinary, datos.Fila);
-            OleDbParameter disponible = UtilDA.SetParameters("@disponible", OleDbType.VarBinary, datos.Disponible);
+            OleDbParameter disponible = UtilDA.SetParameters("@disponible", OleDbType.VarChar, datos.Disponible);
             OleDbParameter idzona = UtilDA.SetParameters("@IdZona", OleDbType.Integer, datos.Zona.IdZona);
-            OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
+            OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
 
-            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, descripcion, fila, disponible, idzona, fechaCreacion, usuarioCrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, descripcion, fila, disponible, idzona, fechaCreacion, usuarioCrea);
         }
 
-        public string ProbarMensaje()
-        {
-            return "MensajePrueba";
-        }
-
-        public void Update(Asiento datos)
+        public bool Update(Asiento datos)
         {
             String sql = "UPDATE TH_Asiento SET Descripcion = @descripcion, Fila = @fila, Disponible = @disponible, IdZona = @IdZona " +
                             "FechaMod = @fechaMod, UserMod = @usuarioMod WHERE IdAsiento = @idAsiento";
@@ -130,12 +127,11 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fila = UtilDA.SetParameters("@fila", OleDbType.VarBinary, datos.Fila);
             OleDbParameter disponible = UtilDA.SetParameters("@disponible", OleDbType.VarBinary, datos.Disponible);
             OleDbParameter idzona = UtilDA.SetParameters("@IdZona", OleDbType.Integer, datos.Zona.IdZona);
-            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, datos.FechaModificacion);
-            OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, datos.FechaModificacion);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idAsiento = UtilDA.SetParameters("@idAsiento", OleDbType.Integer, datos.IdAsiento);
 
-            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, descripcion, fila, disponible, idzona, fechaMod, usuarioMod, idAsiento);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, descripcion, fila, disponible, idzona, fechaMod, usuarioMod, idAsiento);
         }
     }
 }
-_

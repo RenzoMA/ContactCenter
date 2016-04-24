@@ -9,7 +9,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 {
     public class LogEmailRepository : ILogEmailRepository
     {
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -24,12 +24,12 @@ namespace ContactCenterDA.Repositories.CC.TH
             throw new NotImplementedException();
         }
 
-        public void Insert(LogEmail datos)
+        public bool Insert(LogEmail datos)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(LogEmail datos)
+        public bool Update(LogEmail datos)
         {
             throw new NotImplementedException();
         }

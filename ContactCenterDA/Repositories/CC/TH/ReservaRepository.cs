@@ -9,7 +9,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 {
     public class ReservaRepository : IReservaRepository
     {
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -24,12 +24,12 @@ namespace ContactCenterDA.Repositories.CC.TH
             throw new NotImplementedException();
         }
 
-        public void Insert(Reserva datos)
+        public bool Insert(Reserva datos)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Reserva datos)
+        public bool Update(Reserva datos)
         {
             throw new NotImplementedException();
         }
