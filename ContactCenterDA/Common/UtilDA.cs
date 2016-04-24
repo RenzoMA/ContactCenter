@@ -98,11 +98,13 @@ namespace ContactCenterDA.Common
             catch (OleDbException ex)
             {
                 SaveLog(ex, sql, parameters);
+                throw new Exception(ex.Message);
                 return false;
             }
             catch (Exception ex)
             {
                 SaveLog(ex, sql, parameters);
+                throw new Exception(ex.Message);
                 return false;
             }
             finally
@@ -142,11 +144,13 @@ namespace ContactCenterDA.Common
             catch (OleDbException ex)
             {
                 SaveLog(ex, sqlEjecucion, parameters);
+                throw new Exception(ex.Message);
                 return false;
             }
             catch (Exception ex)
             {
                 SaveLog(ex, sqlEjecucion, parameters);
+                throw new Exception(ex.Message);
                 return false;
             }
             finally
