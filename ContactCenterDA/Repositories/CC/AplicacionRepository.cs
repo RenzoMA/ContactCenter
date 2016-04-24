@@ -84,8 +84,8 @@ namespace ContactCenterDA.Repositories.CC
 
         public void Insert(Aplicacion datos)
         {
-            String sql = "INSERT INTO CC_APLICACION(Nombre, Version, Estado, Correo, FechaCrea, UserCrea) " +
-                                       "VALUES(@nombre,@version,@estado,@correo,@fechaCrea,@usuarioCrea)";
+            String sql = "INSERT INTO CC_APLICACION(Nombre, Version, Estado, Correo, FechaCrea, UserCrea,FormInicio) " +
+                                       "VALUES(@nombre,@version,@estado,@correo,@fechaCrea,@usuarioCrea,@formInicio)";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter version = UtilDA.SetParameters("@version", OleDbType.VarChar, datos.Version);
@@ -93,8 +93,9 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
             OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
             OleDbParameter UsuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter formInicio = UtilDA.SetParameters("@formInicio", OleDbType.VarChar, datos.FormInicio);
 
-            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, version, estado, correo, fechaCreacion, UsuarioCrea);
+            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, version, estado, correo, fechaCreacion, UsuarioCrea, formInicio);
         }
 
         public void Update(Aplicacion datos)

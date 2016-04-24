@@ -18,6 +18,12 @@ namespace ContactCenterDA.Common
         {
 
             string ruta = System.IO.Directory.GetCurrentDirectory();
+            if (ruta.Contains("TestResults"))
+            {
+                int since = ruta.LastIndexOf("TestResults");
+                ruta = ruta.Substring(0, since) + "ContactCenterDA";
+            }
+
             if (ruta.Contains("ContactCenterGUI\\bin\\Debug"))
                 ruta = ruta.Replace("ContactCenterGUI\\bin\\Debug", "ContactCenterDA");
 
