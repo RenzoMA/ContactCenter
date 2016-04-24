@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
             this.SuspendLayout();
             // 
             // materialRaisedButton1
@@ -47,60 +47,57 @@
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
-            // comboBox1
+            // metroComboBox1
             // 
-            this.comboBox1.DisplayMember = "Seleccionar";
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Seleccione un teatro",
-            "Teatro A",
-            "Teatro B",
-            "Teatro C"});
-            this.comboBox1.Location = new System.Drawing.Point(39, 101);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 21);
-            this.comboBox1.TabIndex = 2;
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Items.AddRange(new object[] {
+            "Seleccione Teatro",
+            "Peruano Japonés",
+            "Plaza Callao",
+            "Plaza Norte"});
+            this.metroComboBox1.Location = new System.Drawing.Point(36, 102);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(170, 29);
+            this.metroComboBox1.TabIndex = 4;
             // 
-            // comboBox2
+            // metroComboBox2
             // 
-            this.comboBox2.DisplayMember = "Seleccionar";
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Seleccione una Obra",
+            this.metroComboBox2.FormattingEnabled = true;
+            this.metroComboBox2.ItemHeight = 23;
+            this.metroComboBox2.Items.AddRange(new object[] {
+            "Seleccione Obra",
             "Obra A",
             "Obra B",
             "Obra C"});
-            this.comboBox2.Location = new System.Drawing.Point(39, 216);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(159, 21);
-            this.comboBox2.TabIndex = 4;
+            this.metroComboBox2.Location = new System.Drawing.Point(36, 225);
+            this.metroComboBox2.Name = "metroComboBox2";
+            this.metroComboBox2.Size = new System.Drawing.Size(170, 29);
+            this.metroComboBox2.TabIndex = 5;
             // 
-            // comboBox3
+            // metroComboBox3
             // 
-            this.comboBox3.DisplayMember = "Seleccionar";
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Seleccione una Función",
-            "3:00PM-5:00PM",
-            "6:00PM-7:00PM",
-            "7:00PM-9:00PM"});
-            this.comboBox3.Location = new System.Drawing.Point(39, 320);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(159, 21);
-            this.comboBox3.TabIndex = 5;
+            this.metroComboBox3.FormattingEnabled = true;
+            this.metroComboBox3.ItemHeight = 23;
+            this.metroComboBox3.Items.AddRange(new object[] {
+            "Seleccione Función",
+            "3:00pm - 5:00pm",
+            "5:00pm - 7:00pm",
+            "7:00pm - 9:00pm"});
+            this.metroComboBox3.Location = new System.Drawing.Point(36, 352);
+            this.metroComboBox3.Name = "metroComboBox3";
+            this.metroComboBox3.Size = new System.Drawing.Size(170, 29);
+            this.metroComboBox3.TabIndex = 6;
             // 
             // NewTheater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(251, 496);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.metroComboBox3);
+            this.Controls.Add(this.metroComboBox2);
+            this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.materialRaisedButton1);
-            this.Controls.Add(this.comboBox1);
             this.MaximizeBox = false;
             this.Name = "NewTheater";
             this.Sizable = false;
@@ -114,8 +111,8 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private MetroFramework.Controls.MetroComboBox metroComboBox3;
     }
 }

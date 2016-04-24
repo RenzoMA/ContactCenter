@@ -21,17 +21,35 @@ namespace ContactCenterGUI.Teatros
 
         private void NewTheater_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
-            comboBox3.SelectedIndex = 0;
+            metroComboBox1.SelectedIndex = 0;
+            metroComboBox2.SelectedIndex = 0;
+            metroComboBox3.SelectedIndex = 0;
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            //todobien
-            this.Hide();
-            NewTheater2 newtheater2 = new NewTheater2();
-            newtheater2.ShowDialog();
+            if (metroComboBox1.SelectedIndex == 1)
+            {
+
+                //todobien
+                this.Hide();
+                NewTheater2 newtheater2 = new NewTheater2();
+                newtheater2.ShowDialog();
+            }
+            else if (metroComboBox1.SelectedIndex == 2)
+            {
+
+                this.Hide();
+                CallaoTheater callaoT = new CallaoTheater();
+                callaoT.ShowDialog();
+            }
+            else if (metroComboBox1.SelectedIndex == 3) {
+
+                this.Hide();
+                PlazaNorteTheater plazaNT = new PlazaNorteTheater();
+                plazaNT.ShowDialog();
+            }
+           
         }
     }
 }

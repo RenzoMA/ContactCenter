@@ -91,6 +91,12 @@
     <Compile Include="CC\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\CallaoTheater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\CallaoTheater.Designer.cs">
+      <DependentUpon>CallaoTheater.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\NewTheater.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Teatros\PlazaNorteTheater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\PlazaNorteTheater.Designer.cs">
+      <DependentUpon>PlazaNorteTheater.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\Animacion.cs" />
     <Compile Include="Teatros\TheaterApp.cs">
       <SubType>Form</SubType>
@@ -120,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CC\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\CallaoTheater.resx">
+      <DependentUpon>CallaoTheater.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\NewTheater.resx">
       <DependentUpon>NewTheater.cs</DependentUpon>
@@ -137,6 +152,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Teatros\PlazaNorteTheater.resx">
+      <DependentUpon>PlazaNorteTheater.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\TheaterApp.resx">
       <DependentUpon>TheaterApp.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\hospital31.png" />
     <None Include="Resources\loading.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

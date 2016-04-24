@@ -19,9 +19,13 @@ namespace ContactCenterGUI.CC
 
         private void Loader_Load(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.ShowDialog();
+            //Login login = new Login();
+            //login.ShowDialog();
+            //this.Close();
+            Teatros.NewTheater teatro = new Teatros.NewTheater();
+            teatro.ShowDialog();
             this.Close();
+
         }
     }
 }
