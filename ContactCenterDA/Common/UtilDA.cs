@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Data;
 using ContactCenterCommon;
+using System.IO;
 
 namespace ContactCenterDA.Common
 {
@@ -15,10 +16,10 @@ namespace ContactCenterDA.Common
 
         public static String GetConexion(this OleDbConnection con)
         {
-            string ruta = System.IO.Directory.GetCurrentDirectory().Replace("ContactCenterGUI\\bin\\Debug", "ContactCenterDA\\");
+            string ruta = Directory.GetCurrentDirectory();
 
             string strCnx =
-                "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + ruta + "ContactCenter.accdb; Persist Security Info = True";
+                "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + ruta + "\\ContactCenter.accdb; Persist Security Info = True";
 
             if (object.ReferenceEquals(strCnx, string.Empty))
             {
