@@ -15,6 +15,7 @@ namespace ContactCenterGUI.CC
         public Loader()
         {
             InitializeComponent();
+            //Test
         }
 
         private void Loader_Load(object sender, EventArgs e)
