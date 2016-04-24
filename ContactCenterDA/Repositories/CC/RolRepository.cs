@@ -80,24 +80,24 @@ namespace ContactCenterDA.Repositories.CC
         public void Insert(Rol datos)
         {
             String sql = "INSERT INTO CC_Rol(Nombre, Estado, FechaCrea, UserMod) " +
-                         " VALUES(@nombre, @estado, @fechaCrea, @userCrea)";
+                         " VALUES(@nombre, @estado, @fechaCrea, @usuarioCrea)";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter usuarioCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
 
             UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, estado, fechaCrea, usuarioCrea);
         }
 
         public void Update(Rol datos)
         {
-            String sql = "UPDATE CC_Rol(Nombre = @nombre, Estado = @estado, FechaMod = @fechaMod, @UserMod = @userMod  WHERE IdRol = @idRol";
+            String sql = "UPDATE CC_Rol(Nombre = @nombre, Estado = @estado, FechaMod = @fechaMod, UserMod = @usuarioMod  WHERE IdRol = @idRol";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
-            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter usuarioMod = UtilDA.SetParameters("@useerMod", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, datos.FechaModificacion);
+            OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, datos.UsuarioModificacion);
             OleDbParameter idRol = UtilDA.SetParameters("@idRol", OleDbType.Integer, datos.IdRol);
         }
     }
