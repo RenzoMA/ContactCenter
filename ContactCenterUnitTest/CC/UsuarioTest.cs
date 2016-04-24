@@ -9,7 +9,7 @@ using ContactCenterUnitTest.GenericInterface;
 namespace ContactCenterUnitTest.CC
 {
     [TestClass]
-    public class UsuarioTest
+    public class UsuarioTest : GenericCrud
     {
         UsuarioRepository usuarioRepository = new UsuarioRepository();
         public static Usuario usuario = new Usuario()
@@ -39,33 +39,35 @@ namespace ContactCenterUnitTest.CC
         }
 
         [TestMethod]
-        public void GetLista()
+        public void Listar()
         {
              usuarioRepository.GetLista();
         }
 
         [TestMethod]
-        public void GetById()
+        public void Consultar()
         {
             usuarioRepository.GetById(1);
         }
 
         [TestMethod]
-        public void Insert()
+        public void Crear()
         {
             usuarioRepository.Insert(usuario);
         }
 
         [TestMethod]
-        public void Update()
+        public void Actualizar()
         {
             usuarioRepository.Update(usuario);
         }
 
         [TestMethod]
-        public void Delete()
+        public void Eliminar()
         {
             usuarioRepository.Delete(usuario.IdUsuario);
         }
+
+     
     }
 }
