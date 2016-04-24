@@ -10,7 +10,7 @@ using ContactCenterBE.Base;
 
 namespace ContactCenterBE.CC.TH.Entidades.TarifaBE
 {
-    public class Tarifa:BaseEntity
+    public class Tarifa : BaseEntity
     {
         public int IdTarifa { get; set; }
 

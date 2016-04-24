@@ -67,6 +67,7 @@
     <Compile Include="TH\ObraTest.cs" />
     <Compile Include="TH\PromocionTest.cs" />
     <Compile Include="TH\ReservaTest.cs" />
+    <Compile Include="TH\TarifaTest.cs" />
     <Compile Include="TH\TeatroTest.cs" />
     <Compile Include="TH\TipoPromocionTest.cs" />
     <Compile Include="TH\ZonaTest.cs" />

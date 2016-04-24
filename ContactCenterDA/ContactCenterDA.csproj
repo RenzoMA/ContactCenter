@@ -55,6 +55,7 @@
     <Compile Include="Repositories\CC\TH\ObraRepository.cs" />
     <Compile Include="Repositories\CC\TH\PromocionRepository.cs" />
     <Compile Include="Repositories\CC\TH\ReservaRepository.cs" />
+    <Compile Include="Repositories\CC\TH\TarifaRepository.cs" />
     <Compile Include="Repositories\CC\TH\TeatroRepository.cs" />
     <Compile Include="Repositories\CC\TH\TipoPromocionRepository.cs" />
     <Compile Include="Repositories\CC\TH\ZonaRepository.cs" />
