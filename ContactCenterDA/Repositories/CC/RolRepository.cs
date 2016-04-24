@@ -28,7 +28,7 @@ namespace ContactCenterDA.Repositories.CC
         {
             Rol objRol = null;
 
-            String sql = "SELECT * FROM CC_Rol WHERE idRol = @idRol";
+            String sql = "SELECT * FROM CC_Rol WHERE IdRol = @idRol";
 
             OleDbParameter codigo = UtilDA.SetParameters("@idRol", OleDbType.Integer, id);
 
