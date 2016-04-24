@@ -15,180 +15,90 @@ namespace ContactCenterDA.Repositories.CC
         
         OleDbConnection cnx = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
-        OleDbDataReader dtr = default(OleDbDataReader);
 
         public void Delete(int id)
         {
-            try
-            {
-                cnx.ConnectionString = cnx.GetConexion();
-                cmd.CommandType = CommandType.Text;
-                string sql = String.Format("DELETE FROM CC_ROL WHERE IdRol = {0}",
-                                            id);
-                cmd.CommandText = sql;
-                cnx.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (OleDbException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
-                }
-            }
+            String sql = "SELECT * FROM CC_Rol WHERE = @codigo";
+
+            OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
+            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, codigo);
         }
 
         public Rol GetById(int id)
         {
             Rol objRol = null;
 
-            try
-            {
-                cnx.ConnectionString = cnx.GetConexion();
-                cmd.Connection = cnx;
-                cmd.CommandType = CommandType.Text;
-                string sql = String.Format("SELECT * FROM CC_ROL WHERE IdRol = {0}", id);
-                cmd.CommandText = sql;
-                cnx.Open();
-                dtr = cmd.ExecuteReader();
-                if (dtr.HasRows)
-                {
-                    dtr.Read();
+            String sql = "SELECT * FROM CC_Rol WHERE idRol = @idRol";
 
+            OleDbParameter codigo = UtilDA.SetParameters("idRol", OleDbType.Integer, id);
+
+            using(var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, codigo))
+            {
+                while(dtr.Read())
+                {
                     objRol = new Rol();
-                    objRol.IdRol = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("IdRol")).ToString());
-                    objRol.Nombre = dtr.GetValue(dtr.GetOrdinal("Nombre")).ToString();
-                    objRol.Estado = dtr.GetValue(dtr.GetOrdinal("Estado")).ToString();
-                    objRol.FechaCreacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaCrea")).ToString());
-                    objRol.UsuarioCreacion = dtr.GetValue(dtr.GetOrdinal("UsuarioCrea")).ToString();
-                    objRol.FechaModificacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaMod")).ToString());
-                    objRol.UsuarioModificacion = dtr.GetValue(dtr.GetOrdinal("UsuarioMod")).ToString();
-
-                    dtr.Close();
-                }
-
-                return objRol;
-            }
-            catch (OleDbException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
+                    objRol.IdRol = DataConvert.ToInt(dtr["IdRol"]);
+                    objRol.Nombre = DataConvert.ToString(dtr["Nombre"]);
+                    objRol.Estado = DataConvert.ToString(dtr["Estado"]);
+                    objRol.FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]);
+                    objRol.UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]);
+                    objRol.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
+                    objRol.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
                 }
             }
-
+            UtilDA.Close(cnx);
+            return objRol;
         }
 
 
         public IList<Rol> GetLista()
         {
-
             List<Rol> listaRol = null;
 
-            try
+            String sql = "DELETE * FROM CC_Rol";
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx))
             {
-                cnx.ConnectionString = cnx.GetConexion();
-                cmd.Connection = cnx;
-                cmd.CommandType = CommandType.Text;
-                string sql = String.Format("SELECT * FROM CC_ROL");
-                cmd.CommandText = sql;
-                cnx.Open();
-                dtr = cmd.ExecuteReader();
-                if (dtr.HasRows)
+                while(dtr.Read())
                 {
-                    while (dtr.Read())
-                    {
-                        Rol objRol = new Rol();
-                        objRol.IdRol = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("IdRol")).ToString());
-                        objRol.Nombre = dtr.GetValue(dtr.GetOrdinal("Nombre")).ToString();
-                        objRol.Estado = dtr.GetValue(dtr.GetOrdinal("Estado")).ToString();
-                        objRol.FechaCreacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaCrea")).ToString());
-                        objRol.UsuarioCreacion = dtr.GetValue(dtr.GetOrdinal("UsuarioCrea")).ToString();
-                        objRol.FechaModificacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaMod")).ToString());
-                        objRol.UsuarioModificacion = dtr.GetValue(dtr.GetOrdinal("UsuarioMod")).ToString();
-                        listaRol.Add(objRol);
-                    }
-
-                    dtr.Close();
+                    Rol objRol = new Rol();
+                    objRol.IdRol = DataConvert.ToInt(dtr["IdRol"]);
+                    objRol.Nombre = DataConvert.ToString(dtr["Nombre"]);
+                    objRol.Estado = DataConvert.ToString(dtr["Estado"]);
+                    objRol.FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]);
+                    objRol.UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]);
+                    objRol.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
+                    objRol.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
+                    listaRol.Add(objRol);
                 }
-
-
+                UtilDA.Close(cnx);
                 return listaRol;
             }
-            catch (OleDbException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
-                }
-            }
+            
         }
 
         public void Insert(Rol datos)
         {
-            cnx.ConnectionString = cnx.GetConexion();
-            cmd.Connection = cnx;
-            cmd.CommandType = CommandType.Text;
-            string sql = String.Format("INSERTO INTO CC_ROL(Nombre, Estado, FechaCrea, UsuarioCrea, FechaMod, UsuarioMod) " +
-                                        "values('{0}','{1}','{2}','{3}','{4}','{5}')",
-                                         datos.Nombre, datos.Estado, datos.FechaCreacion, datos.UsuarioCreacion,
-                                         datos.FechaModificacion, datos.UsuarioModificacion);
-            cmd.CommandText = sql;
-            try
-            {
-                cnx.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (OleDbException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
-                }
-            }
+            String sql = "INSERT INTO CC_Rol(Nombre, Estado, FechaCrea, UserMod) " +
+                         " VALUES(@nombre, @estado, @fechaCrea, @userCrea)";
+
+            OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
+            OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
+            OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
+            OleDbParameter usuarioCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+
+            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, estado, fechaCrea, usuarioCrea);
         }
 
         public void Update(Rol datos)
         {
-            cnx.ConnectionString = cnx.GetConexion();
-            cmd.Connection = cnx;
-            cmd.CommandType = CommandType.Text;
-            String sql = String.Format("UPDATE CC_ROL SET Nombre = {0}, Estado = {1}, FechaCrea = {2}, UsuarioCrea = {3}, FechaMod = {4}, UsuarioMod = {5} where IdCliente = {6}",
-                                        datos.Nombre, datos.Estado, datos.FechaCreacion, datos.UsuarioCreacion,
-                                        datos.FechaModificacion, datos.UsuarioModificacion, datos.IdRol);
-            cmd.CommandText = sql;
-            try
-            {
-                cnx.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (OleDbException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
-                }
-            }
+            String sql = "UPDATE CC_Rol(Nombre = @nombre, Estado = @estado, FechaMod = @fechaMod, @UserMod = @userMod  WHERE IdRol = @idRol";
+
+            OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
+            OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, datos.FechaCreacion);
+            OleDbParameter usuarioMod = UtilDA.SetParameters("@useerMod", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter idRol = UtilDA.SetParameters("@idRol", OleDbType.Integer, datos.IdRol);
         }
     }
 }

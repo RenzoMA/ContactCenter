@@ -85,7 +85,7 @@ namespace ContactCenterDA.Repositories.CC
         public void Insert(Aplicacion datos)
         {
             String sql = "INSERT INTO CC_APLICACION(Nombre, Version, Estado, Correo, FechaCrea, UserCrea) " +
-                                       "values(@nombre,@version,@estado,@correo,@fechaCreacion,@UsuarioCrea)";
+                                       "VALUES(@nombre,@version,@estado,@correo,@fechaCreacion,@UsuarioCrea)";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter version = UtilDA.SetParameters("@version", OleDbType.VarChar, datos.Version);
@@ -100,7 +100,7 @@ namespace ContactCenterDA.Repositories.CC
         public void Update(Aplicacion datos)
         {
             String sql = "UPDATE CC_APLICACION SET Nombre = @nombre, Version = @version, Estado = @estado, Correo = @correo," +
-                                        "FechaMod = @fechaModificacion, UsuarioMod = @UsuarioMod where IdAplicacion = @idAplicacion";
+                                        "FechaMod = @fechaModificacion, UserMod = @UsuarioMod WHERE IdAplicacion = @idAplicacion";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter version = UtilDA.SetParameters("@version", OleDbType.VarChar, datos.Version);

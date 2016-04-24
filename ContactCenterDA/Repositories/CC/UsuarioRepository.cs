@@ -21,185 +21,126 @@ namespace ContactCenterDA.Repositories.CC
 
         public void Delete(int id)
         {
-           
-            try
-            {
-                cnx.ConnectionString = cnx.GetConexion();
-                cmd.CommandType = CommandType.Text;
-                string sql = String.Format("DELETE FROM CC_USUARIO WHERE IdUsuario = {0}",
-                                            id);
-                cmd.CommandText = sql;
-                cnx.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (OleDbException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
-                }
-            }
+            String sql = "DELETE FROM CC_USUARIO WHERE IdUsuario = @codigo";
+
+            OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
+
+            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, codigo);
         }
 
         public Usuario GetById(int id)
         {
             Usuario objUsuario = null;
 
-            try
-            {
-                cnx.ConnectionString = cnx.GetConexion();
-                cmd.Connection = cnx;
-                cmd.CommandType = CommandType.Text;
-                string sql = String.Format("SELECT * FROM CC_USUARIO WHERE IdUsuario = {0}", id);
-                cmd.CommandText = sql;
-                cnx.Open();
-                dtr = cmd.ExecuteReader();
-                if (dtr.HasRows)
-                {
-                    dtr.Read();
+            String sql = "SELECT * FROM CC_Usuario WHERE IdUsuario = @codigo";
 
+            OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, codigo))
+            {
+                while (dtr.Read())
+                {
                     objUsuario = new Usuario();
-                    objUsuario.IdUsuario = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("IdRol")).ToString());
-                    objUsuario.Nombre = dtr.GetValue(dtr.GetOrdinal("Nombre")).ToString();
-                    objUsuario.ApellidoPaterno = dtr.GetValue(dtr.GetOrdinal("ApePaterno")).ToString();
-                    objUsuario.ApellidoMaterno = dtr.GetValue(dtr.GetOrdinal("ApeMaterno")).ToString();
-                    objUsuario.Correo = dtr.GetValue(dtr.GetOrdinal("Correo")).ToString();
-                    objUsuario.Login = dtr.GetValue(dtr.GetOrdinal("Login")).ToString();
-                    objUsuario.Contraseña = dtr.GetValue(dtr.GetOrdinal("Contraseña")).ToString();
-                    objUsuario.Rol.IdRol = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("IdRol")).ToString());
-                    objUsuario.FechaCreacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaCrea")).ToString());
-                    objUsuario.UsuarioCreacion = dtr.GetValue(dtr.GetOrdinal("UsuarioCrea")).ToString();
-                    objUsuario.FechaModificacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaMod")).ToString());
-                    objUsuario.UsuarioModificacion = dtr.GetValue(dtr.GetOrdinal("UsuarioMod")).ToString();
-
-                    dtr.Close();
-                }
-
-                return objUsuario;
-            }
-            catch (OleDbException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
+                    objUsuario.IdUsuario = DataConvert.ToInt(dtr["IdUsuario"]);
+                    objUsuario.Nombre = DataConvert.ToString(dtr["Nomnbre"]);
+                    objUsuario.ApellidoPaterno = DataConvert.ToString(dtr["ApePaterno"]);
+                    objUsuario.ApellidoMaterno = DataConvert.ToString(dtr["ApeMaterno"]);
+                    objUsuario.Correo = DataConvert.ToString(dtr["Correo"]);
+                    objUsuario.Login = DataConvert.ToString(dtr["Login"]);
+                    objUsuario.Contraseña = DataConvert.ToString(dtr["Contraseña"]);
+                    objUsuario.Rol = new Rol()
+                    {
+                        Estado = DataConvert.ToString(dtr["R.Estado"]),
+                        IdRol = DataConvert.ToInt(dtr["R.IdRol"]),
+                        Nombre = DataConvert.ToString(dtr["R.Nombre"])
+                    };
+                    objUsuario.FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]);
+                    objUsuario.UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]);
+                    objUsuario.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
+                    objUsuario.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
+                    objUsuario.Estado = DataConvert.ToString(dtr["Estado"]);
                 }
             }
+            UtilDA.Close(cnx);
+            return objUsuario;
         }
 
         public IList<Usuario> GetLista()
         {
             List<Usuario> listaUsuario = null;
 
-            try
+            String sql = "SELECT * FROM CC_Usuario";
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx))
             {
-                cnx.ConnectionString = cnx.GetConexion();
-                cmd.Connection = cnx;
-                cmd.CommandType = CommandType.Text;
-                string sql = String.Format("SELECT * FROM CC_USUARIO");
-                cmd.CommandText = sql;
-                cnx.Open();
-                dtr = cmd.ExecuteReader();
-                if (dtr.HasRows)
+                while (dtr.Read())
                 {
-                    while (dtr.Read())
+                    Usuario objUsuario = new Usuario();
+                    objUsuario.IdUsuario = DataConvert.ToInt(dtr["IdUsuario"]);
+                    objUsuario.Nombre = DataConvert.ToString(dtr["Nomnbre"]);
+                    objUsuario.ApellidoPaterno = DataConvert.ToString(dtr["ApePaterno"]);
+                    objUsuario.ApellidoMaterno = DataConvert.ToString(dtr["ApeMaterno"]);
+                    objUsuario.Correo = DataConvert.ToString(dtr["Correo"]);
+                    objUsuario.Login = DataConvert.ToString(dtr["Login"]);
+                    objUsuario.Contraseña = DataConvert.ToString(dtr["Contraseña"]);
+                    objUsuario.Rol = new Rol()
                     {
-                        Usuario objUsuario = new Usuario();
-                        objUsuario.IdUsuario = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("IdRol")).ToString());
-                        objUsuario.Nombre = dtr.GetValue(dtr.GetOrdinal("Nombre")).ToString();
-                        objUsuario.ApellidoPaterno = dtr.GetValue(dtr.GetOrdinal("ApePaterno")).ToString();
-                        objUsuario.ApellidoMaterno = dtr.GetValue(dtr.GetOrdinal("ApeMaterno")).ToString();
-                        objUsuario.Correo = dtr.GetValue(dtr.GetOrdinal("Correo")).ToString();
-                        objUsuario.Login = dtr.GetValue(dtr.GetOrdinal("Login")).ToString();
-                        objUsuario.Contraseña = dtr.GetValue(dtr.GetOrdinal("Contraseña")).ToString();
-                        objUsuario.Rol.IdRol = Convert.ToInt32(dtr.GetValue(dtr.GetOrdinal("IdRol")).ToString());
-                        objUsuario.FechaCreacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaCrea")).ToString());
-                        objUsuario.UsuarioCreacion = dtr.GetValue(dtr.GetOrdinal("UsuarioCrea")).ToString();
-                        objUsuario.FechaModificacion = Convert.ToDateTime(dtr.GetValue(dtr.GetOrdinal("FechaMod")).ToString());
-                        objUsuario.UsuarioModificacion = dtr.GetValue(dtr.GetOrdinal("UsuarioMod")).ToString();
-                        listaUsuario.Add(objUsuario);
-                    }
-
-                    dtr.Close();
-                }
-
-
-                return listaUsuario;
-            }
-            catch (OleDbException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
+                        Estado = DataConvert.ToString(dtr["R.Estado"]),
+                        IdRol = DataConvert.ToInt(dtr["R.IdRol"]),
+                        Nombre = DataConvert.ToString(dtr["R.Nombre"])
+                    };
+                    objUsuario.FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]);
+                    objUsuario.UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]);
+                    objUsuario.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
+                    objUsuario.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
+                    objUsuario.Estado = DataConvert.ToString(dtr["Estado"]);
+                    listaUsuario.Add(objUsuario);
                 }
             }
+            UtilDA.Close(cnx);
+            return listaUsuario;
         }
 
         public void Insert(Usuario datos)
         {
-            cnx.ConnectionString = cnx.GetConexion();
-            cmd.Connection = cnx;
-            cmd.CommandType = CommandType.Text;
-            string sql = String.Format("INSERTO INTO CC_USUARIO(Nombre, ApePaterno, ApeMaterno, Correo, Login, Contraseña, IdRol, FechaCrea, UsuarioCre, FechaMod, UsuarioMod) " +
-                                        "values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')",
-                                         datos.Nombre, datos.ApellidoPaterno, datos.ApellidoMaterno, datos.Correo, datos.Login, datos.Contraseña, datos.Rol, datos.FechaCreacion, datos.UsuarioCreacion,
-                                         datos.FechaModificacion, datos.UsuarioModificacion);
-            cmd.CommandText = sql;
-            try
-            {
-                cnx.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (OleDbException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
-                }
-            }
+            String sql = "INSERT INTO CC_Usuario(Nombre, ApePaterno, ApeMaterno, Correo, Login, Contraseña, IdRol, FechaCrea, UserCrea) " +
+                         "VALUES(@nombre, @apePaterno, @apeMaterno, @correo, @login, @contraseña, @idrol, @fechaCrea, @userCrea)";
+
+            OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
+            OleDbParameter apePaterno = UtilDA.SetParameters("@apePaterno", OleDbType.VarChar, datos.ApellidoPaterno);
+            OleDbParameter apeMaterno = UtilDA.SetParameters("@apeMaterno", OleDbType.VarChar, datos.ApellidoMaterno);
+            OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
+            OleDbParameter login = UtilDA.SetParameters("@login", OleDbType.VarChar, datos.Login);
+            OleDbParameter contraseña = UtilDA.SetParameters("@contraseña", OleDbType.VarChar, datos.Contraseña);
+            OleDbParameter idrol = UtilDA.SetParameters("@idrol", OleDbType.Integer, datos.Rol);
+            OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCreacion", OleDbType.Date, datos.FechaCreacion);
+            OleDbParameter usuarioCrea = UtilDA.SetParameters("@UsuarioCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
+
+            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, correo, login, contraseña, idrol, fechaCreacion, usuarioCrea, estado);
+                
         }
 
         public void Update(Usuario datos)
         {
-            cnx.ConnectionString = cnx.GetConexion();
-            cmd.Connection = cnx;
-            cmd.CommandType = CommandType.Text;
-            String sql = String.Format("UPDATE CC_USUARIO SET Nombre = {0}, Estado = {1}, ApePaterno = {2}, ApeMaterno = {3}, Correo = {4}, Login = {5}, Contraseña = {6}, Rol = {7}" +
-                                        "FechaCrea = {8}, UsuarioCrea = {9}, FechaMod = {10}, UsuarioMod = {11} where IdUsuario = {12}",
-                                        datos.Nombre, datos.ApellidoPaterno, datos.ApellidoMaterno, datos.Correo, datos.Login, datos.Contraseña, datos.Rol, datos.FechaCreacion, datos.UsuarioCreacion,
-                                         datos.FechaModificacion, datos.UsuarioModificacion);
-            cmd.CommandText = sql;
-            try
-            {
-                cnx.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (OleDbException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
-                }
-            }
+            String sql = "UPDATE CC_Usuario SET Nombre = @nombre, ApePaterno = @apePaterno, ApeMaterno, @apeMaterno, Correo = @correo, Login = @login, Contraseña = @contraseña " +
+                         "IdRol = @idRol, FechaMod = @fechaMod, UserMod = @userMod, Estado = @estado WHERE IdUsuario = @idUsuario";
+
+            OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
+            OleDbParameter apePaterno = UtilDA.SetParameters("@apePaterno", OleDbType.VarChar, datos.ApellidoPaterno);
+            OleDbParameter apeMaterno = UtilDA.SetParameters("@apeMaterno", OleDbType.VarChar, datos.ApellidoMaterno);
+            OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
+            OleDbParameter login = UtilDA.SetParameters("@login", OleDbType.VarChar, datos.Login);
+            OleDbParameter contraseña = UtilDA.SetParameters("@contraseña", OleDbType.VarChar, datos.Contraseña);
+            OleDbParameter idrol = UtilDA.SetParameters("@idrol", OleDbType.Integer, datos.Rol);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaCreacion", OleDbType.Date, datos.FechaModificacion);
+            OleDbParameter usuarioMod = UtilDA.SetParameters("@UsuarioCrea", OleDbType.VarChar, datos.UsuarioModificacion);
+            OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
+            OleDbParameter idusuario = UtilDA.SetParameters("@idUsuario", OleDbType.Integer, datos.IdUsuario);
+
+            UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, correo, login, contraseña, idrol, fechaMod, usuarioMod, estado, idusuario);
+
+
         }
 
         public Usuario ValidarUsuario(string login, string password)
