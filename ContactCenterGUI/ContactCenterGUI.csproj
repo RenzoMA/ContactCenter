@@ -21,16 +21,17 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\home-pc\New folder\Origen\</InstallUrl>
+    <UpdateUrl>\\home-pc\New folder\Falso2\</UpdateUrl>
     <TargetCulture>es-PE</TargetCulture>
     <ProductName>ContactCenter</ProductName>
     <PublisherName>Krieger Lab</PublisherName>
     <SuiteName>Krieger Lab</SuiteName>
+    <MinimumRequiredVersion>1.0.0.17</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.html</WebPage>
-    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
