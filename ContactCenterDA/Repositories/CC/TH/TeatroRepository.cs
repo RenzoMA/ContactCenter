@@ -43,7 +43,8 @@ namespace ContactCenterDA.Repositories.CC.TH
                         IdTeatro = DataConvert.ToInt(dtr["IdTeatro"]),
                         Nombre = DataConvert.ToString(dtr["Nombre"]),
                         UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]),
-                        UsuarioModificacion = DataConvert.ToString(dtr["UserMod"])
+                        UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]),
+                        frmTeatro = DataConvert.ToString(dtr["frmTeatro"])
                     };
                 }
             }
@@ -69,7 +70,8 @@ namespace ContactCenterDA.Repositories.CC.TH
                         IdTeatro = DataConvert.ToInt(dtr["IdTeatro"]),
                         Nombre = DataConvert.ToString(dtr["Nombre"]),
                         UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]),
-                        UsuarioModificacion = DataConvert.ToString(dtr["UserMod"])
+                        UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]),
+                        frmTeatro = DataConvert.ToString(dtr["frmTeatro"])
                     };
                     lTeatro.Add(teatro);
                 }
@@ -80,15 +82,16 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Insert(Teatro datos)
         {
-            string sql = "INSERT INTO TH_TEATRO (Estado,Nombre,FechaCrea,UserCrea) " +
-                         "VALUES (@Estado, @Nombre, @FechaCrea, @UserCrea)";
+            string sql = "INSERT INTO TH_TEATRO (Estado,Nombre,FechaCrea,UserCrea,frmTeatro) " +
+                         "VALUES (@Estado, @Nombre, @FechaCrea, @UserCrea,@frmTeatro)";
 
             OleDbParameter estado = UtilDA.SetParameters("@Estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter nombre = UtilDA.SetParameters("@Nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter fechaCrea = UtilDA.SetParameters("@FechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter userCrea = UtilDA.SetParameters("@UserCrea", OleDbType.VarChar, Sesion.usuario.Login);
+            OleDbParameter frmTeatro = UtilDA.SetParameters("@frmTeatro", OleDbType.VarChar, datos.frmTeatro);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, estado, nombre, fechaCrea, userCrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, estado, nombre, fechaCrea, userCrea, frmTeatro);
 
 
         }
@@ -96,15 +99,16 @@ namespace ContactCenterDA.Repositories.CC.TH
         public bool Update(Teatro datos)
         {
             string sql = "UPDATE TH_TEATRO SET Estado = @Estado, Nombre = @Nombre, FechaMod = @FechaMod," + 
-                         "UserMod = @UserMod WHERE IdTeatro = @IdTeatro";
+                         "UserMod = @UserMod, frmTeatro = @frmTeatro WHERE IdTeatro = @IdTeatro";
 
             OleDbParameter estado = UtilDA.SetParameters("@Estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter nombre = UtilDA.SetParameters("@Nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idTeatro = UtilDA.SetParameters("@IdTeatro", OleDbType.Integer, datos.IdTeatro);
+            OleDbParameter frmTeatro = UtilDA.SetParameters("@frmTeatro", OleDbType.VarChar, datos.frmTeatro);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, estado, nombre, fechaMod, userMod, idTeatro);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, estado, nombre, fechaMod, userMod, frmTeatro, idTeatro);
 
 
         }

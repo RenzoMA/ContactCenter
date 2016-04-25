@@ -84,5 +84,15 @@ namespace ContactCenterServices
         {
             return _asientoService.ListarAsientoDisponible(idObra, idFuncion, FechaObra);
         }
+
+        public async Task<List<Asiento>> ListarAsientoDisponibleAsync(int idObra, int idFuncion, DateTime FechaObra)
+        {
+            List<Asiento> lAsiento = null;
+            await Task.Run(() =>
+            {
+                lAsiento = _asientoService.ListarAsientoDisponible(idObra, idFuncion, FechaObra);
+            });
+            return lAsiento;
+        }
     }
 }

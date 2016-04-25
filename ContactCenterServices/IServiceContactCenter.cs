@@ -17,6 +17,7 @@ namespace ContactCenterServices
         Task<Usuario> ValidarUsuarioAsync(string login, string password);
         List<Aplicacion> ListarAplicacionUsuario(Usuario usuario);
         Task<List<Aplicacion>> ListarAplicacionUsuarioAsync(Usuario usuario);
+        Task<List<Asiento>> ListarAsientoDisponibleAsync(int idObra, int idFuncion, DateTime FechaObra);
         List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime FechaObra);
     }
 }

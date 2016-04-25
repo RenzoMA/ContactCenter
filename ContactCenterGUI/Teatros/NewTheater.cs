@@ -30,8 +30,6 @@ namespace ContactCenterGUI.Teatros
         {
             if (metroComboBox1.SelectedIndex == 1)
             {
-
-                //todobien
                 this.Hide();
                 PerJapTheater newtheater2 = new PerJapTheater();
                 newtheater2.ShowDialog();

@@ -12,6 +12,6 @@ namespace ContactCenterBE.CC.TH.Entidades.TeatroBE
         public int IdTeatro { get; set; }
         public string Estado { get; set; }
         public string Nombre { get; set; }
-
+        public string frmTeatro { get; set; }
     }
 }
