@@ -24,7 +24,7 @@ namespace ContactCenterGUI.Mantenimientos.Aplicacion
             this.Hide();
             Mantenimientos.Aplicacion.ManAppMenu manappmenu = new Mantenimientos.Aplicacion.ManAppMenu();
             manappmenu.ShowDialog();
-            //pruenasadasd on ta el commit xD 
+            //pruenasadasd on ta el commit xD  qque era por tener la bd abierto como ato ? sepmtya gracias! 
             
         }
     }
