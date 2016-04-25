@@ -145,13 +145,11 @@ namespace ContactCenterDA.Common
             {
                 SaveLog(ex, sqlEjecucion, parameters);
                 throw new Exception(ex.Message);
-                return false;
             }
             catch (Exception ex)
             {
                 SaveLog(ex, sqlEjecucion, parameters);
                 throw new Exception(ex.Message);
-                return false;
             }
             finally
             {

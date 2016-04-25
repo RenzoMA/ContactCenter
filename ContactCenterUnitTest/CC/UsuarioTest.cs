@@ -41,31 +41,31 @@ namespace ContactCenterUnitTest.CC
         [TestMethod]
         public void Listar()
         {
-             usuarioRepository.GetLista();
+            Assert.IsNotNull(usuarioRepository.GetLista());
         }
 
         [TestMethod]
         public void Consultar()
         {
-            usuarioRepository.GetById(1);
+            Assert.IsNotNull(usuarioRepository.GetById(1));
         }
 
         [TestMethod]
         public void Crear()
         {
-            usuarioRepository.Insert(usuario);
+            Assert.IsTrue(usuarioRepository.Insert(usuario));
         }
 
         [TestMethod]
         public void Actualizar()
         {
-            usuarioRepository.Update(usuario);
+            Assert.IsTrue(usuarioRepository.Update(usuario));
         }
 
         [TestMethod]
         public void Eliminar()
         {
-            usuarioRepository.Delete(usuario.IdUsuario);
+            Assert.IsTrue(usuarioRepository.Delete(usuario.IdUsuario));
         }
 
      

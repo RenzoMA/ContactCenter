@@ -24,7 +24,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             String sql = "UPDATE TH_Zona SET ESTADO = 'I', FechaMod = @FechaMod, UserMod = @UserMod WHERE IdZona = @codigo";
 
             OleDbParameter FechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
-            OleDbParameter UserMod = UtilDA.SetParameters("@UserMod", OleDbType.Integer, Sesion.usuario.Login);
+            OleDbParameter UserMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, FechaMod, UserMod, codigo);
@@ -99,7 +99,7 @@ namespace ContactCenterDA.Repositories.CC.TH
         public bool Insert(Zona datos)
         {
             String sql = "INSERT INTO TH_Zona(Nombre, Descripcion, Estado, IdTeatro, FechaCrea, UserCrea) " +
-                        "VALUES(@nombre, @descripcion, @estado, @idTeatro, @fechaCrea, @userCrea";
+                        "VALUES(@nombre, @descripcion, @estado, @idTeatro, @fechaCrea, @userCrea)";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
@@ -113,7 +113,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Update(Zona datos)
         {
-            String sql = "UPDATE TH_Zona SET Nombre = @nombre, Descripcion = @descripcion, Estado = @estado, IdTeatro = @idTeatro, FechaMod = @fechaMod, UserMod = @usuarioMod" +
+            String sql = "UPDATE TH_Zona SET Nombre = @nombre, Descripcion = @descripcion, Estado = @estado, IdTeatro = @idTeatro, FechaMod = @fechaMod, UserMod = @usuarioMod " +
                         "WHERE IdZona = @idZona";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);

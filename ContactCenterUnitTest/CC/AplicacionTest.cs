@@ -29,32 +29,32 @@ namespace ContactCenterUnitTest.CC
         [TestMethod]
         public void Actualizar()
         {
-            aplicacionRepository.Update(aplicacion);
+            Assert.IsTrue(aplicacionRepository.Update(aplicacion));
         }
         [TestMethod]
         public void Consultar()
         {
-            aplicacionRepository.GetById(1);
+            Assert.IsNotNull(aplicacionRepository.GetById(1));
         }
         [TestMethod]
         public void Crear()
         {
-            aplicacionRepository.Insert(aplicacion);
+            Assert.IsTrue(aplicacionRepository.Insert(aplicacion));
         }
         [TestMethod]
         public void Eliminar()
         {
-            aplicacionRepository.Delete(aplicacion.IdAplicacion);
+            Assert.IsTrue(aplicacionRepository.Delete(aplicacion.IdAplicacion));
         }
         [TestMethod]
         public void Listar()
         {
-            aplicacionRepository.GetLista();
+            Assert.IsNotNull(aplicacionRepository.GetLista());
         }
         [TestMethod]
         public void ListarAplicacionUsuario()
         {
-            aplicacionRepository.ListarAplicacionUsuario(UsuarioTest.usuario);
+            Assert.IsNotNull(aplicacionRepository.ListarAplicacionUsuario(UsuarioTest.usuario));
         }
 
         [TestMethod]

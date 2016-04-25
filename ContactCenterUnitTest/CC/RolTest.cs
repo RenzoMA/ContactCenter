@@ -27,27 +27,27 @@ namespace ContactCenterUnitTest.CC
         [TestMethod]
         public void Actualizar()
         {
-            rolRepository.Update(rol);
+            Assert.IsTrue(rolRepository.Update(rol));
         }
         [TestMethod]
         public void Consultar()
         {
-            rolRepository.GetById(rol.IdRol);
+            Assert.IsNotNull(rolRepository.GetById(rol.IdRol));
         }
         [TestMethod]
         public void Crear()
         {
-            rolRepository.Insert(rol);
+            Assert.IsTrue(rolRepository.Insert(rol));
         }
         [TestMethod]
         public void Eliminar()
         {
-            rolRepository.Delete(rol.IdRol);
+            Assert.IsTrue(rolRepository.Delete(rol.IdRol));
         }
         [TestMethod]
         public void Listar()
         {
-            rolRepository.Update(rol);
+            Assert.IsNotNull(rolRepository.Update(rol));
         }
     }
 
