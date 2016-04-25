@@ -92,6 +92,30 @@
     <Compile Include="CC\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\Aplicacion\ManAppBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Aplicacion\ManAppBuscar.Designer.cs">
+      <DependentUpon>ManAppBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Aplicacion\ManAppCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Aplicacion\ManAppCreate.Designer.cs">
+      <DependentUpon>ManAppCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Aplicacion\ManAppMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Aplicacion\ManAppMenu.Designer.cs">
+      <DependentUpon>ManAppMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\ManForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\ManForm.Designer.cs">
+      <DependentUpon>ManForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\CallaoTheater.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,11 +128,17 @@
     <Compile Include="Teatros\NewTheater.Designer.cs">
       <DependentUpon>NewTheater.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\NewTheater2.cs">
+    <Compile Include="Teatros\PerInfoTheater.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\NewTheater2.Designer.cs">
-      <DependentUpon>NewTheater2.cs</DependentUpon>
+    <Compile Include="Teatros\PerInfoTheater.Designer.cs">
+      <DependentUpon>PerInfoTheater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teatros\PerJapTheater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\PerJapTheater.Designer.cs">
+      <DependentUpon>PerJapTheater.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -134,14 +164,29 @@
     <EmbeddedResource Include="CC\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Aplicacion\ManAppBuscar.resx">
+      <DependentUpon>ManAppBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Aplicacion\ManAppCreate.resx">
+      <DependentUpon>ManAppCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Aplicacion\ManAppMenu.resx">
+      <DependentUpon>ManAppMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\ManForm.resx">
+      <DependentUpon>ManForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\CallaoTheater.resx">
       <DependentUpon>CallaoTheater.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\NewTheater.resx">
       <DependentUpon>NewTheater.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\NewTheater2.resx">
-      <DependentUpon>NewTheater2.cs</DependentUpon>
+    <EmbeddedResource Include="Teatros\PerInfoTheater.resx">
+      <DependentUpon>PerInfoTheater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\PerJapTheater.resx">
+      <DependentUpon>PerJapTheater.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

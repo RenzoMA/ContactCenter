@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
+using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 
 
 namespace ContactCenterGUI.Teatros
 {
-    public partial class CallaoTheater : MaterialForm
+    public partial class PerJapTheater : MaterialForm
     {
-        public CallaoTheater()
+        public PerJapTheater()
         {
             InitializeComponent();
         }
@@ -30,23 +31,11 @@ namespace ContactCenterGUI.Teatros
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void button124_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             this.Hide();
             NewTheater newtheater = new NewTheater();
             newtheater.ShowDialog();
-        }
-
-        private void materialRaisedButton2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Teatros.PerInfoTheater info = new Teatros.PerInfoTheater();
-            info.ShowDialog();
         }
     }
 }

@@ -23,8 +23,13 @@ namespace ContactCenterGUI.CC
             //Login login = new Login();
             //login.ShowDialog();
             //this.Close();
-            Teatros.NewTheater teatro = new Teatros.NewTheater();
-            teatro.ShowDialog();
+
+            //Teatros.NewTheater teatro = new Teatros.NewTheater();
+            //teatro.ShowDialog();
+            //this.Close();
+
+            Mantenimientos.ManForm manform = new Mantenimientos.ManForm();
+            manform.ShowDialog();
             this.Close();
 
         }

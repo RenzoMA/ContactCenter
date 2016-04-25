@@ -33,7 +33,7 @@ namespace ContactCenterGUI.Teatros
 
                 //todobien
                 this.Hide();
-                NewTheater2 newtheater2 = new NewTheater2();
+                PerJapTheater newtheater2 = new PerJapTheater();
                 newtheater2.ShowDialog();
             }
             else if (metroComboBox1.SelectedIndex == 2)
