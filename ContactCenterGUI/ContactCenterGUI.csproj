@@ -207,7 +207,7 @@
     <Compile Include="Teatros\TheaterApp.Designer.cs">
       <DependentUpon>TheaterApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Util\AsientoUtil.cs" />
+    <Compile Include="Util\Helper.cs" />
     <EmbeddedResource Include="CC\Loader.resx">
       <DependentUpon>Loader.cs</DependentUpon>
     </EmbeddedResource>

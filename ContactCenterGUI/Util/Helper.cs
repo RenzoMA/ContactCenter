@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 using System.Windows.Forms;
+using ContactCenterServices;
+using Microsoft.Practices.Unity;
 
 
 namespace ContactCenterGUI.Util
 {
-    class AsientoUtil
+    class Helper
     {
         private static Asiento GetAsiento(int IdAsiento, List<Asiento> lista)
         {
@@ -43,6 +45,24 @@ namespace ContactCenterGUI.Util
                     btn.Enabled = false;
                     btn.BackColor = System.Drawing.Color.Gray;
                 }
+            }
+        }
+        public static async void MostrarDisponibilidad(Form form,int idObra, int idFuncion, DateTime fechaReserva)
+        {
+            try
+            {
+                Animacion.ShowLoader(form);
+                IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+                List<Asiento> lAsiento = await servicio.ListarAsientoDisponibleAsync(idObra, idFuncion, fechaReserva);
+                Helper.CruzarBotonData(lAsiento, form);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Animacion.HideLoader(form);
             }
         }
     }
