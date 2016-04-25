@@ -13694,6 +13694,7 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.NewTheater2_Load);
 
         }
 
