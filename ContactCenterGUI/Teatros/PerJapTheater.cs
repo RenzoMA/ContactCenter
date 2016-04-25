@@ -15,13 +15,13 @@ using ContactCenterGUI.Util;
 
 namespace ContactCenterGUI.Teatros
 {
-    public partial class NewTheater2 : MaterialForm
+    public partial class PerJapTheater : MaterialForm
     {
         public int idTeatro = 1;
         public int idFuncion = 1;
         public int idObra = 1;
 
-        public NewTheater2()
+        public PerJapTheater()
         {
             InitializeComponent();
         }
@@ -38,6 +38,13 @@ namespace ContactCenterGUI.Teatros
         private void NewTheater2_Load(object sender, EventArgs e)
         {
             AsientoUtil.CruzarBotonData(null, this);
+        }
+
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            NewTheater newtheater = new NewTheater();
+            newtheater.ShowDialog();
         }
     }
 }

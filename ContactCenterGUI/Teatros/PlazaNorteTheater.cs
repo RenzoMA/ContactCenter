@@ -37,5 +37,12 @@ namespace ContactCenterGUI.Teatros
         {
 
         }
+
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            NewTheater newtheater = new NewTheater();
+            newtheater.ShowDialog();
+        }
     }
 }
