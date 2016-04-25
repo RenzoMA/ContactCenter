@@ -24,7 +24,7 @@ namespace ContactCenterGUI.Mantenimientos.Aplicacion
             this.Hide();
             Mantenimientos.Aplicacion.ManAppMenu manappmenu = new Mantenimientos.Aplicacion.ManAppMenu();
             manappmenu.ShowDialog();
-            //pruena
+            //pruenasadasd on ta el commit xD 
             
         }
     }
