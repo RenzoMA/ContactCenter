@@ -17,6 +17,12 @@ namespace ContactCenterGUI.Mantenimientos.Aplicacion
         public ManAppBuscar()
         {
             InitializeComponent();
+
+
+            var materialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.LightBlue800, MaterialSkin.Primary.LightBlue900, MaterialSkin.Primary.LightBlue500, MaterialSkin.Accent.LightBlue200, MaterialSkin.TextShade.WHITE);
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
