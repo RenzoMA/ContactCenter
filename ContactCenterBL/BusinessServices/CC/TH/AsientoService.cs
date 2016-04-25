@@ -26,6 +26,11 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         {
             return asientoRepository.ListarAsientoDisponible(idObra, idFuncion, fecha.Date);
         }
+
+        public List<Asiento> ListarAsientoTeatro(int idTeatro)
+        {
+            return asientoRepository.ListarTeatroAsiento(idTeatro);
+        }
         #endregion
     }
 }

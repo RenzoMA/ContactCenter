@@ -94,5 +94,15 @@ namespace ContactCenterServices
             });
             return lAsiento;
         }
+
+        public async Task<List<Asiento>> listarAsientoTeatroAsync(int idTeatro)
+        {
+            List<Asiento> lAsiento = null;
+            await Task.Run(() =>
+            {
+                lAsiento = _asientoService.ListarAsientoTeatro(idTeatro);
+            });
+            return lAsiento;
+        }
     }
 }

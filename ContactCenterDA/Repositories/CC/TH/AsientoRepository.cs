@@ -138,11 +138,11 @@ namespace ContactCenterDA.Repositories.CC.TH
             List<Asiento> lAsiento = new List<Asiento>();
             Asiento asiento = null;
 
-            string sql = "SELECT IdAsiento, Estado FROM TH_DETALLE_RESERVA DR INNER JOIN TH_RESERVA R ON R.IDRESERVA = DR.IDRESERVA WHERE R.IDOBRA = @IdObra AND R.IDFUNCION = @IdFuncion AND R.FECHARESERVA = @FechaReserva ";
+            string sql = "SELECT IdAsiento, Estado FROM TH_DETALLE_RESERVA DR INNER JOIN TH_RESERVA R ON R.IDRESERVA = DR.IDRESERVA WHERE R.IDOBRA = @IdObra AND R.IDFUNCION = @IdFuncion AND R.FECHARESERVA = @fechaReserva";
 
             OleDbParameter obra = UtilDA.SetParameters("@IdObra", OleDbType.Integer, idObra);
             OleDbParameter funcion = UtilDA.SetParameters("@IdFuncion", OleDbType.Integer, idFuncion);
-            OleDbParameter reserva = UtilDA.SetParameters("@FechaReserva", OleDbType.Date, fechaReserva);
+            OleDbParameter reserva = UtilDA.SetParameters("@fechaReserva", OleDbType.Date,fechaReserva);
 
             using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, obra, funcion, reserva))
             {
@@ -156,6 +156,34 @@ namespace ContactCenterDA.Repositories.CC.TH
                     lAsiento.Add(asiento);
                 }
             }
+            UtilDA.Close(cnx);
+            return lAsiento;
+        }
+
+        public List<Asiento> ListarTeatroAsiento(int idTeatro)
+        {
+            List<Asiento> lAsiento = new List<Asiento>();
+            Asiento asiento = null;
+
+            string sql = "SELECT A.* FROM " +
+                         "((TH_ASIENTO A INNER JOIN TH_ZONA Z ON A.IDZONA = Z.IDZONA) " +
+                         " INNER JOIN TH_TEATRO T ON T.IDTEATRO = Z.IDTEATRO) WHERE T.IDTEATRO = @IdTeatro";
+
+            OleDbParameter _idTeatro = UtilDA.SetParameters("@IdTeatro", OleDbType.Integer, idTeatro);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, _idTeatro))
+            {
+                while (dtr.Read())
+                {
+                    asiento = new Asiento()
+                    {
+                        Disponible = DataConvert.ToString(dtr["Disponible"]),
+                        IdAsiento = DataConvert.ToInt(dtr["IdAsiento"])
+                    };
+                    lAsiento.Add(asiento);
+                }
+            }
+            UtilDA.Close(cnx);
             return lAsiento;
         }
     }

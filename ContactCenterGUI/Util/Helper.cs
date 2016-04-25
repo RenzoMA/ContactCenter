@@ -32,7 +32,7 @@ namespace ContactCenterGUI.Util
                                       .Concat(controls)
                                       .Where(c => c.GetType() == type);
         }
-        public static void CruzarBotonData(List<Asiento> lAsiento, Form form)
+        public static void CruzarBotonData(List<Asiento> lAsiento,List<Asiento> lAsientoTotal, Form form)
         {
             foreach (Button btn in GetAll(form,typeof(Button)))
             {
@@ -40,21 +40,40 @@ namespace ContactCenterGUI.Util
                 bool isNumber = int.TryParse(btn.Name.Replace("A",""), out IdAsiento);
                 if (isNumber)
                 {
-                    Asiento asiento = GetAsiento(IdAsiento, lAsiento);
-                    btn.Tag = asiento;
-                    btn.Enabled = false;
-                    btn.BackColor = System.Drawing.Color.Gray;
+                    Asiento asiento = GetAsiento(IdAsiento, lAsientoTotal);
+                    Asiento ocupado = GetAsiento(IdAsiento, lAsiento);
+
+                    if (asiento != null)
+                    {
+                        if (ocupado == null)
+                        {
+                            if (asiento.Disponible != "S")
+                            {
+                                btn.BackColor = System.Drawing.Color.DarkGray;
+                                btn.Enabled = false;
+                                btn.Text = "X";
+                            }
+                        }
+                        else
+                        {
+                            btn.BackColor = System.Drawing.Color.DarkGray;
+                            btn.Enabled = false;
+                        }
+                        btn.Tag = asiento;
+                    }
                 }
             }
         }
-        public static async void MostrarDisponibilidad(Form form,int idObra, int idFuncion, DateTime fechaReserva)
+        public static async void MostrarDisponibilidad(Form form,int idObra, int idFuncion, DateTime fechaReserva, int idTeatro)
         {
             try
             {
                 Animacion.ShowLoader(form);
                 IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
                 List<Asiento> lAsiento = await servicio.ListarAsientoDisponibleAsync(idObra, idFuncion, fechaReserva);
-                Helper.CruzarBotonData(lAsiento, form);
+                List<Asiento> lAsientoTotal = await servicio.listarAsientoTeatroAsync(idTeatro);
+                Helper.CruzarBotonData(lAsiento, lAsientoTotal, form);
+               
             }
             catch (Exception ex)
             {

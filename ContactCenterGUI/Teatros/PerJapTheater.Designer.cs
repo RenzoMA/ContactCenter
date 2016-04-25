@@ -147,11 +147,11 @@
             this.button523 = new System.Windows.Forms.Button();
             this.button524 = new System.Windows.Forms.Button();
             this.button525 = new System.Windows.Forms.Button();
-            this.button526 = new System.Windows.Forms.Button();
-            this.button527 = new System.Windows.Forms.Button();
-            this.button528 = new System.Windows.Forms.Button();
-            this.button529 = new System.Windows.Forms.Button();
-            this.button530 = new System.Windows.Forms.Button();
+            this.A15 = new System.Windows.Forms.Button();
+            this.A16 = new System.Windows.Forms.Button();
+            this.A17 = new System.Windows.Forms.Button();
+            this.A18 = new System.Windows.Forms.Button();
+            this.A19 = new System.Windows.Forms.Button();
             this.button531 = new System.Windows.Forms.Button();
             this.button532 = new System.Windows.Forms.Button();
             this.button533 = new System.Windows.Forms.Button();
@@ -1376,11 +1376,11 @@
             this.metroTabPage1.Controls.Add(this.button523);
             this.metroTabPage1.Controls.Add(this.button524);
             this.metroTabPage1.Controls.Add(this.button525);
-            this.metroTabPage1.Controls.Add(this.button526);
-            this.metroTabPage1.Controls.Add(this.button527);
-            this.metroTabPage1.Controls.Add(this.button528);
-            this.metroTabPage1.Controls.Add(this.button529);
-            this.metroTabPage1.Controls.Add(this.button530);
+            this.metroTabPage1.Controls.Add(this.A15);
+            this.metroTabPage1.Controls.Add(this.A16);
+            this.metroTabPage1.Controls.Add(this.A17);
+            this.metroTabPage1.Controls.Add(this.A18);
+            this.metroTabPage1.Controls.Add(this.A19);
             this.metroTabPage1.Controls.Add(this.button531);
             this.metroTabPage1.Controls.Add(this.button532);
             this.metroTabPage1.Controls.Add(this.button533);
@@ -2769,55 +2769,55 @@
             this.button525.Text = "80";
             this.button525.UseVisualStyleBackColor = false;
             // 
-            // button526
+            // A15
             // 
-            this.button526.BackColor = System.Drawing.Color.Pink;
-            this.button526.Location = new System.Drawing.Point(218, 155);
-            this.button526.Name = "button526";
-            this.button526.Size = new System.Drawing.Size(27, 30);
-            this.button526.TabIndex = 1238;
-            this.button526.Text = "80";
-            this.button526.UseVisualStyleBackColor = false;
+            this.A15.BackColor = System.Drawing.Color.Pink;
+            this.A15.Location = new System.Drawing.Point(218, 155);
+            this.A15.Name = "A15";
+            this.A15.Size = new System.Drawing.Size(27, 30);
+            this.A15.TabIndex = 1238;
+            this.A15.Text = "80";
+            this.A15.UseVisualStyleBackColor = false;
             // 
-            // button527
+            // A16
             // 
-            this.button527.BackColor = System.Drawing.Color.Pink;
-            this.button527.Location = new System.Drawing.Point(190, 155);
-            this.button527.Name = "button527";
-            this.button527.Size = new System.Drawing.Size(27, 30);
-            this.button527.TabIndex = 1237;
-            this.button527.Text = "80";
-            this.button527.UseVisualStyleBackColor = false;
+            this.A16.BackColor = System.Drawing.Color.Pink;
+            this.A16.Location = new System.Drawing.Point(190, 155);
+            this.A16.Name = "A16";
+            this.A16.Size = new System.Drawing.Size(27, 30);
+            this.A16.TabIndex = 1237;
+            this.A16.Text = "80";
+            this.A16.UseVisualStyleBackColor = false;
             // 
-            // button528
+            // A17
             // 
-            this.button528.BackColor = System.Drawing.Color.Pink;
-            this.button528.Location = new System.Drawing.Point(162, 155);
-            this.button528.Name = "button528";
-            this.button528.Size = new System.Drawing.Size(27, 30);
-            this.button528.TabIndex = 1236;
-            this.button528.Text = "80";
-            this.button528.UseVisualStyleBackColor = false;
+            this.A17.BackColor = System.Drawing.Color.Pink;
+            this.A17.Location = new System.Drawing.Point(162, 155);
+            this.A17.Name = "A17";
+            this.A17.Size = new System.Drawing.Size(27, 30);
+            this.A17.TabIndex = 1236;
+            this.A17.Text = "80";
+            this.A17.UseVisualStyleBackColor = false;
             // 
-            // button529
+            // A18
             // 
-            this.button529.BackColor = System.Drawing.Color.Pink;
-            this.button529.Location = new System.Drawing.Point(134, 155);
-            this.button529.Name = "button529";
-            this.button529.Size = new System.Drawing.Size(27, 30);
-            this.button529.TabIndex = 1235;
-            this.button529.Text = "80";
-            this.button529.UseVisualStyleBackColor = false;
+            this.A18.BackColor = System.Drawing.Color.Pink;
+            this.A18.Location = new System.Drawing.Point(134, 155);
+            this.A18.Name = "A18";
+            this.A18.Size = new System.Drawing.Size(27, 30);
+            this.A18.TabIndex = 1235;
+            this.A18.Text = "80";
+            this.A18.UseVisualStyleBackColor = false;
             // 
-            // button530
+            // A19
             // 
-            this.button530.BackColor = System.Drawing.Color.Pink;
-            this.button530.Location = new System.Drawing.Point(106, 155);
-            this.button530.Name = "button530";
-            this.button530.Size = new System.Drawing.Size(27, 30);
-            this.button530.TabIndex = 1234;
-            this.button530.Text = "80";
-            this.button530.UseVisualStyleBackColor = false;
+            this.A19.BackColor = System.Drawing.Color.Pink;
+            this.A19.Location = new System.Drawing.Point(106, 155);
+            this.A19.Name = "A19";
+            this.A19.Size = new System.Drawing.Size(27, 30);
+            this.A19.TabIndex = 1234;
+            this.A19.Text = "80";
+            this.A19.UseVisualStyleBackColor = false;
             // 
             // button531
             // 
@@ -14037,11 +14037,11 @@
         private System.Windows.Forms.Button button523;
         private System.Windows.Forms.Button button524;
         private System.Windows.Forms.Button button525;
-        private System.Windows.Forms.Button button526;
-        private System.Windows.Forms.Button button527;
-        private System.Windows.Forms.Button button528;
-        private System.Windows.Forms.Button button529;
-        private System.Windows.Forms.Button button530;
+        private System.Windows.Forms.Button A15;
+        private System.Windows.Forms.Button A16;
+        private System.Windows.Forms.Button A17;
+        private System.Windows.Forms.Button A18;
+        private System.Windows.Forms.Button A19;
         private System.Windows.Forms.Button button531;
         private System.Windows.Forms.Button button532;
         private System.Windows.Forms.Button button533;

@@ -18,6 +18,7 @@ namespace ContactCenterServices
         List<Aplicacion> ListarAplicacionUsuario(Usuario usuario);
         Task<List<Aplicacion>> ListarAplicacionUsuarioAsync(Usuario usuario);
         Task<List<Asiento>> ListarAsientoDisponibleAsync(int idObra, int idFuncion, DateTime FechaObra);
+        Task<List<Asiento>> listarAsientoTeatroAsync(int idTeatro);
         List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime FechaObra);
     }
 }

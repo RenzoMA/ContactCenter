@@ -43,7 +43,7 @@ namespace ContactCenterGUI.Teatros
         }
         private void NewTheater2_Load(object sender, EventArgs e)
         {
-            Helper.MostrarDisponibilidad(this, idObra, idFuncion, fechaReserva);
+            Helper.MostrarDisponibilidad(this, idObra, idFuncion, fechaReserva,idTeatro);
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
