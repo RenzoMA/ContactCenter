@@ -29,27 +29,27 @@ namespace ContactCenterUnitTest.TH
         [TestMethod]
         public void Actualizar()
         {
-            zonaRepository.Update(zona);
+            Assert.IsTrue(zonaRepository.Update(zona));
         }
         [TestMethod]
         public void Consultar()
         {
-            zonaRepository.GetById(zona.IdZona);
+            Assert.IsNotNull(zonaRepository.GetById(zona.IdZona));
         }
         [TestMethod]
         public void Crear()
         {
-            zonaRepository.Insert(zona);
+            Assert.IsTrue(zonaRepository.Insert(zona));
         }
         [TestMethod]
         public void Eliminar()
         {
-            zonaRepository.Delete(zona.IdZona);
+            Assert.IsTrue(zonaRepository.Delete(zona.IdZona));
         }
         [TestMethod]
         public void Listar()
         {
-            zonaRepository.GetLista();
+            Assert.IsNotNull(zonaRepository.GetLista());
         }
     }
 }

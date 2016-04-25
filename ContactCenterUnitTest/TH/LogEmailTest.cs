@@ -33,27 +33,27 @@ namespace ContactCenterUnitTest.TH
         [TestMethod]
         public void Actualizar()
         {
-            logEmailRepository.Update(logEmail);
+            Assert.IsTrue(logEmailRepository.Update(logEmail));
         }
         [TestMethod]
         public void Consultar()
         {
-            logEmailRepository.GetById(logEmail.IdLog);
+            Assert.IsNotNull(logEmailRepository.GetById(logEmail.IdLog));
         }
         [TestMethod]
         public void Crear()
         {
-            logEmailRepository.Insert(logEmail);
+            Assert.IsTrue(logEmailRepository.Insert(logEmail));
         }
         [TestMethod]
         public void Eliminar()
         {
-            logEmailRepository.Delete(logEmail.IdLog);
+            Assert.IsTrue(logEmailRepository.Delete(logEmail.IdLog));
         }
         [TestMethod]
         public void Listar()
         {
-            logEmailRepository.GetLista();
+            Assert.IsNotNull(logEmailRepository.GetLista());
         }
     }
 }

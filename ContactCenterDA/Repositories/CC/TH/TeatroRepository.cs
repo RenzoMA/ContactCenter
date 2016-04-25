@@ -33,16 +33,19 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter idTeatro = UtilDA.SetParameters("@IdTeatro", OleDbType.Integer, id);
             using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, idTeatro))
             {
-                teatro = new Teatro()
+                while (dtr.Read())
                 {
-                    Estado = DataConvert.ToString(dtr["Estado"]),
-                    FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]),
-                    FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]),
-                    IdTeatro = DataConvert.ToInt(dtr["IdTeatro"]),
-                    Nombre = DataConvert.ToString(dtr["Nombre"]),
-                    UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]),
-                    UsuarioModificacion = DataConvert.ToString(dtr["UserMod"])
-                };
+                    teatro = new Teatro()
+                    {
+                        Estado = DataConvert.ToString(dtr["Estado"]),
+                        FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]),
+                        FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]),
+                        IdTeatro = DataConvert.ToInt(dtr["IdTeatro"]),
+                        Nombre = DataConvert.ToString(dtr["Nombre"]),
+                        UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]),
+                        UsuarioModificacion = DataConvert.ToString(dtr["UserMod"])
+                    };
+                }
             }
             UtilDA.Close(cnx);
             return teatro;
@@ -56,17 +59,20 @@ namespace ContactCenterDA.Repositories.CC.TH
 
             using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx))
             {
-                teatro = new Teatro()
+                while (dtr.Read())
                 {
-                    Estado = DataConvert.ToString(dtr["Estado"]),
-                    FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]),
-                    FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]),
-                    IdTeatro = DataConvert.ToInt(dtr["IdTeatro"]),
-                    Nombre = DataConvert.ToString(dtr["Nombre"]),
-                    UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]),
-                    UsuarioModificacion = DataConvert.ToString(dtr["UserMod"])
-                };
-                lTeatro.Add(teatro);
+                    teatro = new Teatro()
+                    {
+                        Estado = DataConvert.ToString(dtr["Estado"]),
+                        FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]),
+                        FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]),
+                        IdTeatro = DataConvert.ToInt(dtr["IdTeatro"]),
+                        Nombre = DataConvert.ToString(dtr["Nombre"]),
+                        UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]),
+                        UsuarioModificacion = DataConvert.ToString(dtr["UserMod"])
+                    };
+                    lTeatro.Add(teatro);
+                }
             }
             UtilDA.Close(cnx);
             return lTeatro;
