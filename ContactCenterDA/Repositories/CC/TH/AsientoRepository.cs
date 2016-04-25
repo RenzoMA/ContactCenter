@@ -132,5 +132,31 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter idAsiento = UtilDA.SetParameters("@idAsiento", OleDbType.Integer, datos.IdAsiento);
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, descripcion, fila, disponible, idzona, fechaMod, usuarioMod, idAsiento);
         }
+
+        public List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime fechaReserva)
+        {
+            List<Asiento> lAsiento = new List<Asiento>();
+            Asiento asiento = null;
+
+            string sql = "SELECT IdAsiento, Estado FROM TH_DETALLE_RESERVA DR INNER JOIN TH_RESERVA R ON R.IDRESERVA = DR.IDRESERVA WHERE R.IDOBRA = @IdObra AND R.IDFUNCION = @IdFuncion AND R.FECHARESERVA = @FechaReserva ";
+
+            OleDbParameter obra = UtilDA.SetParameters("@IdObra", OleDbType.Integer, idObra);
+            OleDbParameter funcion = UtilDA.SetParameters("@IdFuncion", OleDbType.Integer, idFuncion);
+            OleDbParameter reserva = UtilDA.SetParameters("@FechaReserva", OleDbType.Date, fechaReserva);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, obra, funcion, reserva))
+            {
+                while (dtr.Read())
+                {
+                    asiento = new Asiento()
+                    {
+                        Disponible = DataConvert.ToString(dtr["Estado"]),
+                        IdAsiento = DataConvert.ToInt(dtr["IdAsiento"])
+                    };
+                    lAsiento.Add(asiento);
+                }
+            }
+            return lAsiento;
+        }
     }
 }

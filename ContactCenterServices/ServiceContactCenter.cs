@@ -10,6 +10,7 @@ using ContactCenterBL.BusinessServices.CC.TH;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
+using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 
 namespace ContactCenterServices
 {
@@ -77,6 +78,11 @@ namespace ContactCenterServices
                 lAplicacion = _aplicacionService.ListarAplicacionUsuario(usuario);
             });
             return lAplicacion;
+        }
+
+        public List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime FechaObra)
+        {
+            return _asientoService.ListarAsientoDisponible(idObra, idFuncion, FechaObra);
         }
     }
 }

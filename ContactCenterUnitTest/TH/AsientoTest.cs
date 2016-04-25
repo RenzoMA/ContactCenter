@@ -51,5 +51,10 @@ namespace ContactCenterUnitTest.TH
         {
             Assert.IsNotNull(asientoRepository.GetLista());
         }
+        [TestMethod]
+        public void ListarDisponible()
+        {
+            asientoRepository.ListarAsientoDisponible(1, 1, DateTime.Now);
+        }
     }
 }

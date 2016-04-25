@@ -11,7 +11,8 @@ using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 using ContactCenterGUI.Util;
-
+using ContactCenterServices;
+using Microsoft.Practices.Unity;
 
 namespace ContactCenterGUI.Teatros
 {
@@ -37,7 +38,9 @@ namespace ContactCenterGUI.Teatros
         }
         private void NewTheater2_Load(object sender, EventArgs e)
         {
-            AsientoUtil.CruzarBotonData(null, this);
+            IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+            List<Asiento> lAsiento = servicio.ListarAsientoDisponible(1, 1, DateTime.Now);
+            AsientoUtil.CruzarBotonData(lAsiento, this);
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)

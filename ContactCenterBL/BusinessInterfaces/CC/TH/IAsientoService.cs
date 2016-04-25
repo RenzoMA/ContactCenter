@@ -10,5 +10,6 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
 {
     public interface IAsientoService
     {
+        List<Asiento> ListarAsientoDisponible(int idObra,int idFuncion,DateTime fecha);
     }
 }

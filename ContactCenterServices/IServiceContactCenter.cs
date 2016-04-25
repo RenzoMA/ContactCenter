@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
+using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 
 namespace ContactCenterServices
 {
@@ -16,5 +17,6 @@ namespace ContactCenterServices
         Task<Usuario> ValidarUsuarioAsync(string login, string password);
         List<Aplicacion> ListarAplicacionUsuario(Usuario usuario);
         Task<List<Aplicacion>> ListarAplicacionUsuarioAsync(Usuario usuario);
+        List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime FechaObra);
     }
 }

@@ -22,16 +22,26 @@ namespace ContactCenterGUI.Util
             }
             return null;
         }
+        public static IEnumerable<Control> GetAll(Control control, Type type)
+        {
+            var controls = control.Controls.Cast<Control>();
 
+            return controls.SelectMany(ctrl => GetAll(ctrl, type))
+                                      .Concat(controls)
+                                      .Where(c => c.GetType() == type);
+        }
         public static void CruzarBotonData(List<Asiento> lAsiento, Form form)
         {
-            foreach (Button btn in form.Controls.OfType<Button>())
+            foreach (Button btn in GetAll(form,typeof(Button)))
             {
                 int IdAsiento;
-                bool isNumber = int.TryParse(btn.Name, out IdAsiento);
+                bool isNumber = int.TryParse(btn.Name.Replace("A",""), out IdAsiento);
                 if (isNumber)
                 {
-                    btn.Tag = GetAsiento(IdAsiento, lAsiento);
+                    Asiento asiento = GetAsiento(IdAsiento, lAsiento);
+                    btn.Tag = asiento;
+                    btn.Enabled = false;
+                    btn.BackColor = System.Drawing.Color.Gray;
                 }
             }
         }
