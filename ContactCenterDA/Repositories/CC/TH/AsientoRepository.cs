@@ -160,25 +160,30 @@ namespace ContactCenterDA.Repositories.CC.TH
             return lAsiento;
         }
 
-        public List<Asiento> ListarTeatroAsiento(int idTeatro)
+        public List<AsientoPrecio> ListarTeatroAsiento(int idObra)
         {
-            List<Asiento> lAsiento = new List<Asiento>();
-            Asiento asiento = null;
+            List<AsientoPrecio> lAsiento = new List<AsientoPrecio>();
+            AsientoPrecio asiento = null;
 
-            string sql = "SELECT A.* FROM " +
-                         "((TH_ASIENTO A INNER JOIN TH_ZONA Z ON A.IDZONA = Z.IDZONA) " +
-                         " INNER JOIN TH_TEATRO T ON T.IDTEATRO = Z.IDTEATRO) WHERE T.IDTEATRO = @IdTeatro";
+            string sql = "SELECT * FROM TH_ASIENTO A "+
+                         "INNER JOIN TH_TARIFA T "+
+                         "ON A.IDZONA = T.IDZONA "+
+                         "WHERE "+
+                         "T.IDOBRA = @IdObra";
 
-            OleDbParameter _idTeatro = UtilDA.SetParameters("@IdTeatro", OleDbType.Integer, idTeatro);
+            OleDbParameter _idTeatro = UtilDA.SetParameters("@IdObra", OleDbType.Integer, idObra);
 
             using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, _idTeatro))
             {
                 while (dtr.Read())
                 {
-                    asiento = new Asiento()
+                    asiento = new AsientoPrecio()
                     {
                         Disponible = DataConvert.ToString(dtr["Disponible"]),
-                        IdAsiento = DataConvert.ToInt(dtr["IdAsiento"])
+                        IdAsiento = DataConvert.ToInt(dtr["IdAsiento"]),
+                        Descripcion = DataConvert.ToString(dtr["Descripcion"]),
+                        Fila = DataConvert.ToString(dtr["Fila"]),
+                        Precio = DataConvert.ToSingle(dtr["Precio"])
                     };
                     lAsiento.Add(asiento);
                 }

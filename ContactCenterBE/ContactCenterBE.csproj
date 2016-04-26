@@ -52,6 +52,7 @@
     <Compile Include="CC\Entidades\RolBE\Rol.cs" />
     <Compile Include="CC\Entidades\UsuarioBE\Usuario.cs" />
     <Compile Include="CC\TH\Entidades\AsientoBE\Asiento.cs" />
+    <Compile Include="CC\TH\Entidades\AsientoBE\AsientoPrecio.cs" />
     <Compile Include="CC\TH\Entidades\AsientoBE\IAsientoRepository.cs" />
     <Compile Include="CC\TH\Entidades\FuncionBE\IFuncionRepository.cs" />
     <Compile Include="CC\TH\Entidades\LogEmailBE\ILogEmailRepository.cs" />
