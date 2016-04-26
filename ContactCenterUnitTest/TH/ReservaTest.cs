@@ -20,7 +20,7 @@ namespace ContactCenterUnitTest.TH
             FechaCreacion = DateTime.Now,
             FechaModificacion = DateTime.Now,
             Funcion = FuncionTest.funcion,
-            Horario = new TimeSpan(),
+            Horario = "6pm",
             IdReserva = 1,
             NombrePromocion = "N/A",
             Obra = ObraTest.obra,

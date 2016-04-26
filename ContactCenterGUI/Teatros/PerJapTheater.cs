@@ -11,10 +11,11 @@ using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 using ContactCenterBE.CC.TH.Entidades.AsientoBE;
-using ContactCenterGUI.Util;
+using ContactCenterGUI.Helpers;
 using ContactCenterServices;
 using Microsoft.Practices.Unity;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
+using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterCommon;
 
 namespace ContactCenterGUI.Teatros
@@ -24,7 +25,10 @@ namespace ContactCenterGUI.Teatros
         public int idTeatro = 1;
         public int idFuncion = 1;
         public int idObra = 1;
-        public DateTime fechaReserva = DateTime.Now.Date;
+
+        private Reserva reserva;
+
+        public DateTime fechaReserva = DateTime.Today;
 
         public PerJapTheater()
         {
@@ -43,14 +47,13 @@ namespace ContactCenterGUI.Teatros
         }
         private void NewTheater2_Load(object sender, EventArgs e)
         {
-            Helper.MostrarDisponibilidad(this, idObra, idFuncion, fechaReserva,idTeatro);
+            reserva = (Reserva)this.Tag;
+            HelperTeatro.MostrarDisponibilidad(this, reserva.Obra.IdObra, reserva.Funcion.IdFuncion, reserva.FechaReserva,reserva.Obra.Teatro.IdTeatro);
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            NewTheater newtheater = new NewTheater();
-            newtheater.ShowDialog();
+            this.Close();
         }
     }
 }

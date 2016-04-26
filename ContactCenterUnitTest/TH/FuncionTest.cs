@@ -19,7 +19,7 @@ namespace ContactCenterUnitTest.TH
             Estado = "A",
             FechaCreacion = DateTime.Now,
             FechaModificacion = DateTime.Now,
-            Horario = new TimeSpan(),
+            Horario = "9:00PM",
             IdFuncion = 1,
             UsuarioCreacion = "test",
             UsuarioModificacion = "test",

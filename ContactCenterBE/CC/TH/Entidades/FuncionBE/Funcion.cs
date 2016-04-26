@@ -12,7 +12,7 @@ namespace ContactCenterBE.CC.TH.Entidades.FuncionBE
     {
         public int IdFuncion { get; set; }
         public int Dia { get; set; }
-        public TimeSpan Horario { get; set; }
+        public string Horario { get; set; }
         public string Estado { get; set; }
         public Obra Obra { get; set; }
 

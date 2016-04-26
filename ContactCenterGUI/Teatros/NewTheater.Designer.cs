@@ -32,6 +32,7 @@
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // materialRaisedButton1
@@ -51,15 +52,11 @@
             // 
             this.metroComboBox1.FormattingEnabled = true;
             this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Items.AddRange(new object[] {
-            "Seleccione Teatro",
-            "Peruano Japonés",
-            "Plaza Callao",
-            "Plaza Norte"});
             this.metroComboBox1.Location = new System.Drawing.Point(36, 102);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(170, 29);
             this.metroComboBox1.TabIndex = 4;
+            this.metroComboBox1.SelectionChangeCommitted += new System.EventHandler(this.metroComboBox1_SelectionChangeCommitted);
             // 
             // metroComboBox2
             // 
@@ -74,6 +71,7 @@
             this.metroComboBox2.Name = "metroComboBox2";
             this.metroComboBox2.Size = new System.Drawing.Size(170, 29);
             this.metroComboBox2.TabIndex = 5;
+            this.metroComboBox2.SelectionChangeCommitted += new System.EventHandler(this.metroComboBox2_SelectionChangeCommitted);
             // 
             // metroComboBox3
             // 
@@ -89,11 +87,21 @@
             this.metroComboBox3.Size = new System.Drawing.Size(170, 29);
             this.metroComboBox3.TabIndex = 6;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(36, 291);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(170, 20);
+            this.dateTimePicker1.TabIndex = 7;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
             // NewTheater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(251, 496);
+            this.ClientSize = new System.Drawing.Size(285, 496);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.metroComboBox3);
             this.Controls.Add(this.metroComboBox2);
             this.Controls.Add(this.metroComboBox1);
@@ -114,5 +122,6 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
         private MetroFramework.Controls.MetroComboBox metroComboBox3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

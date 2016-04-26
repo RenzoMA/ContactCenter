@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Data;
 using ContactCenterDA.Common;
+using ContactCenterCommon;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
-using ContactCenterCommon;
 
 
 namespace ContactCenterDA.Repositories.CC.TH

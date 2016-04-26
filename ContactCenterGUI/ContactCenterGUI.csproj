@@ -112,8 +112,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -144,6 +146,7 @@
     <Compile Include="CC\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HelperForm.cs" />
     <Compile Include="Mantenimientos\Aplicacion\ManAppBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,14 +203,14 @@
     <Compile Include="Teatros\PlazaNorteTheater.Designer.cs">
       <DependentUpon>PlazaNorteTheater.cs</DependentUpon>
     </Compile>
-    <Compile Include="Util\Animacion.cs" />
+    <Compile Include="Helpers\Animacion.cs" />
     <Compile Include="Teatros\TheaterApp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Teatros\TheaterApp.Designer.cs">
       <DependentUpon>TheaterApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Util\Helper.cs" />
+    <Compile Include="Helpers\HelperTeatro.cs" />
     <EmbeddedResource Include="CC\Loader.resx">
       <DependentUpon>Loader.cs</DependentUpon>
     </EmbeddedResource>

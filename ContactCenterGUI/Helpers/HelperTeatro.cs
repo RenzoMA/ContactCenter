@@ -9,9 +9,9 @@ using ContactCenterServices;
 using Microsoft.Practices.Unity;
 
 
-namespace ContactCenterGUI.Util
+namespace ContactCenterGUI.Helpers
 {
-    class Helper
+    class HelperTeatro
     {
         public static IEnumerable<Control> GetAll(Control control, Type type)
         {
@@ -77,7 +77,7 @@ namespace ContactCenterGUI.Util
                 IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
                 List<Asiento> lOcupados = await servicio.ListarAsientoDisponibleAsync(idObra, idFuncion, fechaReserva);
                 List<AsientoPrecio> lAsientoTotal = await servicio.listarAsientoTeatroAsync(idTeatro);
-                Helper.CruzarBotonData(lOcupados, lAsientoTotal, form);
+                HelperTeatro.CruzarBotonData(lOcupados, lAsientoTotal, form);
                
             }
             catch (Exception ex)

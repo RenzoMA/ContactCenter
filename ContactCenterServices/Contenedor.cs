@@ -10,11 +10,14 @@ using ContactCenterBL.BusinessServices.CC;
 using Microsoft.Practices.Unity;
 using System.Diagnostics.CodeAnalysis;
 using ContactCenterBE.CC.TH.Entidades.AsientoBE;
+using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterDA.Repositories.CC.TH;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
 using ContactCenterDA.Repositories.CC;
 using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
+using ContactCenterBE.CC.TH.Entidades.TeatroBE;
+using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 
 
 
@@ -34,6 +37,9 @@ namespace ContactCenterServices
             current.RegisterType<IAplicacionService, AplicacionService>();
             current.RegisterType<IUsuarioService, UsuarioService>();
             current.RegisterType<ILogEmailService, LogEmailService>();
+            current.RegisterType<ITeatroService, TeatroService>();
+            current.RegisterType<IObraService, ObraService>();
+            current.RegisterType<IFuncionService, FuncionService>();
             
 
             // Entidades - DA
@@ -41,6 +47,9 @@ namespace ContactCenterServices
             current.RegisterType<IAplicacionRepository, AplicacionRepository>();
             current.RegisterType<IUsuarioRepository, UsuarioRepository>();
             current.RegisterType<ILogEmailRepository, LogEmailRepository>();
+            current.RegisterType<ITeatroRepository, TeatroRepository>();
+            current.RegisterType<IObraRepository, ObraRepository>();
+            current.RegisterType<IFuncionRepository, FuncionRepository>();
         }
     }
 }
