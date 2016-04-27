@@ -171,11 +171,11 @@
     <Compile Include="Mantenimientos\ManForm.Designer.cs">
       <DependentUpon>ManForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\CallaoTheater.cs">
+    <Compile Include="Teatros\LaPlazaTheater.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\CallaoTheater.Designer.cs">
-      <DependentUpon>CallaoTheater.cs</DependentUpon>
+    <Compile Include="Teatros\LaPlazaTheater.Designer.cs">
+      <DependentUpon>LaPlazaTheater.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\NewTheater.cs">
       <SubType>Form</SubType>
@@ -232,8 +232,8 @@
     <EmbeddedResource Include="Mantenimientos\ManForm.resx">
       <DependentUpon>ManForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\CallaoTheater.resx">
-      <DependentUpon>CallaoTheater.cs</DependentUpon>
+    <EmbeddedResource Include="Teatros\LaPlazaTheater.resx">
+      <DependentUpon>LaPlazaTheater.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\NewTheater.resx">
       <DependentUpon>NewTheater.cs</DependentUpon>

@@ -15,11 +15,11 @@ using ContactCenterGUI.Helpers;
 
 namespace ContactCenterGUI.Teatros
 {
-    public partial class CallaoTheater : MaterialForm
+    public partial class LaPlazaTheater : MaterialForm
     {
         private Reserva reserva;
 
-        public CallaoTheater()
+        public LaPlazaTheater()
         {
             InitializeComponent();
         }
