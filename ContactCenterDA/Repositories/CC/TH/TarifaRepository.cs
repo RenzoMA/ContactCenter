@@ -27,6 +27,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public IList<Tarifa> GetLista()
         {
+            // gg gg gg
             throw new NotImplementedException();
         }
 
