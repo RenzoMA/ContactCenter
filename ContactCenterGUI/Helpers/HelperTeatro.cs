@@ -28,8 +28,9 @@ namespace ContactCenterGUI.Helpers
             switch (estado)
             {
                 case "N":
-                    btn.BackColor = System.Drawing.Color.Black;
+                    btn.BackColor = System.Drawing.Color.LightGray;
                     btn.Enabled = false;
+                    btn.Text = "X";
                     break;
                 case "S":
                     btn.Text = asiento.Descripcion;
@@ -39,9 +40,11 @@ namespace ContactCenterGUI.Helpers
         }
         private static void PintarAsientoOcupado(Button btn, Asiento asiento)
         {
-            btn.BackColor = System.Drawing.Color.LightGray;
+            btn.BackColor = System.Drawing.Color.Red;
             btn.Enabled = false;
-            btn.Text = "X";
+            
+
+
         }
         public static void CruzarBotonData(List<Asiento> lOcupados, List<AsientoPrecio> lAsientoTotal, Form form)
         {
