@@ -39,7 +39,7 @@
             this.Name = "Main";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
+            this.Text = "Aplicaciones";
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
 

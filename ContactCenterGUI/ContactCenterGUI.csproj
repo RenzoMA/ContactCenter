@@ -301,6 +301,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\splash.gif" />
     <None Include="Resources\hospital31.png" />
     <None Include="Resources\loading.gif" />
   </ItemGroup>
