@@ -57,7 +57,7 @@
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
+            this.A4 = new System.Windows.Forms.Button();
             this.button45 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
             this.button47 = new System.Windows.Forms.Button();
@@ -592,15 +592,15 @@
             this.button27.Text = "3";
             this.button27.UseVisualStyleBackColor = false;
             // 
-            // button28
+            // A4
             // 
-            this.button28.BackColor = System.Drawing.Color.LightBlue;
-            this.button28.Location = new System.Drawing.Point(758, 174);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(27, 30);
-            this.button28.TabIndex = 1572;
-            this.button28.Text = "4";
-            this.button28.UseVisualStyleBackColor = false;
+            this.A4.BackColor = System.Drawing.Color.LightBlue;
+            this.A4.Location = new System.Drawing.Point(758, 174);
+            this.A4.Name = "A4";
+            this.A4.Size = new System.Drawing.Size(27, 30);
+            this.A4.TabIndex = 1572;
+            this.A4.Text = "4";
+            this.A4.UseVisualStyleBackColor = false;
             // 
             // button45
             // 
@@ -3043,7 +3043,7 @@
             this.Controls.Add(this.button25);
             this.Controls.Add(this.button26);
             this.Controls.Add(this.button27);
-            this.Controls.Add(this.button28);
+            this.Controls.Add(this.A4);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.button20);
             this.Controls.Add(this.button21);
@@ -3069,6 +3069,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CallaoTheater";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.CallaoTheater_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -3115,7 +3116,7 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.Button A4;
         private System.Windows.Forms.Button button45;
         private System.Windows.Forms.Button button46;
         private System.Windows.Forms.Button button47;

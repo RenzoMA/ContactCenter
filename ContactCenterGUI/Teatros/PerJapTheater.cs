@@ -28,8 +28,6 @@ namespace ContactCenterGUI.Teatros
 
         private Reserva reserva;
 
-        public DateTime fechaReserva = DateTime.Today;
-
         public PerJapTheater()
         {
             InitializeComponent();

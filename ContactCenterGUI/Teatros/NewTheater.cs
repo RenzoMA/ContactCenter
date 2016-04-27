@@ -26,18 +26,15 @@ namespace ContactCenterGUI.Teatros
     {
         private List<Teatro> listaTeatro = null;
         private Teatro teatro = null;
-        private int idTeatro = 0;
 
         private List<Obra> listaObra = null;
         private Obra obra = null;
-        private int idObra = 0;
 
         private int diaFuncion;
         private DateTime FechaFuncion;
 
         private List<Funcion> listaFuncion = null;
         private Funcion funcion = null;
-        private int idFuncion = 0;
 
         private Reserva reserva = new Reserva();
 
@@ -54,10 +51,7 @@ namespace ContactCenterGUI.Teatros
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-
-            idFuncion = Convert.ToInt16(metroComboBox3.SelectedValue.ToString());
-            funcion = listaFuncion.Where(tx => tx.IdFuncion == idFuncion).FirstOrDefault();
-
+            funcion = metroComboBox3.SelectedValue as Funcion;
             if (funcion.IdFuncion != 0)
             {
                 reserva.Horario = funcion.Horario;
@@ -101,35 +95,30 @@ namespace ContactCenterGUI.Teatros
                 listaTeatro = servicio.ListarTeatros();
                 metroComboBox1.DataSource = listaTeatro;
                 metroComboBox1.DisplayMember = "Nombre";
-                metroComboBox1.ValueMember = "IdTeatro";
             }
             CargarObras();
         }
         private void CargarFuncion()
         {
-            idObra = Convert.ToInt32(metroComboBox2.SelectedValue.ToString());
-            obra = listaObra.Where(tx => tx.IdObra == idObra).FirstOrDefault();
+            obra = metroComboBox2.SelectedItem as Obra;
             diaFuncion = Util.DayOfWeekHelper(dateTimePicker1.Value.Date.DayOfWeek);
             FechaFuncion = dateTimePicker1.Value.Date;
             using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
             {
-                listaFuncion = servicio.ListarFuncionDiaObra(diaFuncion, idObra);
+                listaFuncion = servicio.ListarFuncionDiaObra(diaFuncion, obra.IdObra);
                 metroComboBox3.DataSource = listaFuncion;
                 metroComboBox3.DisplayMember = "Horario";
-                metroComboBox3.ValueMember = "IdFuncion";
             }
             
         }
         private void CargarObras()
         {
-            idTeatro = Convert.ToInt32(metroComboBox1.SelectedValue.ToString());
-            teatro = listaTeatro.Where(tx => tx.IdTeatro == idTeatro).FirstOrDefault();
+            teatro = metroComboBox1.SelectedItem as Teatro;
             using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
             {
-                listaObra = servicio.ListarObraTeatro(idTeatro);
+                listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
                 metroComboBox2.DataSource = listaObra;
                 metroComboBox2.DisplayMember = "Nombre";
-                metroComboBox2.ValueMember = "IdObra";
             }
             CargarFuncion();
         }

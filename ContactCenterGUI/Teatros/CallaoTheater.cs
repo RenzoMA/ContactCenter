@@ -8,13 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
+using ContactCenterBE.CC.Entidades.UsuarioBE;
+using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using MaterialSkin.Controls;
-
+using ContactCenterGUI.Helpers;
 
 namespace ContactCenterGUI.Teatros
 {
     public partial class CallaoTheater : MaterialForm
     {
+        private Reserva reserva;
+
         public CallaoTheater()
         {
             InitializeComponent();
@@ -47,6 +51,12 @@ namespace ContactCenterGUI.Teatros
             this.Hide();
             Teatros.PerInfoTheater info = new Teatros.PerInfoTheater();
             info.ShowDialog();
+        }
+
+        private void CallaoTheater_Load(object sender, EventArgs e)
+        {
+            reserva = (Reserva)this.Tag;
+            HelperTeatro.MostrarDisponibilidad(this, reserva.Obra.IdObra, reserva.Funcion.IdFuncion, reserva.FechaReserva, reserva.Obra.Teatro.IdTeatro);
         }
     }
 }
