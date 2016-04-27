@@ -34,7 +34,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 261);
+            this.ClientSize = new System.Drawing.Size(849, 364);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Loader";
             this.Text = "Loader";
             this.Load += new System.EventHandler(this.Loader_Load);
