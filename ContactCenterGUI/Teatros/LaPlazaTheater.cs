@@ -41,15 +41,12 @@ namespace ContactCenterGUI.Teatros
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            NewTheater newtheater = new NewTheater();
-            newtheater.ShowDialog();
+            this.Close();
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Teatros.PerInfoTheater info = new Teatros.PerInfoTheater();
+            PerInfoTheater info = new PerInfoTheater(this);
             info.ShowDialog();
         }
 
