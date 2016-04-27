@@ -12,6 +12,31 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\home-pc\New folder\Origen\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\home-pc\New folder\Falso2\</UpdateUrl>
+    <TargetCulture>es-PE</TargetCulture>
+    <ProductName>ContactCenter</ProductName>
+    <PublisherName>Krieger Lab</PublisherName>
+    <SuiteName>Krieger Lab</SuiteName>
+    <MinimumRequiredVersion>1.0.0.17</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>index.html</WebPage>
+    <ApplicationRevision>18</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +57,31 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>F77FC255A7C71E869B4B79C6E3179422DC32633F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ContactCenterGUI_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MaterialSkin">
@@ -62,7 +112,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -92,27 +146,71 @@
     <Compile Include="CC\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HelperForm.cs" />
+    <Compile Include="Mantenimientos\Aplicacion\ManAppBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Aplicacion\ManAppBuscar.Designer.cs">
+      <DependentUpon>ManAppBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Aplicacion\ManAppCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Aplicacion\ManAppCreate.Designer.cs">
+      <DependentUpon>ManAppCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Aplicacion\ManAppMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Aplicacion\ManAppMenu.Designer.cs">
+      <DependentUpon>ManAppMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\ManForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\ManForm.Designer.cs">
+      <DependentUpon>ManForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teatros\LaPlazaTheater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\LaPlazaTheater.Designer.cs">
+      <DependentUpon>LaPlazaTheater.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\NewTheater.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Teatros\NewTheater.Designer.cs">
       <DependentUpon>NewTheater.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\NewTheater2.cs">
+    <Compile Include="Teatros\PerInfoTheater.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\NewTheater2.Designer.cs">
-      <DependentUpon>NewTheater2.cs</DependentUpon>
+    <Compile Include="Teatros\PerInfoTheater.Designer.cs">
+      <DependentUpon>PerInfoTheater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teatros\PerJapTheater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\PerJapTheater.Designer.cs">
+      <DependentUpon>PerJapTheater.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Util\Animacion.cs" />
+    <Compile Include="Teatros\PlazaNorteTheater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\PlazaNorteTheater.Designer.cs">
+      <DependentUpon>PlazaNorteTheater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Animacion.cs" />
     <Compile Include="Teatros\TheaterApp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Teatros\TheaterApp.Designer.cs">
       <DependentUpon>TheaterApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HelperTeatro.cs" />
     <EmbeddedResource Include="CC\Loader.resx">
       <DependentUpon>Loader.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,11 +220,29 @@
     <EmbeddedResource Include="CC\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Aplicacion\ManAppBuscar.resx">
+      <DependentUpon>ManAppBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Aplicacion\ManAppCreate.resx">
+      <DependentUpon>ManAppCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Aplicacion\ManAppMenu.resx">
+      <DependentUpon>ManAppMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\ManForm.resx">
+      <DependentUpon>ManForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\LaPlazaTheater.resx">
+      <DependentUpon>LaPlazaTheater.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\NewTheater.resx">
       <DependentUpon>NewTheater.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\NewTheater2.resx">
-      <DependentUpon>NewTheater2.cs</DependentUpon>
+    <EmbeddedResource Include="Teatros\PerInfoTheater.resx">
+      <DependentUpon>PerInfoTheater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\PerJapTheater.resx">
+      <DependentUpon>PerJapTheater.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -138,10 +254,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Teatros\PlazaNorteTheater.resx">
+      <DependentUpon>PlazaNorteTheater.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\TheaterApp.resx">
       <DependentUpon>TheaterApp.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -180,7 +300,32 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\hospital31.png" />
     <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="MetroFramework.Design">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

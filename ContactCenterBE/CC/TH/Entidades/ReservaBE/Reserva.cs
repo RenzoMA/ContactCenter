@@ -16,7 +16,8 @@ namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
     {
         public int IdReserva { get; set; }
         public string NombrePromocion { get; set; }
-        public TimeSpan Horario { get; set; }
+        public DateTime FechaReserva { get; set; }
+        public string Horario { get; set; }
         public EstadoReserva EstadoReserva { get; set; }
         public Obra Obra { get; set; }
         public Funcion Funcion { get; set; }

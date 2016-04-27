@@ -109,7 +109,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                             "VALUES(@descripciom, @fila, @disponible, @idZona, @fechaCrea, @usuarioCrea)";
 
             OleDbParameter descripcion = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Descripcion);
-            OleDbParameter fila = UtilDA.SetParameters("@fila", OleDbType.VarBinary, datos.Fila);
+            OleDbParameter fila = UtilDA.SetParameters("@fila", OleDbType.VarChar, datos.Fila);
             OleDbParameter disponible = UtilDA.SetParameters("@disponible", OleDbType.VarChar, datos.Disponible);
             OleDbParameter idzona = UtilDA.SetParameters("@IdZona", OleDbType.Integer, datos.Zona.IdZona);
             OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
@@ -120,18 +120,76 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Update(Asiento datos)
         {
-            String sql = "UPDATE TH_Asiento SET Descripcion = @descripcion, Fila = @fila, Disponible = @disponible, IdZona = @IdZona " +
+            String sql = "UPDATE TH_Asiento SET Descripcion = @descripcion, Fila = @fila, Disponible = @disponible, IdZona = @IdZona, " +
                             "FechaMod = @fechaMod, UserMod = @usuarioMod WHERE IdAsiento = @idAsiento";
 
-            OleDbParameter descripcion = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Descripcion);
-            OleDbParameter fila = UtilDA.SetParameters("@fila", OleDbType.VarBinary, datos.Fila);
-            OleDbParameter disponible = UtilDA.SetParameters("@disponible", OleDbType.VarBinary, datos.Disponible);
+            OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
+            OleDbParameter fila = UtilDA.SetParameters("@fila", OleDbType.VarChar, datos.Fila);
+            OleDbParameter disponible = UtilDA.SetParameters("@disponible", OleDbType.VarChar, datos.Disponible);
             OleDbParameter idzona = UtilDA.SetParameters("@IdZona", OleDbType.Integer, datos.Zona.IdZona);
             OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idAsiento = UtilDA.SetParameters("@idAsiento", OleDbType.Integer, datos.IdAsiento);
-
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, descripcion, fila, disponible, idzona, fechaMod, usuarioMod, idAsiento);
+        }
+
+        public List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime fechaReserva)
+        {
+            List<Asiento> lAsiento = new List<Asiento>();
+            Asiento asiento = null;
+
+            string sql = "SELECT IdAsiento, Estado FROM TH_DETALLE_RESERVA DR INNER JOIN TH_RESERVA R ON R.IDRESERVA = DR.IDRESERVA WHERE R.IDOBRA = @IdObra AND R.IDFUNCION = @IdFuncion AND R.FECHARESERVA = @fechaReserva";
+
+            OleDbParameter obra = UtilDA.SetParameters("@IdObra", OleDbType.Integer, idObra);
+            OleDbParameter funcion = UtilDA.SetParameters("@IdFuncion", OleDbType.Integer, idFuncion);
+            OleDbParameter reserva = UtilDA.SetParameters("@fechaReserva", OleDbType.Date,fechaReserva);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, obra, funcion, reserva))
+            {
+                while (dtr.Read())
+                {
+                    asiento = new Asiento()
+                    {
+                        Disponible = DataConvert.ToString(dtr["Estado"]),
+                        IdAsiento = DataConvert.ToInt(dtr["IdAsiento"])
+                    };
+                    lAsiento.Add(asiento);
+                }
+            }
+            UtilDA.Close(cnx);
+            return lAsiento;
+        }
+
+        public List<AsientoPrecio> ListarTeatroAsiento(int idObra)
+        {
+            List<AsientoPrecio> lAsiento = new List<AsientoPrecio>();
+            AsientoPrecio asiento = null;
+
+            string sql = "SELECT * FROM TH_ASIENTO A "+
+                         "INNER JOIN TH_TARIFA T "+
+                         "ON A.IDZONA = T.IDZONA "+
+                         "WHERE "+
+                         "T.IDOBRA = @IdObra";
+
+            OleDbParameter _idTeatro = UtilDA.SetParameters("@IdObra", OleDbType.Integer, idObra);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, _idTeatro))
+            {
+                while (dtr.Read())
+                {
+                    asiento = new AsientoPrecio()
+                    {
+                        Disponible = DataConvert.ToString(dtr["Disponible"]),
+                        IdAsiento = DataConvert.ToInt(dtr["IdAsiento"]),
+                        Descripcion = DataConvert.ToString(dtr["Descripcion"]),
+                        Fila = DataConvert.ToString(dtr["Fila"]),
+                        Precio = DataConvert.ToSingle(dtr["Precio"])
+                    };
+                    lAsiento.Add(asiento);
+                }
+            }
+            UtilDA.Close(cnx);
+            return lAsiento;
         }
     }
 }

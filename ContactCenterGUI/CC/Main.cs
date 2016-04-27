@@ -12,7 +12,7 @@ using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 using ContactCenterServices;
 using Microsoft.Practices.Unity;
-using ContactCenterGUI.Util;
+using ContactCenterGUI.Helpers;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
 using ContactCenterCommon;
 
@@ -100,24 +100,7 @@ namespace ContactCenterGUI.CC
             Button btnElemento = (Button)sender;
             Aplicacion aplicacion = (Aplicacion)btnElemento.Tag;
             setApplication(aplicacion);
-            changeForm(aplicacion.FormInicio,aplicacion.Nombre, true);
-        }
-
-        void changeForm(string formName,string aplicacion, bool hide)
-        {
-            
-            Type CAType = Type.GetType("ContactCenterGUI." + aplicacion + "."+ formName);
-            if (CAType != null)
-            {
-                if (hide) this.Hide();
-                Form nextForm2 = (Form)Activator.CreateInstance(CAType);
-                nextForm2.ShowDialog();
-                if (hide) this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Aplicación no disponible");
-            }
+            HelperForm.changeForm(aplicacion.FormInicio,aplicacion.Nombre, true,this);
         }
 
         void setApplication(Aplicacion aplicacion)

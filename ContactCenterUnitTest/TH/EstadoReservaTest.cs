@@ -26,27 +26,27 @@ namespace ContactCenterUnitTest.TH
         [TestMethod]
         public void Crear()
         {
-            estadoReservaRepository.Insert(estadoReserva);
+            Assert.IsTrue(estadoReservaRepository.Insert(estadoReserva));
         }
         [TestMethod]
         public void Actualizar()
         {
-            estadoReservaRepository.Update(estadoReserva);
+            Assert.IsTrue(estadoReservaRepository.Update(estadoReserva));
         }
         [TestMethod]
         public void Consultar()
         {
-            estadoReservaRepository.GetById(estadoReserva.IdEstadoReserva);
+            Assert.IsNotNull(estadoReservaRepository.GetById(estadoReserva.IdEstadoReserva));
         }
         [TestMethod]
         public void Listar()
         {
-            estadoReservaRepository.GetLista();
+            Assert.IsNotNull(estadoReservaRepository.GetLista());
         }
         [TestMethod]
         public void Eliminar()
         {
-            estadoReservaRepository.Delete(estadoReserva.IdEstadoReserva);
+            Assert.IsTrue(estadoReservaRepository.Delete(estadoReserva.IdEstadoReserva));
         }
     }
 }

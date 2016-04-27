@@ -20,7 +20,7 @@ namespace ContactCenterUnitTest.TH
             FechaCreacion = DateTime.Now,
             FechaModificacion = DateTime.Now,
             Funcion = FuncionTest.funcion,
-            Horario = new TimeSpan(),
+            Horario = "6pm",
             IdReserva = 1,
             NombrePromocion = "N/A",
             Obra = ObraTest.obra,
@@ -32,27 +32,27 @@ namespace ContactCenterUnitTest.TH
         [TestMethod]
         public void Crear()
         {
-            reservaRepository.Insert(reserva);
+            Assert.IsTrue(reservaRepository.Insert(reserva));
         }
         [TestMethod]
         public void Actualizar()
         {
-            reservaRepository.Update(reserva);
+            Assert.IsTrue(reservaRepository.Update(reserva));
         }
         [TestMethod]
         public void Consultar()
         {
-            reservaRepository.GetById(reserva.IdReserva);
+            Assert.IsNotNull(reservaRepository.GetById(reserva.IdReserva));
         }
         [TestMethod]
         public void Listar()
         {
-            reservaRepository.GetLista();
+            Assert.IsNotNull(reservaRepository.GetLista());
         }
         [TestMethod]
         public void Eliminar()
         {
-            reservaRepository.Delete(reserva.IdReserva);
+            Assert.IsTrue(reservaRepository.Delete(reserva.IdReserva));
         }
     }
 }

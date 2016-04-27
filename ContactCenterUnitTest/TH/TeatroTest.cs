@@ -26,27 +26,27 @@ namespace ContactCenterUnitTest.TH
         [TestMethod]
         public void Actualizar()
         {
-            teatroRepository.Update(teatro);
+            Assert.IsTrue(teatroRepository.Update(teatro));
         }
         [TestMethod]
         public void Consultar()
         {
-            teatroRepository.GetById(teatro.IdTeatro);
+            Assert.IsNotNull(teatroRepository.GetById(teatro.IdTeatro));
         }
         [TestMethod]
         public void Crear()
         {
-            teatroRepository.Insert(teatro);
+            Assert.IsTrue(teatroRepository.Insert(teatro));
         }
         [TestMethod]
         public void Eliminar()
         {
-            teatroRepository.Delete(teatro.IdTeatro);
+            Assert.IsTrue(teatroRepository.Delete(teatro.IdTeatro));
         }
         [TestMethod]
         public void Listar()
         {
-            teatroRepository.GetLista();
+            Assert.IsNotNull(teatroRepository.GetLista());
         }
     }
 }

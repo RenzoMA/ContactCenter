@@ -9,5 +9,7 @@ namespace ContactCenterBE.CC.TH.Entidades.AsientoBE
 {
     public interface IAsientoRepository : IBaseRepository<Asiento>
     {
+        List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime fecha);
+        List<AsientoPrecio> ListarTeatroAsiento(int idObra);
     }
 }

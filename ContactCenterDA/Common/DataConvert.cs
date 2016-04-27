@@ -52,6 +52,10 @@ namespace ContactCenterDA.Common
         {
             return ((obj == null) || (obj == DBNull.Value)) ? 0 : Convert.ToDouble(obj);
         }
+        public static Single ToSingle(object obj)
+        {
+            return ((obj == null) || (obj == DBNull.Value)) ? 0 : Convert.ToSingle(obj);
+        }
 
         public static string ToString(object obj)
         {

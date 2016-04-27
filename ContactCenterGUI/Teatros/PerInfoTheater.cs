@@ -9,26 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
-using ContactCenterBE.CC.TH.Entidades.AsientoBE;
-
 
 namespace ContactCenterGUI.Teatros
 {
-    public partial class NewTheater2 : MaterialForm
+    public partial class PerInfoTheater : MaterialForm
     {
-        public NewTheater2()
+        public PerInfoTheater()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void PerInfoTheater_Load(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
+            metroComboBox1.SelectedIndex = 0;
+            metroComboBox2.SelectedIndex = 0;
+            
         }
     }
 }

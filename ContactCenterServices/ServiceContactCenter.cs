@@ -10,6 +10,10 @@ using ContactCenterBL.BusinessServices.CC.TH;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
+using ContactCenterBE.CC.TH.Entidades.AsientoBE;
+using ContactCenterBE.CC.TH.Entidades.TeatroBE;
+using ContactCenterBE.CC.TH.Entidades.ObraBE;
+using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 
 namespace ContactCenterServices
 {
@@ -19,16 +23,25 @@ namespace ContactCenterServices
         private IAsientoService _asientoService;
         private IAplicacionService _aplicacionService;
         private IUsuarioService _usuarioService;
+        private ITeatroService _teatroService;
+        private IObraService _obraService;
+        private IFuncionService _funcionService;
 
 
         public ServiceContactCenter(
             IAsientoService asientoService,
             IAplicacionService aplicacionService,
-            IUsuarioService usuarioService)
+            IUsuarioService usuarioService,
+            ITeatroService teatroService,
+            IObraService obraService,
+            IFuncionService funcionService)
         {
             _asientoService = asientoService;
             _aplicacionService = aplicacionService;
             _usuarioService = usuarioService;
+            _teatroService = teatroService;
+            _obraService = obraService;
+            _funcionService = funcionService;
         }
 
         public void Dispose()
@@ -77,6 +90,46 @@ namespace ContactCenterServices
                 lAplicacion = _aplicacionService.ListarAplicacionUsuario(usuario);
             });
             return lAplicacion;
+        }
+
+        public List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime FechaObra)
+        {
+            return _asientoService.ListarAsientoDisponible(idObra, idFuncion, FechaObra);
+        }
+
+        public async Task<List<Asiento>> ListarAsientoDisponibleAsync(int idObra, int idFuncion, DateTime FechaObra)
+        {
+            List<Asiento> lAsiento = null;
+            await Task.Run(() =>
+            {
+                lAsiento = _asientoService.ListarAsientoDisponible(idObra, idFuncion, FechaObra);
+            });
+            return lAsiento;
+        }
+
+        public async Task<List<AsientoPrecio>> listarAsientoTeatroAsync(int idObra)
+        {
+            List<AsientoPrecio> lAsiento = null;
+            await Task.Run(() =>
+            {
+                lAsiento = _asientoService.ListarAsientoTeatro(idObra);
+            });
+            return lAsiento;
+        }
+
+        public List<Teatro> ListarTeatros()
+        {
+            return _teatroService.Listar();
+        }
+
+        public List<Obra> ListarObraTeatro(int idTeatro)
+        {
+            return _obraService.ListarObraTeatro(idTeatro);
+        }
+
+        public List<Funcion> ListarFuncionDiaObra(int dia, int idObra)
+        {
+            return _funcionService.ListarFuncionDiaObra(dia, idObra);
         }
     }
 }

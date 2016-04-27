@@ -21,10 +21,16 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         {
             asientoRepository = _asientoRepository;
         }
-        #endregion
 
-        #region metodos
-        
+        public List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime fecha)
+        {
+            return asientoRepository.ListarAsientoDisponible(idObra, idFuncion, fecha.Date);
+        }
+
+        public List<AsientoPrecio> ListarAsientoTeatro(int idObra)
+        {
+            return asientoRepository.ListarTeatroAsiento(idObra);
+        }
         #endregion
     }
 }

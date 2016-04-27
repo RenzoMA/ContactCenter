@@ -12,9 +12,9 @@ using MaterialSkin.Controls;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
 using ContactCenterServices;
 using Microsoft.Practices.Unity;
-using ContactCenterGUI.Util;
+using ContactCenterGUI.Helpers;
 
-namespace ContactCenterGUI.Util
+namespace ContactCenterGUI.Helpers
 {
     class Animacion
     {

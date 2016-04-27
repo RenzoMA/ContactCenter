@@ -30,27 +30,27 @@ namespace ContactCenterUnitTest.CC
         [TestMethod]
         public void Actualizar()
         {
-            clienteRepository.Update(cliente);
+            Assert.IsTrue(clienteRepository.Update(cliente));
         }
         [TestMethod]
         public void Consultar()
         {
-            clienteRepository.GetById(cliente.IdCliente);
+            Assert.IsNotNull(clienteRepository.GetById(cliente.IdCliente));
         }
         [TestMethod]
         public void Crear()
         {
-            clienteRepository.Insert(cliente);
+            Assert.IsTrue(clienteRepository.Insert(cliente));
         }
         [TestMethod]
         public void Eliminar()
         {
-            clienteRepository.Delete(cliente.IdCliente);
+            Assert.IsTrue(clienteRepository.Delete(cliente.IdCliente));
         }
         [TestMethod]
         public void Listar()
         {
-            clienteRepository.GetLista();
+            Assert.IsNotNull(clienteRepository.GetLista());
         }
     }
 }
