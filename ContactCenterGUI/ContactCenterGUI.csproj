@@ -146,6 +146,7 @@
     <Compile Include="CC\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HelperConexion.cs" />
     <Compile Include="Helpers\HelperForm.cs" />
     <Compile Include="Mantenimientos\Aplicacion\ManAppBuscar.cs">
       <SubType>Form</SubType>

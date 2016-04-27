@@ -14,8 +14,15 @@ namespace ContactCenterGUI.Teatros
 {
     public partial class PerInfoTheater : MaterialForm
     {
+        Form frmTeatro;
         public PerInfoTheater()
         {
+            InitializeComponent();
+        }
+        public PerInfoTheater(Form form)
+        {
+            frmTeatro = form;
+            frmTeatro.Visible = false;
             InitializeComponent();
         }
 
@@ -24,6 +31,12 @@ namespace ContactCenterGUI.Teatros
             metroComboBox1.SelectedIndex = 0;
             metroComboBox2.SelectedIndex = 0;
             
+        }
+
+        private void materialRaisedButton2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmTeatro.Visible = true;
         }
     }
 }
