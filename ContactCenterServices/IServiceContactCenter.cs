@@ -14,6 +14,7 @@ namespace ContactCenterServices
 {
     public interface IServiceContactCenter : IDisposable
     {
+        //Prueba
         bool InsertarAplicacion(Aplicacion aplicacion);
         List<Aplicacion> ListarAplicaciones();
         Usuario ValidarUsuario(string login, string password);
