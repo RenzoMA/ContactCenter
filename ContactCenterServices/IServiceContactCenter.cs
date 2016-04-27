@@ -24,6 +24,7 @@ namespace ContactCenterServices
         Task<List<AsientoPrecio>> listarAsientoTeatroAsync(int idObra);
         List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime FechaObra);
         List<Teatro> ListarTeatros();
+        Task<List<Teatro>> ListarTeatrosAsync();
         List<Obra> ListarObraTeatro(int idTeatro);
         List<Funcion> ListarFuncionDiaObra(int dia, int idObra);
     }

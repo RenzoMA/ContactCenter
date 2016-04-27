@@ -131,5 +131,15 @@ namespace ContactCenterServices
         {
             return _funcionService.ListarFuncionDiaObra(dia, idObra);
         }
+
+        public async Task<List<Teatro>> ListarTeatrosAsync()
+        {
+            List<Teatro> lTeatro = null;
+            await Task.Run(() =>
+            {
+                lTeatro = _teatroService.Listar();
+            });
+            return lTeatro;
+        }
     }
 }

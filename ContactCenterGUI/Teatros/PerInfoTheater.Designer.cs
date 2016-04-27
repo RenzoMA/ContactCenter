@@ -364,7 +364,7 @@
             this.Name = "PerInfoTheater";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PerInfoTheater";
+            this.Text = "Información Cliente";
             this.Load += new System.EventHandler(this.PerInfoTheater_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

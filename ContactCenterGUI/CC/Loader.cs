@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ContactCenterGUI.Helpers;
+
 
 namespace ContactCenterGUI.CC
 {
@@ -15,23 +17,25 @@ namespace ContactCenterGUI.CC
         public Loader()
         {
             InitializeComponent();
-            //Test
         }
 
         private void Loader_Load(object sender, EventArgs e)
         {
-            //Login login = new Login();
-            //login.ShowDialog();
-            //this.Close();
+            if (HelperConexion.PingHost("localhost"))
+            {
 
-            Teatros.NewTheater teatro = new Teatros.NewTheater();
-            teatro.ShowDialog();
-            this.Close();
+                Login login = new Login();
+                login.ShowDialog();
+                this.Close();
+                //Teatros.NewTheater teatro = new Teatros.NewTheater();
+                //teatro.ShowDialog();
+                //this.Close();
 
-            //Mantenimientos.ManForm manform = new Mantenimientos.ManForm();
-            //manform.ShowDialog();
-            //this.Close();
-
+            }
+            else
+            {
+                MessageBox.Show("No hay conexión con el servidor");
+            }
         }
     }
 }
