@@ -47,6 +47,7 @@
             this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -174,7 +175,7 @@
             this.metroComboBox1.Location = new System.Drawing.Point(127, 212);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(148, 29);
-            this.metroComboBox1.TabIndex = 9;
+            this.metroComboBox1.TabIndex = 3;
             // 
             // materialLabel9
             // 
@@ -214,7 +215,7 @@
             this.metroComboBox2.Location = new System.Drawing.Point(127, 370);
             this.metroComboBox2.Name = "metroComboBox2";
             this.metroComboBox2.Size = new System.Drawing.Size(148, 29);
-            this.metroComboBox2.TabIndex = 12;
+            this.metroComboBox2.TabIndex = 6;
             // 
             // materialSingleLineTextField2
             // 
@@ -229,7 +230,7 @@
             this.materialSingleLineTextField2.SelectionLength = 0;
             this.materialSingleLineTextField2.SelectionStart = 0;
             this.materialSingleLineTextField2.Size = new System.Drawing.Size(148, 23);
-            this.materialSingleLineTextField2.TabIndex = 13;
+            this.materialSingleLineTextField2.TabIndex = 2;
             this.materialSingleLineTextField2.TabStop = false;
             this.materialSingleLineTextField2.UseSystemPasswordChar = false;
             // 
@@ -246,7 +247,7 @@
             this.materialSingleLineTextField3.SelectionLength = 0;
             this.materialSingleLineTextField3.SelectionStart = 0;
             this.materialSingleLineTextField3.Size = new System.Drawing.Size(148, 23);
-            this.materialSingleLineTextField3.TabIndex = 14;
+            this.materialSingleLineTextField3.TabIndex = 4;
             this.materialSingleLineTextField3.TabStop = false;
             this.materialSingleLineTextField3.UseSystemPasswordChar = false;
             // 
@@ -263,7 +264,7 @@
             this.materialSingleLineTextField4.SelectionLength = 0;
             this.materialSingleLineTextField4.SelectionStart = 0;
             this.materialSingleLineTextField4.Size = new System.Drawing.Size(148, 23);
-            this.materialSingleLineTextField4.TabIndex = 15;
+            this.materialSingleLineTextField4.TabIndex = 5;
             this.materialSingleLineTextField4.TabStop = false;
             this.materialSingleLineTextField4.UseSystemPasswordChar = false;
             // 
@@ -317,15 +318,29 @@
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
             this.materialRaisedButton1.Size = new System.Drawing.Size(135, 38);
-            this.materialRaisedButton1.TabIndex = 19;
+            this.materialRaisedButton1.TabIndex = 7;
             this.materialRaisedButton1.Text = "Aceptar";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            // 
+            // materialRaisedButton2
+            // 
+            this.materialRaisedButton2.Depth = 0;
+            this.materialRaisedButton2.Location = new System.Drawing.Point(12, 623);
+            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton2.Name = "materialRaisedButton2";
+            this.materialRaisedButton2.Primary = true;
+            this.materialRaisedButton2.Size = new System.Drawing.Size(135, 38);
+            this.materialRaisedButton2.TabIndex = 20;
+            this.materialRaisedButton2.Text = "Volver";
+            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
             // 
             // PerInfoTheater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(333, 683);
+            this.Controls.Add(this.materialRaisedButton2);
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.materialLabel12);
             this.Controls.Add(this.materialLabel11);
@@ -349,7 +364,7 @@
             this.Name = "PerInfoTheater";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PerInfoTheater";
+            this.Text = "Información Cliente";
             this.Load += new System.EventHandler(this.PerInfoTheater_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -377,5 +392,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel11;
         private MaterialSkin.Controls.MaterialLabel materialLabel12;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
     }
 }

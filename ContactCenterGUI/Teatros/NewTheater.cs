@@ -88,11 +88,13 @@ namespace ContactCenterGUI.Teatros
             diaFuncion = Util.DayOfWeekHelper(dateTimePicker1.Value.Date.DayOfWeek);
             FechaFuncion = dateTimePicker1.Value.Date;
         }
-        private void CargarTeatros()
+        private async void CargarTeatros()
         {
             using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
             {
-                listaTeatro = servicio.ListarTeatros();
+                Animacion.ShowLoader(this);
+                listaTeatro = await servicio.ListarTeatrosAsync();
+                Animacion.HideLoader(this);
                 metroComboBox1.DataSource = listaTeatro;
                 metroComboBox1.DisplayMember = "Nombre";
             }
