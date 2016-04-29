@@ -142,9 +142,16 @@ namespace ContactCenterGUI.Helpers
         }
         public static void ConfirmarReserva()
         {
-            PerInfoTheater info = new PerInfoTheater(formTemp,reservaTemp);
-            info.listaAsientoPrecio = asientosReserva;
-            info.ShowDialog();
+            if (asientosReserva.Count > 0)
+            {
+                PerInfoTheater info = new PerInfoTheater(formTemp, reservaTemp);
+                info.listaAsientoPrecio = asientosReserva;
+                info.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar al menos un asiento", "Aviso");
+            }
         }
 
         public async static void ReservarAsiento(Button btnAsiento, AsientoPrecio asiento)
