@@ -30,6 +30,7 @@ namespace ContactCenterGUI.Mantenimientos
             this.Hide();
             Mantenimientos.Aplicacion.ManAppMenu manappmenu = new Mantenimientos.Aplicacion.ManAppMenu();
             manappmenu.ShowDialog();
+            //prueba
             
         }
     }
