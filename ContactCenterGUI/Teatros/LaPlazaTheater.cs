@@ -18,6 +18,7 @@ namespace ContactCenterGUI.Teatros
     public partial class LaPlazaTheater : MaterialForm
     {
         private Reserva reserva;
+        private string token;
 
         public LaPlazaTheater()
         {
@@ -26,7 +27,7 @@ namespace ContactCenterGUI.Teatros
 
         private void label1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            HelperTeatro.EliminarSeparadas(token);
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -41,19 +42,19 @@ namespace ContactCenterGUI.Teatros
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            HelperTeatro.EliminarSeparadas(token);
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
-            PerInfoTheater info = new PerInfoTheater(this);
-            info.ShowDialog();
+            HelperTeatro.ConfirmarReserva();
         }
 
         private void CallaoTheater_Load(object sender, EventArgs e)
         {
             reserva = (Reserva)this.Tag;
-            HelperTeatro.MostrarDisponibilidad(this, reserva.Obra.IdObra, reserva.Funcion.IdFuncion, reserva.FechaReserva, reserva.Obra.Teatro.IdTeatro);
+            token = HelperTeatro.GenerarToken();
+            HelperTeatro.MostrarDisponibilidad(this, reserva,token);
         }
     }
 }

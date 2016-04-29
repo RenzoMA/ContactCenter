@@ -22,9 +22,24 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             asientoRepository = _asientoRepository;
         }
 
-        public List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime fecha)
+        public bool EliminarAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, string token)
         {
-            return asientoRepository.ListarAsientoDisponible(idObra, idFuncion, fecha.Date);
+            return asientoRepository.EliminarAsientoTemporal(idFuncion, idAsiento, fechaObra, token);
+        }
+
+        public bool EliminarAsientoTemporalTotal(string token)
+        {
+            return asientoRepository.EliminarAsientoTemporalTotal(token);
+        }
+
+        public bool InserAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, string token)
+        {
+            return asientoRepository.InserAsientoTemporal(idFuncion, idAsiento, fechaObra, token);
+        }
+
+        public List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime fecha,string token)
+        {
+            return asientoRepository.ListarAsientoDisponible(idObra, idFuncion, fecha.Date, token);
         }
 
         public List<AsientoPrecio> ListarAsientoTeatro(int idObra)

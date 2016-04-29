@@ -85,6 +85,7 @@ namespace ContactCenterGUI.Teatros
 
         private void InicializarVariables()
         {
+            dateTimePicker1.MinDate = DateTime.Today;
             diaFuncion = Util.DayOfWeekHelper(dateTimePicker1.Value.Date.DayOfWeek);
             FechaFuncion = dateTimePicker1.Value.Date;
         }
