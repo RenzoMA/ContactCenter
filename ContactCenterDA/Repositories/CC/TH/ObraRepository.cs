@@ -20,17 +20,79 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            String sql = "UPDATE TH_OBRA SET ESTADO = 'I', FechaMod = @FechaMod, UserMod = @UserMod WHERE IdObra = @codigo";
+
+            OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
+
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, fechaMod, userMod, codigo);
         }
 
         public Obra GetById(int id)
         {
-            throw new NotImplementedException();
+            Obra objObra = null;
+
+            String sql = "SELECT * FROM TH_OBRA O INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO WHERE IDOBRA = @codigo ";
+
+            OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, codigo))
+            {
+                objObra = new Obra();
+                objObra.IdObra = DataConvert.ToInt(dtr["IdObra"]);
+                objObra.Nombre = DataConvert.ToString(dtr["O.Nombre"]);
+                objObra.FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]);
+                objObra.FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]);
+                objObra.Descripcion = DataConvert.ToString(dtr["Descripcion"]);
+                objObra.Estado = DataConvert.ToString(dtr["O.Estado"]);
+                objObra.Teatro = new Teatro()
+                {
+                    IdTeatro = DataConvert.ToInt(dtr["T.IdTeatro"]),
+                    Nombre = DataConvert.ToString(dtr["T.Nombre"]),
+                    Estado = DataConvert.ToString(dtr["T.Estado"])
+                };
+                objObra.FechaCreacion = DataConvert.ToDateTime(dtr["O.FechaCrea"]);
+                objObra.UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]);
+                objObra.FechaModificacion = DataConvert.ToDateTime(dtr["O.FechaMod"]);
+                objObra.UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]);
+            }
+            UtilDA.Close(cnx);
+            return objObra;
         }
 
         public IList<Obra> GetLista()
         {
-            throw new NotImplementedException();
+            List<Obra> listaObra = null;
+
+            String sql = "SELECT * FROM TH_OBRA O INNER JOIN TH_TEATRO T ON T.IDTEATRO  = T.IDTEATRO";
+
+            using (var dtr = (UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx)))
+            {
+                while (dtr.Read())
+                {
+                    Obra objObra = new Obra();
+                    objObra.IdObra = DataConvert.ToInt(dtr["IdObra"]);
+                    objObra.Nombre = DataConvert.ToString(dtr["O.Nombre"]);
+                    objObra.FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]);
+                    objObra.FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]);
+                    objObra.Descripcion = DataConvert.ToString(dtr["Descripcion"]);
+                    objObra.Estado = DataConvert.ToString(dtr["O.Estado"]);
+                    objObra.Teatro = new Teatro()
+                    {
+                        IdTeatro = DataConvert.ToInt(dtr["T.IdTeatro"]),
+                        Nombre = DataConvert.ToString(dtr["T.Nombre"]),
+                        Estado = DataConvert.ToString(dtr["T.Estado"])
+                    };
+                    objObra.FechaCreacion = DataConvert.ToDateTime(dtr["O.FechaCrea"]);
+                    objObra.UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]);
+                    objObra.FechaModificacion = DataConvert.ToDateTime(dtr["O.FechaMod"]);
+                    objObra.UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]);
+                    listaObra.Add(objObra);
+                }
+            }
+            UtilDA.Close(cnx);
+            return listaObra;
         }
 
         public List<Obra> GetListaTeatro(int idTeatro)
@@ -81,12 +143,37 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Insert(Obra datos)
         {
-            throw new NotImplementedException();
+            String sql = "INSERT INTO TH_OBRA(Nombre, FechaInicio, FechaFin, Descripcion, Estado, IdTeatro, FechaCrea, UserCrea) " +
+                        "VALUES(@nombre @fechaini, @fechafin, @descripcion, @estado, @idTeatro, @fechaCrea, @userCrea)";
+
+            OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
+            OleDbParameter fechaini = UtilDA.SetParameters("@fechaini", OleDbType.Date, datos.FechaInicio);
+            OleDbParameter fechafin = UtilDA.SetParameters("@fechafin", OleDbType.Date, datos.FechaFin);
+            OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
+            OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
+            OleDbParameter idTeatro = UtilDA.SetParameters("@idTeatro", OleDbType.Integer, datos.Teatro.IdTeatro);
+            OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
+            OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
+
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, fechaini, fechafin, descripcion, estado, idTeatro, fechaCreacion, usuarioCrea);
         }
 
         public bool Update(Obra datos)
         {
-            throw new NotImplementedException();
+            String sql = "UPDATE TH_OBRA SET Nombre = @nombre, FechaInicio = @fechaini, FechaFin = @fechafin, Descripcion = @descripcion, Estado = @estado, , IdTeatro = @idteatro, " +
+                            "FechaMod = @fechaMod, UserMod = @usuarioMod WHERE IdObra = @idobra";
+
+           
+            OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
+            OleDbParameter fechaini = UtilDA.SetParameters("@fechaini", OleDbType.Date, datos.FechaInicio);
+            OleDbParameter fechafin = UtilDA.SetParameters("@fechafin", OleDbType.Date, datos.FechaFin);
+            OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
+            OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
+            OleDbParameter idteatro = UtilDA.SetParameters("@idteatro", OleDbType.Integer, datos.Teatro.IdTeatro);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
+            OleDbParameter idObra = UtilDA.SetParameters("@idobra", OleDbType.Integer, datos.IdObra);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, fechaini, fechafin, descripcion, estado, idteatro, fechaMod, usuarioMod, idObra);
         }
     }
 }

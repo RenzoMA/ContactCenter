@@ -141,5 +141,26 @@ namespace ContactCenterServices
             });
             return lTeatro;
         }
+
+        public bool InsertarObra(Obra obra) {
+            return _obraService.Insert(obra);
+        }
+        public bool ActualizarObra(Obra obra)
+        {
+            return _obraService.Update(obra);
+        }
+        public bool EliminarObra(int id)
+        {
+            return _obraService.Delete(id);
+        }
+
+        public Obra BuscarObra(int id)
+        {
+            return _obraService.GetById(id);
+        }
+
+        public IList<Obra> ListarObras() {
+            return _obraService.GetLista();
+        }
     }
 }

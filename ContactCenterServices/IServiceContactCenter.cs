@@ -27,5 +27,11 @@ namespace ContactCenterServices
         Task<List<Teatro>> ListarTeatrosAsync();
         List<Obra> ListarObraTeatro(int idTeatro);
         List<Funcion> ListarFuncionDiaObra(int dia, int idObra);
+
+        bool InsertarObra(Obra obra);
+        bool EliminarObra(int id);
+        bool ActualizarObra(Obra obra);
+        IList<Obra> ListarObras();
+        Obra BuscarObra(int id);    
     }
 }

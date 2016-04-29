@@ -26,5 +26,26 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             listaObra.Insert(0, obra);
             return listaObra;
         }
+
+        public bool Delete(int id) {
+            return _obraRepository.Delete(id);
+        }
+
+        public Obra GetById(int id) {
+            return _obraRepository.GetById(id);
+        }
+
+        public IList<Obra> GetLista() {
+            return _obraRepository.GetLista();
+        }
+
+        public bool Insert(Obra obra) {
+            return _obraRepository.Insert(obra);
+
+        }
+
+        public bool Update(Obra obra) {
+            return _obraRepository.Update(obra);
+        }
     }
 }

@@ -10,5 +10,10 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
     public interface IObraService
     {
         List<Obra> ListarObraTeatro(int idTeatro);
+        bool Delete(int id);
+        Obra GetById(int id);
+        IList<Obra> GetLista();
+        bool Insert(Obra datos);
+        bool Update(Obra datos);
     }
 }
