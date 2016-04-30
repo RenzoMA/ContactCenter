@@ -47,7 +47,7 @@ namespace ContactCenterGUI.Mantenimientos
             else if (metroComboBox1.SelectedIndex == 8) {
 
                 this.Hide();
-                Mantenimientos.Obra.ManPlayMenu manaplaymenu = new Mantenimientos.Obra.ManPlayMenu();
+                Mantenimientos.ObraC.ManPlayMenu manaplaymenu = new Mantenimientos.ObraC.ManPlayMenu();
                 manaplaymenu.ShowDialog();
             }
         }

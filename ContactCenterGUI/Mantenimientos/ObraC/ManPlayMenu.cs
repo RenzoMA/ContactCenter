@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 
-namespace ContactCenterGUI.Mantenimientos.Obra
+namespace ContactCenterGUI.Mantenimientos.ObraC
 {
     public partial class ManPlayMenu : MaterialForm
     {
