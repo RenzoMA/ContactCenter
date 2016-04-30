@@ -10,6 +10,7 @@ namespace ContactCenterBE.CC.Entidades.CLienteBE
 {
     public interface IClienteRepository : IBaseRepository<Cliente>
     {
-
+        Cliente GetByTelefono(string telefono);
+        int GetNewIdCliente(Cliente cliente);
     }
 }

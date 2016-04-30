@@ -58,6 +58,7 @@ namespace ContactCenterGUI.Teatros
                 reserva.FechaReserva = FechaFuncion;
                 reserva.Obra = obra;
                 reserva.Funcion = funcion;
+                reserva.Usuario = Sesion.usuario;
 
                 HelperForm.changeForm(funcion.Obra.Teatro.frmTeatro, "Teatros", true, this, reserva);
             }

@@ -10,7 +10,7 @@ using Microsoft.Practices.Unity;
 using ContactCenterCommon;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterGUI.Teatros;
-
+using MaterialSkin.Controls;
 
 namespace ContactCenterGUI.Helpers
 {
@@ -84,6 +84,31 @@ namespace ContactCenterGUI.Helpers
                 }
             }
         }
+        public static void SetEventosBoton()
+        {
+            foreach (MaterialRaisedButton btn in GetAll(formTemp, typeof(MaterialRaisedButton)))
+            {
+                if (btn.Name == "btnContinuar")
+                {
+                    btn.MouseClick += new MouseEventHandler(ConfirmarReserva);
+                }
+                if (btn.Name == "btnAtras")
+                {
+                    btn.MouseClick += new MouseEventHandler(CancelarAsientoTotal);
+
+                }
+            }
+        }
+        public static void SetEventosLabel()
+        {
+            foreach (Label lbl in GetAll(formTemp, typeof(Label)))
+            {
+                if (lbl.Name == "lblCerrar")
+                {
+                    lbl.MouseClick += new MouseEventHandler(CancelarAsientoTotal);
+                }
+            }
+        }
 
         public static string GenerarToken()
         {
@@ -115,10 +140,10 @@ namespace ContactCenterGUI.Helpers
             }
         }
 
-        public static async void MostrarDisponibilidad(Form form,Reserva reserva, string token)
+        public static async void MostrarDisponibilidad(Form form,Reserva reserva)
         {
             asientosReserva = new List<AsientoPrecio>();
-            tokenTemp = token;
+            tokenTemp = GenerarToken();
             reservaTemp = reserva;
             formTemp = form;
 
@@ -129,6 +154,8 @@ namespace ContactCenterGUI.Helpers
                 lOcupados = await servicio.ListarAsientoDisponibleAsync(reservaTemp.Obra.IdObra, reservaTemp.Funcion.IdFuncion, reservaTemp.FechaReserva,tokenTemp);
                 CruzarBotonData(lAsientoTotal, form);
                 AsignarListaOcupada(lOcupados);
+                SetEventosBoton();
+                SetEventosLabel();
 
             }
             catch (Exception ex)
@@ -140,7 +167,7 @@ namespace ContactCenterGUI.Helpers
                 Animacion.HideLoader(form);
             }
         }
-        public static void ConfirmarReserva()
+        static void ConfirmarReserva(object sender, EventArgs e)
         {
             if (asientosReserva.Count > 0)
             {
@@ -152,6 +179,7 @@ namespace ContactCenterGUI.Helpers
             {
                 MessageBox.Show("Debe seleccionar al menos un asiento", "Aviso");
             }
+
         }
 
         public async static void ReservarAsiento(Button btnAsiento, AsientoPrecio asiento)
@@ -193,6 +221,14 @@ namespace ContactCenterGUI.Helpers
             AsientoPrecio asiento = (AsientoPrecio)btnAsiento.Tag;
             ReservarAsiento(btnAsiento, asiento);
             
+        }
+        public static void CancelarReservaAsiento()
+        {
+            EliminarSeparadas(tokenTemp);
+        }
+        public static void CancelarAsientoTotal(object sender, EventArgs e)
+        {
+            EliminarSeparadas(tokenTemp);
         }
     }
 }

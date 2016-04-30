@@ -46,7 +46,7 @@ namespace ContactCenterGUI.Teatros
         private void NewTheater2_Load(object sender, EventArgs e)
         {
             reserva = (Reserva)this.Tag;
-            HelperTeatro.MostrarDisponibilidad(this, reserva,"");
+            HelperTeatro.MostrarDisponibilidad(this, reserva);
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)

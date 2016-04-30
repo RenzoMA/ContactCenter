@@ -18,6 +18,8 @@ using ContactCenterDA.Repositories.CC;
 using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
+using ContactCenterBE.CC.TH.Entidades.ReservaBE;
+using ContactCenterBE.CC.Entidades.CLienteBE;
 
 
 
@@ -40,7 +42,9 @@ namespace ContactCenterServices
             current.RegisterType<ITeatroService, TeatroService>();
             current.RegisterType<IObraService, ObraService>();
             current.RegisterType<IFuncionService, FuncionService>();
-            
+            current.RegisterType<IReservaService, ReservaService>();
+            current.RegisterType<IClienteService, ClienteService>();
+
 
             // Entidades - DA
             current.RegisterType<IAsientoRepository, AsientoRepository>();
@@ -50,6 +54,8 @@ namespace ContactCenterServices
             current.RegisterType<ITeatroRepository, TeatroRepository>();
             current.RegisterType<IObraRepository, ObraRepository>();
             current.RegisterType<IFuncionRepository, FuncionRepository>();
+            current.RegisterType<IReservaRepository, ReservaRepository>();
+            current.RegisterType<IClienteRepository, ClienteRepository>();
         }
     }
 }

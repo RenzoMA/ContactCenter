@@ -95,12 +95,6 @@ namespace ContactCenterDA.Common
                 oleDbCommand.ExecuteNonQuery();
                 return true;
             }
-            catch (OleDbException ex)
-            {
-                SaveLog(ex, sql, parameters);
-                throw new Exception(ex.Message);
-                return false;
-            }
             catch (Exception ex)
             {
                 SaveLog(ex, sql, parameters);
@@ -113,6 +107,98 @@ namespace ContactCenterDA.Common
                 {
                     oleDbConnection.Close();
                 }
+            }
+        }
+        public static int ExecuteNonQueryTransactionId(OleDbCommand oleDbCommand, CommandType commandType, String sql, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)
+        {
+            try
+            {
+                oleDbCommand.Connection = oleDbConnection;
+                oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
+                oleDbCommand.Parameters.Clear();
+
+                foreach (OleDbParameter parameter in parameters)
+                {
+                    oleDbCommand.Parameters.Add(parameter);
+                }
+
+                oleDbCommand.CommandType = commandType;
+                oleDbConnection.Open();
+                oleDbCommand.CommandText = "BEGIN TRANSACTION";
+                oleDbCommand.ExecuteNonQuery();
+                oleDbCommand.CommandText = sql;
+                oleDbCommand.ExecuteNonQuery();
+                oleDbCommand.CommandText = "SELECT @@Identity";
+                int id = (int)oleDbCommand.ExecuteScalar();
+                return id;
+
+            }
+            catch (Exception ex)
+            {
+                oleDbCommand.CommandText = "ROLLBACK";
+                oleDbCommand.ExecuteNonQuery();
+                SaveLog(ex, sql, parameters);
+                throw new Exception(ex.Message);
+            }
+        }
+        public static void ExecuteCommit(OleDbCommand oleDbCommand,OleDbConnection oleDbConnection)
+        {
+            try
+            {
+                oleDbCommand.CommandText = "COMMIT";
+                oleDbCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                SaveLog(ex, "COMMIT", null);
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (oleDbConnection.State == ConnectionState.Open)
+                {
+                    oleDbConnection.Close();
+                }
+            }
+
+        }
+        public static void ExecuteRollback(OleDbCommand oleDbCommand,OleDbConnection oleDbConnection)
+        {
+            try
+            {
+                oleDbCommand.CommandText = "ROLLBACK";
+                oleDbCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                SaveLog(ex, "ROLLBACK", null);
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (oleDbConnection.State == ConnectionState.Open)
+                {
+                    oleDbConnection.Close();
+                }
+            }
+        }
+        public static bool ExecuteNonQueryTransactionDetalle(OleDbCommand oleDbCommand, String sql, params OleDbParameter[] parameters)
+        {
+            try
+            {
+                oleDbCommand.Parameters.Clear();
+                foreach (OleDbParameter parameter in parameters)
+                {
+                    oleDbCommand.Parameters.Add(parameter);
+                }
+                oleDbCommand.CommandText = sql;
+                oleDbCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                SaveLog(ex, sql, parameters);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -142,11 +228,6 @@ namespace ContactCenterDA.Common
                 }
                 return false;
 
-            }
-            catch (OleDbException ex)
-            {
-                SaveLog(ex, sqlEjecucion, parameters);
-                throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
@@ -180,7 +261,7 @@ namespace ContactCenterDA.Common
                 oleDbConnection.Open();
                 oleDbCommand.ExecuteNonQuery();
             }
-            catch (OleDbException ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -217,11 +298,6 @@ namespace ContactCenterDA.Common
                 oleDbCommand.CommandText = sql;
                 oleDbConnection.Open();
                 return oleDbCommand.ExecuteReader();
-            }
-            catch (OleDbException ex)
-            {
-                SaveLog(ex, sql, parameters);
-                throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {

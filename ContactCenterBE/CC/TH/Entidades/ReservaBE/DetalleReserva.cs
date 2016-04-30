@@ -13,7 +13,7 @@ namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
         public int IdDetalleReserva { get; set; }
         public Single Precio { get; set; }
         public string Estado { get; set; }
-        public Asiento Asiento { get; set; }
+        public AsientoPrecio Asiento { get; set; }
 
     }
 }

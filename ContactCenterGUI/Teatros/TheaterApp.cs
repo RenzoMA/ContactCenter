@@ -24,6 +24,7 @@ namespace ContactCenterGUI.Teatros
             this.Hide();
             NewTheater newtheater = new NewTheater();
             newtheater.ShowDialog();
+            this.Show();
         }
     }
 }

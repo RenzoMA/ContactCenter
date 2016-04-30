@@ -9,6 +9,8 @@ using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
+using ContactCenterBE.CC.TH.Entidades.ReservaBE;
+using ContactCenterBE.CC.Entidades.CLienteBE;
 
 namespace ContactCenterServices
 {
@@ -39,5 +41,9 @@ namespace ContactCenterServices
         Task<bool> EliminarAsientoTemporalAsync(int idFuncion, int idAsiento, DateTime fechaObra, string token);
         bool EliminarAsientoTemporalTotal(string token);
         Task<bool> EliminarAsientoTemporalTotalAsync(string token);
+        bool InsertarReserva(Reserva reserva,Cliente cliente);
+        Task<bool> InsertarReservaAsync(Reserva reserva,Cliente cliente);
+        Cliente GetClienteByTelefono(string telefono);
+        Task<Cliente> GetClienteByTelefonoAsync(string telefono);
     }
 }

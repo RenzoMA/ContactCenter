@@ -97,8 +97,8 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
             OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter UsuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
-
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, telefono, correo, fechaCrea, UsuarioCrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, correo, telefono, fechaCrea, UsuarioCrea);
+           
         }
 
         public bool Update(Cliente datos)
@@ -115,7 +115,55 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idcliente = UtilDA.SetParameters("@idCliente", OleDbType.Integer, datos.IdCliente);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, telefono, correo, fechaMod, usuarioMod, idcliente);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, correo, telefono, fechaMod, usuarioMod, idcliente);
+        }
+
+        public Cliente GetByTelefono(string telefono)
+        {
+            Cliente objCliente = null;
+
+            String sql = "SELECT * FROM CC_Cliente WHERE Telefono = @telefono";
+
+            OleDbParameter pTelefono = UtilDA.SetParameters("@telefono", OleDbType.Integer, telefono);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pTelefono))
+            {
+                while (dtr.Read())
+                {
+                    objCliente = new Cliente();
+                    objCliente.IdCliente = DataConvert.ToInt(dtr["IdCliente"]);
+                    objCliente.Nombre = DataConvert.ToString(dtr["Nombre"]);
+                    objCliente.ApellidoPaterno = DataConvert.ToString(dtr["ApePaterno"]);
+                    objCliente.Apellidomaterno = DataConvert.ToString(dtr["ApeMaterno"]);
+                    objCliente.Telefono = DataConvert.ToString(dtr["Telefono"]);
+                    objCliente.Correo = DataConvert.ToString(dtr["Correo"]);
+                    objCliente.FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]);
+                    objCliente.UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]);
+                    objCliente.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
+                    objCliente.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
+
+                }
+            }
+            UtilDA.Close(cnx);
+            return objCliente;
+        }
+
+        public int GetNewIdCliente(Cliente cliente)
+        {
+
+            String sql = "INSERT INTO CC_Cliente(Nombre, ApePaterno, ApeMaterno, Correo, Telefono, FechaCrea, UserCrea) " +
+                                       "VALUES(@nombre,@apePaterno,@apeMaterno,@correo,@telefono ,@fechaCrea, @usuarioCrea)";
+
+            OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, cliente.Nombre);
+            OleDbParameter apePaterno = UtilDA.SetParameters("@apePaterno", OleDbType.VarChar, cliente.ApellidoPaterno);
+            OleDbParameter apeMaterno = UtilDA.SetParameters("@apeMaterno", OleDbType.VarChar, cliente.Apellidomaterno);
+            OleDbParameter telefono = UtilDA.SetParameters("@telefono", OleDbType.VarChar, cliente.Telefono);
+            OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, cliente.Correo);
+            OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
+            OleDbParameter UsuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
+            int idCliente = UtilDA.ExecuteNonQueryTransactionId(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, correo, telefono, fechaCrea, UsuarioCrea);
+            UtilDA.ExecuteCommit(cmd, cnx);
+            return idCliente;
         }
     }
 }
