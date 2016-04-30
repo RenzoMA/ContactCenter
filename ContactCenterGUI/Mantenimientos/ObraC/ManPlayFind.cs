@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ContactCenterGUI.Mantenimientos.Obra
+namespace ContactCenterGUI.Mantenimientos.ObraC
 {
     public partial class ManPlayFind : Form
     {

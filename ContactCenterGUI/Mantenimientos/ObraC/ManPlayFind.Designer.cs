@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI.Mantenimientos.Obra
+﻿namespace ContactCenterGUI.Mantenimientos.ObraC
 {
     partial class ManPlayFind
     {

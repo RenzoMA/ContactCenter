@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI.Mantenimientos.Obra
+﻿namespace ContactCenterGUI.Mantenimientos.ObraC
 {
     partial class ManPlayCreate
     {
@@ -30,10 +30,8 @@
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
@@ -42,6 +40,8 @@
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,14 +75,6 @@
             this.materialSingleLineTextField1.TabStop = false;
             this.materialSingleLineTextField1.UseSystemPasswordChar = false;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(170, 197);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(171, 20);
-            this.dateTimePicker1.TabIndex = 2;
-            this.dateTimePicker1.Value = new System.DateTime(2016, 4, 29, 22, 38, 28, 0);
-            // 
             // materialLabel2
             // 
             this.materialLabel2.AutoSize = true;
@@ -108,14 +100,6 @@
             this.materialLabel3.Size = new System.Drawing.Size(77, 19);
             this.materialLabel3.TabIndex = 5;
             this.materialLabel3.Text = "Fecha Fin:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(170, 254);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(171, 20);
-            this.dateTimePicker2.TabIndex = 4;
-            this.dateTimePicker2.Value = new System.DateTime(2016, 4, 29, 22, 38, 28, 0);
             // 
             // materialLabel4
             // 
@@ -155,6 +139,9 @@
             // 
             this.metroComboBox1.FormattingEnabled = true;
             this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
             this.metroComboBox1.Location = new System.Drawing.Point(170, 458);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(151, 29);
@@ -193,6 +180,7 @@
             this.materialRaisedButton1.TabIndex = 12;
             this.materialRaisedButton1.Text = "Aceptar";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // pictureBox1
             // 
@@ -206,11 +194,29 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(170, 195);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(170, 20);
+            this.dateTimePicker1.TabIndex = 14;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(170, 252);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(170, 20);
+            this.dateTimePicker2.TabIndex = 15;
+            // 
             // ManPlayCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 635);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.metroComboBox2);
@@ -220,13 +226,12 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.materialLabel3);
-            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.materialSingleLineTextField1);
             this.Controls.Add(this.materialLabel1);
             this.Name = "ManPlayCreate";
             this.Text = "ManPlayCreate";
+            this.Load += new System.EventHandler(this.ManPlayCreate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -237,10 +242,8 @@
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
@@ -249,5 +252,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }
