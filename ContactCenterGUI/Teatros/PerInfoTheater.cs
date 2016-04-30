@@ -149,6 +149,14 @@ namespace ContactCenterGUI.Teatros
                     txtNombre.Text = cliente.Nombre;
                     txtTelefono.Text = cliente.Telefono;
                 }
+                else
+                {
+                    txtApeMat.Text = "";
+                    txtApePat.Text = "";
+                    txtCorreo.Text = "";
+                    txtNombre.Text = "";
+                    txtTelefono.Text = "";
+                }
             }
         }
     }
