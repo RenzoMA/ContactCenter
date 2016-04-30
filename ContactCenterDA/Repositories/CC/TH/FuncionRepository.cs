@@ -20,6 +20,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Delete(int id)
         {
+            //prueba
             throw new NotImplementedException();
         }
 
