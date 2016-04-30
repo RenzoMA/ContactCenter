@@ -27,5 +27,26 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             listaFuncion.Insert(0, funcion);
             return listaFuncion;
         }
+
+        public bool Delete(int id) {
+            return _funcionRepository.Delete(id);
+        }
+        public Funcion GetById(int id) {
+
+            return _funcionRepository.GetById(id);
+        }
+
+        public IList<Funcion> GetLista() {
+            return _funcionRepository.GetLista();
+        }
+
+        public bool Insert(Funcion datos) {
+            return _funcionRepository.Insert(datos);
+        }
+
+        public bool Update(Funcion datos)
+        {
+            return _funcionRepository.Update(datos);
+        }
     }
 }

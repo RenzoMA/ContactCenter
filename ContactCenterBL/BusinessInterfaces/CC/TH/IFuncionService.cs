@@ -10,5 +10,11 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
     public interface IFuncionService
     {
         List<Funcion> ListarFuncionDiaObra(int dia, int idObra);
+        bool Delete(int id);
+        Funcion GetById(int id);
+        IList<Funcion> GetLista();
+        bool Insert(Funcion datos);
+        bool Update(Funcion datos);
+
     }
 }

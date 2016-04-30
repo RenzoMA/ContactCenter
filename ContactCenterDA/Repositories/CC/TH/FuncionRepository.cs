@@ -20,22 +20,103 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            String sql = "UPDATE TH_FUNCION SET ESTADO = 'I', FechaMod = @FechaMod, UserMod = @UserMod WHERE IDFUNCION = @codigo";
+
+            OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
+
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, fechaMod, userMod, codigo);
         }
 
         public Funcion GetById(int id)
         {
-            throw new NotImplementedException();
+            Funcion objFuncion = null;
+
+            String sql = "SELECT * FROM TH_FUNCION F INNER JOIN TH_OBRA O ON F.IDOBRA = O.IDOBRA  INNER JOIN TH_TEATRO T ON O.IDTEATRO = T.IDTEATRO WHERE IDFUNCION = @codigo ";
+
+            OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, codigo))
+            {
+                objFuncion = new Funcion();
+                objFuncion.IdFuncion = DataConvert.ToInt(dtr["IdFuncion"]);
+                objFuncion.Dia = DataConvert.ToInt(dtr["Dia"]);
+                objFuncion.Horario = DataConvert.ToString(dtr["Horario"]);
+                objFuncion.Estado = DataConvert.ToString(dtr["F.Estado"]);
+                objFuncion.Obra = new Obra()
+                {
+                    Nombre = DataConvert.ToString(dtr["O.Nombre"]),
+                    FechaInicio = DataConvert.ToDateTime(dtr["O.FechaInicio"]),
+                    FechaFin = DataConvert.ToDateTime(dtr["O.FechaFin"]),
+                    Descripcion = DataConvert.ToString(dtr["O.Descripcion"]),
+                    Teatro = new Teatro()
+                    {
+                        IdTeatro = DataConvert.ToInt(dtr["T.IdTeatro"]),
+                        Nombre = DataConvert.ToString(dtr["T.Nombre"]),
+                        Estado = DataConvert.ToString(dtr["T.Estado"]),
+                        frmTeatro = DataConvert.ToString(dtr["T.frmTeatro"])
+                    }
+                };
+                objFuncion.FechaCreacion = DataConvert.ToDateTime(dtr["F.FechaCrea"]);
+                objFuncion.UsuarioCreacion = DataConvert.ToString(dtr["F.UserCrea"]);
+                objFuncion.FechaModificacion = DataConvert.ToDateTime(dtr["F.FechaMod"]);
+                objFuncion.UsuarioModificacion = DataConvert.ToString(dtr["F.UserMod"]);
+            }
+            UtilDA.Close(cnx);
+            return objFuncion;
         }
 
         public IList<Funcion> GetLista()
         {
-            throw new NotImplementedException();
+            List<Funcion> listaFuncion = null;
+
+            String sql = "SELECT * FROM TH_FUNCION F INNER JOIN TH_OBRA O ON F.IDOBRA = O.IDOBRA  INNER JOIN TH_TEATRO T ON O.IDTEATRO = T.IDTEATRO";
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx))
+            {
+                Funcion objFuncion = new Funcion();
+                objFuncion.IdFuncion = DataConvert.ToInt(dtr["IdFuncion"]);
+                objFuncion.Dia = DataConvert.ToInt(dtr["Dia"]);
+                objFuncion.Horario = DataConvert.ToString(dtr["Horario"]);
+                objFuncion.Estado = DataConvert.ToString(dtr["F.Estado"]);
+                objFuncion.Obra = new Obra()
+                {
+                    Nombre = DataConvert.ToString(dtr["O.Nombre"]),
+                    FechaInicio = DataConvert.ToDateTime(dtr["O.FechaInicio"]),
+                    FechaFin = DataConvert.ToDateTime(dtr["O.FechaFin"]),
+                    Descripcion = DataConvert.ToString(dtr["O.Descripcion"]),
+                    Teatro = new Teatro()
+                    {
+                        IdTeatro = DataConvert.ToInt(dtr["T.IdTeatro"]),
+                        Nombre = DataConvert.ToString(dtr["T.Nombre"]),
+                        Estado = DataConvert.ToString(dtr["T.Estado"]),
+                        frmTeatro = DataConvert.ToString(dtr["T.frmTeatro"])
+                    }
+                };
+                objFuncion.FechaCreacion = DataConvert.ToDateTime(dtr["F.FechaCrea"]);
+                objFuncion.UsuarioCreacion = DataConvert.ToString(dtr["F.UserCrea"]);
+                objFuncion.FechaModificacion = DataConvert.ToDateTime(dtr["F.FechaMod"]);
+                objFuncion.UsuarioModificacion = DataConvert.ToString(dtr["F.UserMod"]);
+                listaFuncion.Add(objFuncion);
+            }
+            UtilDA.Close(cnx);
+            return listaFuncion;
         }
 
         public bool Insert(Funcion datos)
         {
-            throw new NotImplementedException();
+            String sql = "INSERT INTO TH_FUNCION(DIA, HORARIO, ESTADO, IDOBRA, FECHACREA, USERCREA) " +
+                            "VALUES(@dia, @horario, @estado, @idobra, @fechacrea, @usuariocrea)";
+
+            OleDbParameter dia = UtilDA.SetParameters("@nombre", OleDbType.Integer, datos.Dia);
+            OleDbParameter horario = UtilDA.SetParameters("@horario", OleDbType.VarChar, datos.Horario);
+            OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
+            OleDbParameter idobra = UtilDA.SetParameters("@IdZona", OleDbType.Integer, datos.Obra.IdObra);
+            OleDbParameter fechacreacion = UtilDA.SetParameters("@fechacrea", OleDbType.Date, DateTime.Now);
+            OleDbParameter usuariocrea = UtilDA.SetParameters("@usuariocrea", OleDbType.VarChar, Sesion.usuario.Login);
+
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, dia, horario, estado , idobra, fechacreacion, usuariocrea);
         }
 
         public List<Funcion> ListarFuncionDiaObra(int dia, int obra)
@@ -96,7 +177,17 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Update(Funcion datos)
         {
-            throw new NotImplementedException();
+            String sql = "UPDATE TH_FUNCION SET DIA = @dia, HORARIO = @horario, ESTADO = @estado, IDOBRA = @idobra, " +
+                           "FECHAMOD = @fechamod, USERMOD = @usermod WHERE IDFUNCION = @idfuncion";
+
+            OleDbParameter dia = UtilDA.SetParameters("@dia", OleDbType.Integer, datos.Dia);
+            OleDbParameter horario = UtilDA.SetParameters("@horario", OleDbType.VarChar, datos.Horario);
+            OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
+            OleDbParameter idobra = UtilDA.SetParameters("@Idobra", OleDbType.Integer, datos.Obra.IdObra);
+            OleDbParameter fechamod = UtilDA.SetParameters("@fechamod", OleDbType.Date, DateTime.Now);
+            OleDbParameter usermod = UtilDA.SetParameters("@usermod", OleDbType.VarChar, Sesion.usuario.Login);
+            OleDbParameter idfuncion = UtilDA.SetParameters("@idfuncion", OleDbType.Integer, datos.IdFuncion);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, dia, horario, estado, idobra, fechamod, usermod, idobra);
         }
     }
 }
