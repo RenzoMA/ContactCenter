@@ -148,11 +148,11 @@
     </Compile>
     <Compile Include="Helpers\HelperConexion.cs" />
     <Compile Include="Helpers\HelperForm.cs" />
-    <Compile Include="Mantenimientos\Aplicacion\ManAppBuscar.cs">
+    <Compile Include="Mantenimientos\Aplicacion\ManAppFind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\Aplicacion\ManAppBuscar.Designer.cs">
-      <DependentUpon>ManAppBuscar.cs</DependentUpon>
+    <Compile Include="Mantenimientos\Aplicacion\ManAppFind.Designer.cs">
+      <DependentUpon>ManAppFind.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\Aplicacion\ManAppCreate.cs">
       <SubType>Form</SubType>
@@ -171,6 +171,24 @@
     </Compile>
     <Compile Include="Mantenimientos\ManForm.Designer.cs">
       <DependentUpon>ManForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Obra\ManPlayCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Obra\ManPlayCreate.Designer.cs">
+      <DependentUpon>ManPlayCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Obra\ManPlayFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Obra\ManPlayFind.Designer.cs">
+      <DependentUpon>ManPlayFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Obra\ManPlayMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Obra\ManPlayMenu.Designer.cs">
+      <DependentUpon>ManPlayMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\LaPlazaTheater.cs">
       <SubType>Form</SubType>
@@ -221,8 +239,8 @@
     <EmbeddedResource Include="CC\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\Aplicacion\ManAppBuscar.resx">
-      <DependentUpon>ManAppBuscar.cs</DependentUpon>
+    <EmbeddedResource Include="Mantenimientos\Aplicacion\ManAppFind.resx">
+      <DependentUpon>ManAppFind.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\Aplicacion\ManAppCreate.resx">
       <DependentUpon>ManAppCreate.cs</DependentUpon>
@@ -232,6 +250,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\ManForm.resx">
       <DependentUpon>ManForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Obra\ManPlayCreate.resx">
+      <DependentUpon>ManPlayCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Obra\ManPlayMenu.resx">
+      <DependentUpon>ManPlayMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\LaPlazaTheater.resx">
       <DependentUpon>LaPlazaTheater.cs</DependentUpon>
@@ -301,9 +325,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\loading2.gif" />
+    <None Include="Resources\loading3.gif" />
+    <None Include="Resources\krieger2_2.png" />
+    <None Include="Resources\loading5.gif" />
+    <None Include="Resources\left-arrow2.png" />
+    <None Include="Resources\left-arrow1.png" />
+    <None Include="Resources\left-arrow.png" />
+    <None Include="Resources\atrás-galería-3.png" />
     <None Include="Resources\splash.gif" />
     <None Include="Resources\hospital31.png" />
-    <None Include="Resources\loading.gif" />
+    <None Include="Resources\loading8.gif" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -328,6 +360,10 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mantenimientos\Funcion\" />
+    <Folder Include="Mantenimientos\Tarifa\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -33,12 +33,14 @@
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialRaisedButton1
             // 
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(105, 387);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(202, 387);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -96,11 +98,24 @@
             this.dateTimePicker1.TabIndex = 7;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox1.Location = new System.Drawing.Point(246, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // NewTheater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(324, 431);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.metroComboBox3);
             this.Controls.Add(this.metroComboBox2);
@@ -112,6 +127,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Reserva";
             this.Load += new System.EventHandler(this.NewTheater_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -123,5 +139,6 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
         private MetroFramework.Controls.MetroComboBox metroComboBox3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

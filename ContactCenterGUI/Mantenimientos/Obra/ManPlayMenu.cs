@@ -10,16 +10,16 @@ using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 
-namespace ContactCenterGUI.Mantenimientos.Aplicacion
+namespace ContactCenterGUI.Mantenimientos.Obra
 {
-    public partial class ManAppMenu : MaterialForm
+    public partial class ManPlayMenu : MaterialForm
     {
-        public ManAppMenu()
+        public ManPlayMenu()
         {
             InitializeComponent();
         }
 
-        private void ManAppMenu_Load(object sender, EventArgs e)
+        private void ManPlayMenu_Load(object sender, EventArgs e)
         {
             metroComboBox1.SelectedIndex = 0;
         }
@@ -34,7 +34,8 @@ namespace ContactCenterGUI.Mantenimientos.Aplicacion
                 manappcreate.ShowDialog();
 
             }
-            else if (metroComboBox1.SelectedIndex == 2) {
+            else if (metroComboBox1.SelectedIndex == 2)
+            {
 
                 this.Hide();
                 Mantenimientos.Aplicacion.ManAppFind manappbuscar = new Mantenimientos.Aplicacion.ManAppFind();

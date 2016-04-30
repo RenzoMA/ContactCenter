@@ -36,12 +36,19 @@ namespace ContactCenterGUI.Mantenimientos
 
                 MessageBox.Show("Seleccione un mantenimiento", "ERROR");
             }
-            else if (metroComboBox1.SelectedIndex == 1) {
+            else if (metroComboBox1.SelectedIndex == 1)
+            {
 
                 this.Hide();
                 Mantenimientos.Aplicacion.ManAppMenu manappmenu = new Mantenimientos.Aplicacion.ManAppMenu();
                 manappmenu.ShowDialog();
-                
+
+            }
+            else if (metroComboBox1.SelectedIndex == 8) {
+
+                this.Hide();
+                Mantenimientos.Obra.ManPlayMenu manaplaymenu = new Mantenimientos.Obra.ManPlayMenu();
+                manaplaymenu.ShowDialog();
             }
         }
     }

@@ -72,6 +72,11 @@ namespace ContactCenterGUI.Teatros
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
             this.Hide();
             frmTeatro.Visible = true;
         }

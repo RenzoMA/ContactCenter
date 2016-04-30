@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.A16 = new System.Windows.Forms.Button();
@@ -274,6 +273,7 @@
             this.materialLabel18 = new MaterialSkin.Controls.MaterialLabel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -357,19 +357,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1172, 27);
             this.panel3.TabIndex = 2;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(12, 3);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(140, 19);
-            this.materialLabel1.TabIndex = 0;
-            this.materialLabel1.Text = "Teatro Plaza Callao";
             // 
             // panel5
             // 
@@ -2822,6 +2809,19 @@
             this.materialLabel19.TabIndex = 0;
             this.materialLabel19.Text = "SALIDA ";
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(12, 3);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(140, 19);
+            this.materialLabel1.TabIndex = 0;
+            this.materialLabel1.Text = "Teatro Plaza Callao";
+            // 
             // LaPlazaTheater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3093,7 +3093,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.Panel panel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.Button A16;
@@ -3335,5 +3334,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel19;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

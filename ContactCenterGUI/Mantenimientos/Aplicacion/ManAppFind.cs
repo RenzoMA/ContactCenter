@@ -12,9 +12,9 @@ using MaterialSkin.Controls;
 
 namespace ContactCenterGUI.Mantenimientos.Aplicacion
 {
-    public partial class ManAppBuscar : MaterialForm
+    public partial class ManAppFind : MaterialForm
     {
-        public ManAppBuscar()
+        public ManAppFind()
         {
             InitializeComponent();
 

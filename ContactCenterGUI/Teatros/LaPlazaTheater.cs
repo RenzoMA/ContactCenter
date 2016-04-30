@@ -52,6 +52,7 @@ namespace ContactCenterGUI.Teatros
 
         private void CallaoTheater_Load(object sender, EventArgs e)
         {
+            materialLabel1.ForeColor = Color.White;
             reserva = (Reserva)this.Tag;
             token = HelperTeatro.GenerarToken();
             HelperTeatro.MostrarDisponibilidad(this, reserva,token);

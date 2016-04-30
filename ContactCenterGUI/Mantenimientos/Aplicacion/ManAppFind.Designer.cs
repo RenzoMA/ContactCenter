@@ -1,6 +1,6 @@
 ﻿namespace ContactCenterGUI.Mantenimientos.Aplicacion
 {
-    partial class ManAppBuscar
+    partial class ManAppFind
     {
         /// <summary>
         /// Required designer variable.

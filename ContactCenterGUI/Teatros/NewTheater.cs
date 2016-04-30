@@ -125,5 +125,12 @@ namespace ContactCenterGUI.Teatros
             }
             CargarFuncion();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Teatros.TheaterApp teatroapp = new Teatros.TheaterApp();
+            teatroapp.ShowDialog();
+        }
     }
 }

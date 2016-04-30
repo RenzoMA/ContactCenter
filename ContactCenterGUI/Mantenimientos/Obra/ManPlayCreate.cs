@@ -7,31 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin.Animations;
 using MaterialSkin.Controls;
+using MaterialSkin.Animations;
 
-namespace ContactCenterGUI.Teatros
+namespace ContactCenterGUI.Mantenimientos.Obra
 {
-    public partial class TheaterApp : MaterialForm
+    public partial class ManPlayCreate : MaterialForm
     {
-        public TheaterApp()
+        public ManPlayCreate()
         {
             InitializeComponent();
-        }
-
-        private void btnNuevoRegistro_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            NewTheater newtheater = new NewTheater();
-            newtheater.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CC.Main menu = new CC.Main();
-            menu.ShowDialog();
-
+            Mantenimientos.Obra.ManPlayMenu manplaymenu = new Mantenimientos.Obra.ManPlayMenu();
+            manplaymenu.ShowDialog();
         }
     }
 }

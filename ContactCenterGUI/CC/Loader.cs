@@ -38,7 +38,7 @@ namespace ContactCenterGUI.CC
                     Login login = new Login();
                     login.ShowDialog();
                     this.Close();
-                    //Teatros.NewTheater teatro = new Teatros.NewTheater();
+                    //Teatros.LaPlazaTheater teatro = new Teatros.LaPlazaTheater();
                     //teatro.ShowDialog();
                     //this.Close();
 

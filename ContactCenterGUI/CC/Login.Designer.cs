@@ -96,12 +96,12 @@
             // 
             this.lblMensaje.AutoSize = true;
             this.lblMensaje.Depth = 0;
-            this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblMensaje.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblMensaje.Location = new System.Drawing.Point(97, 307);
             this.lblMensaje.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(0, 18);
+            this.lblMensaje.Size = new System.Drawing.Size(0, 19);
             this.lblMensaje.TabIndex = 10;
             // 
             // pictureBox2
@@ -139,7 +139,7 @@
             this.Name = "Login";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "Inicio";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ep1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
