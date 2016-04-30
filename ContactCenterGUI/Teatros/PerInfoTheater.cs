@@ -57,7 +57,7 @@ namespace ContactCenterGUI.Teatros
             {
                 contador++;
                 result += obj.Fila + obj.Descripcion + ", ";
-                if (contador == 5)
+                if (contador == 15)
                 {
                     result += "\n";
                     contador = 0;

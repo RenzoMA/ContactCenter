@@ -104,6 +104,8 @@ namespace ContactCenterGUI.Teatros
         }
         private void CargarFuncion()
         {
+
+            txtFecha.Text = dateTimePicker1.Value.ToShortDateString();
             obra = metroComboBox2.SelectedItem as Obra;
             diaFuncion = Util.DayOfWeekHelper(dateTimePicker1.Value.Date.DayOfWeek);
             FechaFuncion = dateTimePicker1.Value.Date;
@@ -132,6 +134,12 @@ namespace ContactCenterGUI.Teatros
             this.Hide();
             Teatros.TheaterApp teatroapp = new Teatros.TheaterApp();
             teatroapp.ShowDialog();
+        }
+
+        private void txtCorreo_MouseClick(object sender, MouseEventArgs e)
+        {
+            dateTimePicker1.Select();
+            SendKeys.Send("%{DOWN}");
         }
     }
 }

@@ -34,6 +34,7 @@
             this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtFecha = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,11 +111,30 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // txtFecha
+            // 
+            this.txtFecha.Depth = 0;
+            this.txtFecha.Hint = "";
+            this.txtFecha.Location = new System.Drawing.Point(77, 233);
+            this.txtFecha.MaxLength = 32767;
+            this.txtFecha.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.PasswordChar = '\0';
+            this.txtFecha.SelectedText = "";
+            this.txtFecha.SelectionLength = 0;
+            this.txtFecha.SelectionStart = 0;
+            this.txtFecha.Size = new System.Drawing.Size(170, 23);
+            this.txtFecha.TabIndex = 16;
+            this.txtFecha.TabStop = false;
+            this.txtFecha.UseSystemPasswordChar = false;
+            this.txtFecha.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtCorreo_MouseClick);
+            // 
             // NewTheater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(324, 431);
+            this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.metroComboBox3);
@@ -140,5 +160,6 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtFecha;
     }
 }

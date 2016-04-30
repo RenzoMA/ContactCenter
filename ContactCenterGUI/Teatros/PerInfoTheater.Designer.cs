@@ -56,7 +56,6 @@
             this.txtApeMat = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
@@ -328,7 +327,7 @@
             // materialRaisedButton1
             // 
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(482, 834);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(482, 849);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -461,7 +460,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.materialRaisedButton3);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.txtApeMat);
             this.groupBox1.Controls.Add(this.materialLabel1);
@@ -485,18 +483,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Cliente";
             // 
-            // materialRaisedButton3
-            // 
-            this.materialRaisedButton3.Depth = 0;
-            this.materialRaisedButton3.Location = new System.Drawing.Point(449, 34);
-            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton3.Name = "materialRaisedButton3";
-            this.materialRaisedButton3.Primary = true;
-            this.materialRaisedButton3.Size = new System.Drawing.Size(170, 50);
-            this.materialRaisedButton3.TabIndex = 28;
-            this.materialRaisedButton3.Text = "Ingresar Cliente";
-            this.materialRaisedButton3.UseVisualStyleBackColor = true;
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
@@ -512,7 +498,7 @@
             this.groupBox2.Controls.Add(this.lblFuncion);
             this.groupBox2.Location = new System.Drawing.Point(12, 604);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(641, 202);
+            this.groupBox2.Size = new System.Drawing.Size(641, 239);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Reserva";
@@ -533,7 +519,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 884);
+            this.ClientSize = new System.Drawing.Size(665, 899);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -584,7 +570,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtApeMat;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private System.Windows.Forms.GroupBox groupBox1;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
