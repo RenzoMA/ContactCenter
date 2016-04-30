@@ -187,6 +187,8 @@ namespace ContactCenterServices
             return result;
         }
 
+
+        //OBRA
         public bool InsertarObra(Obra obra) {
             return _obraService.Insert(obra);
         }
@@ -206,6 +208,30 @@ namespace ContactCenterServices
 
         public IList<Obra> ListarObras() {
             return _obraService.GetLista();
+        }
+
+        //FUNCION
+        public bool InsertarFuncion(Funcion funcion)
+        {
+            return _funcionService.Insert(funcion);
+        }
+        public bool ActualizarFuncion(Funcion funcion)
+        {
+            return _funcionService.Update(funcion);
+        }
+        public bool EliminarFuncion(int id)
+        {
+            return _funcionService.Delete(id);
+        }
+
+        public Funcion BuscarFuncion(int id)
+        {
+            return _funcionService.GetById(id);
+        }
+
+        public IList<Funcion> ListarFunciones()
+        {
+            return _funcionService.GetLista();
         }
     }
 }

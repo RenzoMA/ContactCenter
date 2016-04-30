@@ -28,16 +28,26 @@ namespace ContactCenterServices
         List<Obra> ListarObraTeatro(int idTeatro);
         List<Funcion> ListarFuncionDiaObra(int dia, int idObra);
 
+        //OBRA
         bool InsertarObra(Obra obra);
         bool EliminarObra(int id);
         bool ActualizarObra(Obra obra);
         IList<Obra> ListarObras();
         Obra BuscarObra(int id);    
+
+        //ASIENTO
         bool InserAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, string token);
         Task<bool> InserAsientoTemporalAsync(int idFuncion, int idAsiento, DateTime fechaObra, string token);
         bool EliminarAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, string token);
         Task<bool> EliminarAsientoTemporalAsync(int idFuncion, int idAsiento, DateTime fechaObra, string token);
         bool EliminarAsientoTemporalTotal(string token);
         Task<bool> EliminarAsientoTemporalTotalAsync(string token);
+
+        //FUNCION
+        bool InsertarFuncion(Funcion funcion);
+        bool EliminarFuncion(int id);
+        bool ActualizarFuncion(Funcion funcion);
+        IList<Funcion> ListarFunciones();
+        Funcion BuscarFuncion(int id);
     }
 }

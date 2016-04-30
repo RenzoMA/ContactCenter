@@ -55,7 +55,8 @@ namespace ContactCenterDA.Repositories.CC.TH
                     {
                         IdTeatro = DataConvert.ToInt(dtr["T.IdTeatro"]),
                         Nombre = DataConvert.ToString(dtr["T.Nombre"]),
-                        Estado = DataConvert.ToString(dtr["T.Estado"])
+                        Estado = DataConvert.ToString(dtr["T.Estado"]),
+                        frmTeatro = DataConvert.ToString(dtr["T.frmTeatro"])
                     },
                 };
                 objAsiento.FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]);
