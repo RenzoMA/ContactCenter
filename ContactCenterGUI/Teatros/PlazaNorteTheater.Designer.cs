@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -688,7 +687,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
             this.panel1.Controls.Add(this.materialRaisedButton2);
-            this.panel1.Controls.Add(this.materialRaisedButton1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel3);
@@ -700,6 +698,8 @@
             // 
             // materialRaisedButton2
             // 
+            this.materialRaisedButton2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialRaisedButton2.Depth = 0;
             this.materialRaisedButton2.Location = new System.Drawing.Point(989, 33);
             this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -709,19 +709,6 @@
             this.materialRaisedButton2.TabIndex = 6;
             this.materialRaisedButton2.Text = "Continuar";
             this.materialRaisedButton2.UseVisualStyleBackColor = true;
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(817, 33);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(160, 26);
-            this.materialRaisedButton1.TabIndex = 5;
-            this.materialRaisedButton1.Text = "Atrás";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // label2
             // 
@@ -8615,6 +8602,5 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
     }
 }
