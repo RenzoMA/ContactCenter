@@ -87,9 +87,7 @@ namespace ContactCenterGUI.Teatros
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
-            validaSalida = 1;
-            frmTeatro.Visible = true;
-            this.Close();
+           
         }
 
         private void PerInfoTheater_FormClosing(object sender, FormClosingEventArgs e)
@@ -159,6 +157,13 @@ namespace ContactCenterGUI.Teatros
                 }
                 Animacion.HideLoader(this);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            validaSalida = 1;
+            frmTeatro.Visible = true;
+            this.Close();
         }
     }
 }
