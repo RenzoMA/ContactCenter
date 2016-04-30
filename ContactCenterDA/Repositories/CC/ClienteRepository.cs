@@ -124,7 +124,7 @@ namespace ContactCenterDA.Repositories.CC
 
             String sql = "SELECT * FROM CC_Cliente WHERE Telefono = @telefono";
 
-            OleDbParameter pTelefono = UtilDA.SetParameters("@telefono", OleDbType.Integer, telefono);
+            OleDbParameter pTelefono = UtilDA.SetParameters("@telefono", OleDbType.VarChar, telefono);
 
             using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pTelefono))
             {

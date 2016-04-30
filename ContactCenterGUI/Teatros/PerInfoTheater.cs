@@ -140,6 +140,7 @@ namespace ContactCenterGUI.Teatros
             if (telefono != "")
             {
                 IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+                Animacion.ShowLoader(this);
                 cliente = await servicio.GetClienteByTelefonoAsync(telefono);
                 if (cliente != null)
                 {
@@ -155,8 +156,8 @@ namespace ContactCenterGUI.Teatros
                     txtApePat.Text = "";
                     txtCorreo.Text = "";
                     txtNombre.Text = "";
-                    txtTelefono.Text = "";
                 }
+                Animacion.HideLoader(this);
             }
         }
     }
