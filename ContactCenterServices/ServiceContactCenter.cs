@@ -247,5 +247,30 @@ namespace ContactCenterServices
             return obj;
 
         }
+
+        public bool InsertarFuncion(Funcion funcion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool EliminarFuncion(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ActualizarFuncion(Funcion funcion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<Funcion> ListarFunciones()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Funcion BuscarFuncion(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
