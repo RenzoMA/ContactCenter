@@ -9,6 +9,8 @@ using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
+using ContactCenterBE.CC.TH.Entidades.ReservaBE;
+using ContactCenterBE.CC.Entidades.CLienteBE;
 
 namespace ContactCenterServices
 {
@@ -49,5 +51,9 @@ namespace ContactCenterServices
         bool ActualizarFuncion(Funcion funcion);
         IList<Funcion> ListarFunciones();
         Funcion BuscarFuncion(int id);
+        bool InsertarReserva(Reserva reserva,Cliente cliente);
+        Task<bool> InsertarReservaAsync(Reserva reserva,Cliente cliente);
+        Cliente GetClienteByTelefono(string telefono);
+        Task<Cliente> GetClienteByTelefonoAsync(string telefono);
     }
 }

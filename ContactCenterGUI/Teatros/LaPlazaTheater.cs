@@ -18,44 +18,17 @@ namespace ContactCenterGUI.Teatros
     public partial class LaPlazaTheater : MaterialForm
     {
         private Reserva reserva;
-        private string token;
 
         public LaPlazaTheater()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            HelperTeatro.EliminarSeparadas(token);
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void button124_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialRaisedButton1_Click(object sender, EventArgs e)
-        {
-            HelperTeatro.EliminarSeparadas(token);
-        }
-
-        private void materialRaisedButton2_Click(object sender, EventArgs e)
-        {
-            HelperTeatro.ConfirmarReserva();
-        }
-
         private void CallaoTheater_Load(object sender, EventArgs e)
         {
             materialLabel1.ForeColor = Color.White;
             reserva = (Reserva)this.Tag;
-            token = HelperTeatro.GenerarToken();
-            HelperTeatro.MostrarDisponibilidad(this, reserva,token);
+            HelperTeatro.MostrarDisponibilidad(this, reserva);
         }
     }
 }

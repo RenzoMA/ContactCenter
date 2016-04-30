@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnContinuar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnAtras = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCerrar = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -285,10 +285,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.panel1.Controls.Add(this.materialRaisedButton2);
-            this.panel1.Controls.Add(this.materialRaisedButton1);
+            this.panel1.Controls.Add(this.btnContinuar);
+            this.panel1.Controls.Add(this.btnAtras);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblCerrar);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -296,31 +296,29 @@
             this.panel1.Size = new System.Drawing.Size(1172, 65);
             this.panel1.TabIndex = 2;
             // 
-            // materialRaisedButton2
+            // btnContinuar
             // 
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(990, 33);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(160, 26);
-            this.materialRaisedButton2.TabIndex = 6;
-            this.materialRaisedButton2.Text = "Continuar";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
-            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
+            this.btnContinuar.Depth = 0;
+            this.btnContinuar.Location = new System.Drawing.Point(990, 33);
+            this.btnContinuar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnContinuar.Name = "btnContinuar";
+            this.btnContinuar.Primary = true;
+            this.btnContinuar.Size = new System.Drawing.Size(160, 26);
+            this.btnContinuar.TabIndex = 6;
+            this.btnContinuar.Text = "Continuar";
+            this.btnContinuar.UseVisualStyleBackColor = true;
             // 
-            // materialRaisedButton1
+            // btnAtras
             // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(818, 33);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(160, 26);
-            this.materialRaisedButton1.TabIndex = 5;
-            this.materialRaisedButton1.Text = "Atrás";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+            this.btnAtras.Depth = 0;
+            this.btnAtras.Location = new System.Drawing.Point(818, 33);
+            this.btnAtras.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Primary = true;
+            this.btnAtras.Size = new System.Drawing.Size(160, 26);
+            this.btnAtras.TabIndex = 5;
+            this.btnAtras.Text = "Atrás";
+            this.btnAtras.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -333,20 +331,18 @@
             this.label2.Size = new System.Drawing.Size(13, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "_";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label1
+            // lblCerrar
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
-            this.label1.Location = new System.Drawing.Point(1146, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(14, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "X";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCerrar.AutoSize = true;
+            this.lblCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.lblCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
+            this.lblCerrar.Location = new System.Drawing.Point(1146, 9);
+            this.lblCerrar.Name = "lblCerrar";
+            this.lblCerrar.Size = new System.Drawing.Size(14, 13);
+            this.lblCerrar.TabIndex = 0;
+            this.lblCerrar.Text = "X";
             // 
             // panel3
             // 
@@ -908,7 +904,6 @@
             this.A114.TabIndex = 1675;
             this.A114.Text = "4";
             this.A114.UseVisualStyleBackColor = false;
-            this.A114.Click += new System.EventHandler(this.button124_Click);
             // 
             // A115
             // 
@@ -3091,7 +3086,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCerrar;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
@@ -3332,8 +3327,8 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel18;
         private System.Windows.Forms.Panel panel6;
         private MaterialSkin.Controls.MaterialLabel materialLabel19;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnContinuar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnAtras;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ContactCenterDA.Repositories.CC;
 using ContactCenterDA.Repositories.CC.TH;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
+using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using System.Collections.Generic;
 using ContactCenterUnitTest.GenericInterface;
@@ -15,7 +16,7 @@ namespace ContactCenterUnitTest.TH
         DetalleReservaRepository detalleReservaRepository = new DetalleReservaRepository();
         DetalleReserva detalleReserva = new DetalleReserva()
         {
-            Asiento = AsientoTest.asiento,
+            Asiento = (AsientoPrecio)AsientoTest.asiento,
             Estado = "A",
             FechaCreacion = DateTime.Now,
             FechaModificacion = DateTime.Now,

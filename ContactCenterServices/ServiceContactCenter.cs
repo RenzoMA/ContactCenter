@@ -14,6 +14,8 @@ using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
+using ContactCenterBE.CC.TH.Entidades.ReservaBE;
+using ContactCenterBE.CC.Entidades.CLienteBE;
 
 namespace ContactCenterServices
 {
@@ -26,7 +28,8 @@ namespace ContactCenterServices
         private ITeatroService _teatroService;
         private IObraService _obraService;
         private IFuncionService _funcionService;
-
+        private IReservaService _reservaService;
+        private IClienteService _clienteService;
 
         public ServiceContactCenter(
             IAsientoService asientoService,
@@ -34,14 +37,18 @@ namespace ContactCenterServices
             IUsuarioService usuarioService,
             ITeatroService teatroService,
             IObraService obraService,
-            IFuncionService funcionService)
+            IFuncionService funcionService,
+            IReservaService reservaService,
+            IClienteService clienteService)
         {
+            _clienteService = clienteService;
             _asientoService = asientoService;
             _aplicacionService = aplicacionService;
             _usuarioService = usuarioService;
             _teatroService = teatroService;
             _obraService = obraService;
             _funcionService = funcionService;
+            _reservaService = reservaService;
         }
 
         public void Dispose()
@@ -210,28 +217,60 @@ namespace ContactCenterServices
             return _obraService.GetLista();
         }
 
-        //FUNCION
-        public bool InsertarFuncion(Funcion funcion)
+        public bool InsertarReserva(Reserva reserva,Cliente cliente)
         {
-            return _funcionService.Insert(funcion);
-        }
-        public bool ActualizarFuncion(Funcion funcion)
-        {
-            return _funcionService.Update(funcion);
-        }
-        public bool EliminarFuncion(int id)
-        {
-            return _funcionService.Delete(id);
+            return _reservaService.InsertarReserva(reserva,cliente);
         }
 
-        public Funcion BuscarFuncion(int id)
+        public async Task<bool> InsertarReservaAsync(Reserva reserva,Cliente cliente)
         {
-            return _funcionService.GetById(id);
+            bool result = false;
+            await Task.Run(() =>
+            {
+                result = _reservaService.InsertarReserva(reserva, cliente);
+            });
+            return result;
+        }
+
+        public Cliente GetClienteByTelefono(string telefono)
+        {
+            return _clienteService.GetClienteByTelefono(telefono);
+        }
+
+        public async Task<Cliente> GetClienteByTelefonoAsync(string telefono)
+        {
+            Cliente obj = null;
+            await Task.Run(() =>
+            {
+                obj = _clienteService.GetClienteByTelefono(telefono);
+            });
+            return obj;
+
+        }
+
+        public bool InsertarFuncion(Funcion funcion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool EliminarFuncion(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ActualizarFuncion(Funcion funcion)
+        {
+            throw new NotImplementedException();
         }
 
         public IList<Funcion> ListarFunciones()
         {
-            return _funcionService.GetLista();
+            throw new NotImplementedException();
+        }
+
+        public Funcion BuscarFuncion(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
