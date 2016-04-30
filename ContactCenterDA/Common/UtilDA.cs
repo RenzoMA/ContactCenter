@@ -31,7 +31,7 @@ namespace ContactCenterDA.Common
                 ruta = ruta.Replace("ContactCenterUnitTest\\bin\\Debug", "ContactCenterDA");
 
             string strCnx =
-                "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + ruta + "\\ContactCenter.accdb; Persist Security Info = True";
+                "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + ruta + "\\ContactCenter.accdb; Persist Security Info = True;";
 
             if (object.ReferenceEquals(strCnx, string.Empty))
             {
@@ -132,8 +132,10 @@ namespace ContactCenterDA.Common
                 oleDbCommand.CommandType = commandType;
                 oleDbConnection.Open();
                 oleDbCommand.CommandText = sqlValidador;
-                if (!oleDbCommand.ExecuteReader().HasRows)
+                OleDbDataReader dtr = oleDbCommand.ExecuteReader();
+                if (!dtr.HasRows)
                 {
+                    dtr.Close();
                     oleDbCommand.CommandText = sqlEjecucion;
                     oleDbCommand.ExecuteNonQuery();
                     return true;
@@ -204,6 +206,7 @@ namespace ContactCenterDA.Common
             {
                 oleDbCommand.Connection = oleDbConnection;
                 oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
+                oleDbCommand.Parameters.Clear();
 
                 foreach (OleDbParameter parameter in parameters)
                 {

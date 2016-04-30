@@ -133,18 +133,23 @@ namespace ContactCenterDA.Repositories.CC.TH
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, descripcion, fila, disponible, idzona, fechaMod, usuarioMod, idAsiento);
         }
 
-        public List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime fechaReserva)
+        public List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime fechaReserva,string token)
         {
+            cmd = new OleDbCommand();
+            cnx = new OleDbConnection();
             List<Asiento> lAsiento = new List<Asiento>();
             Asiento asiento = null;
 
-            string sql = "SELECT IdAsiento, Estado FROM TH_DETALLE_RESERVA DR INNER JOIN TH_RESERVA R ON R.IDRESERVA = DR.IDRESERVA WHERE R.IDOBRA = @IdObra AND R.IDFUNCION = @IdFuncion AND R.FECHARESERVA = @fechaReserva";
+            string sql = "SELECT IdAsiento, Estado FROM TH_DETALLE_RESERVA DR INNER JOIN TH_RESERVA R ON R.IDRESERVA = DR.IDRESERVA WHERE R.IDOBRA = @IdObra AND R.IDFUNCION = @IdFuncion AND R.FECHARESERVA = @fechaReserva UNION SELECT idAsiento, ESTADO FROM TH_ASIENTO_TEMPORAL WHERE IdFuncion =@IdFuncion2 AND FECHAOBRA = @fechaReserva2 AND TOKEN <> @token";
 
             OleDbParameter obra = UtilDA.SetParameters("@IdObra", OleDbType.Integer, idObra);
             OleDbParameter funcion = UtilDA.SetParameters("@IdFuncion", OleDbType.Integer, idFuncion);
             OleDbParameter reserva = UtilDA.SetParameters("@fechaReserva", OleDbType.Date,fechaReserva);
+            OleDbParameter funcion2 = UtilDA.SetParameters("@IdFuncion2", OleDbType.Integer, idFuncion);
+            OleDbParameter reserva2 = UtilDA.SetParameters("@fechaReserva2", OleDbType.Date, fechaReserva);
+            OleDbParameter pToken = UtilDA.SetParameters("@token", OleDbType.VarChar, token);
 
-            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, obra, funcion, reserva))
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, obra, funcion, reserva,funcion2, reserva2, pToken))
             {
                 while (dtr.Read())
                 {
@@ -190,6 +195,41 @@ namespace ContactCenterDA.Repositories.CC.TH
             }
             UtilDA.Close(cnx);
             return lAsiento;
+        }
+
+        public bool InserAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, string token)
+        {
+            string sqlValida = "SELECT * FROM TH_ASIENTO_TEMPORAL WHERE IdFuncion = @idFuncion and idAsiento = @IdAsiento and FechaObra = @FechaObra and token <> @token";
+
+            string sqlInsert = "INSERT INTO TH_ASIENTO_TEMPORAL (IdFuncion,IdAsiento,FechaObra,Token,UserCrea,FechaCrea,Estado) VALUES " +
+                         "(@idFuncion,@idAsiento,@fechaObra,@token,@userCrea,@fechaCrea,'A')";
+
+            OleDbParameter pIdFuncion = UtilDA.SetParameters("@idFuncion", OleDbType.Integer, idFuncion);
+            OleDbParameter pIdAsiento = UtilDA.SetParameters("@idAsiento", OleDbType.Integer, idAsiento);
+            OleDbParameter pFechaObra = UtilDA.SetParameters("@fechaObra", OleDbType.Date, fechaObra);
+            OleDbParameter pToken = UtilDA.SetParameters("@token", OleDbType.VarChar, token);
+            OleDbParameter pUserCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
+            OleDbParameter pFechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
+            return UtilDA.ExecuteQueryValidador(cmd, CommandType.Text, sqlValida, sqlInsert, cnx, pIdFuncion, pIdAsiento, pFechaObra, pToken, pUserCrea,pFechaCrea);
+
+        }
+
+        public bool EliminarAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, string token)
+        {
+            string sql = "DELETE FROM TH_ASIENTO_TEMPORAL WHERE IdFuncion = @idFuncion and idAsiento = @IdAsiento and FechaObra = @FechaObra and token = @token";
+            OleDbParameter pIdFuncion = UtilDA.SetParameters("@idFuncion", OleDbType.Integer, idFuncion);
+            OleDbParameter pIdAsiento = UtilDA.SetParameters("@idAsiento", OleDbType.Integer, idAsiento);
+            OleDbParameter pFechaObra = UtilDA.SetParameters("@fechaObra", OleDbType.Date, fechaObra);
+            OleDbParameter pToken = UtilDA.SetParameters("@token", OleDbType.VarChar, token);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, pIdFuncion, pIdAsiento, pFechaObra, pToken);
+
+        }
+        public bool EliminarAsientoTemporalTotal(string token)
+        {
+            string sql = "DELETE FROM TH_ASIENTO_TEMPORAL WHERE token = @token";
+            OleDbParameter pToken = UtilDA.SetParameters("@token", OleDbType.VarChar, token);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, pToken);
+
         }
     }
 }

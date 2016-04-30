@@ -92,17 +92,17 @@ namespace ContactCenterServices
             return lAplicacion;
         }
 
-        public List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime FechaObra)
+        public List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime FechaObra,string token)
         {
-            return _asientoService.ListarAsientoDisponible(idObra, idFuncion, FechaObra);
+            return _asientoService.ListarAsientoDisponible(idObra, idFuncion, FechaObra,token);
         }
 
-        public async Task<List<Asiento>> ListarAsientoDisponibleAsync(int idObra, int idFuncion, DateTime FechaObra)
+        public async Task<List<Asiento>> ListarAsientoDisponibleAsync(int idObra, int idFuncion, DateTime FechaObra,string token)
         {
             List<Asiento> lAsiento = null;
             await Task.Run(() =>
             {
-                lAsiento = _asientoService.ListarAsientoDisponible(idObra, idFuncion, FechaObra);
+                lAsiento = _asientoService.ListarAsientoDisponible(idObra, idFuncion, FechaObra,token);
             });
             return lAsiento;
         }
@@ -140,6 +140,51 @@ namespace ContactCenterServices
                 lTeatro = _teatroService.Listar();
             });
             return lTeatro;
+        }
+
+        public bool InserAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, string token)
+        {
+            return _asientoService.InserAsientoTemporal(idFuncion, idAsiento, fechaObra, token);
+        }
+
+        public bool EliminarAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, string token)
+        {
+            return _asientoService.EliminarAsientoTemporal(idFuncion, idAsiento, fechaObra, token);
+        }
+
+        public async Task<bool> InserAsientoTemporalAsync(int idFuncion, int idAsiento, DateTime fechaObra, string token)
+        {
+            bool result = false;
+            await Task.Run(() =>
+            {
+                result = _asientoService.InserAsientoTemporal(idFuncion, idAsiento, fechaObra, token);
+            });
+            return result;
+        }
+
+        public async Task<bool> EliminarAsientoTemporalAsync(int idFuncion, int idAsiento, DateTime fechaObra, string token)
+        {
+            bool result = false;
+            await Task.Run(() =>
+            {
+                result = _asientoService.EliminarAsientoTemporal(idFuncion, idAsiento, fechaObra, token);
+            });
+            return result;
+        }
+
+        public bool EliminarAsientoTemporalTotal(string token)
+        {
+            return _asientoService.EliminarAsientoTemporalTotal(token);
+        }
+
+        public async Task<bool> EliminarAsientoTemporalTotalAsync(string token)
+        {
+            bool result = false;
+            await Task.Run(() =>
+            {
+                result = _asientoService.EliminarAsientoTemporalTotal(token);
+            });
+            return result;
         }
 
         public bool InsertarObra(Obra obra) {

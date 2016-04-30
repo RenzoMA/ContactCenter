@@ -20,9 +20,9 @@ namespace ContactCenterServices
         Task<Usuario> ValidarUsuarioAsync(string login, string password);
         List<Aplicacion> ListarAplicacionUsuario(Usuario usuario);
         Task<List<Aplicacion>> ListarAplicacionUsuarioAsync(Usuario usuario);
-        Task<List<Asiento>> ListarAsientoDisponibleAsync(int idObra, int idFuncion, DateTime FechaObra);
+        Task<List<Asiento>> ListarAsientoDisponibleAsync(int idObra, int idFuncion, DateTime FechaObra,string token);
         Task<List<AsientoPrecio>> listarAsientoTeatroAsync(int idObra);
-        List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime FechaObra);
+        List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime FechaObra, string token);
         List<Teatro> ListarTeatros();
         Task<List<Teatro>> ListarTeatrosAsync();
         List<Obra> ListarObraTeatro(int idTeatro);
@@ -33,5 +33,11 @@ namespace ContactCenterServices
         bool ActualizarObra(Obra obra);
         IList<Obra> ListarObras();
         Obra BuscarObra(int id);    
+        bool InserAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, string token);
+        Task<bool> InserAsientoTemporalAsync(int idFuncion, int idAsiento, DateTime fechaObra, string token);
+        bool EliminarAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, string token);
+        Task<bool> EliminarAsientoTemporalAsync(int idFuncion, int idAsiento, DateTime fechaObra, string token);
+        bool EliminarAsientoTemporalTotal(string token);
+        Task<bool> EliminarAsientoTemporalTotalAsync(string token);
     }
 }
