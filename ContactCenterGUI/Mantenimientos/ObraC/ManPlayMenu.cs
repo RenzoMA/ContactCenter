@@ -30,8 +30,8 @@ namespace ContactCenterGUI.Mantenimientos.ObraC
             {
 
                 this.Hide();
-                Mantenimientos.ManAppCreate manappcreate = new Mantenimientos.ManAppCreate();
-                manappcreate.ShowDialog();
+                Mantenimientos.ObraC.ManPlayCreate manplaycreate = new Mantenimientos.ObraC.ManPlayCreate();
+                manplaycreate.ShowDialog();
 
             }
             else if (metroComboBox1.SelectedIndex == 2)

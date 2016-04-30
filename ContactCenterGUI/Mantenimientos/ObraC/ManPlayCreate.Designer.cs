@@ -229,7 +229,10 @@
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialSingleLineTextField1);
             this.Controls.Add(this.materialLabel1);
+            this.MaximizeBox = false;
             this.Name = "ManPlayCreate";
+            this.Sizable = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManPlayCreate";
             this.Load += new System.EventHandler(this.ManPlayCreate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

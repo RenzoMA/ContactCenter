@@ -37,12 +37,11 @@ namespace ContactCenterGUI.Mantenimientos.ObraC
 
                 Obra obra = new Obra();
                 obra.Nombre = materialSingleLineTextField1.Text;
-                obra.FechaInicio = dateTimePicker1.Value;
-                obra.FechaFin = dateTimePicker2.Value;
+                obra.FechaInicio = dateTimePicker1.Value.Date;
+                obra.FechaFin = dateTimePicker2.Value.Date;
                 obra.Descripcion = richTextBox1.Text;
-                obra.Estado = metroComboBox1.ValueMember;
+                obra.Estado = metroComboBox1.SelectedIndex == 0?"A":"I";
                 obra.Teatro = metroComboBox2.SelectedItem as Teatro;
-                servicio.InsertarObra(obra);
             if(servicio.InsertarObra(obra) == true) {
 
                 MessageBox.Show("Obra registrada correctamente");

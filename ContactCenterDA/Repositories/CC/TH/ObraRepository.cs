@@ -145,7 +145,7 @@ namespace ContactCenterDA.Repositories.CC.TH
         public bool Insert(Obra datos)
         {
             String sql = "INSERT INTO TH_OBRA(Nombre, FechaInicio, FechaFin, Descripcion, Estado, IdTeatro, FechaCrea, UserCrea) " +
-                        "VALUES(@nombre @fechaini, @fechafin, @descripcion, @estado, @idTeatro, @fechaCrea, @userCrea)";
+                        "VALUES(@nombre, @fechaini, @fechafin, @descripcion, @estado, @idTeatro, @fechaCrea, @userCrea)";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter fechaini = UtilDA.SetParameters("@fechaini", OleDbType.Date, datos.FechaInicio);
