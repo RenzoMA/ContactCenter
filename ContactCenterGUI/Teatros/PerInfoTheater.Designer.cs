@@ -269,7 +269,7 @@
             this.txtTelefono.Depth = 0;
             this.txtTelefono.Hint = "";
             this.txtTelefono.Location = new System.Drawing.Point(139, 30);
-            this.txtTelefono.MaxLength = 32767;
+            this.txtTelefono.MaxLength = 20;
             this.txtTelefono.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PasswordChar = '\0';
@@ -281,6 +281,7 @@
             this.txtTelefono.TabStop = false;
             this.txtTelefono.UseSystemPasswordChar = false;
             this.txtTelefono.Leave += new System.EventHandler(this.txtTelefono_Leave);
+            
             // 
             // lblTeatro
             // 
@@ -327,7 +328,7 @@
             // materialRaisedButton1
             // 
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(482, 849);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(1129, 336);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -496,7 +497,7 @@
             this.groupBox2.Controls.Add(this.lblObra);
             this.groupBox2.Controls.Add(this.materialLabel15);
             this.groupBox2.Controls.Add(this.lblFuncion);
-            this.groupBox2.Location = new System.Drawing.Point(12, 604);
+            this.groupBox2.Location = new System.Drawing.Point(659, 91);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(641, 239);
             this.groupBox2.TabIndex = 29;
@@ -507,7 +508,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
             this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
-            this.pictureBox1.Location = new System.Drawing.Point(587, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(1245, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(16, 18);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -519,7 +520,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 899);
+            this.ClientSize = new System.Drawing.Size(1320, 612);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

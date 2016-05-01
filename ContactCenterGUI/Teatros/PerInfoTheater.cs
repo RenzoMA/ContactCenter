@@ -38,6 +38,8 @@ namespace ContactCenterGUI.Teatros
             reserva = _reserva;
             frmTeatro = form;
             frmTeatro.Visible = false;
+           
+
             InitializeComponent();
         }
         public Single CalcularPrecio(List<AsientoPrecio> lista)
@@ -66,14 +68,13 @@ namespace ContactCenterGUI.Teatros
             return result;
         }
 
-        private void PerInfoTheater_Load(object sender, EventArgs e)
+        private void PopularDatosReserva()
         {
-            lblPrecio.Text = "S/. "+CalcularPrecio(listaAsientoPrecio).ToString();
+            lblPrecio.Text = "S/. " + CalcularPrecio(listaAsientoPrecio).ToString();
             lblAsientos.Text = GenerarAsiento(listaAsientoPrecio);
             lblObra.Text = reserva.Obra.Nombre;
             lblFuncion.Text = reserva.Funcion.Horario;
             lblTeatro.Text = reserva.Obra.Teatro.Nombre;
-
             foreach (AsientoPrecio ap in listaAsientoPrecio)
             {
                 detalle = new DetalleReserva();
@@ -82,12 +83,22 @@ namespace ContactCenterGUI.Teatros
                 listaDetalle.Add(detalle);
             }
             reserva.ListaDetalles = listaDetalle;
-
         }
-
-        private void materialRaisedButton2_Click(object sender, EventArgs e)
+        private void PerInfoTheater_Load(object sender, EventArgs e)
         {
-           
+
+            SetEventos();
+            PopularDatosReserva();
+            
+        }
+        private void SetEventos()
+        {
+            txtNombre.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
+            txtApeMat.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
+            txtApePat.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
+            txtCorreo.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
+            txtTelefono.KeyPress += new KeyPressEventHandler(HelperControl.EditTextNumber);
+            txtCorreo.Validating += new CancelEventHandler(HelperControl.ValidEmail);
         }
 
         private void PerInfoTheater_FormClosing(object sender, FormClosingEventArgs e)
@@ -99,7 +110,35 @@ namespace ContactCenterGUI.Teatros
             }
         }
 
+        private bool ValidarCampos()
+        {
+            if (txtApeMat.Text.Trim().Equals(String.Empty))
+                return false;
+            if (txtApePat.Text.Trim().Equals(String.Empty))
+                return false;
+            if (txtCorreo.Text.Trim().Equals(String.Empty))
+                return false;
+            if (txtNombre.Text.Trim().Equals(String.Empty))
+                return false;
+            if (txtTelefono.Text.Trim().Equals(String.Empty))
+                return false;
+
+            return true;
+        }
+
         private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            if (ValidarCampos())
+            {
+                AsociarClienteReserva();
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los campos", "Aviso");
+            }
+            
+        }
+        public void AsociarClienteReserva()
         {
             cliente = new Cliente()
             {
@@ -165,5 +204,6 @@ namespace ContactCenterGUI.Teatros
             frmTeatro.Visible = true;
             this.Close();
         }
+
     }
 }
