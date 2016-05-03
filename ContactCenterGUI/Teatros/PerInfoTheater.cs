@@ -26,6 +26,7 @@ namespace ContactCenterGUI.Teatros
         public List<AsientoPrecio> listaAsientoPrecio { get; set; }
         public List<DetalleReserva> listaDetalle = new List<DetalleReserva>();
         public DetalleReserva detalle;
+        public Single precioTotal;
         public Cliente cliente;
         public int validaSalida = 0;
 
@@ -70,7 +71,8 @@ namespace ContactCenterGUI.Teatros
 
         private void PopularDatosReserva()
         {
-            lblPrecio.Text = "S/. " + CalcularPrecio(listaAsientoPrecio).ToString();
+            precioTotal = CalcularPrecio(listaAsientoPrecio);
+            lblPrecio.Text = "S/. " + precioTotal.ToString();
             lblAsientos.Text = GenerarAsiento(listaAsientoPrecio);
             lblObra.Text = reserva.Obra.Nombre;
             lblFuncion.Text = reserva.Funcion.Horario;
@@ -83,13 +85,25 @@ namespace ContactCenterGUI.Teatros
                 listaDetalle.Add(detalle);
             }
             reserva.ListaDetalles = listaDetalle;
+            reserva.PrecioTotal = precioTotal; 
         }
         private void PerInfoTheater_Load(object sender, EventArgs e)
         {
 
             SetEventos();
             PopularDatosReserva();
+            LoadCombos();
             
+        }
+
+        private void LoadCombos()
+        {
+            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            {
+                cboTipoPromocion.DataSource = servicio.GetListaTipoPromocion();
+                cboTipoPromocion.DisplayMember = "Descripcion";
+            }
+                
         }
         private void SetEventos()
         {
@@ -146,7 +160,8 @@ namespace ContactCenterGUI.Teatros
                 ApellidoPaterno = txtApePat.Text.ToUpper().Trim(),
                 Correo = txtCorreo.Text.ToUpper().Trim(),
                 Nombre = txtNombre.Text.ToUpper().Trim(),
-                Telefono = txtTelefono.Text.ToUpper().Trim()
+                Telefono = txtTelefono.Text.ToUpper().Trim(),
+                DNI = txtDNI.Text.ToUpper().Trim()
             };
             ProcesarReserva(cliente);
         }

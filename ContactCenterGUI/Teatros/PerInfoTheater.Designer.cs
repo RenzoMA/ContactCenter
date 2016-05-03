@@ -31,17 +31,15 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.txtNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.cboTipoPromocion = new MetroFramework.Controls.MetroComboBox();
             this.txtApePat = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField3 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtDNI = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtTelefono = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblTeatro = new MaterialSkin.Controls.MaterialLabel();
             this.lblObra = new MaterialSkin.Controls.MaterialLabel();
@@ -58,6 +56,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.cboPromocion = new MetroFramework.Controls.MetroComboBox();
+            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -107,20 +108,6 @@
             this.materialLabel2.Size = new System.Drawing.Size(94, 19);
             this.materialLabel2.TabIndex = 2;
             this.materialLabel2.Text = "Apellido Pat:";
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(18, 341);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(91, 19);
-            this.materialLabel3.TabIndex = 3;
-            this.materialLabel3.Text = "Documento:";
             // 
             // materialLabel4
             // 
@@ -178,18 +165,6 @@
             this.materialLabel7.TabIndex = 7;
             this.materialLabel7.Text = "Función:";
             // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Items.AddRange(new object[] {
-            "DNI",
-            "Carnet Extranjería"});
-            this.metroComboBox1.Location = new System.Drawing.Point(139, 331);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(266, 29);
-            this.metroComboBox1.TabIndex = 5;
-            // 
             // materialLabel9
             // 
             this.materialLabel9.AutoSize = true;
@@ -197,7 +172,7 @@
             this.materialLabel9.Depth = 0;
             this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel9.Location = new System.Drawing.Point(17, 390);
+            this.materialLabel9.Location = new System.Drawing.Point(17, 333);
             this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel9.Name = "materialLabel9";
             this.materialLabel9.Size = new System.Drawing.Size(98, 19);
@@ -211,24 +186,24 @@
             this.materialLabel10.Depth = 0;
             this.materialLabel10.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel10.Location = new System.Drawing.Point(15, 452);
+            this.materialLabel10.Location = new System.Drawing.Point(15, 395);
             this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel10.Name = "materialLabel10";
-            this.materialLabel10.Size = new System.Drawing.Size(82, 19);
+            this.materialLabel10.Size = new System.Drawing.Size(121, 19);
             this.materialLabel10.TabIndex = 11;
-            this.materialLabel10.Text = "Suscriptor:";
+            this.materialLabel10.Text = "Tipo Promocion:";
             // 
-            // metroComboBox2
+            // cboTipoPromocion
             // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
-            this.metroComboBox2.Items.AddRange(new object[] {
+            this.cboTipoPromocion.FormattingEnabled = true;
+            this.cboTipoPromocion.ItemHeight = 23;
+            this.cboTipoPromocion.Items.AddRange(new object[] {
             "El Comercio",
             "Banco Crédito del Perú"});
-            this.metroComboBox2.Location = new System.Drawing.Point(139, 442);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(266, 29);
-            this.metroComboBox2.TabIndex = 7;
+            this.cboTipoPromocion.Location = new System.Drawing.Point(142, 385);
+            this.cboTipoPromocion.Name = "cboTipoPromocion";
+            this.cboTipoPromocion.Size = new System.Drawing.Size(266, 29);
+            this.cboTipoPromocion.TabIndex = 7;
             // 
             // txtApePat
             // 
@@ -247,22 +222,22 @@
             this.txtApePat.TabStop = false;
             this.txtApePat.UseSystemPasswordChar = false;
             // 
-            // materialSingleLineTextField3
+            // txtDNI
             // 
-            this.materialSingleLineTextField3.Depth = 0;
-            this.materialSingleLineTextField3.Hint = "";
-            this.materialSingleLineTextField3.Location = new System.Drawing.Point(139, 390);
-            this.materialSingleLineTextField3.MaxLength = 32767;
-            this.materialSingleLineTextField3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField3.Name = "materialSingleLineTextField3";
-            this.materialSingleLineTextField3.PasswordChar = '\0';
-            this.materialSingleLineTextField3.SelectedText = "";
-            this.materialSingleLineTextField3.SelectionLength = 0;
-            this.materialSingleLineTextField3.SelectionStart = 0;
-            this.materialSingleLineTextField3.Size = new System.Drawing.Size(266, 23);
-            this.materialSingleLineTextField3.TabIndex = 6;
-            this.materialSingleLineTextField3.TabStop = false;
-            this.materialSingleLineTextField3.UseSystemPasswordChar = false;
+            this.txtDNI.Depth = 0;
+            this.txtDNI.Hint = "";
+            this.txtDNI.Location = new System.Drawing.Point(139, 333);
+            this.txtDNI.MaxLength = 32767;
+            this.txtDNI.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.PasswordChar = '\0';
+            this.txtDNI.SelectedText = "";
+            this.txtDNI.SelectionLength = 0;
+            this.txtDNI.SelectionStart = 0;
+            this.txtDNI.Size = new System.Drawing.Size(266, 23);
+            this.txtDNI.TabIndex = 6;
+            this.txtDNI.TabStop = false;
+            this.txtDNI.UseSystemPasswordChar = false;
             // 
             // txtTelefono
             // 
@@ -281,7 +256,6 @@
             this.txtTelefono.TabStop = false;
             this.txtTelefono.UseSystemPasswordChar = false;
             this.txtTelefono.Leave += new System.EventHandler(this.txtTelefono_Leave);
-            
             // 
             // lblTeatro
             // 
@@ -461,25 +435,26 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.materialRaisedButton2);
+            this.groupBox1.Controls.Add(this.materialLabel3);
+            this.groupBox1.Controls.Add(this.cboPromocion);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.txtApeMat);
             this.groupBox1.Controls.Add(this.materialLabel1);
             this.groupBox1.Controls.Add(this.materialLabel8);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.materialLabel2);
-            this.groupBox1.Controls.Add(this.materialLabel3);
             this.groupBox1.Controls.Add(this.materialLabel4);
-            this.groupBox1.Controls.Add(this.metroComboBox1);
             this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.Controls.Add(this.materialLabel9);
             this.groupBox1.Controls.Add(this.materialLabel13);
             this.groupBox1.Controls.Add(this.materialLabel10);
-            this.groupBox1.Controls.Add(this.metroComboBox2);
+            this.groupBox1.Controls.Add(this.cboTipoPromocion);
             this.groupBox1.Controls.Add(this.txtApePat);
-            this.groupBox1.Controls.Add(this.materialSingleLineTextField3);
+            this.groupBox1.Controls.Add(this.txtDNI);
             this.groupBox1.Location = new System.Drawing.Point(12, 90);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(641, 498);
+            this.groupBox1.Size = new System.Drawing.Size(641, 482);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Cliente";
@@ -516,11 +491,49 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(15, 444);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(60, 19);
+            this.materialLabel3.TabIndex = 29;
+            this.materialLabel3.Text = "Detalle:";
+            // 
+            // cboPromocion
+            // 
+            this.cboPromocion.FormattingEnabled = true;
+            this.cboPromocion.ItemHeight = 23;
+            this.cboPromocion.Items.AddRange(new object[] {
+            "El Comercio",
+            "Banco Crédito del Perú"});
+            this.cboPromocion.Location = new System.Drawing.Point(142, 434);
+            this.cboPromocion.Name = "cboPromocion";
+            this.cboPromocion.Size = new System.Drawing.Size(266, 29);
+            this.cboPromocion.TabIndex = 28;
+            // 
+            // materialRaisedButton2
+            // 
+            this.materialRaisedButton2.Depth = 0;
+            this.materialRaisedButton2.Location = new System.Drawing.Point(427, 434);
+            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton2.Name = "materialRaisedButton2";
+            this.materialRaisedButton2.Primary = true;
+            this.materialRaisedButton2.Size = new System.Drawing.Size(148, 29);
+            this.materialRaisedButton2.TabIndex = 31;
+            this.materialRaisedButton2.Text = "Aplicar";
+            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            // 
             // PerInfoTheater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1320, 612);
+            this.ClientSize = new System.Drawing.Size(1320, 607);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -546,17 +559,15 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombre;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private MetroFramework.Controls.MetroComboBox cboTipoPromocion;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtApePat;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField3;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtDNI;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTelefono;
         private MaterialSkin.Controls.MaterialLabel lblTeatro;
         private MaterialSkin.Controls.MaterialLabel lblObra;
@@ -573,5 +584,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MetroFramework.Controls.MetroComboBox cboPromocion;
     }
 }

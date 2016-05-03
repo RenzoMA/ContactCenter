@@ -20,6 +20,7 @@ using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.Entidades.CLienteBE;
+using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 
 
 
@@ -44,6 +45,8 @@ namespace ContactCenterServices
             current.RegisterType<IFuncionService, FuncionService>();
             current.RegisterType<IReservaService, ReservaService>();
             current.RegisterType<IClienteService, ClienteService>();
+            current.RegisterType<ITipoPromocionService, TipoPromocionService>();
+            current.RegisterType<IPromocionService, PromocionService>();
 
 
             // Entidades - DA
@@ -56,6 +59,8 @@ namespace ContactCenterServices
             current.RegisterType<IFuncionRepository, FuncionRepository>();
             current.RegisterType<IReservaRepository, ReservaRepository>();
             current.RegisterType<IClienteRepository, ClienteRepository>();
+            current.RegisterType<IPromocionRepository, PromocionRepository>();
+            current.RegisterType<ITipoPromocionRepository, TipoPromocionRepository>();
         }
     }
 }

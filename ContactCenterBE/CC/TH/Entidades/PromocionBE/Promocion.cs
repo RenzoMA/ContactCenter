@@ -17,6 +17,8 @@ namespace ContactCenterBE.CC.TH.Entidades.PromocionBE
         public DateTime FechaFin { get; set; }
         public Funcion Funcion { get; set; }
         public TipoPromocion TipoPromocion { get; set; }
+        public string TipoDescuento { get; set; }
+        public Single Descuento { get; set; }
 
     }
 }
