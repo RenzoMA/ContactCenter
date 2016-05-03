@@ -58,7 +58,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.cboPromocion = new MetroFramework.Controls.MetroComboBox();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnAplicarDescuento = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -197,13 +197,11 @@
             // 
             this.cboTipoPromocion.FormattingEnabled = true;
             this.cboTipoPromocion.ItemHeight = 23;
-            this.cboTipoPromocion.Items.AddRange(new object[] {
-            "El Comercio",
-            "Banco Crédito del Perú"});
             this.cboTipoPromocion.Location = new System.Drawing.Point(142, 385);
             this.cboTipoPromocion.Name = "cboTipoPromocion";
             this.cboTipoPromocion.Size = new System.Drawing.Size(266, 29);
             this.cboTipoPromocion.TabIndex = 7;
+            this.cboTipoPromocion.SelectionChangeCommitted += new System.EventHandler(this.cboTipoPromocion_SelectionChangeCommitted);
             // 
             // txtApePat
             // 
@@ -227,7 +225,7 @@
             this.txtDNI.Depth = 0;
             this.txtDNI.Hint = "";
             this.txtDNI.Location = new System.Drawing.Point(139, 333);
-            this.txtDNI.MaxLength = 32767;
+            this.txtDNI.MaxLength = 10;
             this.txtDNI.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.PasswordChar = '\0';
@@ -435,7 +433,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.materialRaisedButton2);
+            this.groupBox1.Controls.Add(this.btnAplicarDescuento);
             this.groupBox1.Controls.Add(this.materialLabel3);
             this.groupBox1.Controls.Add(this.cboPromocion);
             this.groupBox1.Controls.Add(this.txtTelefono);
@@ -509,25 +507,23 @@
             // 
             this.cboPromocion.FormattingEnabled = true;
             this.cboPromocion.ItemHeight = 23;
-            this.cboPromocion.Items.AddRange(new object[] {
-            "El Comercio",
-            "Banco Crédito del Perú"});
             this.cboPromocion.Location = new System.Drawing.Point(142, 434);
             this.cboPromocion.Name = "cboPromocion";
             this.cboPromocion.Size = new System.Drawing.Size(266, 29);
             this.cboPromocion.TabIndex = 28;
             // 
-            // materialRaisedButton2
+            // btnAplicarDescuento
             // 
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(427, 434);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(148, 29);
-            this.materialRaisedButton2.TabIndex = 31;
-            this.materialRaisedButton2.Text = "Aplicar";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            this.btnAplicarDescuento.Depth = 0;
+            this.btnAplicarDescuento.Location = new System.Drawing.Point(427, 434);
+            this.btnAplicarDescuento.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAplicarDescuento.Name = "btnAplicarDescuento";
+            this.btnAplicarDescuento.Primary = true;
+            this.btnAplicarDescuento.Size = new System.Drawing.Size(148, 29);
+            this.btnAplicarDescuento.TabIndex = 31;
+            this.btnAplicarDescuento.Text = "Aplicar";
+            this.btnAplicarDescuento.UseVisualStyleBackColor = true;
+            this.btnAplicarDescuento.Click += new System.EventHandler(this.btnAplicarDescuento_Click);
             // 
             // PerInfoTheater
             // 
@@ -584,7 +580,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
+        private MaterialSkin.Controls.MaterialRaisedButton btnAplicarDescuento;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MetroFramework.Controls.MetroComboBox cboPromocion;
     }

@@ -167,12 +167,23 @@ namespace ContactCenterGUI.Helpers
                 Animacion.HideLoader(form);
             }
         }
+        private static List<AsientoPrecio> Clonar(List<AsientoPrecio> lista)
+        {
+            List<AsientoPrecio> listaClonar = new List<AsientoPrecio>();
+            foreach (AsientoPrecio asiento in lista)
+            {
+                listaClonar.Add(new AsientoPrecio(asiento));
+            }
+            return listaClonar;
+        }
+
+
         static void ConfirmarReserva(object sender, EventArgs e)
         {
             if (asientosReserva.Count > 0)
             {
                 PerInfoTheater info = new PerInfoTheater(formTemp, reservaTemp);
-                info.listaAsientoPrecio = asientosReserva;
+                info.listaAsientoPrecio = Clonar(asientosReserva);
                 info.ShowDialog();
             }
             else

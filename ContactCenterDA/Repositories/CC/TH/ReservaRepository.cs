@@ -42,8 +42,8 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter pIdFuncion = UtilDA.SetParameters("@idFuncion", OleDbType.Integer, datos.Funcion.IdFuncion);
             OleDbParameter pIdCliente = UtilDA.SetParameters("@idCliente", OleDbType.VarChar, datos.Cliente.IdCliente);
             OleDbParameter pIdUsuario = UtilDA.SetParameters("@idUsuario", OleDbType.Integer, datos.Usuario.IdUsuario);
-            OleDbParameter pPromocion = UtilDA.SetParameters("@idPromocion", OleDbType.Integer, 1);
-            OleDbParameter pNombrePromo = UtilDA.SetParameters("@nombrePromocion", OleDbType.VarChar, "N/A");
+            OleDbParameter pPromocion = UtilDA.SetParameters("@idPromocion", OleDbType.Integer, datos.Promocion == null ? 0 : datos.Promocion.IdPromocion);
+            OleDbParameter pNombrePromo = UtilDA.SetParameters("@nombrePromocion", OleDbType.VarChar, datos.Promocion == null ? "" : datos.Promocion.Descripcion);
             OleDbParameter pFechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter pUserCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter pTotal = UtilDA.SetParameters("@PrecioTotal", OleDbType.Single, datos.PrecioTotal);

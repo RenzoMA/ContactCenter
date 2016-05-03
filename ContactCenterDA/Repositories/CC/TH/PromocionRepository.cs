@@ -201,7 +201,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                         Estado = DataConvert.ToString(dtr["P.Estado"]),
                         FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]),
                         FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]),
-                        FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]),
+                        FechaCreacion = DataConvert.ToDateTime(dtr["P.FechaCrea"]),
                         UsuarioCreacion = DataConvert.ToString(dtr["P.UserCrea"]),
                         FechaModificacion = DataConvert.ToDateTime(dtr["P.FechaMod"]),
                         UsuarioModificacion = DataConvert.ToString(dtr["P.UserMod"]),

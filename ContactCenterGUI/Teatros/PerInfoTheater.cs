@@ -11,6 +11,7 @@ using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
+using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterBE.CC.Entidades.CLienteBE;
 using ContactCenterGUI.Helpers;
 using ContactCenterServices;
@@ -29,6 +30,8 @@ namespace ContactCenterGUI.Teatros
         public Single precioTotal;
         public Cliente cliente;
         public int validaSalida = 0;
+        private Boolean AplicoPromocion = false;
+
 
         public PerInfoTheater()
         {
@@ -77,6 +80,20 @@ namespace ContactCenterGUI.Teatros
             lblObra.Text = reserva.Obra.Nombre;
             lblFuncion.Text = reserva.Funcion.Horario;
             lblTeatro.Text = reserva.Obra.Teatro.Nombre;
+            
+        }
+        private void PerInfoTheater_Load(object sender, EventArgs e)
+        {
+            SetEventos();
+            PopularDatosReserva();
+            AsociarEntidadesReserva();
+            LoadCombos();
+            
+        }
+
+        private void AsociarEntidadesReserva()
+        {
+            reserva.ListaDetalles = null;
             foreach (AsientoPrecio ap in listaAsientoPrecio)
             {
                 detalle = new DetalleReserva();
@@ -85,17 +102,8 @@ namespace ContactCenterGUI.Teatros
                 listaDetalle.Add(detalle);
             }
             reserva.ListaDetalles = listaDetalle;
-            reserva.PrecioTotal = precioTotal; 
+            reserva.PrecioTotal = precioTotal;
         }
-        private void PerInfoTheater_Load(object sender, EventArgs e)
-        {
-
-            SetEventos();
-            PopularDatosReserva();
-            LoadCombos();
-            
-        }
-
         private void LoadCombos()
         {
             using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
@@ -201,6 +209,7 @@ namespace ContactCenterGUI.Teatros
                     txtCorreo.Text = cliente.Correo;
                     txtNombre.Text = cliente.Nombre;
                     txtTelefono.Text = cliente.Telefono;
+                    txtDNI.Text = cliente.DNI;
                 }
                 else
                 {
@@ -208,6 +217,7 @@ namespace ContactCenterGUI.Teatros
                     txtApePat.Text = "";
                     txtCorreo.Text = "";
                     txtNombre.Text = "";
+                    txtDNI.Text = "";
                 }
                 Animacion.HideLoader(this);
             }
@@ -220,5 +230,55 @@ namespace ContactCenterGUI.Teatros
             this.Close();
         }
 
+        private void cboTipoPromocion_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            {
+                TipoPromocion tipoPromocion = cboTipoPromocion.SelectedItem as TipoPromocion;
+                cboPromocion.DataSource = servicio.ListPromocionByFuncionTipoPromo(reserva.Funcion.IdFuncion, tipoPromocion.IdTipoPromocion);
+                cboPromocion.DisplayMember = "Descripcion";
+            }
+        }
+
+        private void btnAplicarDescuento_Click(object sender, EventArgs e)
+        {
+            if (!AplicoPromocion)
+            {
+                Promocion promocion = cboPromocion.SelectedItem as Promocion;
+                if (promocion != null)
+                {
+                    switch (promocion.TipoDescuento)
+                    {
+                        case "M":
+
+                            foreach (AsientoPrecio ap in listaAsientoPrecio)
+                            {
+                                ap.Precio = promocion.Descuento * ap.Precio;
+                            }
+                            break;
+                        case "R":
+                            foreach (AsientoPrecio ap in listaAsientoPrecio)
+                            {
+                                ap.Precio = promocion.Descuento;
+                            }
+                            break;
+                    }
+                    PopularDatosReserva();
+                    AsociarEntidadesReserva();
+                    reserva.Promocion = promocion;
+                    reserva.NombrePromocion = promocion.Descripcion;
+                    AplicoPromocion = true;
+                    MessageBox.Show("Descuento aplicado correctamente", "Aviso");
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un descuento", "Aviso");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ya aplico un descuento", "Aviso");
+            }
+        }
     }
 }

@@ -8,6 +8,18 @@ namespace ContactCenterBE.CC.TH.Entidades.AsientoBE
 {
     public class AsientoPrecio : Asiento
     {
+        public AsientoPrecio()
+        {
+
+        }
+        public AsientoPrecio(AsientoPrecio asiento)
+        {
+            this.Precio = asiento.Precio;
+            this.Disponible = asiento.Disponible;
+            this.IdAsiento = asiento.IdAsiento;
+            this.Descripcion = asiento.Descripcion;
+            this.Fila = asiento.Fila;
+        }
         public Single Precio { get; set; }
     }
 }
