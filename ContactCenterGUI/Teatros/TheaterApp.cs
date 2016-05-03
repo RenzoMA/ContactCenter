@@ -29,9 +29,7 @@ namespace ContactCenterGUI.Teatros
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            CC.Main menu = new CC.Main();
-            menu.ShowDialog();
+            this.Close();
 
         }
     }
