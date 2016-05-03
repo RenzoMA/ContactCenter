@@ -25,6 +25,7 @@ namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
         public Usuario Usuario { get; set; }
         public Promocion Promocion { get; set; }
         public List<DetalleReserva> ListaDetalles { get; set; }
+        public Single PrecioTotal { get; set; }
         
     }
 }

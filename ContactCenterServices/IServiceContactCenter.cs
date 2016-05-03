@@ -10,6 +10,7 @@ using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
+using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterBE.CC.Entidades.CLienteBE;
 
 namespace ContactCenterServices
@@ -55,5 +56,9 @@ namespace ContactCenterServices
         Task<bool> InsertarReservaAsync(Reserva reserva,Cliente cliente);
         Cliente GetClienteByTelefono(string telefono);
         Task<Cliente> GetClienteByTelefonoAsync(string telefono);
+
+        //PROMOCION
+        List<Promocion> ListPromocionByFuncionTipoPromo(int idFuncion, int idTipoPromocion);
+        List<TipoPromocion> GetListaTipoPromocion();
     }
 }

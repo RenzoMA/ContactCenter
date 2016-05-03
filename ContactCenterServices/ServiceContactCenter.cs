@@ -16,6 +16,7 @@ using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.Entidades.CLienteBE;
+using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 
 namespace ContactCenterServices
 {
@@ -30,6 +31,8 @@ namespace ContactCenterServices
         private IFuncionService _funcionService;
         private IReservaService _reservaService;
         private IClienteService _clienteService;
+        private IPromocionService _promocionService;
+        private ITipoPromocionService _tipoPromocionService;
 
         public ServiceContactCenter(
             IAsientoService asientoService,
@@ -39,7 +42,9 @@ namespace ContactCenterServices
             IObraService obraService,
             IFuncionService funcionService,
             IReservaService reservaService,
-            IClienteService clienteService)
+            IClienteService clienteService,
+            IPromocionService promocionService,
+            ITipoPromocionService tipoPromocionService)
         {
             _clienteService = clienteService;
             _asientoService = asientoService;
@@ -48,7 +53,9 @@ namespace ContactCenterServices
             _teatroService = teatroService;
             _obraService = obraService;
             _funcionService = funcionService;
+            _promocionService = promocionService;
             _reservaService = reservaService;
+            _tipoPromocionService = tipoPromocionService;
         }
 
         public void Dispose()
@@ -271,6 +278,16 @@ namespace ContactCenterServices
         public Funcion BuscarFuncion(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Promocion> ListPromocionByFuncionTipoPromo(int idFuncion, int idTipoPromocion)
+        {
+            return _promocionService.ListByFuncionTipoPromo(idFuncion, idTipoPromocion);
+        }
+
+        public List<TipoPromocion> GetListaTipoPromocion()
+        {
+            return _tipoPromocionService.GetLista();
         }
     }
 }

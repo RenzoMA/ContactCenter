@@ -32,8 +32,8 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Insert(Reserva datos)
         {
-            string sql = "INSERT INTO TH_RESERVA (FECHARESERVA,HORARIO,idEstadoReserva,idObra,idFuncion,idCliente,idUsuario,idPromocion,NombrePromocion,FechaCrea,userCrea) " +
-                         "values(@fechaReserva,@horario,@idEstadoReserva,@idObra,@idFuncion,@idCliente,@idUsuario,@idPromocion,@nombrePromocion,@fechaCrea,@userCrea)";
+            string sql = "INSERT INTO TH_RESERVA (FECHARESERVA,HORARIO,idEstadoReserva,idObra,idFuncion,idCliente,idUsuario,idPromocion,NombrePromocion,FechaCrea,userCrea,PrecioTotal) " +
+                         "values(@fechaReserva,@horario,@idEstadoReserva,@idObra,@idFuncion,@idCliente,@idUsuario,@idPromocion,@nombrePromocion,@fechaCrea,@userCrea,@PrecioTotal)";
 
             OleDbParameter pFechaReserva = UtilDA.SetParameters("@fechaReserva", OleDbType.Date, datos.FechaReserva);
             OleDbParameter pHorario = UtilDA.SetParameters("@horario", OleDbType.VarChar, datos.Horario);
@@ -46,9 +46,10 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter pNombrePromo = UtilDA.SetParameters("@nombrePromocion", OleDbType.VarChar, "N/A");
             OleDbParameter pFechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter pUserCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
+            OleDbParameter pTotal = UtilDA.SetParameters("@PrecioTotal", OleDbType.Single, datos.PrecioTotal);
 
             int id = UtilDA.ExecuteNonQueryTransactionId(cmd, CommandType.Text, sql, cnx, pFechaReserva, pHorario, pEstadoReserva, pIdObra, pIdFuncion, pIdCliente,
-                pIdUsuario, pPromocion, pNombrePromo, pFechaCrea, pUserCrea);
+                pIdUsuario, pPromocion, pNombrePromo, pFechaCrea, pUserCrea, pTotal);
 
             string sqlDetalle = "INSERT INTO TH_DETALLE_RESERVA (idReserva,Precio,Estado,idAsiento,FechaCrea,UserCrea) " +
                                 "VALUES (@idReserva,@precio,@estado,@idAsiento,@fechaCrea,@userCrea)";

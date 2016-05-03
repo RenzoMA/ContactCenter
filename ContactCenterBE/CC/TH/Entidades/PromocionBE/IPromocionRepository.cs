@@ -9,6 +9,6 @@ namespace ContactCenterBE.CC.TH.Entidades.PromocionBE
 {
     public interface IPromocionRepository : IBaseRepository<Promocion>
     {
-
+        List<Promocion> ListByFuncionTipoPromo(int idFuncion, int idTipoPromocion);
     }
 }
