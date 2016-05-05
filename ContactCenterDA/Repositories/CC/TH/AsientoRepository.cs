@@ -142,7 +142,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             List<Asiento> lAsiento = new List<Asiento>();
             Asiento asiento = null;
 
-            string sql = "SELECT IdAsiento, Estado FROM TH_DETALLE_RESERVA DR INNER JOIN TH_RESERVA R ON R.IDRESERVA = DR.IDRESERVA WHERE R.IDOBRA = @IdObra AND R.IDFUNCION = @IdFuncion AND R.FECHARESERVA = @fechaReserva UNION SELECT idAsiento, ESTADO FROM TH_ASIENTO_TEMPORAL WHERE IdFuncion =@IdFuncion2 AND FECHAOBRA = @fechaReserva2 AND TOKEN <> @token";
+            string sql = "SELECT IdAsiento, Estado FROM TH_DETALLE_RESERVA DR INNER JOIN TH_RESERVA R ON R.IDRESERVA = DR.IDRESERVA WHERE R.IDOBRA = @IdObra AND R.IDFUNCION = @IdFuncion AND R.FECHARESERVA = @fechaReserva AND IdEstadoReserva = 1 UNION SELECT idAsiento, ESTADO FROM TH_ASIENTO_TEMPORAL WHERE IdFuncion =@IdFuncion2 AND FECHAOBRA = @fechaReserva2 AND TOKEN <> @token";
 
             OleDbParameter obra = UtilDA.SetParameters("@IdObra", OleDbType.Integer, idObra);
             OleDbParameter funcion = UtilDA.SetParameters("@IdFuncion", OleDbType.Integer, idFuncion);
@@ -150,8 +150,9 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter funcion2 = UtilDA.SetParameters("@IdFuncion2", OleDbType.Integer, idFuncion);
             OleDbParameter reserva2 = UtilDA.SetParameters("@fechaReserva2", OleDbType.Date, fechaReserva);
             OleDbParameter pToken = UtilDA.SetParameters("@token", OleDbType.VarChar, token);
+            OleDbParameter pFechaActual = UtilDA.SetParameters("@fechaActual", OleDbType.Date, DateTime.Now);
 
-            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, obra, funcion, reserva,funcion2, reserva2, pToken))
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, obra, funcion, reserva,funcion2, reserva2, pToken, pFechaActual))
             {
                 while (dtr.Read())
                 {
