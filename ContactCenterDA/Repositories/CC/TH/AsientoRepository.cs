@@ -28,7 +28,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, fechaMod, userMod, codigo);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, fechaMod, userMod, codigo);
         }
 
         public Asiento GetById(int id)
@@ -117,7 +117,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, descripcion, fila, disponible, idzona, fechaCreacion, usuarioCrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, descripcion, fila, disponible, idzona, fechaCreacion, usuarioCrea);
         }
 
         public bool Update(Asiento datos)
@@ -132,7 +132,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idAsiento = UtilDA.SetParameters("@idAsiento", OleDbType.Integer, datos.IdAsiento);
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, descripcion, fila, disponible, idzona, fechaMod, usuarioMod, idAsiento);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, descripcion, fila, disponible, idzona, fechaMod, usuarioMod, idAsiento);
         }
 
         public List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime fechaReserva,string token)
@@ -213,7 +213,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter pToken = UtilDA.SetParameters("@token", OleDbType.VarChar, token);
             OleDbParameter pUserCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter pFechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
-            return UtilDA.ExecuteQueryValidador(cmd, CommandType.Text, sqlValida, sqlInsert, cnx, pIdFuncion, pIdAsiento, pFechaObra, pToken, pUserCrea,pFechaCrea);
+            return UtilDA.ExecuteQueryValidador(cmd, CommandType.Text, sqlValida, sqlInsert, cnx, false, pIdFuncion, pIdAsiento, pFechaObra, pToken, pUserCrea,pFechaCrea);
 
         }
 
@@ -224,14 +224,14 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter pIdAsiento = UtilDA.SetParameters("@idAsiento", OleDbType.Integer, idAsiento);
             OleDbParameter pFechaObra = UtilDA.SetParameters("@fechaObra", OleDbType.Date, fechaObra);
             OleDbParameter pToken = UtilDA.SetParameters("@token", OleDbType.VarChar, token);
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, pIdFuncion, pIdAsiento, pFechaObra, pToken);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, pIdFuncion, pIdAsiento, pFechaObra, pToken);
 
         }
         public bool EliminarAsientoTemporalTotal(string token)
         {
             string sql = "DELETE FROM TH_ASIENTO_TEMPORAL WHERE token = @token";
             OleDbParameter pToken = UtilDA.SetParameters("@token", OleDbType.VarChar, token);
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, pToken);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, pToken);
 
         }
     }

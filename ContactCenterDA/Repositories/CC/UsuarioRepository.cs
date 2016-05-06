@@ -27,7 +27,7 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter userMod = UtilDA.SetParameters("@userMod", OleDbType.VarChar, Sesion.usuario.Login);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx,fechaMod , userMod, codigo);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, fechaMod , userMod, codigo);
         }
 
         public Usuario GetById(int id)
@@ -119,7 +119,7 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, correo, login, contraseña, idrol, fechaCreacion, usuarioCrea, estado);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, apePaterno, apeMaterno, correo, login, contraseña, idrol, fechaCreacion, usuarioCrea, estado);
                 
         }
 
@@ -140,7 +140,7 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter idusuario = UtilDA.SetParameters("@idUsuario", OleDbType.Integer, datos.IdUsuario);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, correo, login, contraseña, idrol, fechaMod, usuarioMod, estado, idusuario);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, apePaterno, apeMaterno, correo, login, contraseña, idrol, fechaMod, usuarioMod, estado, idusuario);
 
 
         }
