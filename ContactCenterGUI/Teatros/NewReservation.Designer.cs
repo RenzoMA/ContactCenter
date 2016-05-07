@@ -1,6 +1,6 @@
 ﻿namespace ContactCenterGUI.Teatros
 {
-    partial class NewTheater
+    partial class NewReservation
     {
         /// <summary>
         /// Required designer variable.

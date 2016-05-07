@@ -1,6 +1,6 @@
 ﻿namespace ContactCenterGUI.Teatros
 {
-    partial class TheaterApp
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
