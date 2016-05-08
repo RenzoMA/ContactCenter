@@ -31,5 +31,30 @@ namespace ContactCenterGUI.Teatros
             HelperTeatro.MostrarDisponibilidad(this, reserva);
         }
 
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Se perderan todos los cambios realizados hasta el momento. ¿ seguro de regresar ?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Hide();
+                NewReservation newtheater = new NewReservation();
+                newtheater.ShowDialog();
+                this.Show();
+            }
+        }
+
+        private void lblCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

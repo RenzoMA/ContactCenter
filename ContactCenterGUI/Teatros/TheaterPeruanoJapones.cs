@@ -51,7 +51,18 @@ namespace ContactCenterGUI.Teatros
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Se perderan todos los cambios realizados hasta el momento. ¿ seguro de regresar ?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Hide();
+                NewReservation newtheater = new NewReservation();
+                newtheater.ShowDialog();
+                this.Show();
+            }
         }
     }
 }
