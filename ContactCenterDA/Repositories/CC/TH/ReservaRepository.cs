@@ -48,7 +48,9 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter pUserCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter pTotal = UtilDA.SetParameters("@PrecioTotal", OleDbType.Single, datos.PrecioTotal);
 
-            int id = UtilDA.ExecuteNonQueryTransactionId(cmd, CommandType.Text, sql, cnx, pFechaReserva, pHorario, pEstadoReserva, pIdObra, pIdFuncion, pIdCliente,
+            UtilDA.ExecuteBeginTransaction(cmd, cnx);
+
+            int id = UtilDA.ExecuteNonQueryGetId(cmd, CommandType.Text, sql, cnx,true, pFechaReserva, pHorario, pEstadoReserva, pIdObra, pIdFuncion, pIdCliente,
                 pIdUsuario, pPromocion, pNombrePromo, pFechaCrea, pUserCrea, pTotal);
 
             string sqlDetalle = "INSERT INTO TH_DETALLE_RESERVA (idReserva,Precio,Estado,idAsiento,FechaCrea,UserCrea) " +
@@ -63,7 +65,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                 OleDbParameter pFechaCrea2 = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
                 OleDbParameter pUserCrea2 = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
 
-                if (!UtilDA.ExecuteNonQueryTransactionDetalle(cmd, sqlDetalle, pIdReserva, pPrecio, pEstado, pIdAsiento, pFechaCrea2, pUserCrea2))
+                if (!UtilDA.ExecuteNonQuery(cmd,CommandType.Text, sqlDetalle,cnx, true, pIdReserva, pPrecio, pEstado, pIdAsiento, pFechaCrea2, pUserCrea2))
                 {
                     UtilDA.ExecuteRollback(cmd,cnx);
                     return false;

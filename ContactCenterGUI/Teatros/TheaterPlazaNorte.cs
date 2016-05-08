@@ -7,20 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin.Controls;
 using MaterialSkin.Animations;
+using ContactCenterBE.CC.Entidades.UsuarioBE;
+using ContactCenterBE.CC.TH.Entidades.ReservaBE;
+using MaterialSkin.Controls;
+using ContactCenterGUI.Helpers;
+
 namespace ContactCenterGUI.Teatros
 {
-    public partial class PlazaNorteTheater : MaterialForm
+    public partial class TheaterPlazaNorte : MaterialForm
     {
-        public PlazaNorteTheater()
+        private Reserva reserva;
+        public TheaterPlazaNorte()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -28,19 +28,11 @@ namespace ContactCenterGUI.Teatros
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void button34_Click(object sender, EventArgs e)
+        private void PlazaNorteTheater_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialRaisedButton1_Click(object sender, EventArgs e)
-        {
-            
+            materialLabel1.ForeColor = Color.White;
+            reserva = (Reserva)this.Tag;
+            HelperTeatro.MostrarDisponibilidad(this, reserva);
         }
     }
 }

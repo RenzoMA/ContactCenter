@@ -14,7 +14,12 @@ namespace ContactCenterDA.Common
 {
     static class UtilDA
     {
-        public static String GetConexion(this OleDbConnection con)
+        /// <summary>
+        /// Metodo de extension para obtener la cadena de conexión.
+        /// </summary>
+        /// <param name="con"></param>
+        /// <returns></returns>
+        private static String GetConexion(this OleDbConnection con)
         {
 
             string ruta = System.IO.Directory.GetCurrentDirectory();
@@ -43,6 +48,14 @@ namespace ContactCenterDA.Common
             }
         }
 
+        /// <summary>
+        /// Devuelve un objeto OleDbParameter con los parametros establecidos
+        /// </summary>
+        /// <param name="name">Nombre del parametro</param>
+        /// <param name="type">Tipo del parametro</param>
+        /// <param name="value">Valor del parametro</param>
+        /// <param name="parameterDirection">Direccion del parametro</param>
+        /// <returns></returns>
         public static OleDbParameter SetParameters(string name, OleDbType type, object value, ParameterDirection parameterDirection)
         {
             OleDbParameter parameter = new OleDbParameter(name, type);
@@ -50,12 +63,27 @@ namespace ContactCenterDA.Common
             parameter.Direction = parameterDirection;
             return parameter;
         }
+
+        /// <summary>
+        /// Devuelve un objeto OleDbParameter con los parametros establecidos
+        /// </summary>
+        /// <param name="name">Nombre del parametro</param>
+        /// <param name="type">Tipo del parametro</param>
+        /// <param name="value">Valor del parametro</param>
+        /// <returns></returns>
         public static OleDbParameter SetParameters(string name, OleDbType type, object value)
         {
             OleDbParameter parameter = new OleDbParameter(name, type);
             parameter.Value = value;
             return parameter;
         }
+
+        /// <summary>
+        /// Guarda el log en la tabla CC_LOG_ERROR
+        /// </summary>
+        /// <param name="oleDbException">Exception lanzada</param>
+        /// <param name="sql">Cadena sql que genero el error</param>
+        /// <param name="parameters">Parametros enviados en la cadena SQL</param>
         private static void SaveLog(Exception oleDbException, string sql, params OleDbParameter[] parameters)
         {
             string concatParameters = string.Join(" , ",
@@ -76,14 +104,27 @@ namespace ContactCenterDA.Common
 
         }
 
-        public static bool ExecuteNonQuery(OleDbCommand oleDbCommand, CommandType commandType, String sql, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)
+        /// <summary>
+        /// Ejecuta una sentencia SQL en la base de datos
+        /// </summary>
+        /// <param name="oleDbCommand">Objeto Command</param>
+        /// <param name="commandType">Tipo de commando</param>
+        /// <param name="sql">Cadena SQL a ejecutar</param>
+        /// <param name="oleDbConnection">Objeto Conexión</param>
+        /// <param name="transaction">Si debe ser tratado como transacción</param>
+        /// <param name="parameters">Lista de parametros</param>
+        /// <returns></returns>
+        public static bool ExecuteNonQuery(OleDbCommand oleDbCommand, CommandType commandType, String sql, OleDbConnection oleDbConnection, bool transaction, params OleDbParameter[] parameters)
         {
             try
             {
-                oleDbCommand.Connection = oleDbConnection;
-                oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
-                oleDbCommand.Parameters.Clear();
+                if (!transaction)
+                {
+                    oleDbCommand.Connection = oleDbConnection;
+                    oleDbConnection.ConnectionString = oleDbConnection.GetConexion();  
+                }
 
+                oleDbCommand.Parameters.Clear();
                 foreach (OleDbParameter parameter in parameters)
                 {
                     oleDbCommand.Parameters.Add(parameter);
@@ -91,7 +132,10 @@ namespace ContactCenterDA.Common
 
                 oleDbCommand.CommandType = commandType;
                 oleDbCommand.CommandText = sql;
-                oleDbConnection.Open();
+                if (!transaction)
+                {
+                    oleDbConnection.Open();
+                }
                 oleDbCommand.ExecuteNonQuery();
                 return true;
             }
@@ -103,18 +147,55 @@ namespace ContactCenterDA.Common
             }
             finally
             {
-                if (oleDbConnection.State == ConnectionState.Open)
+                if (oleDbConnection.State == ConnectionState.Open && !transaction)
                 {
                     oleDbConnection.Close();
                 }
             }
         }
-        public static int ExecuteNonQueryTransactionId(OleDbCommand oleDbCommand, CommandType commandType, String sql, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)
+        
+        /// <summary>
+        /// Comienza una transaccion en la BD
+        /// </summary>
+        /// <param name="oleDbCommand">Objeto Command</param>
+        /// <param name="oleDbConnection">Objeto Conexión</param>
+        public static void ExecuteBeginTransaction(OleDbCommand oleDbCommand, OleDbConnection oleDbConnection)
         {
             try
             {
                 oleDbCommand.Connection = oleDbConnection;
                 oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
+                oleDbCommand.Parameters.Clear();
+                oleDbConnection.Open();
+                oleDbCommand.CommandText = "BEGIN TRANSACTION";
+                oleDbCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                SaveLog(ex, "BEGIN TRANSACTION", null);
+                throw new Exception(ex.Message);
+            }
+        }
+        
+        /// <summary>
+        /// Devuelve el ID autogenerado del ultimo objeto insertado en la BD
+        /// </summary>
+        /// <param name="oleDbCommand">Objeto Command</param>
+        /// <param name="commandType">Tipo de comando</param>
+        /// <param name="sql">Cadena SQL de inserción</param>
+        /// <param name="oleDbConnection">Objeto Conexión</param>
+        /// <param name="transaction">Si debe ser tratado como transacción</param>
+        /// <param name="parameters">Lista de parametros</param>
+        /// <returns></returns>
+        public static int ExecuteNonQueryGetId(OleDbCommand oleDbCommand, CommandType commandType, String sql, OleDbConnection oleDbConnection, bool transaction, params OleDbParameter[] parameters)
+        {
+            try
+            {
+                if (!transaction)
+                {
+                    oleDbCommand.Connection = oleDbConnection;
+                    oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
+                }
                 oleDbCommand.Parameters.Clear();
 
                 foreach (OleDbParameter parameter in parameters)
@@ -123,9 +204,11 @@ namespace ContactCenterDA.Common
                 }
 
                 oleDbCommand.CommandType = commandType;
-                oleDbConnection.Open();
-                oleDbCommand.CommandText = "BEGIN TRANSACTION";
-                oleDbCommand.ExecuteNonQuery();
+                if (!transaction)
+                {
+                    oleDbConnection.Open();
+                }
+             
                 oleDbCommand.CommandText = sql;
                 oleDbCommand.ExecuteNonQuery();
                 oleDbCommand.CommandText = "SELECT @@Identity";
@@ -140,7 +223,20 @@ namespace ContactCenterDA.Common
                 SaveLog(ex, sql, parameters);
                 throw new Exception(ex.Message);
             }
+            finally
+            {
+                if (oleDbConnection.State == ConnectionState.Open && !transaction)
+                {
+                    oleDbConnection.Close();
+                }
+            }
         }
+
+        /// <summary>
+        /// Commit al lote de ejecución actual
+        /// </summary>
+        /// <param name="oleDbCommand">Objeto Comando</param>
+        /// <param name="oleDbConnection">Objeto Conexión</param>
         public static void ExecuteCommit(OleDbCommand oleDbCommand,OleDbConnection oleDbConnection)
         {
             try
@@ -162,6 +258,12 @@ namespace ContactCenterDA.Common
             }
 
         }
+
+        /// <summary>
+        /// Realiza el rollback de el lote de instrucciones actual
+        /// </summary>
+        /// <param name="oleDbCommand">Objeto Comando</param>
+        /// <param name="oleDbConnection">Objeto Conexión</param>
         public static void ExecuteRollback(OleDbCommand oleDbCommand,OleDbConnection oleDbConnection)
         {
             try
@@ -182,32 +284,27 @@ namespace ContactCenterDA.Common
                 }
             }
         }
-        public static bool ExecuteNonQueryTransactionDetalle(OleDbCommand oleDbCommand, String sql, params OleDbParameter[] parameters)
-        {
-            try
-            {
-                oleDbCommand.Parameters.Clear();
-                foreach (OleDbParameter parameter in parameters)
-                {
-                    oleDbCommand.Parameters.Add(parameter);
-                }
-                oleDbCommand.CommandText = sql;
-                oleDbCommand.ExecuteNonQuery();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                SaveLog(ex, sql, parameters);
-                throw new Exception(ex.Message);
-            }
-        }
 
-        public static bool ExecuteQueryValidador(OleDbCommand oleDbCommand, CommandType commandType, String sqlValidador, String sqlEjecucion, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)
+        /// <summary>
+        /// Ejecuta dos instrucciones SQL, si el SQLValidador devuelve alguna fila, no se ejecutara el SQLEjecución
+        /// </summary>
+        /// <param name="oleDbCommand">Objeto Comando</param>
+        /// <param name="commandType">Tipo de comando</param>
+        /// <param name="sqlValidador">SQL con validación</param>
+        /// <param name="sqlEjecucion">SQL a ejecutar de pasar la validación</param>
+        /// <param name="oleDbConnection">Objeto Conexión</param>
+        /// <param name="transaction">Si debe ser tratado como transacción</param>
+        /// <param name="parameters">Listado de parametros</param>
+        /// <returns></returns>
+        public static bool ExecuteQueryValidador(OleDbCommand oleDbCommand, CommandType commandType, String sqlValidador, String sqlEjecucion, OleDbConnection oleDbConnection, bool transaction, params OleDbParameter[] parameters)
         {
             try
             {
-                oleDbCommand.Connection = oleDbConnection;
-                oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
+                if (!transaction)
+                {
+                    oleDbCommand.Connection = oleDbConnection;
+                    oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
+                }
                 oleDbCommand.Parameters.Clear();
 
                 foreach (OleDbParameter parameter in parameters)
@@ -216,7 +313,10 @@ namespace ContactCenterDA.Common
                 }
 
                 oleDbCommand.CommandType = commandType;
-                oleDbConnection.Open();
+                if (!transaction)
+                {
+                    oleDbConnection.Open();
+                }
                 oleDbCommand.CommandText = sqlValidador;
                 OleDbDataReader dtr = oleDbCommand.ExecuteReader();
                 if (!dtr.HasRows)
@@ -236,13 +336,21 @@ namespace ContactCenterDA.Common
             }
             finally
             {
-                if (oleDbConnection.State == ConnectionState.Open)
+                if (oleDbConnection.State == ConnectionState.Open && !transaction)
                 {
                     oleDbConnection.Close();
                 }
             }
         }
 
+        /// <summary>
+        /// Metodo exclusivo para guardar los LOG.
+        /// </summary>
+        /// <param name="oleDbCommand">Objeto Comando</param>
+        /// <param name="commandType">Tipo comando</param>
+        /// <param name="sql">SQL Insertando el LOG</param>
+        /// <param name="oleDbConnection">Objeto Conexión</param>
+        /// <param name="parameters">Listado parametros</param>
         private static void ExecuteNonQueryLog(OleDbCommand oleDbCommand, CommandType commandType, String sql, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)
         {
             try
@@ -274,6 +382,10 @@ namespace ContactCenterDA.Common
             }
         }
 
+        /// <summary>
+        /// Cierra la conexión actual en caso de estar abierta
+        /// </summary>
+        /// <param name="oleDbConnection"></param>
         public static void Close(OleDbConnection oleDbConnection)
         {
             if (oleDbConnection.State == ConnectionState.Open)
@@ -281,6 +393,16 @@ namespace ContactCenterDA.Common
                 oleDbConnection.Close();
             }
         }
+
+        /// <summary>
+        /// Devuelve un OleDbDataReader con el resultado de la consulta SQL
+        /// </summary>
+        /// <param name="oleDbCommand">Objeto Command</param>
+        /// <param name="commandType">Tipo comando</param>
+        /// <param name="sql">Cadena SQL</param>
+        /// <param name="oleDbConnection">Objeto Conexión</param>
+        /// <param name="parameters">Listado parametros</param>
+        /// <returns></returns>
         public static OleDbDataReader ExecuteReader(OleDbCommand oleDbCommand, CommandType commandType, String sql, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)
         {
             try
@@ -305,6 +427,5 @@ namespace ContactCenterDA.Common
                 throw new Exception(ex.Message);
             }
         }
-
     }
 }

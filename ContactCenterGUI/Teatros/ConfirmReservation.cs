@@ -19,7 +19,7 @@ using Microsoft.Practices.Unity;
 
 namespace ContactCenterGUI.Teatros
 {
-    public partial class PerInfoTheater : MaterialForm
+    public partial class ConfirmReservation : MaterialForm
     {
         private Form frmTeatro;
         private Reserva reserva;
@@ -33,18 +33,16 @@ namespace ContactCenterGUI.Teatros
         private Boolean AplicoPromocion = false;
 
 
-        public PerInfoTheater()
+        public ConfirmReservation()
         {
             InitializeComponent();
         }
-        public PerInfoTheater(Form form,Reserva _reserva)
+        public ConfirmReservation(Form form,Reserva _reserva)
         {
+            InitializeComponent();
             reserva = _reserva;
             frmTeatro = form;
             frmTeatro.Visible = false;
-           
-
-            InitializeComponent();
         }
         public Single CalcularPrecio(List<AsientoPrecio> lista)
         {

@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin.Animations;
-using MaterialSkin.Controls;
-using ContactCenterBE.CC.Entidades.UsuarioBE;
-using ContactCenterServices;
-using Microsoft.Practices.Unity;
-using ContactCenterGUI.Helpers;
+
 
 namespace ContactCenterGUI.Helpers
 {
@@ -20,7 +10,6 @@ namespace ContactCenterGUI.Helpers
     {
         private static int loaderHeight = 80;
         private static int loaderWidth = 72;
-
 
 
         public static void ShowLoader(Form form)
@@ -32,12 +21,12 @@ namespace ContactCenterGUI.Helpers
                 int coordenadaY = form.Height / 2;
 
                 pictureBox = new PictureBox();
-                pictureBox.Image = ContactCenterGUI.Properties.Resources.loading;
-                pictureBox.BackColor = System.Drawing.Color.Transparent;
-                pictureBox.Location = new System.Drawing.Point(coordenadaX - loaderWidth/2, coordenadaY - loaderHeight/2);
+                pictureBox.Image = Properties.Resources.loading;
+                pictureBox.BackColor = Color.Transparent;
+                pictureBox.Location = new Point(coordenadaX - loaderWidth/2, coordenadaY - loaderHeight/2);
                 pictureBox.Name = "loader";
-                pictureBox.Size = new System.Drawing.Size(loaderHeight, loaderHeight);
-                pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                pictureBox.Size = new Size(loaderHeight, loaderHeight);
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 form.Controls.Add(pictureBox);
                 pictureBox.BringToFront();
             }

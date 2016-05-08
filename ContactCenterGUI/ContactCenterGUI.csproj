@@ -191,44 +191,44 @@
     <Compile Include="Mantenimientos\ObraC\ManPlayMenu.Designer.cs">
       <DependentUpon>ManPlayMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\LaPlazaTheater.cs">
+    <Compile Include="Teatros\TheaterLaPlaza.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\LaPlazaTheater.Designer.cs">
-      <DependentUpon>LaPlazaTheater.cs</DependentUpon>
+    <Compile Include="Teatros\TheaterLaPlaza.Designer.cs">
+      <DependentUpon>TheaterLaPlaza.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\NewTheater.cs">
+    <Compile Include="Teatros\NewReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\NewTheater.Designer.cs">
-      <DependentUpon>NewTheater.cs</DependentUpon>
+    <Compile Include="Teatros\NewReservation.Designer.cs">
+      <DependentUpon>NewReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\PerInfoTheater.cs">
+    <Compile Include="Teatros\ConfirmReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\PerInfoTheater.Designer.cs">
-      <DependentUpon>PerInfoTheater.cs</DependentUpon>
+    <Compile Include="Teatros\ConfirmReservation.Designer.cs">
+      <DependentUpon>ConfirmReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\PerJapTheater.cs">
+    <Compile Include="Teatros\TheaterPeruanoJapones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\PerJapTheater.Designer.cs">
-      <DependentUpon>PerJapTheater.cs</DependentUpon>
+    <Compile Include="Teatros\TheaterPeruanoJapones.Designer.cs">
+      <DependentUpon>TheaterPeruanoJapones.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Teatros\PlazaNorteTheater.cs">
+    <Compile Include="Teatros\TheaterPlazaNorte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\PlazaNorteTheater.Designer.cs">
-      <DependentUpon>PlazaNorteTheater.cs</DependentUpon>
+    <Compile Include="Teatros\TheaterPlazaNorte.Designer.cs">
+      <DependentUpon>TheaterPlazaNorte.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Animacion.cs" />
-    <Compile Include="Teatros\TheaterApp.cs">
+    <Compile Include="Teatros\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\TheaterApp.Designer.cs">
-      <DependentUpon>TheaterApp.cs</DependentUpon>
+    <Compile Include="Teatros\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\HelperTeatro.cs" />
     <EmbeddedResource Include="CC\Loader.resx">
@@ -258,17 +258,17 @@
     <EmbeddedResource Include="Mantenimientos\ObraC\ManPlayMenu.resx">
       <DependentUpon>ManPlayMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\LaPlazaTheater.resx">
-      <DependentUpon>LaPlazaTheater.cs</DependentUpon>
+    <EmbeddedResource Include="Teatros\TheaterLaPlaza.resx">
+      <DependentUpon>TheaterLaPlaza.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\NewTheater.resx">
-      <DependentUpon>NewTheater.cs</DependentUpon>
+    <EmbeddedResource Include="Teatros\NewReservation.resx">
+      <DependentUpon>NewReservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\PerInfoTheater.resx">
-      <DependentUpon>PerInfoTheater.cs</DependentUpon>
+    <EmbeddedResource Include="Teatros\ConfirmReservation.resx">
+      <DependentUpon>ConfirmReservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\PerJapTheater.resx">
-      <DependentUpon>PerJapTheater.cs</DependentUpon>
+    <EmbeddedResource Include="Teatros\TheaterPeruanoJapones.resx">
+      <DependentUpon>TheaterPeruanoJapones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -280,11 +280,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Teatros\PlazaNorteTheater.resx">
-      <DependentUpon>PlazaNorteTheater.cs</DependentUpon>
+    <EmbeddedResource Include="Teatros\TheaterPlazaNorte.resx">
+      <DependentUpon>TheaterPlazaNorte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\TheaterApp.resx">
-      <DependentUpon>TheaterApp.cs</DependentUpon>
+    <EmbeddedResource Include="Teatros\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />

@@ -28,7 +28,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, fechaMod, userMod, codigo);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, fechaMod, userMod, codigo);
         }
     
 
@@ -156,7 +156,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
             OleDbParameter userCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, datos.UsuarioCreacion);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, descripcion, estado, fechaInicio, fechaFin, idFuncion, idTipoPromocion, tipoDescuento, descuento, fechaCrea, userCrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, descripcion, estado, fechaInicio, fechaFin, idFuncion, idTipoPromocion, tipoDescuento, descuento, fechaCrea, userCrea);
 
         }
 
@@ -177,7 +177,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter userMod = UtilDA.SetParameters("@userMod", OleDbType.VarChar, datos.UsuarioCreacion);
             OleDbParameter idPromocion = UtilDA.SetParameters("@idPromocion", OleDbType.Integer, datos.IdPromocion);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, descripcion, estado, fechaInicio, fechaFin, idFuncion, idTipoPromocion, tipoDescuento, descuento, fechaMod, userMod, idPromocion);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, descripcion, estado, fechaInicio, fechaFin, idFuncion, idTipoPromocion, tipoDescuento, descuento, fechaMod, userMod, idPromocion);
 
         }
 

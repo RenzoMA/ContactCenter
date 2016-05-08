@@ -1,6 +1,6 @@
 ﻿namespace ContactCenterGUI.Teatros
 {
-    partial class PerInfoTheater
+    partial class ConfirmReservation
     {
         /// <summary>
         /// Required designer variable.

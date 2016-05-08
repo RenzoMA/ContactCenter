@@ -23,7 +23,7 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
             OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, fechaMod, userMod, codigo);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, fechaMod, userMod, codigo);
 
         }
 
@@ -100,7 +100,7 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter UsuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter pDNI = UtilDA.SetParameters("@DNI", OleDbType.VarChar, datos.DNI);
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, correo, telefono, fechaCrea, UsuarioCrea, pDNI);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, apePaterno, apeMaterno, correo, telefono, fechaCrea, UsuarioCrea, pDNI);
            
         }
 
@@ -119,7 +119,7 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter idcliente = UtilDA.SetParameters("@idCliente", OleDbType.Integer, datos.IdCliente);
             OleDbParameter pDNI = UtilDA.SetParameters("@DNI", OleDbType.VarChar, datos.DNI);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, correo, telefono, fechaMod, usuarioMod, pDNI, idcliente);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, apePaterno, apeMaterno, correo, telefono, fechaMod, usuarioMod, pDNI, idcliente);
         }
 
         public Cliente GetByTelefono(string telefono)
@@ -166,8 +166,7 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter UsuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter pDNI = UtilDA.SetParameters("@DNI", OleDbType.VarChar, cliente.DNI);
-            int idCliente = UtilDA.ExecuteNonQueryTransactionId(cmd, CommandType.Text, sql, cnx, nombre, apePaterno, apeMaterno, correo, telefono, fechaCrea, UsuarioCrea, pDNI);
-            UtilDA.ExecuteCommit(cmd, cnx);
+            int idCliente = UtilDA.ExecuteNonQueryGetId(cmd, CommandType.Text, sql, cnx, false, nombre, apePaterno, apeMaterno, correo, telefono, fechaCrea, UsuarioCrea, pDNI);
             return idCliente;
         }
     }

@@ -26,7 +26,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, fechaMod, userMod, codigo);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, fechaMod, userMod, codigo);
         }
 
         public Funcion GetById(int id)
@@ -116,7 +116,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechacreacion = UtilDA.SetParameters("@fechacrea", OleDbType.Date, DateTime.Now);
             OleDbParameter usuariocrea = UtilDA.SetParameters("@usuariocrea", OleDbType.VarChar, Sesion.usuario.Login);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, dia, horario, estado , idobra, fechacreacion, usuariocrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, dia, horario, estado , idobra, fechacreacion, usuariocrea);
         }
 
         public List<Funcion> ListarFuncionDiaObra(int dia, int obra)
@@ -187,7 +187,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechamod = UtilDA.SetParameters("@fechamod", OleDbType.Date, DateTime.Now);
             OleDbParameter usermod = UtilDA.SetParameters("@usermod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idfuncion = UtilDA.SetParameters("@idfuncion", OleDbType.Integer, datos.IdFuncion);
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, dia, horario, estado, idobra, fechamod, usermod, idobra);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, dia, horario, estado, idobra, fechamod, usermod, idobra);
         }
     }
 }
