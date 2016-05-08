@@ -12,9 +12,9 @@ using MaterialSkin.Controls;
 
 namespace ContactCenterGUI.Teatros
 {
-    public partial class TheaterApp : MaterialForm
+    public partial class Main : MaterialForm
     {
-        public TheaterApp()
+        public Main()
         {
             InitializeComponent();
         }
@@ -22,16 +22,14 @@ namespace ContactCenterGUI.Teatros
         private void btnNuevoRegistro_Click(object sender, EventArgs e)
         {
             this.Hide();
-            NewTheater newtheater = new NewTheater();
+            NewReservation newtheater = new NewReservation();
             newtheater.ShowDialog();
             this.Show();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            CC.Main menu = new CC.Main();
-            menu.ShowDialog();
+            this.Close();
 
         }
     }

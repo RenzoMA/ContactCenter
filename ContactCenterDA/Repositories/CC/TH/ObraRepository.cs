@@ -26,7 +26,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, fechaMod, userMod, codigo);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, fechaMod, userMod, codigo);
         }
 
         public Obra GetById(int id)
@@ -102,10 +102,12 @@ namespace ContactCenterDA.Repositories.CC.TH
             Obra obra = null;
             string sql = "SELECT O.IDOBRA,O.DESCRIPCION,O.FECHACREA,O.FECHAFIN,O.FECHAINICIO,O.FECHAMOD,O.NOMBRE,O.USERCREA,O.USERMOD,O.Estado,O.IdTeatro, " +
                          "T.IdTeatro,T.Estado,T.FechaCrea,T.FechaMod,T.frmTeatro,T.Nombre,T.UserCrea,T.UserMod " +
-                         "FROM TH_OBRA O INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO WHERE T.IDTEATRO = @IdTeatro";
+                         "FROM TH_OBRA O INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO WHERE T.IDTEATRO = @IdTeatro AND (@fechaActual BETWEEN FECHAINICIO AND FECHAFIN) AND O.ESTADO = 'A'";
 
             OleDbParameter pIdTeatro = UtilDA.SetParameters("@IdTeatro", OleDbType.Integer, idTeatro);
-            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pIdTeatro))
+            OleDbParameter pFechaActual = UtilDA.SetParameters("@fechaActual", OleDbType.Date, DateTime.Today);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pIdTeatro,pFechaActual))
             {
                 while (dtr.Read())
                 {
@@ -156,7 +158,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, fechaini, fechafin, descripcion, estado, idTeatro, fechaCreacion, usuarioCrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, fechaini, fechafin, descripcion, estado, idTeatro, fechaCreacion, usuarioCrea);
         }
 
         public bool Update(Obra datos)
@@ -174,7 +176,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idObra = UtilDA.SetParameters("@idobra", OleDbType.Integer, datos.IdObra);
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, fechaini, fechafin, descripcion, estado, idteatro, fechaMod, usuarioMod, idObra);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, fechaini, fechafin, descripcion, estado, idteatro, fechaMod, usuarioMod, idObra);
         }
     }
 }

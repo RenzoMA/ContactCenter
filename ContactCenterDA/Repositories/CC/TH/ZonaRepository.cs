@@ -27,7 +27,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter UserMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, FechaMod, UserMod, codigo);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, FechaMod, UserMod, codigo);
         }
 
         public Zona GetById(int id)
@@ -108,7 +108,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, descripcion, estado, idTeatro, fechaCreacion, usuarioCrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, descripcion, estado, idTeatro, fechaCreacion, usuarioCrea);
         }
 
         public bool Update(Zona datos)
@@ -124,7 +124,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idZona = UtilDA.SetParameters("@idZona", OleDbType.VarChar, datos.IdZona);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, descripcion, estado, idTeatro, fechaMod, usuarioMod, idZona);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, descripcion, estado, idTeatro, fechaMod, usuarioMod, idZona);
         }
     }
 

@@ -20,7 +20,7 @@ using ContactCenterCommon;
 
 namespace ContactCenterGUI.Teatros
 {
-    public partial class PerJapTheater : MaterialForm
+    public partial class TheaterPeruanoJapones : MaterialForm
     {
         public int idTeatro = 1;
         public int idFuncion = 1;
@@ -28,7 +28,7 @@ namespace ContactCenterGUI.Teatros
 
         private Reserva reserva;
 
-        public PerJapTheater()
+        public TheaterPeruanoJapones()
         {
             InitializeComponent();
             

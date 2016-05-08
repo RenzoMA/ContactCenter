@@ -1,6 +1,6 @@
 ﻿namespace ContactCenterGUI.Teatros
 {
-    partial class LaPlazaTheater
+    partial class TheaterLaPlaza
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnContinuar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAtras = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCerrar = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.A16 = new System.Windows.Forms.Button();
@@ -275,7 +275,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -285,6 +284,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.panel1.Controls.Add(this.materialLabel1);
             this.panel1.Controls.Add(this.btnContinuar);
             this.panel1.Controls.Add(this.btnAtras);
             this.panel1.Controls.Add(this.label2);
@@ -296,8 +296,22 @@
             this.panel1.Size = new System.Drawing.Size(1172, 65);
             this.panel1.TabIndex = 2;
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(12, 36);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(113, 19);
+            this.materialLabel1.TabIndex = 0;
+            this.materialLabel1.Text = "Teatro La Plaza";
+            // 
             // btnContinuar
             // 
+            this.btnContinuar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnContinuar.Depth = 0;
             this.btnContinuar.Location = new System.Drawing.Point(990, 33);
             this.btnContinuar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -310,6 +324,7 @@
             // 
             // btnAtras
             // 
+            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAtras.Depth = 0;
             this.btnAtras.Location = new System.Drawing.Point(818, 33);
             this.btnAtras.MouseState = MaterialSkin.MouseState.HOVER;
@@ -319,7 +334,6 @@
             this.btnAtras.TabIndex = 5;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.UseVisualStyleBackColor = true;
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // label2
             // 
@@ -327,7 +341,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
-            this.label2.Location = new System.Drawing.Point(1127, 9);
+            this.label2.Location = new System.Drawing.Point(1127, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 13);
             this.label2.TabIndex = 1;
@@ -339,7 +353,7 @@
             this.lblCerrar.AutoSize = true;
             this.lblCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
             this.lblCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
-            this.lblCerrar.Location = new System.Drawing.Point(1146, 9);
+            this.lblCerrar.Location = new System.Drawing.Point(1146, 8);
             this.lblCerrar.Name = "lblCerrar";
             this.lblCerrar.Size = new System.Drawing.Size(14, 13);
             this.lblCerrar.TabIndex = 0;
@@ -348,25 +362,11 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.panel3.Controls.Add(this.materialLabel1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1172, 27);
             this.panel3.TabIndex = 2;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(12, 3);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(140, 19);
-            this.materialLabel1.TabIndex = 0;
-            this.materialLabel1.Text = "Teatro Plaza Callao";
             // 
             // panel5
             // 
@@ -2818,7 +2818,7 @@
             this.materialLabel19.TabIndex = 0;
             this.materialLabel19.Text = "SALIDA ";
             // 
-            // LaPlazaTheater
+            // TheaterLaPlaza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -3060,7 +3060,7 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
-            this.Name = "LaPlazaTheater";
+            this.Name = "TheaterLaPlaza";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CallaoTheater";
@@ -3068,8 +3068,6 @@
             this.Load += new System.EventHandler(this.CallaoTheater_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);

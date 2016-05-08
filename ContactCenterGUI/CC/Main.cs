@@ -71,7 +71,7 @@ namespace ContactCenterGUI.CC
             int width = this.Width;
             int height = this.Height;
             int marginRight = 50;
-            int marginBottom = 30;
+            int marginBottom = 50;
 
             if ((x + marginRight + (buttonWidth * 2)) > width)
             {
@@ -122,7 +122,15 @@ namespace ContactCenterGUI.CC
             btn.UseVisualStyleBackColor = false;
             btn.Location = new System.Drawing.Point(positionX, positionY);
             btn.Click += elemento_Click;
+            Label lbl = new Label();
+            lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lbl.Location = new System.Drawing.Point(positionX, positionY-30);
+            lbl.Size = new System.Drawing.Size(buttonWidth, buttonHeight);
+            lbl.Text = aplicacion.Nombre;
+            lbl.BackColor = Color.Transparent;
+
             this.Controls.Add(btn);
+            this.Controls.Add(lbl);
             CoordSiguienteElemento(positionX, positionY);
         }
     }

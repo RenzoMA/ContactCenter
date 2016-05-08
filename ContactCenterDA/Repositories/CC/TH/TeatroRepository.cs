@@ -23,7 +23,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, fechaMod, userMod, idTeatro);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, fechaMod, userMod, idTeatro);
         }
 
         public Teatro GetById(int id)
@@ -91,7 +91,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter userCrea = UtilDA.SetParameters("@UserCrea", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter frmTeatro = UtilDA.SetParameters("@frmTeatro", OleDbType.VarChar, datos.frmTeatro);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, estado, nombre, fechaCrea, userCrea, frmTeatro);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, estado, nombre, fechaCrea, userCrea, frmTeatro);
 
 
         }
@@ -108,7 +108,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter idTeatro = UtilDA.SetParameters("@IdTeatro", OleDbType.Integer, datos.IdTeatro);
             OleDbParameter frmTeatro = UtilDA.SetParameters("@frmTeatro", OleDbType.VarChar, datos.frmTeatro);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, estado, nombre, fechaMod, userMod, frmTeatro, idTeatro);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, estado, nombre, fechaMod, userMod, frmTeatro, idTeatro);
 
 
         }

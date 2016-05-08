@@ -15,11 +15,11 @@ using ContactCenterGUI.Helpers;
 
 namespace ContactCenterGUI.Teatros
 {
-    public partial class LaPlazaTheater : MaterialForm
+    public partial class TheaterLaPlaza : MaterialForm
     {
         private Reserva reserva;
 
-        public LaPlazaTheater()
+        public TheaterLaPlaza()
         {
             InitializeComponent();
         }
@@ -31,9 +31,5 @@ namespace ContactCenterGUI.Teatros
             HelperTeatro.MostrarDisponibilidad(this, reserva);
         }
 
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

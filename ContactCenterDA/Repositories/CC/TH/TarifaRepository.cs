@@ -27,7 +27,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, fechaMod, userMod, idTarifa);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, fechaMod, userMod, idTarifa);
 
         }
 
@@ -144,7 +144,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
             OleDbParameter userCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, datos.UsuarioCreacion);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, idZona, idObra, precio, fechaCrea, userCrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, idZona, idObra, precio, fechaCrea, userCrea);
         }
 
         public bool Update(Tarifa datos)
@@ -158,7 +158,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter userCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, datos.UsuarioCreacion);
             OleDbParameter idTarifa = UtilDA.SetParameters("@IdTeatro", OleDbType.Integer, datos.IdTarifa);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, idZona, idObra, precio, fechaCrea, userCrea, idTarifa);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, idZona, idObra, precio, fechaCrea, userCrea, idTarifa);
         }
     }
 }

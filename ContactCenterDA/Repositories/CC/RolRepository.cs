@@ -24,7 +24,7 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
             OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, fechaMod, userMod, codigo);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, fechaMod, userMod, codigo);
         }
 
         public Rol GetById(int id)
@@ -90,7 +90,7 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, estado, fechaCrea, usuarioCrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, estado, fechaCrea, usuarioCrea);
         }
 
         public bool Update(Rol datos)
@@ -103,7 +103,7 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idRol = UtilDA.SetParameters("@idRol", OleDbType.Integer, datos.IdRol);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, estado, fechaMod, usuarioMod, idRol);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, estado, fechaMod, usuarioMod, idRol);
         }
     }
 }

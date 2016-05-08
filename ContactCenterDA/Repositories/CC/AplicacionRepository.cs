@@ -25,7 +25,7 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
             OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter userMod = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, fechaMod, userMod, codigo);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx,false, fechaMod, userMod, codigo);
         }
 
         public Aplicacion GetById(int id)
@@ -97,7 +97,7 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter UsuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter formInicio = UtilDA.SetParameters("@formInicio", OleDbType.VarChar, datos.FormInicio);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, version, estado, correo, fechaCreacion, UsuarioCrea, formInicio);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, version, estado, correo, fechaCreacion, UsuarioCrea, formInicio);
         }
 
         public bool Update(Aplicacion datos)
@@ -113,7 +113,7 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter UsuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idAplicacion = UtilDA.SetParameters("@idAplicacion", OleDbType.Integer, datos.IdAplicacion);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, nombre, version, estado, correo, fechaModificacion, UsuarioMod, idAplicacion);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, version, estado, correo, fechaModificacion, UsuarioMod, idAplicacion);
 
         }
 
@@ -157,7 +157,7 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter FechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter UserCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
 
-            return UtilDA.ExecuteQueryValidador(cmd, CommandType.Text, sqlValidador, sql, cnx, pIdUsuario, pIdAplicacion, FechaCrea, UserCrea);
+            return UtilDA.ExecuteQueryValidador(cmd, CommandType.Text, sqlValidador, sql, cnx, false, pIdUsuario, pIdAplicacion, FechaCrea, UserCrea);
 
         }
     }

@@ -22,7 +22,7 @@ using System.Globalization;
 
 namespace ContactCenterGUI.Teatros
 {
-    public partial class NewTheater : MaterialForm
+    public partial class NewReservation : MaterialForm
     {
         private List<Teatro> listaTeatro = null;
         private Teatro teatro = null;
@@ -38,7 +38,7 @@ namespace ContactCenterGUI.Teatros
 
         private Reserva reserva = new Reserva();
 
-        public NewTheater()
+        public NewReservation()
         {
             InitializeComponent();
         }
@@ -131,9 +131,7 @@ namespace ContactCenterGUI.Teatros
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Teatros.TheaterApp teatroapp = new Teatros.TheaterApp();
-            teatroapp.ShowDialog();
+            this.Close();
         }
 
         private void txtCorreo_MouseClick(object sender, MouseEventArgs e)
