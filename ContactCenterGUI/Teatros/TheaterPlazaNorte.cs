@@ -17,22 +17,16 @@ namespace ContactCenterGUI.Teatros
 {
     public partial class TheaterPlazaNorte : MaterialForm
     {
-        private Reserva reserva;
         public TheaterPlazaNorte()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void PlazaNorteTheater_Load(object sender, EventArgs e)
         {
-            materialLabel1.ForeColor = Color.White;
-            reserva = (Reserva)this.Tag;
-            HelperTeatro.MostrarDisponibilidad(this, reserva);
+            HelperTeatro.MostrarDisponibilidad(this, (Reserva)this.Tag);
         }
+
+       
     }
 }

@@ -24,7 +24,7 @@ namespace ContactCenterGUI.Helpers
         private static IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
         private static List<AsientoPrecio> asientosReserva;
 
-        public static IEnumerable<Control> GetAll(Control control, Type type)
+        private static IEnumerable<Control> GetAll(Control control, Type type)
         {
             var controls = control.Controls.Cast<Control>();
 
@@ -51,7 +51,7 @@ namespace ContactCenterGUI.Helpers
             btn.MouseClick += new MouseEventHandler(ReservarAsientoClick);
         }
 
-        public async static void EliminarSeparadas(string token)
+        private async static void EliminarSeparadas(string token)
         {
             Animacion.ShowLoader(formTemp);
             await servicio.EliminarAsientoTemporalTotalAsync(token);
@@ -64,7 +64,7 @@ namespace ContactCenterGUI.Helpers
             btn.BackColor = System.Drawing.Color.Red;
             btn.Enabled = false;
         }
-        public static void CruzarBotonData(List<AsientoPrecio> lAsientoTotal, Form form)
+        private static void CruzarBotonData(List<AsientoPrecio> lAsientoTotal, Form form)
         {
             int contador = 0;
             foreach (Button btn in GetAll(form,typeof(Button)))
@@ -91,45 +91,38 @@ namespace ContactCenterGUI.Helpers
                 MessageBox.Show("Incongruencia en asignacion, Botones: "+contador+ " Asientos en BD: "+lAsientoTotal.Count);
             }
         }
-        public static void SetEventosBoton()
+        private static void SetEventosBoton()
         {
-            foreach (MaterialRaisedButton btn in GetAll(formTemp, typeof(MaterialRaisedButton)))
-            {
-                if (btn.Name == "btnContinuar")
-                {
-                    btn.MouseClick += new MouseEventHandler(ConfirmarReserva);
-                }
-                if (btn.Name == "btnAtras")
-                {
-                    btn.MouseClick += new MouseEventHandler(CancelarAsientoTotal);
+            MaterialRaisedButton btnContinue = (MaterialRaisedButton)GetAll(formTemp, typeof(MaterialRaisedButton)).Where(a => a.Name == "btnContinuar").FirstOrDefault();
+            btnContinue.MouseClick += new MouseEventHandler(ConfirmarReserva);
 
-                }
-            }
-        }
-        public static void SetEventosLabel()
-        {
-            foreach (Label lbl in GetAll(formTemp, typeof(Label)))
-            {
-                if (lbl.Name == "lblCerrar")
-                {
-                    lbl.MouseClick += new MouseEventHandler(CancelarAsientoTotal);
-                }
-            }
+            PictureBox pcBack = (PictureBox)GetAll(formTemp, typeof(PictureBox)).Where(x => x.Name == "btnAtras").FirstOrDefault();
+            pcBack.MouseClick += new MouseEventHandler(CancelarAsientoTotal);
+
+            Label btnClose = (Label)GetAll(formTemp, typeof(Label)).Where(d => d.Name == "btnCerrar").FirstOrDefault();
+            btnClose.MouseClick += new MouseEventHandler(CancelarAsientoTotal);
+
+            Label btnMiminizar = (Label)GetAll(formTemp, typeof(Label)).Where(d => d.Name == "btnMiminizar").FirstOrDefault();
+            btnMiminizar.MouseClick += new MouseEventHandler(MiminizarTeatro);
+
+            MaterialLabel tituloX = (MaterialLabel)GetAll(formTemp, typeof(MaterialLabel)).Where(d => d.Name == "lblTituloTeatro").FirstOrDefault();
+            tituloX.ForeColor = System.Drawing.Color.White;
+
         }
 
-        public static string GenerarToken()
+        private static string GenerarToken()
         {
             String usuarioActual = Sesion.usuario.Login;
             int randomNumber1 = new Random().Next(100000, 1000000);
             int randomNumber2 = new Random().Next(1000000, 10000000);
             return Util.Encriptar(randomNumber1 + usuarioActual + randomNumber2);
         }
-        public static async void AsignarListaOcupada(List<Asiento> lOcupada)
+        private static async void AsignarListaOcupada(List<Asiento> lOcupada)
         {
             lOcupada = await servicio.ListarAsientoDisponibleAsync(reservaTemp.Obra.IdObra, reservaTemp.Funcion.IdFuncion, reservaTemp.FechaReserva,tokenTemp);
             CruzarBotonOcupado(lOcupada);
         }
-        public static void CruzarBotonOcupado(List<Asiento> lista)
+        private static void CruzarBotonOcupado(List<Asiento> lista)
         {
             foreach (Button btn in GetAll(formTemp, typeof(Button)))
             {
@@ -162,8 +155,7 @@ namespace ContactCenterGUI.Helpers
                 CruzarBotonData(lAsientoTotal, form);
                 AsignarListaOcupada(lOcupados);
                 SetEventosBoton();
-                SetEventosLabel();
-                Animacion.HideLoader(form);
+               
             }
             catch (Exception ex)
             {
@@ -171,7 +163,7 @@ namespace ContactCenterGUI.Helpers
             }
             finally
             {
-                //Animacion.HideLoader(form);
+                Animacion.HideLoader(form);
             }
         }
         private static List<AsientoPrecio> Clonar(List<AsientoPrecio> lista)
@@ -185,7 +177,7 @@ namespace ContactCenterGUI.Helpers
         }
 
 
-        static void ConfirmarReserva(object sender, EventArgs e)
+        private static void ConfirmarReserva(object sender, EventArgs e)
         {
             if (asientosReserva.Count > 0)
             {
@@ -200,7 +192,7 @@ namespace ContactCenterGUI.Helpers
 
         }
 
-        public async static void ReservarAsiento(Button btnAsiento, AsientoPrecio asiento)
+        private async static void ReservarAsiento(Button btnAsiento, AsientoPrecio asiento)
         {
             Animacion.ShowLoader(formTemp);
             if (asiento.EstadoTemporal == "" || asiento.EstadoTemporal == null)
@@ -233,7 +225,7 @@ namespace ContactCenterGUI.Helpers
             }
             Animacion.HideLoader(formTemp);
         }
-        static void ReservarAsientoClick(object sender, EventArgs e)
+        private static void ReservarAsientoClick(object sender, EventArgs e)
         {
             Button btnAsiento = (Button)sender;
             AsientoPrecio asiento = (AsientoPrecio)btnAsiento.Tag;
@@ -244,9 +236,16 @@ namespace ContactCenterGUI.Helpers
         {
             EliminarSeparadas(tokenTemp);
         }
-        public static void CancelarAsientoTotal(object sender, EventArgs e)
+        private static void CancelarAsientoTotal(object sender, EventArgs e)
         {
-            EliminarSeparadas(tokenTemp);
+            if (MessageBox.Show("Se perderan todos los cambios realizados hasta el momento. ¿ Seguro de regresar ?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                EliminarSeparadas(tokenTemp);
+            }
+        }
+        private static void MiminizarTeatro(object sender, EventArgs e)
+        {
+            formTemp.WindowState = FormWindowState.Minimized;
         }
     }
 }
