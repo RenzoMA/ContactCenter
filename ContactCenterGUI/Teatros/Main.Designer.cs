@@ -70,8 +70,9 @@
             this.btnGenerarReporte.Primary = true;
             this.btnGenerarReporte.Size = new System.Drawing.Size(244, 45);
             this.btnGenerarReporte.TabIndex = 7;
-            this.btnGenerarReporte.Text = "Generar Reporte";
+            this.btnGenerarReporte.Text = "Reporte Reservas";
             this.btnGenerarReporte.UseVisualStyleBackColor = true;
+            this.btnGenerarReporte.Click += new System.EventHandler(this.btnGenerarReporte_Click);
             // 
             // btnAmpliarTeatro
             // 
@@ -110,7 +111,7 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // TheaterApp
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -122,7 +123,7 @@
             this.Controls.Add(this.btnAmpliarTeatro);
             this.Controls.Add(this.btnNuevoRegistro);
             this.MaximizeBox = false;
-            this.Name = "TheaterApp";
+            this.Name = "Main";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aplicación Teatro";

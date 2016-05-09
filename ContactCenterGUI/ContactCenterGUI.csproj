@@ -191,6 +191,12 @@
     <Compile Include="Mantenimientos\ObraC\ManPlayMenu.Designer.cs">
       <DependentUpon>ManPlayMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Reportes\rptReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Reportes\rptReservas.Designer.cs">
+      <DependentUpon>rptReservas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\TheaterLaPlaza.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\ObraC\ManPlayMenu.resx">
       <DependentUpon>ManPlayMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Reportes\rptReservas.resx">
+      <DependentUpon>rptReservas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\TheaterLaPlaza.resx">
       <DependentUpon>TheaterLaPlaza.cs</DependentUpon>

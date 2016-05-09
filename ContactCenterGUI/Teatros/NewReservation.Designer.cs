@@ -129,7 +129,7 @@
             this.txtFecha.UseSystemPasswordChar = false;
             this.txtFecha.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtCorreo_MouseClick);
             // 
-            // NewTheater
+            // NewReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,7 +142,7 @@
             this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.materialRaisedButton1);
             this.MaximizeBox = false;
-            this.Name = "NewTheater";
+            this.Name = "NewReservation";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Reserva";
