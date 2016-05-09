@@ -111,12 +111,15 @@
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -270,6 +273,7 @@
     <EmbeddedResource Include="Mantenimientos\ObraC\ManPlayMenu.resx">
       <DependentUpon>ManPlayMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Reportes\rptReservas.rdlc" />
     <EmbeddedResource Include="Teatros\Reportes\rptReservas.resx">
       <DependentUpon>rptReservas.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +310,8 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\ContactCenterBE.CC.TH.Entidades.ReservaBE.Reserva.datasource" />
+    <None Include="Properties\DataSources\ContactCenterServices.ServiceContactCenter.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -383,6 +389,9 @@
   <ItemGroup>
     <Folder Include="Mantenimientos\Funcion\" />
     <Folder Include="Mantenimientos\Tarifa\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

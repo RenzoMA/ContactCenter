@@ -60,5 +60,7 @@ namespace ContactCenterServices
         //PROMOCION
         List<Promocion> ListPromocionByFuncionTipoPromo(int idFuncion, int idTipoPromocion);
         List<TipoPromocion> GetListaTipoPromocion();
+
+        List<Reserva> ReporteReservas(int idTeatro, DateTime fecha);
     }
 }

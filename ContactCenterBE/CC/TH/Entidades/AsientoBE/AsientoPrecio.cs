@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ContactCenterBE.CC.TH.Entidades.AsientoBE
 {
+    [Serializable]
     public class AsientoPrecio : Asiento
     {
         public AsientoPrecio()

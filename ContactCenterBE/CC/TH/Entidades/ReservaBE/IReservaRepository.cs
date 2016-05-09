@@ -9,5 +9,6 @@ namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
 {
     public interface IReservaRepository : IBaseRepository<Reserva>
     {
+        List<Reserva> ReporteReservas(int idTeatro, DateTime fecha);
     }
 }

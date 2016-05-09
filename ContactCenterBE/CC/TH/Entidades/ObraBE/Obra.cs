@@ -8,6 +8,7 @@ using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 
 namespace ContactCenterBE.CC.TH.Entidades.ObraBE
 {
+    [Serializable]
     public class Obra : BaseEntity
     {
         public int IdObra { get; set; }

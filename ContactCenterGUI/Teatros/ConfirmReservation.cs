@@ -31,6 +31,7 @@ namespace ContactCenterGUI.Teatros
         public Cliente cliente;
         public int validaSalida = 0;
         private Boolean AplicoPromocion = false;
+        private String asientos;
 
 
         public ConfirmReservation()
@@ -60,13 +61,9 @@ namespace ContactCenterGUI.Teatros
             foreach (AsientoPrecio obj in lista)
             {
                 contador++;
-                result += obj.Fila + obj.Descripcion + ", ";
-                if (contador == 15)
-                {
-                    result += "\n";
-                    contador = 0;
-                }
+                result += obj.Fila + obj.Descripcion + ",";
             }
+            result = result.Substring(0, result.Length - 1);
             return result;
         }
 
@@ -74,7 +71,8 @@ namespace ContactCenterGUI.Teatros
         {
             precioTotal = CalcularPrecio(listaAsientoPrecio);
             lblPrecio.Text = "S/. " + precioTotal.ToString();
-            lblAsientos.Text = GenerarAsiento(listaAsientoPrecio);
+            asientos = GenerarAsiento(listaAsientoPrecio);
+            lblAsientos.Text = asientos;
             lblObra.Text = reserva.Obra.Nombre;
             lblFuncion.Text = reserva.Funcion.Horario;
             lblTeatro.Text = reserva.Obra.Teatro.Nombre;
@@ -99,6 +97,7 @@ namespace ContactCenterGUI.Teatros
                 detalle.Precio = ap.Precio;
                 listaDetalle.Add(detalle);
             }
+            reserva.Asientos = asientos;
             reserva.ListaDetalles = listaDetalle;
             reserva.PrecioTotal = precioTotal;
         }
