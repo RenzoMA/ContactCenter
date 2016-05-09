@@ -749,7 +749,7 @@
             this.btnAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnAtras.TabIndex = 15;
             this.btnAtras.TabStop = false;
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            
             // 
             // btnMiminizar
             // 
@@ -762,7 +762,7 @@
             this.btnMiminizar.Size = new System.Drawing.Size(13, 13);
             this.btnMiminizar.TabIndex = 3;
             this.btnMiminizar.Text = "_";
-            this.btnMiminizar.Click += new System.EventHandler(this.btnMiminizar_Click);
+           
             // 
             // btnCerrar
             // 
@@ -775,7 +775,7 @@
             this.btnCerrar.Size = new System.Drawing.Size(14, 13);
             this.btnCerrar.TabIndex = 2;
             this.btnCerrar.Text = "X";
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            
             // 
             // metroTabControl1
             // 

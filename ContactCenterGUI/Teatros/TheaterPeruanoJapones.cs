@@ -32,6 +32,6 @@ namespace ContactCenterGUI.Teatros
             HelperTeatro.MostrarDisponibilidad(this, (Reserva)this.Tag);
         }
 
-
+       
     }
 }

@@ -10484,7 +10484,7 @@
             this.lbltpmin.Size = new System.Drawing.Size(13, 13);
             this.lbltpmin.TabIndex = 17;
             this.lbltpmin.Text = "_";
-            this.lbltpmin.Click += new System.EventHandler(this.lbltpmin_Click);
+           
             // 
             // lbltpcer
             // 
@@ -10497,7 +10497,6 @@
             this.lbltpcer.Size = new System.Drawing.Size(14, 13);
             this.lbltpcer.TabIndex = 16;
             this.lbltpcer.Text = "X";
-            this.lbltpcer.Click += new System.EventHandler(this.lbltpcer_Click);
             // 
             // lbltpatras
             // 
@@ -10510,7 +10509,7 @@
             this.lbltpatras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.lbltpatras.TabIndex = 18;
             this.lbltpatras.TabStop = false;
-            this.lbltpatras.Click += new System.EventHandler(this.lbltpatras_Click);
+          
             // 
             // btnContinuar
             // 
