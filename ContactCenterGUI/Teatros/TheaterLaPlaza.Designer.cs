@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnContinuar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnAtras = new System.Windows.Forms.PictureBox();
+            this.btnMiminizar = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Label();
             this.lblTituloTeatro = new MaterialSkin.Controls.MaterialLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -270,16 +274,12 @@
             this.materialLabel18 = new MaterialSkin.Controls.MaterialLabel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
-            this.btnContinuar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnAtras = new System.Windows.Forms.PictureBox();
-            this.btnMiminizar = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -296,6 +296,55 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1172, 65);
             this.panel1.TabIndex = 2;
+            // 
+            // btnContinuar
+            // 
+            this.btnContinuar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnContinuar.Depth = 0;
+            this.btnContinuar.Location = new System.Drawing.Point(1000, 33);
+            this.btnContinuar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnContinuar.Name = "btnContinuar";
+            this.btnContinuar.Primary = true;
+            this.btnContinuar.Size = new System.Drawing.Size(160, 26);
+            this.btnContinuar.TabIndex = 18;
+            this.btnContinuar.Text = "Continuar";
+            this.btnContinuar.UseVisualStyleBackColor = true;
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.btnAtras.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.btnAtras.Location = new System.Drawing.Point(1102, 5);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(16, 18);
+            this.btnAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtras.TabIndex = 19;
+            this.btnAtras.TabStop = false;
+            // 
+            // btnMiminizar
+            // 
+            this.btnMiminizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMiminizar.AutoSize = true;
+            this.btnMiminizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.btnMiminizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
+            this.btnMiminizar.Location = new System.Drawing.Point(1125, 5);
+            this.btnMiminizar.Name = "btnMiminizar";
+            this.btnMiminizar.Size = new System.Drawing.Size(13, 13);
+            this.btnMiminizar.TabIndex = 17;
+            this.btnMiminizar.Text = "_";
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.AutoSize = true;
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
+            this.btnCerrar.Location = new System.Drawing.Point(1146, 7);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(14, 13);
+            this.btnCerrar.TabIndex = 16;
+            this.btnCerrar.Text = "X";
             // 
             // lblTituloTeatro
             // 
@@ -2750,9 +2799,8 @@
             // 
             // panel6
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.materialLabel19);
-            this.panel6.Location = new System.Drawing.Point(1034, 705);
+            this.panel6.Location = new System.Drawing.Point(1054, 705);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(106, 39);
             this.panel6.TabIndex = 1549;
@@ -2769,55 +2817,6 @@
             this.materialLabel19.Size = new System.Drawing.Size(64, 19);
             this.materialLabel19.TabIndex = 0;
             this.materialLabel19.Text = "SALIDA ";
-            // 
-            // btnContinuar
-            // 
-            this.btnContinuar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnContinuar.Depth = 0;
-            this.btnContinuar.Location = new System.Drawing.Point(1000, 33);
-            this.btnContinuar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnContinuar.Name = "btnContinuar";
-            this.btnContinuar.Primary = true;
-            this.btnContinuar.Size = new System.Drawing.Size(160, 26);
-            this.btnContinuar.TabIndex = 18;
-            this.btnContinuar.Text = "Continuar";
-            this.btnContinuar.UseVisualStyleBackColor = true;
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.btnAtras.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
-            this.btnAtras.Location = new System.Drawing.Point(1102, 5);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(16, 18);
-            this.btnAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAtras.TabIndex = 19;
-            this.btnAtras.TabStop = false;
-            // 
-            // btnMiminizar
-            // 
-            this.btnMiminizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMiminizar.AutoSize = true;
-            this.btnMiminizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.btnMiminizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
-            this.btnMiminizar.Location = new System.Drawing.Point(1125, 5);
-            this.btnMiminizar.Name = "btnMiminizar";
-            this.btnMiminizar.Size = new System.Drawing.Size(13, 13);
-            this.btnMiminizar.TabIndex = 17;
-            this.btnMiminizar.Text = "_";
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.AutoSize = true;
-            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
-            this.btnCerrar.Location = new System.Drawing.Point(1146, 7);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(14, 13);
-            this.btnCerrar.TabIndex = 16;
-            this.btnCerrar.Text = "X";
             // 
             // TheaterLaPlaza
             // 
@@ -3070,6 +3069,7 @@
             this.Load += new System.EventHandler(this.CallaoTheater_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -3078,7 +3078,6 @@
             this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

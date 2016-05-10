@@ -782,7 +782,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(0, 65);
             this.metroTabControl1.Multiline = true;
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1172, 707);
             this.metroTabControl1.TabIndex = 3;
             // 
@@ -4190,7 +4190,7 @@
             this.materialLabel47.Depth = 0;
             this.materialLabel47.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel47.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel47.Location = new System.Drawing.Point(822, 625);
+            this.materialLabel47.Location = new System.Drawing.Point(821, 594);
             this.materialLabel47.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel47.Name = "materialLabel47";
             this.materialLabel47.Size = new System.Drawing.Size(18, 18);
@@ -4204,7 +4204,7 @@
             this.materialLabel48.Depth = 0;
             this.materialLabel48.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel48.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel48.Location = new System.Drawing.Point(822, 589);
+            this.materialLabel48.Location = new System.Drawing.Point(822, 555);
             this.materialLabel48.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel48.Name = "materialLabel48";
             this.materialLabel48.Size = new System.Drawing.Size(23, 18);
@@ -4218,7 +4218,7 @@
             this.materialLabel36.Depth = 0;
             this.materialLabel36.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel36.Location = new System.Drawing.Point(823, 536);
+            this.materialLabel36.Location = new System.Drawing.Point(823, 515);
             this.materialLabel36.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel36.Name = "materialLabel36";
             this.materialLabel36.Size = new System.Drawing.Size(17, 18);
@@ -4232,7 +4232,7 @@
             this.materialLabel37.Depth = 0;
             this.materialLabel37.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel37.Location = new System.Drawing.Point(823, 488);
+            this.materialLabel37.Location = new System.Drawing.Point(822, 477);
             this.materialLabel37.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel37.Name = "materialLabel37";
             this.materialLabel37.Size = new System.Drawing.Size(19, 18);
@@ -4372,7 +4372,7 @@
             this.materialLabel35.Depth = 0;
             this.materialLabel35.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel35.Location = new System.Drawing.Point(365, 625);
+            this.materialLabel35.Location = new System.Drawing.Point(365, 594);
             this.materialLabel35.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel35.Name = "materialLabel35";
             this.materialLabel35.Size = new System.Drawing.Size(18, 18);
@@ -4386,7 +4386,7 @@
             this.materialLabel31.Depth = 0;
             this.materialLabel31.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel31.Location = new System.Drawing.Point(365, 589);
+            this.materialLabel31.Location = new System.Drawing.Point(365, 555);
             this.materialLabel31.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel31.Name = "materialLabel31";
             this.materialLabel31.Size = new System.Drawing.Size(23, 18);
@@ -4400,7 +4400,7 @@
             this.materialLabel32.Depth = 0;
             this.materialLabel32.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel32.Location = new System.Drawing.Point(365, 536);
+            this.materialLabel32.Location = new System.Drawing.Point(365, 514);
             this.materialLabel32.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel32.Name = "materialLabel32";
             this.materialLabel32.Size = new System.Drawing.Size(17, 18);
@@ -4414,7 +4414,7 @@
             this.materialLabel33.Depth = 0;
             this.materialLabel33.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel33.Location = new System.Drawing.Point(365, 488);
+            this.materialLabel33.Location = new System.Drawing.Point(365, 477);
             this.materialLabel33.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel33.Name = "materialLabel33";
             this.materialLabel33.Size = new System.Drawing.Size(19, 18);
@@ -4567,7 +4567,7 @@
             // A795
             // 
             this.A795.BackColor = System.Drawing.Color.PeachPuff;
-            this.A795.Location = new System.Drawing.Point(1088, 620);
+            this.A795.Location = new System.Drawing.Point(1087, 589);
             this.A795.Name = "A795";
             this.A795.Size = new System.Drawing.Size(27, 30);
             this.A795.TabIndex = 1887;
@@ -4577,7 +4577,7 @@
             // A794
             // 
             this.A794.BackColor = System.Drawing.Color.PeachPuff;
-            this.A794.Location = new System.Drawing.Point(1059, 620);
+            this.A794.Location = new System.Drawing.Point(1058, 589);
             this.A794.Name = "A794";
             this.A794.Size = new System.Drawing.Size(27, 30);
             this.A794.TabIndex = 1886;
@@ -4587,7 +4587,7 @@
             // A793
             // 
             this.A793.BackColor = System.Drawing.Color.PeachPuff;
-            this.A793.Location = new System.Drawing.Point(1030, 620);
+            this.A793.Location = new System.Drawing.Point(1029, 589);
             this.A793.Name = "A793";
             this.A793.Size = new System.Drawing.Size(27, 30);
             this.A793.TabIndex = 1885;
@@ -4597,7 +4597,7 @@
             // A792
             // 
             this.A792.BackColor = System.Drawing.Color.PeachPuff;
-            this.A792.Location = new System.Drawing.Point(1001, 620);
+            this.A792.Location = new System.Drawing.Point(1000, 589);
             this.A792.Name = "A792";
             this.A792.Size = new System.Drawing.Size(27, 30);
             this.A792.TabIndex = 1884;
@@ -4607,7 +4607,7 @@
             // A791
             // 
             this.A791.BackColor = System.Drawing.Color.PeachPuff;
-            this.A791.Location = new System.Drawing.Point(972, 620);
+            this.A791.Location = new System.Drawing.Point(971, 589);
             this.A791.Name = "A791";
             this.A791.Size = new System.Drawing.Size(27, 30);
             this.A791.TabIndex = 1883;
@@ -4617,7 +4617,7 @@
             // A790
             // 
             this.A790.BackColor = System.Drawing.Color.PeachPuff;
-            this.A790.Location = new System.Drawing.Point(943, 620);
+            this.A790.Location = new System.Drawing.Point(942, 589);
             this.A790.Name = "A790";
             this.A790.Size = new System.Drawing.Size(27, 30);
             this.A790.TabIndex = 1882;
@@ -4627,7 +4627,7 @@
             // A789
             // 
             this.A789.BackColor = System.Drawing.Color.PeachPuff;
-            this.A789.Location = new System.Drawing.Point(914, 620);
+            this.A789.Location = new System.Drawing.Point(913, 589);
             this.A789.Name = "A789";
             this.A789.Size = new System.Drawing.Size(27, 30);
             this.A789.TabIndex = 1881;
@@ -4637,7 +4637,7 @@
             // A788
             // 
             this.A788.BackColor = System.Drawing.Color.PeachPuff;
-            this.A788.Location = new System.Drawing.Point(885, 620);
+            this.A788.Location = new System.Drawing.Point(884, 589);
             this.A788.Name = "A788";
             this.A788.Size = new System.Drawing.Size(27, 30);
             this.A788.TabIndex = 1880;
@@ -4647,7 +4647,7 @@
             // A787
             // 
             this.A787.BackColor = System.Drawing.Color.PeachPuff;
-            this.A787.Location = new System.Drawing.Point(856, 620);
+            this.A787.Location = new System.Drawing.Point(855, 589);
             this.A787.Name = "A787";
             this.A787.Size = new System.Drawing.Size(27, 30);
             this.A787.TabIndex = 1879;
@@ -4657,7 +4657,7 @@
             // A775
             // 
             this.A775.BackColor = System.Drawing.Color.PeachPuff;
-            this.A775.Location = new System.Drawing.Point(1059, 584);
+            this.A775.Location = new System.Drawing.Point(1059, 550);
             this.A775.Name = "A775";
             this.A775.Size = new System.Drawing.Size(27, 30);
             this.A775.TabIndex = 1878;
@@ -4667,7 +4667,7 @@
             // A774
             // 
             this.A774.BackColor = System.Drawing.Color.PeachPuff;
-            this.A774.Location = new System.Drawing.Point(1030, 584);
+            this.A774.Location = new System.Drawing.Point(1030, 550);
             this.A774.Name = "A774";
             this.A774.Size = new System.Drawing.Size(27, 30);
             this.A774.TabIndex = 1877;
@@ -4677,7 +4677,7 @@
             // A773
             // 
             this.A773.BackColor = System.Drawing.Color.PeachPuff;
-            this.A773.Location = new System.Drawing.Point(1001, 584);
+            this.A773.Location = new System.Drawing.Point(1001, 550);
             this.A773.Name = "A773";
             this.A773.Size = new System.Drawing.Size(27, 30);
             this.A773.TabIndex = 1876;
@@ -4687,7 +4687,7 @@
             // A772
             // 
             this.A772.BackColor = System.Drawing.Color.PeachPuff;
-            this.A772.Location = new System.Drawing.Point(972, 584);
+            this.A772.Location = new System.Drawing.Point(972, 550);
             this.A772.Name = "A772";
             this.A772.Size = new System.Drawing.Size(27, 30);
             this.A772.TabIndex = 1875;
@@ -4697,7 +4697,7 @@
             // A771
             // 
             this.A771.BackColor = System.Drawing.Color.PeachPuff;
-            this.A771.Location = new System.Drawing.Point(943, 584);
+            this.A771.Location = new System.Drawing.Point(943, 550);
             this.A771.Name = "A771";
             this.A771.Size = new System.Drawing.Size(27, 30);
             this.A771.TabIndex = 1874;
@@ -4707,7 +4707,7 @@
             // A770
             // 
             this.A770.BackColor = System.Drawing.Color.PeachPuff;
-            this.A770.Location = new System.Drawing.Point(914, 584);
+            this.A770.Location = new System.Drawing.Point(914, 550);
             this.A770.Name = "A770";
             this.A770.Size = new System.Drawing.Size(27, 30);
             this.A770.TabIndex = 1873;
@@ -4717,7 +4717,7 @@
             // A769
             // 
             this.A769.BackColor = System.Drawing.Color.PeachPuff;
-            this.A769.Location = new System.Drawing.Point(885, 584);
+            this.A769.Location = new System.Drawing.Point(885, 550);
             this.A769.Name = "A769";
             this.A769.Size = new System.Drawing.Size(27, 30);
             this.A769.TabIndex = 1872;
@@ -4727,7 +4727,7 @@
             // A768
             // 
             this.A768.BackColor = System.Drawing.Color.PeachPuff;
-            this.A768.Location = new System.Drawing.Point(856, 584);
+            this.A768.Location = new System.Drawing.Point(856, 550);
             this.A768.Name = "A768";
             this.A768.Size = new System.Drawing.Size(27, 30);
             this.A768.TabIndex = 1871;
@@ -4737,7 +4737,7 @@
             // A757
             // 
             this.A757.BackColor = System.Drawing.Color.PeachPuff;
-            this.A757.Location = new System.Drawing.Point(1124, 535);
+            this.A757.Location = new System.Drawing.Point(1124, 514);
             this.A757.Name = "A757";
             this.A757.Size = new System.Drawing.Size(27, 30);
             this.A757.TabIndex = 1870;
@@ -4747,7 +4747,7 @@
             // A725
             // 
             this.A725.BackColor = System.Drawing.Color.PeachPuff;
-            this.A725.Location = new System.Drawing.Point(1092, 488);
+            this.A725.Location = new System.Drawing.Point(1091, 477);
             this.A725.Name = "A725";
             this.A725.Size = new System.Drawing.Size(27, 30);
             this.A725.TabIndex = 1869;
@@ -4757,7 +4757,7 @@
             // A724
             // 
             this.A724.BackColor = System.Drawing.Color.PeachPuff;
-            this.A724.Location = new System.Drawing.Point(1059, 488);
+            this.A724.Location = new System.Drawing.Point(1058, 477);
             this.A724.Name = "A724";
             this.A724.Size = new System.Drawing.Size(27, 30);
             this.A724.TabIndex = 1868;
@@ -4767,7 +4767,7 @@
             // A723
             // 
             this.A723.BackColor = System.Drawing.Color.PeachPuff;
-            this.A723.Location = new System.Drawing.Point(1030, 488);
+            this.A723.Location = new System.Drawing.Point(1029, 477);
             this.A723.Name = "A723";
             this.A723.Size = new System.Drawing.Size(27, 30);
             this.A723.TabIndex = 1867;
@@ -4777,7 +4777,7 @@
             // A722
             // 
             this.A722.BackColor = System.Drawing.Color.PeachPuff;
-            this.A722.Location = new System.Drawing.Point(1001, 488);
+            this.A722.Location = new System.Drawing.Point(1000, 477);
             this.A722.Name = "A722";
             this.A722.Size = new System.Drawing.Size(27, 30);
             this.A722.TabIndex = 1866;
@@ -4787,7 +4787,7 @@
             // A721
             // 
             this.A721.BackColor = System.Drawing.Color.PeachPuff;
-            this.A721.Location = new System.Drawing.Point(972, 488);
+            this.A721.Location = new System.Drawing.Point(971, 477);
             this.A721.Name = "A721";
             this.A721.Size = new System.Drawing.Size(27, 30);
             this.A721.TabIndex = 1865;
@@ -4797,7 +4797,7 @@
             // A720
             // 
             this.A720.BackColor = System.Drawing.Color.PeachPuff;
-            this.A720.Location = new System.Drawing.Point(943, 488);
+            this.A720.Location = new System.Drawing.Point(942, 477);
             this.A720.Name = "A720";
             this.A720.Size = new System.Drawing.Size(27, 30);
             this.A720.TabIndex = 1864;
@@ -4807,7 +4807,7 @@
             // A719
             // 
             this.A719.BackColor = System.Drawing.Color.PeachPuff;
-            this.A719.Location = new System.Drawing.Point(914, 488);
+            this.A719.Location = new System.Drawing.Point(913, 477);
             this.A719.Name = "A719";
             this.A719.Size = new System.Drawing.Size(27, 30);
             this.A719.TabIndex = 1863;
@@ -4817,7 +4817,7 @@
             // A718
             // 
             this.A718.BackColor = System.Drawing.Color.PeachPuff;
-            this.A718.Location = new System.Drawing.Point(885, 488);
+            this.A718.Location = new System.Drawing.Point(884, 477);
             this.A718.Name = "A718";
             this.A718.Size = new System.Drawing.Size(27, 30);
             this.A718.TabIndex = 1862;
@@ -4827,7 +4827,7 @@
             // A717
             // 
             this.A717.BackColor = System.Drawing.Color.PeachPuff;
-            this.A717.Location = new System.Drawing.Point(856, 488);
+            this.A717.Location = new System.Drawing.Point(855, 477);
             this.A717.Name = "A717";
             this.A717.Size = new System.Drawing.Size(27, 30);
             this.A717.TabIndex = 1861;
@@ -5067,7 +5067,7 @@
             // A747
             // 
             this.A747.BackColor = System.Drawing.Color.PeachPuff;
-            this.A747.Location = new System.Drawing.Point(750, 535);
+            this.A747.Location = new System.Drawing.Point(750, 513);
             this.A747.Name = "A747";
             this.A747.Size = new System.Drawing.Size(27, 30);
             this.A747.TabIndex = 1837;
@@ -5077,7 +5077,7 @@
             // A746
             // 
             this.A746.BackColor = System.Drawing.Color.PeachPuff;
-            this.A746.Location = new System.Drawing.Point(721, 535);
+            this.A746.Location = new System.Drawing.Point(721, 513);
             this.A746.Name = "A746";
             this.A746.Size = new System.Drawing.Size(27, 30);
             this.A746.TabIndex = 1836;
@@ -5087,7 +5087,7 @@
             // A745
             // 
             this.A745.BackColor = System.Drawing.Color.PeachPuff;
-            this.A745.Location = new System.Drawing.Point(692, 535);
+            this.A745.Location = new System.Drawing.Point(692, 513);
             this.A745.Name = "A745";
             this.A745.Size = new System.Drawing.Size(27, 30);
             this.A745.TabIndex = 1835;
@@ -5097,7 +5097,7 @@
             // A744
             // 
             this.A744.BackColor = System.Drawing.Color.PeachPuff;
-            this.A744.Location = new System.Drawing.Point(663, 535);
+            this.A744.Location = new System.Drawing.Point(663, 513);
             this.A744.Name = "A744";
             this.A744.Size = new System.Drawing.Size(27, 30);
             this.A744.TabIndex = 1834;
@@ -5107,7 +5107,7 @@
             // A743
             // 
             this.A743.BackColor = System.Drawing.Color.PeachPuff;
-            this.A743.Location = new System.Drawing.Point(634, 535);
+            this.A743.Location = new System.Drawing.Point(634, 513);
             this.A743.Name = "A743";
             this.A743.Size = new System.Drawing.Size(27, 30);
             this.A743.TabIndex = 1833;
@@ -5117,7 +5117,7 @@
             // A742
             // 
             this.A742.BackColor = System.Drawing.Color.PeachPuff;
-            this.A742.Location = new System.Drawing.Point(605, 535);
+            this.A742.Location = new System.Drawing.Point(605, 513);
             this.A742.Name = "A742";
             this.A742.Size = new System.Drawing.Size(27, 30);
             this.A742.TabIndex = 1832;
@@ -5127,7 +5127,7 @@
             // A741
             // 
             this.A741.BackColor = System.Drawing.Color.PeachPuff;
-            this.A741.Location = new System.Drawing.Point(576, 535);
+            this.A741.Location = new System.Drawing.Point(576, 513);
             this.A741.Name = "A741";
             this.A741.Size = new System.Drawing.Size(27, 30);
             this.A741.TabIndex = 1831;
@@ -5137,7 +5137,7 @@
             // A740
             // 
             this.A740.BackColor = System.Drawing.Color.PeachPuff;
-            this.A740.Location = new System.Drawing.Point(547, 535);
+            this.A740.Location = new System.Drawing.Point(547, 513);
             this.A740.Name = "A740";
             this.A740.Size = new System.Drawing.Size(27, 30);
             this.A740.TabIndex = 1830;
@@ -5147,7 +5147,7 @@
             // A739
             // 
             this.A739.BackColor = System.Drawing.Color.PeachPuff;
-            this.A739.Location = new System.Drawing.Point(518, 535);
+            this.A739.Location = new System.Drawing.Point(518, 513);
             this.A739.Name = "A739";
             this.A739.Size = new System.Drawing.Size(27, 30);
             this.A739.TabIndex = 1829;
@@ -5157,7 +5157,7 @@
             // A738
             // 
             this.A738.BackColor = System.Drawing.Color.PeachPuff;
-            this.A738.Location = new System.Drawing.Point(489, 535);
+            this.A738.Location = new System.Drawing.Point(489, 513);
             this.A738.Name = "A738";
             this.A738.Size = new System.Drawing.Size(27, 30);
             this.A738.TabIndex = 1828;
@@ -5167,7 +5167,7 @@
             // A737
             // 
             this.A737.BackColor = System.Drawing.Color.PeachPuff;
-            this.A737.Location = new System.Drawing.Point(460, 535);
+            this.A737.Location = new System.Drawing.Point(460, 513);
             this.A737.Name = "A737";
             this.A737.Size = new System.Drawing.Size(27, 30);
             this.A737.TabIndex = 1827;
@@ -5177,7 +5177,7 @@
             // A736
             // 
             this.A736.BackColor = System.Drawing.Color.PeachPuff;
-            this.A736.Location = new System.Drawing.Point(431, 535);
+            this.A736.Location = new System.Drawing.Point(431, 513);
             this.A736.Name = "A736";
             this.A736.Size = new System.Drawing.Size(27, 30);
             this.A736.TabIndex = 1826;
@@ -5187,7 +5187,7 @@
             // A735
             // 
             this.A735.BackColor = System.Drawing.Color.PeachPuff;
-            this.A735.Location = new System.Drawing.Point(402, 535);
+            this.A735.Location = new System.Drawing.Point(402, 513);
             this.A735.Name = "A735";
             this.A735.Size = new System.Drawing.Size(27, 30);
             this.A735.TabIndex = 1825;
@@ -5197,7 +5197,7 @@
             // A716
             // 
             this.A716.BackColor = System.Drawing.Color.PeachPuff;
-            this.A716.Location = new System.Drawing.Point(779, 488);
+            this.A716.Location = new System.Drawing.Point(779, 477);
             this.A716.Name = "A716";
             this.A716.Size = new System.Drawing.Size(27, 30);
             this.A716.TabIndex = 1824;
@@ -5207,7 +5207,7 @@
             // A715
             // 
             this.A715.BackColor = System.Drawing.Color.PeachPuff;
-            this.A715.Location = new System.Drawing.Point(750, 488);
+            this.A715.Location = new System.Drawing.Point(750, 477);
             this.A715.Name = "A715";
             this.A715.Size = new System.Drawing.Size(27, 30);
             this.A715.TabIndex = 1823;
@@ -5217,7 +5217,7 @@
             // A714
             // 
             this.A714.BackColor = System.Drawing.Color.PeachPuff;
-            this.A714.Location = new System.Drawing.Point(721, 488);
+            this.A714.Location = new System.Drawing.Point(721, 477);
             this.A714.Name = "A714";
             this.A714.Size = new System.Drawing.Size(27, 30);
             this.A714.TabIndex = 1822;
@@ -5227,7 +5227,7 @@
             // A713
             // 
             this.A713.BackColor = System.Drawing.Color.PeachPuff;
-            this.A713.Location = new System.Drawing.Point(692, 488);
+            this.A713.Location = new System.Drawing.Point(692, 477);
             this.A713.Name = "A713";
             this.A713.Size = new System.Drawing.Size(27, 30);
             this.A713.TabIndex = 1821;
@@ -5237,7 +5237,7 @@
             // A712
             // 
             this.A712.BackColor = System.Drawing.Color.PeachPuff;
-            this.A712.Location = new System.Drawing.Point(663, 488);
+            this.A712.Location = new System.Drawing.Point(663, 477);
             this.A712.Name = "A712";
             this.A712.Size = new System.Drawing.Size(27, 30);
             this.A712.TabIndex = 1820;
@@ -5247,7 +5247,7 @@
             // A711
             // 
             this.A711.BackColor = System.Drawing.Color.PeachPuff;
-            this.A711.Location = new System.Drawing.Point(634, 488);
+            this.A711.Location = new System.Drawing.Point(634, 477);
             this.A711.Name = "A711";
             this.A711.Size = new System.Drawing.Size(27, 30);
             this.A711.TabIndex = 1819;
@@ -5257,7 +5257,7 @@
             // A710
             // 
             this.A710.BackColor = System.Drawing.Color.PeachPuff;
-            this.A710.Location = new System.Drawing.Point(605, 488);
+            this.A710.Location = new System.Drawing.Point(605, 477);
             this.A710.Name = "A710";
             this.A710.Size = new System.Drawing.Size(27, 30);
             this.A710.TabIndex = 1818;
@@ -5267,7 +5267,7 @@
             // A709
             // 
             this.A709.BackColor = System.Drawing.Color.PeachPuff;
-            this.A709.Location = new System.Drawing.Point(576, 488);
+            this.A709.Location = new System.Drawing.Point(576, 477);
             this.A709.Name = "A709";
             this.A709.Size = new System.Drawing.Size(27, 30);
             this.A709.TabIndex = 1817;
@@ -5277,7 +5277,7 @@
             // A708
             // 
             this.A708.BackColor = System.Drawing.Color.PeachPuff;
-            this.A708.Location = new System.Drawing.Point(547, 488);
+            this.A708.Location = new System.Drawing.Point(547, 477);
             this.A708.Name = "A708";
             this.A708.Size = new System.Drawing.Size(27, 30);
             this.A708.TabIndex = 1816;
@@ -5287,7 +5287,7 @@
             // A707
             // 
             this.A707.BackColor = System.Drawing.Color.PeachPuff;
-            this.A707.Location = new System.Drawing.Point(518, 488);
+            this.A707.Location = new System.Drawing.Point(518, 477);
             this.A707.Name = "A707";
             this.A707.Size = new System.Drawing.Size(27, 30);
             this.A707.TabIndex = 1815;
@@ -5297,7 +5297,7 @@
             // A706
             // 
             this.A706.BackColor = System.Drawing.Color.PeachPuff;
-            this.A706.Location = new System.Drawing.Point(489, 488);
+            this.A706.Location = new System.Drawing.Point(489, 477);
             this.A706.Name = "A706";
             this.A706.Size = new System.Drawing.Size(27, 30);
             this.A706.TabIndex = 1814;
@@ -5307,7 +5307,7 @@
             // A705
             // 
             this.A705.BackColor = System.Drawing.Color.PeachPuff;
-            this.A705.Location = new System.Drawing.Point(460, 488);
+            this.A705.Location = new System.Drawing.Point(460, 477);
             this.A705.Name = "A705";
             this.A705.Size = new System.Drawing.Size(27, 30);
             this.A705.TabIndex = 1813;
@@ -5317,7 +5317,7 @@
             // A704
             // 
             this.A704.BackColor = System.Drawing.Color.PeachPuff;
-            this.A704.Location = new System.Drawing.Point(431, 488);
+            this.A704.Location = new System.Drawing.Point(431, 477);
             this.A704.Name = "A704";
             this.A704.Size = new System.Drawing.Size(27, 30);
             this.A704.TabIndex = 1812;
@@ -5327,7 +5327,7 @@
             // A703
             // 
             this.A703.BackColor = System.Drawing.Color.PeachPuff;
-            this.A703.Location = new System.Drawing.Point(402, 488);
+            this.A703.Location = new System.Drawing.Point(402, 477);
             this.A703.Name = "A703";
             this.A703.Size = new System.Drawing.Size(27, 30);
             this.A703.TabIndex = 1811;
@@ -5757,7 +5757,7 @@
             // A756
             // 
             this.A756.BackColor = System.Drawing.Color.PeachPuff;
-            this.A756.Location = new System.Drawing.Point(1091, 536);
+            this.A756.Location = new System.Drawing.Point(1091, 515);
             this.A756.Name = "A756";
             this.A756.Size = new System.Drawing.Size(27, 30);
             this.A756.TabIndex = 1747;
@@ -5767,7 +5767,7 @@
             // A755
             // 
             this.A755.BackColor = System.Drawing.Color.PeachPuff;
-            this.A755.Location = new System.Drawing.Point(1059, 535);
+            this.A755.Location = new System.Drawing.Point(1059, 514);
             this.A755.Name = "A755";
             this.A755.Size = new System.Drawing.Size(27, 30);
             this.A755.TabIndex = 1746;
@@ -5777,7 +5777,7 @@
             // A754
             // 
             this.A754.BackColor = System.Drawing.Color.PeachPuff;
-            this.A754.Location = new System.Drawing.Point(1030, 535);
+            this.A754.Location = new System.Drawing.Point(1030, 514);
             this.A754.Name = "A754";
             this.A754.Size = new System.Drawing.Size(27, 30);
             this.A754.TabIndex = 1745;
@@ -5787,7 +5787,7 @@
             // A753
             // 
             this.A753.BackColor = System.Drawing.Color.PeachPuff;
-            this.A753.Location = new System.Drawing.Point(1001, 535);
+            this.A753.Location = new System.Drawing.Point(1001, 514);
             this.A753.Name = "A753";
             this.A753.Size = new System.Drawing.Size(27, 30);
             this.A753.TabIndex = 1744;
@@ -5797,7 +5797,7 @@
             // A752
             // 
             this.A752.BackColor = System.Drawing.Color.PeachPuff;
-            this.A752.Location = new System.Drawing.Point(972, 535);
+            this.A752.Location = new System.Drawing.Point(972, 514);
             this.A752.Name = "A752";
             this.A752.Size = new System.Drawing.Size(27, 30);
             this.A752.TabIndex = 1743;
@@ -5807,7 +5807,7 @@
             // A751
             // 
             this.A751.BackColor = System.Drawing.Color.PeachPuff;
-            this.A751.Location = new System.Drawing.Point(943, 535);
+            this.A751.Location = new System.Drawing.Point(943, 514);
             this.A751.Name = "A751";
             this.A751.Size = new System.Drawing.Size(27, 30);
             this.A751.TabIndex = 1742;
@@ -5817,7 +5817,7 @@
             // A750
             // 
             this.A750.BackColor = System.Drawing.Color.PeachPuff;
-            this.A750.Location = new System.Drawing.Point(914, 535);
+            this.A750.Location = new System.Drawing.Point(914, 514);
             this.A750.Name = "A750";
             this.A750.Size = new System.Drawing.Size(27, 30);
             this.A750.TabIndex = 1741;
@@ -5827,7 +5827,7 @@
             // A749
             // 
             this.A749.BackColor = System.Drawing.Color.PeachPuff;
-            this.A749.Location = new System.Drawing.Point(885, 535);
+            this.A749.Location = new System.Drawing.Point(885, 514);
             this.A749.Name = "A749";
             this.A749.Size = new System.Drawing.Size(27, 30);
             this.A749.TabIndex = 1740;
@@ -5837,7 +5837,7 @@
             // A748
             // 
             this.A748.BackColor = System.Drawing.Color.PeachPuff;
-            this.A748.Location = new System.Drawing.Point(856, 535);
+            this.A748.Location = new System.Drawing.Point(856, 514);
             this.A748.Name = "A748";
             this.A748.Size = new System.Drawing.Size(27, 30);
             this.A748.TabIndex = 1739;
@@ -6797,7 +6797,7 @@
             // A786
             // 
             this.A786.BackColor = System.Drawing.Color.PeachPuff;
-            this.A786.Location = new System.Drawing.Point(325, 620);
+            this.A786.Location = new System.Drawing.Point(325, 589);
             this.A786.Name = "A786";
             this.A786.Size = new System.Drawing.Size(27, 30);
             this.A786.TabIndex = 1480;
@@ -6807,7 +6807,7 @@
             // A785
             // 
             this.A785.BackColor = System.Drawing.Color.PeachPuff;
-            this.A785.Location = new System.Drawing.Point(296, 620);
+            this.A785.Location = new System.Drawing.Point(296, 589);
             this.A785.Name = "A785";
             this.A785.Size = new System.Drawing.Size(27, 30);
             this.A785.TabIndex = 1479;
@@ -6817,7 +6817,7 @@
             // A784
             // 
             this.A784.BackColor = System.Drawing.Color.PeachPuff;
-            this.A784.Location = new System.Drawing.Point(267, 620);
+            this.A784.Location = new System.Drawing.Point(267, 589);
             this.A784.Name = "A784";
             this.A784.Size = new System.Drawing.Size(27, 30);
             this.A784.TabIndex = 1478;
@@ -6827,7 +6827,7 @@
             // A783
             // 
             this.A783.BackColor = System.Drawing.Color.PeachPuff;
-            this.A783.Location = new System.Drawing.Point(238, 620);
+            this.A783.Location = new System.Drawing.Point(238, 589);
             this.A783.Name = "A783";
             this.A783.Size = new System.Drawing.Size(27, 30);
             this.A783.TabIndex = 1477;
@@ -6837,7 +6837,7 @@
             // A782
             // 
             this.A782.BackColor = System.Drawing.Color.PeachPuff;
-            this.A782.Location = new System.Drawing.Point(209, 620);
+            this.A782.Location = new System.Drawing.Point(209, 589);
             this.A782.Name = "A782";
             this.A782.Size = new System.Drawing.Size(27, 30);
             this.A782.TabIndex = 1476;
@@ -6847,7 +6847,7 @@
             // A781
             // 
             this.A781.BackColor = System.Drawing.Color.PeachPuff;
-            this.A781.Location = new System.Drawing.Point(180, 620);
+            this.A781.Location = new System.Drawing.Point(180, 589);
             this.A781.Name = "A781";
             this.A781.Size = new System.Drawing.Size(27, 30);
             this.A781.TabIndex = 1475;
@@ -6857,7 +6857,7 @@
             // A780
             // 
             this.A780.BackColor = System.Drawing.Color.PeachPuff;
-            this.A780.Location = new System.Drawing.Point(151, 620);
+            this.A780.Location = new System.Drawing.Point(151, 589);
             this.A780.Name = "A780";
             this.A780.Size = new System.Drawing.Size(27, 30);
             this.A780.TabIndex = 1474;
@@ -6867,7 +6867,7 @@
             // A779
             // 
             this.A779.BackColor = System.Drawing.Color.PeachPuff;
-            this.A779.Location = new System.Drawing.Point(122, 620);
+            this.A779.Location = new System.Drawing.Point(122, 589);
             this.A779.Name = "A779";
             this.A779.Size = new System.Drawing.Size(27, 30);
             this.A779.TabIndex = 1473;
@@ -6877,7 +6877,7 @@
             // A778
             // 
             this.A778.BackColor = System.Drawing.Color.PeachPuff;
-            this.A778.Location = new System.Drawing.Point(93, 620);
+            this.A778.Location = new System.Drawing.Point(93, 589);
             this.A778.Name = "A778";
             this.A778.Size = new System.Drawing.Size(27, 30);
             this.A778.TabIndex = 1472;
@@ -6887,7 +6887,7 @@
             // A777
             // 
             this.A777.BackColor = System.Drawing.Color.PeachPuff;
-            this.A777.Location = new System.Drawing.Point(64, 620);
+            this.A777.Location = new System.Drawing.Point(64, 589);
             this.A777.Name = "A777";
             this.A777.Size = new System.Drawing.Size(27, 30);
             this.A777.TabIndex = 1471;
@@ -6897,7 +6897,7 @@
             // A776
             // 
             this.A776.BackColor = System.Drawing.Color.PeachPuff;
-            this.A776.Location = new System.Drawing.Point(35, 620);
+            this.A776.Location = new System.Drawing.Point(35, 589);
             this.A776.Name = "A776";
             this.A776.Size = new System.Drawing.Size(27, 30);
             this.A776.TabIndex = 1470;
@@ -6907,7 +6907,7 @@
             // A765
             // 
             this.A765.BackColor = System.Drawing.Color.PeachPuff;
-            this.A765.Location = new System.Drawing.Point(238, 584);
+            this.A765.Location = new System.Drawing.Point(238, 550);
             this.A765.Name = "A765";
             this.A765.Size = new System.Drawing.Size(27, 30);
             this.A765.TabIndex = 1466;
@@ -6917,7 +6917,7 @@
             // A764
             // 
             this.A764.BackColor = System.Drawing.Color.PeachPuff;
-            this.A764.Location = new System.Drawing.Point(209, 584);
+            this.A764.Location = new System.Drawing.Point(209, 550);
             this.A764.Name = "A764";
             this.A764.Size = new System.Drawing.Size(27, 30);
             this.A764.TabIndex = 1465;
@@ -6927,7 +6927,7 @@
             // A763
             // 
             this.A763.BackColor = System.Drawing.Color.PeachPuff;
-            this.A763.Location = new System.Drawing.Point(180, 584);
+            this.A763.Location = new System.Drawing.Point(180, 550);
             this.A763.Name = "A763";
             this.A763.Size = new System.Drawing.Size(27, 30);
             this.A763.TabIndex = 1464;
@@ -6937,7 +6937,7 @@
             // A762
             // 
             this.A762.BackColor = System.Drawing.Color.PeachPuff;
-            this.A762.Location = new System.Drawing.Point(151, 584);
+            this.A762.Location = new System.Drawing.Point(151, 550);
             this.A762.Name = "A762";
             this.A762.Size = new System.Drawing.Size(27, 30);
             this.A762.TabIndex = 1463;
@@ -6947,7 +6947,7 @@
             // A761
             // 
             this.A761.BackColor = System.Drawing.Color.PeachPuff;
-            this.A761.Location = new System.Drawing.Point(122, 584);
+            this.A761.Location = new System.Drawing.Point(122, 550);
             this.A761.Name = "A761";
             this.A761.Size = new System.Drawing.Size(27, 30);
             this.A761.TabIndex = 1462;
@@ -6957,7 +6957,7 @@
             // A760
             // 
             this.A760.BackColor = System.Drawing.Color.PeachPuff;
-            this.A760.Location = new System.Drawing.Point(93, 584);
+            this.A760.Location = new System.Drawing.Point(93, 550);
             this.A760.Name = "A760";
             this.A760.Size = new System.Drawing.Size(27, 30);
             this.A760.TabIndex = 1461;
@@ -6967,7 +6967,7 @@
             // A759
             // 
             this.A759.BackColor = System.Drawing.Color.PeachPuff;
-            this.A759.Location = new System.Drawing.Point(64, 584);
+            this.A759.Location = new System.Drawing.Point(64, 550);
             this.A759.Name = "A759";
             this.A759.Size = new System.Drawing.Size(27, 30);
             this.A759.TabIndex = 1460;
@@ -6977,7 +6977,7 @@
             // A758
             // 
             this.A758.BackColor = System.Drawing.Color.PeachPuff;
-            this.A758.Location = new System.Drawing.Point(35, 584);
+            this.A758.Location = new System.Drawing.Point(35, 550);
             this.A758.Name = "A758";
             this.A758.Size = new System.Drawing.Size(27, 30);
             this.A758.TabIndex = 1459;
@@ -6987,7 +6987,7 @@
             // A734
             // 
             this.A734.BackColor = System.Drawing.Color.PeachPuff;
-            this.A734.Location = new System.Drawing.Point(267, 536);
+            this.A734.Location = new System.Drawing.Point(267, 514);
             this.A734.Name = "A734";
             this.A734.Size = new System.Drawing.Size(27, 30);
             this.A734.TabIndex = 1456;
@@ -6997,7 +6997,7 @@
             // A733
             // 
             this.A733.BackColor = System.Drawing.Color.PeachPuff;
-            this.A733.Location = new System.Drawing.Point(238, 536);
+            this.A733.Location = new System.Drawing.Point(238, 514);
             this.A733.Name = "A733";
             this.A733.Size = new System.Drawing.Size(27, 30);
             this.A733.TabIndex = 1455;
@@ -7007,7 +7007,7 @@
             // A732
             // 
             this.A732.BackColor = System.Drawing.Color.PeachPuff;
-            this.A732.Location = new System.Drawing.Point(209, 536);
+            this.A732.Location = new System.Drawing.Point(209, 514);
             this.A732.Name = "A732";
             this.A732.Size = new System.Drawing.Size(27, 30);
             this.A732.TabIndex = 1454;
@@ -7017,7 +7017,7 @@
             // A731
             // 
             this.A731.BackColor = System.Drawing.Color.PeachPuff;
-            this.A731.Location = new System.Drawing.Point(180, 536);
+            this.A731.Location = new System.Drawing.Point(180, 514);
             this.A731.Name = "A731";
             this.A731.Size = new System.Drawing.Size(27, 30);
             this.A731.TabIndex = 1453;
@@ -7027,7 +7027,7 @@
             // A730
             // 
             this.A730.BackColor = System.Drawing.Color.PeachPuff;
-            this.A730.Location = new System.Drawing.Point(151, 536);
+            this.A730.Location = new System.Drawing.Point(151, 514);
             this.A730.Name = "A730";
             this.A730.Size = new System.Drawing.Size(27, 30);
             this.A730.TabIndex = 1452;
@@ -7037,7 +7037,7 @@
             // A729
             // 
             this.A729.BackColor = System.Drawing.Color.PeachPuff;
-            this.A729.Location = new System.Drawing.Point(122, 536);
+            this.A729.Location = new System.Drawing.Point(122, 514);
             this.A729.Name = "A729";
             this.A729.Size = new System.Drawing.Size(27, 30);
             this.A729.TabIndex = 1451;
@@ -7047,7 +7047,7 @@
             // A728
             // 
             this.A728.BackColor = System.Drawing.Color.PeachPuff;
-            this.A728.Location = new System.Drawing.Point(93, 536);
+            this.A728.Location = new System.Drawing.Point(93, 514);
             this.A728.Name = "A728";
             this.A728.Size = new System.Drawing.Size(27, 30);
             this.A728.TabIndex = 1450;
@@ -7057,7 +7057,7 @@
             // A727
             // 
             this.A727.BackColor = System.Drawing.Color.PeachPuff;
-            this.A727.Location = new System.Drawing.Point(64, 536);
+            this.A727.Location = new System.Drawing.Point(64, 514);
             this.A727.Name = "A727";
             this.A727.Size = new System.Drawing.Size(27, 30);
             this.A727.TabIndex = 1449;
@@ -7067,7 +7067,7 @@
             // A726
             // 
             this.A726.BackColor = System.Drawing.Color.PeachPuff;
-            this.A726.Location = new System.Drawing.Point(35, 536);
+            this.A726.Location = new System.Drawing.Point(35, 514);
             this.A726.Name = "A726";
             this.A726.Size = new System.Drawing.Size(27, 30);
             this.A726.TabIndex = 1448;
@@ -7077,7 +7077,7 @@
             // A702
             // 
             this.A702.BackColor = System.Drawing.Color.PeachPuff;
-            this.A702.Location = new System.Drawing.Point(267, 488);
+            this.A702.Location = new System.Drawing.Point(267, 477);
             this.A702.Name = "A702";
             this.A702.Size = new System.Drawing.Size(27, 30);
             this.A702.TabIndex = 1445;
@@ -7087,7 +7087,7 @@
             // A701
             // 
             this.A701.BackColor = System.Drawing.Color.PeachPuff;
-            this.A701.Location = new System.Drawing.Point(238, 488);
+            this.A701.Location = new System.Drawing.Point(238, 477);
             this.A701.Name = "A701";
             this.A701.Size = new System.Drawing.Size(27, 30);
             this.A701.TabIndex = 1444;
@@ -7097,7 +7097,7 @@
             // A700
             // 
             this.A700.BackColor = System.Drawing.Color.PeachPuff;
-            this.A700.Location = new System.Drawing.Point(209, 488);
+            this.A700.Location = new System.Drawing.Point(209, 477);
             this.A700.Name = "A700";
             this.A700.Size = new System.Drawing.Size(27, 30);
             this.A700.TabIndex = 1443;
@@ -7107,7 +7107,7 @@
             // A699
             // 
             this.A699.BackColor = System.Drawing.Color.PeachPuff;
-            this.A699.Location = new System.Drawing.Point(180, 488);
+            this.A699.Location = new System.Drawing.Point(180, 477);
             this.A699.Name = "A699";
             this.A699.Size = new System.Drawing.Size(27, 30);
             this.A699.TabIndex = 1442;
@@ -7117,7 +7117,7 @@
             // A698
             // 
             this.A698.BackColor = System.Drawing.Color.PeachPuff;
-            this.A698.Location = new System.Drawing.Point(151, 488);
+            this.A698.Location = new System.Drawing.Point(151, 477);
             this.A698.Name = "A698";
             this.A698.Size = new System.Drawing.Size(27, 30);
             this.A698.TabIndex = 1441;
@@ -7127,7 +7127,7 @@
             // A697
             // 
             this.A697.BackColor = System.Drawing.Color.PeachPuff;
-            this.A697.Location = new System.Drawing.Point(122, 488);
+            this.A697.Location = new System.Drawing.Point(122, 477);
             this.A697.Name = "A697";
             this.A697.Size = new System.Drawing.Size(27, 30);
             this.A697.TabIndex = 1440;
@@ -7137,7 +7137,7 @@
             // A696
             // 
             this.A696.BackColor = System.Drawing.Color.PeachPuff;
-            this.A696.Location = new System.Drawing.Point(93, 488);
+            this.A696.Location = new System.Drawing.Point(93, 477);
             this.A696.Name = "A696";
             this.A696.Size = new System.Drawing.Size(27, 30);
             this.A696.TabIndex = 1439;
@@ -7147,7 +7147,7 @@
             // A695
             // 
             this.A695.BackColor = System.Drawing.Color.PeachPuff;
-            this.A695.Location = new System.Drawing.Point(64, 488);
+            this.A695.Location = new System.Drawing.Point(64, 477);
             this.A695.Name = "A695";
             this.A695.Size = new System.Drawing.Size(27, 30);
             this.A695.TabIndex = 1438;
@@ -7157,7 +7157,7 @@
             // A694
             // 
             this.A694.BackColor = System.Drawing.Color.PeachPuff;
-            this.A694.Location = new System.Drawing.Point(35, 488);
+            this.A694.Location = new System.Drawing.Point(35, 477);
             this.A694.Name = "A694";
             this.A694.Size = new System.Drawing.Size(27, 30);
             this.A694.TabIndex = 1437;
