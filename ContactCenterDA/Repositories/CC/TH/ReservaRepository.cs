@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
+using ContactCenterBE.CC.TH.Entidades.ObraBE;
+using ContactCenterBE.CC.Entidades.CLienteBE;
 using System.Data.OleDb;
 using System.Data;
 using ContactCenterDA.Common;
@@ -32,8 +34,8 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Insert(Reserva datos)
         {
-            string sql = "INSERT INTO TH_RESERVA (FECHARESERVA,HORARIO,idEstadoReserva,idObra,idFuncion,idCliente,idUsuario,idPromocion,NombrePromocion,FechaCrea,userCrea,PrecioTotal) " +
-                         "values(@fechaReserva,@horario,@idEstadoReserva,@idObra,@idFuncion,@idCliente,@idUsuario,@idPromocion,@nombrePromocion,@fechaCrea,@userCrea,@PrecioTotal)";
+            string sql = "INSERT INTO TH_RESERVA (FECHARESERVA,HORARIO,idEstadoReserva,idObra,idFuncion,idCliente,idUsuario,idPromocion,NombrePromocion,FechaCrea,userCrea,PrecioTotal,Asientos) " +
+                         "values(@fechaReserva,@horario,@idEstadoReserva,@idObra,@idFuncion,@idCliente,@idUsuario,@idPromocion,@nombrePromocion,@fechaCrea,@userCrea,@PrecioTotal,@Asientos)";
 
             OleDbParameter pFechaReserva = UtilDA.SetParameters("@fechaReserva", OleDbType.Date, datos.FechaReserva);
             OleDbParameter pHorario = UtilDA.SetParameters("@horario", OleDbType.VarChar, datos.Horario);
@@ -47,11 +49,12 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter pFechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter pUserCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter pTotal = UtilDA.SetParameters("@PrecioTotal", OleDbType.Single, datos.PrecioTotal);
+            OleDbParameter pAsientos = UtilDA.SetParameters("@Asientos", OleDbType.VarChar, datos.Asientos);
 
             UtilDA.ExecuteBeginTransaction(cmd, cnx);
 
             int id = UtilDA.ExecuteNonQueryGetId(cmd, CommandType.Text, sql, cnx,true, pFechaReserva, pHorario, pEstadoReserva, pIdObra, pIdFuncion, pIdCliente,
-                pIdUsuario, pPromocion, pNombrePromo, pFechaCrea, pUserCrea, pTotal);
+                pIdUsuario, pPromocion, pNombrePromo, pFechaCrea, pUserCrea, pTotal, pAsientos);
 
             string sqlDetalle = "INSERT INTO TH_DETALLE_RESERVA (idReserva,Precio,Estado,idAsiento,FechaCrea,UserCrea) " +
                                 "VALUES (@idReserva,@precio,@estado,@idAsiento,@fechaCrea,@userCrea)";
@@ -79,6 +82,46 @@ namespace ContactCenterDA.Repositories.CC.TH
         public bool Update(Reserva datos)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Reserva> ReporteReservas(int idTeatro, DateTime fecha)
+        {
+            List<Reserva> listaReserva = new List<Reserva>();
+            Reserva reserva = null;
+
+            string sql = "SELECT * FROM (((TH_RESERVA R INNER JOIN TH_OBRA O ON O.IDOBRA = R.IDOBRA) INNER JOIN TH_FUNCION F ON F.IDFUNCION = R.IDFUNCION) INNER JOIN CC_CLIENTE C ON C.IDCLIENTE = R.IDCLIENTE) INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO WHERE T.IDTEATRO = @IdTeatro AND R.FechaReserva = @FechaReserva AND IdEstadoReserva = 1 ORDER BY C.Nombre ASC";
+
+            OleDbParameter pIdTeatro = UtilDA.SetParameters("@IdTeatro", OleDbType.Integer, idTeatro);
+            OleDbParameter pFecha = UtilDA.SetParameters("@FechaReserva", OleDbType.Date, fecha);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx,pIdTeatro,pFecha))
+            {
+                while (dtr.Read())
+                {
+                    reserva = new Reserva()
+                    {
+                        IdReserva = DataConvert.ToInt(dtr["IdReserva"]),
+                        FechaReserva = DataConvert.ToDateTime(dtr["FechaReserva"]),
+                        Horario = DataConvert.ToString(dtr["R.Horario"]),
+                        NombrePromocion = DataConvert.ToString(dtr["NombrePromocion"]),
+                        PrecioTotal = DataConvert.ToSingle(dtr["PrecioTotal"]),
+                        Asientos = DataConvert.ToString(dtr["Asientos"]),
+                        Obra = new Obra()
+                        {
+                            IdObra = DataConvert.ToInt(dtr["O.IdObra"]),
+                            Nombre = DataConvert.ToString(dtr["O.Nombre"]),
+                        },
+                        Cliente = new Cliente()
+                        {
+                            IdCliente = DataConvert.ToInt(dtr["C.IdCliente"]),
+                            Nombre = DataConvert.ToString(dtr["C.Nombre"]) + " " + DataConvert.ToString(dtr["ApePaterno"]) + " " + DataConvert.ToString(dtr["ApeMaterno"])
+                        }
+                    };
+                    listaReserva.Add(reserva);
+                }
+            }
+            UtilDA.Close(cnx);
+            return listaReserva;
         }
     }
 }

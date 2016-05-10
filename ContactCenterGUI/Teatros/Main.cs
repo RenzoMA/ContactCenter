@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
+using ContactCenterGUI.Teatros.Reportes;
 
 namespace ContactCenterGUI.Teatros
 {
@@ -31,6 +32,12 @@ namespace ContactCenterGUI.Teatros
         {
             this.Close();
 
+        }
+
+        private void btnGenerarReporte_Click(object sender, EventArgs e)
+        {
+            rptReservas rptRes = new rptReservas();
+            rptRes.ShowDialog();
         }
     }
 }

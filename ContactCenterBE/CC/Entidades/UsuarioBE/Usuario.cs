@@ -9,6 +9,7 @@ using ContactCenterBE.Base;
 
 namespace ContactCenterBE.CC.Entidades.UsuarioBE
 {
+    [Serializable]
     public class Usuario : BaseEntity
     {
         public int IdUsuario { get; set; }

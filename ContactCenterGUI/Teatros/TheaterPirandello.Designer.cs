@@ -972,12 +972,12 @@
             this.button565 = new System.Windows.Forms.Button();
             this.button566 = new System.Windows.Forms.Button();
             this.pnltpcab = new System.Windows.Forms.Panel();
-            this.btnContinuar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.lbltptit = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbltpmin = new System.Windows.Forms.Label();
-            this.lbltpcer = new System.Windows.Forms.Label();
-            this.lbltpatras = new System.Windows.Forms.PictureBox();
+            this.lblTituloTeatro = new MaterialSkin.Controls.MaterialLabel();
+            this.btnAtras = new System.Windows.Forms.PictureBox();
+            this.btnMiminizar = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Label();
+            this.btnContinuar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pnltpcon.SuspendLayout();
             this.tbtpgen.SuspendLayout();
             this.tbtpgenp1.SuspendLayout();
@@ -997,8 +997,7 @@
             this.pnltptb4re3.SuspendLayout();
             this.pnltptb4re2.SuspendLayout();
             this.pnltpcab.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lbltpatras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).BeginInit();
             this.SuspendLayout();
             // 
             // pnltpcon
@@ -1008,7 +1007,7 @@
             this.pnltpcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnltpcon.Location = new System.Drawing.Point(0, 0);
             this.pnltpcon.Name = "pnltpcon";
-            this.pnltpcon.Size = new System.Drawing.Size(1364, 772);
+            this.pnltpcon.Size = new System.Drawing.Size(1372, 780);
             this.pnltpcon.TabIndex = 0;
             // 
             // tbtpgen
@@ -1021,7 +1020,7 @@
             this.tbtpgen.Location = new System.Drawing.Point(0, 64);
             this.tbtpgen.Name = "tbtpgen";
             this.tbtpgen.SelectedIndex = 3;
-            this.tbtpgen.Size = new System.Drawing.Size(1364, 708);
+            this.tbtpgen.Size = new System.Drawing.Size(1372, 716);
             this.tbtpgen.TabIndex = 1;
             // 
             // tbtpgenp1
@@ -5457,12 +5456,12 @@
             // 
             this.lbltptb3re1.AutoSize = true;
             this.lbltptb3re1.Depth = 0;
-            this.lbltptb3re1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbltptb3re1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbltptb3re1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbltptb3re1.Location = new System.Drawing.Point(61, 15);
             this.lbltptb3re1.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbltptb3re1.Name = "lbltptb3re1";
-            this.lbltptb3re1.Size = new System.Drawing.Size(150, 19);
+            this.lbltptb3re1.Size = new System.Drawing.Size(159, 18);
             this.lbltptb3re1.TabIndex = 0;
             this.lbltptb3re1.Text = "ESCENARIO TEATRO";
             // 
@@ -7379,12 +7378,12 @@
             // 
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(61, 15);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(150, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(159, 18);
             this.materialLabel2.TabIndex = 0;
             this.materialLabel2.Text = "ESCENARIO TEATRO";
             // 
@@ -7402,12 +7401,12 @@
             // 
             this.lbltptb2re1.AutoSize = true;
             this.lbltptb2re1.Depth = 0;
-            this.lbltptb2re1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbltptb2re1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbltptb2re1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbltptb2re1.Location = new System.Drawing.Point(61, 15);
             this.lbltptb2re1.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbltptb2re1.Name = "lbltptb2re1";
-            this.lbltptb2re1.Size = new System.Drawing.Size(150, 19);
+            this.lbltptb2re1.Size = new System.Drawing.Size(159, 18);
             this.lbltptb2re1.TabIndex = 0;
             this.lbltptb2re1.Text = "ESCENARIO TEATRO";
             // 
@@ -9999,7 +9998,7 @@
             this.tbtpgenp4.HorizontalScrollbarBarColor = true;
             this.tbtpgenp4.Location = new System.Drawing.Point(4, 35);
             this.tbtpgenp4.Name = "tbtpgenp4";
-            this.tbtpgenp4.Size = new System.Drawing.Size(1356, 669);
+            this.tbtpgenp4.Size = new System.Drawing.Size(1364, 677);
             this.tbtpgenp4.TabIndex = 3;
             this.tbtpgenp4.Text = "Mezzanine B";
             this.tbtpgenp4.VerticalScrollbarBarColor = true;
@@ -10018,7 +10017,7 @@
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.SystemColors.Control;
-            this.panel6.Location = new System.Drawing.Point(577, 125);
+            this.panel6.Location = new System.Drawing.Point(585, 125);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(198, 66);
             this.panel6.TabIndex = 1812;
@@ -10028,7 +10027,7 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.SystemColors.Control;
             this.panel5.Controls.Add(this.materialLabel4);
-            this.panel5.Location = new System.Drawing.Point(464, 305);
+            this.panel5.Location = new System.Drawing.Point(472, 305);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(424, 88);
             this.panel5.TabIndex = 1714;
@@ -10051,7 +10050,7 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.SystemColors.Control;
             this.panel4.Controls.Add(this.materialLabel3);
-            this.panel4.Location = new System.Drawing.Point(520, 3);
+            this.panel4.Location = new System.Drawing.Point(528, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(283, 45);
             this.panel4.TabIndex = 1811;
@@ -10074,7 +10073,7 @@
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Location = new System.Drawing.Point(1267, 346);
+            this.label19.Location = new System.Drawing.Point(1271, 350);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(25, 13);
             this.label19.TabIndex = 1810;
@@ -10085,7 +10084,7 @@
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Location = new System.Drawing.Point(1267, 310);
+            this.label20.Location = new System.Drawing.Point(1271, 314);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(19, 13);
             this.label20.TabIndex = 1809;
@@ -10096,7 +10095,7 @@
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Location = new System.Drawing.Point(1267, 274);
+            this.label21.Location = new System.Drawing.Point(1271, 278);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(21, 13);
             this.label21.TabIndex = 1808;
@@ -10107,7 +10106,7 @@
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Location = new System.Drawing.Point(1267, 238);
+            this.label22.Location = new System.Drawing.Point(1271, 242);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(17, 13);
             this.label22.TabIndex = 1807;
@@ -10118,7 +10117,7 @@
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Location = new System.Drawing.Point(1267, 202);
+            this.label23.Location = new System.Drawing.Point(1271, 206);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(13, 13);
             this.label23.TabIndex = 1806;
@@ -10129,7 +10128,7 @@
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Location = new System.Drawing.Point(1267, 166);
+            this.label24.Location = new System.Drawing.Point(1271, 170);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(23, 13);
             this.label24.TabIndex = 1805;
@@ -10140,7 +10139,7 @@
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Location = new System.Drawing.Point(1267, 130);
+            this.label25.Location = new System.Drawing.Point(1271, 134);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(23, 13);
             this.label25.TabIndex = 1804;
@@ -10151,7 +10150,7 @@
             this.pnltptb4re3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnltptb4re3.BackColor = System.Drawing.SystemColors.Control;
             this.pnltptb4re3.Controls.Add(this.lbltptb4re2);
-            this.pnltptb4re3.Location = new System.Drawing.Point(-623, 3);
+            this.pnltptb4re3.Location = new System.Drawing.Point(-615, 3);
             this.pnltptb4re3.Name = "pnltptb4re3";
             this.pnltptb4re3.Size = new System.Drawing.Size(283, 45);
             this.pnltptb4re3.TabIndex = 1803;
@@ -10183,7 +10182,7 @@
             // 
             this.pnltptb4re2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnltptb4re2.Controls.Add(this.lbltptb4re1);
-            this.pnltptb4re2.Location = new System.Drawing.Point(-709, 316);
+            this.pnltptb4re2.Location = new System.Drawing.Point(-701, 316);
             this.pnltptb4re2.Name = "pnltptb4re2";
             this.pnltptb4re2.Size = new System.Drawing.Size(425, 85);
             this.pnltptb4re2.TabIndex = 1801;
@@ -10206,7 +10205,7 @@
             this.lbltptb1c2kk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c2kk.AutoSize = true;
             this.lbltptb1c2kk.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c2kk.Location = new System.Drawing.Point(-162, -34);
+            this.lbltptb1c2kk.Location = new System.Drawing.Point(-158, -30);
             this.lbltptb1c2kk.Name = "lbltptb1c2kk";
             this.lbltptb1c2kk.Size = new System.Drawing.Size(21, 13);
             this.lbltptb1c2kk.TabIndex = 1800;
@@ -10217,7 +10216,7 @@
             this.lbltptb1c2jj.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c2jj.AutoSize = true;
             this.lbltptb1c2jj.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c2jj.Location = new System.Drawing.Point(-162, -70);
+            this.lbltptb1c2jj.Location = new System.Drawing.Point(-158, -66);
             this.lbltptb1c2jj.Name = "lbltptb1c2jj";
             this.lbltptb1c2jj.Size = new System.Drawing.Size(17, 13);
             this.lbltptb1c2jj.TabIndex = 1799;
@@ -10228,7 +10227,7 @@
             this.lbltptb1c1hh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c1hh.AutoSize = true;
             this.lbltptb1c1hh.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c1hh.Location = new System.Drawing.Point(-516, -142);
+            this.lbltptb1c1hh.Location = new System.Drawing.Point(-512, -138);
             this.lbltptb1c1hh.Name = "lbltptb1c1hh";
             this.lbltptb1c1hh.Size = new System.Drawing.Size(23, 13);
             this.lbltptb1c1hh.TabIndex = 1798;
@@ -10239,7 +10238,7 @@
             this.lbltptb1c1gg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c1gg.AutoSize = true;
             this.lbltptb1c1gg.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c1gg.Location = new System.Drawing.Point(-516, -178);
+            this.lbltptb1c1gg.Location = new System.Drawing.Point(-512, -174);
             this.lbltptb1c1gg.Name = "lbltptb1c1gg";
             this.lbltptb1c1gg.Size = new System.Drawing.Size(23, 13);
             this.lbltptb1c1gg.TabIndex = 1797;
@@ -10250,7 +10249,7 @@
             this.lbltptb1c3mm.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c3mm.AutoSize = true;
             this.lbltptb1c3mm.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c3mm.Location = new System.Drawing.Point(62, 346);
+            this.lbltptb1c3mm.Location = new System.Drawing.Point(66, 350);
             this.lbltptb1c3mm.Name = "lbltptb1c3mm";
             this.lbltptb1c3mm.Size = new System.Drawing.Size(25, 13);
             this.lbltptb1c3mm.TabIndex = 1796;
@@ -10261,7 +10260,7 @@
             this.lbltptb1c3ll.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c3ll.AutoSize = true;
             this.lbltptb1c3ll.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c3ll.Location = new System.Drawing.Point(62, 310);
+            this.lbltptb1c3ll.Location = new System.Drawing.Point(66, 314);
             this.lbltptb1c3ll.Name = "lbltptb1c3ll";
             this.lbltptb1c3ll.Size = new System.Drawing.Size(19, 13);
             this.lbltptb1c3ll.TabIndex = 1795;
@@ -10272,7 +10271,7 @@
             this.lbltptb1c3kk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c3kk.AutoSize = true;
             this.lbltptb1c3kk.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c3kk.Location = new System.Drawing.Point(62, 274);
+            this.lbltptb1c3kk.Location = new System.Drawing.Point(66, 278);
             this.lbltptb1c3kk.Name = "lbltptb1c3kk";
             this.lbltptb1c3kk.Size = new System.Drawing.Size(21, 13);
             this.lbltptb1c3kk.TabIndex = 1794;
@@ -10283,7 +10282,7 @@
             this.lbltptb1c3jj.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c3jj.AutoSize = true;
             this.lbltptb1c3jj.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c3jj.Location = new System.Drawing.Point(62, 238);
+            this.lbltptb1c3jj.Location = new System.Drawing.Point(66, 242);
             this.lbltptb1c3jj.Name = "lbltptb1c3jj";
             this.lbltptb1c3jj.Size = new System.Drawing.Size(17, 13);
             this.lbltptb1c3jj.TabIndex = 1793;
@@ -10294,7 +10293,7 @@
             this.lbltptb1c3ii.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c3ii.AutoSize = true;
             this.lbltptb1c3ii.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c3ii.Location = new System.Drawing.Point(62, 202);
+            this.lbltptb1c3ii.Location = new System.Drawing.Point(66, 206);
             this.lbltptb1c3ii.Name = "lbltptb1c3ii";
             this.lbltptb1c3ii.Size = new System.Drawing.Size(13, 13);
             this.lbltptb1c3ii.TabIndex = 1792;
@@ -10305,7 +10304,7 @@
             this.lbltptb1c3hh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c3hh.AutoSize = true;
             this.lbltptb1c3hh.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c3hh.Location = new System.Drawing.Point(62, 166);
+            this.lbltptb1c3hh.Location = new System.Drawing.Point(66, 170);
             this.lbltptb1c3hh.Name = "lbltptb1c3hh";
             this.lbltptb1c3hh.Size = new System.Drawing.Size(23, 13);
             this.lbltptb1c3hh.TabIndex = 1791;
@@ -10316,7 +10315,7 @@
             this.lbltptb1c3gg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c3gg.AutoSize = true;
             this.lbltptb1c3gg.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c3gg.Location = new System.Drawing.Point(62, 130);
+            this.lbltptb1c3gg.Location = new System.Drawing.Point(66, 134);
             this.lbltptb1c3gg.Name = "lbltptb1c3gg";
             this.lbltptb1c3gg.Size = new System.Drawing.Size(23, 13);
             this.lbltptb1c3gg.TabIndex = 1790;
@@ -11115,7 +11114,7 @@
             // pnltptb4re1
             // 
             this.pnltptb4re1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnltptb4re1.Location = new System.Drawing.Point(-597, 125);
+            this.pnltptb4re1.Location = new System.Drawing.Point(-589, 125);
             this.pnltptb4re1.Name = "pnltptb4re1";
             this.pnltptb4re1.Size = new System.Drawing.Size(200, 94);
             this.pnltptb4re1.TabIndex = 1710;
@@ -11285,7 +11284,7 @@
             this.lbltptb1c1mm.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c1mm.AutoSize = true;
             this.lbltptb1c1mm.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c1mm.Location = new System.Drawing.Point(-516, 38);
+            this.lbltptb1c1mm.Location = new System.Drawing.Point(-512, 42);
             this.lbltptb1c1mm.Name = "lbltptb1c1mm";
             this.lbltptb1c1mm.Size = new System.Drawing.Size(25, 13);
             this.lbltptb1c1mm.TabIndex = 1693;
@@ -11366,7 +11365,7 @@
             this.lbltptb1c1ll.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c1ll.AutoSize = true;
             this.lbltptb1c1ll.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c1ll.Location = new System.Drawing.Point(-516, 2);
+            this.lbltptb1c1ll.Location = new System.Drawing.Point(-512, 6);
             this.lbltptb1c1ll.Name = "lbltptb1c1ll";
             this.lbltptb1c1ll.Size = new System.Drawing.Size(19, 13);
             this.lbltptb1c1ll.TabIndex = 1685;
@@ -11377,7 +11376,7 @@
             this.lbltptb1c1kk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c1kk.AutoSize = true;
             this.lbltptb1c1kk.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c1kk.Location = new System.Drawing.Point(-516, -34);
+            this.lbltptb1c1kk.Location = new System.Drawing.Point(-512, -30);
             this.lbltptb1c1kk.Name = "lbltptb1c1kk";
             this.lbltptb1c1kk.Size = new System.Drawing.Size(21, 13);
             this.lbltptb1c1kk.TabIndex = 1684;
@@ -11388,7 +11387,7 @@
             this.lbltptb1c1jj.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c1jj.AutoSize = true;
             this.lbltptb1c1jj.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c1jj.Location = new System.Drawing.Point(-516, -70);
+            this.lbltptb1c1jj.Location = new System.Drawing.Point(-512, -66);
             this.lbltptb1c1jj.Name = "lbltptb1c1jj";
             this.lbltptb1c1jj.Size = new System.Drawing.Size(17, 13);
             this.lbltptb1c1jj.TabIndex = 1683;
@@ -11609,7 +11608,7 @@
             this.lbltptb1c1ii.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c1ii.AutoSize = true;
             this.lbltptb1c1ii.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c1ii.Location = new System.Drawing.Point(-516, -106);
+            this.lbltptb1c1ii.Location = new System.Drawing.Point(-512, -102);
             this.lbltptb1c1ii.Name = "lbltptb1c1ii";
             this.lbltptb1c1ii.Size = new System.Drawing.Size(13, 13);
             this.lbltptb1c1ii.TabIndex = 1661;
@@ -11620,7 +11619,7 @@
             this.lbltptb1c2hh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c2hh.AutoSize = true;
             this.lbltptb1c2hh.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c2hh.Location = new System.Drawing.Point(-160, -142);
+            this.lbltptb1c2hh.Location = new System.Drawing.Point(-156, -138);
             this.lbltptb1c2hh.Name = "lbltptb1c2hh";
             this.lbltptb1c2hh.Size = new System.Drawing.Size(23, 13);
             this.lbltptb1c2hh.TabIndex = 1660;
@@ -11631,7 +11630,7 @@
             this.lbltptb1c2gg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltptb1c2gg.AutoSize = true;
             this.lbltptb1c2gg.BackColor = System.Drawing.Color.Transparent;
-            this.lbltptb1c2gg.Location = new System.Drawing.Point(-160, -178);
+            this.lbltptb1c2gg.Location = new System.Drawing.Point(-156, -174);
             this.lbltptb1c2gg.Name = "lbltptb1c2gg";
             this.lbltptb1c2gg.Size = new System.Drawing.Size(23, 13);
             this.lbltptb1c2gg.TabIndex = 1659;
@@ -11831,92 +11830,94 @@
             // 
             this.pnltpcab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
             this.pnltpcab.Controls.Add(this.btnContinuar);
-            this.pnltpcab.Controls.Add(this.lbltptit);
+            this.pnltpcab.Controls.Add(this.btnAtras);
+            this.pnltpcab.Controls.Add(this.lblTituloTeatro);
+            this.pnltpcab.Controls.Add(this.btnMiminizar);
+            this.pnltpcab.Controls.Add(this.btnCerrar);
             this.pnltpcab.Controls.Add(this.panel1);
             this.pnltpcab.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnltpcab.Location = new System.Drawing.Point(0, 0);
             this.pnltpcab.Name = "pnltpcab";
-            this.pnltpcab.Size = new System.Drawing.Size(1364, 64);
+            this.pnltpcab.Size = new System.Drawing.Size(1372, 64);
             this.pnltpcab.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(5, 0, 10, 5);
+            this.panel1.Size = new System.Drawing.Size(1372, 29);
+            this.panel1.TabIndex = 0;
+            // 
+            // lblTituloTeatro
+            // 
+            this.lblTituloTeatro.AutoSize = true;
+            this.lblTituloTeatro.Depth = 0;
+            this.lblTituloTeatro.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblTituloTeatro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTituloTeatro.Location = new System.Drawing.Point(12, 36);
+            this.lblTituloTeatro.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblTituloTeatro.Name = "lblTituloTeatro";
+            this.lblTituloTeatro.Size = new System.Drawing.Size(124, 19);
+            this.lblTituloTeatro.TabIndex = 10;
+            this.lblTituloTeatro.Text = "Teatro Pirandello";
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.btnAtras.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.btnAtras.Location = new System.Drawing.Point(1292, 4);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(16, 18);
+            this.btnAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtras.TabIndex = 1817;
+            this.btnAtras.TabStop = false;
+            // 
+            // btnMiminizar
+            // 
+            this.btnMiminizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMiminizar.AutoSize = true;
+            this.btnMiminizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.btnMiminizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
+            this.btnMiminizar.Location = new System.Drawing.Point(1315, 4);
+            this.btnMiminizar.Name = "btnMiminizar";
+            this.btnMiminizar.Size = new System.Drawing.Size(13, 13);
+            this.btnMiminizar.TabIndex = 1815;
+            this.btnMiminizar.Text = "_";
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.AutoSize = true;
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
+            this.btnCerrar.Location = new System.Drawing.Point(1336, 6);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(14, 13);
+            this.btnCerrar.TabIndex = 1814;
+            this.btnCerrar.Text = "X";
             // 
             // btnContinuar
             // 
             this.btnContinuar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnContinuar.Depth = 0;
-            this.btnContinuar.Location = new System.Drawing.Point(1180, 33);
+            this.btnContinuar.Location = new System.Drawing.Point(1190, 32);
             this.btnContinuar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnContinuar.Name = "btnContinuar";
             this.btnContinuar.Primary = true;
             this.btnContinuar.Size = new System.Drawing.Size(160, 26);
-            this.btnContinuar.TabIndex = 9;
+            this.btnContinuar.TabIndex = 1816;
             this.btnContinuar.Text = "Continuar";
             this.btnContinuar.UseVisualStyleBackColor = true;
-            // 
-            // lbltptit
-            // 
-            this.lbltptit.AutoSize = true;
-            this.lbltptit.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltptit.ForeColor = System.Drawing.Color.White;
-            this.lbltptit.Location = new System.Drawing.Point(12, 36);
-            this.lbltptit.Name = "lbltptit";
-            this.lbltptit.Size = new System.Drawing.Size(124, 19);
-            this.lbltptit.TabIndex = 6;
-            this.lbltptit.Text = "Teatro Pirandello";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.panel1.Controls.Add(this.lbltpmin);
-            this.panel1.Controls.Add(this.lbltpcer);
-            this.panel1.Controls.Add(this.lbltpatras);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5, 0, 10, 5);
-            this.panel1.Size = new System.Drawing.Size(1364, 29);
-            this.panel1.TabIndex = 0;
-            // 
-            // lbltpmin
-            // 
-            this.lbltpmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbltpmin.AutoSize = true;
-            this.lbltpmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.lbltpmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
-            this.lbltpmin.Location = new System.Drawing.Point(1311, 6);
-            this.lbltpmin.Name = "lbltpmin";
-            this.lbltpmin.Size = new System.Drawing.Size(13, 13);
-            this.lbltpmin.TabIndex = 17;
-            this.lbltpmin.Text = "_";
-            // 
-            // lbltpcer
-            // 
-            this.lbltpcer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbltpcer.AutoSize = true;
-            this.lbltpcer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.lbltpcer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
-            this.lbltpcer.Location = new System.Drawing.Point(1330, 6);
-            this.lbltpcer.Name = "lbltpcer";
-            this.lbltpcer.Size = new System.Drawing.Size(14, 13);
-            this.lbltpcer.TabIndex = 16;
-            this.lbltpcer.Text = "X";
-            // 
-            // lbltpatras
-            // 
-            this.lbltpatras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbltpatras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.lbltpatras.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
-            this.lbltpatras.Location = new System.Drawing.Point(1289, 5);
-            this.lbltpatras.Name = "lbltpatras";
-            this.lbltpatras.Size = new System.Drawing.Size(16, 18);
-            this.lbltpatras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.lbltpatras.TabIndex = 18;
-            this.lbltpatras.TabStop = false;
             // 
             // TheaterPirandello
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1364, 772);
+            this.ClientSize = new System.Drawing.Size(1372, 780);
             this.Controls.Add(this.pnltpcon);
             this.MaximizeBox = false;
             this.Name = "TheaterPirandello";
@@ -11956,9 +11957,7 @@
             this.pnltptb4re2.PerformLayout();
             this.pnltpcab.ResumeLayout(false);
             this.pnltpcab.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lbltpatras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -11968,10 +11967,6 @@
         private System.Windows.Forms.Panel pnltpcon;
         private System.Windows.Forms.Panel pnltpcab;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbltpmin;
-        private System.Windows.Forms.Label lbltpcer;
-        private System.Windows.Forms.PictureBox lbltpatras;
-        private System.Windows.Forms.Label lbltptit;
         private MetroFramework.Controls.MetroTabControl tbtpgen;
         private MetroFramework.Controls.MetroTabPage tbtpgenp1;
         private MetroFramework.Controls.MetroTabPage tbtpgenp2;
@@ -12782,7 +12777,6 @@
         private System.Windows.Forms.Button button568;
         private System.Windows.Forms.Panel pnltptb4re3;
         private MaterialSkin.Controls.MaterialLabel lbltptb4re2;
-        private MaterialSkin.Controls.MaterialRaisedButton btnContinuar;
         private System.Windows.Forms.Panel panel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.Label label1;
@@ -12915,5 +12909,10 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button button567;
+        private MaterialSkin.Controls.MaterialLabel lblTituloTeatro;
+        private MaterialSkin.Controls.MaterialRaisedButton btnContinuar;
+        private System.Windows.Forms.PictureBox btnAtras;
+        private System.Windows.Forms.Label btnMiminizar;
+        private System.Windows.Forms.Label btnCerrar;
     }
 }

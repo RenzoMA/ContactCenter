@@ -8,6 +8,7 @@ using ContactCenterBE.Base;
 
 namespace ContactCenterBE.CC.Entidades.RolBE
 {
+    [Serializable]
     public class Rol : BaseEntity
     {
         public int IdRol { get; set; }

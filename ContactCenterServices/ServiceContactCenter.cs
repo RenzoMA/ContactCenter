@@ -289,5 +289,10 @@ namespace ContactCenterServices
         {
             return _tipoPromocionService.GetLista();
         }
+
+        public List<Reserva> ReporteReservas(int idTeatro, DateTime fecha)
+        {
+            return _reservaService.ReporteReservas(idTeatro, fecha);
+        }
     }
 }

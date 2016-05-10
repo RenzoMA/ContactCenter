@@ -12,6 +12,7 @@ using ContactCenterBE.Base;
 
 namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
 {
+    [Serializable]
     public class Reserva : BaseEntity
     {
         public int IdReserva { get; set; }
@@ -26,6 +27,6 @@ namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
         public Promocion Promocion { get; set; }
         public List<DetalleReserva> ListaDetalles { get; set; }
         public Single PrecioTotal { get; set; }
-        
+        public String Asientos { get; set; }
     }
 }

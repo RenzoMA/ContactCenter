@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ContactCenterBE.Base
 {
+    [Serializable]
     public class BaseEntity
     {
         public string UsuarioCreacion { get; set; }
