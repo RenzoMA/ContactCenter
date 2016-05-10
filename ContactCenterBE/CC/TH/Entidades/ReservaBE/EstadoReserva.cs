@@ -7,6 +7,7 @@ using ContactCenterBE.Base;
 
 namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
 {
+    [Serializable]
     public class EstadoReserva : BaseEntity
     {
         public int IdEstadoReserva { get; set; }

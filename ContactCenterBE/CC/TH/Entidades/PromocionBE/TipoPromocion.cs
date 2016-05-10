@@ -7,6 +7,7 @@ using ContactCenterBE.Base;
 
 namespace ContactCenterBE.CC.TH.Entidades.PromocionBE
 {
+    [Serializable]
     public class TipoPromocion : BaseEntity
     {
         public int IdTipoPromocion { get; set; }

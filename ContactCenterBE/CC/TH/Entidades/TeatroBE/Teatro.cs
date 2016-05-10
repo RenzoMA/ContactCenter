@@ -7,6 +7,7 @@ using ContactCenterBE.Base;
 
 namespace ContactCenterBE.CC.TH.Entidades.TeatroBE
 {
+    [Serializable]
     public class Teatro : BaseEntity
     {
         public int IdTeatro { get; set; }

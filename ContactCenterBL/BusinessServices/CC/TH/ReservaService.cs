@@ -37,5 +37,10 @@ namespace ContactCenterBL.BusinessServices.CC.TH
 
             return reservaRepository.Insert(reserva);
         }
+
+        public List<Reserva> ReporteReservas(int idTeatro, DateTime fecha)
+        {
+            return reservaRepository.ReporteReservas(idTeatro, fecha);
+        }
     }
 }

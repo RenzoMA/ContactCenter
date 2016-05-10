@@ -8,6 +8,7 @@ using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 
 namespace ContactCenterBE.CC.TH.Entidades.PromocionBE
 {
+    [Serializable]
     public class Promocion : BaseEntity
     {
         public int IdPromocion { get; set; }
