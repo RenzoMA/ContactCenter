@@ -42,6 +42,7 @@ namespace ContactCenterGUI.Mantenimientos.ObraC
                 obra.Descripcion = richTextBox1.Text;
                 obra.Estado = metroComboBox1.SelectedIndex == 0?"A":"I";
                 obra.Teatro = metroComboBox2.SelectedItem as Teatro;
+
             if(servicio.InsertarObra(obra) == true) {
 
                 MessageBox.Show("Obra registrada correctamente");

@@ -7,6 +7,9 @@ using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using System.Data.OleDb;
 using System.Data;
 using ContactCenterDA.Common;
+using ContactCenterCommon;
+using ContactCenterBE.CC.Entidades.UsuarioBE;
+
 
 namespace ContactCenterDA.Repositories.CC.TH
 {
@@ -20,8 +23,10 @@ namespace ContactCenterDA.Repositories.CC.TH
             String sql = "UPDATE TH_TIPO_PROMOCION SET ESTADO = 'I', FECHAMOD = @fechaMod, USERMOD = @userMod WHERE IDTIPOPROMOCION = @codigo";
 
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter userMod = UtilDA.SetParameters("@userMod", OleDbType.VarChar, Sesion.usuario.Login);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, codigo);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, fechaMod, userMod, codigo);
         }
 
         public TipoPromocion GetById(int id)
@@ -81,7 +86,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
             OleDbParameter userCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, datos.UsuarioCreacion);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, descripcion, estado, fechaCrea, userCrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, descripcion, estado, fechaCrea, userCrea);
         }
 
         public bool Update(TipoPromocion datos)
@@ -94,7 +99,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter userMod = UtilDA.SetParameters("@userMod", OleDbType.VarChar, datos.UsuarioCreacion);
             OleDbParameter codigo = UtilDA.SetParameters("@idTipoPromocion", OleDbType.Integer, datos.IdTipoPromocion);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, descripcion, estado, fechaMod, userMod, codigo);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, descripcion, estado, fechaMod, userMod, codigo);
         }
     }
 }
