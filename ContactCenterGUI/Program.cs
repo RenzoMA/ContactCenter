@@ -17,7 +17,7 @@ namespace ContactCenterGUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Teatros.TheaterPirandello());
+            Application.Run(new Teatros.TheaterPerJapones());
         }
     }
 }

@@ -7,20 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin.Animations;
 using MaterialSkin.Controls;
+using MaterialSkin.Animations;
 
 namespace ContactCenterGUI.Teatros
 {
-    public partial class TheaterPirandello : MaterialForm
+    public partial class TheaterPirandell : MaterialForm
     {
-        public TheaterPirandello()
+        public TheaterPirandell()
         {
             InitializeComponent();
         }
-
-       
-
-      
     }
 }
