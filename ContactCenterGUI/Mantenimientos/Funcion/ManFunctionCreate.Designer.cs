@@ -185,6 +185,7 @@
             this.cboTeatro.Name = "cboTeatro";
             this.cboTeatro.Size = new System.Drawing.Size(178, 29);
             this.cboTeatro.TabIndex = 26;
+            this.cboTeatro.SelectedIndexChanged += new System.EventHandler(this.cboTeatro_SelectedIndexChanged);
             // 
             // btnAceptar
             // 
@@ -213,6 +214,7 @@
             this.cboObra.Name = "cboObra";
             this.cboObra.Size = new System.Drawing.Size(178, 29);
             this.cboObra.TabIndex = 30;
+            this.cboObra.SelectionChangeCommitted += new System.EventHandler(this.cboObra_SelectionChangeCommitted);
             // 
             // metroLabel4
             // 

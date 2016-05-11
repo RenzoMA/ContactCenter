@@ -18,6 +18,11 @@ namespace ContactCenterGUI.Mantenimientos.Funcion
 {
     public partial class ManFunctionCreate : MaterialForm
     {
+        private Teatro teatro = null;
+
+        private List<Obra> listaObra = null;
+        private Obra obra = null;
+
         IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
 
         public ManFunctionCreate()
@@ -30,8 +35,27 @@ namespace ContactCenterGUI.Mantenimientos.Funcion
             cboTeatro.DataSource = servicio.ListarTeatros();
             cboTeatro.DisplayMember = "Nombre";
 
-            cboObra.DataSource = servicio.ListarObras();
-            cboObra.DisplayMember = "Nombre";
+        }
+
+        private void CargarObras()
+        {
+            teatro = cboTeatro.SelectedItem as Teatro;
+            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            {
+                listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
+                cboObra.DataSource = listaObra;
+                cboObra.DisplayMember = "Nombre";
+            };
+        }
+
+        private void cboObra_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //CargarObras();
+        }
+
+        private void cboTeatro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarObras();
         }
     }
 }
