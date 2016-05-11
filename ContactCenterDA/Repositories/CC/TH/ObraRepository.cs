@@ -66,18 +66,16 @@ namespace ContactCenterDA.Repositories.CC.TH
         {
             List<Obra> listaObra = null;
 
-            String sql = "SELECT * FROM TH_OBRA O INNER JOIN TH_TEATRO T ON T.IDTEATRO  = T.IDTEATRO";
+            String sql = "SELECT * FROM TH_OBRA O INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO";
 
-            using (var dtr = (UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx)))
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx))
             {
-                while (dtr.Read())
-                {
                     Obra objObra = new Obra();
-                    objObra.IdObra = DataConvert.ToInt(dtr["IdObra"]);
+                    objObra.IdObra = DataConvert.ToInt(dtr["O.IdObra"]);
                     objObra.Nombre = DataConvert.ToString(dtr["O.Nombre"]);
-                    objObra.FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]);
-                    objObra.FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]);
-                    objObra.Descripcion = DataConvert.ToString(dtr["Descripcion"]);
+                    objObra.FechaInicio = DataConvert.ToDateTime(dtr["O.FechaInicio"]);
+                    objObra.FechaFin = DataConvert.ToDateTime(dtr["O.FechaFin"]);
+                    objObra.Descripcion = DataConvert.ToString(dtr["O.Descripcion"]);
                     objObra.Estado = DataConvert.ToString(dtr["O.Estado"]);
                     objObra.Teatro = new Teatro()
                     {
@@ -90,7 +88,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                     objObra.FechaModificacion = DataConvert.ToDateTime(dtr["O.FechaMod"]);
                     objObra.UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]);
                     listaObra.Add(objObra);
-                }
+                
             }
             UtilDA.Close(cnx);
             return listaObra;

@@ -44,6 +44,12 @@ namespace ContactCenterGUI.Mantenimientos
                 manappmenu.ShowDialog();
 
             }
+            else if(metroComboBox1.SelectedIndex == 7)
+            {
+                this.Hide();
+                Mantenimientos.Funcion.ManFunctionMenu manfunmenu = new Mantenimientos.Funcion.ManFunctionMenu();
+                manfunmenu.ShowDialog();
+            }
             else if (metroComboBox1.SelectedIndex == 8) {
 
                 this.Hide();

@@ -18,6 +18,8 @@ namespace ContactCenterGUI.Mantenimientos.Funcion
 {
     public partial class ManFunctionCreate : MaterialForm
     {
+        IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+
         public ManFunctionCreate()
         {
             InitializeComponent();
@@ -25,7 +27,11 @@ namespace ContactCenterGUI.Mantenimientos.Funcion
 
         private void ManFunctionCreate_Load(object sender, EventArgs e)
         {
+            cboTeatro.DataSource = servicio.ListarTeatros();
+            cboTeatro.DisplayMember = "Nombre";
 
+            cboObra.DataSource = servicio.ListarObras();
+            cboObra.DisplayMember = "Nombre";
         }
     }
 }
