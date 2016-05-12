@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnProcesarPromociones = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnGenerarReporte = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnAmpliarTeatro = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnNuevoRegistro = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,22 +47,10 @@
             this.materialRaisedButton1.Text = "Buscar Reservas";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             // 
-            // btnProcesarPromociones
-            // 
-            this.btnProcesarPromociones.Depth = 0;
-            this.btnProcesarPromociones.Location = new System.Drawing.Point(47, 356);
-            this.btnProcesarPromociones.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnProcesarPromociones.Name = "btnProcesarPromociones";
-            this.btnProcesarPromociones.Primary = true;
-            this.btnProcesarPromociones.Size = new System.Drawing.Size(244, 45);
-            this.btnProcesarPromociones.TabIndex = 8;
-            this.btnProcesarPromociones.Text = "Generar Promociones";
-            this.btnProcesarPromociones.UseVisualStyleBackColor = true;
-            // 
             // btnGenerarReporte
             // 
             this.btnGenerarReporte.Depth = 0;
-            this.btnGenerarReporte.Location = new System.Drawing.Point(47, 295);
+            this.btnGenerarReporte.Location = new System.Drawing.Point(47, 230);
             this.btnGenerarReporte.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGenerarReporte.Name = "btnGenerarReporte";
             this.btnGenerarReporte.Primary = true;
@@ -73,18 +59,6 @@
             this.btnGenerarReporte.Text = "Reporte Reservas";
             this.btnGenerarReporte.UseVisualStyleBackColor = true;
             this.btnGenerarReporte.Click += new System.EventHandler(this.btnGenerarReporte_Click);
-            // 
-            // btnAmpliarTeatro
-            // 
-            this.btnAmpliarTeatro.Depth = 0;
-            this.btnAmpliarTeatro.Location = new System.Drawing.Point(47, 232);
-            this.btnAmpliarTeatro.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnAmpliarTeatro.Name = "btnAmpliarTeatro";
-            this.btnAmpliarTeatro.Primary = true;
-            this.btnAmpliarTeatro.Size = new System.Drawing.Size(244, 45);
-            this.btnAmpliarTeatro.TabIndex = 6;
-            this.btnAmpliarTeatro.Text = "Ampliar Teatro";
-            this.btnAmpliarTeatro.UseVisualStyleBackColor = true;
             // 
             // btnNuevoRegistro
             // 
@@ -115,12 +89,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 451);
+            this.ClientSize = new System.Drawing.Size(334, 306);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.materialRaisedButton1);
-            this.Controls.Add(this.btnProcesarPromociones);
             this.Controls.Add(this.btnGenerarReporte);
-            this.Controls.Add(this.btnAmpliarTeatro);
             this.Controls.Add(this.btnNuevoRegistro);
             this.MaximizeBox = false;
             this.Name = "Main";
@@ -135,9 +107,7 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
-        private MaterialSkin.Controls.MaterialRaisedButton btnProcesarPromociones;
         private MaterialSkin.Controls.MaterialRaisedButton btnGenerarReporte;
-        private MaterialSkin.Controls.MaterialRaisedButton btnAmpliarTeatro;
         private MaterialSkin.Controls.MaterialRaisedButton btnNuevoRegistro;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

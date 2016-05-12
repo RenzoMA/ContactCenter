@@ -66,6 +66,7 @@
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.metroComboBox1);
             this.Name = "ManPlayMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManPlayMenu";
             this.Load += new System.EventHandler(this.ManPlayMenu_Load);
             this.ResumeLayout(false);

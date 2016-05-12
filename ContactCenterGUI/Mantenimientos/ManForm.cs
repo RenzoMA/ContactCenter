@@ -17,11 +17,6 @@ namespace ContactCenterGUI.Mantenimientos
         public ManForm()
         {
             InitializeComponent();
-
-            var materialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.LightBlue800, MaterialSkin.Primary.LightBlue900, MaterialSkin.Primary.LightBlue500, MaterialSkin.Accent.LightBlue200, MaterialSkin.TextShade.WHITE);
         }
 
         private void ManForm_Load(object sender, EventArgs e)
@@ -33,7 +28,6 @@ namespace ContactCenterGUI.Mantenimientos
         {
             if (metroComboBox1.SelectedIndex == 0)
             {
-
                 MessageBox.Show("Seleccione un mantenimiento", "ERROR");
             }
             else if (metroComboBox1.SelectedIndex == 1)
@@ -42,6 +36,7 @@ namespace ContactCenterGUI.Mantenimientos
                 this.Hide();
                 Mantenimientos.Aplicacion.ManAppMenu manappmenu = new Mantenimientos.Aplicacion.ManAppMenu();
                 manappmenu.ShowDialog();
+                this.Show();
 
             }
             else if (metroComboBox1.SelectedIndex == 8) {
@@ -49,6 +44,7 @@ namespace ContactCenterGUI.Mantenimientos
                 this.Hide();
                 Mantenimientos.ObraC.ManPlayMenu manaplaymenu = new Mantenimientos.ObraC.ManPlayMenu();
                 manaplaymenu.ShowDialog();
+                this.Show();
             }
         }
     }
