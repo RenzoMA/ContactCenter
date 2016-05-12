@@ -1,6 +1,6 @@
 ﻿namespace ContactCenterGUI.Teatros
 {
-    partial class TheaterPirandell
+    partial class TheaterPirandello
     {
         /// <summary>
         /// Required designer variable.

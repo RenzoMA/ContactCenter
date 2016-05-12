@@ -12,9 +12,9 @@ using MaterialSkin.Animations;
 
 namespace ContactCenterGUI.Teatros
 {
-    public partial class TheaterPirandell : MaterialForm
+    public partial class TheaterPirandello : MaterialForm
     {
-        public TheaterPirandell()
+        public TheaterPirandello()
         {
             InitializeComponent();
         }

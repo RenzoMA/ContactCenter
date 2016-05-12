@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
+using ContactCenterBE.CC.TH.Entidades.ReservaBE;
+using ContactCenterGUI.Helpers;
 
 namespace ContactCenterGUI.Teatros
 {
@@ -19,9 +21,9 @@ namespace ContactCenterGUI.Teatros
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void TheaterPerJapones_Load(object sender, EventArgs e)
         {
-
+            HelperTeatro.MostrarDisponibilidad(this, (Reserva)this.Tag);
         }
     }
 }
