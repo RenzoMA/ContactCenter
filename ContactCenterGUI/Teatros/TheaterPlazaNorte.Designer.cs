@@ -783,7 +783,7 @@
             this.metroTabControl1.Multiline = true;
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 1;
-            this.metroTabControl1.Size = new System.Drawing.Size(1172, 935);
+            this.metroTabControl1.Size = new System.Drawing.Size(1172, 707);
             this.metroTabControl1.TabIndex = 3;
             // 
             // metroTabPage1
@@ -1056,7 +1056,7 @@
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(1164, 668);
+            this.metroTabPage1.Size = new System.Drawing.Size(1164, 896);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Parte Delantera";
             this.metroTabPage1.VerticalScrollbar = true;
@@ -4157,7 +4157,7 @@
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(1164, 896);
+            this.metroTabPage2.Size = new System.Drawing.Size(1164, 668);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Parte Trasera";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
@@ -7969,7 +7969,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1172, 1000);
+            this.ClientSize = new System.Drawing.Size(1172, 772);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
