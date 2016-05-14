@@ -61,6 +61,7 @@
             // 
             // txtObra
             // 
+            this.txtObra.BackColor = System.Drawing.Color.White;
             this.txtObra.Depth = 0;
             this.txtObra.Hint = "";
             this.txtObra.Location = new System.Drawing.Point(170, 136);
@@ -149,7 +150,7 @@
             "Inactivo"});
             this.cboEstado.Location = new System.Drawing.Point(170, 458);
             this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(151, 29);
+            this.cboEstado.Size = new System.Drawing.Size(241, 29);
             this.cboEstado.TabIndex = 9;
             // 
             // cboTeatro
@@ -158,7 +159,7 @@
             this.cboTeatro.ItemHeight = 23;
             this.cboTeatro.Location = new System.Drawing.Point(170, 532);
             this.cboTeatro.Name = "cboTeatro";
-            this.cboTeatro.Size = new System.Drawing.Size(151, 29);
+            this.cboTeatro.Size = new System.Drawing.Size(241, 29);
             this.cboTeatro.TabIndex = 11;
             // 
             // materialLabel6
@@ -192,7 +193,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
             this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow2;
-            this.pictureBox1.Location = new System.Drawing.Point(410, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(406, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -205,7 +206,7 @@
             this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpInicio.Location = new System.Drawing.Point(170, 195);
             this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(170, 20);
+            this.dtpInicio.Size = new System.Drawing.Size(241, 20);
             this.dtpInicio.TabIndex = 14;
             // 
             // dtpFin
@@ -213,7 +214,7 @@
             this.dtpFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFin.Location = new System.Drawing.Point(170, 252);
             this.dtpFin.Name = "dtpFin";
-            this.dtpFin.Size = new System.Drawing.Size(170, 20);
+            this.dtpFin.Size = new System.Drawing.Size(241, 20);
             this.dtpFin.TabIndex = 15;
             // 
             // ManPlayCreate

@@ -22,7 +22,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Delete(int id)
         {
-            String sql = "UPDATE TH_PR SET ESTADO = 'I', FechaMod = @FechaMod, UserMod = @UserMod WHERE IDFUNCION = @codigo";
+            String sql = "UPDATE TH_PROMOCION SET ESTADO = 'I', FechaMod = @FechaMod, UserMod = @UserMod WHERE IDFUNCION = @codigo";
 
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
             OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);

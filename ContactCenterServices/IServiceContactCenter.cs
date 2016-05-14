@@ -36,7 +36,8 @@ namespace ContactCenterServices
         bool EliminarObra(int id);
         bool ActualizarObra(Obra obra);
         IList<Obra> ListarObras();
-        Obra BuscarObra(int id);    
+        Obra BuscarObra(int id);
+        Obra BuscarObraPorNombre(string name);
 
         //ASIENTO
         bool InserAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, string token);
@@ -46,7 +47,7 @@ namespace ContactCenterServices
         bool EliminarAsientoTemporalTotal(string token);
         Task<bool> EliminarAsientoTemporalTotalAsync(string token);
 
-        //FUNCION
+        //FUNCION//
         bool InsertarFuncion(Funcion funcion);
         bool EliminarFuncion(int id);
         bool ActualizarFuncion(Funcion funcion);

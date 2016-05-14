@@ -62,22 +62,53 @@ namespace ContactCenterDA.Repositories.CC.TH
             return objObra;
         }
 
+        public Obra GetByName(string nombre)
+        {
+            Obra objObra = null;
+
+            String sql = "SELECT * FROM TH_OBRA O INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO WHERE O.Nombre = @nombre ";
+
+            OleDbParameter codigo = UtilDA.SetParameters("@nombre", OleDbType.Char, nombre);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, codigo))
+            {
+                objObra = new Obra();
+                objObra.IdObra = DataConvert.ToInt(dtr["IdObra"]);
+                objObra.Nombre = DataConvert.ToString(dtr["O.Nombre"]);
+                objObra.FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]);
+                objObra.FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]);
+                objObra.Descripcion = DataConvert.ToString(dtr["Descripcion"]);
+                objObra.Estado = DataConvert.ToString(dtr["O.Estado"]);
+                objObra.Teatro = new Teatro()
+                {
+                    IdTeatro = DataConvert.ToInt(dtr["T.IdTeatro"]),
+                    Nombre = DataConvert.ToString(dtr["T.Nombre"]),
+                    Estado = DataConvert.ToString(dtr["T.Estado"]),
+                    frmTeatro = DataConvert.ToString(dtr["T.frmTeatro"])
+                };
+                objObra.FechaCreacion = DataConvert.ToDateTime(dtr["O.FechaCrea"]);
+                objObra.UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]);
+                objObra.FechaModificacion = DataConvert.ToDateTime(dtr["O.FechaMod"]);
+                objObra.UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]);
+            }
+            UtilDA.Close(cnx);
+            return objObra;
+        }
+
         public IList<Obra> GetLista()
         {
             List<Obra> listaObra = null;
 
-            String sql = "SELECT * FROM TH_OBRA O INNER JOIN TH_TEATRO T ON T.IDTEATRO  = T.IDTEATRO";
+            String sql = "SELECT * FROM TH_OBRA O INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO";
 
-            using (var dtr = (UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx)))
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx))
             {
-                while (dtr.Read())
-                {
                     Obra objObra = new Obra();
-                    objObra.IdObra = DataConvert.ToInt(dtr["IdObra"]);
+                    objObra.IdObra = DataConvert.ToInt(dtr["O.IdObra"]);
                     objObra.Nombre = DataConvert.ToString(dtr["O.Nombre"]);
-                    objObra.FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]);
-                    objObra.FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]);
-                    objObra.Descripcion = DataConvert.ToString(dtr["Descripcion"]);
+                    objObra.FechaInicio = DataConvert.ToDateTime(dtr["O.FechaInicio"]);
+                    objObra.FechaFin = DataConvert.ToDateTime(dtr["O.FechaFin"]);
+                    objObra.Descripcion = DataConvert.ToString(dtr["O.Descripcion"]);
                     objObra.Estado = DataConvert.ToString(dtr["O.Estado"]);
                     objObra.Teatro = new Teatro()
                     {
@@ -90,7 +121,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                     objObra.FechaModificacion = DataConvert.ToDateTime(dtr["O.FechaMod"]);
                     objObra.UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]);
                     listaObra.Add(objObra);
-                }
+                
             }
             UtilDA.Close(cnx);
             return listaObra;
