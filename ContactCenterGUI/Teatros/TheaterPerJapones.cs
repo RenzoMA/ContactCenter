@@ -14,14 +14,14 @@ using ContactCenterGUI.Helpers;
 
 namespace ContactCenterGUI.Teatros
 {
-    public partial class TheaterPirandello : MaterialForm
+    public partial class TheaterPerJapones : MaterialForm
     {
-        public TheaterPirandello()
+        public TheaterPerJapones()
         {
             InitializeComponent();
         }
 
-        private void TheaterPirandello_Load(object sender, EventArgs e)
+        private void TheaterPerJapones_Load(object sender, EventArgs e)
         {
             HelperTeatro.MostrarDisponibilidad(this, (Reserva)this.Tag);
         }

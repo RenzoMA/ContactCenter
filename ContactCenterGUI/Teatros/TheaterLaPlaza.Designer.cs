@@ -294,14 +294,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1172, 65);
+            this.panel1.Size = new System.Drawing.Size(1280, 65);
             this.panel1.TabIndex = 2;
             // 
             // btnContinuar
             // 
             this.btnContinuar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnContinuar.Depth = 0;
-            this.btnContinuar.Location = new System.Drawing.Point(1000, 33);
+            this.btnContinuar.Location = new System.Drawing.Point(1108, 33);
             this.btnContinuar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnContinuar.Name = "btnContinuar";
             this.btnContinuar.Primary = true;
@@ -315,7 +315,7 @@
             this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
             this.btnAtras.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
-            this.btnAtras.Location = new System.Drawing.Point(1102, 5);
+            this.btnAtras.Location = new System.Drawing.Point(1210, 5);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(16, 18);
             this.btnAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -328,7 +328,7 @@
             this.btnMiminizar.AutoSize = true;
             this.btnMiminizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
             this.btnMiminizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
-            this.btnMiminizar.Location = new System.Drawing.Point(1125, 5);
+            this.btnMiminizar.Location = new System.Drawing.Point(1233, 5);
             this.btnMiminizar.Name = "btnMiminizar";
             this.btnMiminizar.Size = new System.Drawing.Size(13, 13);
             this.btnMiminizar.TabIndex = 17;
@@ -340,7 +340,7 @@
             this.btnCerrar.AutoSize = true;
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
             this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
-            this.btnCerrar.Location = new System.Drawing.Point(1146, 7);
+            this.btnCerrar.Location = new System.Drawing.Point(1254, 7);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(14, 13);
             this.btnCerrar.TabIndex = 16;
@@ -365,7 +365,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1172, 27);
+            this.panel3.Size = new System.Drawing.Size(1280, 27);
             this.panel3.TabIndex = 2;
             // 
             // panel5
@@ -2800,7 +2800,7 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.materialLabel19);
-            this.panel6.Location = new System.Drawing.Point(1054, 705);
+            this.panel6.Location = new System.Drawing.Point(1120, 705);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(106, 39);
             this.panel6.TabIndex = 1549;
@@ -2823,7 +2823,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1172, 772);
+            this.ClientSize = new System.Drawing.Size(1280, 772);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
@@ -3065,7 +3065,6 @@
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CallaoTheater";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.CallaoTheater_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

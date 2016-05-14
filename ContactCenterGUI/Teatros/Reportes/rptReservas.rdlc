@@ -501,10 +501,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NombreTeatro</rd:DefaultName>
-        <Top>1.29328cm</Top>
-        <Left>1.53141cm</Left>
+        <Top>2.18377cm</Top>
+        <Left>5.36787cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Width>5.59562cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -601,7 +601,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
         <Top>0.92286cm</Top>
-        <Left>12.63919cm</Left>
+        <Left>13.59169cm</Left>
         <Height>0.97042cm</Height>
         <Width>8.12618cm</Width>
         <ZIndex>5</ZIndex>

@@ -26,9 +26,7 @@ namespace ContactCenterGUI.Mantenimientos.ObraC
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Mantenimientos.ObraC.ManPlayMenu manplaymenu = new Mantenimientos.ObraC.ManPlayMenu();
-            manplaymenu.ShowDialog();
+            this.Close();
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
@@ -36,16 +34,16 @@ namespace ContactCenterGUI.Mantenimientos.ObraC
             
 
                 Obra obra = new Obra();
-                obra.Nombre = materialSingleLineTextField1.Text;
-                obra.FechaInicio = dateTimePicker1.Value.Date;
-                obra.FechaFin = dateTimePicker2.Value.Date;
-                obra.Descripcion = richTextBox1.Text;
-                obra.Estado = metroComboBox1.SelectedIndex == 0?"A":"I";
-                obra.Teatro = metroComboBox2.SelectedItem as Teatro;
-
+                obra.Nombre = txtObra.Text;
+                obra.FechaInicio = dtpInicio.Value.Date;
+                obra.FechaFin = dtpFin.Value.Date;
+                obra.Descripcion = txtDescripcion.Text;
+                obra.Estado = cboEstado.SelectedIndex == 0?"A":"I";
+                obra.Teatro = cboTeatro.SelectedItem as Teatro;
             if(servicio.InsertarObra(obra) == true) {
 
                 MessageBox.Show("Obra registrada correctamente");
+                this.Close();
             } else {
 
                 MessageBox.Show("ERROR", "ERROR");
@@ -57,8 +55,9 @@ namespace ContactCenterGUI.Mantenimientos.ObraC
 
         private void ManPlayCreate_Load(object sender, EventArgs e)
         {
-            metroComboBox2.DataSource = servicio.ListarTeatros();
-            metroComboBox2.DisplayMember = "Nombre";
+            cboTeatro.DataSource = servicio.ListarTeatros();
+            cboTeatro.DisplayMember = "Nombre";
+            cboEstado.SelectedIndex = 0;
 
         }
     }
