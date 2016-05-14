@@ -46,7 +46,7 @@ namespace ContactCenterServices
         bool EliminarAsientoTemporalTotal(string token);
         Task<bool> EliminarAsientoTemporalTotalAsync(string token);
 
-        //FUNCION
+        //FUNCION//
         bool InsertarFuncion(Funcion funcion);
         bool EliminarFuncion(int id);
         bool ActualizarFuncion(Funcion funcion);
