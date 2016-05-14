@@ -38,7 +38,6 @@
             this.cbSabado = new MetroFramework.Controls.MetroCheckBox();
             this.cbDomingo = new MetroFramework.Controls.MetroCheckBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.panelDias = new MetroFramework.Controls.MetroPanel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.cboTeatro = new MetroFramework.Controls.MetroComboBox();
             this.btnAceptar = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -46,19 +45,19 @@
             this.cboObra = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelDias.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow2;
-            this.pictureBox1.Location = new System.Drawing.Point(405, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(444, 66);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // metroLabel1
             // 
@@ -72,7 +71,7 @@
             // cbLunes
             // 
             this.cbLunes.AutoSize = true;
-            this.cbLunes.Location = new System.Drawing.Point(14, 18);
+            this.cbLunes.Location = new System.Drawing.Point(93, 85);
             this.cbLunes.Name = "cbLunes";
             this.cbLunes.Size = new System.Drawing.Size(54, 15);
             this.cbLunes.TabIndex = 16;
@@ -82,7 +81,7 @@
             // cbMartes
             // 
             this.cbMartes.AutoSize = true;
-            this.cbMartes.Location = new System.Drawing.Point(132, 19);
+            this.cbMartes.Location = new System.Drawing.Point(211, 86);
             this.cbMartes.Name = "cbMartes";
             this.cbMartes.Size = new System.Drawing.Size(59, 15);
             this.cbMartes.TabIndex = 17;
@@ -92,7 +91,7 @@
             // cbMiercoles
             // 
             this.cbMiercoles.AutoSize = true;
-            this.cbMiercoles.Location = new System.Drawing.Point(249, 19);
+            this.cbMiercoles.Location = new System.Drawing.Point(328, 86);
             this.cbMiercoles.Name = "cbMiercoles";
             this.cbMiercoles.Size = new System.Drawing.Size(74, 15);
             this.cbMiercoles.TabIndex = 18;
@@ -102,7 +101,7 @@
             // cbJueves
             // 
             this.cbJueves.AutoSize = true;
-            this.cbJueves.Location = new System.Drawing.Point(14, 49);
+            this.cbJueves.Location = new System.Drawing.Point(93, 116);
             this.cbJueves.Name = "cbJueves";
             this.cbJueves.Size = new System.Drawing.Size(57, 15);
             this.cbJueves.TabIndex = 19;
@@ -112,7 +111,7 @@
             // cbViernes
             // 
             this.cbViernes.AutoSize = true;
-            this.cbViernes.Location = new System.Drawing.Point(132, 49);
+            this.cbViernes.Location = new System.Drawing.Point(211, 116);
             this.cbViernes.Name = "cbViernes";
             this.cbViernes.Size = new System.Drawing.Size(61, 15);
             this.cbViernes.TabIndex = 20;
@@ -122,7 +121,7 @@
             // cbSabado
             // 
             this.cbSabado.AutoSize = true;
-            this.cbSabado.Location = new System.Drawing.Point(249, 49);
+            this.cbSabado.Location = new System.Drawing.Point(328, 116);
             this.cbSabado.Name = "cbSabado";
             this.cbSabado.Size = new System.Drawing.Size(62, 15);
             this.cbSabado.TabIndex = 21;
@@ -132,7 +131,7 @@
             // cbDomingo
             // 
             this.cbDomingo.AutoSize = true;
-            this.cbDomingo.Location = new System.Drawing.Point(14, 80);
+            this.cbDomingo.Location = new System.Drawing.Point(93, 147);
             this.cbDomingo.Name = "cbDomingo";
             this.cbDomingo.Size = new System.Drawing.Size(73, 15);
             this.cbDomingo.TabIndex = 22;
@@ -147,26 +146,6 @@
             this.metroLabel2.Size = new System.Drawing.Size(54, 19);
             this.metroLabel2.TabIndex = 23;
             this.metroLabel2.Text = "Horario";
-            // 
-            // panelDias
-            // 
-            this.panelDias.Controls.Add(this.cbDomingo);
-            this.panelDias.Controls.Add(this.cbMartes);
-            this.panelDias.Controls.Add(this.cbSabado);
-            this.panelDias.Controls.Add(this.cbLunes);
-            this.panelDias.Controls.Add(this.cbViernes);
-            this.panelDias.Controls.Add(this.cbMiercoles);
-            this.panelDias.Controls.Add(this.cbJueves);
-            this.panelDias.HorizontalScrollbarBarColor = true;
-            this.panelDias.HorizontalScrollbarHighlightOnWheel = false;
-            this.panelDias.HorizontalScrollbarSize = 10;
-            this.panelDias.Location = new System.Drawing.Point(88, 107);
-            this.panelDias.Name = "panelDias";
-            this.panelDias.Size = new System.Drawing.Size(337, 111);
-            this.panelDias.TabIndex = 24;
-            this.panelDias.VerticalScrollbarBarColor = true;
-            this.panelDias.VerticalScrollbarHighlightOnWheel = false;
-            this.panelDias.VerticalScrollbarSize = 10;
             // 
             // metroLabel3
             // 
@@ -198,6 +177,7 @@
             this.btnAceptar.TabIndex = 27;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txtHorarioFuncion
             // 
@@ -214,7 +194,6 @@
             this.cboObra.Name = "cboObra";
             this.cboObra.Size = new System.Drawing.Size(178, 29);
             this.cboObra.TabIndex = 30;
-            this.cboObra.SelectionChangeCommitted += new System.EventHandler(this.cboObra_SelectionChangeCommitted);
             // 
             // metroLabel4
             // 
@@ -232,11 +211,17 @@
             this.ClientSize = new System.Drawing.Size(486, 459);
             this.Controls.Add(this.cboObra);
             this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.cbDomingo);
             this.Controls.Add(this.txtHorarioFuncion);
+            this.Controls.Add(this.cbMartes);
+            this.Controls.Add(this.cbJueves);
             this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.cbMiercoles);
             this.Controls.Add(this.cboTeatro);
+            this.Controls.Add(this.cbSabado);
             this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.panelDias);
+            this.Controls.Add(this.cbViernes);
+            this.Controls.Add(this.cbLunes);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.pictureBox1);
@@ -245,8 +230,6 @@
             this.Text = "ManFunctionCreate";
             this.Load += new System.EventHandler(this.ManFunctionCreate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelDias.ResumeLayout(false);
-            this.panelDias.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,7 +247,6 @@
         private MetroFramework.Controls.MetroCheckBox cbSabado;
         private MetroFramework.Controls.MetroCheckBox cbDomingo;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroPanel panelDias;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroComboBox cboTeatro;
         private MaterialSkin.Controls.MaterialRaisedButton btnAceptar;

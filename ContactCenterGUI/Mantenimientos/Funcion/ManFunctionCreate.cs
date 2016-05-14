@@ -18,12 +18,12 @@ namespace ContactCenterGUI.Mantenimientos.Funcion
 {
     public partial class ManFunctionCreate : MaterialForm
     {
-        private Teatro teatro = null;
+        //private Teatro teatro = null;
 
-        private List<Obra> listaObra = null;
-        private Obra obra = null;
+        //private List<Obra> listaObra = null;
+        //private Obra obra = null;
 
-        IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+        //IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
 
         public ManFunctionCreate()
         {
@@ -32,30 +32,35 @@ namespace ContactCenterGUI.Mantenimientos.Funcion
 
         private void ManFunctionCreate_Load(object sender, EventArgs e)
         {
-            cboTeatro.DataSource = servicio.ListarTeatros();
-            cboTeatro.DisplayMember = "Nombre";
+            //cboTeatro.DataSource = servicio.ListarTeatros();
+            //cboTeatro.DisplayMember = "Nombre";
 
-        }
-
-        private void CargarObras()
-        {
-            teatro = cboTeatro.SelectedItem as Teatro;
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
-            {
-                listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
-                cboObra.DataSource = listaObra;
-                cboObra.DisplayMember = "Nombre";
-            };
-        }
-
-        private void cboObra_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            //CargarObras();
         }
 
         private void cboTeatro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CargarObras();
+            //CargarObras();
+        }
+
+        private void CargarObras()
+        {
+            //teatro = cboTeatro.SelectedItem as Teatro;
+            //using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            //{
+            //    listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
+            //    cboObra.DataSource = listaObra;
+            //    cboObra.DisplayMember = "Nombre";
+            //};
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

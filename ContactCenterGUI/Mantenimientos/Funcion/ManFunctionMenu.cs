@@ -32,6 +32,7 @@ namespace ContactCenterGUI.Mantenimientos.Funcion
                 this.Hide();
                 Mantenimientos.Funcion.ManFunctionCreate manfuncreate = new Mantenimientos.Funcion.ManFunctionCreate();
                 manfuncreate.ShowDialog();
+                this.Show();
 
             }
         }

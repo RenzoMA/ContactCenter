@@ -42,6 +42,7 @@ namespace ContactCenterGUI.Mantenimientos
                 this.Hide();
                 Mantenimientos.Aplicacion.ManAppMenu manappmenu = new Mantenimientos.Aplicacion.ManAppMenu();
                 manappmenu.ShowDialog();
+                this.Show();
 
             }
             else if(metroComboBox1.SelectedIndex == 7)
@@ -49,12 +50,14 @@ namespace ContactCenterGUI.Mantenimientos
                 this.Hide();
                 Mantenimientos.Funcion.ManFunctionMenu manfunmenu = new Mantenimientos.Funcion.ManFunctionMenu();
                 manfunmenu.ShowDialog();
+                this.Show();
             }
             else if (metroComboBox1.SelectedIndex == 8) {
 
                 this.Hide();
                 Mantenimientos.ObraC.ManPlayMenu manaplaymenu = new Mantenimientos.ObraC.ManPlayMenu();
                 manaplaymenu.ShowDialog();
+                this.Show();
             }
         }
     }
