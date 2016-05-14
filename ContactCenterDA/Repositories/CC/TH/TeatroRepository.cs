@@ -64,7 +64,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                 {
                     teatro = new Teatro()
                     {
-                        Estado = DataConvert.ToString(dtr["Estado"]),
+                        Estado = DataConvert.ToString(dtr["Estado"]),chive
                         FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]),
                         FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]),
                         IdTeatro = DataConvert.ToInt(dtr["IdTeatro"]),
