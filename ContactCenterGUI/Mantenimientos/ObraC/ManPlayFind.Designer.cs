@@ -54,7 +54,7 @@
             // 
             this.txt.Depth = 0;
             this.txt.Hint = "";
-            this.txt.Location = new System.Drawing.Point(136, 104);
+            this.txt.Location = new System.Drawing.Point(155, 100);
             this.txt.MaxLength = 32767;
             this.txt.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt.Name = "txt";

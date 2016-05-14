@@ -17,7 +17,7 @@ namespace ContactCenterGUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Mantenimientos.Tarifa.manFareCreate());
+            Application.Run(new Loader());
         }
     }
 }

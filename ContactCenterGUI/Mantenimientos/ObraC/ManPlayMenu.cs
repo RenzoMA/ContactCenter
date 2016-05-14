@@ -38,8 +38,8 @@ namespace ContactCenterGUI.Mantenimientos.ObraC
             {
 
                 this.Hide();
-                Mantenimientos.Aplicacion.ManAppFind manappbuscar = new Mantenimientos.Aplicacion.ManAppFind();
-                manappbuscar.ShowDialog();
+                Mantenimientos.ObraC.ManPlayFind manplayfind = new Mantenimientos.ObraC.ManPlayFind();
+                manplayfind.ShowDialog();
             }
         }
     }
