@@ -225,6 +225,11 @@ namespace ContactCenterServices
             return _obraService.GetById(id);
         }
 
+        public Obra BuscarObraPorNombre(string name) {
+
+            return _obraService.GetByName(name);
+        }
+
         public IList<Obra> ListarObras() {
             return _obraService.GetLista();
         }
