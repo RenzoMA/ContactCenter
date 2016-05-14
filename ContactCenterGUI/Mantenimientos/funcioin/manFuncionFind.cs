@@ -7,15 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin.Controls;
 using MaterialSkin.Animations;
+using MaterialSkin.Controls;
 
-
-namespace ContactCenterGUI.Mantenimientos.ObraC
+namespace ContactCenterGUI.Mantenimientos.funcioin
 {
-    public partial class ManPlayFind : MaterialForm
+    public partial class manFuncionFind : MaterialForm
     {
-        public ManPlayFind()
+        public manFuncionFind()
         {
             InitializeComponent();
         }

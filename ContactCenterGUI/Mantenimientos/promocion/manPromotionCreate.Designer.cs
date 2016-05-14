@@ -1,6 +1,6 @@
-﻿namespace ContactCenterGUI.Mantenimientos.ObraC
+﻿namespace ContactCenterGUI.Mantenimientos.promocion
 {
-    partial class ManPlayFind
+    partial class manPromotionCreate
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // ManPlayFind
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 619);
-            this.Name = "ManPlayFind";
-            this.Text = "ManPlayFind";
-            this.ResumeLayout(false);
-
+            this.Text = "manPromotionCreate";
         }
 
         #endregion
