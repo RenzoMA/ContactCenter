@@ -15,5 +15,6 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
         IList<Obra> GetLista();
         bool Insert(Obra datos);
         bool Update(Obra datos);
+        Obra GetByName(string name);
     }
 }
