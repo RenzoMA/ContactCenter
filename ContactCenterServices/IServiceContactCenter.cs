@@ -12,8 +12,6 @@ using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterBE.CC.Entidades.CLienteBE;
-using ContactCenterBE.CC.TH.Entidades.ZonaBE;
-
 
 namespace ContactCenterServices
 {
@@ -65,9 +63,7 @@ namespace ContactCenterServices
         List<TipoPromocion> GetListaTipoPromocion();
 
         List<Reserva> ReporteReservas(int idTeatro, DateTime fecha);
-
-        //Zona
-
-        List<Zona> ListaZonaTeatro(int idTeatro);
+        List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fecha);
+        bool CancelarReserva(int idReserva);
     }
 }

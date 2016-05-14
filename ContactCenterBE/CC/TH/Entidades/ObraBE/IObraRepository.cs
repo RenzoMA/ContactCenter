@@ -10,8 +10,6 @@ namespace ContactCenterBE.CC.TH.Entidades.ObraBE
     public interface IObraRepository : IBaseRepository<Obra>
     {
         List<Obra> GetListaTeatro(int idTeatro);
-        Obra GetbyName(string name);
-        
-
+        Obra GetByName(string name);
     }
 }

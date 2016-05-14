@@ -28,7 +28,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         }
 
         public Obra GetByName(string name) {
-            return _obraRepository.GetbyName(name);
+            return _obraRepository.GetByName(name);
         }
 
         public bool Delete(int id) {

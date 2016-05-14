@@ -131,9 +131,7 @@ namespace ContactCenterGUI.Teatros
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Teatros.Main menu = new Teatros.Main();
-            menu.ShowDialog();
+            this.Close();
         }
 
         private void txtCorreo_MouseClick(object sender, MouseEventArgs e)
