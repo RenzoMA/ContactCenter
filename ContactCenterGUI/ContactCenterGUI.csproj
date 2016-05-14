@@ -330,6 +330,9 @@
     <EmbeddedResource Include="Mantenimientos\ObraC\ManPlayMenu.resx">
       <DependentUpon>ManPlayMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Tarifa\manFareCreate.resx">
+      <DependentUpon>manFareCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reportes\rptReservas.rdlc" />
     <EmbeddedResource Include="Teatros\Reportes\rptReservas.resx">
       <DependentUpon>rptReservas.cs</DependentUpon>

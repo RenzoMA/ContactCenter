@@ -34,7 +34,7 @@ namespace ContactCenterDA.Repositories.CC.TH
         {
             Zona objZona = null;
 
-            String sql = "SELECT * FROM TH_Zona Z INNER JOIN TH_Teatro T ON T.IdTeatro  = T.IdTeatro WHERE IdZona = @codigo";
+            String sql = "SELECT * FROM TH_Zona Z INNER JOIN TH_Teatro T ON Z.IdTeatro  = T.IdTeatro WHERE IdZona = @codigo";
 
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
 
@@ -67,7 +67,7 @@ namespace ContactCenterDA.Repositories.CC.TH
         {
             List<Zona> listaZona = null;
 
-            String sql = "SELECT * FROM TH_Zona Z INNER JOIN TH_Teatro T ON T.IdTeatro  = T.IdTeatro";
+            String sql = "SELECT * FROM TH_Zona Z INNER JOIN TH_Teatro T ON Z.IdTeatro  = T.IdTeatro";
 
             using (var dtr = (UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx)))
             {
@@ -95,6 +95,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             return listaZona;
 
         }
+
 
         public bool Insert(Zona datos)
         {
@@ -125,6 +126,43 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter idZona = UtilDA.SetParameters("@idZona", OleDbType.VarChar, datos.IdZona);
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, descripcion, estado, idTeatro, fechaMod, usuarioMod, idZona);
+        }
+
+        public List<Zona> GetZonaTeatro(int id)
+        {
+            List<Zona> listaZonaTeatro = null;
+
+            String sql = "SELECT * FROM TH_ZONA Z INNER JOIN TH_TEATRO T ON Z.IdTeatro  = T.IdTeatro WHERE Z.IdTeatro = @codigo";
+
+            OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
+
+
+            using (var dtr = (UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, codigo)))
+            {
+                while (dtr.Read())
+                {
+                    Zona objZona = new Zona();
+                    objZona.IdZona = DataConvert.ToInt(dtr["Z.IdZona"]);
+                    objZona.Nombre = DataConvert.ToString(dtr["Z.Nombre"]);
+                    objZona.Descripcion = DataConvert.ToString(dtr["Z.Descripcion"]);
+                    objZona.Estado = DataConvert.ToString(dtr["Z.Estado"]);
+                    objZona.Teatro = new Teatro()
+                    {
+                        IdTeatro = DataConvert.ToInt(dtr["T.IdTeatro"]),
+                        Nombre = DataConvert.ToString(dtr["T.Nombre"]),
+                        Estado = DataConvert.ToString(dtr["T.Estado"]),
+                        frmTeatro = DataConvert.ToString(dtr["T.frmTeatro"])
+                    };
+                    objZona.FechaCreacion = DataConvert.ToDateTime(dtr["Z.FechaCrea"]);
+                    objZona.UsuarioCreacion = DataConvert.ToString(dtr["Z.UserCrea"]);
+                    objZona.FechaModificacion = DataConvert.ToDateTime(dtr["Z.FechaMod"]);
+                    objZona.UsuarioModificacion = DataConvert.ToString(dtr["Z.UserMod"]);
+                    listaZonaTeatro.Add(objZona);
+                }
+            }
+            UtilDA.Close(cnx);
+            return listaZonaTeatro;
+
         }
     }
 
