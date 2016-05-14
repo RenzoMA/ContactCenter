@@ -18,7 +18,7 @@ namespace ContactCenterServices
     public interface IServiceContactCenter : IDisposable
     {
         bool InsertarAplicacion(Aplicacion aplicacion);
-        List<Aplicacion> ListarAplicaciones();C:\Users\Portanova\Source\Repos\ContactCenter\ContactCenterServices\Contenedor.cs
+        List<Aplicacion> ListarAplicaciones();
         Usuario ValidarUsuario(string login, string password);
         Task<Usuario> ValidarUsuarioAsync(string login, string password);
         List<Aplicacion> ListarAplicacionUsuario(Usuario usuario);
