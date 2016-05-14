@@ -60,6 +60,7 @@
     <Compile Include="CC\TH\Entidades\ObraBE\IObraRepository.cs" />
     <Compile Include="CC\TH\Entidades\PromocionBE\IPromocionRepository.cs" />
     <Compile Include="CC\TH\Entidades\PromocionBE\ITipoPromocionRepository.cs" />
+    <Compile Include="CC\TH\Entidades\ReservaBE\BusquedaReserva.cs" />
     <Compile Include="CC\TH\Entidades\ReservaBE\DetalleReserva.cs" />
     <Compile Include="CC\TH\Entidades\ReservaBE\EstadoReserva.cs" />
     <Compile Include="CC\TH\Entidades\FuncionBE\Funcion.cs" />

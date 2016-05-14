@@ -294,5 +294,15 @@ namespace ContactCenterServices
         {
             return _reservaService.ReporteReservas(idTeatro, fecha);
         }
+
+        public List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fecha)
+        {
+            return _reservaService.BuscarByNamePhoneDate(nombrePhone, fecha);
+        }
+
+        public bool CancelarReserva(int idReserva)
+        {
+            return _reservaService.CancelarReserva(idReserva);
+        }
     }
 }

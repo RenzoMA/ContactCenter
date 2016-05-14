@@ -123,5 +123,72 @@ namespace ContactCenterDA.Repositories.CC.TH
             UtilDA.Close(cnx);
             return listaReserva;
         }
+
+        public List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fecha)
+        {
+            List<BusquedaReserva> listaReserva = new List<BusquedaReserva>();
+            BusquedaReserva reserva = null;
+
+             string sql = "SELECT * FROM (((TH_RESERVA R INNER JOIN CC_CLIENTE C ON R.IDCLIENTE = C.IDCLIENTE) INNER JOIN TH_OBRA O ON O.IDOBRA = R.IDOBRA) INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO) INNER JOIN TH_ESTADO_RESERVA ER ON ER.IDESTADORESERVA = R.IDESTADORESERVA WHERE (C.NOMBRE + APEPATERNO + APEMATERNO + TELEFONO) LIKE '%' & @busqueda & '%' AND FECHARESERVA = @fecha";
+
+            OleDbParameter pNombrePhone = UtilDA.SetParameters("@busqueda", OleDbType.VarChar, nombrePhone);
+            OleDbParameter pFecha = UtilDA.SetParameters("@fecha", OleDbType.Date, fecha);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pNombrePhone, pFecha))
+            {
+                while (dtr.Read())
+                {
+                    reserva = new BusquedaReserva()
+                    {
+                        IdReserva = DataConvert.ToInt(dtr["IdReserva"]),
+                        FechaReserva = DataConvert.ToDateTime(dtr["FechaReserva"]),
+                        Horario = DataConvert.ToString(dtr["Horario"]),
+                        EstadoReserva = new EstadoReserva()
+                        {
+                            IdEstadoReserva = DataConvert.ToInt(dtr["ER.IdEstadoReserva"]),
+                            Nombre = DataConvert.ToString(dtr["ER.Nombre"]),
+                            Estado = DataConvert.ToString(dtr["ER.Estado"]),
+                            FechaCreacion = DataConvert.ToDateTime(dtr["ER.FechaCrea"]),
+                            UsuarioCreacion = DataConvert.ToString(dtr["ER.UserCrea"]),
+                        },
+                        Obra = new Obra()
+                        {
+                            IdObra = DataConvert.ToInt(dtr["O.IdObra"]),
+                            Nombre = DataConvert.ToString(dtr["O.Nombre"])
+                        },
+                        Cliente = new Cliente()
+                        {
+                            IdCliente = DataConvert.ToInt(dtr["C.IdCliente"]),
+                            Nombre = DataConvert.ToString(dtr["C.Nombre"]),
+                            ApellidoPaterno = DataConvert.ToString(dtr["ApePaterno"]),
+                            Apellidomaterno = DataConvert.ToString(dtr["ApeMaterno"]),
+                            Telefono = DataConvert.ToString(dtr["Telefono"]),
+                            Correo = DataConvert.ToString(dtr["Correo"]),
+                            DNI = DataConvert.ToString(dtr["DNI"])
+                        },
+                        NombrePromocion = DataConvert.ToString(dtr["NombrePromocion"]),
+                        Asientos = DataConvert.ToString(dtr["Asientos"]),
+                        PrecioTotal = DataConvert.ToSingle(dtr["PrecioTotal"])
+                    };
+                    listaReserva.Add(reserva);
+                }
+            }
+
+
+            UtilDA.Close(cnx);
+            return listaReserva;
+        }
+
+        public bool CancelarReserva(int idReserva)
+        {
+            string sql = "UPDATE TH_RESERVA SET IdEstadoReserva = 2,FechaMod = @fechaMod, UserMod = @userMod WHERE IdReserva = @idReserva";
+
+
+            OleDbParameter pFechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Today);
+            OleDbParameter pUserMod = UtilDA.SetParameters("@userMod", OleDbType.VarChar, Sesion.usuario.Login);
+            OleDbParameter pIdReserva = UtilDA.SetParameters("@idReserva", OleDbType.Integer, idReserva);
+
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, pFechaMod, pUserMod, pIdReserva);
+        }
     }
 }
