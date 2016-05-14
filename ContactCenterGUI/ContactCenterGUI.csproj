@@ -170,6 +170,24 @@
     <Compile Include="Mantenimientos\Aplicacion\ManAppMenu.Designer.cs">
       <DependentUpon>ManAppMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\funcioin\manFuncionCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\funcioin\manFuncionCreate.Designer.cs">
+      <DependentUpon>manFuncionCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\funcioin\manFuncionFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\funcioin\manFuncionFind.Designer.cs">
+      <DependentUpon>manFuncionFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\funcioin\manFuncionMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\funcioin\manFuncionMenu.Designer.cs">
+      <DependentUpon>manFuncionMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\ManForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +211,42 @@
     </Compile>
     <Compile Include="Mantenimientos\ObraC\ManPlayMenu.Designer.cs">
       <DependentUpon>ManPlayMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\promocion\manPromotionCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\promocion\manPromotionCreate.Designer.cs">
+      <DependentUpon>manPromotionCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\promocion\manPromotionFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\promocion\manPromotionFind.Designer.cs">
+      <DependentUpon>manPromotionFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\promocion\manPromotionMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\promocion\manPromotionMenu.Designer.cs">
+      <DependentUpon>manPromotionMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Tarifa\manFareCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Tarifa\manFareCreate.Designer.cs">
+      <DependentUpon>manFareCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Tarifa\manFareFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Tarifa\manFareFind.Designer.cs">
+      <DependentUpon>manFareFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Tarifa\manFareMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Tarifa\manFareMenu.Designer.cs">
+      <DependentUpon>manFareMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Reportes\rptReservas.cs">
       <SubType>Form</SubType>
@@ -269,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\ObraC\ManPlayCreate.resx">
       <DependentUpon>ManPlayCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\ObraC\ManPlayFind.resx">
+      <DependentUpon>ManPlayFind.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\ObraC\ManPlayMenu.resx">
       <DependentUpon>ManPlayMenu.cs</DependentUpon>
@@ -386,9 +443,7 @@
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mantenimientos\Tarifa\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>

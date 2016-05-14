@@ -41,10 +41,10 @@ namespace ContactCenterGUI.Mantenimientos
             }
             else if(metroComboBox1.SelectedIndex == 7)
             {
-                this.Hide();
-                //Mantenimientos.Funcion.ManFunctionMenu manfunmenu = new Mantenimientos.Funcion.ManFunctionMenu();
-                //manfunmenu.ShowDialog();
-                this.Show();
+               // this.Hide();
+               // Mantenimientos.Funcion.ManFunctionMenu manfunmenu = new Mantenimientos.Funcion.ManFunctionMenu();
+               // manfunmenu.ShowDialog();
+                //this.Show();
             }
             else if (metroComboBox1.SelectedIndex == 8) {
 
