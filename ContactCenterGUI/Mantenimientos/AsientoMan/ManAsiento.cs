@@ -50,7 +50,10 @@ namespace ContactCenterGUI.Mantenimientos.AsientoMan
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            EnlazarDataGrid();
+            if (cboTeatro.SelectedIndex != 0)
+            {
+                EnlazarDataGrid();
+            }
         }
         private void EnlazarDataGrid()
         {

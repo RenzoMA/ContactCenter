@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvAsientos = new System.Windows.Forms.DataGridView();
-            this.checkAsiento = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.IdAsiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fila = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Disponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.cboZona = new MetroFramework.Controls.MetroComboBox();
@@ -42,6 +37,11 @@
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.btnDeshabilitar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnHabilitar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.checkAsiento = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IdAsiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fila = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Disponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsientos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -64,43 +64,6 @@
             this.dgvAsientos.Size = new System.Drawing.Size(627, 452);
             this.dgvAsientos.TabIndex = 3;
             this.dgvAsientos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsientos_CellContentClick);
-            // 
-            // checkAsiento
-            // 
-            this.checkAsiento.FalseValue = "";
-            this.checkAsiento.HeaderText = "Sel.";
-            this.checkAsiento.Name = "checkAsiento";
-            this.checkAsiento.ReadOnly = true;
-            this.checkAsiento.TrueValue = "";
-            // 
-            // IdAsiento
-            // 
-            this.IdAsiento.DataPropertyName = "IdAsiento";
-            this.IdAsiento.HeaderText = "IdAsiento";
-            this.IdAsiento.Name = "IdAsiento";
-            this.IdAsiento.ReadOnly = true;
-            this.IdAsiento.Visible = false;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // Fila
-            // 
-            this.Fila.DataPropertyName = "Fila";
-            this.Fila.HeaderText = "Fila";
-            this.Fila.Name = "Fila";
-            this.Fila.ReadOnly = true;
-            // 
-            // Disponible
-            // 
-            this.Disponible.DataPropertyName = "Disponible";
-            this.Disponible.HeaderText = "Disponible";
-            this.Disponible.Name = "Disponible";
-            this.Disponible.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -203,6 +166,43 @@
             this.btnHabilitar.UseVisualStyleBackColor = true;
             this.btnHabilitar.Click += new System.EventHandler(this.btnHabilitar_Click);
             // 
+            // checkAsiento
+            // 
+            this.checkAsiento.FalseValue = "";
+            this.checkAsiento.HeaderText = "Sel.";
+            this.checkAsiento.Name = "checkAsiento";
+            this.checkAsiento.ReadOnly = true;
+            this.checkAsiento.TrueValue = "";
+            // 
+            // IdAsiento
+            // 
+            this.IdAsiento.DataPropertyName = "IdAsiento";
+            this.IdAsiento.HeaderText = "IdAsiento";
+            this.IdAsiento.Name = "IdAsiento";
+            this.IdAsiento.ReadOnly = true;
+            this.IdAsiento.Visible = false;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Asiento";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // Fila
+            // 
+            this.Fila.DataPropertyName = "Fila";
+            this.Fila.HeaderText = "Fila";
+            this.Fila.Name = "Fila";
+            this.Fila.ReadOnly = true;
+            // 
+            // Disponible
+            // 
+            this.Disponible.DataPropertyName = "Disponible";
+            this.Disponible.HeaderText = "Disponible";
+            this.Disponible.Name = "Disponible";
+            this.Disponible.ReadOnly = true;
+            // 
             // ManAsiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,11 +233,11 @@
         private MetroFramework.Controls.MetroComboBox cboTeatro;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialRaisedButton btnDeshabilitar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnHabilitar;
         private System.Windows.Forms.DataGridViewCheckBoxColumn checkAsiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdAsiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fila;
         private System.Windows.Forms.DataGridViewTextBoxColumn Disponible;
-        private MaterialSkin.Controls.MaterialRaisedButton btnHabilitar;
     }
 }
