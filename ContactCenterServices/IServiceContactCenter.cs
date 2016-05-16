@@ -11,6 +11,7 @@ using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
+using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.Entidades.CLienteBE;
 
 namespace ContactCenterServices
@@ -65,5 +66,8 @@ namespace ContactCenterServices
         List<Reserva> ReporteReservas(int idTeatro, DateTime fecha);
         List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fecha);
         bool CancelarReserva(int idReserva);
+        List<Zona> ListZonaByTeatro(int IdTeatro);
+        List<Asiento> ListAsientoByZona(int IdZona);
+        bool UpdateAsientoDisponible(string asientos, string estado);
     }
 }

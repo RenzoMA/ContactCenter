@@ -21,6 +21,7 @@ using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.Entidades.CLienteBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
+using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 
 
 
@@ -47,7 +48,7 @@ namespace ContactCenterServices
             current.RegisterType<IClienteService, ClienteService>();
             current.RegisterType<ITipoPromocionService, TipoPromocionService>();
             current.RegisterType<IPromocionService, PromocionService>();
-
+            current.RegisterType<IZonaService, ZonaService>();
 
             // Entidades - DA
             current.RegisterType<IAsientoRepository, AsientoRepository>();
@@ -61,6 +62,7 @@ namespace ContactCenterServices
             current.RegisterType<IClienteRepository, ClienteRepository>();
             current.RegisterType<IPromocionRepository, PromocionRepository>();
             current.RegisterType<ITipoPromocionRepository, TipoPromocionRepository>();
+            current.RegisterType<IZonaRepository, ZonaRepository>();
         }
     }
 }

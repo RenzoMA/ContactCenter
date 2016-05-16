@@ -17,6 +17,7 @@ using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.Entidades.CLienteBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
+using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 
 namespace ContactCenterServices
 {
@@ -33,6 +34,7 @@ namespace ContactCenterServices
         private IClienteService _clienteService;
         private IPromocionService _promocionService;
         private ITipoPromocionService _tipoPromocionService;
+        private IZonaService _zonaService;
 
         public ServiceContactCenter(
             IAsientoService asientoService,
@@ -44,7 +46,8 @@ namespace ContactCenterServices
             IReservaService reservaService,
             IClienteService clienteService,
             IPromocionService promocionService,
-            ITipoPromocionService tipoPromocionService)
+            ITipoPromocionService tipoPromocionService,
+            IZonaService zonaService)
         {
             _clienteService = clienteService;
             _asientoService = asientoService;
@@ -56,6 +59,7 @@ namespace ContactCenterServices
             _promocionService = promocionService;
             _reservaService = reservaService;
             _tipoPromocionService = tipoPromocionService;
+            _zonaService = zonaService;
         }
 
         public void Dispose()
@@ -308,6 +312,21 @@ namespace ContactCenterServices
         public bool CancelarReserva(int idReserva)
         {
             return _reservaService.CancelarReserva(idReserva);
+        }
+
+        public List<Zona> ListZonaByTeatro(int IdTeatro)
+        {
+            return _zonaService.ListZonaByTeatro(IdTeatro);
+        }
+
+        public List<Asiento> ListAsientoByZona(int IdZona)
+        {
+            return _asientoService.ListAsientoByZona(IdZona);
+        }
+
+        public bool UpdateAsientoDisponible(string asientos, string estado)
+        {
+            return _asientoService.UpdateAsientoDisponible(asientos, estado);
         }
     }
 }

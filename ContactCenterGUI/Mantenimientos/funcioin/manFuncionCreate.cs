@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
+
 namespace ContactCenterGUI.Mantenimientos.funcioin
 {
     public partial class manFuncionCreate : MaterialForm

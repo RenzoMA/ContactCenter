@@ -46,6 +46,23 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         {
             return asientoRepository.ListarTeatroAsiento(idObra);
         }
+
+        public List<Asiento> ListAsientoByZona(int IdZona)
+        {
+            return asientoRepository.ListAsientoByZona(IdZona);
+        }
+
+        public bool UpdateAsientoDisponible(string asientos, string estado)
+        {
+            if (estado.Equals("S") || estado.Equals("N"))
+            {
+                return asientoRepository.UpdateAsientoDisponible(asientos, estado);
+            }
+            else
+            {
+                return false;
+            }
+        }
         #endregion
     }
 }
