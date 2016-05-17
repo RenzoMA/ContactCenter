@@ -21,7 +21,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
 
         public List<Zona> ListaZonaTeatro(int id)
         {
-            List<Zona> listaZona = _zonaRepository.GetZonaTeatro(id);
+            List<Zona> listaZona = _zonaRepository.GetZonaTeatro(id).ToList();
             Zona obj = new Zona()
             {
                 IdZona = 0,

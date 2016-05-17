@@ -130,7 +130,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public List<Zona> GetZonaTeatro(int id)
         {
-            List<Zona> listaZonaTeatro = null;
+            List<Zona> listaZonaTeatro = new List<Zona>();
 
             String sql = "SELECT * FROM TH_ZONA Z INNER JOIN TH_TEATRO T ON Z.IdTeatro  = T.IdTeatro WHERE Z.IdTeatro = @codigo";
 

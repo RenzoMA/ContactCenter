@@ -52,6 +52,7 @@
             // 
             // txt
             // 
+            this.txt.BackColor = System.Drawing.Color.White;
             this.txt.Depth = 0;
             this.txt.Hint = "";
             this.txt.Location = new System.Drawing.Point(155, 100);
@@ -70,6 +71,7 @@
             // materialLabel1
             // 
             this.materialLabel1.AutoSize = true;
+            this.materialLabel1.BackColor = System.Drawing.Color.White;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));

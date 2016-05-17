@@ -209,5 +209,10 @@ namespace ContactCenterDA.Repositories.CC.TH
             UtilDA.Close(cnx);
             return objObra;
         }
+
+        public Obra GetByName(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

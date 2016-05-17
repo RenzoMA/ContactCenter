@@ -57,6 +57,7 @@
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(209, 29);
             this.metroComboBox1.TabIndex = 4;
+            this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
             // 
             // ManPlayMenu
             // 

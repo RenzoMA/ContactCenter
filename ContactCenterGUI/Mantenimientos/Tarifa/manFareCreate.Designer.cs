@@ -43,7 +43,7 @@
             // 
             this.cboObra.FormattingEnabled = true;
             this.cboObra.ItemHeight = 23;
-            this.cboObra.Location = new System.Drawing.Point(159, 142);
+            this.cboObra.Location = new System.Drawing.Point(159, 192);
             this.cboObra.Name = "cboObra";
             this.cboObra.Size = new System.Drawing.Size(177, 29);
             this.cboObra.TabIndex = 0;
@@ -55,7 +55,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(13, 152);
+            this.materialLabel1.Location = new System.Drawing.Point(13, 202);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(40, 19);
@@ -69,7 +69,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(13, 203);
+            this.materialLabel2.Location = new System.Drawing.Point(13, 154);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(43, 19);
@@ -80,7 +80,7 @@
             // 
             this.cboZona.FormattingEnabled = true;
             this.cboZona.ItemHeight = 23;
-            this.cboZona.Location = new System.Drawing.Point(159, 193);
+            this.cboZona.Location = new System.Drawing.Point(159, 144);
             this.cboZona.Name = "cboZona";
             this.cboZona.Size = new System.Drawing.Size(177, 29);
             this.cboZona.TabIndex = 3;
@@ -157,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 400);
+            this.ClientSize = new System.Drawing.Size(416, 393);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.cboTeatro);
             this.Controls.Add(this.btnAceptar);

@@ -47,6 +47,8 @@ namespace ContactCenterGUI.Mantenimientos.Tarifa
             CargarTeatros();
         }
 
+
+
         private async void CargarTeatros()
         {
             using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
@@ -55,6 +57,7 @@ namespace ContactCenterGUI.Mantenimientos.Tarifa
                 cboTeatro.DataSource = listaTeatro;
                 cboTeatro.DisplayMember = "Nombre";
             }
+            CargarZona();
             CargarObras();
         }
 
@@ -67,7 +70,7 @@ namespace ContactCenterGUI.Mantenimientos.Tarifa
                 cboObra.DataSource = listaObra;
                 cboObra.DisplayMember = "Nombre";
             }
-            CargarZona();
+            
         }
 
         private void CargarZona()
@@ -83,7 +86,7 @@ namespace ContactCenterGUI.Mantenimientos.Tarifa
 
         private void cboTeatro_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            CargarObras();
+            CargarTeatros();
         }
     }
 }

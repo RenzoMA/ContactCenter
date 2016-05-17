@@ -53,6 +53,15 @@ namespace ContactCenterGUI.Mantenimientos
                 manaplaymenu.ShowDialog();
                 this.Show();
             }
+
+            else if (metroComboBox1.SelectedIndex == 11)
+            {
+
+                this.Hide();
+                Mantenimientos.Tarifa.manFareMenu manfaremenu = new Mantenimientos.Tarifa.manFareMenu();
+                manfaremenu.ShowDialog();
+                this.Show();
+            }
         }
     }
 }

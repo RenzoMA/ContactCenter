@@ -17,6 +17,7 @@ namespace ContactCenterGUI.Mantenimientos.ObraC
         public ManPlayMenu()
         {
             InitializeComponent();
+            
         }
 
         private void ManPlayMenu_Load(object sender, EventArgs e)
@@ -41,6 +42,11 @@ namespace ContactCenterGUI.Mantenimientos.ObraC
                 Mantenimientos.ObraC.ManPlayFind manplayfind = new Mantenimientos.ObraC.ManPlayFind();
                 manplayfind.ShowDialog();
             }
+        }
+
+        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

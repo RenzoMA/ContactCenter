@@ -29,7 +29,7 @@ namespace ContactCenterGUI.Mantenimientos.ObraC
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
 
-            Obra obra = servicio.BuscarObraPorNombre(textBox1.Text);
+            Obra obra = servicio.BuscarObraPorNombre(txt.Text);
 
             if (obra == null)
             {
