@@ -155,7 +155,7 @@ namespace ContactCenterDA.Repositories.CC
         public bool Update(Usuario datos)
         {
             String sql = "UPDATE CC_Usuario SET Nombre = @nombre, ApePaterno = @apePaterno, ApeMaterno = @apeMaterno, Correo = @correo, " +
-                         "IdRol = @idRol, FechaMod = @fechaMod, UserMod = @usuarioMod, Estado = @estado WHERE IdUsuario = @idUsuario";
+                         "IdRol = @idRol, FechaMod = @fechaMod, UserMod = @usuarioMod, Estado = @estado,Contraseña = @Contraseña WHERE IdUsuario = @idUsuario";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter apePaterno = UtilDA.SetParameters("@apePaterno", OleDbType.VarChar, datos.ApellidoPaterno);
@@ -166,9 +166,10 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter idusuario = UtilDA.SetParameters("@idUsuario", OleDbType.Integer, datos.IdUsuario);
+            OleDbParameter pContraseña = UtilDA.SetParameters("@Contraseña", OleDbType.VarChar, datos.Contraseña);
             UtilDA.ExecuteBeginTransaction(cmd, cnx);
 
-            if (!UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, true, nombre, apePaterno, apeMaterno, correo, idrol, fechaMod, usuarioMod, estado, idusuario))
+            if (!UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, true, nombre, apePaterno, apeMaterno, correo, idrol, fechaMod, usuarioMod, estado, pContraseña,idusuario))
             {
                 UtilDA.ExecuteRollback(cmd, cnx);
                 return false;

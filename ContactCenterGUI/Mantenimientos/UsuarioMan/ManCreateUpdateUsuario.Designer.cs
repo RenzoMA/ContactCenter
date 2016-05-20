@@ -34,8 +34,6 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.txtApeMaterno = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtLogin = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.lblLogin = new MaterialSkin.Controls.MaterialLabel();
             this.txtContraseña = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblContraseña = new MaterialSkin.Controls.MaterialLabel();
             this.txtRepiteContraseña = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -54,6 +52,8 @@
             this.lblError = new System.Windows.Forms.Label();
             this.cboEstado = new System.Windows.Forms.ComboBox();
             this.lblEstado = new MaterialSkin.Controls.MaterialLabel();
+            this.txtLogin = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.lblLogin = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
             this.SuspendLayout();
@@ -154,44 +154,12 @@
             this.materialLabel3.TabIndex = 11;
             this.materialLabel3.Text = "Apellido Materno:";
             // 
-            // txtLogin
-            // 
-            this.txtLogin.BackColor = System.Drawing.Color.White;
-            this.txtLogin.Depth = 0;
-            this.txtLogin.Hint = "";
-            this.txtLogin.Location = new System.Drawing.Point(162, 289);
-            this.txtLogin.MaxLength = 32767;
-            this.txtLogin.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.PasswordChar = '\0';
-            this.txtLogin.SelectedText = "";
-            this.txtLogin.SelectionLength = 0;
-            this.txtLogin.SelectionStart = 0;
-            this.txtLogin.Size = new System.Drawing.Size(235, 23);
-            this.txtLogin.TabIndex = 6;
-            this.txtLogin.TabStop = false;
-            this.txtLogin.UseSystemPasswordChar = false;
-            // 
-            // lblLogin
-            // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogin.Depth = 0;
-            this.lblLogin.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblLogin.Location = new System.Drawing.Point(16, 289);
-            this.lblLogin.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(50, 19);
-            this.lblLogin.TabIndex = 13;
-            this.lblLogin.Text = "Login:";
-            // 
             // txtContraseña
             // 
             this.txtContraseña.BackColor = System.Drawing.Color.White;
             this.txtContraseña.Depth = 0;
             this.txtContraseña.Hint = "";
-            this.txtContraseña.Location = new System.Drawing.Point(161, 366);
+            this.txtContraseña.Location = new System.Drawing.Point(161, 327);
             this.txtContraseña.MaxLength = 32767;
             this.txtContraseña.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtContraseña.Name = "txtContraseña";
@@ -211,7 +179,7 @@
             this.lblContraseña.Depth = 0;
             this.lblContraseña.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblContraseña.Location = new System.Drawing.Point(15, 366);
+            this.lblContraseña.Location = new System.Drawing.Point(15, 327);
             this.lblContraseña.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(90, 19);
@@ -223,7 +191,7 @@
             this.txtRepiteContraseña.BackColor = System.Drawing.Color.White;
             this.txtRepiteContraseña.Depth = 0;
             this.txtRepiteContraseña.Hint = "";
-            this.txtRepiteContraseña.Location = new System.Drawing.Point(161, 405);
+            this.txtRepiteContraseña.Location = new System.Drawing.Point(161, 366);
             this.txtRepiteContraseña.MaxLength = 32767;
             this.txtRepiteContraseña.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtRepiteContraseña.Name = "txtRepiteContraseña";
@@ -243,7 +211,7 @@
             this.lblRepiteContraseña.Depth = 0;
             this.lblRepiteContraseña.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblRepiteContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblRepiteContraseña.Location = new System.Drawing.Point(15, 405);
+            this.lblRepiteContraseña.Location = new System.Drawing.Point(15, 366);
             this.lblRepiteContraseña.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblRepiteContraseña.Name = "lblRepiteContraseña";
             this.lblRepiteContraseña.Size = new System.Drawing.Size(141, 19);
@@ -390,7 +358,7 @@
             this.cboEstado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cboEstado.Location = new System.Drawing.Point(162, 328);
+            this.cboEstado.Location = new System.Drawing.Point(162, 289);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(235, 21);
             this.cboEstado.TabIndex = 33;
@@ -402,12 +370,44 @@
             this.lblEstado.Depth = 0;
             this.lblEstado.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblEstado.Location = new System.Drawing.Point(15, 327);
+            this.lblEstado.Location = new System.Drawing.Point(15, 288);
             this.lblEstado.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(60, 19);
             this.lblEstado.TabIndex = 34;
             this.lblEstado.Text = "Estado:";
+            // 
+            // txtLogin
+            // 
+            this.txtLogin.BackColor = System.Drawing.Color.White;
+            this.txtLogin.Depth = 0;
+            this.txtLogin.Hint = "";
+            this.txtLogin.Location = new System.Drawing.Point(161, 405);
+            this.txtLogin.MaxLength = 32767;
+            this.txtLogin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.PasswordChar = '\0';
+            this.txtLogin.SelectedText = "";
+            this.txtLogin.SelectionLength = 0;
+            this.txtLogin.SelectionStart = 0;
+            this.txtLogin.Size = new System.Drawing.Size(235, 23);
+            this.txtLogin.TabIndex = 35;
+            this.txtLogin.TabStop = false;
+            this.txtLogin.UseSystemPasswordChar = false;
+            // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogin.Depth = 0;
+            this.lblLogin.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblLogin.Location = new System.Drawing.Point(15, 405);
+            this.lblLogin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(50, 19);
+            this.lblLogin.TabIndex = 36;
+            this.lblLogin.Text = "Login:";
             // 
             // ManCreateUpdateUsuario
             // 
@@ -415,6 +415,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(456, 706);
+            this.Controls.Add(this.txtLogin);
+            this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.cboEstado);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.lblError);
@@ -433,8 +435,6 @@
             this.Controls.Add(this.lblRepiteContraseña);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.lblContraseña);
-            this.Controls.Add(this.txtLogin);
-            this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.txtApeMaterno);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.txtApePaterno);
@@ -460,8 +460,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtApeMaterno;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtLogin;
-        private MaterialSkin.Controls.MaterialLabel lblLogin;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtContraseña;
         private MaterialSkin.Controls.MaterialLabel lblContraseña;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtRepiteContraseña;
@@ -480,5 +478,7 @@
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.ComboBox cboEstado;
         private MaterialSkin.Controls.MaterialLabel lblEstado;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtLogin;
+        private MaterialSkin.Controls.MaterialLabel lblLogin;
     }
 }

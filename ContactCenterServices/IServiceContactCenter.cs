@@ -73,6 +73,6 @@ namespace ContactCenterServices
         List<Usuario> SearchUsuarioByName(string name);
         List<Rol> ListarRol();
         bool InsertarUsuario(Usuario usuario);
-        bool UpdateUsuario(Usuario usuario);
+        bool UpdateUsuario(Usuario usuario,bool cambioContraseña);
     }
 }

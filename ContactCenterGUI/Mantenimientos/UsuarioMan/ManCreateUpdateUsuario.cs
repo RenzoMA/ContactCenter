@@ -68,6 +68,7 @@ namespace ContactCenterGUI.Mantenimientos.UsuarioMan
                 this.Text = "Crear nuevo usuario";
                 btnCreaUpdate.MouseClick += new MouseEventHandler(CrearUsuario);
                 btnCreaUpdate.Text = "Crear";
+                OcultarCamposCreacion();
             }
             else
             {
@@ -83,8 +84,6 @@ namespace ContactCenterGUI.Mantenimientos.UsuarioMan
         {
             lblEstado.Visible = false;
             cboEstado.Visible = false;
-            txtLogin.Visible = false;
-            lblLogin.Visible = false;
         }
         private void SetEventos()
         {
@@ -102,10 +101,10 @@ namespace ContactCenterGUI.Mantenimientos.UsuarioMan
         }
         private void OcultarCamposEdicion()
         {
-            txtContraseña.Visible = false;
             txtRepiteContraseña.Visible = false;
-            lblContraseña.Visible = false;
             lblRepiteContraseña.Visible = false;
+            txtLogin.Visible = false;
+            lblLogin.Visible = false;
         }
         private void PopularDatos()
         {
@@ -174,6 +173,7 @@ namespace ContactCenterGUI.Mantenimientos.UsuarioMan
         }
         private void EditarUsuario(object sender, EventArgs e)
         {
+            bool CambioContraseña = false;
             if (ValidarCampos())
             {
                 usuario.Nombre = txtNombre.Text.Trim();
@@ -184,8 +184,13 @@ namespace ContactCenterGUI.Mantenimientos.UsuarioMan
                 usuario.Aplicaciones = listaAplicacion;
                 usuario.Rol = cboRol.SelectedItem as Rol;
                 usuario.Estado = cboEstado.SelectedIndex == 0 ? "A" : "I";
+                if (!txtContraseña.Text.Trim().Equals(String.Empty))
+                {
+                    usuario.Contraseña = txtContraseña.Text.Trim();
+                    CambioContraseña = true;
+                }
 
-                if (servicio.UpdateUsuario(usuario))
+                if (servicio.UpdateUsuario(usuario, CambioContraseña))
                 {
                     MessageBox.Show("Usuario editado correctamente", "Aviso");
                     this.Close();

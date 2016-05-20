@@ -348,9 +348,9 @@ namespace ContactCenterServices
             return _usuarioService.InsertarUsuario(usuario);
         }
 
-        public bool UpdateUsuario(Usuario usuario)
+        public bool UpdateUsuario(Usuario usuario, bool CambioContraseña)
         {
-            return _usuarioService.UpdateUsuario(usuario);
+            return _usuarioService.UpdateUsuario(usuario,CambioContraseña);
         }
     }
 }

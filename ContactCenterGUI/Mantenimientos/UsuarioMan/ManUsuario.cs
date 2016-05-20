@@ -46,6 +46,7 @@ namespace ContactCenterGUI.Mantenimientos.UsuarioMan
                 Usuario usuario = (Usuario)dgvUsuarios.CurrentRow.DataBoundItem;
                 ManCreateUpdateUsuario createUsuario = new ManCreateUpdateUsuario(false, usuario);
                 createUsuario.ShowDialog();
+                dgvUsuarios.DataSource = servicio.SearchUsuarioByName(userName);
             }
         }
     }

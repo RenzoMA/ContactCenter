@@ -30,8 +30,12 @@ namespace ContactCenterBL.BusinessServices.CC
             return usuarioRepository.SearchByName(name);
         }
 
-        public bool UpdateUsuario(Usuario usuario)
+        public bool UpdateUsuario(Usuario usuario,bool CambioContraseña)
         {
+            if (CambioContraseña)
+            {
+                usuario.Contraseña = Util.Encriptar(usuario.Contraseña);
+            }
             return usuarioRepository.Update(usuario);
         }
 
