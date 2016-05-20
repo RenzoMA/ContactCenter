@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 
-namespace ContactCenterGUI.Mantenimientos.Aplicacion
+namespace ContactCenterGUI.Mantenimientos.AplicacionMan
 {
     public partial class ManAppFind : MaterialForm
     {
@@ -28,7 +28,7 @@ namespace ContactCenterGUI.Mantenimientos.Aplicacion
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Mantenimientos.Aplicacion.ManAppMenu manappmenu = new Mantenimientos.Aplicacion.ManAppMenu();
+            Mantenimientos.AplicacionMan.ManAppMenu manappmenu = new Mantenimientos.AplicacionMan.ManAppMenu();
             manappmenu.ShowDialog();
             
             

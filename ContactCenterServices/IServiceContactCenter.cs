@@ -13,6 +13,7 @@ using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.Entidades.CLienteBE;
+using ContactCenterBE.CC.Entidades.RolBE;
 
 namespace ContactCenterServices
 {
@@ -69,5 +70,9 @@ namespace ContactCenterServices
         List<Zona> ListZonaByTeatro(int IdTeatro);
         List<Asiento> ListAsientoByZona(int IdZona);
         bool UpdateAsientoDisponible(string asientos, string estado);
+        List<Usuario> SearchUsuarioByName(string name);
+        List<Rol> ListarRol();
+        bool InsertarUsuario(Usuario usuario);
+        bool UpdateUsuario(Usuario usuario);
     }
 }

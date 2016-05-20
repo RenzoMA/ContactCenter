@@ -326,6 +326,7 @@ namespace ContactCenterDA.Common
                     oleDbCommand.ExecuteNonQuery();
                     return true;
                 }
+                dtr.Close();
                 return false;
 
             }
@@ -427,5 +428,61 @@ namespace ContactCenterDA.Common
                 throw new Exception(ex.Message);
             }
         }
+
+        public static OleDbDataReader ExecuteSubReader(OleDbCommand oleDbCommand, CommandType commandType, String sql, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)
+        {
+            try
+            {
+                oleDbCommand.Connection = oleDbConnection;
+                oleDbCommand.Parameters.Clear();
+
+                foreach (OleDbParameter parameter in parameters)
+                {
+                    oleDbCommand.Parameters.Add(parameter);
+                }
+
+                oleDbCommand.CommandType = commandType;
+                oleDbCommand.CommandText = sql;
+                return oleDbCommand.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                SaveLog(ex, sql, parameters);
+                throw new Exception(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Retorna el Id Generado en una transacción
+        /// </summary>
+        /// <param name="oleDbCommand"></param>
+        /// <param name="oleDbConnection"></param>
+        /// <param name="transaction"></param>
+        /// <returns>Id Generado</returns>
+        public static int GetIdentity(OleDbCommand oleDbCommand, OleDbConnection oleDbConnection, bool transaction)
+        {
+            try
+            {
+                oleDbCommand.CommandText = "SELECT @@Identity";
+                int id = (int)oleDbCommand.ExecuteScalar();
+                return id;
+
+            }
+            catch (Exception ex)
+            {
+                oleDbCommand.CommandText = "ROLLBACK";
+                oleDbCommand.ExecuteNonQuery();
+                SaveLog(ex, "SELECT @@Identity", null);
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (oleDbConnection.State == ConnectionState.Open && !transaction)
+                {
+                    oleDbConnection.Close();
+                }
+            }
+        }
+
     }
 }

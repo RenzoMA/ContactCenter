@@ -38,7 +38,7 @@ namespace ContactCenterGUI.Mantenimientos.ObraC
             {
 
                 this.Hide();
-                Mantenimientos.Aplicacion.ManAppFind manappbuscar = new Mantenimientos.Aplicacion.ManAppFind();
+                Mantenimientos.AplicacionMan.ManAppFind manappbuscar = new Mantenimientos.AplicacionMan.ManAppFind();
                 manappbuscar.ShowDialog();
             }
         }

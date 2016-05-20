@@ -152,22 +152,22 @@
     <Compile Include="Helpers\HelperConexion.cs" />
     <Compile Include="Helpers\HelperControl.cs" />
     <Compile Include="Helpers\HelperForm.cs" />
-    <Compile Include="Mantenimientos\Aplicacion\ManAppFind.cs">
+    <Compile Include="Mantenimientos\AplicacionMan\ManAppFind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\Aplicacion\ManAppFind.Designer.cs">
+    <Compile Include="Mantenimientos\AplicacionMan\ManAppFind.Designer.cs">
       <DependentUpon>ManAppFind.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\Aplicacion\ManAppCreate.cs">
+    <Compile Include="Mantenimientos\AplicacionMan\ManAppCreate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\Aplicacion\ManAppCreate.Designer.cs">
+    <Compile Include="Mantenimientos\AplicacionMan\ManAppCreate.Designer.cs">
       <DependentUpon>ManAppCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\Aplicacion\ManAppMenu.cs">
+    <Compile Include="Mantenimientos\AplicacionMan\ManAppMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\Aplicacion\ManAppMenu.Designer.cs">
+    <Compile Include="Mantenimientos\AplicacionMan\ManAppMenu.Designer.cs">
       <DependentUpon>ManAppMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\AsientoMan\ManAsiento.cs">
@@ -217,6 +217,18 @@
     </Compile>
     <Compile Include="Mantenimientos\ObraC\ManPlayMenu.Designer.cs">
       <DependentUpon>ManPlayMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.Designer.cs">
+      <DependentUpon>ManCreateUpdateUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\UsuarioMan\ManUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\UsuarioMan\ManUsuario.Designer.cs">
+      <DependentUpon>ManUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\FindReservation.cs">
       <SubType>Form</SubType>
@@ -321,13 +333,13 @@
     <EmbeddedResource Include="CC\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\Aplicacion\ManAppFind.resx">
+    <EmbeddedResource Include="Mantenimientos\AplicacionMan\ManAppFind.resx">
       <DependentUpon>ManAppFind.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\Aplicacion\ManAppCreate.resx">
+    <EmbeddedResource Include="Mantenimientos\AplicacionMan\ManAppCreate.resx">
       <DependentUpon>ManAppCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\Aplicacion\ManAppMenu.resx">
+    <EmbeddedResource Include="Mantenimientos\AplicacionMan\ManAppMenu.resx">
       <DependentUpon>ManAppMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\AsientoMan\ManAsiento.resx">
@@ -344,6 +356,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\ObraC\ManPlayMenu.resx">
       <DependentUpon>ManPlayMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.resx">
+      <DependentUpon>ManCreateUpdateUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\UsuarioMan\ManUsuario.resx">
+      <DependentUpon>ManUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\FindReservation.resx">
       <DependentUpon>FindReservation.cs</DependentUpon>
@@ -425,6 +443,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\ic_menu_edit.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\ic_menu_add.png" />
     <None Include="Resources\cancel-256.png" />
     <None Include="Resources\loading2.gif" />
     <None Include="Resources\loading3.gif" />

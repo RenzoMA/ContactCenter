@@ -19,6 +19,22 @@ namespace ContactCenterBL.BusinessServices.CC
             usuarioRepository = _usuarioRepository;
         }
 
+        public bool InsertarUsuario(Usuario usuario)
+        {
+            usuario.Contraseña = Util.Encriptar(usuario.Contraseña);
+            return usuarioRepository.Insert(usuario);
+        }
+
+        public List<Usuario> SearchByName(string name)
+        {
+            return usuarioRepository.SearchByName(name);
+        }
+
+        public bool UpdateUsuario(Usuario usuario)
+        {
+            return usuarioRepository.Update(usuario);
+        }
+
         public Usuario ValidarUsuario(string login, string contraseña)
         {
             string passwordEncriptado = Util.Encriptar(contraseña);

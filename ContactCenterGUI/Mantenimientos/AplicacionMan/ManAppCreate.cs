@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 
-namespace ContactCenterGUI.Mantenimientos
+namespace ContactCenterGUI.Mantenimientos.AplicacionMan
 {
     public partial class ManAppCreate : MaterialForm
     {
@@ -18,17 +18,12 @@ namespace ContactCenterGUI.Mantenimientos
         {
             InitializeComponent();
 
-
-            var materialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.LightBlue800, MaterialSkin.Primary.LightBlue900, MaterialSkin.Primary.LightBlue500, MaterialSkin.Accent.LightBlue200, MaterialSkin.TextShade.WHITE);
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Mantenimientos.Aplicacion.ManAppMenu manappmenu = new Mantenimientos.Aplicacion.ManAppMenu();
+            Mantenimientos.AplicacionMan.ManAppMenu manappmenu = new Mantenimientos.AplicacionMan.ManAppMenu();
             manappmenu.ShowDialog();
             //prueba
             

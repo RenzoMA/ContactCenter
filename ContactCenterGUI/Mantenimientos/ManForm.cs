@@ -34,7 +34,7 @@ namespace ContactCenterGUI.Mantenimientos
             {
 
                 this.Hide();
-                Mantenimientos.Aplicacion.ManAppMenu manappmenu = new Mantenimientos.Aplicacion.ManAppMenu();
+                Mantenimientos.AplicacionMan.ManAppMenu manappmenu = new Mantenimientos.AplicacionMan.ManAppMenu();
                 manappmenu.ShowDialog();
                 this.Show();
 
@@ -44,6 +44,13 @@ namespace ContactCenterGUI.Mantenimientos
                 this.Hide();
                 AsientoMan.ManAsiento manfunmenu = new AsientoMan.ManAsiento();
                 manfunmenu.ShowDialog();
+                this.Show();
+            }
+            else if (metroComboBox1.SelectedIndex == 4)
+            {
+                this.Hide();
+                UsuarioMan.ManUsuario manUsuario = new UsuarioMan.ManUsuario();
+                manUsuario.ShowDialog();
                 this.Show();
             }
             else if(metroComboBox1.SelectedIndex == 7)

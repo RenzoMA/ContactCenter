@@ -18,6 +18,7 @@ using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.Entidades.CLienteBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
+using ContactCenterBE.CC.Entidades.RolBE;
 
 namespace ContactCenterServices
 {
@@ -35,6 +36,7 @@ namespace ContactCenterServices
         private IPromocionService _promocionService;
         private ITipoPromocionService _tipoPromocionService;
         private IZonaService _zonaService;
+        private IRolService _rolService;
 
         public ServiceContactCenter(
             IAsientoService asientoService,
@@ -47,7 +49,8 @@ namespace ContactCenterServices
             IClienteService clienteService,
             IPromocionService promocionService,
             ITipoPromocionService tipoPromocionService,
-            IZonaService zonaService)
+            IZonaService zonaService,
+            IRolService rolService)
         {
             _clienteService = clienteService;
             _asientoService = asientoService;
@@ -60,6 +63,7 @@ namespace ContactCenterServices
             _reservaService = reservaService;
             _tipoPromocionService = tipoPromocionService;
             _zonaService = zonaService;
+            _rolService = rolService;
         }
 
         public void Dispose()
@@ -327,6 +331,26 @@ namespace ContactCenterServices
         public bool UpdateAsientoDisponible(string asientos, string estado)
         {
             return _asientoService.UpdateAsientoDisponible(asientos, estado);
+        }
+
+        public List<Usuario> SearchUsuarioByName(string name)
+        {
+            return _usuarioService.SearchByName(name);
+        }
+
+        public List<Rol> ListarRol()
+        {
+            return _rolService.GetLista();
+        }
+
+        public bool InsertarUsuario(Usuario usuario)
+        {
+            return _usuarioService.InsertarUsuario(usuario);
+        }
+
+        public bool UpdateUsuario(Usuario usuario)
+        {
+            return _usuarioService.UpdateUsuario(usuario);
         }
     }
 }

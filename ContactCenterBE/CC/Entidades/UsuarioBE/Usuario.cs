@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBE.CC.Entidades.RolBE;
+using ContactCenterBE.CC.Entidades.AplicacionBE;
 using ContactCenterBE.Base;
 
 
@@ -21,5 +22,6 @@ namespace ContactCenterBE.CC.Entidades.UsuarioBE
         public String Contraseña { get; set; }
         public Rol Rol { get; set; }
         public string Estado { get; set; }
+        public List<Aplicacion> Aplicaciones { get; set; }
     }
 }

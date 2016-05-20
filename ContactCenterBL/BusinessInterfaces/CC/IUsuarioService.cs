@@ -10,5 +10,8 @@ namespace ContactCenterBL.BusinessInterfaces.CC
     public interface IUsuarioService
     {
         Usuario ValidarUsuario(string login, string contraseña);
+        List<Usuario> SearchByName(string name);
+        bool InsertarUsuario(Usuario usuario);
+        bool UpdateUsuario(Usuario usuario);
     }
 }
