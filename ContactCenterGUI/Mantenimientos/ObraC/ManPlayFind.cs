@@ -28,8 +28,9 @@ namespace ContactCenterGUI.Mantenimientos.ObraC
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            
+
             Obra obra = servicio.BuscarObraPorNombre(txt.Text);
+
             if (obra == null)
             {
                 MessageBox.Show("La obra ingresada no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
