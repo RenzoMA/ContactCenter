@@ -25,5 +25,10 @@ namespace ContactCenterGUI.Teatros
         {
             HelperTeatro.MostrarDisponibilidad(this, (Reserva)this.Tag);
         }
+
+        private void button221_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
