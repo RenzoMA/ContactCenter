@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 
-namespace ContactCenterGUI.Mantenimientos.Aplicacion
+namespace ContactCenterGUI.Mantenimientos.AplicacionMan
 {
     public partial class ManAppMenu : MaterialForm
     {
@@ -30,7 +30,7 @@ namespace ContactCenterGUI.Mantenimientos.Aplicacion
             {
 
                 this.Hide();
-                Mantenimientos.ManAppCreate manappcreate = new Mantenimientos.ManAppCreate();
+                Mantenimientos.AplicacionMan.ManAppCreate manappcreate = new Mantenimientos.AplicacionMan.ManAppCreate();
                 manappcreate.ShowDialog();
                 this.Close();
 
@@ -38,7 +38,7 @@ namespace ContactCenterGUI.Mantenimientos.Aplicacion
             else if (metroComboBox1.SelectedIndex == 2) {
 
                 this.Hide();
-                Mantenimientos.Aplicacion.ManAppFind manappbuscar = new Mantenimientos.Aplicacion.ManAppFind();
+                Mantenimientos.AplicacionMan.ManAppFind manappbuscar = new Mantenimientos.AplicacionMan.ManAppFind();
                 manappbuscar.ShowDialog();
                 this.Close();
             }

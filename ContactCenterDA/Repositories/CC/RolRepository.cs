@@ -56,7 +56,7 @@ namespace ContactCenterDA.Repositories.CC
 
         public IList<Rol> GetLista()
         {
-            List<Rol> listaRol = null;
+            List<Rol> listaRol = new List<Rol>();
 
             String sql = "SELECT * FROM CC_Rol";
 
