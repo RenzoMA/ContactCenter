@@ -240,7 +240,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             List<Asiento> listaAsiento = new List<Asiento>();
             Asiento asiento = null;
 
-            string sql = "SELECT * FROM TH_ASIENTO WHERE IdZona = @IdZona ORDER BY Fila,Descripcion";
+            string sql = "SELECT * FROM TH_ASIENTO WHERE IdZona = @IdZona ORDER BY IdAsiento";
             OleDbParameter pIdZona = UtilDA.SetParameters("@IdZona", OleDbType.Integer, IdZona);
 
 

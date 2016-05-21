@@ -131,5 +131,14 @@ namespace ContactCenterGUI.Mantenimientos.AsientoMan
                 }
             }
         }
+
+        private void btnCheckAll_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvAsientos.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                chk.Value = (chk.Value == null ? true : Convert.ToBoolean(chk.Value) == false ? true : false);
+            }
+        }
     }
 }
