@@ -80,6 +80,8 @@ namespace ContactCenterDA.Repositories.CC.TH
             return lTeatro;
         }
 
+
+
         public bool Insert(Teatro datos)
         {
             string sql = "INSERT INTO TH_TEATRO (Estado,Nombre,FechaCrea,UserCrea,frmTeatro) " +

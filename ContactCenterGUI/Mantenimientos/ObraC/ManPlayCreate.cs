@@ -19,6 +19,7 @@ namespace ContactCenterGUI.Mantenimientos.ObraC
     public partial class ManPlayCreate : MaterialForm
     {
         IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+
         public ManPlayCreate()
         {
             InitializeComponent();
@@ -58,7 +59,7 @@ namespace ContactCenterGUI.Mantenimientos.ObraC
             cboTeatro.DataSource = servicio.ListarTeatros();
             cboTeatro.DisplayMember = "Nombre";
             cboEstado.SelectedIndex = 0;
-
         }
+
     }
 }
