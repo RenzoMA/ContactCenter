@@ -9,6 +9,6 @@ namespace ContactCenterBE.CC.TH.Entidades.ZonaBE
 {
     public interface IZonaRepository : IBaseRepository<Zona>
     {
-        List<Zona> GetZonaTeatro(int id);
+        List<Zona> ListZonaByTeatro(int IdTeatro);
     }
 }

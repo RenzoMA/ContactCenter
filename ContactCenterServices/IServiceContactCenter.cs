@@ -66,9 +66,8 @@ namespace ContactCenterServices
         List<Reserva> ReporteReservas(int idTeatro, DateTime fecha);
         List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fecha);
         bool CancelarReserva(int idReserva);
-
-        //Zona
-
-        List<Zona> ListaZonaTeatro(int id);
+        List<Zona> ListZonaByTeatro(int IdTeatro);
+        List<Asiento> ListAsientoByZona(int IdZona);
+        bool UpdateAsientoDisponible(string asientos, string estado);
     }
 }

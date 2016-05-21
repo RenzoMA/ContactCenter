@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ContactCenterGUI.Helpers;
+using System.Configuration;
 
 
 namespace ContactCenterGUI.CC
@@ -29,8 +30,8 @@ namespace ContactCenterGUI.CC
             if (intentos < 3)
             {
                 lblMensajeConexion.Text = "Iniciando...";
-                await Task.Delay(2000);
-                if (HelperConexion.PingHost("localhost"))
+                await Task.Delay(1500);
+                if (HelperConexion.PingHost(ConfigurationManager.AppSettings["ServerAccess"]))
                 {
                     lblMensajeConexion.Text = "Conexión exitosa..";
                     await Task.Delay(1000);
@@ -38,10 +39,6 @@ namespace ContactCenterGUI.CC
                     Login login = new Login();
                     login.ShowDialog();
                     this.Close();
-                    //Teatros.LaPlazaTheater teatro = new Teatros.LaPlazaTheater();
-                    //teatro.ShowDialog();
-                    //this.Close();
-
                 }
                 else
                 {

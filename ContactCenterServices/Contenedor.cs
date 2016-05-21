@@ -25,13 +25,11 @@ using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 
 
 
-
 namespace ContactCenterServices
 {
     public class Contenedor
     {
         public static IUnityContainer current { get; private set; }
-
         static Contenedor()
         {
             current = new UnityContainer();
@@ -50,7 +48,7 @@ namespace ContactCenterServices
             current.RegisterType<IClienteService, ClienteService>();
             current.RegisterType<ITipoPromocionService, TipoPromocionService>();
             current.RegisterType<IPromocionService, PromocionService>();
-            current.RegisterType<IZonaService, ZonaService > ();
+            current.RegisterType<IZonaService, ZonaService>();
 
             // Entidades - DA
             current.RegisterType<IAsientoRepository, AsientoRepository>();

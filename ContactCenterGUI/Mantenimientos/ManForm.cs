@@ -39,6 +39,13 @@ namespace ContactCenterGUI.Mantenimientos
                 this.Show();
 
             }
+            else if (metroComboBox1.SelectedIndex == 6)
+            {
+                this.Hide();
+                AsientoMan.ManAsiento manfunmenu = new AsientoMan.ManAsiento();
+                manfunmenu.ShowDialog();
+                this.Show();
+            }
             else if(metroComboBox1.SelectedIndex == 7)
             {
                // this.Hide();

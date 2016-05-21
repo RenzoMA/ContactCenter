@@ -234,5 +234,40 @@ namespace ContactCenterDA.Repositories.CC.TH
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, pToken);
 
         }
+
+        public List<Asiento> ListAsientoByZona(int IdZona)
+        {
+            List<Asiento> listaAsiento = new List<Asiento>();
+            Asiento asiento = null;
+
+            string sql = "SELECT * FROM TH_ASIENTO WHERE IdZona = @IdZona ORDER BY Fila,Descripcion";
+            OleDbParameter pIdZona = UtilDA.SetParameters("@IdZona", OleDbType.Integer, IdZona);
+
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pIdZona))
+            {
+                while (dtr.Read())
+                {
+                    asiento = new Asiento()
+                    {
+                        IdAsiento = DataConvert.ToInt(dtr["IdAsiento"]),
+                        Descripcion = DataConvert.ToString(dtr["Descripcion"]),
+                        Fila = DataConvert.ToString(dtr["Fila"]),
+                        Disponible = DataConvert.ToString(dtr["Disponible"])
+                    };
+                    listaAsiento.Add(asiento);
+                }
+            }
+            UtilDA.Close(cnx);
+
+            return listaAsiento;
+        }
+
+        public bool UpdateAsientoDisponible(string asientos, string estado)
+        {
+            string sql = "UPDATE TH_ASIENTO SET DISPONIBLE = @Disponible WHERE IdAsiento IN (" + asientos + ")";
+            OleDbParameter pEstado = UtilDA.SetParameters("@Disponible", OleDbType.VarChar, estado);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, pEstado);
+        }
     }
 }

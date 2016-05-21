@@ -170,6 +170,12 @@
     <Compile Include="Mantenimientos\Aplicacion\ManAppMenu.Designer.cs">
       <DependentUpon>ManAppMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\AsientoMan\ManAsiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\AsientoMan\ManAsiento.Designer.cs">
+      <DependentUpon>ManAsiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\funcioin\manFuncionCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\Aplicacion\ManAppMenu.resx">
       <DependentUpon>ManAppMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\AsientoMan\ManAsiento.resx">
+      <DependentUpon>ManAsiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\ManForm.resx">
       <DependentUpon>ManForm.cs</DependentUpon>

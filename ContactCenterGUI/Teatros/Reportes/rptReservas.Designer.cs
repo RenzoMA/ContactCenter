@@ -64,7 +64,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ContactCenterGUI.Teatros.Reportes.rptReservas.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(24, 151);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1128, 487);
+            this.reportViewer1.Size = new System.Drawing.Size(1252, 487);
             this.reportViewer1.TabIndex = 6;
             // 
             // dtpFechaObra
@@ -120,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 650);
+            this.ClientSize = new System.Drawing.Size(1288, 650);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.lblTituloTeatro);
             this.Controls.Add(this.materialRaisedButton1);

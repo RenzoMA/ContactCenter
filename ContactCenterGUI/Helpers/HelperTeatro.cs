@@ -238,7 +238,14 @@ namespace ContactCenterGUI.Helpers
         }
         private static void CancelarAsientoTotal(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Se perderan todos los cambios realizados hasta el momento. ¿ Seguro de regresar ?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (asientosReserva.Count > 0)
+            {
+                if (MessageBox.Show("Se perderan todos los cambios realizados hasta el momento. ¿ Seguro de regresar ?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    EliminarSeparadas(tokenTemp);
+                }
+            }
+            else
             {
                 EliminarSeparadas(tokenTemp);
             }

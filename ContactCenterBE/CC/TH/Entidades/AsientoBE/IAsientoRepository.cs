@@ -14,5 +14,7 @@ namespace ContactCenterBE.CC.TH.Entidades.AsientoBE
         bool InserAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, String token);
         bool EliminarAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, string token);
         bool EliminarAsientoTemporalTotal(string token);
+        List<Asiento> ListAsientoByZona(int IdZona);
+        bool UpdateAsientoDisponible(string asientos, string estado);
     }
 }

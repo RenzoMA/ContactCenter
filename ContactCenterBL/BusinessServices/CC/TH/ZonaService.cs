@@ -3,32 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ContactCenterBL.BusinessInterfaces.CC.TH;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
+using ContactCenterBL.BusinessInterfaces.CC.TH;
 
 namespace ContactCenterBL.BusinessServices.CC.TH
 {
-    
-
     public class ZonaService : IZonaService
     {
-        private readonly IZonaRepository _zonaRepository;
-
-        public ZonaService(IZonaRepository zonaRepository)
+        private readonly IZonaRepository zonaRepository;
+        public ZonaService(IZonaRepository _zonaRepository)
         {
-            _zonaRepository = zonaRepository;
+            zonaRepository = _zonaRepository;
         }
-
-        public List<Zona> ListaZonaTeatro(int id)
+        public List<Zona> ListZonaByTeatro(int IdTeatro)
         {
-            List<Zona> listaZona = _zonaRepository.GetZonaTeatro(id).ToList();
-            Zona obj = new Zona()
-            {
-                IdZona = 0,
-                Nombre = "Seleccione Zona"
-            };
-            listaZona.Insert(0, obj);
-            return listaZona;
+            return zonaRepository.ListZonaByTeatro(IdTeatro);
         }
     }
 }

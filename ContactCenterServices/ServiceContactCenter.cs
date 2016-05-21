@@ -314,11 +314,19 @@ namespace ContactCenterServices
             return _reservaService.CancelarReserva(idReserva);
         }
 
-        //ZonaService
-
-        public List<Zona> ListaZonaTeatro(int id)
+        public List<Zona> ListZonaByTeatro(int IdTeatro)
         {
-            return _zonaService.ListaZonaTeatro(id);
+            return _zonaService.ListZonaByTeatro(IdTeatro);
+        }
+
+        public List<Asiento> ListAsientoByZona(int IdZona)
+        {
+            return _asientoService.ListAsientoByZona(IdZona);
+        }
+
+        public bool UpdateAsientoDisponible(string asientos, string estado)
+        {
+            return _asientoService.UpdateAsientoDisponible(asientos, estado);
         }
     }
 }
