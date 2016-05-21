@@ -64,7 +64,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public IList<Obra> GetLista()
         {
-            List<Obra> listaObra = null;
+            List<Obra> listaObra = new List<Obra>();
 
             String sql = "SELECT * FROM TH_OBRA O INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO";
 

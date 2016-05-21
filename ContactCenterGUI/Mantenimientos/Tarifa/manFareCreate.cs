@@ -78,7 +78,7 @@ namespace ContactCenterGUI.Mantenimientos.Tarifa
             teatro = cboTeatro.SelectedItem as Teatro;
             using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
             {
-                listaZona = servicio.ListaZonaTeatro(teatro.IdTeatro);
+                listaZona = servicio.ListZonaByTeatro(teatro.IdTeatro);
                 cboZona.DataSource = listaZona;
                 cboZona.DisplayMember = "Nombre";
             }
