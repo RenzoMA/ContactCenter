@@ -1,6 +1,6 @@
 ﻿namespace ContactCenterGUI.Mantenimientos.FuncionMan
 {
-    partial class manFuncionMenu
+    partial class ManFuncionMenu
     {
         /// <summary>
         /// Required designer variable.

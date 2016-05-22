@@ -1,6 +1,6 @@
 ﻿namespace ContactCenterGUI.Mantenimientos
 {
-    partial class ManForm
+    partial class ManPrincipal
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace ContactCenterGUI.Mantenimientos.PromocionMan
 {
-    partial class manPromotionFind
+    partial class ManPromocionCreate
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "manPromotionFind";
+            this.Text = "manPromotionCreate";
         }
 
         #endregion

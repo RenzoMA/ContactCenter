@@ -19,7 +19,7 @@ using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 
 namespace ContactCenterGUI.Mantenimientos.TarifaMan
 {
-    public partial class manFareCreate : MaterialForm
+    public partial class ManTarifaCreate : MaterialForm
     {
         private Teatro teatro = null;
         private List<Teatro> listaTeatro;
@@ -32,7 +32,7 @@ namespace ContactCenterGUI.Mantenimientos.TarifaMan
 
 
 
-        public manFareCreate()
+        public ManTarifaCreate()
         {
             InitializeComponent();
         }

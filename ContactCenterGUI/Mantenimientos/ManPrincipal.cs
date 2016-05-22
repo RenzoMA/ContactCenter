@@ -19,9 +19,9 @@ using ContactCenterGUI.Mantenimientos.UsuarioMan;
 
 namespace ContactCenterGUI.Mantenimientos
 {
-    public partial class ManForm : MaterialForm
+    public partial class ManPrincipal : MaterialForm
     {
-        public ManForm()
+        public ManPrincipal()
         {
             InitializeComponent();
         }
@@ -78,7 +78,7 @@ namespace ContactCenterGUI.Mantenimientos
             else if (metroComboBox1.SelectedItem.ToString() == "Tarifa")
             {
                 this.Hide();
-                manFareMenu manfaremenu = new manFareMenu();
+                ManTarifaMenu manfaremenu = new ManTarifaMenu();
                 manfaremenu.ShowDialog();
                 this.Show();
             }

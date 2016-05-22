@@ -36,7 +36,7 @@ namespace ContactCenterGUI.Teatros
 
         private void btnGenerarReporte_Click(object sender, EventArgs e)
         {
-            rptReservas rptRes = new rptReservas();
+            RptReservas rptRes = new RptReservas();
             rptRes.ShowDialog();
         }
 

@@ -17,11 +17,11 @@ using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 
 namespace ContactCenterGUI.Teatros.Reportes
 {
-    public partial class rptReservas : MaterialForm
+    public partial class RptReservas : MaterialForm
     {
         private Teatro teatro;
         private DateTime fechaObra; 
-        public rptReservas()
+        public RptReservas()
         {
             InitializeComponent();
         }

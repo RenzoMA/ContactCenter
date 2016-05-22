@@ -13,9 +13,9 @@ using MaterialSkin.Controls;
 
 namespace ContactCenterGUI.Mantenimientos.FuncionMan
 {
-    public partial class manFuncionCreate : MaterialForm
+    public partial class ManFuncionCreate : MaterialForm
     {
-        public manFuncionCreate()
+        public ManFuncionCreate()
         {
             InitializeComponent();
         }

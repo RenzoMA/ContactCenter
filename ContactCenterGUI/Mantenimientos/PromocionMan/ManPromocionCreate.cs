@@ -12,9 +12,9 @@ using MaterialSkin.Controls;
 
 namespace ContactCenterGUI.Mantenimientos.PromocionMan
 {
-    public partial class manPromotionFind : MaterialForm
+    public partial class ManPromocionCreate : MaterialForm
     {
-        public manPromotionFind()
+        public ManPromocionCreate()
         {
             InitializeComponent();
         }

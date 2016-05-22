@@ -1,6 +1,6 @@
 ﻿namespace ContactCenterGUI.Mantenimientos.TarifaMan
 {
-    partial class manFareCreate
+    partial class ManTarifaCreate
     {
         /// <summary>
         /// Required designer variable.

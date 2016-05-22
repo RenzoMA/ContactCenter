@@ -1,6 +1,6 @@
 ﻿namespace ContactCenterGUI.Teatros.Reportes
 {
-    partial class rptReservas
+    partial class RptReservas
     {
         /// <summary>
         /// Required designer variable.

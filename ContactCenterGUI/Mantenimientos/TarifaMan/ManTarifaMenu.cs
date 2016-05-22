@@ -19,9 +19,9 @@ using ContactCenterGUI.Mantenimientos.UsuarioMan;
 
 namespace ContactCenterGUI.Mantenimientos.TarifaMan
 {
-    public partial class manFareMenu : MaterialForm
+    public partial class ManTarifaMenu : MaterialForm
     {
-        public manFareMenu()
+        public ManTarifaMenu()
         {
             InitializeComponent();
         }
@@ -36,7 +36,7 @@ namespace ContactCenterGUI.Mantenimientos.TarifaMan
             if (metroComboBox1.SelectedIndex == 1)
             {
                 this.Hide();
-                manFareCreate manfarecreate = new manFareCreate();
+                ManTarifaCreate manfarecreate = new ManTarifaCreate();
                 manfarecreate.ShowDialog();
 
             }
@@ -44,7 +44,7 @@ namespace ContactCenterGUI.Mantenimientos.TarifaMan
             {
 
                 this.Hide();
-                manFareFind manfarefind = new manFareFind();
+                ManTarifaFind manfarefind = new ManTarifaFind();
                 manfarefind.ShowDialog();
             }
         }
