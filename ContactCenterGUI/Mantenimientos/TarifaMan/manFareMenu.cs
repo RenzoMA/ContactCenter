@@ -9,8 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
+using ContactCenterGUI.Mantenimientos.AplicacionMan;
+using ContactCenterGUI.Mantenimientos.AsientoMan;
+using ContactCenterGUI.Mantenimientos.FuncionMan;
+using ContactCenterGUI.Mantenimientos.ObraMan;
+using ContactCenterGUI.Mantenimientos.PromocionMan;
+using ContactCenterGUI.Mantenimientos.TarifaMan;
+using ContactCenterGUI.Mantenimientos.UsuarioMan;
 
-namespace ContactCenterGUI.Mantenimientos.Tarifa
+namespace ContactCenterGUI.Mantenimientos.TarifaMan
 {
     public partial class manFareMenu : MaterialForm
     {
@@ -29,7 +36,7 @@ namespace ContactCenterGUI.Mantenimientos.Tarifa
             if (metroComboBox1.SelectedIndex == 1)
             {
                 this.Hide();
-                Mantenimientos.Tarifa.manFareCreate manfarecreate = new Mantenimientos.Tarifa.manFareCreate();
+                manFareCreate manfarecreate = new manFareCreate();
                 manfarecreate.ShowDialog();
 
             }
@@ -37,7 +44,7 @@ namespace ContactCenterGUI.Mantenimientos.Tarifa
             {
 
                 this.Hide();
-                Mantenimientos.Tarifa.manFareFind manfarefind = new Mantenimientos.Tarifa.manFareFind();
+                manFareFind manfarefind = new manFareFind();
                 manfarefind.ShowDialog();
             }
         }

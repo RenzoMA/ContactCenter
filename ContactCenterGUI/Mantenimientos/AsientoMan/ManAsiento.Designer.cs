@@ -43,6 +43,8 @@
             this.btnDeshabilitar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnHabilitar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnCheckAll = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsientos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +64,7 @@
             this.dgvAsientos.Name = "dgvAsientos";
             this.dgvAsientos.ReadOnly = true;
             this.dgvAsientos.RowHeadersVisible = false;
-            this.dgvAsientos.Size = new System.Drawing.Size(627, 426);
+            this.dgvAsientos.Size = new System.Drawing.Size(423, 451);
             this.dgvAsientos.TabIndex = 3;
             this.dgvAsientos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsientos_CellContentClick);
             // 
@@ -113,7 +115,7 @@
             this.groupBox1.Controls.Add(this.materialLabel5);
             this.groupBox1.Location = new System.Drawing.Point(12, 74);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(627, 106);
+            this.groupBox1.Size = new System.Drawing.Size(556, 106);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Activar Asientos";
@@ -181,7 +183,7 @@
             // btnDeshabilitar
             // 
             this.btnDeshabilitar.Depth = 0;
-            this.btnDeshabilitar.Location = new System.Drawing.Point(522, 657);
+            this.btnDeshabilitar.Location = new System.Drawing.Point(451, 299);
             this.btnDeshabilitar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDeshabilitar.Name = "btnDeshabilitar";
             this.btnDeshabilitar.Primary = true;
@@ -194,7 +196,7 @@
             // btnHabilitar
             // 
             this.btnHabilitar.Depth = 0;
-            this.btnHabilitar.Location = new System.Drawing.Point(12, 657);
+            this.btnHabilitar.Location = new System.Drawing.Point(451, 261);
             this.btnHabilitar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnHabilitar.Name = "btnHabilitar";
             this.btnHabilitar.Primary = true;
@@ -207,21 +209,44 @@
             // btnCheckAll
             // 
             this.btnCheckAll.Depth = 0;
-            this.btnCheckAll.Location = new System.Drawing.Point(266, 657);
+            this.btnCheckAll.Location = new System.Drawing.Point(451, 225);
             this.btnCheckAll.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCheckAll.Name = "btnCheckAll";
             this.btnCheckAll.Primary = true;
             this.btnCheckAll.Size = new System.Drawing.Size(117, 30);
             this.btnCheckAll.TabIndex = 17;
-            this.btnCheckAll.Text = "Check all";
+            this.btnCheckAll.Text = "Check Todo";
             this.btnCheckAll.UseVisualStyleBackColor = true;
             this.btnCheckAll.Click += new System.EventHandler(this.btnCheckAll_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.LightGray;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(325, 188);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 17);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "S : SÍ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.LightGray;
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(325, 205);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "N : NO";
             // 
             // ManAsiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 703);
+            this.ClientSize = new System.Drawing.Size(586, 703);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCheckAll);
             this.Controls.Add(this.btnHabilitar);
             this.Controls.Add(this.btnDeshabilitar);
@@ -229,12 +254,13 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ManAsiento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Asientos";
+            this.Text = "Configurar Asientos";
             this.Load += new System.EventHandler(this.ManAsiento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsientos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -255,5 +281,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Fila;
         private System.Windows.Forms.DataGridViewTextBoxColumn Disponible;
         private MaterialSkin.Controls.MaterialRaisedButton btnCheckAll;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

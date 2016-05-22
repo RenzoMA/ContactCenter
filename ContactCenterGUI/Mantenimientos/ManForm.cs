@@ -9,6 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
+using ContactCenterGUI.Mantenimientos.AplicacionMan;
+using ContactCenterGUI.Mantenimientos.AsientoMan;
+using ContactCenterGUI.Mantenimientos.FuncionMan;
+using ContactCenterGUI.Mantenimientos.ObraMan;
+using ContactCenterGUI.Mantenimientos.PromocionMan;
+using ContactCenterGUI.Mantenimientos.TarifaMan;
+using ContactCenterGUI.Mantenimientos.UsuarioMan;
 
 namespace ContactCenterGUI.Mantenimientos
 {
@@ -30,7 +37,7 @@ namespace ContactCenterGUI.Mantenimientos
             {
                 MessageBox.Show("Seleccione un mantenimiento", "ERROR");
             }
-            else if (metroComboBox1.SelectedIndex == 1)
+            else if (metroComboBox1.SelectedItem.ToString() == "Aplicación")
             {
 
                 this.Hide();
@@ -39,40 +46,39 @@ namespace ContactCenterGUI.Mantenimientos
                 this.Show();
 
             }
-            else if (metroComboBox1.SelectedIndex == 6)
+            else if (metroComboBox1.SelectedItem.ToString() == "Asiento")
             {
                 this.Hide();
                 AsientoMan.ManAsiento manfunmenu = new AsientoMan.ManAsiento();
                 manfunmenu.ShowDialog();
                 this.Show();
             }
-            else if (metroComboBox1.SelectedIndex == 4)
+            else if (metroComboBox1.SelectedItem.ToString() == "Usuario")
             {
                 this.Hide();
-                UsuarioMan.ManUsuario manUsuario = new UsuarioMan.ManUsuario();
+                ManUsuario manUsuario = new ManUsuario();
                 manUsuario.ShowDialog();
                 this.Show();
             }
-            else if(metroComboBox1.SelectedIndex == 7)
+            else if(metroComboBox1.SelectedItem.ToString() == "Funcion")
             {
                // this.Hide();
                // Mantenimientos.Funcion.ManFunctionMenu manfunmenu = new Mantenimientos.Funcion.ManFunctionMenu();
                // manfunmenu.ShowDialog();
                 //this.Show();
             }
-            else if (metroComboBox1.SelectedIndex == 8) {
-
+            else if (metroComboBox1.SelectedItem.ToString() == "Obra")
+            {
                 this.Hide();
-                Mantenimientos.ObraC.ManPlayMenu manaplaymenu = new Mantenimientos.ObraC.ManPlayMenu();
+                ManPlayMenu manaplaymenu = new ManPlayMenu();
                 manaplaymenu.ShowDialog();
                 this.Show();
             }
 
-            else if (metroComboBox1.SelectedIndex == 11)
+            else if (metroComboBox1.SelectedItem.ToString() == "Tarifa")
             {
-
                 this.Hide();
-                Mantenimientos.Tarifa.manFareMenu manfaremenu = new Mantenimientos.Tarifa.manFareMenu();
+                manFareMenu manfaremenu = new manFareMenu();
                 manfaremenu.ShowDialog();
                 this.Show();
             }

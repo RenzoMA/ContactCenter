@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI.Mantenimientos.Tarifa
+﻿namespace ContactCenterGUI.Mantenimientos.TarifaMan
 {
     partial class manFareCreate
     {

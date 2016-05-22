@@ -1,6 +1,6 @@
-﻿namespace ContactCenterGUI.Mantenimientos.ObraC
+﻿namespace ContactCenterGUI.Mantenimientos.TarifaMan
 {
-    partial class ManPlayMenu
+    partial class manFareMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -35,12 +35,12 @@
             // materialRaisedButton1
             // 
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(180, 314);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(174, 307);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
             this.materialRaisedButton1.Size = new System.Drawing.Size(117, 32);
-            this.materialRaisedButton1.TabIndex = 5;
+            this.materialRaisedButton1.TabIndex = 7;
             this.materialRaisedButton1.Text = "Aceptar";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
@@ -51,24 +51,23 @@
             this.metroComboBox1.ItemHeight = 23;
             this.metroComboBox1.Items.AddRange(new object[] {
             "Elegir Mantenimiento",
-            "Nueva Obra",
-            "Buscar Obra"});
-            this.metroComboBox1.Location = new System.Drawing.Point(44, 121);
+            "Nueva Tarifa",
+            "Buscar Tarifa"});
+            this.metroComboBox1.Location = new System.Drawing.Point(38, 114);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(209, 29);
-            this.metroComboBox1.TabIndex = 4;
+            this.metroComboBox1.TabIndex = 6;
             // 
-            // ManPlayMenu
+            // manFareMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 372);
+            this.ClientSize = new System.Drawing.Size(300, 379);
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.metroComboBox1);
-            this.Name = "ManPlayMenu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ManPlayMenu";
-            this.Load += new System.EventHandler(this.ManPlayMenu_Load);
+            this.Name = "manFareMenu";
+            this.Text = "manFareMenu";
+            this.Load += new System.EventHandler(this.manFareMenu_Load);
             this.ResumeLayout(false);
 
         }

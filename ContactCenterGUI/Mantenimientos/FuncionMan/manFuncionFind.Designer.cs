@@ -1,6 +1,6 @@
-﻿namespace ContactCenterGUI.Mantenimientos.funcioin
+﻿namespace ContactCenterGUI.Mantenimientos.FuncionMan
 {
-    partial class manFuncionMenu
+    partial class manFuncionFind
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "manFuncionMenu";
+            this.Text = "manFuncionFind";
         }
 
         #endregion

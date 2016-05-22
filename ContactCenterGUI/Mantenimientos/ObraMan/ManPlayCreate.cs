@@ -14,7 +14,7 @@ using Microsoft.Practices.Unity;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 
-namespace ContactCenterGUI.Mantenimientos.ObraC
+namespace ContactCenterGUI.Mantenimientos.ObraMan
 {
     public partial class ManPlayCreate : MaterialForm
     {

@@ -86,7 +86,10 @@ namespace ContactCenterGUI.Mantenimientos.AsientoMan
                     cadenaIds += row.Cells[1].Value.ToString() + ",";
                 }
             }
-            cadenaIds = cadenaIds.Substring(0, cadenaIds.Length-1);
+            if (!cadenaIds.Equals(String.Empty))
+            {
+                cadenaIds = cadenaIds.Substring(0, cadenaIds.Length - 1);
+            }
             return cadenaIds;
         }
         private bool ValidarSeleccionado()

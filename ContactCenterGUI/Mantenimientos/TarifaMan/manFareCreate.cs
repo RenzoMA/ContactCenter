@@ -17,7 +17,7 @@ using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 
 
 
-namespace ContactCenterGUI.Mantenimientos.Tarifa
+namespace ContactCenterGUI.Mantenimientos.TarifaMan
 {
     public partial class manFareCreate : MaterialForm
     {

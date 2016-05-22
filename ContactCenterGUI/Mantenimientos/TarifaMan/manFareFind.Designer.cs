@@ -1,6 +1,6 @@
-﻿namespace ContactCenterGUI.Mantenimientos.promocion
+﻿namespace ContactCenterGUI.Mantenimientos.TarifaMan
 {
-    partial class manPromotionCreate
+    partial class manFareFind
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "manPromotionCreate";
+            this.Text = "manFareFind";
         }
 
         #endregion

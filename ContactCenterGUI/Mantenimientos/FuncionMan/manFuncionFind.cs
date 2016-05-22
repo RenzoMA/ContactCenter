@@ -10,11 +10,11 @@ using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 
-namespace ContactCenterGUI.Mantenimientos.promocion
+namespace ContactCenterGUI.Mantenimientos.FuncionMan
 {
-    public partial class manPromotionMenu : MaterialForm
+    public partial class manFuncionFind : MaterialForm
     {
-        public manPromotionMenu()
+        public manFuncionFind()
         {
             InitializeComponent();
         }
