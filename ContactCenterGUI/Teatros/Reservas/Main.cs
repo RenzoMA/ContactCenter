@@ -11,7 +11,7 @@ using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 using ContactCenterGUI.Teatros.Reportes;
 
-namespace ContactCenterGUI.Teatros
+namespace ContactCenterGUI.Teatros.Reservas
 {
     public partial class Main : MaterialForm
     {

@@ -13,11 +13,12 @@ using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterBE.CC.Entidades.CLienteBE;
-using ContactCenterGUI.Helpers;
 using ContactCenterServices;
+using ContactCenterGUI.CC.Helpers;
+using ContactCenterGUI.Teatros.Helpers;
 using Microsoft.Practices.Unity;
 
-namespace ContactCenterGUI.Teatros
+namespace ContactCenterGUI.Teatros.Reservas
 {
     public partial class ConfirmReservation : MaterialForm
     {

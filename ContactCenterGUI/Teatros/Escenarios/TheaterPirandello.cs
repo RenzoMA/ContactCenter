@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
-using ContactCenterGUI.Helpers;
+using ContactCenterGUI.Teatros.Helpers;
 
 namespace ContactCenterGUI.Teatros.Escenarios
 {

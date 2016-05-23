@@ -17,10 +17,10 @@ using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
-using ContactCenterGUI.Helpers;
 using System.Globalization;
+using ContactCenterGUI.CC.Helpers;
 
-namespace ContactCenterGUI.Teatros
+namespace ContactCenterGUI.Teatros.Reservas
 {
     public partial class NewReservation : MaterialForm
     {

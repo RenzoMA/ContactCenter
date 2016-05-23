@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.NetworkInformation;
 
-namespace ContactCenterGUI.Helpers
+namespace ContactCenterGUI.CC.Helpers
 {
     class HelperConexion
     {

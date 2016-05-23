@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 
-namespace ContactCenterGUI.Mantenimientos.TarifaMan
+namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 {
     public partial class ManTarifaFind : MaterialForm
     {

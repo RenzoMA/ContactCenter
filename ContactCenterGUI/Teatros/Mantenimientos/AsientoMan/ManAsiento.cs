@@ -13,7 +13,7 @@ using ContactCenterServices;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 
-namespace ContactCenterGUI.Mantenimientos.AsientoMan
+namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
 {
     public partial class ManAsiento : MaterialForm
     {

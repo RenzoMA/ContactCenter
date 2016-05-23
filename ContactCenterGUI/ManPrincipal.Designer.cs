@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI.Mantenimientos
+﻿namespace ContactCenterGUI
 {
     partial class ManPrincipal
     {

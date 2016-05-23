@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI.Mantenimientos.TarifaMan
+﻿namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 {
     partial class ManTarifaMenu
     {

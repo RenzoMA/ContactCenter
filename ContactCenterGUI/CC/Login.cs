@@ -13,8 +13,9 @@ using MaterialSkin.Controls;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
 using ContactCenterServices;
 using Microsoft.Practices.Unity;
-using ContactCenterGUI.Helpers;
+using ContactCenterGUI.Teatros.Helpers;
 using ContactCenterCommon;
+using ContactCenterGUI.CC.Helpers;
 
 namespace ContactCenterGUI.CC
 {

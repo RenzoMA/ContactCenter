@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI.Mantenimientos.FuncionMan
+﻿namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 {
     partial class ManFuncionFind
     {

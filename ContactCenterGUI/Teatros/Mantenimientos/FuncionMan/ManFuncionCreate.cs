@@ -11,7 +11,7 @@ using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 
 
-namespace ContactCenterGUI.Mantenimientos.FuncionMan
+namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 {
     public partial class ManFuncionCreate : MaterialForm
     {

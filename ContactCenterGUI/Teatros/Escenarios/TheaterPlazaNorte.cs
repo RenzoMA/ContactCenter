@@ -11,7 +11,7 @@ using MaterialSkin.Animations;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using MaterialSkin.Controls;
-using ContactCenterGUI.Helpers;
+using ContactCenterGUI.Teatros.Helpers;
 
 namespace ContactCenterGUI.Teatros.Escenarios
 {

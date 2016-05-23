@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 
-namespace ContactCenterGUI.Mantenimientos.PromocionMan
+namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
 {
     public partial class ManPromocionCreate : MaterialForm
     {

@@ -12,10 +12,10 @@ using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 using ContactCenterServices;
 using Microsoft.Practices.Unity;
-using ContactCenterGUI.Helpers;
+using ContactCenterGUI.Teatros.Helpers;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
 using ContactCenterCommon;
-
+using ContactCenterGUI.CC.Helpers;
 
 namespace ContactCenterGUI.CC
 {

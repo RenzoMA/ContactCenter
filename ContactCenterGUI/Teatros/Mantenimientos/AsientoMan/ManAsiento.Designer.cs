@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI.Mantenimientos.AsientoMan
+﻿namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
 {
     partial class ManAsiento
     {

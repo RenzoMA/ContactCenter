@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI.Mantenimientos.AplicacionMan
+﻿namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
 {
     partial class ManAppMenu
     {

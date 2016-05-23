@@ -9,7 +9,7 @@ using MaterialSkin.Controls;
 using System.ComponentModel;
 
 
-namespace ContactCenterGUI.Helpers
+namespace ContactCenterGUI.CC.Helpers
 {
     class HelperControl
     {

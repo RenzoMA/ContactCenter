@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI.Mantenimientos.UsuarioMan
+﻿namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
 {
     partial class ManCreateUpdateUsuario
     {

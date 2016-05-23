@@ -15,7 +15,7 @@ using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 
 
-namespace ContactCenterGUI.Mantenimientos.ObraMan
+namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 {
     public partial class ManPlayFind : MaterialForm
     {

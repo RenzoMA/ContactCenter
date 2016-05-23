@@ -9,10 +9,11 @@ using ContactCenterServices;
 using Microsoft.Practices.Unity;
 using ContactCenterCommon;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
-using ContactCenterGUI.Teatros;
+using ContactCenterGUI.Teatros.Reservas;
 using MaterialSkin.Controls;
+using ContactCenterGUI.CC.Helpers;
 
-namespace ContactCenterGUI.Helpers
+namespace ContactCenterGUI.Teatros.Helpers
 {
     class HelperTeatro
     {

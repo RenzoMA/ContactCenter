@@ -11,7 +11,7 @@ using MaterialSkin.Controls;
 using Microsoft.Practices.Unity;
 using ContactCenterServices;
 
-namespace ContactCenterGUI.Teatros
+namespace ContactCenterGUI.Teatros.Reservas
 {
     public partial class FindReservation : MaterialForm
     {

@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI.Mantenimientos.PromocionMan
+﻿namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
 {
     partial class ManPromocionFind
     {

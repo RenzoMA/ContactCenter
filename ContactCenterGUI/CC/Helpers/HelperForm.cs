@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ContactCenterGUI.Helpers
+namespace ContactCenterGUI.CC.Helpers
 {
     class HelperForm
     {
         public static void changeForm(string formName, string aplicacion, bool hide,Form form, object parametro = null)
         {
-            Type CAType = Type.GetType("ContactCenterGUI." + aplicacion + "." + formName);
+            Type CAType = Type.GetType("ContactCenterGUI." + formName);
             if (CAType != null)
             {
                 if (hide) form.Hide();

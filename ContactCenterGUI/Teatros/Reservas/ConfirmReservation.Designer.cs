@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI.Teatros
+﻿namespace ContactCenterGUI.Teatros.Reservas
 {
     partial class ConfirmReservation
     {

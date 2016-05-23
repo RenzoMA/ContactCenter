@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
+using ContactCenterGUI.CC.Mantenimientos.AplicacionMan;
 
-namespace ContactCenterGUI.Mantenimientos.ObraMan
+namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 {
     public partial class ManPlayMenu : MaterialForm
     {
@@ -38,7 +39,7 @@ namespace ContactCenterGUI.Mantenimientos.ObraMan
             {
 
                 this.Hide();
-                Mantenimientos.AplicacionMan.ManAppFind manappbuscar = new Mantenimientos.AplicacionMan.ManAppFind();
+                ManAppFind manappbuscar = new ManAppFind();
                 manappbuscar.ShowDialog();
             }
         }

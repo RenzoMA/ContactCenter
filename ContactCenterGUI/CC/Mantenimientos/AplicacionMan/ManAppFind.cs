@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 
-namespace ContactCenterGUI.Mantenimientos.AplicacionMan
+namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
 {
     public partial class ManAppFind : MaterialForm
     {

@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
-using ContactCenterGUI.Mantenimientos.AplicacionMan;
-using ContactCenterGUI.Mantenimientos.AsientoMan;
-using ContactCenterGUI.Mantenimientos.FuncionMan;
-using ContactCenterGUI.Mantenimientos.ObraMan;
-using ContactCenterGUI.Mantenimientos.PromocionMan;
-using ContactCenterGUI.Mantenimientos.TarifaMan;
-using ContactCenterGUI.Mantenimientos.UsuarioMan;
+using ContactCenterGUI.CC.Mantenimientos.AplicacionMan;
+using ContactCenterGUI.Teatros.Mantenimientos.AsientoMan;
+using ContactCenterGUI.Teatros.Mantenimientos.FuncionMan;
+using ContactCenterGUI.Teatros.Mantenimientos.ObraMan;
+using ContactCenterGUI.Teatros.Mantenimientos.PromocionMan;
+using ContactCenterGUI.Teatros.Mantenimientos.TarifaMan;
+using ContactCenterGUI.CC.Mantenimientos.UsuarioMan;
 
-namespace ContactCenterGUI.Mantenimientos.TarifaMan
+namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 {
     public partial class ManTarifaMenu : MaterialForm
     {

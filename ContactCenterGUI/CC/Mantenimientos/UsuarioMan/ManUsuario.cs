@@ -12,7 +12,7 @@ using ContactCenterServices;
 using Microsoft.Practices.Unity;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
 
-namespace ContactCenterGUI.Mantenimientos.UsuarioMan
+namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
 {
     public partial class ManUsuario : MaterialForm
     {

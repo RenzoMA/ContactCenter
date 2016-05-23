@@ -13,9 +13,9 @@ using Microsoft.Practices.Unity;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
 using ContactCenterBE.CC.Entidades.RolBE;
-using ContactCenterGUI.Helpers;
+using ContactCenterGUI.CC.Helpers;
 
-namespace ContactCenterGUI.Mantenimientos.UsuarioMan
+namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
 {
     public partial class ManCreateUpdateUsuario : MaterialForm
     {

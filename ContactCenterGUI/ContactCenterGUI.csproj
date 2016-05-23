@@ -194,10 +194,10 @@
     <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncionMenu.Designer.cs">
       <DependentUpon>ManFuncionMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\Mantenimientos\ManPrincipal.cs">
+    <Compile Include="ManPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\Mantenimientos\ManPrincipal.Designer.cs">
+    <Compile Include="ManPrincipal.Designer.cs">
       <DependentUpon>ManPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayCreate.cs">
@@ -345,7 +345,7 @@
     <EmbeddedResource Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.resx">
       <DependentUpon>ManAsiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\Mantenimientos\ManPrincipal.resx">
+    <EmbeddedResource Include="ManPrincipal.resx">
       <DependentUpon>ManPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManPlayCreate.resx">

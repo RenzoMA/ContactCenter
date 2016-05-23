@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
-using ContactCenterGUI.Mantenimientos.AplicacionMan;
-using ContactCenterGUI.Mantenimientos.AsientoMan;
-using ContactCenterGUI.Mantenimientos.FuncionMan;
-using ContactCenterGUI.Mantenimientos.ObraMan;
-using ContactCenterGUI.Mantenimientos.PromocionMan;
-using ContactCenterGUI.Mantenimientos.TarifaMan;
-using ContactCenterGUI.Mantenimientos.UsuarioMan;
+using ContactCenterGUI.CC.Mantenimientos.AplicacionMan;
+using ContactCenterGUI.Teatros.Mantenimientos.AsientoMan;
+using ContactCenterGUI.Teatros.Mantenimientos.FuncionMan;
+using ContactCenterGUI.Teatros.Mantenimientos.ObraMan;
+using ContactCenterGUI.Teatros.Mantenimientos.PromocionMan;
+using ContactCenterGUI.Teatros.Mantenimientos.TarifaMan;
+using ContactCenterGUI.CC.Mantenimientos.UsuarioMan;
 
-namespace ContactCenterGUI.Mantenimientos
+namespace ContactCenterGUI
 {
     public partial class ManPrincipal : MaterialForm
     {
@@ -41,7 +41,7 @@ namespace ContactCenterGUI.Mantenimientos
             {
 
                 this.Hide();
-                Mantenimientos.AplicacionMan.ManAppMenu manappmenu = new Mantenimientos.AplicacionMan.ManAppMenu();
+                ManAppMenu manappmenu = new ManAppMenu();
                 manappmenu.ShowDialog();
                 this.Show();
 
@@ -49,7 +49,7 @@ namespace ContactCenterGUI.Mantenimientos
             else if (metroComboBox1.SelectedItem.ToString() == "Asiento")
             {
                 this.Hide();
-                AsientoMan.ManAsiento manfunmenu = new AsientoMan.ManAsiento();
+                ManAsiento manfunmenu = new ManAsiento();
                 manfunmenu.ShowDialog();
                 this.Show();
             }
