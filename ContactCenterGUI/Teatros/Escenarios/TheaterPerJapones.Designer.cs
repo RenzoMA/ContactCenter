@@ -384,7 +384,6 @@
             this.A2003 = new System.Windows.Forms.Button();
             this.A2002 = new System.Windows.Forms.Button();
             this.A2001 = new System.Windows.Forms.Button();
-            this.A1986 = new System.Windows.Forms.Button();
             this.A1985 = new System.Windows.Forms.Button();
             this.A1984 = new System.Windows.Forms.Button();
             this.A1983 = new System.Windows.Forms.Button();
@@ -529,7 +528,6 @@
             this.materialLabel30 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel31 = new MaterialSkin.Controls.MaterialLabel();
             this.A1965 = new System.Windows.Forms.Button();
-            this.A1973 = new System.Windows.Forms.Button();
             this.A1972 = new System.Windows.Forms.Button();
             this.A1971 = new System.Windows.Forms.Button();
             this.A1970 = new System.Windows.Forms.Button();
@@ -1127,6 +1125,7 @@
             this.btnAtras = new System.Windows.Forms.PictureBox();
             this.btnMiminizar = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Label();
+            this.A1973 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -1155,13 +1154,13 @@
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
+            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
-            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 66);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 3;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1280, 706);
             this.metroTabControl1.TabIndex = 1;
             // 
@@ -4569,6 +4568,7 @@
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.A1973);
             this.metroTabPage2.Controls.Add(this.A1816);
             this.metroTabPage2.Controls.Add(this.A1778);
             this.metroTabPage2.Controls.Add(this.A1777);
@@ -4618,7 +4618,6 @@
             this.metroTabPage2.Controls.Add(this.A2003);
             this.metroTabPage2.Controls.Add(this.A2002);
             this.metroTabPage2.Controls.Add(this.A2001);
-            this.metroTabPage2.Controls.Add(this.A1986);
             this.metroTabPage2.Controls.Add(this.A1985);
             this.metroTabPage2.Controls.Add(this.A1984);
             this.metroTabPage2.Controls.Add(this.A1983);
@@ -4763,7 +4762,6 @@
             this.metroTabPage2.Controls.Add(this.materialLabel30);
             this.metroTabPage2.Controls.Add(this.materialLabel31);
             this.metroTabPage2.Controls.Add(this.A1965);
-            this.metroTabPage2.Controls.Add(this.A1973);
             this.metroTabPage2.Controls.Add(this.A1972);
             this.metroTabPage2.Controls.Add(this.A1971);
             this.metroTabPage2.Controls.Add(this.A1970);
@@ -5367,20 +5365,10 @@
             this.A2001.Text = "16";
             this.A2001.UseVisualStyleBackColor = false;
             // 
-            // A1986
-            // 
-            this.A1986.BackColor = System.Drawing.Color.Khaki;
-            this.A1986.Location = new System.Drawing.Point(883, 500);
-            this.A1986.Name = "A1986";
-            this.A1986.Size = new System.Drawing.Size(27, 30);
-            this.A1986.TabIndex = 2176;
-            this.A1986.Text = "16";
-            this.A1986.UseVisualStyleBackColor = false;
-            // 
             // A1985
             // 
             this.A1985.BackColor = System.Drawing.Color.Khaki;
-            this.A1985.Location = new System.Drawing.Point(855, 500);
+            this.A1985.Location = new System.Drawing.Point(883, 500);
             this.A1985.Name = "A1985";
             this.A1985.Size = new System.Drawing.Size(27, 30);
             this.A1985.TabIndex = 2175;
@@ -5390,7 +5378,7 @@
             // A1984
             // 
             this.A1984.BackColor = System.Drawing.Color.Khaki;
-            this.A1984.Location = new System.Drawing.Point(827, 500);
+            this.A1984.Location = new System.Drawing.Point(855, 500);
             this.A1984.Name = "A1984";
             this.A1984.Size = new System.Drawing.Size(27, 30);
             this.A1984.TabIndex = 2174;
@@ -5400,7 +5388,7 @@
             // A1983
             // 
             this.A1983.BackColor = System.Drawing.Color.Khaki;
-            this.A1983.Location = new System.Drawing.Point(799, 500);
+            this.A1983.Location = new System.Drawing.Point(827, 500);
             this.A1983.Name = "A1983";
             this.A1983.Size = new System.Drawing.Size(27, 30);
             this.A1983.TabIndex = 2173;
@@ -5410,7 +5398,7 @@
             // A1982
             // 
             this.A1982.BackColor = System.Drawing.Color.Khaki;
-            this.A1982.Location = new System.Drawing.Point(771, 500);
+            this.A1982.Location = new System.Drawing.Point(799, 500);
             this.A1982.Name = "A1982";
             this.A1982.Size = new System.Drawing.Size(27, 30);
             this.A1982.TabIndex = 2172;
@@ -5420,7 +5408,7 @@
             // A1981
             // 
             this.A1981.BackColor = System.Drawing.Color.Khaki;
-            this.A1981.Location = new System.Drawing.Point(743, 500);
+            this.A1981.Location = new System.Drawing.Point(771, 500);
             this.A1981.Name = "A1981";
             this.A1981.Size = new System.Drawing.Size(27, 30);
             this.A1981.TabIndex = 2171;
@@ -5430,7 +5418,7 @@
             // A1980
             // 
             this.A1980.BackColor = System.Drawing.Color.Khaki;
-            this.A1980.Location = new System.Drawing.Point(715, 500);
+            this.A1980.Location = new System.Drawing.Point(743, 500);
             this.A1980.Name = "A1980";
             this.A1980.Size = new System.Drawing.Size(27, 30);
             this.A1980.TabIndex = 2170;
@@ -5440,7 +5428,7 @@
             // A1979
             // 
             this.A1979.BackColor = System.Drawing.Color.Khaki;
-            this.A1979.Location = new System.Drawing.Point(687, 500);
+            this.A1979.Location = new System.Drawing.Point(715, 500);
             this.A1979.Name = "A1979";
             this.A1979.Size = new System.Drawing.Size(27, 30);
             this.A1979.TabIndex = 2169;
@@ -5450,7 +5438,7 @@
             // A1978
             // 
             this.A1978.BackColor = System.Drawing.Color.Khaki;
-            this.A1978.Location = new System.Drawing.Point(659, 500);
+            this.A1978.Location = new System.Drawing.Point(687, 500);
             this.A1978.Name = "A1978";
             this.A1978.Size = new System.Drawing.Size(27, 30);
             this.A1978.TabIndex = 2168;
@@ -5460,7 +5448,7 @@
             // A1977
             // 
             this.A1977.BackColor = System.Drawing.Color.Khaki;
-            this.A1977.Location = new System.Drawing.Point(631, 500);
+            this.A1977.Location = new System.Drawing.Point(659, 500);
             this.A1977.Name = "A1977";
             this.A1977.Size = new System.Drawing.Size(27, 30);
             this.A1977.TabIndex = 2167;
@@ -5470,7 +5458,7 @@
             // A1976
             // 
             this.A1976.BackColor = System.Drawing.Color.Khaki;
-            this.A1976.Location = new System.Drawing.Point(603, 500);
+            this.A1976.Location = new System.Drawing.Point(631, 500);
             this.A1976.Name = "A1976";
             this.A1976.Size = new System.Drawing.Size(27, 30);
             this.A1976.TabIndex = 2166;
@@ -5480,7 +5468,7 @@
             // A1975
             // 
             this.A1975.BackColor = System.Drawing.Color.Khaki;
-            this.A1975.Location = new System.Drawing.Point(575, 500);
+            this.A1975.Location = new System.Drawing.Point(603, 500);
             this.A1975.Name = "A1975";
             this.A1975.Size = new System.Drawing.Size(27, 30);
             this.A1975.TabIndex = 2165;
@@ -5490,7 +5478,7 @@
             // A1974
             // 
             this.A1974.BackColor = System.Drawing.Color.Khaki;
-            this.A1974.Location = new System.Drawing.Point(547, 500);
+            this.A1974.Location = new System.Drawing.Point(575, 500);
             this.A1974.Name = "A1974";
             this.A1974.Size = new System.Drawing.Size(27, 30);
             this.A1974.TabIndex = 2164;
@@ -6853,16 +6841,6 @@
             this.A1965.TabIndex = 2032;
             this.A1965.Text = "16";
             this.A1965.UseVisualStyleBackColor = false;
-            // 
-            // A1973
-            // 
-            this.A1973.BackColor = System.Drawing.Color.Plum;
-            this.A1973.Location = new System.Drawing.Point(348, 500);
-            this.A1973.Name = "A1973";
-            this.A1973.Size = new System.Drawing.Size(27, 30);
-            this.A1973.TabIndex = 2031;
-            this.A1973.Text = "16";
-            this.A1973.UseVisualStyleBackColor = false;
             // 
             // A1972
             // 
@@ -13432,6 +13410,16 @@
             this.btnCerrar.TabIndex = 24;
             this.btnCerrar.Text = "X";
             // 
+            // A1973
+            // 
+            this.A1973.BackColor = System.Drawing.Color.Khaki;
+            this.A1973.Location = new System.Drawing.Point(547, 500);
+            this.A1973.Name = "A1973";
+            this.A1973.Size = new System.Drawing.Size(27, 30);
+            this.A1973.TabIndex = 2226;
+            this.A1973.Text = "16";
+            this.A1973.UseVisualStyleBackColor = false;
+            // 
             // TheaterPerJapones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -13836,7 +13824,6 @@
         private System.Windows.Forms.Button A2003;
         private System.Windows.Forms.Button A2002;
         private System.Windows.Forms.Button A2001;
-        private System.Windows.Forms.Button A1986;
         private System.Windows.Forms.Button A1985;
         private System.Windows.Forms.Button A1984;
         private System.Windows.Forms.Button A1983;
@@ -13981,7 +13968,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel30;
         private MaterialSkin.Controls.MaterialLabel materialLabel31;
         private System.Windows.Forms.Button A1965;
-        private System.Windows.Forms.Button A1973;
         private System.Windows.Forms.Button A1972;
         private System.Windows.Forms.Button A1971;
         private System.Windows.Forms.Button A1970;
@@ -14571,5 +14557,6 @@
         private System.Windows.Forms.Button button1026;
         private System.Windows.Forms.Button button1027;
         private MaterialSkin.Controls.MaterialLabel lblTituloTeatro;
+        private System.Windows.Forms.Button A1973;
     }
 }
