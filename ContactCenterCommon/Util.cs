@@ -9,7 +9,7 @@ namespace ContactCenterCommon
 {
     public static class Util
     {
-        //con fe
+        //con fe porfis
         public static string Encriptar(string text)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
