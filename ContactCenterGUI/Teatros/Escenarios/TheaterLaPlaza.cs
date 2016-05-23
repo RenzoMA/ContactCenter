@@ -7,28 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin.Controls;
 using MaterialSkin.Animations;
+using ContactCenterBE.CC.Entidades.UsuarioBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
+using MaterialSkin.Controls;
 using ContactCenterGUI.Helpers;
 
-namespace ContactCenterGUI.Teatros
+namespace ContactCenterGUI.Teatros.Escenarios
 {
-    public partial class TheaterPirandello : MaterialForm
+    public partial class TheaterLaPlaza : MaterialForm
     {
-        public TheaterPirandello()
+        public TheaterLaPlaza()
         {
             InitializeComponent();
         }
 
-        private void TheaterPirandello_Load(object sender, EventArgs e)
+        private void CallaoTheater_Load(object sender, EventArgs e)
         {
             HelperTeatro.MostrarDisponibilidad(this, (Reserva)this.Tag);
-        }
-
-        private void button221_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI.Teatros
+﻿namespace ContactCenterGUI.Teatros.Escenarios
 {
     partial class TheaterLaPlaza
     {

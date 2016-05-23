@@ -149,127 +149,127 @@
     <Compile Include="CC\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\HelperConexion.cs" />
-    <Compile Include="Helpers\HelperControl.cs" />
-    <Compile Include="Helpers\HelperForm.cs" />
-    <Compile Include="Mantenimientos\AplicacionMan\ManAppFind.cs">
+    <Compile Include="CC\Helpers\HelperConexion.cs" />
+    <Compile Include="CC\Helpers\HelperControl.cs" />
+    <Compile Include="CC\Helpers\HelperForm.cs" />
+    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAppFind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\AplicacionMan\ManAppFind.Designer.cs">
+    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAppFind.Designer.cs">
       <DependentUpon>ManAppFind.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\AplicacionMan\ManAppCreate.cs">
+    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAppCreate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\AplicacionMan\ManAppCreate.Designer.cs">
+    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAppCreate.Designer.cs">
       <DependentUpon>ManAppCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\AplicacionMan\ManAppMenu.cs">
+    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAppMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\AplicacionMan\ManAppMenu.Designer.cs">
+    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAppMenu.Designer.cs">
       <DependentUpon>ManAppMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\AsientoMan\ManAsiento.cs">
+    <Compile Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\AsientoMan\ManAsiento.Designer.cs">
+    <Compile Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.Designer.cs">
       <DependentUpon>ManAsiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\FuncionMan\ManFuncionCreate.cs">
+    <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncionCreate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\FuncionMan\ManFuncionCreate.Designer.cs">
+    <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncionCreate.Designer.cs">
       <DependentUpon>ManFuncionCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\FuncionMan\ManFuncionFind.cs">
+    <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncionFind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\FuncionMan\ManFuncionFind.Designer.cs">
+    <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncionFind.Designer.cs">
       <DependentUpon>ManFuncionFind.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\FuncionMan\ManFuncionMenu.cs">
+    <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncionMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\FuncionMan\ManFuncionMenu.Designer.cs">
+    <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncionMenu.Designer.cs">
       <DependentUpon>ManFuncionMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\ManPrincipal.cs">
+    <Compile Include="Teatros\Mantenimientos\ManPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\ManPrincipal.Designer.cs">
+    <Compile Include="Teatros\Mantenimientos\ManPrincipal.Designer.cs">
       <DependentUpon>ManPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\ObraMan\ManPlayCreate.cs">
+    <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayCreate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\ObraMan\ManPlayCreate.Designer.cs">
+    <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayCreate.Designer.cs">
       <DependentUpon>ManPlayCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\ObraMan\ManPlayFind.cs">
+    <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayFind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\ObraMan\ManPlayFind.Designer.cs">
+    <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayFind.Designer.cs">
       <DependentUpon>ManPlayFind.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\ObraMan\ManPlayMenu.cs">
+    <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\ObraMan\ManPlayMenu.Designer.cs">
+    <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayMenu.Designer.cs">
       <DependentUpon>ManPlayMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.cs">
+    <Compile Include="CC\Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.Designer.cs">
+    <Compile Include="CC\Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.Designer.cs">
       <DependentUpon>ManCreateUpdateUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\UsuarioMan\ManUsuario.cs">
+    <Compile Include="CC\Mantenimientos\UsuarioMan\ManUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\UsuarioMan\ManUsuario.Designer.cs">
+    <Compile Include="CC\Mantenimientos\UsuarioMan\ManUsuario.Designer.cs">
       <DependentUpon>ManUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\FindReservation.cs">
+    <Compile Include="Teatros\Reservas\FindReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\FindReservation.Designer.cs">
+    <Compile Include="Teatros\Reservas\FindReservation.Designer.cs">
       <DependentUpon>FindReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\PromocionMan\ManPromocionCreate.cs">
+    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionCreate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\PromocionMan\ManPromocionCreate.Designer.cs">
+    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionCreate.Designer.cs">
       <DependentUpon>ManPromocionCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\PromocionMan\ManPromocionFind.cs">
+    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionFind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\PromocionMan\ManPromocionFind.Designer.cs">
+    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionFind.Designer.cs">
       <DependentUpon>ManPromocionFind.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\PromocionMan\ManPromocionMenu.cs">
+    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\PromocionMan\ManPromocionMenu.Designer.cs">
+    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionMenu.Designer.cs">
       <DependentUpon>ManPromocionMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\TarifaMan\ManTarifaCreate.cs">
+    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaCreate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\TarifaMan\ManTarifaCreate.Designer.cs">
+    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaCreate.Designer.cs">
       <DependentUpon>ManTarifaCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\TarifaMan\ManTarifaFind.cs">
+    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaFind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\TarifaMan\ManTarifaFind.Designer.cs">
+    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaFind.Designer.cs">
       <DependentUpon>ManTarifaFind.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\TarifaMan\ManTarifaMenu.cs">
+    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\TarifaMan\ManTarifaMenu.Designer.cs">
+    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaMenu.Designer.cs">
       <DependentUpon>ManTarifaMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Reportes\RptReservas.cs">
@@ -278,52 +278,52 @@
     <Compile Include="Teatros\Reportes\RptReservas.Designer.cs">
       <DependentUpon>RptReservas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\TheaterLaPlaza.cs">
+    <Compile Include="Teatros\Escenarios\TheaterLaPlaza.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\TheaterLaPlaza.Designer.cs">
+    <Compile Include="Teatros\Escenarios\TheaterLaPlaza.Designer.cs">
       <DependentUpon>TheaterLaPlaza.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\NewReservation.cs">
+    <Compile Include="Teatros\Reservas\NewReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\NewReservation.Designer.cs">
+    <Compile Include="Teatros\Reservas\NewReservation.Designer.cs">
       <DependentUpon>NewReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\ConfirmReservation.cs">
+    <Compile Include="Teatros\Reservas\ConfirmReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\ConfirmReservation.Designer.cs">
+    <Compile Include="Teatros\Reservas\ConfirmReservation.Designer.cs">
       <DependentUpon>ConfirmReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\TheaterPerJapones.cs">
+    <Compile Include="Teatros\Escenarios\TheaterPerJapones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\TheaterPerJapones.Designer.cs">
+    <Compile Include="Teatros\Escenarios\TheaterPerJapones.Designer.cs">
       <DependentUpon>TheaterPerJapones.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Teatros\TheaterPirandello.cs">
+    <Compile Include="Teatros\Escenarios\TheaterPirandello.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\TheaterPirandello.Designer.cs">
+    <Compile Include="Teatros\Escenarios\TheaterPirandello.Designer.cs">
       <DependentUpon>TheaterPirandello.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\TheaterPlazaNorte.cs">
+    <Compile Include="Teatros\Escenarios\TheaterPlazaNorte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\TheaterPlazaNorte.Designer.cs">
+    <Compile Include="Teatros\Escenarios\TheaterPlazaNorte.Designer.cs">
       <DependentUpon>TheaterPlazaNorte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\Animacion.cs" />
-    <Compile Include="Teatros\Main.cs">
+    <Compile Include="CC\Helpers\Animacion.cs" />
+    <Compile Include="Teatros\Reservas\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\Main.Designer.cs">
+    <Compile Include="Teatros\Reservas\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\HelperTeatro.cs" />
+    <Compile Include="Teatros\Helpers\HelperTeatro.cs" />
     <EmbeddedResource Include="CC\Loader.resx">
       <DependentUpon>Loader.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,53 +333,53 @@
     <EmbeddedResource Include="CC\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\AplicacionMan\ManAppFind.resx">
+    <EmbeddedResource Include="CC\Mantenimientos\AplicacionMan\ManAppFind.resx">
       <DependentUpon>ManAppFind.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\AplicacionMan\ManAppCreate.resx">
+    <EmbeddedResource Include="CC\Mantenimientos\AplicacionMan\ManAppCreate.resx">
       <DependentUpon>ManAppCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\AplicacionMan\ManAppMenu.resx">
+    <EmbeddedResource Include="CC\Mantenimientos\AplicacionMan\ManAppMenu.resx">
       <DependentUpon>ManAppMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\AsientoMan\ManAsiento.resx">
+    <EmbeddedResource Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.resx">
       <DependentUpon>ManAsiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\ManPrincipal.resx">
+    <EmbeddedResource Include="Teatros\Mantenimientos\ManPrincipal.resx">
       <DependentUpon>ManPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\ObraMan\ManPlayCreate.resx">
+    <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManPlayCreate.resx">
       <DependentUpon>ManPlayCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\ObraMan\ManPlayFind.resx">
+    <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManPlayFind.resx">
       <DependentUpon>ManPlayFind.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\ObraMan\ManPlayMenu.resx">
+    <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManPlayMenu.resx">
       <DependentUpon>ManPlayMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.resx">
+    <EmbeddedResource Include="CC\Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.resx">
       <DependentUpon>ManCreateUpdateUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\UsuarioMan\ManUsuario.resx">
+    <EmbeddedResource Include="CC\Mantenimientos\UsuarioMan\ManUsuario.resx">
       <DependentUpon>ManUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\FindReservation.resx">
+    <EmbeddedResource Include="Teatros\Reservas\FindReservation.resx">
       <DependentUpon>FindReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reportes\rptReservas.rdlc" />
     <EmbeddedResource Include="Teatros\Reportes\RptReservas.resx">
       <DependentUpon>RptReservas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\TheaterLaPlaza.resx">
+    <EmbeddedResource Include="Teatros\Escenarios\TheaterLaPlaza.resx">
       <DependentUpon>TheaterLaPlaza.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\NewReservation.resx">
+    <EmbeddedResource Include="Teatros\Reservas\NewReservation.resx">
       <DependentUpon>NewReservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\ConfirmReservation.resx">
+    <EmbeddedResource Include="Teatros\Reservas\ConfirmReservation.resx">
       <DependentUpon>ConfirmReservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\TheaterPerJapones.resx">
+    <EmbeddedResource Include="Teatros\Escenarios\TheaterPerJapones.resx">
       <DependentUpon>TheaterPerJapones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -392,13 +392,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Teatros\TheaterPirandello.resx">
+    <EmbeddedResource Include="Teatros\Escenarios\TheaterPirandello.resx">
       <DependentUpon>TheaterPirandello.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\TheaterPlazaNorte.resx">
+    <EmbeddedResource Include="Teatros\Escenarios\TheaterPlazaNorte.resx">
       <DependentUpon>TheaterPlazaNorte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\Main.resx">
+    <EmbeddedResource Include="Teatros\Reservas\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -484,9 +484,6 @@
     </PublishFile>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

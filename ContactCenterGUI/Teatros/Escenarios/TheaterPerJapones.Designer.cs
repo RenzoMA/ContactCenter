@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI.Teatros
+﻿namespace ContactCenterGUI.Teatros.Escenarios
 {
     partial class TheaterPerJapones
     {
@@ -1161,7 +1161,7 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 66);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 3;
             this.metroTabControl1.Size = new System.Drawing.Size(1280, 706);
             this.metroTabControl1.TabIndex = 1;
             // 
@@ -3260,7 +3260,7 @@
             // A1779
             // 
             this.A1779.BackColor = System.Drawing.Color.Plum;
-            this.A1779.Location = new System.Drawing.Point(33, 363);
+            this.A1779.Location = new System.Drawing.Point(89, 363);
             this.A1779.Name = "A1779";
             this.A1779.Size = new System.Drawing.Size(27, 30);
             this.A1779.TabIndex = 1698;
@@ -4882,7 +4882,7 @@
             // A1816
             // 
             this.A1816.BackColor = System.Drawing.Color.Plum;
-            this.A1816.Location = new System.Drawing.Point(1164, 356);
+            this.A1816.Location = new System.Drawing.Point(1108, 356);
             this.A1816.Name = "A1816";
             this.A1816.Size = new System.Drawing.Size(27, 30);
             this.A1816.TabIndex = 2225;
