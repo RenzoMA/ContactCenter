@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.A1986 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
@@ -343,15 +344,12 @@
             this.A3124 = new System.Windows.Forms.Button();
             this.A3123 = new System.Windows.Forms.Button();
             this.A3122 = new System.Windows.Forms.Button();
-            this.A3074 = new System.Windows.Forms.Button();
             this.A3073 = new System.Windows.Forms.Button();
             this.A3072 = new System.Windows.Forms.Button();
             this.A3071 = new System.Windows.Forms.Button();
             this.A3070 = new System.Windows.Forms.Button();
             this.A3069 = new System.Windows.Forms.Button();
             this.A3068 = new System.Windows.Forms.Button();
-            this.A2122 = new System.Windows.Forms.Button();
-            this.A2121 = new System.Windows.Forms.Button();
             this.A2120 = new System.Windows.Forms.Button();
             this.A2119 = new System.Windows.Forms.Button();
             this.A2118 = new System.Windows.Forms.Button();
@@ -573,8 +571,8 @@
             this.A2102 = new System.Windows.Forms.Button();
             this.A2101 = new System.Windows.Forms.Button();
             this.A2100 = new System.Windows.Forms.Button();
-            this.A2099 = new System.Windows.Forms.Button();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.A2000 = new System.Windows.Forms.Button();
             this.A1973 = new System.Windows.Forms.Button();
             this.A1816 = new System.Windows.Forms.Button();
             this.A1778 = new System.Windows.Forms.Button();
@@ -1124,8 +1122,8 @@
             this.btnAtras = new System.Windows.Forms.PictureBox();
             this.btnMiminizar = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Label();
-            this.A2000 = new System.Windows.Forms.Button();
-            this.A1986 = new System.Windows.Forms.Button();
+            this.A2099 = new System.Windows.Forms.Button();
+            this.A2098 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -1476,6 +1474,16 @@
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Platea A";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
+            // 
+            // A1986
+            // 
+            this.A1986.BackColor = System.Drawing.Color.Khaki;
+            this.A1986.Location = new System.Drawing.Point(285, 543);
+            this.A1986.Name = "A1986";
+            this.A1986.Size = new System.Drawing.Size(27, 30);
+            this.A1986.TabIndex = 1933;
+            this.A1986.Text = "16";
+            this.A1986.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -4558,6 +4566,7 @@
             // 
             // metroTabPage4
             // 
+            this.metroTabPage4.Controls.Add(this.A2098);
             this.metroTabPage4.Controls.Add(this.A3176);
             this.metroTabPage4.Controls.Add(this.A3175);
             this.metroTabPage4.Controls.Add(this.A3174);
@@ -4567,15 +4576,12 @@
             this.metroTabPage4.Controls.Add(this.A3124);
             this.metroTabPage4.Controls.Add(this.A3123);
             this.metroTabPage4.Controls.Add(this.A3122);
-            this.metroTabPage4.Controls.Add(this.A3074);
             this.metroTabPage4.Controls.Add(this.A3073);
             this.metroTabPage4.Controls.Add(this.A3072);
             this.metroTabPage4.Controls.Add(this.A3071);
             this.metroTabPage4.Controls.Add(this.A3070);
             this.metroTabPage4.Controls.Add(this.A3069);
             this.metroTabPage4.Controls.Add(this.A3068);
-            this.metroTabPage4.Controls.Add(this.A2122);
-            this.metroTabPage4.Controls.Add(this.A2121);
             this.metroTabPage4.Controls.Add(this.A2120);
             this.metroTabPage4.Controls.Add(this.A2119);
             this.metroTabPage4.Controls.Add(this.A2118);
@@ -4895,20 +4901,10 @@
             this.A3122.Text = "16";
             this.A3122.UseVisualStyleBackColor = false;
             // 
-            // A3074
-            // 
-            this.A3074.BackColor = System.Drawing.Color.PaleGreen;
-            this.A3074.Location = new System.Drawing.Point(1208, 208);
-            this.A3074.Name = "A3074";
-            this.A3074.Size = new System.Drawing.Size(27, 30);
-            this.A3074.TabIndex = 2780;
-            this.A3074.Text = "16";
-            this.A3074.UseVisualStyleBackColor = false;
-            // 
             // A3073
             // 
             this.A3073.BackColor = System.Drawing.Color.PaleGreen;
-            this.A3073.Location = new System.Drawing.Point(1180, 208);
+            this.A3073.Location = new System.Drawing.Point(1208, 208);
             this.A3073.Name = "A3073";
             this.A3073.Size = new System.Drawing.Size(27, 30);
             this.A3073.TabIndex = 2779;
@@ -4918,7 +4914,7 @@
             // A3072
             // 
             this.A3072.BackColor = System.Drawing.Color.PaleGreen;
-            this.A3072.Location = new System.Drawing.Point(1152, 208);
+            this.A3072.Location = new System.Drawing.Point(1180, 208);
             this.A3072.Name = "A3072";
             this.A3072.Size = new System.Drawing.Size(27, 30);
             this.A3072.TabIndex = 2778;
@@ -4928,7 +4924,7 @@
             // A3071
             // 
             this.A3071.BackColor = System.Drawing.Color.PaleGreen;
-            this.A3071.Location = new System.Drawing.Point(1124, 208);
+            this.A3071.Location = new System.Drawing.Point(1152, 208);
             this.A3071.Name = "A3071";
             this.A3071.Size = new System.Drawing.Size(27, 30);
             this.A3071.TabIndex = 2777;
@@ -4938,7 +4934,7 @@
             // A3070
             // 
             this.A3070.BackColor = System.Drawing.Color.PaleGreen;
-            this.A3070.Location = new System.Drawing.Point(1096, 208);
+            this.A3070.Location = new System.Drawing.Point(1124, 208);
             this.A3070.Name = "A3070";
             this.A3070.Size = new System.Drawing.Size(27, 30);
             this.A3070.TabIndex = 2776;
@@ -4948,7 +4944,7 @@
             // A3069
             // 
             this.A3069.BackColor = System.Drawing.Color.PaleGreen;
-            this.A3069.Location = new System.Drawing.Point(1068, 208);
+            this.A3069.Location = new System.Drawing.Point(1096, 208);
             this.A3069.Name = "A3069";
             this.A3069.Size = new System.Drawing.Size(27, 30);
             this.A3069.TabIndex = 2775;
@@ -4958,37 +4954,17 @@
             // A3068
             // 
             this.A3068.BackColor = System.Drawing.Color.PaleGreen;
-            this.A3068.Location = new System.Drawing.Point(1040, 208);
+            this.A3068.Location = new System.Drawing.Point(1068, 208);
             this.A3068.Name = "A3068";
             this.A3068.Size = new System.Drawing.Size(27, 30);
             this.A3068.TabIndex = 2774;
             this.A3068.Text = "16";
             this.A3068.UseVisualStyleBackColor = false;
             // 
-            // A2122
-            // 
-            this.A2122.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2122.Location = new System.Drawing.Point(1208, 172);
-            this.A2122.Name = "A2122";
-            this.A2122.Size = new System.Drawing.Size(27, 30);
-            this.A2122.TabIndex = 2773;
-            this.A2122.Text = "16";
-            this.A2122.UseVisualStyleBackColor = false;
-            // 
-            // A2121
-            // 
-            this.A2121.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2121.Location = new System.Drawing.Point(1180, 172);
-            this.A2121.Name = "A2121";
-            this.A2121.Size = new System.Drawing.Size(27, 30);
-            this.A2121.TabIndex = 2772;
-            this.A2121.Text = "16";
-            this.A2121.UseVisualStyleBackColor = false;
-            // 
             // A2120
             // 
             this.A2120.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2120.Location = new System.Drawing.Point(1152, 172);
+            this.A2120.Location = new System.Drawing.Point(1208, 172);
             this.A2120.Name = "A2120";
             this.A2120.Size = new System.Drawing.Size(27, 30);
             this.A2120.TabIndex = 2771;
@@ -4998,7 +4974,7 @@
             // A2119
             // 
             this.A2119.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2119.Location = new System.Drawing.Point(1124, 172);
+            this.A2119.Location = new System.Drawing.Point(1180, 172);
             this.A2119.Name = "A2119";
             this.A2119.Size = new System.Drawing.Size(27, 30);
             this.A2119.TabIndex = 2770;
@@ -5008,7 +4984,7 @@
             // A2118
             // 
             this.A2118.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2118.Location = new System.Drawing.Point(1096, 172);
+            this.A2118.Location = new System.Drawing.Point(1152, 172);
             this.A2118.Name = "A2118";
             this.A2118.Size = new System.Drawing.Size(27, 30);
             this.A2118.TabIndex = 2769;
@@ -5018,7 +4994,7 @@
             // A2117
             // 
             this.A2117.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2117.Location = new System.Drawing.Point(1068, 172);
+            this.A2117.Location = new System.Drawing.Point(1124, 172);
             this.A2117.Name = "A2117";
             this.A2117.Size = new System.Drawing.Size(27, 30);
             this.A2117.TabIndex = 2768;
@@ -5028,7 +5004,7 @@
             // A2116
             // 
             this.A2116.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2116.Location = new System.Drawing.Point(1040, 172);
+            this.A2116.Location = new System.Drawing.Point(1096, 172);
             this.A2116.Name = "A2116";
             this.A2116.Size = new System.Drawing.Size(27, 30);
             this.A2116.TabIndex = 2767;
@@ -6186,7 +6162,7 @@
             // A2115
             // 
             this.A2115.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2115.Location = new System.Drawing.Point(901, 172);
+            this.A2115.Location = new System.Drawing.Point(1068, 172);
             this.A2115.Name = "A2115";
             this.A2115.Size = new System.Drawing.Size(27, 30);
             this.A2115.TabIndex = 2633;
@@ -6196,7 +6172,7 @@
             // A2114
             // 
             this.A2114.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2114.Location = new System.Drawing.Point(873, 172);
+            this.A2114.Location = new System.Drawing.Point(901, 172);
             this.A2114.Name = "A2114";
             this.A2114.Size = new System.Drawing.Size(27, 30);
             this.A2114.TabIndex = 2632;
@@ -6206,7 +6182,7 @@
             // A2113
             // 
             this.A2113.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2113.Location = new System.Drawing.Point(845, 172);
+            this.A2113.Location = new System.Drawing.Point(873, 172);
             this.A2113.Name = "A2113";
             this.A2113.Size = new System.Drawing.Size(27, 30);
             this.A2113.TabIndex = 2631;
@@ -6216,7 +6192,7 @@
             // A2112
             // 
             this.A2112.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2112.Location = new System.Drawing.Point(817, 172);
+            this.A2112.Location = new System.Drawing.Point(845, 172);
             this.A2112.Name = "A2112";
             this.A2112.Size = new System.Drawing.Size(27, 30);
             this.A2112.TabIndex = 2630;
@@ -6226,7 +6202,7 @@
             // A2111
             // 
             this.A2111.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2111.Location = new System.Drawing.Point(789, 172);
+            this.A2111.Location = new System.Drawing.Point(817, 172);
             this.A2111.Name = "A2111";
             this.A2111.Size = new System.Drawing.Size(27, 30);
             this.A2111.TabIndex = 2629;
@@ -6236,7 +6212,7 @@
             // A2110
             // 
             this.A2110.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2110.Location = new System.Drawing.Point(761, 172);
+            this.A2110.Location = new System.Drawing.Point(789, 172);
             this.A2110.Name = "A2110";
             this.A2110.Size = new System.Drawing.Size(27, 30);
             this.A2110.TabIndex = 2628;
@@ -6246,7 +6222,7 @@
             // A2109
             // 
             this.A2109.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2109.Location = new System.Drawing.Point(733, 172);
+            this.A2109.Location = new System.Drawing.Point(761, 172);
             this.A2109.Name = "A2109";
             this.A2109.Size = new System.Drawing.Size(27, 30);
             this.A2109.TabIndex = 2627;
@@ -6256,7 +6232,7 @@
             // A2108
             // 
             this.A2108.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2108.Location = new System.Drawing.Point(705, 172);
+            this.A2108.Location = new System.Drawing.Point(733, 172);
             this.A2108.Name = "A2108";
             this.A2108.Size = new System.Drawing.Size(27, 30);
             this.A2108.TabIndex = 2626;
@@ -6266,7 +6242,7 @@
             // A2107
             // 
             this.A2107.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2107.Location = new System.Drawing.Point(677, 172);
+            this.A2107.Location = new System.Drawing.Point(705, 172);
             this.A2107.Name = "A2107";
             this.A2107.Size = new System.Drawing.Size(27, 30);
             this.A2107.TabIndex = 2625;
@@ -7166,7 +7142,7 @@
             // A2106
             // 
             this.A2106.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2106.Location = new System.Drawing.Point(390, 172);
+            this.A2106.Location = new System.Drawing.Point(677, 172);
             this.A2106.Name = "A2106";
             this.A2106.Size = new System.Drawing.Size(27, 30);
             this.A2106.TabIndex = 2535;
@@ -7176,7 +7152,7 @@
             // A2105
             // 
             this.A2105.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2105.Location = new System.Drawing.Point(362, 172);
+            this.A2105.Location = new System.Drawing.Point(390, 172);
             this.A2105.Name = "A2105";
             this.A2105.Size = new System.Drawing.Size(27, 30);
             this.A2105.TabIndex = 2534;
@@ -7186,7 +7162,7 @@
             // A2104
             // 
             this.A2104.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2104.Location = new System.Drawing.Point(334, 172);
+            this.A2104.Location = new System.Drawing.Point(362, 172);
             this.A2104.Name = "A2104";
             this.A2104.Size = new System.Drawing.Size(27, 30);
             this.A2104.TabIndex = 2533;
@@ -7196,7 +7172,7 @@
             // A2103
             // 
             this.A2103.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2103.Location = new System.Drawing.Point(306, 172);
+            this.A2103.Location = new System.Drawing.Point(334, 172);
             this.A2103.Name = "A2103";
             this.A2103.Size = new System.Drawing.Size(27, 30);
             this.A2103.TabIndex = 2532;
@@ -7206,7 +7182,7 @@
             // A2102
             // 
             this.A2102.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2102.Location = new System.Drawing.Point(278, 172);
+            this.A2102.Location = new System.Drawing.Point(306, 172);
             this.A2102.Name = "A2102";
             this.A2102.Size = new System.Drawing.Size(27, 30);
             this.A2102.TabIndex = 2531;
@@ -7216,7 +7192,7 @@
             // A2101
             // 
             this.A2101.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2101.Location = new System.Drawing.Point(250, 172);
+            this.A2101.Location = new System.Drawing.Point(278, 172);
             this.A2101.Name = "A2101";
             this.A2101.Size = new System.Drawing.Size(27, 30);
             this.A2101.TabIndex = 2530;
@@ -7226,21 +7202,12 @@
             // A2100
             // 
             this.A2100.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2100.Location = new System.Drawing.Point(222, 172);
+            this.A2100.Location = new System.Drawing.Point(250, 172);
             this.A2100.Name = "A2100";
             this.A2100.Size = new System.Drawing.Size(27, 30);
             this.A2100.TabIndex = 2529;
             this.A2100.Text = "16";
             this.A2100.UseVisualStyleBackColor = false;
-            // 
-            // A2099
-            // 
-            this.A2099.BackColor = System.Drawing.Color.PaleGreen;
-            this.A2099.Location = new System.Drawing.Point(194, 172);
-            this.A2099.Name = "A2099";
-            this.A2099.Size = new System.Drawing.Size(27, 30);
-            this.A2099.TabIndex = 2528;
-            this.A2099.UseVisualStyleBackColor = false;
             // 
             // metroTabPage2
             // 
@@ -7552,6 +7519,16 @@
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Platea B";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
+            // 
+            // A2000
+            // 
+            this.A2000.BackColor = System.Drawing.Color.Khaki;
+            this.A2000.Location = new System.Drawing.Point(519, 536);
+            this.A2000.Name = "A2000";
+            this.A2000.Size = new System.Drawing.Size(27, 30);
+            this.A2000.TabIndex = 2227;
+            this.A2000.Text = "16";
+            this.A2000.UseVisualStyleBackColor = false;
             // 
             // A1973
             // 
@@ -13399,25 +13376,23 @@
             this.btnCerrar.TabIndex = 24;
             this.btnCerrar.Text = "X";
             // 
-            // A2000
+            // A2099
             // 
-            this.A2000.BackColor = System.Drawing.Color.Khaki;
-            this.A2000.Location = new System.Drawing.Point(519, 536);
-            this.A2000.Name = "A2000";
-            this.A2000.Size = new System.Drawing.Size(27, 30);
-            this.A2000.TabIndex = 2227;
-            this.A2000.Text = "16";
-            this.A2000.UseVisualStyleBackColor = false;
+            this.A2099.BackColor = System.Drawing.Color.PaleGreen;
+            this.A2099.Location = new System.Drawing.Point(222, 172);
+            this.A2099.Name = "A2099";
+            this.A2099.Size = new System.Drawing.Size(27, 30);
+            this.A2099.TabIndex = 2528;
+            this.A2099.UseVisualStyleBackColor = false;
             // 
-            // A1986
+            // A2098
             // 
-            this.A1986.BackColor = System.Drawing.Color.Khaki;
-            this.A1986.Location = new System.Drawing.Point(285, 543);
-            this.A1986.Name = "A1986";
-            this.A1986.Size = new System.Drawing.Size(27, 30);
-            this.A1986.TabIndex = 1933;
-            this.A1986.Text = "16";
-            this.A1986.UseVisualStyleBackColor = false;
+            this.A2098.BackColor = System.Drawing.Color.PaleGreen;
+            this.A2098.Location = new System.Drawing.Point(194, 172);
+            this.A2098.Name = "A2098";
+            this.A2098.Size = new System.Drawing.Size(27, 30);
+            this.A2098.TabIndex = 2790;
+            this.A2098.UseVisualStyleBackColor = false;
             // 
             // TheaterPerJapones
             // 
@@ -14322,15 +14297,12 @@
         private System.Windows.Forms.Button A3124;
         private System.Windows.Forms.Button A3123;
         private System.Windows.Forms.Button A3122;
-        private System.Windows.Forms.Button A3074;
         private System.Windows.Forms.Button A3073;
         private System.Windows.Forms.Button A3072;
         private System.Windows.Forms.Button A3071;
         private System.Windows.Forms.Button A3070;
         private System.Windows.Forms.Button A3069;
         private System.Windows.Forms.Button A3068;
-        private System.Windows.Forms.Button A2122;
-        private System.Windows.Forms.Button A2121;
         private System.Windows.Forms.Button A2120;
         private System.Windows.Forms.Button A2119;
         private System.Windows.Forms.Button A2118;
@@ -14552,10 +14524,11 @@
         private System.Windows.Forms.Button A2102;
         private System.Windows.Forms.Button A2101;
         private System.Windows.Forms.Button A2100;
-        private System.Windows.Forms.Button A2099;
         private MaterialSkin.Controls.MaterialLabel lblTituloTeatro;
         private System.Windows.Forms.Button A1973;
         private System.Windows.Forms.Button A1986;
         private System.Windows.Forms.Button A2000;
+        private System.Windows.Forms.Button A2098;
+        private System.Windows.Forms.Button A2099;
     }
 }
