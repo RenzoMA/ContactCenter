@@ -189,6 +189,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                     },
                     Obra = new Obra()
                     {
+                        IdObra = DataConvert.ToInt(dtr["O.IdObra"]),
                         Nombre = DataConvert.ToString(dtr["O.Nombre"]),
                         FechaInicio = DataConvert.ToDateTime(dtr["O.FechaInicio"]),
                         FechaFin = DataConvert.ToDateTime(dtr["O.FechaFin"]),
