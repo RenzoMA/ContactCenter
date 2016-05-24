@@ -162,14 +162,13 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Update(Promocion datos)
         {
-            String sql = "UPDATE TH_PROMOCION SET Descripcion = @descripciom, Estad0 = @estado, FechaInicio = @fechaInicio, FechaFin = @fechaFin, IdFuncion = @idFunciom, IdTipoPromocion = @idTipoPromocion " +
+            String sql = "UPDATE TH_PROMOCION SET Descripcion = @descripciom, Estado = @estado, FechaInicio = @fechaInicio, FechaFin = @fechaFin, IdTipoPromocion = @idTipoPromocion, " +
                         "TipoDescuento = @tipoDescuento, Descuento = @descuento, FechaMod = @fechaMod, UserMod = @userMod WHERE IdPromocion = @idPromocion";
 
             OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter fechaInicio = UtilDA.SetParameters("@fechInicio", OleDbType.Date, datos.FechaInicio);
             OleDbParameter fechaFin = UtilDA.SetParameters("@fechaFin", OleDbType.VarChar, datos.FechaFin);
-            OleDbParameter idFuncion = UtilDA.SetParameters("@idFuncion", OleDbType.Integer, datos.Funcion.IdFuncion);
             OleDbParameter idTipoPromocion = UtilDA.SetParameters("@idTipoPromocion", OleDbType.Integer, datos.TipoPromocion.IdTipoPromocion);
             OleDbParameter tipoDescuento = UtilDA.SetParameters("@tipoDescuento", OleDbType.VarChar, datos.TipoDescuento);
             OleDbParameter descuento = UtilDA.SetParameters("@descuento", OleDbType.Single, datos.Descuento);
@@ -177,20 +176,21 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter userMod = UtilDA.SetParameters("@userMod", OleDbType.VarChar, datos.UsuarioCreacion);
             OleDbParameter idPromocion = UtilDA.SetParameters("@idPromocion", OleDbType.Integer, datos.IdPromocion);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, descripcion, estado, fechaInicio, fechaFin, idFuncion, idTipoPromocion, tipoDescuento, descuento, fechaMod, userMod, idPromocion);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, descripcion, estado, fechaInicio, fechaFin, idTipoPromocion, tipoDescuento, descuento, fechaMod, userMod, idPromocion);
 
         }
 
         public List<Promocion> ListByFuncionTipoPromo(int idFuncion, int idTipoPromo)
         {
-            string SQL = "SELECT* FROM (TH_PROMOCION P INNER JOIN TH_FUNCION F ON F.IDFUNCION = P.IDFUNCION) INNER JOIN TH_TIPO_PROMOCION TP ON TP.IDTIPOPROMOCION = P.IDTIPOPROMOCION WHERE P.IDFUNCION = @IdFuncion AND P.Estado = 'A' AND P.IDTIPOPROMOCION = @IdTipoPromocion";
+            string SQL = "SELECT* FROM (TH_PROMOCION P INNER JOIN TH_FUNCION F ON F.IDFUNCION = P.IDFUNCION) INNER JOIN TH_TIPO_PROMOCION TP ON TP.IDTIPOPROMOCION = P.IDTIPOPROMOCION WHERE P.IDFUNCION = @IdFuncion AND P.Estado = 'A' AND P.IDTIPOPROMOCION = @IdTipoPromocion AND @FechaActual BETWEEN FechaInicio and FechaFin";
 
             OleDbParameter pIdfuncion = UtilDA.SetParameters("@IdFuncion", OleDbType.Integer, idFuncion);
             OleDbParameter pIdTipoPromo = UtilDA.SetParameters("@IdTipoPromocion", OleDbType.Integer, idTipoPromo);
+            OleDbParameter pFechaActual = UtilDA.SetParameters("@FechaActual", OleDbType.Date, DateTime.Today);
             Promocion promocion = null;
             List<Promocion> ListaPromocion = new List<Promocion>();
 
-            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, SQL, cnx, pIdfuncion, pIdTipoPromo))
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, SQL, cnx, pIdfuncion, pIdTipoPromo,pFechaActual))
             {
                 while (dtr.Read())
                 {
@@ -214,6 +214,46 @@ namespace ContactCenterDA.Repositories.CC.TH
             UtilDA.Close(cnx);
             return ListaPromocion;
 
+        }
+
+        public List<Promocion> ListarPromocionByFuncion(int idFuncion)
+        {
+            string SQL = "SELECT* FROM (TH_PROMOCION P INNER JOIN TH_FUNCION F ON F.IDFUNCION = P.IDFUNCION) INNER JOIN TH_TIPO_PROMOCION TP ON TP.IDTIPOPROMOCION = P.IDTIPOPROMOCION WHERE P.IDFUNCION = @IdFuncion";
+
+            OleDbParameter pIdfuncion = UtilDA.SetParameters("@IdFuncion", OleDbType.Integer, idFuncion);
+            Promocion promocion = null;
+            List<Promocion> ListaPromocion = new List<Promocion>();
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, SQL, cnx, pIdfuncion))
+            {
+                while (dtr.Read())
+                {
+                    promocion = new Promocion()
+                    {
+                        IdPromocion = DataConvert.ToInt(dtr["IdPromocion"]),
+                        Descripcion = DataConvert.ToString(dtr["P.Descripcion"]),
+                        Estado = DataConvert.ToString(dtr["P.Estado"]),
+                        FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]),
+                        FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]),
+                        FechaCreacion = DataConvert.ToDateTime(dtr["P.FechaCrea"]),
+                        UsuarioCreacion = DataConvert.ToString(dtr["P.UserCrea"]),
+                        FechaModificacion = DataConvert.ToDateTime(dtr["P.FechaMod"]),
+                        UsuarioModificacion = DataConvert.ToString(dtr["P.UserMod"]),
+                        TipoDescuento = DataConvert.ToString(dtr["TipoDescuento"]),
+                        Descuento = DataConvert.ToSingle(dtr["Descuento"]),
+                        TipoPromocion = new TipoPromocion()
+                        {
+                            IdTipoPromocion = DataConvert.ToInt(dtr["TP.IdTipoPromocion"]),
+                            Descripcion = DataConvert.ToString(dtr["TP.Descripcion"]),
+                            FechaCreacion = DataConvert.ToDateTime(dtr["TP.FechaCrea"]),
+                            UsuarioCreacion = DataConvert.ToString(dtr["TP.UserCrea"])
+                        }
+                    };
+                    ListaPromocion.Add(promocion);
+                }
+            }
+            UtilDA.Close(cnx);
+            return ListaPromocion;
         }
     }
 }

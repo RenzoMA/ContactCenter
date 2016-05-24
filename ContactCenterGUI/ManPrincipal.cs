@@ -82,6 +82,13 @@ namespace ContactCenterGUI
                 manfaremenu.ShowDialog();
                 this.Show();
             }
+            else if (metroComboBox1.SelectedItem.ToString() == "Promoción")
+            {
+                this.Hide();
+                ManPromocion manfaremenu = new ManPromocion();
+                manfaremenu.ShowDialog();
+                this.Show();
+            }
         }
     }
 }

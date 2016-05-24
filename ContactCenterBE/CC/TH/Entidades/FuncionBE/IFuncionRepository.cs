@@ -10,5 +10,6 @@ namespace ContactCenterBE.CC.TH.Entidades.FuncionBE
     public interface IFuncionRepository : IBaseRepository<Funcion>
     {
         List<Funcion> ListarFuncionDiaObra(int dia, int obra);
+        List<Funcion> ListarFuncionByObra(int idObra);
     }
 }

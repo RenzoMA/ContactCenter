@@ -92,7 +92,6 @@ namespace ContactCenterGUI.CC
                     Main main = new Main();
                     main.ShowDialog();
                     this.Close();
-                    //test
                 }
                 else
                 {

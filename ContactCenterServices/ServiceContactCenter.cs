@@ -289,7 +289,7 @@ namespace ContactCenterServices
 
         public IList<Funcion> ListarFunciones()
         {
-            throw new NotImplementedException();
+            return _funcionService.GetLista();
         }
 
         public Funcion BuscarFuncion(int id)
@@ -302,9 +302,9 @@ namespace ContactCenterServices
             return _promocionService.ListByFuncionTipoPromo(idFuncion, idTipoPromocion);
         }
 
-        public List<TipoPromocion> GetListaTipoPromocion()
+        public List<TipoPromocion> GetListaTipoPromocionSeleccionable()
         {
-            return _tipoPromocionService.GetLista();
+            return _tipoPromocionService.GetListaSeleccionable();
         }
 
         public List<Reserva> ReporteReservas(int idTeatro, DateTime fecha)
@@ -355,6 +355,26 @@ namespace ContactCenterServices
         public bool UpdateUsuario(Usuario usuario, bool CambioContraseña)
         {
             return _usuarioService.UpdateUsuario(usuario,CambioContraseña);
+        }
+
+        public List<Funcion> ListarFuncionByObra(int idObra)
+        {
+            return _funcionService.ListarFuncionByObra(idObra);
+        }
+
+        public List<Promocion> ListarPromocionByFuncion(int idFuncion)
+        {
+            return _promocionService.ListarPromocionByFuncion(idFuncion);
+        }
+
+        public List<TipoPromocion> GetListaTipoPromocion()
+        {
+            return _tipoPromocionService.GetLista();
+        }
+
+        public bool UpdatePromocion(Promocion datos)
+        {
+            return _promocionService.Update(datos);
         }
 
         public List<Tarifa> GetListaByTeatroObra(int IdObra)

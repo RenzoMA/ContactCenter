@@ -242,23 +242,17 @@
     <Compile Include="Teatros\Reservas\FindReservation.Designer.cs">
       <DependentUpon>FindReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionCreate.cs">
+    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionCreate.Designer.cs">
-      <DependentUpon>ManPromocionCreate.cs</DependentUpon>
+    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManFuncion.Designer.cs">
+      <DependentUpon>ManPromocion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionFind.cs">
+    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionFind.Designer.cs">
-      <DependentUpon>ManPromocionFind.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionMenu.Designer.cs">
-      <DependentUpon>ManPromocionMenu.cs</DependentUpon>
+    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionEdit.Designer.cs">
+      <DependentUpon>ManPromocionEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaCreate.cs">
       <SubType>Form</SubType>
@@ -362,6 +356,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\TarifaMan\ManTarifaCreate.resx">
       <DependentUpon>ManTarifaCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\PromocionMan\ManPromocion.resx">
+      <DependentUpon>ManPromocion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\PromocionMan\ManPromocionEdit.resx">
+      <DependentUpon>ManPromocionEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reservas\FindReservation.resx">
       <DependentUpon>FindReservation.cs</DependentUpon>

@@ -189,5 +189,47 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter idfuncion = UtilDA.SetParameters("@idfuncion", OleDbType.Integer, datos.IdFuncion);
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, dia, horario, estado, idobra, fechamod, usermod, idobra);
         }
+
+        public List<Funcion> ListarFuncionByObra(int idObra)
+        {
+            List<Funcion> listaFuncion = new List<Funcion>(); ;
+
+            String sql = "SELECT * FROM (TH_FUNCION F INNER JOIN TH_OBRA O ON F.IDOBRA = O.IDOBRA)  INNER JOIN TH_TEATRO T ON O.IDTEATRO = T.IDTEATRO WHERE F.IDOBRA = @IdObra";
+
+            OleDbParameter pIdObra = UtilDA.SetParameters("@IdObra", OleDbType.Integer, idObra);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pIdObra))
+            {
+                while (dtr.Read())
+                {
+                    Funcion objFuncion = new Funcion();
+                    objFuncion.IdFuncion = DataConvert.ToInt(dtr["IdFuncion"]);
+                    objFuncion.Dia = DataConvert.ToInt(dtr["Dia"]);
+                    objFuncion.Horario = DataConvert.ToString(dtr["Horario"]);
+                    objFuncion.Estado = DataConvert.ToString(dtr["F.Estado"]);
+                    objFuncion.Obra = new Obra()
+                    {
+                        Nombre = DataConvert.ToString(dtr["O.Nombre"]),
+                        FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]),
+                        FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]),
+                        Descripcion = DataConvert.ToString(dtr["Descripcion"]),
+                        Teatro = new Teatro()
+                        {
+                            IdTeatro = DataConvert.ToInt(dtr["T.IdTeatro"]),
+                            Nombre = DataConvert.ToString(dtr["T.Nombre"]),
+                            Estado = DataConvert.ToString(dtr["T.Estado"]),
+                            frmTeatro = DataConvert.ToString(dtr["frmTeatro"])
+                        }
+                    };
+                    objFuncion.FechaCreacion = DataConvert.ToDateTime(dtr["F.FechaCrea"]);
+                    objFuncion.UsuarioCreacion = DataConvert.ToString(dtr["F.UserCrea"]);
+                    objFuncion.FechaModificacion = DataConvert.ToDateTime(dtr["F.FechaMod"]);
+                    objFuncion.UsuarioModificacion = DataConvert.ToString(dtr["F.UserMod"]);
+                    listaFuncion.Add(objFuncion);
+                }
+            }
+            UtilDA.Close(cnx);
+            return listaFuncion;
+        }
     }
 }
