@@ -51,14 +51,14 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         private bool Validar()
         {
             if(String.IsNullOrEmpty(txtPrecio.Text) ||
-            cboTeatro.SelectedItem == 0 || cboObra.SelectedItem == 0 || cboZona.SelectedItem == 0)
+            cboTeatro.SelectedIndex == 0 || cboObra.SelectedIndex == 0 || cboZona.SelectedIndex == 0)
             {
               MessageBox.Show("Por favor, ingrese los datos correctamente", "Aviso");  
               return false;
             }
             else
             {
-                return true:
+                return true;
             }
         }
         public void CrearTarifa()
