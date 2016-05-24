@@ -18,6 +18,11 @@ namespace ContactCenterBL.BusinessServices.CC.TH
 
         public List<TipoPromocion> GetLista()
         {
+            return tipoPromocionRepository.GetLista().ToList();
+        }
+
+        public List<TipoPromocion> GetListaSeleccionable()
+        {
             List<TipoPromocion> lista = tipoPromocionRepository.GetLista().ToList();
 
             TipoPromocion tipoPromocion = new TipoPromocion()

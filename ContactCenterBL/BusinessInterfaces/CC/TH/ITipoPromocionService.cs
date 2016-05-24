@@ -9,6 +9,8 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
 {
     public interface ITipoPromocionService
     {
+        List<TipoPromocion> GetListaSeleccionable();
         List<TipoPromocion> GetLista();
+
     }
 }

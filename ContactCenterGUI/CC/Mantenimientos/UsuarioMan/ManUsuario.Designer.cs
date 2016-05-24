@@ -140,16 +140,18 @@
             // 
             this.dataGridViewImageColumn1.HeaderText = "Editar";
             this.dataGridViewImageColumn1.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 25;
             // 
             // Editar
             // 
             this.Editar.HeaderText = "Editar";
             this.Editar.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Editar.Name = "Editar";
             this.Editar.ReadOnly = true;
-            this.Editar.Width = 25;
+            this.Editar.Width = 45;
             // 
             // Nombre
             // 

@@ -16,9 +16,24 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             promocionRepository = _promocionRepository;
         }
 
+        public List<Promocion> ListarPromocionByFuncion(int idFuncion)
+        {
+            List<Promocion> listaPromocion = promocionRepository.ListarPromocionByFuncion(idFuncion);
+            listaPromocion.ForEach(tx => {
+                tx.TipoDescuento = tx.TipoDescuento == "M"? "Multiplica" : "Reemplaza";
+                tx.Estado = tx.Estado == "A" ? "Activo" : "Inactivo";
+            });
+            return listaPromocion;
+        }
+
         public List<Promocion> ListByFuncionTipoPromo(int idFuncion, int idTipoPromocion)
         {
             return promocionRepository.ListByFuncionTipoPromo(idFuncion, idTipoPromocion);
+        }
+
+        public bool Update(Promocion datos)
+        {
+            return promocionRepository.Update(datos);
         }
     }
 }

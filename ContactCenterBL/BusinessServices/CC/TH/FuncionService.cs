@@ -48,5 +48,18 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         {
             return _funcionRepository.Update(datos);
         }
+
+        public List<Funcion> ListarFuncionByObra(int idObra)
+        {
+            List<Funcion> listaFuncion = _funcionRepository.ListarFuncionByObra(idObra);
+            Funcion funcion = new Funcion()
+            {
+                IdFuncion = 0,
+                Horario = "Seleccione Funcion"
+            };
+            listaFuncion.Insert(0, funcion);
+
+            return listaFuncion;
+        }
     }
 }

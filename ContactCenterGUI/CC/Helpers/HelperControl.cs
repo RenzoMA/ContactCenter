@@ -26,6 +26,14 @@ namespace ContactCenterGUI.CC.Helpers
                 return;
             }
         }
+        public static void EditTextDecimal(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != 46))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
         public static void ValidEmail(object sender, CancelEventArgs e)
         {
             TextBox txt = (TextBox)sender;
