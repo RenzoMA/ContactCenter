@@ -230,6 +230,12 @@
     <Compile Include="CC\Mantenimientos\UsuarioMan\ManUsuario.Designer.cs">
       <DependentUpon>ManUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifa.designer.cs">
+      <DependentUpon>ManTarifa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Reservas\FindReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,18 +265,6 @@
     </Compile>
     <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaCreate.Designer.cs">
       <DependentUpon>ManTarifaCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaFind.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaFind.Designer.cs">
-      <DependentUpon>ManTarifaFind.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaMenu.Designer.cs">
-      <DependentUpon>ManTarifaMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Reportes\RptReservas.cs">
       <SubType>Form</SubType>
@@ -362,6 +356,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CC\Mantenimientos\UsuarioMan\ManUsuario.resx">
       <DependentUpon>ManUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\TarifaMan\ManTarifa.resx">
+      <DependentUpon>ManTarifa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\TarifaMan\ManTarifaCreate.resx">
+      <DependentUpon>ManTarifaCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reservas\FindReservation.resx">
       <DependentUpon>FindReservation.cs</DependentUpon>

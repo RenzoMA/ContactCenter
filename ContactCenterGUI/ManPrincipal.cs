@@ -78,7 +78,7 @@ namespace ContactCenterGUI
             else if (metroComboBox1.SelectedItem.ToString() == "Tarifa")
             {
                 this.Hide();
-                ManTarifaMenu manfaremenu = new ManTarifaMenu();
+                ManTarifa manfaremenu = new ManTarifa();
                 manfaremenu.ShowDialog();
                 this.Show();
             }

@@ -11,6 +11,7 @@ using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
+using ContactCenterBE.CC.TH.Entidades.TarifaBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.Entidades.CLienteBE;
 using ContactCenterBE.CC.Entidades.RolBE;
@@ -74,5 +75,11 @@ namespace ContactCenterServices
         List<Rol> ListarRol();
         bool InsertarUsuario(Usuario usuario);
         bool UpdateUsuario(Usuario usuario,bool cambioContraseña);
+
+        //Tarifa
+
+        List<Tarifa> GetListaByTeatroObra(int IdObra);
+
+        bool InsertarTarifa(Tarifa tarifa);
     }
 }

@@ -9,5 +9,6 @@ namespace ContactCenterBE.CC.TH.Entidades.TarifaBE
 {
     public interface ITarifaRepository : IBaseRepository<Tarifa>
     {
+        List<Tarifa> GetListaByTeatroObra(int IdObra);
     }
 }

@@ -30,5 +30,50 @@ namespace ContactCenterGUI.Teatros.Escenarios
         {
 
         }
+
+        private void A3176_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void A3102_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void A2204_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void A3119_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void A2220_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void A2228_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void A2306_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void A2320_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -160,5 +160,56 @@ namespace ContactCenterDA.Repositories.CC.TH
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, idZona, idObra, precio, fechaCrea, userCrea, idTarifa);
         }
+
+        public List<Tarifa> GetListaByTeatroObra(int IdObra)
+        {
+            List<Tarifa> listTarifa = new List<Tarifa>();
+            String sql = "SELECT * FROM((TH_Tarifa T INNER JOIN TH_OBRA O ON O.IdObra = T.IdObra) INNER JOIN TH_ZONA Z ON Z.IdZona = T.IdZona) INNER JOIN TH_TEATRO TE ON TE.IdTeatro = Z.IdTeatro WHERE T.IDOBRA = @idObra";
+
+            OleDbParameter codigoObra = UtilDA.SetParameters("@idObra", OleDbType.Integer, IdObra);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, codigoObra))
+            {
+                Tarifa objTarifa = new Tarifa()
+                {
+                    IdTarifa = DataConvert.ToInt(dtr["T.IdTarifa"]),
+                    Zona = new Zona()
+                    {
+                        IdZona = DataConvert.ToInt(dtr["Z.IdZona"]),
+                        Nombre = DataConvert.ToString(dtr["Z.Nombre"]),
+                        Descripcion = DataConvert.ToString(dtr["Z.Descripcion"]),
+                        Estado = DataConvert.ToString(dtr["Z.Estado"]),
+                        Teatro = new Teatro()
+                        {
+                            IdTeatro = DataConvert.ToInt(dtr["TE.IdTeatro"]),
+                            Nombre = DataConvert.ToString(dtr["TE.Nombre"]),
+                            Estado = DataConvert.ToString(dtr["TE.Estado"]),
+                            frmTeatro = DataConvert.ToString(dtr["TE.frmTeatro"])
+                        }
+                    },
+                    Obra = new Obra()
+                    {
+                        Nombre = DataConvert.ToString(dtr["O.Nombre"]),
+                        FechaInicio = DataConvert.ToDateTime(dtr["O.FechaInicio"]),
+                        FechaFin = DataConvert.ToDateTime(dtr["O.FechaFin"]),
+                        Descripcion = DataConvert.ToString(dtr["O.Descripcion"]),
+                        Teatro = new Teatro()
+                        {
+                            IdTeatro = DataConvert.ToInt(dtr["TE.IdTeatro"]),
+                            Nombre = DataConvert.ToString(dtr["TE.Nombre"]),
+                            Estado = DataConvert.ToString(dtr["TE.Estado"]),
+                            frmTeatro = DataConvert.ToString(dtr["TE.frmTeatro"])
+                        }
+                    },
+                    FechaCreacion = DataConvert.ToDateTime(dtr["T.FechaCrea"]),
+                    UsuarioCreacion = DataConvert.ToString(dtr["T.UserCrea"]),
+                    FechaModificacion = DataConvert.ToDateTime(dtr["T.FechaMod"]),
+                    UsuarioModificacion = DataConvert.ToString(dtr["T.UserMod"])
+                };
+                    listTarifa.Add(objTarifa);
+            }
+            UtilDA.Close(cnx);
+            return listTarifa;
+        }
     }
 }

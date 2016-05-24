@@ -19,6 +19,7 @@ using ContactCenterBE.CC.Entidades.CLienteBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.Entidades.RolBE;
+using ContactCenterBE.CC.TH.Entidades.TarifaBE;
 
 namespace ContactCenterServices
 {
@@ -37,6 +38,7 @@ namespace ContactCenterServices
         private ITipoPromocionService _tipoPromocionService;
         private IZonaService _zonaService;
         private IRolService _rolService;
+        private ITarifaService _tarifaService;
 
         public ServiceContactCenter(
             IAsientoService asientoService,
@@ -50,7 +52,8 @@ namespace ContactCenterServices
             IPromocionService promocionService,
             ITipoPromocionService tipoPromocionService,
             IZonaService zonaService,
-            IRolService rolService)
+            IRolService rolService,
+            ITarifaService tarifaService)
         {
             _clienteService = clienteService;
             _asientoService = asientoService;
@@ -64,6 +67,7 @@ namespace ContactCenterServices
             _tipoPromocionService = tipoPromocionService;
             _zonaService = zonaService;
             _rolService = rolService;
+            _tarifaService = tarifaService;
         }
 
         public void Dispose()
@@ -351,6 +355,16 @@ namespace ContactCenterServices
         public bool UpdateUsuario(Usuario usuario, bool CambioContraseña)
         {
             return _usuarioService.UpdateUsuario(usuario,CambioContraseña);
+        }
+
+        public List<Tarifa> GetListaByTeatroObra(int IdObra)
+        {
+            return _tarifaService.GetListaByTeatroObra(IdObra);
+        }
+
+        public bool InsertarTarifa(Tarifa tarifa)
+        {
+            return _tarifaService.Insert(tarifa);
         }
     }
 }

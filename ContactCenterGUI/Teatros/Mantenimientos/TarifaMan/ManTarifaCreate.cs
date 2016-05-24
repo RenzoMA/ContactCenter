@@ -7,20 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Animations;
 using ContactCenterServices;
 using Microsoft.Practices.Unity;
-using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
-
-
+using ContactCenterBE.CC.TH.Entidades.TarifaBE;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 {
     public partial class ManTarifaCreate : MaterialForm
     {
+        private IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+
         private Teatro teatro = null;
         private List<Teatro> listaTeatro;
 
@@ -30,7 +31,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         private List<Zona> listaZona = null;
         private Zona zona = null;
 
-
+        private Single precio = 0;
 
         public ManTarifaCreate()
         {
@@ -39,15 +40,34 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        public void CrearTarifa()
+        {
+            teatro = cboTeatro.SelectedItem as Teatro;
+            obra = cboObra.SelectedItem as Obra;
+
+            Tarifa tarifa = new Tarifa()
+            {
+                Precio = Convert.ToSingle(txtPrecio.Text)
+            };
+
+            if (servicio.InsertarTarifa(tarifa))
+            {
+                MessageBox.Show("Tarifa creada correctamente", "Aviso");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void manFareCreate_Load(object sender, EventArgs e)
         {
             CargarTeatros();
         }
-
-
 
         private async void CargarTeatros()
         {
@@ -57,8 +77,8 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
                 cboTeatro.DataSource = listaTeatro;
                 cboTeatro.DisplayMember = "Nombre";
             }
-            CargarZona();
             CargarObras();
+            CargarZonas();
         }
 
         private void CargarObras()
@@ -70,10 +90,9 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
                 cboObra.DataSource = listaObra;
                 cboObra.DisplayMember = "Nombre";
             }
-            
         }
 
-        private void CargarZona()
+        private void CargarZonas()
         {
             teatro = cboTeatro.SelectedItem as Teatro;
             using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
@@ -84,9 +103,10 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
             }
         }
 
-        private void cboTeatro_SelectionChangeCommitted(object sender, EventArgs e)
+        private void cboTeatro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CargarTeatros();
+            CargarObras();
+            CargarZonas();
         }
     }
 }
