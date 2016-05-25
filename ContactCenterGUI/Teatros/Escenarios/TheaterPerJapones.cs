@@ -75,5 +75,30 @@ namespace ContactCenterGUI.Teatros.Escenarios
         {
 
         }
+
+        private void button864_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void A2412_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void A2419_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button744_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void A2481_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -46,8 +46,6 @@
             "Obra",
             "Promoción",
             "Tarifa",
-            "Teatro",
-            "Tipo Promoción",
             "Zona"});
             this.metroComboBox1.Location = new System.Drawing.Point(22, 128);
             this.metroComboBox1.Name = "metroComboBox1";
@@ -67,7 +65,7 @@
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
-            // ManForm
+            // ManPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -75,7 +73,7 @@
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.metroComboBox1);
             this.MaximizeBox = false;
-            this.Name = "ManForm";
+            this.Name = "ManPrincipal";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManForm";
