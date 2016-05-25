@@ -67,10 +67,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
 
         private void ManPromocionCreate_Load(object sender, EventArgs e)
         {
-            LoadComboTeatro();
-            LoadComboTipoPromocion();
-            LoadComboTipoDescuento();
-            SetEventos();
+            Init();
         }
         private void LoadComboTipoDescuento()
         {
@@ -82,7 +79,21 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
                 return false;
             if (txtDescuento.Text.ToUpper().Trim().Equals(String.Empty))
                 return false;
+            if (cboFuncion.SelectedIndex == 0)
+                return false;
             return true;
+        }
+        private void Init()
+        {
+            LoadComboTeatro();
+            LoadComboTipoPromocion();
+            LoadComboTipoDescuento();
+            SetEventos();
+            SetValoresDefecto();
+        }
+        private void SetValoresDefecto()
+        {
+            dtpFechaFin.Value = DateTime.Now.AddMonths(1);
         }
         private void btnCrear_Click(object sender, EventArgs e)
         {

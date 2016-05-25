@@ -151,7 +151,7 @@
             // 
             // tari
             // 
-            this.tari.DataPropertyName = "IdTarifa";
+            this.tari.DataPropertyName = "T.IdTarifa";
             this.tari.HeaderText = "Tarifa";
             this.tari.Name = "tari";
             this.tari.ReadOnly = true;
@@ -180,7 +180,7 @@
             // 
             // pre
             // 
-            this.pre.DataPropertyName = "Precio";
+            this.pre.DataPropertyName = "T.Precio";
             this.pre.HeaderText = "Precio";
             this.pre.Name = "pre";
             this.pre.ReadOnly = true;

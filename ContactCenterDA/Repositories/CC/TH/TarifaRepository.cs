@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ContactCenterBE.CC.TH.Entidades.TarifaBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
+using ContactCenterBE.CC.Entidades.UsuarioBE;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using System.Data.OleDb;
 using System.Data;
@@ -135,14 +136,14 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Insert(Tarifa datos)
         {
-            String sql = "INSERT INTO TH_Tarifa(IdZona, IdObra, Precio, FechaCrea, UserCrea" +
-                        " VALUES(@idZona, @idObra, @precio, @fechaCrea, @userCrea";
+            String sql = "INSERT INTO TH_Tarifa(IdZona, IdObra, Precio, FechaCrea, UserCrea)" +
+                        " VALUES(@idZona, @idObra, @precio, @fechaCrea, @userCrea)";
 
             OleDbParameter idZona = UtilDA.SetParameters("@idZona", OleDbType.Integer, datos.Zona.IdZona);
             OleDbParameter idObra = UtilDA.SetParameters("@idObra", OleDbType.Integer, datos.Obra.IdObra);
             OleDbParameter precio = UtilDA.SetParameters("@precio", OleDbType.Single, datos.Precio);
-            OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter userCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
+            OleDbParameter userCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, idZona, idObra, precio, fechaCrea, userCrea);
         }
@@ -164,7 +165,7 @@ namespace ContactCenterDA.Repositories.CC.TH
         public List<Tarifa> GetListaByTeatroObra(int IdObra)
         {
             List<Tarifa> listTarifa = new List<Tarifa>();
-            String sql = "SELECT * FROM((TH_Tarifa T INNER JOIN TH_OBRA O ON O.IdObra = T.IdObra) INNER JOIN TH_ZONA Z ON Z.IdZona = T.IdZona) INNER JOIN TH_TEATRO TE ON TE.IdTeatro = Z.IdTeatro WHERE T.IDOBRA = @idObra";
+            String sql = "SELECT * FROM ((TH_Tarifa T INNER JOIN TH_OBRA O ON O.IdObra = T.IdObra) INNER JOIN TH_ZONA Z ON Z.IdZona = T.IdZona) INNER JOIN TH_TEATRO TE ON TE.IdTeatro = Z.IdTeatro WHERE T.IDOBRA = @idObra";
 
             OleDbParameter codigoObra = UtilDA.SetParameters("@idObra", OleDbType.Integer, IdObra);
 
@@ -202,6 +203,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                             frmTeatro = DataConvert.ToString(dtr["TE.frmTeatro"])
                         }
                     },
+                    Precio = DataConvert.ToSingle(dtr["T.Precio"]),
                     FechaCreacion = DataConvert.ToDateTime(dtr["T.FechaCrea"]),
                     UsuarioCreacion = DataConvert.ToString(dtr["T.UserCrea"]),
                     FechaModificacion = DataConvert.ToDateTime(dtr["T.FechaMod"]),
