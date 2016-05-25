@@ -1,6 +1,6 @@
-﻿namespace ContactCenterGUI.CC
+﻿namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 {
-    partial class Main
+    partial class ManObraEditar
     {
         /// <summary>
         /// Required designer variable.
@@ -30,18 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Main
+            // ManObraEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(824, 574);
-            this.MaximizeBox = false;
-            this.Name = "Main";
-            this.Sizable = false;
+            this.ClientSize = new System.Drawing.Size(300, 300);
+            this.Name = "ManObraEditar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Aplicaciones";
-            this.Load += new System.EventHandler(this.Main_Load);
+            this.Text = "ManObraEditar";
             this.ResumeLayout(false);
 
         }

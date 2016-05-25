@@ -32,5 +32,10 @@ namespace ContactCenterBL.BusinessServices.CC
         {
             return aplicacionRepository.ListarAplicacionUsuario(usuario);
         }
+
+        public bool Update(Aplicacion aplicacion)
+        {
+            return aplicacionRepository.Update(aplicacion);
+        }
     }
 }

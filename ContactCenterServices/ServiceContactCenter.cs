@@ -241,6 +241,12 @@ namespace ContactCenterServices
             return _obraService.GetLista();
         }
 
+        //obra listar por teatro
+        public List<Obra> ListarObraByTeatro(int idTeatro)
+        {
+            return _obraService.ListarObraByTeatro(idTeatro);
+        }
+
         public bool InsertarReserva(Reserva reserva,Cliente cliente)
         {
             return _reservaService.InsertarReserva(reserva,cliente);
@@ -367,6 +373,7 @@ namespace ContactCenterServices
             return _promocionService.ListarPromocionByFuncion(idFuncion);
         }
 
+
         public List<TipoPromocion> GetListaTipoPromocion()
         {
             return _tipoPromocionService.GetLista();
@@ -390,6 +397,11 @@ namespace ContactCenterServices
         public bool InsertPromocion(Promocion datos)
         {
             return _promocionService.Insert(datos);
+        }
+
+        public bool UpdateAplicacion(Aplicacion aplicacion)
+        {
+            return _aplicacionService.Update(aplicacion);
         }
     }
 }

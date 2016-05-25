@@ -1,6 +1,6 @@
 ﻿namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
 {
-    partial class ManAppMenu
+    partial class ManAplicacion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,56 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.dgbAplicacion = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgbAplicacion)).BeginInit();
             this.SuspendLayout();
             // 
-            // materialRaisedButton1
+            // dgbAplicacion
             // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(143, 320);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(117, 32);
-            this.materialRaisedButton1.TabIndex = 3;
-            this.materialRaisedButton1.Text = "Aceptar";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+            this.dgbAplicacion.AllowUserToAddRows = false;
+            this.dgbAplicacion.AllowUserToDeleteRows = false;
+            this.dgbAplicacion.BackgroundColor = System.Drawing.Color.White;
+            this.dgbAplicacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgbAplicacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar,
+            this.Nombre,
+            this.Correo});
+            this.dgbAplicacion.Location = new System.Drawing.Point(12, 78);
+            this.dgbAplicacion.Name = "dgbAplicacion";
+            this.dgbAplicacion.ReadOnly = true;
+            this.dgbAplicacion.RowHeadersVisible = false;
+            this.dgbAplicacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgbAplicacion.Size = new System.Drawing.Size(773, 419);
+            this.dgbAplicacion.TabIndex = 0;
+            this.dgbAplicacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbAplicacion_CellContentClick);
             // 
-            // metroComboBox1
+            // Editar
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Items.AddRange(new object[] {
-            "Elegir Mantenimiento",
-            "Nueva Aplicación",
-            "Buscar Aplicación"});
-            this.metroComboBox1.Location = new System.Drawing.Point(39, 151);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(209, 29);
-            this.metroComboBox1.TabIndex = 2;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 45;
             // 
-            // ManAppMenu
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 300;
+            // 
+            // Correo
+            // 
+            this.Correo.DataPropertyName = "Correo";
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            this.Correo.Width = 300;
+            // 
+            // ManAplicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 379);
-            this.Controls.Add(this.materialRaisedButton1);
-            this.Controls.Add(this.metroComboBox1);
+            this.ClientSize = new System.Drawing.Size(797, 509);
+            this.Controls.Add(this.dgbAplicacion);
             this.MaximizeBox = false;
-            this.Name = "ManAppMenu";
+            this.Name = "ManAplicacion";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ManAppMenu";
+            this.Text = "Mantenimiento de aplicaciones";
             this.Load += new System.EventHandler(this.ManAppMenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgbAplicacion)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private System.Windows.Forms.DataGridView dgbAplicacion;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
     }
 }

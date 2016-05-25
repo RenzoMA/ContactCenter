@@ -16,6 +16,7 @@ using ContactCenterGUI.Teatros.Helpers;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
 using ContactCenterCommon;
 using ContactCenterGUI.CC.Helpers;
+using System.IO;
 
 namespace ContactCenterGUI.CC
 {
@@ -26,6 +27,7 @@ namespace ContactCenterGUI.CC
         int positionY;
         int buttonHeight = 134;
         int buttonWidth = 194;
+        MemoryStream ms;
 
         public Main()
         {
@@ -113,8 +115,17 @@ namespace ContactCenterGUI.CC
             Button btn = new Button();
             btn.Tag = aplicacion;
             btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            btn.BackgroundImage = global::ContactCenterGUI.Properties.Resources.teatro;
-            btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            
+            if (aplicacion.Image != null)
+            {
+                ms = new MemoryStream(aplicacion.Image);
+                btn.BackgroundImage = Image.FromStream(ms);
+            }
+            else
+            {
+                btn.BackgroundImage = global::ContactCenterGUI.Properties.Resources.teatro;
+            }
+            btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btn.FlatAppearance.BorderSize = 0;
             btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btn.Name = aplicacion.IdAplicacion.ToString();

@@ -13,5 +13,6 @@ namespace ContactCenterBL.BusinessInterfaces.CC
         bool Insertar(Aplicacion aplicacion);
         List<Aplicacion> Listar();
         List<Aplicacion> ListarAplicacionUsuario(Usuario usuario);
+        bool Update(Aplicacion aplicacion);
     }
 }

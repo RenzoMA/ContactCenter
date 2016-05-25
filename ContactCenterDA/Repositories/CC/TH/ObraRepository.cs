@@ -188,7 +188,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, codigo))
             {
                 objObra = new Obra();
-                objObra.IdObra = DataConvert.ToInt(dtr["O.IdObra"]);
+                objObra.IdObra = DataConvert.ToInt(dtr["IdObra"]);
                 objObra.Nombre = DataConvert.ToString(dtr["O.Nombre"]);
                 objObra.FechaInicio = DataConvert.ToDateTime(dtr["O.FechaInicio"]);
                 objObra.FechaFin = DataConvert.ToDateTime(dtr["O.FechaFin"]);
@@ -213,6 +213,45 @@ namespace ContactCenterDA.Repositories.CC.TH
         public Obra GetByName(string name)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Obra> ListarObraByTeatro(int idTeatro)
+        {
+            string SQL = "SELECT * FROM TH_OBRA O INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO WHERE T.IDTEATRO = @Idteatro";
+
+            OleDbParameter obra_ = UtilDA.SetParameters("@Idteatro", OleDbType.Integer, idTeatro);
+            Obra obra = null;
+            List<Obra> ListaObra = new List<Obra>();
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, SQL, cnx, obra_))
+            {
+                while (dtr.Read())
+                {
+                     obra = new Obra()
+                    {
+                    IdObra = DataConvert.ToInt(dtr["IdObra"]),
+                    Nombre = DataConvert.ToString(dtr["O.Nombre"]),
+                    FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]),
+                    FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]),
+                    Descripcion = DataConvert.ToString(dtr["Descripcion"]),
+                    Estado = DataConvert.ToString(dtr["O.Estado"]),
+                    Teatro = new Teatro()
+                    {
+                        IdTeatro = DataConvert.ToInt(dtr["T.IdTeatro"]),
+                        Nombre = DataConvert.ToString(dtr["T.Nombre"]),
+                        Estado = DataConvert.ToString(dtr["T.Estado"]),
+                        frmTeatro = DataConvert.ToString(dtr["frmTeatro"])
+                    },
+                    FechaCreacion = DataConvert.ToDateTime(dtr["O.FechaCrea"]),
+                    UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]),
+                    FechaModificacion = DataConvert.ToDateTime(dtr["O.FechaMod"]),
+                    UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"])
+                };
+                    ListaObra.Add(obra);
+                }
+            }
+            UtilDA.Close(cnx);
+            return ListaObra;
         }
     }
 }

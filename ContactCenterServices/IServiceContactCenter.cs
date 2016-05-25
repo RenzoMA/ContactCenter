@@ -22,6 +22,7 @@ namespace ContactCenterServices
     {
         bool InsertarAplicacion(Aplicacion aplicacion);
         List<Aplicacion> ListarAplicaciones();
+        bool UpdateAplicacion(Aplicacion aplicacion);
         Usuario ValidarUsuario(string login, string password);
         Task<Usuario> ValidarUsuarioAsync(string login, string password);
         List<Aplicacion> ListarAplicacionUsuario(Usuario usuario);
@@ -41,6 +42,7 @@ namespace ContactCenterServices
         IList<Obra> ListarObras();
         Obra BuscarObra(int id);
         Obra BuscarObraPorNombre(string name);
+        List<Obra> ListarObraByTeatro(int idTeatro);
 
         //ASIENTO
         bool InserAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, string token);

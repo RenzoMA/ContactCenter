@@ -50,6 +50,7 @@ namespace ContactCenterDA.Repositories.CC
                     objAplicacion.UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]);
                     objAplicacion.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
                     objAplicacion.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
+                    objAplicacion.Image = DataConvert.ToByteArrayNull(dtr["Imagen"]);
 
                 }
             }
@@ -77,6 +78,7 @@ namespace ContactCenterDA.Repositories.CC
                     objAplicacion.UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]);
                     objAplicacion.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
                     objAplicacion.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
+                    objAplicacion.Image = DataConvert.ToByteArrayNull(dtr["Imagen"]);
                     listaAplicacion.Add(objAplicacion);
                 }
             }
@@ -102,25 +104,23 @@ namespace ContactCenterDA.Repositories.CC
 
         public bool Update(Aplicacion datos)
         {
-            String sql = "UPDATE CC_APLICACION SET Nombre = @nombre, Version = @version, Estado = @estado, Correo = @correo," +
+            String sql = "UPDATE CC_APLICACION SET Correo = @correo,Imagen = @Imagen," +
                                         "FechaMod = @fechaMod, UserMod = @usuarioMod WHERE IdAplicacion = @idAplicacion";
 
-            OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
-            OleDbParameter version = UtilDA.SetParameters("@version", OleDbType.VarChar, datos.Version);
-            OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
             OleDbParameter fechaModificacion = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter UsuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idAplicacion = UtilDA.SetParameters("@idAplicacion", OleDbType.Integer, datos.IdAplicacion);
+            OleDbParameter pImagen = UtilDA.SetParameters("@Imagen", OleDbType.VarBinary, datos.Image);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, version, estado, correo, fechaModificacion, UsuarioMod, idAplicacion);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, correo, pImagen, fechaModificacion, UsuarioMod, idAplicacion);
 
         }
 
         public List<Aplicacion> ListarAplicacionUsuario(Usuario usuario)
         {
             List<Aplicacion> listaAplicacion = new List<Aplicacion>();
-            String sql = "SELECT A.IdAplicacion, A.Nombre, A.Version, A.Estado, A.Correo, A.FechaCrea, A.UserCrea, A.UserMod, A.FechaMod, A.FormInicio FROM CC_USUARIO_APLICACION UA INNER JOIN CC_APLICACION A ON A.IDAPLICACION = UA.IDAPLICACION WHERE UA.IDUSUARIO = @IDUSUARIO";
+            String sql = "SELECT A.IdAplicacion, A.Nombre, A.Version, A.Estado, A.Correo, A.FechaCrea, A.UserCrea, A.UserMod, A.FechaMod, A.FormInicio, Imagen FROM CC_USUARIO_APLICACION UA INNER JOIN CC_APLICACION A ON A.IDAPLICACION = UA.IDAPLICACION WHERE UA.IDUSUARIO = @IDUSUARIO";
             OleDbParameter idUsuario = UtilDA.SetParameters("@IDUSUARIO", OleDbType.VarChar, usuario.IdUsuario);
 
             using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, idUsuario))
@@ -138,6 +138,7 @@ namespace ContactCenterDA.Repositories.CC
                     objAplicacion.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
                     objAplicacion.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
                     objAplicacion.FormInicio = DataConvert.ToString(dtr["FormInicio"]);
+                    objAplicacion.Image = DataConvert.ToByteArrayNull(dtr["Imagen"]);
                     listaAplicacion.Add(objAplicacion);
                 }
             }

@@ -41,7 +41,7 @@ namespace ContactCenterGUI
             {
 
                 this.Hide();
-                ManAppMenu manappmenu = new ManAppMenu();
+                ManAplicacion manappmenu = new ManAplicacion();
                 manappmenu.ShowDialog();
                 this.Show();
 
