@@ -230,6 +230,12 @@
     <Compile Include="CC\Mantenimientos\UsuarioMan\ManUsuario.Designer.cs">
       <DependentUpon>ManUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionCreate.Designer.cs">
+      <DependentUpon>ManPromocionCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,6 +356,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CC\Mantenimientos\UsuarioMan\ManUsuario.resx">
       <DependentUpon>ManUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\PromocionMan\ManPromocionCreate.resx">
+      <DependentUpon>ManPromocionCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\TarifaMan\ManTarifa.resx">
       <DependentUpon>ManTarifa.cs</DependentUpon>

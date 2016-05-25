@@ -85,5 +85,6 @@ namespace ContactCenterServices
         List<Funcion> ListarFuncionByObra(int idObra);
         List<Promocion> ListarPromocionByFuncion(int idFuncion);
         bool UpdatePromocion(Promocion datos);
+        bool InsertPromocion(Promocion datos);
     }
 }

@@ -386,5 +386,10 @@ namespace ContactCenterServices
         {
             return _tarifaService.Insert(tarifa);
         }
+
+        public bool InsertPromocion(Promocion datos)
+        {
+            return _promocionService.Insert(datos);
+        }
     }
 }

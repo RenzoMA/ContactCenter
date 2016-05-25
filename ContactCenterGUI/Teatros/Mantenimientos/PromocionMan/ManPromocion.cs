@@ -85,5 +85,12 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
                 EnlazarGrilla();
             }
         }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            ManPromocionCreate create = new ManPromocionCreate();
+            create.ShowDialog();
+            EnlazarGrilla();
+        }
     }
 }
