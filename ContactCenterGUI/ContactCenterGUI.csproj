@@ -170,6 +170,12 @@
     <Compile Include="CC\Mantenimientos\AplicacionMan\ManAppMenu.Designer.cs">
       <DependentUpon>ManAppMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Funcion\ManFuncion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Funcion\ManFuncion.Designer.cs">
+      <DependentUpon>ManFuncion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.cs">
       <SubType>Form</SubType>
     </Compile>
