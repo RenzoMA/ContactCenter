@@ -152,23 +152,17 @@
     <Compile Include="CC\Helpers\HelperConexion.cs" />
     <Compile Include="CC\Helpers\HelperControl.cs" />
     <Compile Include="CC\Helpers\HelperForm.cs" />
-    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAppFind.cs">
+    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAppFind.Designer.cs">
-      <DependentUpon>ManAppFind.cs</DependentUpon>
+    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.Designer.cs">
+      <DependentUpon>ManAplicacionEditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAppCreate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAppCreate.Designer.cs">
-      <DependentUpon>ManAppCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAppMenu.cs">
+    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAplicacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CC\Mantenimientos\AplicacionMan\ManAppMenu.Designer.cs">
-      <DependentUpon>ManAppMenu.cs</DependentUpon>
+      <DependentUpon>ManAplicacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.cs">
       <SubType>Form</SubType>
@@ -327,14 +321,11 @@
     <EmbeddedResource Include="CC\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CC\Mantenimientos\AplicacionMan\ManAppFind.resx">
-      <DependentUpon>ManAppFind.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CC\Mantenimientos\AplicacionMan\ManAppCreate.resx">
-      <DependentUpon>ManAppCreate.cs</DependentUpon>
+    <EmbeddedResource Include="CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.resx">
+      <DependentUpon>ManAplicacionEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CC\Mantenimientos\AplicacionMan\ManAppMenu.resx">
-      <DependentUpon>ManAppMenu.cs</DependentUpon>
+      <DependentUpon>ManAplicacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.resx">
       <DependentUpon>ManAsiento.cs</DependentUpon>

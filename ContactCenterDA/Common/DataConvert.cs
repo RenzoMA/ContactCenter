@@ -89,7 +89,7 @@ namespace ContactCenterDA.Common
 
         public static byte[] ToByteArrayNull(object obj)
         {
-            return ((obj == null) || (obj == DBNull.Value)) ? null : (byte[])obj;
+            return ((obj == null) || (obj == DBNull.Value) || (obj == "")) ? null : (byte[])obj;
         }
 
         public static int StringToInt(string str)

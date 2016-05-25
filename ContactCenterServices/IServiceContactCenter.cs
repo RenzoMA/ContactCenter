@@ -22,6 +22,7 @@ namespace ContactCenterServices
     {
         bool InsertarAplicacion(Aplicacion aplicacion);
         List<Aplicacion> ListarAplicaciones();
+        bool UpdateAplicacion(Aplicacion aplicacion);
         Usuario ValidarUsuario(string login, string password);
         Task<Usuario> ValidarUsuarioAsync(string login, string password);
         List<Aplicacion> ListarAplicacionUsuario(Usuario usuario);

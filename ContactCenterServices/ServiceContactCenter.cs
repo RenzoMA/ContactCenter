@@ -399,5 +399,9 @@ namespace ContactCenterServices
             return _promocionService.Insert(datos);
         }
 
+        public bool UpdateAplicacion(Aplicacion aplicacion)
+        {
+            return _aplicacionService.Update(aplicacion);
+        }
     }
 }
