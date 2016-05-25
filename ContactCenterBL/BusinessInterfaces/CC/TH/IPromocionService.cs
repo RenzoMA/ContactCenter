@@ -12,5 +12,6 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
         List<Promocion> ListByFuncionTipoPromo(int idFuncion, int idTipoPromocion);
         List<Promocion> ListarPromocionByFuncion(int idFuncion);
         bool Update(Promocion datos);
+        bool Insert(Promocion datos);
     }
 }

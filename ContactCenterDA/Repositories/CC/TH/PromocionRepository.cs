@@ -146,15 +146,15 @@ namespace ContactCenterDA.Repositories.CC.TH
                         "VALUES(@descripcion, @estado, @fechaInicio, @fechaFin, @idFuncion, @idTipoPromocion, @tipoDescuento, @descuento, @fechaCrea, @userCrea)";
 
             OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
-            OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
+            OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, "A");
             OleDbParameter fechaInicio = UtilDA.SetParameters("@fechInicio", OleDbType.Date, datos.FechaInicio);
-            OleDbParameter fechaFin = UtilDA.SetParameters("@fechaFin", OleDbType.VarChar, datos.FechaFin);
+            OleDbParameter fechaFin = UtilDA.SetParameters("@fechaFin", OleDbType.Date, datos.FechaFin);
             OleDbParameter idFuncion = UtilDA.SetParameters("@idFuncion", OleDbType.Integer, datos.Funcion.IdFuncion);
             OleDbParameter idTipoPromocion = UtilDA.SetParameters("@idTipoPromocion", OleDbType.Integer, datos.TipoPromocion.IdTipoPromocion);
             OleDbParameter tipoDescuento = UtilDA.SetParameters("@tipoDescuento", OleDbType.VarChar, datos.TipoDescuento);
             OleDbParameter descuento = UtilDA.SetParameters("@descuento", OleDbType.Single, datos.Descuento);
-            OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter userCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
+            OleDbParameter userCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, descripcion, estado, fechaInicio, fechaFin, idFuncion, idTipoPromocion, tipoDescuento, descuento, fechaCrea, userCrea);
 
@@ -168,7 +168,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter fechaInicio = UtilDA.SetParameters("@fechInicio", OleDbType.Date, datos.FechaInicio);
-            OleDbParameter fechaFin = UtilDA.SetParameters("@fechaFin", OleDbType.VarChar, datos.FechaFin);
+            OleDbParameter fechaFin = UtilDA.SetParameters("@fechaFin", OleDbType.Date, datos.FechaFin);
             OleDbParameter idTipoPromocion = UtilDA.SetParameters("@idTipoPromocion", OleDbType.Integer, datos.TipoPromocion.IdTipoPromocion);
             OleDbParameter tipoDescuento = UtilDA.SetParameters("@tipoDescuento", OleDbType.VarChar, datos.TipoDescuento);
             OleDbParameter descuento = UtilDA.SetParameters("@descuento", OleDbType.Single, datos.Descuento);

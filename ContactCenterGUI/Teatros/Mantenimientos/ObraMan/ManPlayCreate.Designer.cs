@@ -28,241 +28,239 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtObra = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtDescripcion = new System.Windows.Forms.RichTextBox();
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.cboEstado = new MetroFramework.Controls.MetroComboBox();
-            this.cboTeatro = new MetroFramework.Controls.MetroComboBox();
-            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.btnAceptar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dtpInicio = new System.Windows.Forms.DateTimePicker();
-            this.dtpFin = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lblNomObra = new MaterialSkin.Controls.MaterialLabel();
+            this.txtNomObra = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.lblFecIniObra = new MaterialSkin.Controls.MaterialLabel();
+            this.lblFecFinObra = new MaterialSkin.Controls.MaterialLabel();
+            this.lblDescripcionObra = new MaterialSkin.Controls.MaterialLabel();
+            this.txtDescripcionObra = new System.Windows.Forms.RichTextBox();
+            this.lblEstadoObra = new MaterialSkin.Controls.MaterialLabel();
+            this.cboEstadoObra = new MetroFramework.Controls.MetroComboBox();
+            this.cboTeatroObra = new MetroFramework.Controls.MetroComboBox();
+            this.lblTeatroObra = new MaterialSkin.Controls.MaterialLabel();
+            this.btnAceptarObra = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.dtpFecIniObra = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecFinObra = new System.Windows.Forms.DateTimePicker();
+            this.gbDatosObra = new System.Windows.Forms.GroupBox();
+            this.gbDatosObra.SuspendLayout();
             this.SuspendLayout();
             // 
-            // materialLabel1
+            // lblNomObra
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(12, 140);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(44, 19);
-            this.materialLabel1.TabIndex = 0;
-            this.materialLabel1.Text = "Obra:";
+            this.lblNomObra.AutoSize = true;
+            this.lblNomObra.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomObra.Depth = 0;
+            this.lblNomObra.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblNomObra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblNomObra.Location = new System.Drawing.Point(15, 36);
+            this.lblNomObra.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblNomObra.Name = "lblNomObra";
+            this.lblNomObra.Size = new System.Drawing.Size(44, 19);
+            this.lblNomObra.TabIndex = 0;
+            this.lblNomObra.Text = "Obra:";
             // 
-            // txtObra
+            // txtNomObra
             // 
-            this.txtObra.BackColor = System.Drawing.Color.White;
-            this.txtObra.Depth = 0;
-            this.txtObra.Hint = "";
-            this.txtObra.Location = new System.Drawing.Point(170, 136);
-            this.txtObra.MaxLength = 32767;
-            this.txtObra.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtObra.Name = "txtObra";
-            this.txtObra.PasswordChar = '\0';
-            this.txtObra.SelectedText = "";
-            this.txtObra.SelectionLength = 0;
-            this.txtObra.SelectionStart = 0;
-            this.txtObra.Size = new System.Drawing.Size(241, 23);
-            this.txtObra.TabIndex = 1;
-            this.txtObra.TabStop = false;
-            this.txtObra.UseSystemPasswordChar = false;
+            this.txtNomObra.BackColor = System.Drawing.Color.White;
+            this.txtNomObra.Depth = 0;
+            this.txtNomObra.Hint = "";
+            this.txtNomObra.Location = new System.Drawing.Point(173, 32);
+            this.txtNomObra.MaxLength = 32767;
+            this.txtNomObra.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNomObra.Name = "txtNomObra";
+            this.txtNomObra.PasswordChar = '\0';
+            this.txtNomObra.SelectedText = "";
+            this.txtNomObra.SelectionLength = 0;
+            this.txtNomObra.SelectionStart = 0;
+            this.txtNomObra.Size = new System.Drawing.Size(241, 23);
+            this.txtNomObra.TabIndex = 1;
+            this.txtNomObra.TabStop = false;
+            this.txtNomObra.UseSystemPasswordChar = false;
             // 
-            // materialLabel2
+            // lblFecIniObra
             // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(12, 197);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(94, 19);
-            this.materialLabel2.TabIndex = 3;
-            this.materialLabel2.Text = "Fecha Inicio:";
+            this.lblFecIniObra.AutoSize = true;
+            this.lblFecIniObra.BackColor = System.Drawing.Color.Transparent;
+            this.lblFecIniObra.Depth = 0;
+            this.lblFecIniObra.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblFecIniObra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblFecIniObra.Location = new System.Drawing.Point(15, 79);
+            this.lblFecIniObra.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblFecIniObra.Name = "lblFecIniObra";
+            this.lblFecIniObra.Size = new System.Drawing.Size(94, 19);
+            this.lblFecIniObra.TabIndex = 3;
+            this.lblFecIniObra.Text = "Fecha Inicio:";
             // 
-            // materialLabel3
+            // lblFecFinObra
             // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(12, 254);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(77, 19);
-            this.materialLabel3.TabIndex = 5;
-            this.materialLabel3.Text = "Fecha Fin:";
+            this.lblFecFinObra.AutoSize = true;
+            this.lblFecFinObra.BackColor = System.Drawing.Color.Transparent;
+            this.lblFecFinObra.Depth = 0;
+            this.lblFecFinObra.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblFecFinObra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblFecFinObra.Location = new System.Drawing.Point(15, 134);
+            this.lblFecFinObra.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblFecFinObra.Name = "lblFecFinObra";
+            this.lblFecFinObra.Size = new System.Drawing.Size(77, 19);
+            this.lblFecFinObra.TabIndex = 5;
+            this.lblFecFinObra.Text = "Fecha Fin:";
             // 
-            // materialLabel4
+            // lblDescripcionObra
             // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(12, 317);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(93, 19);
-            this.materialLabel4.TabIndex = 6;
-            this.materialLabel4.Text = "Descripción:";
+            this.lblDescripcionObra.AutoSize = true;
+            this.lblDescripcionObra.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescripcionObra.Depth = 0;
+            this.lblDescripcionObra.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblDescripcionObra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblDescripcionObra.Location = new System.Drawing.Point(15, 282);
+            this.lblDescripcionObra.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblDescripcionObra.Name = "lblDescripcionObra";
+            this.lblDescripcionObra.Size = new System.Drawing.Size(93, 19);
+            this.lblDescripcionObra.TabIndex = 6;
+            this.lblDescripcionObra.Text = "Descripción:";
             // 
-            // txtDescripcion
+            // txtDescripcionObra
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(170, 317);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(241, 96);
-            this.txtDescripcion.TabIndex = 7;
-            this.txtDescripcion.Text = "";
+            this.txtDescripcionObra.Location = new System.Drawing.Point(173, 282);
+            this.txtDescripcionObra.Name = "txtDescripcionObra";
+            this.txtDescripcionObra.Size = new System.Drawing.Size(241, 96);
+            this.txtDescripcionObra.TabIndex = 7;
+            this.txtDescripcionObra.Text = "";
             // 
-            // materialLabel5
+            // lblEstadoObra
             // 
-            this.materialLabel5.AutoSize = true;
-            this.materialLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(12, 468);
-            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(60, 19);
-            this.materialLabel5.TabIndex = 8;
-            this.materialLabel5.Text = "Estado:";
+            this.lblEstadoObra.AutoSize = true;
+            this.lblEstadoObra.BackColor = System.Drawing.Color.Transparent;
+            this.lblEstadoObra.Depth = 0;
+            this.lblEstadoObra.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblEstadoObra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblEstadoObra.Location = new System.Drawing.Point(15, 184);
+            this.lblEstadoObra.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblEstadoObra.Name = "lblEstadoObra";
+            this.lblEstadoObra.Size = new System.Drawing.Size(60, 19);
+            this.lblEstadoObra.TabIndex = 8;
+            this.lblEstadoObra.Text = "Estado:";
             // 
-            // cboEstado
+            // cboEstadoObra
             // 
-            this.cboEstado.FormattingEnabled = true;
-            this.cboEstado.ItemHeight = 23;
-            this.cboEstado.Items.AddRange(new object[] {
+            this.cboEstadoObra.FormattingEnabled = true;
+            this.cboEstadoObra.ItemHeight = 23;
+            this.cboEstadoObra.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cboEstado.Location = new System.Drawing.Point(170, 458);
-            this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(241, 29);
-            this.cboEstado.TabIndex = 9;
+            this.cboEstadoObra.Location = new System.Drawing.Point(173, 174);
+            this.cboEstadoObra.Name = "cboEstadoObra";
+            this.cboEstadoObra.Size = new System.Drawing.Size(241, 29);
+            this.cboEstadoObra.TabIndex = 9;
             // 
-            // cboTeatro
+            // cboTeatroObra
             // 
-            this.cboTeatro.FormattingEnabled = true;
-            this.cboTeatro.ItemHeight = 23;
-            this.cboTeatro.Location = new System.Drawing.Point(170, 532);
-            this.cboTeatro.Name = "cboTeatro";
-            this.cboTeatro.Size = new System.Drawing.Size(241, 29);
-            this.cboTeatro.TabIndex = 11;
+            this.cboTeatroObra.FormattingEnabled = true;
+            this.cboTeatroObra.ItemHeight = 23;
+            this.cboTeatroObra.Location = new System.Drawing.Point(173, 223);
+            this.cboTeatroObra.Name = "cboTeatroObra";
+            this.cboTeatroObra.Size = new System.Drawing.Size(241, 29);
+            this.cboTeatroObra.TabIndex = 11;
             // 
-            // materialLabel6
+            // lblTeatroObra
             // 
-            this.materialLabel6.AutoSize = true;
-            this.materialLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel6.Depth = 0;
-            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel6.Location = new System.Drawing.Point(12, 542);
-            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Size = new System.Drawing.Size(57, 19);
-            this.materialLabel6.TabIndex = 10;
-            this.materialLabel6.Text = "Teatro:";
+            this.lblTeatroObra.AutoSize = true;
+            this.lblTeatroObra.BackColor = System.Drawing.Color.Transparent;
+            this.lblTeatroObra.Depth = 0;
+            this.lblTeatroObra.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblTeatroObra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTeatroObra.Location = new System.Drawing.Point(15, 233);
+            this.lblTeatroObra.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblTeatroObra.Name = "lblTeatroObra";
+            this.lblTeatroObra.Size = new System.Drawing.Size(57, 19);
+            this.lblTeatroObra.TabIndex = 10;
+            this.lblTeatroObra.Text = "Teatro:";
             // 
-            // btnAceptar
+            // btnAceptarObra
             // 
-            this.btnAceptar.Depth = 0;
-            this.btnAceptar.Location = new System.Drawing.Point(326, 587);
-            this.btnAceptar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Primary = true;
-            this.btnAceptar.Size = new System.Drawing.Size(145, 36);
-            this.btnAceptar.TabIndex = 12;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+            this.btnAceptarObra.Depth = 0;
+            this.btnAceptarObra.Location = new System.Drawing.Point(326, 499);
+            this.btnAceptarObra.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAceptarObra.Name = "btnAceptarObra";
+            this.btnAceptarObra.Primary = true;
+            this.btnAceptarObra.Size = new System.Drawing.Size(145, 36);
+            this.btnAceptarObra.TabIndex = 12;
+            this.btnAceptarObra.Text = "Aceptar";
+            this.btnAceptarObra.UseVisualStyleBackColor = true;
+            this.btnAceptarObra.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
-            // pictureBox1
+            // dtpFecIniObra
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow2;
-            this.pictureBox1.Location = new System.Drawing.Point(406, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.dtpFecIniObra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecIniObra.Location = new System.Drawing.Point(173, 77);
+            this.dtpFecIniObra.Name = "dtpFecIniObra";
+            this.dtpFecIniObra.Size = new System.Drawing.Size(241, 20);
+            this.dtpFecIniObra.TabIndex = 14;
             // 
-            // dtpInicio
+            // dtpFecFinObra
             // 
-            this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInicio.Location = new System.Drawing.Point(170, 195);
-            this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(241, 20);
-            this.dtpInicio.TabIndex = 14;
+            this.dtpFecFinObra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecFinObra.Location = new System.Drawing.Point(173, 132);
+            this.dtpFecFinObra.Name = "dtpFecFinObra";
+            this.dtpFecFinObra.Size = new System.Drawing.Size(241, 20);
+            this.dtpFecFinObra.TabIndex = 15;
             // 
-            // dtpFin
+            // gbDatosObra
             // 
-            this.dtpFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFin.Location = new System.Drawing.Point(170, 252);
-            this.dtpFin.Name = "dtpFin";
-            this.dtpFin.Size = new System.Drawing.Size(241, 20);
-            this.dtpFin.TabIndex = 15;
+            this.gbDatosObra.BackColor = System.Drawing.Color.White;
+            this.gbDatosObra.Controls.Add(this.txtNomObra);
+            this.gbDatosObra.Controls.Add(this.dtpFecFinObra);
+            this.gbDatosObra.Controls.Add(this.lblNomObra);
+            this.gbDatosObra.Controls.Add(this.dtpFecIniObra);
+            this.gbDatosObra.Controls.Add(this.lblFecIniObra);
+            this.gbDatosObra.Controls.Add(this.lblFecFinObra);
+            this.gbDatosObra.Controls.Add(this.lblDescripcionObra);
+            this.gbDatosObra.Controls.Add(this.cboTeatroObra);
+            this.gbDatosObra.Controls.Add(this.txtDescripcionObra);
+            this.gbDatosObra.Controls.Add(this.lblTeatroObra);
+            this.gbDatosObra.Controls.Add(this.lblEstadoObra);
+            this.gbDatosObra.Controls.Add(this.cboEstadoObra);
+            this.gbDatosObra.Location = new System.Drawing.Point(12, 71);
+            this.gbDatosObra.Name = "gbDatosObra";
+            this.gbDatosObra.Size = new System.Drawing.Size(444, 411);
+            this.gbDatosObra.TabIndex = 16;
+            this.gbDatosObra.TabStop = false;
+            this.gbDatosObra.Text = "Datos Obra";
             // 
             // ManPlayCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 635);
-            this.Controls.Add(this.dtpFin);
-            this.Controls.Add(this.dtpInicio);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.cboTeatro);
-            this.Controls.Add(this.materialLabel6);
-            this.Controls.Add(this.cboEstado);
-            this.Controls.Add(this.materialLabel5);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.materialLabel4);
-            this.Controls.Add(this.materialLabel3);
-            this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.txtObra);
-            this.Controls.Add(this.materialLabel1);
+            this.ClientSize = new System.Drawing.Size(483, 547);
+            this.Controls.Add(this.gbDatosObra);
+            this.Controls.Add(this.btnAceptarObra);
             this.MaximizeBox = false;
             this.Name = "ManPlayCreate";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManPlayCreate";
             this.Load += new System.EventHandler(this.ManPlayCreate_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gbDatosObra.ResumeLayout(false);
+            this.gbDatosObra.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtObra;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private System.Windows.Forms.RichTextBox txtDescripcion;
-        private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private MetroFramework.Controls.MetroComboBox cboEstado;
-        private MetroFramework.Controls.MetroComboBox cboTeatro;
-        private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private MaterialSkin.Controls.MaterialRaisedButton btnAceptar;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DateTimePicker dtpInicio;
-        private System.Windows.Forms.DateTimePicker dtpFin;
+        private MaterialSkin.Controls.MaterialLabel lblNomObra;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtNomObra;
+        private MaterialSkin.Controls.MaterialLabel lblFecIniObra;
+        private MaterialSkin.Controls.MaterialLabel lblFecFinObra;
+        private MaterialSkin.Controls.MaterialLabel lblDescripcionObra;
+        private System.Windows.Forms.RichTextBox txtDescripcionObra;
+        private MaterialSkin.Controls.MaterialLabel lblEstadoObra;
+        private MetroFramework.Controls.MetroComboBox cboEstadoObra;
+        private MetroFramework.Controls.MetroComboBox cboTeatroObra;
+        private MaterialSkin.Controls.MaterialLabel lblTeatroObra;
+        private MaterialSkin.Controls.MaterialRaisedButton btnAceptarObra;
+        private System.Windows.Forms.DateTimePicker dtpFecIniObra;
+        private System.Windows.Forms.DateTimePicker dtpFecFinObra;
+        private System.Windows.Forms.GroupBox gbDatosObra;
     }
 }

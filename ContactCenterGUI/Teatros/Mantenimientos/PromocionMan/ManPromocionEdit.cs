@@ -14,12 +14,13 @@ using ContactCenterServices;
 using Microsoft.Practices.Unity;
 using ContactCenterGUI.CC.Helpers;
 using System.Globalization;
+using System.Threading;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
 {
     public partial class ManPromocionEdit : MaterialForm
     {
-        IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+        private IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
         private Promocion promocion;
         private List<TipoPromocion> listaPromocion;
         public ManPromocionEdit(Promocion promocion)
@@ -48,39 +49,49 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
         {
             return listaPromocion.Where(tx => tx.IdTipoPromocion == idTipoPromocion).FirstOrDefault();
         }
-
         private void ManPromocionEdit_Load(object sender, EventArgs e)
         {
             LoadData();
             SetEventos();
         }
-
-        private void btnCrear_Click(object sender, EventArgs e)
-        {
-
-        }
         private void CapturarDatos()
         {
             promocion.Descripcion = txtDescripcion.Text.ToUpper().Trim();
-            promocion.Descuento = Convert.ToSingle(txtDescuento.Text, new CultureInfo("en-US"));
+            promocion.Descuento = Convert.ToSingle(txtDescuento.Text);
             promocion.Estado = cboEstado.SelectedIndex == 0 ? "A" : "I";
             promocion.FechaFin = dtpFechaFin.Value.Date;
             promocion.FechaInicio = dtpFechaInicio.Value.Date;
             promocion.TipoDescuento = cboTipoDescuento.SelectedIndex == 0 ? "M" : "R";
             promocion.TipoPromocion = cboTipoPromocion.SelectedItem as TipoPromocion;
         }
+        private bool ValidarDatos()
+        {
+            if (txtDescripcion.Text.ToUpper().Trim().Equals(string.Empty))
+                return false;
+            if (txtDescuento.Text.ToUpper().Trim().Equals(String.Empty))
+                return false;
 
+            return true;
+
+        }
         private void btnEditar_Click(object sender, EventArgs e)
         {
             CapturarDatos();
-            if (servicio.UpdatePromocion(promocion))
+            if (ValidarDatos())
             {
-                MessageBox.Show("Proceso realizado correctamente", "Aviso");
-                this.Close();
+                if (servicio.UpdatePromocion(promocion))
+                {
+                    MessageBox.Show("Proceso realizado correctamente", "Aviso");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error", "Aviso");
+                }
             }
             else
             {
-                MessageBox.Show("Ocurrio un error", "Aviso");
+                MessageBox.Show("Completar todos los campos", "Aviso");
             }
         }
     }

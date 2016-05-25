@@ -200,6 +200,12 @@
     <Compile Include="ManPrincipal.Designer.cs">
       <DependentUpon>ManPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Mantenimientos\ObraMan\ManObra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\ObraMan\ManObra.Designer.cs">
+      <DependentUpon>ManObra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +235,12 @@
     </Compile>
     <Compile Include="CC\Mantenimientos\UsuarioMan\ManUsuario.Designer.cs">
       <DependentUpon>ManUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionCreate.Designer.cs">
+      <DependentUpon>ManPromocionCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifa.cs">
       <SubType>Form</SubType>
@@ -336,6 +348,9 @@
     <EmbeddedResource Include="ManPrincipal.resx">
       <DependentUpon>ManPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManObra.resx">
+      <DependentUpon>ManObra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManPlayCreate.resx">
       <DependentUpon>ManPlayCreate.cs</DependentUpon>
     </EmbeddedResource>
@@ -350,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CC\Mantenimientos\UsuarioMan\ManUsuario.resx">
       <DependentUpon>ManUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\PromocionMan\ManPromocionCreate.resx">
+      <DependentUpon>ManPromocionCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\TarifaMan\ManTarifa.resx">
       <DependentUpon>ManTarifa.cs</DependentUpon>
