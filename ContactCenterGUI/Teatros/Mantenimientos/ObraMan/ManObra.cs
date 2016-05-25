@@ -40,7 +40,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
         private void CargarTeatros() {
             cboTeFilObra.DataSource = servicio.ListarTeatros();
             cboTeFilObra.DisplayMember = "Nombre";
-            cboTeFilObra.SelectedIndex = 0;
+            //cboTeFilObra.SelectedIndex = 0;
         }
 
         private void ConfigurarGrilla() {
@@ -53,8 +53,20 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
         }
 
         private void llenarGrilla() {
+            Obra obra = cboTeFilObra.SelectedItem as Obra;
+            dgvObras.DataSource = servicio.ListarObraByTeatro(obra.IdObra);
 
+        }
 
+        private void dgvObras_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                Obra obra = (Obra)dgvObras.CurrentRow.DataBoundItem;
+                ManObraEditar manObraEditar = new ManObraEditar(obra);
+                manObraEditar.ShowDialog();
+                llenarGrilla();
+            }
         }
     }
 }

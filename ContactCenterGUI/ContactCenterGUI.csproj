@@ -206,23 +206,17 @@
     <Compile Include="Teatros\Mantenimientos\ObraMan\ManObra.Designer.cs">
       <DependentUpon>ManObra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Mantenimientos\ObraMan\ManObraEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\ObraMan\ManObraEditar.Designer.cs">
+      <DependentUpon>ManObraEditar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayCreate.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayCreate.Designer.cs">
       <DependentUpon>ManPlayCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayFind.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayFind.Designer.cs">
-      <DependentUpon>ManPlayFind.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayMenu.Designer.cs">
-      <DependentUpon>ManPlayMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="CC\Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.cs">
       <SubType>Form</SubType>
@@ -351,14 +345,11 @@
     <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManObra.resx">
       <DependentUpon>ManObra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManObraEditar.resx">
+      <DependentUpon>ManObraEditar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManPlayCreate.resx">
       <DependentUpon>ManPlayCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManPlayFind.resx">
-      <DependentUpon>ManPlayFind.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManPlayMenu.resx">
-      <DependentUpon>ManPlayMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CC\Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.resx">
       <DependentUpon>ManCreateUpdateUsuario.cs</DependentUpon>
@@ -461,6 +452,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\logo_oficial_2.png" />
     <None Include="Resources\ic_menu_edit.png" />
     <None Include="Resources\delete.png" />
     <None Include="Resources\ic_menu_add.png" />

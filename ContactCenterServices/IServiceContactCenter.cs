@@ -41,6 +41,7 @@ namespace ContactCenterServices
         IList<Obra> ListarObras();
         Obra BuscarObra(int id);
         Obra BuscarObraPorNombre(string name);
+        List<Obra> ListarObraByTeatro(int idTeatro);
 
         //ASIENTO
         bool InserAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, string token);

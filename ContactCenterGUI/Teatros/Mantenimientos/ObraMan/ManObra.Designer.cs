@@ -33,13 +33,13 @@
             this.cboTeFilObra = new MetroFramework.Controls.MetroComboBox();
             this.btnBuscarObra = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dgvObras = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Obra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevaObra = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.gbFiltroObra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObras)).BeginInit();
             this.SuspendLayout();
@@ -105,7 +105,7 @@
             this.FechaInicio,
             this.FechaFin,
             this.Descripcion,
-            this.Obra,
+            this.Nombre,
             this.Estado});
             this.dgvObras.Location = new System.Drawing.Point(65, 232);
             this.dgvObras.Name = "dgvObras";
@@ -114,50 +114,7 @@
             this.dgvObras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvObras.Size = new System.Drawing.Size(648, 303);
             this.dgvObras.TabIndex = 13;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 45;
-            // 
-            // FechaInicio
-            // 
-            this.FechaInicio.DataPropertyName = "FechaInicio";
-            this.FechaInicio.HeaderText = "FechaInicio";
-            this.FechaInicio.Name = "FechaInicio";
-            this.FechaInicio.ReadOnly = true;
-            // 
-            // FechaFin
-            // 
-            this.FechaFin.DataPropertyName = "FechaFin";
-            this.FechaFin.HeaderText = "FechaFin";
-            this.FechaFin.Name = "FechaFin";
-            this.FechaFin.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 200;
-            // 
-            // Obra
-            // 
-            this.Obra.DataPropertyName = "Nombre";
-            this.Obra.HeaderText = "Obra";
-            this.Obra.Name = "Obra";
-            this.Obra.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
+            this.dgvObras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObras_CellContentClick);
             // 
             // btnNuevaObra
             // 
@@ -171,6 +128,50 @@
             this.btnNuevaObra.Text = "Nueva Obra";
             this.btnNuevaObra.UseVisualStyleBackColor = true;
             this.btnNuevaObra.Click += new System.EventHandler(this.btnNuevaObra_Click);
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Obra";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 200;
+            // 
+            // FechaFin
+            // 
+            this.FechaFin.DataPropertyName = "FechaFin";
+            this.FechaFin.HeaderText = "FechaFin";
+            this.FechaFin.Name = "FechaFin";
+            this.FechaFin.ReadOnly = true;
+            // 
+            // FechaInicio
+            // 
+            this.FechaInicio.DataPropertyName = "FechaInicio";
+            this.FechaInicio.HeaderText = "FechaInicio";
+            this.FechaInicio.Name = "FechaInicio";
+            this.FechaInicio.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 45;
             // 
             // ManObra
             // 
@@ -203,7 +204,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaFin;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Obra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

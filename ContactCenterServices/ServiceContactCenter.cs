@@ -367,6 +367,11 @@ namespace ContactCenterServices
             return _promocionService.ListarPromocionByFuncion(idFuncion);
         }
 
+        //obra listar por teatro
+        public List<Obra> ListarObraByTeatro(int idTeatro) {
+            return _obraService.ListarObraByTeatro(idTeatro);
+        }
+
         public List<TipoPromocion> GetListaTipoPromocion()
         {
             return _tipoPromocionService.GetLista();
@@ -391,5 +396,6 @@ namespace ContactCenterServices
         {
             return _promocionService.Insert(datos);
         }
+
     }
 }
