@@ -35,19 +35,19 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
             
 
                 Obra obra = new Obra();
-                obra.Nombre = txtObra.Text;
-                obra.FechaInicio = dtpInicio.Value.Date;
-                obra.FechaFin = dtpFin.Value.Date;
-                obra.Descripcion = txtDescripcion.Text;
-                obra.Estado = cboEstado.SelectedIndex == 0?"A":"I";
-                obra.Teatro = cboTeatro.SelectedItem as Teatro;
+                obra.Nombre = txtNomObra.Text;
+                obra.FechaInicio = dtpFecIniObra.Value.Date;
+                obra.FechaFin = dtpFecFinObra.Value.Date;
+                obra.Descripcion = txtDescripcionObra.Text;
+                obra.Estado = cboEstadoObra.SelectedIndex == 0?"A":"I";
+                obra.Teatro = cboTeatroObra.SelectedItem as Teatro;
             if(servicio.InsertarObra(obra) == true) {
 
-                MessageBox.Show("Obra registrada correctamente");
+                MessageBox.Show("Obra registrada correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             } else {
 
-                MessageBox.Show("ERROR", "ERROR");
+                MessageBox.Show("Error al registrar la reserva. Intentelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -56,9 +56,9 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 
         private void ManPlayCreate_Load(object sender, EventArgs e)
         {
-            cboTeatro.DataSource = servicio.ListarTeatros();
-            cboTeatro.DisplayMember = "Nombre";
-            cboEstado.SelectedIndex = 0;
+            cboTeatroObra.DataSource = servicio.ListarTeatros();
+            cboTeatroObra.DisplayMember = "Nombre";
+            cboEstadoObra.SelectedIndex = 0;
         }
 
     }
