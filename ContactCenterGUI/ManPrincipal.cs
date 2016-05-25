@@ -70,8 +70,8 @@ namespace ContactCenterGUI
             else if (metroComboBox1.SelectedItem.ToString() == "Obra")
             {
                 this.Hide();
-                ManPlayMenu manaplaymenu = new ManPlayMenu();
-                manaplaymenu.ShowDialog();
+                ManObra manObra = new ManObra();
+                manObra.ShowDialog();
                 this.Show();
             }
 
