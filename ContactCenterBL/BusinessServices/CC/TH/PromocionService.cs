@@ -16,6 +16,11 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             promocionRepository = _promocionRepository;
         }
 
+        public bool Insert(Promocion datos)
+        {
+            return promocionRepository.Insert(datos);
+        }
+
         public List<Promocion> ListarPromocionByFuncion(int idFuncion)
         {
             List<Promocion> listaPromocion = promocionRepository.ListarPromocionByFuncion(idFuncion);
