@@ -52,7 +52,7 @@ namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
             DialogResult res = openFileDialog1.ShowDialog();
             if (res == DialogResult.OK)
             {
-                pcbImagen.Image = Image.FromFile(openFileDialog1.FileName);
+                pcbImagen.Image = HelperForm.ResizeImage(Image.FromFile(openFileDialog1.FileName),134,194);
             }
         }
 
