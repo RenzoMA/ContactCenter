@@ -62,7 +62,7 @@ namespace ContactCenterGUI.Teatros.Reservas
             foreach (AsientoPrecio obj in lista)
             {
                 contador++;
-                result += obj.Fila + obj.Descripcion + ",";
+                result += obj.Fila + " - " +obj.Descripcion + ", ";
             }
             result = result.Substring(0, result.Length - 1);
             return result;

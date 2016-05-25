@@ -28,6 +28,12 @@ namespace ContactCenterGUI.CC.Helpers
         }
         public static void EditTextDecimal(object sender, KeyPressEventArgs e)
         {
+            TextBox txt = (TextBox)sender;
+            if (txt.Text.Contains(".") && e.KeyChar == 46)
+            {
+                e.Handled = true;
+                return;
+            }
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != 46))
             {
                 e.Handled = true;
