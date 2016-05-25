@@ -231,16 +231,16 @@ namespace ContactCenterDA.Repositories.CC.TH
                     {
                     IdObra = DataConvert.ToInt(dtr["IdObra"]),
                     Nombre = DataConvert.ToString(dtr["O.Nombre"]),
-                    FechaInicio = DataConvert.ToDateTime(dtr["O.FechaInicio"]),
-                    FechaFin = DataConvert.ToDateTime(dtr["O.FechaFin"]),
-                    Descripcion = DataConvert.ToString(dtr["O.Descripcion"]),
+                    FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]),
+                    FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]),
+                    Descripcion = DataConvert.ToString(dtr["Descripcion"]),
                     Estado = DataConvert.ToString(dtr["O.Estado"]),
                     Teatro = new Teatro()
                     {
-                        IdTeatro = DataConvert.ToInt(dtr["IdTeatro"]),
+                        IdTeatro = DataConvert.ToInt(dtr["T.IdTeatro"]),
                         Nombre = DataConvert.ToString(dtr["T.Nombre"]),
                         Estado = DataConvert.ToString(dtr["T.Estado"]),
-                        frmTeatro = DataConvert.ToString(dtr["T.frmTeatro"])
+                        frmTeatro = DataConvert.ToString(dtr["frmTeatro"])
                     },
                     FechaCreacion = DataConvert.ToDateTime(dtr["O.FechaCrea"]),
                     UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]),

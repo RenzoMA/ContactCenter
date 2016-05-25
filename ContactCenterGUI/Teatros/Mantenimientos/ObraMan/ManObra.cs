@@ -54,7 +54,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 
         private void llenarGrilla() {
             Obra obra = cboTeFilObra.SelectedItem as Obra;
-            dgvObras.DataSource = servicio.ListarObraByTeatro(obra.IdObra);
+            dgvObras.DataSource = servicio.ListarObraByTeatro(34);
 
         }
 
