@@ -171,9 +171,11 @@ namespace ContactCenterDA.Repositories.CC.TH
 
             using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, codigoObra))
             {
-                Tarifa objTarifa = new Tarifa()
+                while(dtr.Read())
                 {
-                    IdTarifa = DataConvert.ToInt(dtr["T.IdTarifa"]),
+                    Tarifa objTarifa = new Tarifa()
+                {
+                    IdTarifa = DataConvert.ToInt(dtr["IdTarifa"]),
                     Zona = new Zona()
                     {
                         IdZona = DataConvert.ToInt(dtr["Z.IdZona"]),
@@ -185,31 +187,32 @@ namespace ContactCenterDA.Repositories.CC.TH
                             IdTeatro = DataConvert.ToInt(dtr["TE.IdTeatro"]),
                             Nombre = DataConvert.ToString(dtr["TE.Nombre"]),
                             Estado = DataConvert.ToString(dtr["TE.Estado"]),
-                            frmTeatro = DataConvert.ToString(dtr["TE.frmTeatro"])
+                            frmTeatro = DataConvert.ToString(dtr["frmTeatro"])
                         }
                     },
                     Obra = new Obra()
                     {
                         IdObra = DataConvert.ToInt(dtr["O.IdObra"]),
                         Nombre = DataConvert.ToString(dtr["O.Nombre"]),
-                        FechaInicio = DataConvert.ToDateTime(dtr["O.FechaInicio"]),
-                        FechaFin = DataConvert.ToDateTime(dtr["O.FechaFin"]),
+                        FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]),
+                        FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]),
                         Descripcion = DataConvert.ToString(dtr["O.Descripcion"]),
                         Teatro = new Teatro()
                         {
                             IdTeatro = DataConvert.ToInt(dtr["TE.IdTeatro"]),
                             Nombre = DataConvert.ToString(dtr["TE.Nombre"]),
                             Estado = DataConvert.ToString(dtr["TE.Estado"]),
-                            frmTeatro = DataConvert.ToString(dtr["TE.frmTeatro"])
+                            frmTeatro = DataConvert.ToString(dtr["frmTeatro"])
                         }
                     },
-                    Precio = DataConvert.ToSingle(dtr["T.Precio"]),
+                    Precio = DataConvert.ToSingle(dtr["Precio"]),
                     FechaCreacion = DataConvert.ToDateTime(dtr["T.FechaCrea"]),
                     UsuarioCreacion = DataConvert.ToString(dtr["T.UserCrea"]),
                     FechaModificacion = DataConvert.ToDateTime(dtr["T.FechaMod"]),
                     UsuarioModificacion = DataConvert.ToString(dtr["T.UserMod"])
                 };
                     listTarifa.Add(objTarifa);
+                }
             }
             UtilDA.Close(cnx);
             return listTarifa;
