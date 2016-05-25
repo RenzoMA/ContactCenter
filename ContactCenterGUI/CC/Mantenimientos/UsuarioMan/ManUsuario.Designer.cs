@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManUsuario));
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ApellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ApellidoMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnCrear = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApellidoMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,46 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(733, 375);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 45;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 150;
+            // 
+            // ApellidoPaterno
+            // 
+            this.ApellidoPaterno.DataPropertyName = "ApellidoPaterno";
+            this.ApellidoPaterno.HeaderText = "ApellidoPaterno";
+            this.ApellidoPaterno.Name = "ApellidoPaterno";
+            this.ApellidoPaterno.ReadOnly = true;
+            this.ApellidoPaterno.Width = 150;
+            // 
+            // ApellidoMaterno
+            // 
+            this.ApellidoMaterno.DataPropertyName = "ApellidoMaterno";
+            this.ApellidoMaterno.HeaderText = "ApellidoMaterno";
+            this.ApellidoMaterno.Name = "ApellidoMaterno";
+            this.ApellidoMaterno.ReadOnly = true;
+            this.ApellidoMaterno.Width = 150;
+            // 
+            // Login
+            // 
+            this.Login.DataPropertyName = "Login";
+            this.Login.HeaderText = "Login";
+            this.Login.Name = "Login";
+            this.Login.ReadOnly = true;
+            this.Login.Width = 150;
             // 
             // groupBox1
             // 
@@ -114,12 +155,12 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(11, 28);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(66, 18);
+            this.materialLabel1.Size = new System.Drawing.Size(67, 19);
             this.materialLabel1.TabIndex = 5;
             this.materialLabel1.Text = "Nombre:";
             // 
@@ -145,46 +186,6 @@
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Width = 25;
             // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 45;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 150;
-            // 
-            // ApellidoPaterno
-            // 
-            this.ApellidoPaterno.DataPropertyName = "ApellidoPaterno";
-            this.ApellidoPaterno.HeaderText = "ApellidoPaterno";
-            this.ApellidoPaterno.Name = "ApellidoPaterno";
-            this.ApellidoPaterno.ReadOnly = true;
-            this.ApellidoPaterno.Width = 150;
-            // 
-            // ApellidoMaterno
-            // 
-            this.ApellidoMaterno.DataPropertyName = "ApellidoMaterno";
-            this.ApellidoMaterno.HeaderText = "ApellidoMaterno";
-            this.ApellidoMaterno.Name = "ApellidoMaterno";
-            this.ApellidoMaterno.ReadOnly = true;
-            this.ApellidoMaterno.Width = 150;
-            // 
-            // Login
-            // 
-            this.Login.DataPropertyName = "Login";
-            this.Login.HeaderText = "Login";
-            this.Login.Name = "Login";
-            this.Login.ReadOnly = true;
-            this.Login.Width = 150;
-            // 
             // ManUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,6 +194,7 @@
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvUsuarios);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de usuarios";

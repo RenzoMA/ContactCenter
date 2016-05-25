@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RptReservas));
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.cboTeatro = new MetroFramework.Controls.MetroComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -116,7 +117,7 @@
             this.materialLabel1.TabIndex = 12;
             this.materialLabel1.Text = "Fecha:";
             // 
-            // rptReservas
+            // RptReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -127,7 +128,8 @@
             this.Controls.Add(this.dtpFechaObra);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.cboTeatro);
-            this.Name = "rptReservas";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "RptReservas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de reservas";
             this.Load += new System.EventHandler(this.rptReservas_Load);

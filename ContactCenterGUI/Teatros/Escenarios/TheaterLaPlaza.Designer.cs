@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TheaterLaPlaza));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnContinuar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAtras = new System.Windows.Forms.PictureBox();
@@ -3060,6 +3061,7 @@
             this.Controls.Add(this.A16);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "TheaterLaPlaza";
             this.Sizable = false;

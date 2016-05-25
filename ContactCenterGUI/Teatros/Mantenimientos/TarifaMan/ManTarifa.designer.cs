@@ -194,6 +194,7 @@
             this.Controls.Add(this.dgvTarifa);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManTarifa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Tarifas";

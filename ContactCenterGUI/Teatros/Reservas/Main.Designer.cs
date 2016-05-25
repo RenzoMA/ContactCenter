@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnGenerarReporte = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnNuevoRegistro = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -95,6 +96,7 @@
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.btnGenerarReporte);
             this.Controls.Add(this.btnNuevoRegistro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Sizable = false;

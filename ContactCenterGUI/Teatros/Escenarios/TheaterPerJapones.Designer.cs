@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TheaterPerJapones));
             this.panel1 = new System.Windows.Forms.Panel();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
@@ -1152,8 +1153,8 @@
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
-            this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
+            this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 66);
@@ -4828,12 +4829,12 @@
             // 
             this.materialLabel41.AutoSize = true;
             this.materialLabel41.Depth = 0;
-            this.materialLabel41.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel41.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel41.Location = new System.Drawing.Point(129, 7);
             this.materialLabel41.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel41.Name = "materialLabel41";
-            this.materialLabel41.Size = new System.Drawing.Size(150, 19);
+            this.materialLabel41.Size = new System.Drawing.Size(159, 18);
             this.materialLabel41.TabIndex = 0;
             this.materialLabel41.Text = "ESCENARIO TEATRO";
             // 
@@ -4842,12 +4843,12 @@
             this.materialLabel40.AutoSize = true;
             this.materialLabel40.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel40.Depth = 0;
-            this.materialLabel40.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel40.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel40.Location = new System.Drawing.Point(251, 470);
             this.materialLabel40.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel40.Name = "materialLabel40";
-            this.materialLabel40.Size = new System.Drawing.Size(17, 19);
+            this.materialLabel40.Size = new System.Drawing.Size(16, 18);
             this.materialLabel40.TabIndex = 2527;
             this.materialLabel40.Text = "9";
             // 
@@ -4856,12 +4857,12 @@
             this.materialLabel39.AutoSize = true;
             this.materialLabel39.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel39.Depth = 0;
-            this.materialLabel39.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel39.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel39.Location = new System.Drawing.Point(251, 434);
             this.materialLabel39.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel39.Name = "materialLabel39";
-            this.materialLabel39.Size = new System.Drawing.Size(17, 19);
+            this.materialLabel39.Size = new System.Drawing.Size(16, 18);
             this.materialLabel39.TabIndex = 2526;
             this.materialLabel39.Text = "8";
             // 
@@ -4870,12 +4871,12 @@
             this.materialLabel38.AutoSize = true;
             this.materialLabel38.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel38.Depth = 0;
-            this.materialLabel38.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel38.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel38.Location = new System.Drawing.Point(251, 398);
             this.materialLabel38.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel38.Name = "materialLabel38";
-            this.materialLabel38.Size = new System.Drawing.Size(17, 19);
+            this.materialLabel38.Size = new System.Drawing.Size(16, 18);
             this.materialLabel38.TabIndex = 2525;
             this.materialLabel38.Text = "7";
             // 
@@ -4884,12 +4885,12 @@
             this.materialLabel37.AutoSize = true;
             this.materialLabel37.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel37.Depth = 0;
-            this.materialLabel37.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel37.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel37.Location = new System.Drawing.Point(251, 362);
             this.materialLabel37.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel37.Name = "materialLabel37";
-            this.materialLabel37.Size = new System.Drawing.Size(17, 19);
+            this.materialLabel37.Size = new System.Drawing.Size(16, 18);
             this.materialLabel37.TabIndex = 2524;
             this.materialLabel37.Text = "6";
             // 
@@ -4898,12 +4899,12 @@
             this.materialLabel36.AutoSize = true;
             this.materialLabel36.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel36.Depth = 0;
-            this.materialLabel36.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel36.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel36.Location = new System.Drawing.Point(251, 326);
             this.materialLabel36.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel36.Name = "materialLabel36";
-            this.materialLabel36.Size = new System.Drawing.Size(17, 19);
+            this.materialLabel36.Size = new System.Drawing.Size(16, 18);
             this.materialLabel36.TabIndex = 2523;
             this.materialLabel36.Text = "5";
             // 
@@ -4912,12 +4913,12 @@
             this.materialLabel35.AutoSize = true;
             this.materialLabel35.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel35.Depth = 0;
-            this.materialLabel35.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel35.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel35.Location = new System.Drawing.Point(251, 290);
             this.materialLabel35.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel35.Name = "materialLabel35";
-            this.materialLabel35.Size = new System.Drawing.Size(17, 19);
+            this.materialLabel35.Size = new System.Drawing.Size(16, 18);
             this.materialLabel35.TabIndex = 2522;
             this.materialLabel35.Text = "4";
             // 
@@ -4926,12 +4927,12 @@
             this.materialLabel34.AutoSize = true;
             this.materialLabel34.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel34.Depth = 0;
-            this.materialLabel34.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel34.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel34.Location = new System.Drawing.Point(251, 254);
             this.materialLabel34.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel34.Name = "materialLabel34";
-            this.materialLabel34.Size = new System.Drawing.Size(17, 19);
+            this.materialLabel34.Size = new System.Drawing.Size(16, 18);
             this.materialLabel34.TabIndex = 2521;
             this.materialLabel34.Text = "3";
             // 
@@ -4940,12 +4941,12 @@
             this.materialLabel33.AutoSize = true;
             this.materialLabel33.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel33.Depth = 0;
-            this.materialLabel33.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel33.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel33.Location = new System.Drawing.Point(251, 218);
             this.materialLabel33.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel33.Name = "materialLabel33";
-            this.materialLabel33.Size = new System.Drawing.Size(17, 19);
+            this.materialLabel33.Size = new System.Drawing.Size(16, 18);
             this.materialLabel33.TabIndex = 2520;
             this.materialLabel33.Text = "2";
             // 
@@ -4954,12 +4955,12 @@
             this.materialLabel32.AutoSize = true;
             this.materialLabel32.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel32.Depth = 0;
-            this.materialLabel32.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel32.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel32.Location = new System.Drawing.Point(251, 182);
             this.materialLabel32.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel32.Name = "materialLabel32";
-            this.materialLabel32.Size = new System.Drawing.Size(17, 19);
+            this.materialLabel32.Size = new System.Drawing.Size(16, 18);
             this.materialLabel32.TabIndex = 2519;
             this.materialLabel32.Text = "1";
             // 
@@ -12086,12 +12087,12 @@
             this.materialLabel22.AutoSize = true;
             this.materialLabel22.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel22.Depth = 0;
-            this.materialLabel22.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel22.Location = new System.Drawing.Point(403, 613);
             this.materialLabel22.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel22.Name = "materialLabel22";
-            this.materialLabel22.Size = new System.Drawing.Size(25, 19);
+            this.materialLabel22.Size = new System.Drawing.Size(24, 18);
             this.materialLabel22.TabIndex = 2041;
             this.materialLabel22.Text = "20";
             // 
@@ -12100,12 +12101,12 @@
             this.materialLabel24.AutoSize = true;
             this.materialLabel24.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel24.Depth = 0;
-            this.materialLabel24.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel24.Location = new System.Drawing.Point(403, 577);
             this.materialLabel24.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel24.Name = "materialLabel24";
-            this.materialLabel24.Size = new System.Drawing.Size(25, 19);
+            this.materialLabel24.Size = new System.Drawing.Size(24, 18);
             this.materialLabel24.TabIndex = 2040;
             this.materialLabel24.Text = "19";
             // 
@@ -12114,12 +12115,12 @@
             this.materialLabel25.AutoSize = true;
             this.materialLabel25.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel25.Depth = 0;
-            this.materialLabel25.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel25.Location = new System.Drawing.Point(403, 541);
             this.materialLabel25.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel25.Name = "materialLabel25";
-            this.materialLabel25.Size = new System.Drawing.Size(25, 19);
+            this.materialLabel25.Size = new System.Drawing.Size(24, 18);
             this.materialLabel25.TabIndex = 2039;
             this.materialLabel25.Text = "18";
             // 
@@ -12128,12 +12129,12 @@
             this.materialLabel26.AutoSize = true;
             this.materialLabel26.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel26.Depth = 0;
-            this.materialLabel26.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel26.Location = new System.Drawing.Point(403, 505);
             this.materialLabel26.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel26.Name = "materialLabel26";
-            this.materialLabel26.Size = new System.Drawing.Size(25, 19);
+            this.materialLabel26.Size = new System.Drawing.Size(24, 18);
             this.materialLabel26.TabIndex = 2038;
             this.materialLabel26.Text = "17";
             // 
@@ -12142,12 +12143,12 @@
             this.materialLabel27.AutoSize = true;
             this.materialLabel27.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel27.Depth = 0;
-            this.materialLabel27.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel27.Location = new System.Drawing.Point(403, 469);
             this.materialLabel27.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel27.Name = "materialLabel27";
-            this.materialLabel27.Size = new System.Drawing.Size(25, 19);
+            this.materialLabel27.Size = new System.Drawing.Size(24, 18);
             this.materialLabel27.TabIndex = 2037;
             this.materialLabel27.Text = "16";
             // 
@@ -12156,12 +12157,12 @@
             this.materialLabel28.AutoSize = true;
             this.materialLabel28.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel28.Depth = 0;
-            this.materialLabel28.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel28.Location = new System.Drawing.Point(403, 433);
             this.materialLabel28.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel28.Name = "materialLabel28";
-            this.materialLabel28.Size = new System.Drawing.Size(25, 19);
+            this.materialLabel28.Size = new System.Drawing.Size(24, 18);
             this.materialLabel28.TabIndex = 2036;
             this.materialLabel28.Text = "15";
             // 
@@ -12170,12 +12171,12 @@
             this.materialLabel29.AutoSize = true;
             this.materialLabel29.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel29.Depth = 0;
-            this.materialLabel29.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel29.Location = new System.Drawing.Point(403, 397);
             this.materialLabel29.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel29.Name = "materialLabel29";
-            this.materialLabel29.Size = new System.Drawing.Size(25, 19);
+            this.materialLabel29.Size = new System.Drawing.Size(24, 18);
             this.materialLabel29.TabIndex = 2035;
             this.materialLabel29.Text = "14";
             // 
@@ -12184,12 +12185,12 @@
             this.materialLabel30.AutoSize = true;
             this.materialLabel30.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel30.Depth = 0;
-            this.materialLabel30.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel30.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel30.Location = new System.Drawing.Point(403, 361);
             this.materialLabel30.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel30.Name = "materialLabel30";
-            this.materialLabel30.Size = new System.Drawing.Size(25, 19);
+            this.materialLabel30.Size = new System.Drawing.Size(24, 18);
             this.materialLabel30.TabIndex = 2034;
             this.materialLabel30.Text = "13";
             // 
@@ -12198,12 +12199,12 @@
             this.materialLabel31.AutoSize = true;
             this.materialLabel31.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel31.Depth = 0;
-            this.materialLabel31.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel31.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel31.Location = new System.Drawing.Point(403, 325);
             this.materialLabel31.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel31.Name = "materialLabel31";
-            this.materialLabel31.Size = new System.Drawing.Size(25, 19);
+            this.materialLabel31.Size = new System.Drawing.Size(24, 18);
             this.materialLabel31.TabIndex = 2033;
             this.materialLabel31.Text = "12";
             // 
@@ -12680,12 +12681,12 @@
             // 
             this.materialLabel21.AutoSize = true;
             this.materialLabel21.Depth = 0;
-            this.materialLabel21.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel21.Location = new System.Drawing.Point(3, 5);
             this.materialLabel21.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel21.Name = "materialLabel21";
-            this.materialLabel21.Size = new System.Drawing.Size(150, 19);
+            this.materialLabel21.Size = new System.Drawing.Size(159, 18);
             this.materialLabel21.TabIndex = 0;
             this.materialLabel21.Text = "ESCENARIO TEATRO";
             // 
@@ -12694,12 +12695,12 @@
             this.materialLabel15.AutoSize = true;
             this.materialLabel15.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel15.Depth = 0;
-            this.materialLabel15.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel15.Location = new System.Drawing.Point(619, 266);
             this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel15.Name = "materialLabel15";
-            this.materialLabel15.Size = new System.Drawing.Size(25, 19);
+            this.materialLabel15.Size = new System.Drawing.Size(24, 18);
             this.materialLabel15.TabIndex = 1984;
             this.materialLabel15.Text = "11";
             // 
@@ -12708,12 +12709,12 @@
             this.materialLabel16.AutoSize = true;
             this.materialLabel16.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel16.Depth = 0;
-            this.materialLabel16.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel16.Location = new System.Drawing.Point(619, 230);
             this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel16.Name = "materialLabel16";
-            this.materialLabel16.Size = new System.Drawing.Size(25, 19);
+            this.materialLabel16.Size = new System.Drawing.Size(24, 18);
             this.materialLabel16.TabIndex = 1983;
             this.materialLabel16.Text = "10";
             // 
@@ -12722,12 +12723,12 @@
             this.materialLabel17.AutoSize = true;
             this.materialLabel17.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel17.Depth = 0;
-            this.materialLabel17.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel17.Location = new System.Drawing.Point(619, 194);
             this.materialLabel17.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel17.Name = "materialLabel17";
-            this.materialLabel17.Size = new System.Drawing.Size(17, 19);
+            this.materialLabel17.Size = new System.Drawing.Size(16, 18);
             this.materialLabel17.TabIndex = 1982;
             this.materialLabel17.Text = "9";
             // 
@@ -12736,12 +12737,12 @@
             this.materialLabel18.AutoSize = true;
             this.materialLabel18.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel18.Depth = 0;
-            this.materialLabel18.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel18.Location = new System.Drawing.Point(619, 158);
             this.materialLabel18.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel18.Name = "materialLabel18";
-            this.materialLabel18.Size = new System.Drawing.Size(17, 19);
+            this.materialLabel18.Size = new System.Drawing.Size(16, 18);
             this.materialLabel18.TabIndex = 1981;
             this.materialLabel18.Text = "8";
             // 
@@ -12750,12 +12751,12 @@
             this.materialLabel19.AutoSize = true;
             this.materialLabel19.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel19.Depth = 0;
-            this.materialLabel19.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel19.Location = new System.Drawing.Point(619, 122);
             this.materialLabel19.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel19.Name = "materialLabel19";
-            this.materialLabel19.Size = new System.Drawing.Size(17, 19);
+            this.materialLabel19.Size = new System.Drawing.Size(16, 18);
             this.materialLabel19.TabIndex = 1980;
             this.materialLabel19.Text = "7";
             // 
@@ -12764,12 +12765,12 @@
             this.materialLabel20.AutoSize = true;
             this.materialLabel20.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel20.Depth = 0;
-            this.materialLabel20.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel20.Location = new System.Drawing.Point(619, 86);
             this.materialLabel20.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel20.Name = "materialLabel20";
-            this.materialLabel20.Size = new System.Drawing.Size(17, 19);
+            this.materialLabel20.Size = new System.Drawing.Size(16, 18);
             this.materialLabel20.TabIndex = 1979;
             this.materialLabel20.Text = "6";
             // 
@@ -13416,6 +13417,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 772);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TheaterPerJapones";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

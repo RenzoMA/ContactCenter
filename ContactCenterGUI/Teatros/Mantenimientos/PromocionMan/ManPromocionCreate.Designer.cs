@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManPromocionCreate));
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.btnCrear = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -316,6 +317,7 @@
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.materialLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManPromocionCreate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Promoción";

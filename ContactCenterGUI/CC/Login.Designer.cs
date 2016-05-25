@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btnLogin = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtUser = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -135,6 +136,7 @@
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Login";
             this.Sizable = false;

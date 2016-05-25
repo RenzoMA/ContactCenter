@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TheaterPirandello));
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTituloTeatro = new MaterialSkin.Controls.MaterialLabel();
             this.btnContinuar = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -289,6 +290,170 @@
             this.A804 = new System.Windows.Forms.Button();
             this.A803 = new System.Windows.Forms.Button();
             this.A802 = new System.Windows.Forms.Button();
+            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.materialLabel49 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel48 = new MaterialSkin.Controls.MaterialLabel();
+            this.A1504 = new System.Windows.Forms.Button();
+            this.A1503 = new System.Windows.Forms.Button();
+            this.A1502 = new System.Windows.Forms.Button();
+            this.A1501 = new System.Windows.Forms.Button();
+            this.A1500 = new System.Windows.Forms.Button();
+            this.A1499 = new System.Windows.Forms.Button();
+            this.A1498 = new System.Windows.Forms.Button();
+            this.A1497 = new System.Windows.Forms.Button();
+            this.A1496 = new System.Windows.Forms.Button();
+            this.A1495 = new System.Windows.Forms.Button();
+            this.A1494 = new System.Windows.Forms.Button();
+            this.A1493 = new System.Windows.Forms.Button();
+            this.A1492 = new System.Windows.Forms.Button();
+            this.A1491 = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.materialLabel47 = new MaterialSkin.Controls.MaterialLabel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.materialLabel46 = new MaterialSkin.Controls.MaterialLabel();
+            this.A1380 = new System.Windows.Forms.Button();
+            this.A1403 = new System.Windows.Forms.Button();
+            this.A1381 = new System.Windows.Forms.Button();
+            this.A1418 = new System.Windows.Forms.Button();
+            this.A1404 = new System.Windows.Forms.Button();
+            this.A1382 = new System.Windows.Forms.Button();
+            this.A1363 = new System.Windows.Forms.Button();
+            this.A1384 = new System.Windows.Forms.Button();
+            this.A1362 = new System.Windows.Forms.Button();
+            this.A1405 = new System.Windows.Forms.Button();
+            this.A1383 = new System.Windows.Forms.Button();
+            this.A1361 = new System.Windows.Forms.Button();
+            this.materialLabel37 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel38 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel39 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel40 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel41 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel42 = new MaterialSkin.Controls.MaterialLabel();
+            this.A1490 = new System.Windows.Forms.Button();
+            this.A1489 = new System.Windows.Forms.Button();
+            this.A1488 = new System.Windows.Forms.Button();
+            this.A1487 = new System.Windows.Forms.Button();
+            this.A1486 = new System.Windows.Forms.Button();
+            this.A1485 = new System.Windows.Forms.Button();
+            this.A1484 = new System.Windows.Forms.Button();
+            this.A1476 = new System.Windows.Forms.Button();
+            this.A1475 = new System.Windows.Forms.Button();
+            this.A1474 = new System.Windows.Forms.Button();
+            this.A1473 = new System.Windows.Forms.Button();
+            this.A1472 = new System.Windows.Forms.Button();
+            this.A1471 = new System.Windows.Forms.Button();
+            this.A1470 = new System.Windows.Forms.Button();
+            this.A1447 = new System.Windows.Forms.Button();
+            this.A1446 = new System.Windows.Forms.Button();
+            this.A1445 = new System.Windows.Forms.Button();
+            this.A1444 = new System.Windows.Forms.Button();
+            this.A1443 = new System.Windows.Forms.Button();
+            this.A1442 = new System.Windows.Forms.Button();
+            this.A1441 = new System.Windows.Forms.Button();
+            this.A1417 = new System.Windows.Forms.Button();
+            this.A1416 = new System.Windows.Forms.Button();
+            this.A1415 = new System.Windows.Forms.Button();
+            this.A1414 = new System.Windows.Forms.Button();
+            this.A1413 = new System.Windows.Forms.Button();
+            this.A1412 = new System.Windows.Forms.Button();
+            this.A1402 = new System.Windows.Forms.Button();
+            this.A1401 = new System.Windows.Forms.Button();
+            this.A1400 = new System.Windows.Forms.Button();
+            this.A1399 = new System.Windows.Forms.Button();
+            this.A1398 = new System.Windows.Forms.Button();
+            this.A1379 = new System.Windows.Forms.Button();
+            this.A1378 = new System.Windows.Forms.Button();
+            this.A1377 = new System.Windows.Forms.Button();
+            this.A1376 = new System.Windows.Forms.Button();
+            this.materialLabel31 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel32 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel34 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel35 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel36 = new MaterialSkin.Controls.MaterialLabel();
+            this.A1483 = new System.Windows.Forms.Button();
+            this.A1482 = new System.Windows.Forms.Button();
+            this.A1481 = new System.Windows.Forms.Button();
+            this.A1480 = new System.Windows.Forms.Button();
+            this.A1479 = new System.Windows.Forms.Button();
+            this.A1478 = new System.Windows.Forms.Button();
+            this.A1477 = new System.Windows.Forms.Button();
+            this.A1454 = new System.Windows.Forms.Button();
+            this.A1453 = new System.Windows.Forms.Button();
+            this.A1452 = new System.Windows.Forms.Button();
+            this.A1451 = new System.Windows.Forms.Button();
+            this.A1450 = new System.Windows.Forms.Button();
+            this.A1449 = new System.Windows.Forms.Button();
+            this.A1448 = new System.Windows.Forms.Button();
+            this.A1425 = new System.Windows.Forms.Button();
+            this.A1424 = new System.Windows.Forms.Button();
+            this.A1423 = new System.Windows.Forms.Button();
+            this.A1422 = new System.Windows.Forms.Button();
+            this.A1421 = new System.Windows.Forms.Button();
+            this.A1420 = new System.Windows.Forms.Button();
+            this.A1419 = new System.Windows.Forms.Button();
+            this.A1411 = new System.Windows.Forms.Button();
+            this.A1410 = new System.Windows.Forms.Button();
+            this.A1409 = new System.Windows.Forms.Button();
+            this.A1408 = new System.Windows.Forms.Button();
+            this.A1407 = new System.Windows.Forms.Button();
+            this.A1406 = new System.Windows.Forms.Button();
+            this.A1389 = new System.Windows.Forms.Button();
+            this.A1388 = new System.Windows.Forms.Button();
+            this.A1387 = new System.Windows.Forms.Button();
+            this.A1386 = new System.Windows.Forms.Button();
+            this.A1385 = new System.Windows.Forms.Button();
+            this.A1367 = new System.Windows.Forms.Button();
+            this.A1366 = new System.Windows.Forms.Button();
+            this.A1365 = new System.Windows.Forms.Button();
+            this.A1364 = new System.Windows.Forms.Button();
+            this.A1469 = new System.Windows.Forms.Button();
+            this.A1468 = new System.Windows.Forms.Button();
+            this.A1467 = new System.Windows.Forms.Button();
+            this.A1466 = new System.Windows.Forms.Button();
+            this.A1465 = new System.Windows.Forms.Button();
+            this.A1464 = new System.Windows.Forms.Button();
+            this.A1463 = new System.Windows.Forms.Button();
+            this.A1462 = new System.Windows.Forms.Button();
+            this.A1461 = new System.Windows.Forms.Button();
+            this.A1460 = new System.Windows.Forms.Button();
+            this.A1459 = new System.Windows.Forms.Button();
+            this.A1458 = new System.Windows.Forms.Button();
+            this.A1457 = new System.Windows.Forms.Button();
+            this.A1456 = new System.Windows.Forms.Button();
+            this.A1455 = new System.Windows.Forms.Button();
+            this.A1440 = new System.Windows.Forms.Button();
+            this.A1439 = new System.Windows.Forms.Button();
+            this.A1438 = new System.Windows.Forms.Button();
+            this.A1437 = new System.Windows.Forms.Button();
+            this.A1436 = new System.Windows.Forms.Button();
+            this.A1435 = new System.Windows.Forms.Button();
+            this.A1434 = new System.Windows.Forms.Button();
+            this.A1433 = new System.Windows.Forms.Button();
+            this.A1432 = new System.Windows.Forms.Button();
+            this.A1431 = new System.Windows.Forms.Button();
+            this.A1430 = new System.Windows.Forms.Button();
+            this.A1429 = new System.Windows.Forms.Button();
+            this.A1428 = new System.Windows.Forms.Button();
+            this.A1427 = new System.Windows.Forms.Button();
+            this.A1426 = new System.Windows.Forms.Button();
+            this.A1397 = new System.Windows.Forms.Button();
+            this.A1396 = new System.Windows.Forms.Button();
+            this.A1395 = new System.Windows.Forms.Button();
+            this.A1394 = new System.Windows.Forms.Button();
+            this.A1393 = new System.Windows.Forms.Button();
+            this.A1392 = new System.Windows.Forms.Button();
+            this.A1391 = new System.Windows.Forms.Button();
+            this.A1390 = new System.Windows.Forms.Button();
+            this.A1375 = new System.Windows.Forms.Button();
+            this.A1374 = new System.Windows.Forms.Button();
+            this.A1373 = new System.Windows.Forms.Button();
+            this.A1372 = new System.Windows.Forms.Button();
+            this.A1371 = new System.Windows.Forms.Button();
+            this.A1370 = new System.Windows.Forms.Button();
+            this.A1369 = new System.Windows.Forms.Button();
+            this.A1368 = new System.Windows.Forms.Button();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.materialLabel45 = new MaterialSkin.Controls.MaterialLabel();
@@ -660,176 +825,15 @@
             this.A1037 = new System.Windows.Forms.Button();
             this.A1036 = new System.Windows.Forms.Button();
             this.A1063 = new System.Windows.Forms.Button();
-            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.materialLabel49 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel48 = new MaterialSkin.Controls.MaterialLabel();
-            this.A1504 = new System.Windows.Forms.Button();
-            this.A1503 = new System.Windows.Forms.Button();
-            this.A1502 = new System.Windows.Forms.Button();
-            this.A1501 = new System.Windows.Forms.Button();
-            this.A1500 = new System.Windows.Forms.Button();
-            this.A1499 = new System.Windows.Forms.Button();
-            this.A1498 = new System.Windows.Forms.Button();
-            this.A1497 = new System.Windows.Forms.Button();
-            this.A1496 = new System.Windows.Forms.Button();
-            this.A1495 = new System.Windows.Forms.Button();
-            this.A1494 = new System.Windows.Forms.Button();
-            this.A1493 = new System.Windows.Forms.Button();
-            this.A1492 = new System.Windows.Forms.Button();
-            this.A1491 = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.materialLabel47 = new MaterialSkin.Controls.MaterialLabel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.materialLabel46 = new MaterialSkin.Controls.MaterialLabel();
-            this.A1380 = new System.Windows.Forms.Button();
-            this.A1403 = new System.Windows.Forms.Button();
-            this.A1381 = new System.Windows.Forms.Button();
-            this.A1418 = new System.Windows.Forms.Button();
-            this.A1404 = new System.Windows.Forms.Button();
-            this.A1382 = new System.Windows.Forms.Button();
-            this.A1363 = new System.Windows.Forms.Button();
-            this.A1384 = new System.Windows.Forms.Button();
-            this.A1362 = new System.Windows.Forms.Button();
-            this.A1405 = new System.Windows.Forms.Button();
-            this.A1383 = new System.Windows.Forms.Button();
-            this.A1361 = new System.Windows.Forms.Button();
-            this.materialLabel37 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel38 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel39 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel40 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel41 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel42 = new MaterialSkin.Controls.MaterialLabel();
-            this.A1490 = new System.Windows.Forms.Button();
-            this.A1489 = new System.Windows.Forms.Button();
-            this.A1488 = new System.Windows.Forms.Button();
-            this.A1487 = new System.Windows.Forms.Button();
-            this.A1486 = new System.Windows.Forms.Button();
-            this.A1485 = new System.Windows.Forms.Button();
-            this.A1484 = new System.Windows.Forms.Button();
-            this.A1476 = new System.Windows.Forms.Button();
-            this.A1475 = new System.Windows.Forms.Button();
-            this.A1474 = new System.Windows.Forms.Button();
-            this.A1473 = new System.Windows.Forms.Button();
-            this.A1472 = new System.Windows.Forms.Button();
-            this.A1471 = new System.Windows.Forms.Button();
-            this.A1470 = new System.Windows.Forms.Button();
-            this.A1447 = new System.Windows.Forms.Button();
-            this.A1446 = new System.Windows.Forms.Button();
-            this.A1445 = new System.Windows.Forms.Button();
-            this.A1444 = new System.Windows.Forms.Button();
-            this.A1443 = new System.Windows.Forms.Button();
-            this.A1442 = new System.Windows.Forms.Button();
-            this.A1441 = new System.Windows.Forms.Button();
-            this.A1417 = new System.Windows.Forms.Button();
-            this.A1416 = new System.Windows.Forms.Button();
-            this.A1415 = new System.Windows.Forms.Button();
-            this.A1414 = new System.Windows.Forms.Button();
-            this.A1413 = new System.Windows.Forms.Button();
-            this.A1412 = new System.Windows.Forms.Button();
-            this.A1402 = new System.Windows.Forms.Button();
-            this.A1401 = new System.Windows.Forms.Button();
-            this.A1400 = new System.Windows.Forms.Button();
-            this.A1399 = new System.Windows.Forms.Button();
-            this.A1398 = new System.Windows.Forms.Button();
-            this.A1379 = new System.Windows.Forms.Button();
-            this.A1378 = new System.Windows.Forms.Button();
-            this.A1377 = new System.Windows.Forms.Button();
-            this.A1376 = new System.Windows.Forms.Button();
-            this.materialLabel31 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel32 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel34 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel35 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel36 = new MaterialSkin.Controls.MaterialLabel();
-            this.A1483 = new System.Windows.Forms.Button();
-            this.A1482 = new System.Windows.Forms.Button();
-            this.A1481 = new System.Windows.Forms.Button();
-            this.A1480 = new System.Windows.Forms.Button();
-            this.A1479 = new System.Windows.Forms.Button();
-            this.A1478 = new System.Windows.Forms.Button();
-            this.A1477 = new System.Windows.Forms.Button();
-            this.A1454 = new System.Windows.Forms.Button();
-            this.A1453 = new System.Windows.Forms.Button();
-            this.A1452 = new System.Windows.Forms.Button();
-            this.A1451 = new System.Windows.Forms.Button();
-            this.A1450 = new System.Windows.Forms.Button();
-            this.A1449 = new System.Windows.Forms.Button();
-            this.A1448 = new System.Windows.Forms.Button();
-            this.A1425 = new System.Windows.Forms.Button();
-            this.A1424 = new System.Windows.Forms.Button();
-            this.A1423 = new System.Windows.Forms.Button();
-            this.A1422 = new System.Windows.Forms.Button();
-            this.A1421 = new System.Windows.Forms.Button();
-            this.A1420 = new System.Windows.Forms.Button();
-            this.A1419 = new System.Windows.Forms.Button();
-            this.A1411 = new System.Windows.Forms.Button();
-            this.A1410 = new System.Windows.Forms.Button();
-            this.A1409 = new System.Windows.Forms.Button();
-            this.A1408 = new System.Windows.Forms.Button();
-            this.A1407 = new System.Windows.Forms.Button();
-            this.A1406 = new System.Windows.Forms.Button();
-            this.A1389 = new System.Windows.Forms.Button();
-            this.A1388 = new System.Windows.Forms.Button();
-            this.A1387 = new System.Windows.Forms.Button();
-            this.A1386 = new System.Windows.Forms.Button();
-            this.A1385 = new System.Windows.Forms.Button();
-            this.A1367 = new System.Windows.Forms.Button();
-            this.A1366 = new System.Windows.Forms.Button();
-            this.A1365 = new System.Windows.Forms.Button();
-            this.A1364 = new System.Windows.Forms.Button();
-            this.A1469 = new System.Windows.Forms.Button();
-            this.A1468 = new System.Windows.Forms.Button();
-            this.A1467 = new System.Windows.Forms.Button();
-            this.A1466 = new System.Windows.Forms.Button();
-            this.A1465 = new System.Windows.Forms.Button();
-            this.A1464 = new System.Windows.Forms.Button();
-            this.A1463 = new System.Windows.Forms.Button();
-            this.A1462 = new System.Windows.Forms.Button();
-            this.A1461 = new System.Windows.Forms.Button();
-            this.A1460 = new System.Windows.Forms.Button();
-            this.A1459 = new System.Windows.Forms.Button();
-            this.A1458 = new System.Windows.Forms.Button();
-            this.A1457 = new System.Windows.Forms.Button();
-            this.A1456 = new System.Windows.Forms.Button();
-            this.A1455 = new System.Windows.Forms.Button();
-            this.A1440 = new System.Windows.Forms.Button();
-            this.A1439 = new System.Windows.Forms.Button();
-            this.A1438 = new System.Windows.Forms.Button();
-            this.A1437 = new System.Windows.Forms.Button();
-            this.A1436 = new System.Windows.Forms.Button();
-            this.A1435 = new System.Windows.Forms.Button();
-            this.A1434 = new System.Windows.Forms.Button();
-            this.A1433 = new System.Windows.Forms.Button();
-            this.A1432 = new System.Windows.Forms.Button();
-            this.A1431 = new System.Windows.Forms.Button();
-            this.A1430 = new System.Windows.Forms.Button();
-            this.A1429 = new System.Windows.Forms.Button();
-            this.A1428 = new System.Windows.Forms.Button();
-            this.A1427 = new System.Windows.Forms.Button();
-            this.A1426 = new System.Windows.Forms.Button();
-            this.A1397 = new System.Windows.Forms.Button();
-            this.A1396 = new System.Windows.Forms.Button();
-            this.A1395 = new System.Windows.Forms.Button();
-            this.A1394 = new System.Windows.Forms.Button();
-            this.A1393 = new System.Windows.Forms.Button();
-            this.A1392 = new System.Windows.Forms.Button();
-            this.A1391 = new System.Windows.Forms.Button();
-            this.A1390 = new System.Windows.Forms.Button();
-            this.A1375 = new System.Windows.Forms.Button();
-            this.A1374 = new System.Windows.Forms.Button();
-            this.A1373 = new System.Windows.Forms.Button();
-            this.A1372 = new System.Windows.Forms.Button();
-            this.A1371 = new System.Windows.Forms.Button();
-            this.A1370 = new System.Windows.Forms.Button();
-            this.A1369 = new System.Windows.Forms.Button();
-            this.A1368 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.metroTabPage4.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -837,9 +841,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.metroTabPage4.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -932,9 +933,9 @@
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
+            this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
-            this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 66);
             this.metroTabControl1.Name = "metroTabControl1";
@@ -3797,6 +3798,1862 @@
             this.A802.Text = "16";
             this.A802.UseVisualStyleBackColor = false;
             // 
+            // metroTabPage4
+            // 
+            this.metroTabPage4.Controls.Add(this.materialLabel49);
+            this.metroTabPage4.Controls.Add(this.materialLabel48);
+            this.metroTabPage4.Controls.Add(this.A1504);
+            this.metroTabPage4.Controls.Add(this.A1503);
+            this.metroTabPage4.Controls.Add(this.A1502);
+            this.metroTabPage4.Controls.Add(this.A1501);
+            this.metroTabPage4.Controls.Add(this.A1500);
+            this.metroTabPage4.Controls.Add(this.A1499);
+            this.metroTabPage4.Controls.Add(this.A1498);
+            this.metroTabPage4.Controls.Add(this.A1497);
+            this.metroTabPage4.Controls.Add(this.A1496);
+            this.metroTabPage4.Controls.Add(this.A1495);
+            this.metroTabPage4.Controls.Add(this.A1494);
+            this.metroTabPage4.Controls.Add(this.A1493);
+            this.metroTabPage4.Controls.Add(this.A1492);
+            this.metroTabPage4.Controls.Add(this.A1491);
+            this.metroTabPage4.Controls.Add(this.panel8);
+            this.metroTabPage4.Controls.Add(this.panel7);
+            this.metroTabPage4.Controls.Add(this.panel6);
+            this.metroTabPage4.Controls.Add(this.A1380);
+            this.metroTabPage4.Controls.Add(this.A1403);
+            this.metroTabPage4.Controls.Add(this.A1381);
+            this.metroTabPage4.Controls.Add(this.A1418);
+            this.metroTabPage4.Controls.Add(this.A1404);
+            this.metroTabPage4.Controls.Add(this.A1382);
+            this.metroTabPage4.Controls.Add(this.A1363);
+            this.metroTabPage4.Controls.Add(this.A1384);
+            this.metroTabPage4.Controls.Add(this.A1362);
+            this.metroTabPage4.Controls.Add(this.A1405);
+            this.metroTabPage4.Controls.Add(this.A1383);
+            this.metroTabPage4.Controls.Add(this.A1361);
+            this.metroTabPage4.Controls.Add(this.materialLabel37);
+            this.metroTabPage4.Controls.Add(this.materialLabel38);
+            this.metroTabPage4.Controls.Add(this.materialLabel39);
+            this.metroTabPage4.Controls.Add(this.materialLabel40);
+            this.metroTabPage4.Controls.Add(this.materialLabel41);
+            this.metroTabPage4.Controls.Add(this.materialLabel42);
+            this.metroTabPage4.Controls.Add(this.A1490);
+            this.metroTabPage4.Controls.Add(this.A1489);
+            this.metroTabPage4.Controls.Add(this.A1488);
+            this.metroTabPage4.Controls.Add(this.A1487);
+            this.metroTabPage4.Controls.Add(this.A1486);
+            this.metroTabPage4.Controls.Add(this.A1485);
+            this.metroTabPage4.Controls.Add(this.A1484);
+            this.metroTabPage4.Controls.Add(this.A1476);
+            this.metroTabPage4.Controls.Add(this.A1475);
+            this.metroTabPage4.Controls.Add(this.A1474);
+            this.metroTabPage4.Controls.Add(this.A1473);
+            this.metroTabPage4.Controls.Add(this.A1472);
+            this.metroTabPage4.Controls.Add(this.A1471);
+            this.metroTabPage4.Controls.Add(this.A1470);
+            this.metroTabPage4.Controls.Add(this.A1447);
+            this.metroTabPage4.Controls.Add(this.A1446);
+            this.metroTabPage4.Controls.Add(this.A1445);
+            this.metroTabPage4.Controls.Add(this.A1444);
+            this.metroTabPage4.Controls.Add(this.A1443);
+            this.metroTabPage4.Controls.Add(this.A1442);
+            this.metroTabPage4.Controls.Add(this.A1441);
+            this.metroTabPage4.Controls.Add(this.A1417);
+            this.metroTabPage4.Controls.Add(this.A1416);
+            this.metroTabPage4.Controls.Add(this.A1415);
+            this.metroTabPage4.Controls.Add(this.A1414);
+            this.metroTabPage4.Controls.Add(this.A1413);
+            this.metroTabPage4.Controls.Add(this.A1412);
+            this.metroTabPage4.Controls.Add(this.A1402);
+            this.metroTabPage4.Controls.Add(this.A1401);
+            this.metroTabPage4.Controls.Add(this.A1400);
+            this.metroTabPage4.Controls.Add(this.A1399);
+            this.metroTabPage4.Controls.Add(this.A1398);
+            this.metroTabPage4.Controls.Add(this.A1379);
+            this.metroTabPage4.Controls.Add(this.A1378);
+            this.metroTabPage4.Controls.Add(this.A1377);
+            this.metroTabPage4.Controls.Add(this.A1376);
+            this.metroTabPage4.Controls.Add(this.materialLabel31);
+            this.metroTabPage4.Controls.Add(this.materialLabel32);
+            this.metroTabPage4.Controls.Add(this.materialLabel33);
+            this.metroTabPage4.Controls.Add(this.materialLabel34);
+            this.metroTabPage4.Controls.Add(this.materialLabel35);
+            this.metroTabPage4.Controls.Add(this.materialLabel36);
+            this.metroTabPage4.Controls.Add(this.A1483);
+            this.metroTabPage4.Controls.Add(this.A1482);
+            this.metroTabPage4.Controls.Add(this.A1481);
+            this.metroTabPage4.Controls.Add(this.A1480);
+            this.metroTabPage4.Controls.Add(this.A1479);
+            this.metroTabPage4.Controls.Add(this.A1478);
+            this.metroTabPage4.Controls.Add(this.A1477);
+            this.metroTabPage4.Controls.Add(this.A1454);
+            this.metroTabPage4.Controls.Add(this.A1453);
+            this.metroTabPage4.Controls.Add(this.A1452);
+            this.metroTabPage4.Controls.Add(this.A1451);
+            this.metroTabPage4.Controls.Add(this.A1450);
+            this.metroTabPage4.Controls.Add(this.A1449);
+            this.metroTabPage4.Controls.Add(this.A1448);
+            this.metroTabPage4.Controls.Add(this.A1425);
+            this.metroTabPage4.Controls.Add(this.A1424);
+            this.metroTabPage4.Controls.Add(this.A1423);
+            this.metroTabPage4.Controls.Add(this.A1422);
+            this.metroTabPage4.Controls.Add(this.A1421);
+            this.metroTabPage4.Controls.Add(this.A1420);
+            this.metroTabPage4.Controls.Add(this.A1419);
+            this.metroTabPage4.Controls.Add(this.A1411);
+            this.metroTabPage4.Controls.Add(this.A1410);
+            this.metroTabPage4.Controls.Add(this.A1409);
+            this.metroTabPage4.Controls.Add(this.A1408);
+            this.metroTabPage4.Controls.Add(this.A1407);
+            this.metroTabPage4.Controls.Add(this.A1406);
+            this.metroTabPage4.Controls.Add(this.A1389);
+            this.metroTabPage4.Controls.Add(this.A1388);
+            this.metroTabPage4.Controls.Add(this.A1387);
+            this.metroTabPage4.Controls.Add(this.A1386);
+            this.metroTabPage4.Controls.Add(this.A1385);
+            this.metroTabPage4.Controls.Add(this.A1367);
+            this.metroTabPage4.Controls.Add(this.A1366);
+            this.metroTabPage4.Controls.Add(this.A1365);
+            this.metroTabPage4.Controls.Add(this.A1364);
+            this.metroTabPage4.Controls.Add(this.A1469);
+            this.metroTabPage4.Controls.Add(this.A1468);
+            this.metroTabPage4.Controls.Add(this.A1467);
+            this.metroTabPage4.Controls.Add(this.A1466);
+            this.metroTabPage4.Controls.Add(this.A1465);
+            this.metroTabPage4.Controls.Add(this.A1464);
+            this.metroTabPage4.Controls.Add(this.A1463);
+            this.metroTabPage4.Controls.Add(this.A1462);
+            this.metroTabPage4.Controls.Add(this.A1461);
+            this.metroTabPage4.Controls.Add(this.A1460);
+            this.metroTabPage4.Controls.Add(this.A1459);
+            this.metroTabPage4.Controls.Add(this.A1458);
+            this.metroTabPage4.Controls.Add(this.A1457);
+            this.metroTabPage4.Controls.Add(this.A1456);
+            this.metroTabPage4.Controls.Add(this.A1455);
+            this.metroTabPage4.Controls.Add(this.A1440);
+            this.metroTabPage4.Controls.Add(this.A1439);
+            this.metroTabPage4.Controls.Add(this.A1438);
+            this.metroTabPage4.Controls.Add(this.A1437);
+            this.metroTabPage4.Controls.Add(this.A1436);
+            this.metroTabPage4.Controls.Add(this.A1435);
+            this.metroTabPage4.Controls.Add(this.A1434);
+            this.metroTabPage4.Controls.Add(this.A1433);
+            this.metroTabPage4.Controls.Add(this.A1432);
+            this.metroTabPage4.Controls.Add(this.A1431);
+            this.metroTabPage4.Controls.Add(this.A1430);
+            this.metroTabPage4.Controls.Add(this.A1429);
+            this.metroTabPage4.Controls.Add(this.A1428);
+            this.metroTabPage4.Controls.Add(this.A1427);
+            this.metroTabPage4.Controls.Add(this.A1426);
+            this.metroTabPage4.Controls.Add(this.A1397);
+            this.metroTabPage4.Controls.Add(this.A1396);
+            this.metroTabPage4.Controls.Add(this.A1395);
+            this.metroTabPage4.Controls.Add(this.A1394);
+            this.metroTabPage4.Controls.Add(this.A1393);
+            this.metroTabPage4.Controls.Add(this.A1392);
+            this.metroTabPage4.Controls.Add(this.A1391);
+            this.metroTabPage4.Controls.Add(this.A1390);
+            this.metroTabPage4.Controls.Add(this.A1375);
+            this.metroTabPage4.Controls.Add(this.A1374);
+            this.metroTabPage4.Controls.Add(this.A1373);
+            this.metroTabPage4.Controls.Add(this.A1372);
+            this.metroTabPage4.Controls.Add(this.A1371);
+            this.metroTabPage4.Controls.Add(this.A1370);
+            this.metroTabPage4.Controls.Add(this.A1369);
+            this.metroTabPage4.Controls.Add(this.A1368);
+            this.metroTabPage4.HorizontalScrollbarBarColor = true;
+            this.metroTabPage4.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage4.Name = "metroTabPage4";
+            this.metroTabPage4.Size = new System.Drawing.Size(1272, 667);
+            this.metroTabPage4.TabIndex = 3;
+            this.metroTabPage4.Text = "Mezzanine B";
+            this.metroTabPage4.VerticalScrollbarBarColor = true;
+            // 
+            // materialLabel49
+            // 
+            this.materialLabel49.AutoSize = true;
+            this.materialLabel49.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel49.Depth = 0;
+            this.materialLabel49.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel49.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel49.Location = new System.Drawing.Point(940, 414);
+            this.materialLabel49.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel49.Name = "materialLabel49";
+            this.materialLabel49.Size = new System.Drawing.Size(34, 18);
+            this.materialLabel49.TabIndex = 2105;
+            this.materialLabel49.Text = "MM";
+            // 
+            // materialLabel48
+            // 
+            this.materialLabel48.AutoSize = true;
+            this.materialLabel48.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel48.Depth = 0;
+            this.materialLabel48.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel48.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel48.Location = new System.Drawing.Point(320, 414);
+            this.materialLabel48.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel48.Name = "materialLabel48";
+            this.materialLabel48.Size = new System.Drawing.Size(34, 18);
+            this.materialLabel48.TabIndex = 2104;
+            this.materialLabel48.Text = "MM";
+            // 
+            // A1504
+            // 
+            this.A1504.BackColor = System.Drawing.Color.LightBlue;
+            this.A1504.Location = new System.Drawing.Point(1195, 409);
+            this.A1504.Name = "A1504";
+            this.A1504.Size = new System.Drawing.Size(27, 30);
+            this.A1504.TabIndex = 2103;
+            this.A1504.Text = "16";
+            this.A1504.UseVisualStyleBackColor = false;
+            // 
+            // A1503
+            // 
+            this.A1503.BackColor = System.Drawing.Color.LightBlue;
+            this.A1503.Location = new System.Drawing.Point(1167, 409);
+            this.A1503.Name = "A1503";
+            this.A1503.Size = new System.Drawing.Size(27, 30);
+            this.A1503.TabIndex = 2102;
+            this.A1503.Text = "16";
+            this.A1503.UseVisualStyleBackColor = false;
+            // 
+            // A1502
+            // 
+            this.A1502.BackColor = System.Drawing.Color.LightBlue;
+            this.A1502.Location = new System.Drawing.Point(1139, 409);
+            this.A1502.Name = "A1502";
+            this.A1502.Size = new System.Drawing.Size(27, 30);
+            this.A1502.TabIndex = 2101;
+            this.A1502.Text = "16";
+            this.A1502.UseVisualStyleBackColor = false;
+            // 
+            // A1501
+            // 
+            this.A1501.BackColor = System.Drawing.Color.LightBlue;
+            this.A1501.Location = new System.Drawing.Point(1111, 409);
+            this.A1501.Name = "A1501";
+            this.A1501.Size = new System.Drawing.Size(27, 30);
+            this.A1501.TabIndex = 2100;
+            this.A1501.Text = "16";
+            this.A1501.UseVisualStyleBackColor = false;
+            // 
+            // A1500
+            // 
+            this.A1500.BackColor = System.Drawing.Color.LightBlue;
+            this.A1500.Location = new System.Drawing.Point(1083, 409);
+            this.A1500.Name = "A1500";
+            this.A1500.Size = new System.Drawing.Size(27, 30);
+            this.A1500.TabIndex = 2099;
+            this.A1500.Text = "16";
+            this.A1500.UseVisualStyleBackColor = false;
+            // 
+            // A1499
+            // 
+            this.A1499.BackColor = System.Drawing.Color.LightBlue;
+            this.A1499.Location = new System.Drawing.Point(1055, 409);
+            this.A1499.Name = "A1499";
+            this.A1499.Size = new System.Drawing.Size(27, 30);
+            this.A1499.TabIndex = 2098;
+            this.A1499.Text = "16";
+            this.A1499.UseVisualStyleBackColor = false;
+            // 
+            // A1498
+            // 
+            this.A1498.BackColor = System.Drawing.Color.LightBlue;
+            this.A1498.Location = new System.Drawing.Point(1027, 409);
+            this.A1498.Name = "A1498";
+            this.A1498.Size = new System.Drawing.Size(27, 30);
+            this.A1498.TabIndex = 2097;
+            this.A1498.Text = "16";
+            this.A1498.UseVisualStyleBackColor = false;
+            // 
+            // A1497
+            // 
+            this.A1497.BackColor = System.Drawing.Color.LightBlue;
+            this.A1497.Location = new System.Drawing.Point(214, 409);
+            this.A1497.Name = "A1497";
+            this.A1497.Size = new System.Drawing.Size(27, 30);
+            this.A1497.TabIndex = 2096;
+            this.A1497.Text = "16";
+            this.A1497.UseVisualStyleBackColor = false;
+            // 
+            // A1496
+            // 
+            this.A1496.BackColor = System.Drawing.Color.LightBlue;
+            this.A1496.Location = new System.Drawing.Point(186, 409);
+            this.A1496.Name = "A1496";
+            this.A1496.Size = new System.Drawing.Size(27, 30);
+            this.A1496.TabIndex = 2095;
+            this.A1496.Text = "16";
+            this.A1496.UseVisualStyleBackColor = false;
+            // 
+            // A1495
+            // 
+            this.A1495.BackColor = System.Drawing.Color.LightBlue;
+            this.A1495.Location = new System.Drawing.Point(158, 409);
+            this.A1495.Name = "A1495";
+            this.A1495.Size = new System.Drawing.Size(27, 30);
+            this.A1495.TabIndex = 2094;
+            this.A1495.Text = "16";
+            this.A1495.UseVisualStyleBackColor = false;
+            // 
+            // A1494
+            // 
+            this.A1494.BackColor = System.Drawing.Color.LightBlue;
+            this.A1494.Location = new System.Drawing.Point(130, 409);
+            this.A1494.Name = "A1494";
+            this.A1494.Size = new System.Drawing.Size(27, 30);
+            this.A1494.TabIndex = 2093;
+            this.A1494.Text = "16";
+            this.A1494.UseVisualStyleBackColor = false;
+            // 
+            // A1493
+            // 
+            this.A1493.BackColor = System.Drawing.Color.LightBlue;
+            this.A1493.Location = new System.Drawing.Point(102, 409);
+            this.A1493.Name = "A1493";
+            this.A1493.Size = new System.Drawing.Size(27, 30);
+            this.A1493.TabIndex = 2092;
+            this.A1493.Text = "16";
+            this.A1493.UseVisualStyleBackColor = false;
+            // 
+            // A1492
+            // 
+            this.A1492.BackColor = System.Drawing.Color.LightBlue;
+            this.A1492.Location = new System.Drawing.Point(74, 409);
+            this.A1492.Name = "A1492";
+            this.A1492.Size = new System.Drawing.Size(27, 30);
+            this.A1492.TabIndex = 2091;
+            this.A1492.Text = "16";
+            this.A1492.UseVisualStyleBackColor = false;
+            // 
+            // A1491
+            // 
+            this.A1491.BackColor = System.Drawing.Color.LightBlue;
+            this.A1491.Location = new System.Drawing.Point(46, 409);
+            this.A1491.Name = "A1491";
+            this.A1491.Size = new System.Drawing.Size(27, 30);
+            this.A1491.TabIndex = 2090;
+            this.A1491.Text = "16";
+            this.A1491.UseVisualStyleBackColor = false;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.materialLabel47);
+            this.panel8.Location = new System.Drawing.Point(410, 378);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(419, 64);
+            this.panel8.TabIndex = 2089;
+            // 
+            // materialLabel47
+            // 
+            this.materialLabel47.AutoSize = true;
+            this.materialLabel47.Depth = 0;
+            this.materialLabel47.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel47.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel47.Location = new System.Drawing.Point(174, 23);
+            this.materialLabel47.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel47.Name = "materialLabel47";
+            this.materialLabel47.Size = new System.Drawing.Size(61, 18);
+            this.materialLabel47.TabIndex = 0;
+            this.materialLabel47.Text = "CABINA";
+            // 
+            // panel7
+            // 
+            this.panel7.Location = new System.Drawing.Point(527, 193);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(185, 64);
+            this.panel7.TabIndex = 2089;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.materialLabel46);
+            this.panel6.Location = new System.Drawing.Point(324, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(578, 64);
+            this.panel6.TabIndex = 2088;
+            // 
+            // materialLabel46
+            // 
+            this.materialLabel46.AutoSize = true;
+            this.materialLabel46.Depth = 0;
+            this.materialLabel46.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel46.Location = new System.Drawing.Point(222, 22);
+            this.materialLabel46.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel46.Name = "materialLabel46";
+            this.materialLabel46.Size = new System.Drawing.Size(159, 18);
+            this.materialLabel46.TabIndex = 0;
+            this.materialLabel46.Text = "ESCENARIO TEATRO";
+            // 
+            // A1380
+            // 
+            this.A1380.BackColor = System.Drawing.Color.LightBlue;
+            this.A1380.Location = new System.Drawing.Point(1139, 193);
+            this.A1380.Name = "A1380";
+            this.A1380.Size = new System.Drawing.Size(27, 30);
+            this.A1380.TabIndex = 2087;
+            this.A1380.Text = "16";
+            this.A1380.UseVisualStyleBackColor = false;
+            // 
+            // A1403
+            // 
+            this.A1403.BackColor = System.Drawing.Color.LightBlue;
+            this.A1403.Location = new System.Drawing.Point(1167, 229);
+            this.A1403.Name = "A1403";
+            this.A1403.Size = new System.Drawing.Size(27, 30);
+            this.A1403.TabIndex = 2086;
+            this.A1403.Text = "16";
+            this.A1403.UseVisualStyleBackColor = false;
+            // 
+            // A1381
+            // 
+            this.A1381.BackColor = System.Drawing.Color.LightBlue;
+            this.A1381.Location = new System.Drawing.Point(1167, 193);
+            this.A1381.Name = "A1381";
+            this.A1381.Size = new System.Drawing.Size(27, 30);
+            this.A1381.TabIndex = 2085;
+            this.A1381.Text = "16";
+            this.A1381.UseVisualStyleBackColor = false;
+            // 
+            // A1418
+            // 
+            this.A1418.BackColor = System.Drawing.Color.LightBlue;
+            this.A1418.Location = new System.Drawing.Point(1195, 265);
+            this.A1418.Name = "A1418";
+            this.A1418.Size = new System.Drawing.Size(27, 30);
+            this.A1418.TabIndex = 2084;
+            this.A1418.Text = "16";
+            this.A1418.UseVisualStyleBackColor = false;
+            // 
+            // A1404
+            // 
+            this.A1404.BackColor = System.Drawing.Color.LightBlue;
+            this.A1404.Location = new System.Drawing.Point(1195, 229);
+            this.A1404.Name = "A1404";
+            this.A1404.Size = new System.Drawing.Size(27, 30);
+            this.A1404.TabIndex = 2083;
+            this.A1404.Text = "16";
+            this.A1404.UseVisualStyleBackColor = false;
+            // 
+            // A1382
+            // 
+            this.A1382.BackColor = System.Drawing.Color.LightBlue;
+            this.A1382.Location = new System.Drawing.Point(1195, 193);
+            this.A1382.Name = "A1382";
+            this.A1382.Size = new System.Drawing.Size(27, 30);
+            this.A1382.TabIndex = 2082;
+            this.A1382.Text = "16";
+            this.A1382.UseVisualStyleBackColor = false;
+            // 
+            // A1363
+            // 
+            this.A1363.BackColor = System.Drawing.Color.LightBlue;
+            this.A1363.Location = new System.Drawing.Point(102, 193);
+            this.A1363.Name = "A1363";
+            this.A1363.Size = new System.Drawing.Size(27, 30);
+            this.A1363.TabIndex = 2081;
+            this.A1363.Text = "16";
+            this.A1363.UseVisualStyleBackColor = false;
+            // 
+            // A1384
+            // 
+            this.A1384.BackColor = System.Drawing.Color.LightBlue;
+            this.A1384.Location = new System.Drawing.Point(74, 229);
+            this.A1384.Name = "A1384";
+            this.A1384.Size = new System.Drawing.Size(27, 30);
+            this.A1384.TabIndex = 2080;
+            this.A1384.Text = "16";
+            this.A1384.UseVisualStyleBackColor = false;
+            // 
+            // A1362
+            // 
+            this.A1362.BackColor = System.Drawing.Color.LightBlue;
+            this.A1362.Location = new System.Drawing.Point(74, 193);
+            this.A1362.Name = "A1362";
+            this.A1362.Size = new System.Drawing.Size(27, 30);
+            this.A1362.TabIndex = 2079;
+            this.A1362.Text = "16";
+            this.A1362.UseVisualStyleBackColor = false;
+            // 
+            // A1405
+            // 
+            this.A1405.BackColor = System.Drawing.Color.LightBlue;
+            this.A1405.Location = new System.Drawing.Point(46, 265);
+            this.A1405.Name = "A1405";
+            this.A1405.Size = new System.Drawing.Size(27, 30);
+            this.A1405.TabIndex = 2078;
+            this.A1405.Text = "16";
+            this.A1405.UseVisualStyleBackColor = false;
+            // 
+            // A1383
+            // 
+            this.A1383.BackColor = System.Drawing.Color.LightBlue;
+            this.A1383.Location = new System.Drawing.Point(46, 229);
+            this.A1383.Name = "A1383";
+            this.A1383.Size = new System.Drawing.Size(27, 30);
+            this.A1383.TabIndex = 2077;
+            this.A1383.Text = "16";
+            this.A1383.UseVisualStyleBackColor = false;
+            // 
+            // A1361
+            // 
+            this.A1361.BackColor = System.Drawing.Color.LightBlue;
+            this.A1361.Location = new System.Drawing.Point(46, 193);
+            this.A1361.Name = "A1361";
+            this.A1361.Size = new System.Drawing.Size(27, 30);
+            this.A1361.TabIndex = 2076;
+            this.A1361.Text = "16";
+            this.A1361.UseVisualStyleBackColor = false;
+            // 
+            // materialLabel37
+            // 
+            this.materialLabel37.AutoSize = true;
+            this.materialLabel37.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel37.Depth = 0;
+            this.materialLabel37.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel37.Location = new System.Drawing.Point(940, 378);
+            this.materialLabel37.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel37.Name = "materialLabel37";
+            this.materialLabel37.Size = new System.Drawing.Size(24, 18);
+            this.materialLabel37.TabIndex = 2075;
+            this.materialLabel37.Text = "LL";
+            // 
+            // materialLabel38
+            // 
+            this.materialLabel38.AutoSize = true;
+            this.materialLabel38.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel38.Depth = 0;
+            this.materialLabel38.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel38.Location = new System.Drawing.Point(940, 342);
+            this.materialLabel38.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel38.Name = "materialLabel38";
+            this.materialLabel38.Size = new System.Drawing.Size(28, 18);
+            this.materialLabel38.TabIndex = 2074;
+            this.materialLabel38.Text = "KK";
+            // 
+            // materialLabel39
+            // 
+            this.materialLabel39.AutoSize = true;
+            this.materialLabel39.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel39.Depth = 0;
+            this.materialLabel39.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel39.Location = new System.Drawing.Point(940, 306);
+            this.materialLabel39.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel39.Name = "materialLabel39";
+            this.materialLabel39.Size = new System.Drawing.Size(24, 18);
+            this.materialLabel39.TabIndex = 2073;
+            this.materialLabel39.Text = "JJ";
+            // 
+            // materialLabel40
+            // 
+            this.materialLabel40.AutoSize = true;
+            this.materialLabel40.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel40.Depth = 0;
+            this.materialLabel40.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel40.Location = new System.Drawing.Point(940, 270);
+            this.materialLabel40.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel40.Name = "materialLabel40";
+            this.materialLabel40.Size = new System.Drawing.Size(14, 18);
+            this.materialLabel40.TabIndex = 2072;
+            this.materialLabel40.Text = "II";
+            // 
+            // materialLabel41
+            // 
+            this.materialLabel41.AutoSize = true;
+            this.materialLabel41.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel41.Depth = 0;
+            this.materialLabel41.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel41.Location = new System.Drawing.Point(940, 234);
+            this.materialLabel41.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel41.Name = "materialLabel41";
+            this.materialLabel41.Size = new System.Drawing.Size(30, 18);
+            this.materialLabel41.TabIndex = 2071;
+            this.materialLabel41.Text = "HH";
+            // 
+            // materialLabel42
+            // 
+            this.materialLabel42.AutoSize = true;
+            this.materialLabel42.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel42.Depth = 0;
+            this.materialLabel42.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel42.Location = new System.Drawing.Point(940, 198);
+            this.materialLabel42.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel42.Name = "materialLabel42";
+            this.materialLabel42.Size = new System.Drawing.Size(32, 18);
+            this.materialLabel42.TabIndex = 2070;
+            this.materialLabel42.Text = "GG";
+            // 
+            // A1490
+            // 
+            this.A1490.BackColor = System.Drawing.Color.LightBlue;
+            this.A1490.Location = new System.Drawing.Point(1195, 373);
+            this.A1490.Name = "A1490";
+            this.A1490.Size = new System.Drawing.Size(27, 30);
+            this.A1490.TabIndex = 2069;
+            this.A1490.Text = "16";
+            this.A1490.UseVisualStyleBackColor = false;
+            // 
+            // A1489
+            // 
+            this.A1489.BackColor = System.Drawing.Color.LightBlue;
+            this.A1489.Location = new System.Drawing.Point(1167, 373);
+            this.A1489.Name = "A1489";
+            this.A1489.Size = new System.Drawing.Size(27, 30);
+            this.A1489.TabIndex = 2068;
+            this.A1489.Text = "16";
+            this.A1489.UseVisualStyleBackColor = false;
+            // 
+            // A1488
+            // 
+            this.A1488.BackColor = System.Drawing.Color.LightBlue;
+            this.A1488.Location = new System.Drawing.Point(1139, 373);
+            this.A1488.Name = "A1488";
+            this.A1488.Size = new System.Drawing.Size(27, 30);
+            this.A1488.TabIndex = 2067;
+            this.A1488.Text = "16";
+            this.A1488.UseVisualStyleBackColor = false;
+            // 
+            // A1487
+            // 
+            this.A1487.BackColor = System.Drawing.Color.LightBlue;
+            this.A1487.Location = new System.Drawing.Point(1111, 373);
+            this.A1487.Name = "A1487";
+            this.A1487.Size = new System.Drawing.Size(27, 30);
+            this.A1487.TabIndex = 2066;
+            this.A1487.Text = "16";
+            this.A1487.UseVisualStyleBackColor = false;
+            // 
+            // A1486
+            // 
+            this.A1486.BackColor = System.Drawing.Color.LightBlue;
+            this.A1486.Location = new System.Drawing.Point(1083, 373);
+            this.A1486.Name = "A1486";
+            this.A1486.Size = new System.Drawing.Size(27, 30);
+            this.A1486.TabIndex = 2065;
+            this.A1486.Text = "16";
+            this.A1486.UseVisualStyleBackColor = false;
+            // 
+            // A1485
+            // 
+            this.A1485.BackColor = System.Drawing.Color.LightBlue;
+            this.A1485.Location = new System.Drawing.Point(1055, 373);
+            this.A1485.Name = "A1485";
+            this.A1485.Size = new System.Drawing.Size(27, 30);
+            this.A1485.TabIndex = 2064;
+            this.A1485.Text = "16";
+            this.A1485.UseVisualStyleBackColor = false;
+            // 
+            // A1484
+            // 
+            this.A1484.BackColor = System.Drawing.Color.LightBlue;
+            this.A1484.Location = new System.Drawing.Point(1027, 373);
+            this.A1484.Name = "A1484";
+            this.A1484.Size = new System.Drawing.Size(27, 30);
+            this.A1484.TabIndex = 2063;
+            this.A1484.Text = "16";
+            this.A1484.UseVisualStyleBackColor = false;
+            // 
+            // A1476
+            // 
+            this.A1476.BackColor = System.Drawing.Color.LightBlue;
+            this.A1476.Location = new System.Drawing.Point(1195, 337);
+            this.A1476.Name = "A1476";
+            this.A1476.Size = new System.Drawing.Size(27, 30);
+            this.A1476.TabIndex = 2062;
+            this.A1476.Text = "16";
+            this.A1476.UseVisualStyleBackColor = false;
+            // 
+            // A1475
+            // 
+            this.A1475.BackColor = System.Drawing.Color.LightBlue;
+            this.A1475.Location = new System.Drawing.Point(1167, 337);
+            this.A1475.Name = "A1475";
+            this.A1475.Size = new System.Drawing.Size(27, 30);
+            this.A1475.TabIndex = 2061;
+            this.A1475.Text = "16";
+            this.A1475.UseVisualStyleBackColor = false;
+            // 
+            // A1474
+            // 
+            this.A1474.BackColor = System.Drawing.Color.LightBlue;
+            this.A1474.Location = new System.Drawing.Point(1139, 337);
+            this.A1474.Name = "A1474";
+            this.A1474.Size = new System.Drawing.Size(27, 30);
+            this.A1474.TabIndex = 2060;
+            this.A1474.Text = "16";
+            this.A1474.UseVisualStyleBackColor = false;
+            // 
+            // A1473
+            // 
+            this.A1473.BackColor = System.Drawing.Color.LightBlue;
+            this.A1473.Location = new System.Drawing.Point(1111, 337);
+            this.A1473.Name = "A1473";
+            this.A1473.Size = new System.Drawing.Size(27, 30);
+            this.A1473.TabIndex = 2059;
+            this.A1473.Text = "16";
+            this.A1473.UseVisualStyleBackColor = false;
+            // 
+            // A1472
+            // 
+            this.A1472.BackColor = System.Drawing.Color.LightBlue;
+            this.A1472.Location = new System.Drawing.Point(1083, 337);
+            this.A1472.Name = "A1472";
+            this.A1472.Size = new System.Drawing.Size(27, 30);
+            this.A1472.TabIndex = 2058;
+            this.A1472.Text = "16";
+            this.A1472.UseVisualStyleBackColor = false;
+            // 
+            // A1471
+            // 
+            this.A1471.BackColor = System.Drawing.Color.LightBlue;
+            this.A1471.Location = new System.Drawing.Point(1055, 337);
+            this.A1471.Name = "A1471";
+            this.A1471.Size = new System.Drawing.Size(27, 30);
+            this.A1471.TabIndex = 2057;
+            this.A1471.Text = "16";
+            this.A1471.UseVisualStyleBackColor = false;
+            // 
+            // A1470
+            // 
+            this.A1470.BackColor = System.Drawing.Color.LightBlue;
+            this.A1470.Location = new System.Drawing.Point(1027, 337);
+            this.A1470.Name = "A1470";
+            this.A1470.Size = new System.Drawing.Size(27, 30);
+            this.A1470.TabIndex = 2056;
+            this.A1470.Text = "16";
+            this.A1470.UseVisualStyleBackColor = false;
+            // 
+            // A1447
+            // 
+            this.A1447.BackColor = System.Drawing.Color.LightBlue;
+            this.A1447.Location = new System.Drawing.Point(1195, 301);
+            this.A1447.Name = "A1447";
+            this.A1447.Size = new System.Drawing.Size(27, 30);
+            this.A1447.TabIndex = 2055;
+            this.A1447.Text = "16";
+            this.A1447.UseVisualStyleBackColor = false;
+            // 
+            // A1446
+            // 
+            this.A1446.BackColor = System.Drawing.Color.LightBlue;
+            this.A1446.Location = new System.Drawing.Point(1167, 301);
+            this.A1446.Name = "A1446";
+            this.A1446.Size = new System.Drawing.Size(27, 30);
+            this.A1446.TabIndex = 2054;
+            this.A1446.Text = "16";
+            this.A1446.UseVisualStyleBackColor = false;
+            // 
+            // A1445
+            // 
+            this.A1445.BackColor = System.Drawing.Color.LightBlue;
+            this.A1445.Location = new System.Drawing.Point(1139, 301);
+            this.A1445.Name = "A1445";
+            this.A1445.Size = new System.Drawing.Size(27, 30);
+            this.A1445.TabIndex = 2053;
+            this.A1445.Text = "16";
+            this.A1445.UseVisualStyleBackColor = false;
+            // 
+            // A1444
+            // 
+            this.A1444.BackColor = System.Drawing.Color.LightBlue;
+            this.A1444.Location = new System.Drawing.Point(1111, 301);
+            this.A1444.Name = "A1444";
+            this.A1444.Size = new System.Drawing.Size(27, 30);
+            this.A1444.TabIndex = 2052;
+            this.A1444.Text = "16";
+            this.A1444.UseVisualStyleBackColor = false;
+            // 
+            // A1443
+            // 
+            this.A1443.BackColor = System.Drawing.Color.LightBlue;
+            this.A1443.Location = new System.Drawing.Point(1083, 301);
+            this.A1443.Name = "A1443";
+            this.A1443.Size = new System.Drawing.Size(27, 30);
+            this.A1443.TabIndex = 2051;
+            this.A1443.Text = "16";
+            this.A1443.UseVisualStyleBackColor = false;
+            // 
+            // A1442
+            // 
+            this.A1442.BackColor = System.Drawing.Color.LightBlue;
+            this.A1442.Location = new System.Drawing.Point(1055, 301);
+            this.A1442.Name = "A1442";
+            this.A1442.Size = new System.Drawing.Size(27, 30);
+            this.A1442.TabIndex = 2050;
+            this.A1442.Text = "16";
+            this.A1442.UseVisualStyleBackColor = false;
+            // 
+            // A1441
+            // 
+            this.A1441.BackColor = System.Drawing.Color.LightBlue;
+            this.A1441.Location = new System.Drawing.Point(1027, 301);
+            this.A1441.Name = "A1441";
+            this.A1441.Size = new System.Drawing.Size(27, 30);
+            this.A1441.TabIndex = 2049;
+            this.A1441.Text = "16";
+            this.A1441.UseVisualStyleBackColor = false;
+            // 
+            // A1417
+            // 
+            this.A1417.BackColor = System.Drawing.Color.LightBlue;
+            this.A1417.Location = new System.Drawing.Point(1167, 265);
+            this.A1417.Name = "A1417";
+            this.A1417.Size = new System.Drawing.Size(27, 30);
+            this.A1417.TabIndex = 2048;
+            this.A1417.Text = "16";
+            this.A1417.UseVisualStyleBackColor = false;
+            // 
+            // A1416
+            // 
+            this.A1416.BackColor = System.Drawing.Color.LightBlue;
+            this.A1416.Location = new System.Drawing.Point(1139, 265);
+            this.A1416.Name = "A1416";
+            this.A1416.Size = new System.Drawing.Size(27, 30);
+            this.A1416.TabIndex = 2047;
+            this.A1416.Text = "16";
+            this.A1416.UseVisualStyleBackColor = false;
+            // 
+            // A1415
+            // 
+            this.A1415.BackColor = System.Drawing.Color.LightBlue;
+            this.A1415.Location = new System.Drawing.Point(1111, 265);
+            this.A1415.Name = "A1415";
+            this.A1415.Size = new System.Drawing.Size(27, 30);
+            this.A1415.TabIndex = 2046;
+            this.A1415.Text = "16";
+            this.A1415.UseVisualStyleBackColor = false;
+            // 
+            // A1414
+            // 
+            this.A1414.BackColor = System.Drawing.Color.LightBlue;
+            this.A1414.Location = new System.Drawing.Point(1083, 265);
+            this.A1414.Name = "A1414";
+            this.A1414.Size = new System.Drawing.Size(27, 30);
+            this.A1414.TabIndex = 2045;
+            this.A1414.Text = "16";
+            this.A1414.UseVisualStyleBackColor = false;
+            // 
+            // A1413
+            // 
+            this.A1413.BackColor = System.Drawing.Color.LightBlue;
+            this.A1413.Location = new System.Drawing.Point(1055, 265);
+            this.A1413.Name = "A1413";
+            this.A1413.Size = new System.Drawing.Size(27, 30);
+            this.A1413.TabIndex = 2044;
+            this.A1413.Text = "16";
+            this.A1413.UseVisualStyleBackColor = false;
+            // 
+            // A1412
+            // 
+            this.A1412.BackColor = System.Drawing.Color.LightBlue;
+            this.A1412.Location = new System.Drawing.Point(1027, 265);
+            this.A1412.Name = "A1412";
+            this.A1412.Size = new System.Drawing.Size(27, 30);
+            this.A1412.TabIndex = 2043;
+            this.A1412.Text = "16";
+            this.A1412.UseVisualStyleBackColor = false;
+            // 
+            // A1402
+            // 
+            this.A1402.BackColor = System.Drawing.Color.LightBlue;
+            this.A1402.Location = new System.Drawing.Point(1139, 229);
+            this.A1402.Name = "A1402";
+            this.A1402.Size = new System.Drawing.Size(27, 30);
+            this.A1402.TabIndex = 2042;
+            this.A1402.Text = "16";
+            this.A1402.UseVisualStyleBackColor = false;
+            // 
+            // A1401
+            // 
+            this.A1401.BackColor = System.Drawing.Color.LightBlue;
+            this.A1401.Location = new System.Drawing.Point(1111, 229);
+            this.A1401.Name = "A1401";
+            this.A1401.Size = new System.Drawing.Size(27, 30);
+            this.A1401.TabIndex = 2041;
+            this.A1401.Text = "16";
+            this.A1401.UseVisualStyleBackColor = false;
+            // 
+            // A1400
+            // 
+            this.A1400.BackColor = System.Drawing.Color.LightBlue;
+            this.A1400.Location = new System.Drawing.Point(1083, 229);
+            this.A1400.Name = "A1400";
+            this.A1400.Size = new System.Drawing.Size(27, 30);
+            this.A1400.TabIndex = 2040;
+            this.A1400.Text = "16";
+            this.A1400.UseVisualStyleBackColor = false;
+            // 
+            // A1399
+            // 
+            this.A1399.BackColor = System.Drawing.Color.LightBlue;
+            this.A1399.Location = new System.Drawing.Point(1055, 229);
+            this.A1399.Name = "A1399";
+            this.A1399.Size = new System.Drawing.Size(27, 30);
+            this.A1399.TabIndex = 2039;
+            this.A1399.Text = "16";
+            this.A1399.UseVisualStyleBackColor = false;
+            // 
+            // A1398
+            // 
+            this.A1398.BackColor = System.Drawing.Color.LightBlue;
+            this.A1398.Location = new System.Drawing.Point(1027, 229);
+            this.A1398.Name = "A1398";
+            this.A1398.Size = new System.Drawing.Size(27, 30);
+            this.A1398.TabIndex = 2038;
+            this.A1398.Text = "16";
+            this.A1398.UseVisualStyleBackColor = false;
+            // 
+            // A1379
+            // 
+            this.A1379.BackColor = System.Drawing.Color.LightBlue;
+            this.A1379.Location = new System.Drawing.Point(1111, 193);
+            this.A1379.Name = "A1379";
+            this.A1379.Size = new System.Drawing.Size(27, 30);
+            this.A1379.TabIndex = 2037;
+            this.A1379.Text = "16";
+            this.A1379.UseVisualStyleBackColor = false;
+            // 
+            // A1378
+            // 
+            this.A1378.BackColor = System.Drawing.Color.LightBlue;
+            this.A1378.Location = new System.Drawing.Point(1083, 193);
+            this.A1378.Name = "A1378";
+            this.A1378.Size = new System.Drawing.Size(27, 30);
+            this.A1378.TabIndex = 2036;
+            this.A1378.Text = "16";
+            this.A1378.UseVisualStyleBackColor = false;
+            // 
+            // A1377
+            // 
+            this.A1377.BackColor = System.Drawing.Color.LightBlue;
+            this.A1377.Location = new System.Drawing.Point(1055, 193);
+            this.A1377.Name = "A1377";
+            this.A1377.Size = new System.Drawing.Size(27, 30);
+            this.A1377.TabIndex = 2035;
+            this.A1377.Text = "16";
+            this.A1377.UseVisualStyleBackColor = false;
+            // 
+            // A1376
+            // 
+            this.A1376.BackColor = System.Drawing.Color.LightBlue;
+            this.A1376.Location = new System.Drawing.Point(1027, 193);
+            this.A1376.Name = "A1376";
+            this.A1376.Size = new System.Drawing.Size(27, 30);
+            this.A1376.TabIndex = 2034;
+            this.A1376.Text = "16";
+            this.A1376.UseVisualStyleBackColor = false;
+            // 
+            // materialLabel31
+            // 
+            this.materialLabel31.AutoSize = true;
+            this.materialLabel31.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel31.Depth = 0;
+            this.materialLabel31.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel31.Location = new System.Drawing.Point(320, 378);
+            this.materialLabel31.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel31.Name = "materialLabel31";
+            this.materialLabel31.Size = new System.Drawing.Size(24, 18);
+            this.materialLabel31.TabIndex = 2033;
+            this.materialLabel31.Text = "LL";
+            // 
+            // materialLabel32
+            // 
+            this.materialLabel32.AutoSize = true;
+            this.materialLabel32.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel32.Depth = 0;
+            this.materialLabel32.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel32.Location = new System.Drawing.Point(320, 342);
+            this.materialLabel32.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel32.Name = "materialLabel32";
+            this.materialLabel32.Size = new System.Drawing.Size(28, 18);
+            this.materialLabel32.TabIndex = 2032;
+            this.materialLabel32.Text = "KK";
+            // 
+            // materialLabel33
+            // 
+            this.materialLabel33.AutoSize = true;
+            this.materialLabel33.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel33.Depth = 0;
+            this.materialLabel33.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel33.Location = new System.Drawing.Point(320, 306);
+            this.materialLabel33.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel33.Name = "materialLabel33";
+            this.materialLabel33.Size = new System.Drawing.Size(24, 18);
+            this.materialLabel33.TabIndex = 2031;
+            this.materialLabel33.Text = "JJ";
+            // 
+            // materialLabel34
+            // 
+            this.materialLabel34.AutoSize = true;
+            this.materialLabel34.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel34.Depth = 0;
+            this.materialLabel34.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel34.Location = new System.Drawing.Point(320, 270);
+            this.materialLabel34.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel34.Name = "materialLabel34";
+            this.materialLabel34.Size = new System.Drawing.Size(14, 18);
+            this.materialLabel34.TabIndex = 2030;
+            this.materialLabel34.Text = "II";
+            // 
+            // materialLabel35
+            // 
+            this.materialLabel35.AutoSize = true;
+            this.materialLabel35.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel35.Depth = 0;
+            this.materialLabel35.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel35.Location = new System.Drawing.Point(320, 234);
+            this.materialLabel35.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel35.Name = "materialLabel35";
+            this.materialLabel35.Size = new System.Drawing.Size(30, 18);
+            this.materialLabel35.TabIndex = 2029;
+            this.materialLabel35.Text = "HH";
+            // 
+            // materialLabel36
+            // 
+            this.materialLabel36.AutoSize = true;
+            this.materialLabel36.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel36.Depth = 0;
+            this.materialLabel36.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel36.Location = new System.Drawing.Point(320, 198);
+            this.materialLabel36.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel36.Name = "materialLabel36";
+            this.materialLabel36.Size = new System.Drawing.Size(32, 18);
+            this.materialLabel36.TabIndex = 2028;
+            this.materialLabel36.Text = "GG";
+            // 
+            // A1483
+            // 
+            this.A1483.BackColor = System.Drawing.Color.LightBlue;
+            this.A1483.Location = new System.Drawing.Point(214, 373);
+            this.A1483.Name = "A1483";
+            this.A1483.Size = new System.Drawing.Size(27, 30);
+            this.A1483.TabIndex = 2027;
+            this.A1483.Text = "16";
+            this.A1483.UseVisualStyleBackColor = false;
+            // 
+            // A1482
+            // 
+            this.A1482.BackColor = System.Drawing.Color.LightBlue;
+            this.A1482.Location = new System.Drawing.Point(186, 373);
+            this.A1482.Name = "A1482";
+            this.A1482.Size = new System.Drawing.Size(27, 30);
+            this.A1482.TabIndex = 2026;
+            this.A1482.Text = "16";
+            this.A1482.UseVisualStyleBackColor = false;
+            // 
+            // A1481
+            // 
+            this.A1481.BackColor = System.Drawing.Color.LightBlue;
+            this.A1481.Location = new System.Drawing.Point(158, 373);
+            this.A1481.Name = "A1481";
+            this.A1481.Size = new System.Drawing.Size(27, 30);
+            this.A1481.TabIndex = 2025;
+            this.A1481.Text = "16";
+            this.A1481.UseVisualStyleBackColor = false;
+            // 
+            // A1480
+            // 
+            this.A1480.BackColor = System.Drawing.Color.LightBlue;
+            this.A1480.Location = new System.Drawing.Point(130, 373);
+            this.A1480.Name = "A1480";
+            this.A1480.Size = new System.Drawing.Size(27, 30);
+            this.A1480.TabIndex = 2024;
+            this.A1480.Text = "16";
+            this.A1480.UseVisualStyleBackColor = false;
+            // 
+            // A1479
+            // 
+            this.A1479.BackColor = System.Drawing.Color.LightBlue;
+            this.A1479.Location = new System.Drawing.Point(102, 373);
+            this.A1479.Name = "A1479";
+            this.A1479.Size = new System.Drawing.Size(27, 30);
+            this.A1479.TabIndex = 2023;
+            this.A1479.Text = "16";
+            this.A1479.UseVisualStyleBackColor = false;
+            // 
+            // A1478
+            // 
+            this.A1478.BackColor = System.Drawing.Color.LightBlue;
+            this.A1478.Location = new System.Drawing.Point(74, 373);
+            this.A1478.Name = "A1478";
+            this.A1478.Size = new System.Drawing.Size(27, 30);
+            this.A1478.TabIndex = 2022;
+            this.A1478.Text = "16";
+            this.A1478.UseVisualStyleBackColor = false;
+            // 
+            // A1477
+            // 
+            this.A1477.BackColor = System.Drawing.Color.LightBlue;
+            this.A1477.Location = new System.Drawing.Point(46, 373);
+            this.A1477.Name = "A1477";
+            this.A1477.Size = new System.Drawing.Size(27, 30);
+            this.A1477.TabIndex = 2021;
+            this.A1477.Text = "16";
+            this.A1477.UseVisualStyleBackColor = false;
+            // 
+            // A1454
+            // 
+            this.A1454.BackColor = System.Drawing.Color.LightBlue;
+            this.A1454.Location = new System.Drawing.Point(214, 337);
+            this.A1454.Name = "A1454";
+            this.A1454.Size = new System.Drawing.Size(27, 30);
+            this.A1454.TabIndex = 2020;
+            this.A1454.Text = "16";
+            this.A1454.UseVisualStyleBackColor = false;
+            // 
+            // A1453
+            // 
+            this.A1453.BackColor = System.Drawing.Color.LightBlue;
+            this.A1453.Location = new System.Drawing.Point(186, 337);
+            this.A1453.Name = "A1453";
+            this.A1453.Size = new System.Drawing.Size(27, 30);
+            this.A1453.TabIndex = 2019;
+            this.A1453.Text = "16";
+            this.A1453.UseVisualStyleBackColor = false;
+            // 
+            // A1452
+            // 
+            this.A1452.BackColor = System.Drawing.Color.LightBlue;
+            this.A1452.Location = new System.Drawing.Point(158, 337);
+            this.A1452.Name = "A1452";
+            this.A1452.Size = new System.Drawing.Size(27, 30);
+            this.A1452.TabIndex = 2018;
+            this.A1452.Text = "16";
+            this.A1452.UseVisualStyleBackColor = false;
+            // 
+            // A1451
+            // 
+            this.A1451.BackColor = System.Drawing.Color.LightBlue;
+            this.A1451.Location = new System.Drawing.Point(130, 337);
+            this.A1451.Name = "A1451";
+            this.A1451.Size = new System.Drawing.Size(27, 30);
+            this.A1451.TabIndex = 2017;
+            this.A1451.Text = "16";
+            this.A1451.UseVisualStyleBackColor = false;
+            // 
+            // A1450
+            // 
+            this.A1450.BackColor = System.Drawing.Color.LightBlue;
+            this.A1450.Location = new System.Drawing.Point(102, 337);
+            this.A1450.Name = "A1450";
+            this.A1450.Size = new System.Drawing.Size(27, 30);
+            this.A1450.TabIndex = 2016;
+            this.A1450.Text = "16";
+            this.A1450.UseVisualStyleBackColor = false;
+            // 
+            // A1449
+            // 
+            this.A1449.BackColor = System.Drawing.Color.LightBlue;
+            this.A1449.Location = new System.Drawing.Point(74, 337);
+            this.A1449.Name = "A1449";
+            this.A1449.Size = new System.Drawing.Size(27, 30);
+            this.A1449.TabIndex = 2015;
+            this.A1449.Text = "16";
+            this.A1449.UseVisualStyleBackColor = false;
+            // 
+            // A1448
+            // 
+            this.A1448.BackColor = System.Drawing.Color.LightBlue;
+            this.A1448.Location = new System.Drawing.Point(46, 337);
+            this.A1448.Name = "A1448";
+            this.A1448.Size = new System.Drawing.Size(27, 30);
+            this.A1448.TabIndex = 2014;
+            this.A1448.Text = "16";
+            this.A1448.UseVisualStyleBackColor = false;
+            // 
+            // A1425
+            // 
+            this.A1425.BackColor = System.Drawing.Color.LightBlue;
+            this.A1425.Location = new System.Drawing.Point(214, 301);
+            this.A1425.Name = "A1425";
+            this.A1425.Size = new System.Drawing.Size(27, 30);
+            this.A1425.TabIndex = 2013;
+            this.A1425.Text = "16";
+            this.A1425.UseVisualStyleBackColor = false;
+            // 
+            // A1424
+            // 
+            this.A1424.BackColor = System.Drawing.Color.LightBlue;
+            this.A1424.Location = new System.Drawing.Point(186, 301);
+            this.A1424.Name = "A1424";
+            this.A1424.Size = new System.Drawing.Size(27, 30);
+            this.A1424.TabIndex = 2012;
+            this.A1424.Text = "16";
+            this.A1424.UseVisualStyleBackColor = false;
+            // 
+            // A1423
+            // 
+            this.A1423.BackColor = System.Drawing.Color.LightBlue;
+            this.A1423.Location = new System.Drawing.Point(158, 301);
+            this.A1423.Name = "A1423";
+            this.A1423.Size = new System.Drawing.Size(27, 30);
+            this.A1423.TabIndex = 2011;
+            this.A1423.Text = "16";
+            this.A1423.UseVisualStyleBackColor = false;
+            // 
+            // A1422
+            // 
+            this.A1422.BackColor = System.Drawing.Color.LightBlue;
+            this.A1422.Location = new System.Drawing.Point(130, 301);
+            this.A1422.Name = "A1422";
+            this.A1422.Size = new System.Drawing.Size(27, 30);
+            this.A1422.TabIndex = 2010;
+            this.A1422.Text = "16";
+            this.A1422.UseVisualStyleBackColor = false;
+            // 
+            // A1421
+            // 
+            this.A1421.BackColor = System.Drawing.Color.LightBlue;
+            this.A1421.Location = new System.Drawing.Point(102, 301);
+            this.A1421.Name = "A1421";
+            this.A1421.Size = new System.Drawing.Size(27, 30);
+            this.A1421.TabIndex = 2009;
+            this.A1421.Text = "16";
+            this.A1421.UseVisualStyleBackColor = false;
+            // 
+            // A1420
+            // 
+            this.A1420.BackColor = System.Drawing.Color.LightBlue;
+            this.A1420.Location = new System.Drawing.Point(74, 301);
+            this.A1420.Name = "A1420";
+            this.A1420.Size = new System.Drawing.Size(27, 30);
+            this.A1420.TabIndex = 2008;
+            this.A1420.Text = "16";
+            this.A1420.UseVisualStyleBackColor = false;
+            // 
+            // A1419
+            // 
+            this.A1419.BackColor = System.Drawing.Color.LightBlue;
+            this.A1419.Location = new System.Drawing.Point(46, 301);
+            this.A1419.Name = "A1419";
+            this.A1419.Size = new System.Drawing.Size(27, 30);
+            this.A1419.TabIndex = 2007;
+            this.A1419.Text = "16";
+            this.A1419.UseVisualStyleBackColor = false;
+            // 
+            // A1411
+            // 
+            this.A1411.BackColor = System.Drawing.Color.LightBlue;
+            this.A1411.Location = new System.Drawing.Point(214, 265);
+            this.A1411.Name = "A1411";
+            this.A1411.Size = new System.Drawing.Size(27, 30);
+            this.A1411.TabIndex = 2006;
+            this.A1411.Text = "16";
+            this.A1411.UseVisualStyleBackColor = false;
+            // 
+            // A1410
+            // 
+            this.A1410.BackColor = System.Drawing.Color.LightBlue;
+            this.A1410.Location = new System.Drawing.Point(186, 265);
+            this.A1410.Name = "A1410";
+            this.A1410.Size = new System.Drawing.Size(27, 30);
+            this.A1410.TabIndex = 2005;
+            this.A1410.Text = "16";
+            this.A1410.UseVisualStyleBackColor = false;
+            // 
+            // A1409
+            // 
+            this.A1409.BackColor = System.Drawing.Color.LightBlue;
+            this.A1409.Location = new System.Drawing.Point(158, 265);
+            this.A1409.Name = "A1409";
+            this.A1409.Size = new System.Drawing.Size(27, 30);
+            this.A1409.TabIndex = 2004;
+            this.A1409.Text = "16";
+            this.A1409.UseVisualStyleBackColor = false;
+            // 
+            // A1408
+            // 
+            this.A1408.BackColor = System.Drawing.Color.LightBlue;
+            this.A1408.Location = new System.Drawing.Point(130, 265);
+            this.A1408.Name = "A1408";
+            this.A1408.Size = new System.Drawing.Size(27, 30);
+            this.A1408.TabIndex = 2003;
+            this.A1408.Text = "16";
+            this.A1408.UseVisualStyleBackColor = false;
+            // 
+            // A1407
+            // 
+            this.A1407.BackColor = System.Drawing.Color.LightBlue;
+            this.A1407.Location = new System.Drawing.Point(102, 265);
+            this.A1407.Name = "A1407";
+            this.A1407.Size = new System.Drawing.Size(27, 30);
+            this.A1407.TabIndex = 2002;
+            this.A1407.Text = "16";
+            this.A1407.UseVisualStyleBackColor = false;
+            // 
+            // A1406
+            // 
+            this.A1406.BackColor = System.Drawing.Color.LightBlue;
+            this.A1406.Location = new System.Drawing.Point(74, 265);
+            this.A1406.Name = "A1406";
+            this.A1406.Size = new System.Drawing.Size(27, 30);
+            this.A1406.TabIndex = 2001;
+            this.A1406.Text = "16";
+            this.A1406.UseVisualStyleBackColor = false;
+            // 
+            // A1389
+            // 
+            this.A1389.BackColor = System.Drawing.Color.LightBlue;
+            this.A1389.Location = new System.Drawing.Point(214, 229);
+            this.A1389.Name = "A1389";
+            this.A1389.Size = new System.Drawing.Size(27, 30);
+            this.A1389.TabIndex = 2000;
+            this.A1389.Text = "16";
+            this.A1389.UseVisualStyleBackColor = false;
+            // 
+            // A1388
+            // 
+            this.A1388.BackColor = System.Drawing.Color.LightBlue;
+            this.A1388.Location = new System.Drawing.Point(186, 229);
+            this.A1388.Name = "A1388";
+            this.A1388.Size = new System.Drawing.Size(27, 30);
+            this.A1388.TabIndex = 1999;
+            this.A1388.Text = "16";
+            this.A1388.UseVisualStyleBackColor = false;
+            // 
+            // A1387
+            // 
+            this.A1387.BackColor = System.Drawing.Color.LightBlue;
+            this.A1387.Location = new System.Drawing.Point(158, 229);
+            this.A1387.Name = "A1387";
+            this.A1387.Size = new System.Drawing.Size(27, 30);
+            this.A1387.TabIndex = 1998;
+            this.A1387.Text = "16";
+            this.A1387.UseVisualStyleBackColor = false;
+            // 
+            // A1386
+            // 
+            this.A1386.BackColor = System.Drawing.Color.LightBlue;
+            this.A1386.Location = new System.Drawing.Point(130, 229);
+            this.A1386.Name = "A1386";
+            this.A1386.Size = new System.Drawing.Size(27, 30);
+            this.A1386.TabIndex = 1997;
+            this.A1386.Text = "16";
+            this.A1386.UseVisualStyleBackColor = false;
+            // 
+            // A1385
+            // 
+            this.A1385.BackColor = System.Drawing.Color.LightBlue;
+            this.A1385.Location = new System.Drawing.Point(102, 229);
+            this.A1385.Name = "A1385";
+            this.A1385.Size = new System.Drawing.Size(27, 30);
+            this.A1385.TabIndex = 1996;
+            this.A1385.Text = "16";
+            this.A1385.UseVisualStyleBackColor = false;
+            // 
+            // A1367
+            // 
+            this.A1367.BackColor = System.Drawing.Color.LightBlue;
+            this.A1367.Location = new System.Drawing.Point(214, 193);
+            this.A1367.Name = "A1367";
+            this.A1367.Size = new System.Drawing.Size(27, 30);
+            this.A1367.TabIndex = 1995;
+            this.A1367.Text = "16";
+            this.A1367.UseVisualStyleBackColor = false;
+            // 
+            // A1366
+            // 
+            this.A1366.BackColor = System.Drawing.Color.LightBlue;
+            this.A1366.Location = new System.Drawing.Point(186, 193);
+            this.A1366.Name = "A1366";
+            this.A1366.Size = new System.Drawing.Size(27, 30);
+            this.A1366.TabIndex = 1994;
+            this.A1366.Text = "16";
+            this.A1366.UseVisualStyleBackColor = false;
+            // 
+            // A1365
+            // 
+            this.A1365.BackColor = System.Drawing.Color.LightBlue;
+            this.A1365.Location = new System.Drawing.Point(158, 193);
+            this.A1365.Name = "A1365";
+            this.A1365.Size = new System.Drawing.Size(27, 30);
+            this.A1365.TabIndex = 1993;
+            this.A1365.Text = "16";
+            this.A1365.UseVisualStyleBackColor = false;
+            // 
+            // A1364
+            // 
+            this.A1364.BackColor = System.Drawing.Color.LightBlue;
+            this.A1364.Location = new System.Drawing.Point(130, 193);
+            this.A1364.Name = "A1364";
+            this.A1364.Size = new System.Drawing.Size(27, 30);
+            this.A1364.TabIndex = 1992;
+            this.A1364.Text = "16";
+            this.A1364.UseVisualStyleBackColor = false;
+            // 
+            // A1469
+            // 
+            this.A1469.BackColor = System.Drawing.Color.LightBlue;
+            this.A1469.Location = new System.Drawing.Point(802, 337);
+            this.A1469.Name = "A1469";
+            this.A1469.Size = new System.Drawing.Size(27, 30);
+            this.A1469.TabIndex = 1991;
+            this.A1469.Text = "16";
+            this.A1469.UseVisualStyleBackColor = false;
+            // 
+            // A1468
+            // 
+            this.A1468.BackColor = System.Drawing.Color.LightBlue;
+            this.A1468.Location = new System.Drawing.Point(774, 337);
+            this.A1468.Name = "A1468";
+            this.A1468.Size = new System.Drawing.Size(27, 30);
+            this.A1468.TabIndex = 1990;
+            this.A1468.Text = "16";
+            this.A1468.UseVisualStyleBackColor = false;
+            // 
+            // A1467
+            // 
+            this.A1467.BackColor = System.Drawing.Color.LightBlue;
+            this.A1467.Location = new System.Drawing.Point(746, 337);
+            this.A1467.Name = "A1467";
+            this.A1467.Size = new System.Drawing.Size(27, 30);
+            this.A1467.TabIndex = 1989;
+            this.A1467.Text = "16";
+            this.A1467.UseVisualStyleBackColor = false;
+            // 
+            // A1466
+            // 
+            this.A1466.BackColor = System.Drawing.Color.LightBlue;
+            this.A1466.Location = new System.Drawing.Point(718, 337);
+            this.A1466.Name = "A1466";
+            this.A1466.Size = new System.Drawing.Size(27, 30);
+            this.A1466.TabIndex = 1988;
+            this.A1466.Text = "16";
+            this.A1466.UseVisualStyleBackColor = false;
+            // 
+            // A1465
+            // 
+            this.A1465.BackColor = System.Drawing.Color.LightBlue;
+            this.A1465.Location = new System.Drawing.Point(690, 337);
+            this.A1465.Name = "A1465";
+            this.A1465.Size = new System.Drawing.Size(27, 30);
+            this.A1465.TabIndex = 1987;
+            this.A1465.Text = "16";
+            this.A1465.UseVisualStyleBackColor = false;
+            // 
+            // A1464
+            // 
+            this.A1464.BackColor = System.Drawing.Color.LightBlue;
+            this.A1464.Location = new System.Drawing.Point(662, 337);
+            this.A1464.Name = "A1464";
+            this.A1464.Size = new System.Drawing.Size(27, 30);
+            this.A1464.TabIndex = 1986;
+            this.A1464.Text = "16";
+            this.A1464.UseVisualStyleBackColor = false;
+            // 
+            // A1463
+            // 
+            this.A1463.BackColor = System.Drawing.Color.LightBlue;
+            this.A1463.Location = new System.Drawing.Point(634, 337);
+            this.A1463.Name = "A1463";
+            this.A1463.Size = new System.Drawing.Size(27, 30);
+            this.A1463.TabIndex = 1985;
+            this.A1463.Text = "16";
+            this.A1463.UseVisualStyleBackColor = false;
+            // 
+            // A1462
+            // 
+            this.A1462.BackColor = System.Drawing.Color.LightBlue;
+            this.A1462.Location = new System.Drawing.Point(606, 337);
+            this.A1462.Name = "A1462";
+            this.A1462.Size = new System.Drawing.Size(27, 30);
+            this.A1462.TabIndex = 1984;
+            this.A1462.Text = "16";
+            this.A1462.UseVisualStyleBackColor = false;
+            // 
+            // A1461
+            // 
+            this.A1461.BackColor = System.Drawing.Color.LightBlue;
+            this.A1461.Location = new System.Drawing.Point(578, 337);
+            this.A1461.Name = "A1461";
+            this.A1461.Size = new System.Drawing.Size(27, 30);
+            this.A1461.TabIndex = 1983;
+            this.A1461.Text = "16";
+            this.A1461.UseVisualStyleBackColor = false;
+            // 
+            // A1460
+            // 
+            this.A1460.BackColor = System.Drawing.Color.LightBlue;
+            this.A1460.Location = new System.Drawing.Point(550, 337);
+            this.A1460.Name = "A1460";
+            this.A1460.Size = new System.Drawing.Size(27, 30);
+            this.A1460.TabIndex = 1982;
+            this.A1460.Text = "16";
+            this.A1460.UseVisualStyleBackColor = false;
+            // 
+            // A1459
+            // 
+            this.A1459.BackColor = System.Drawing.Color.LightBlue;
+            this.A1459.Location = new System.Drawing.Point(522, 337);
+            this.A1459.Name = "A1459";
+            this.A1459.Size = new System.Drawing.Size(27, 30);
+            this.A1459.TabIndex = 1981;
+            this.A1459.Text = "16";
+            this.A1459.UseVisualStyleBackColor = false;
+            // 
+            // A1458
+            // 
+            this.A1458.BackColor = System.Drawing.Color.LightBlue;
+            this.A1458.Location = new System.Drawing.Point(494, 337);
+            this.A1458.Name = "A1458";
+            this.A1458.Size = new System.Drawing.Size(27, 30);
+            this.A1458.TabIndex = 1980;
+            this.A1458.Text = "16";
+            this.A1458.UseVisualStyleBackColor = false;
+            // 
+            // A1457
+            // 
+            this.A1457.BackColor = System.Drawing.Color.LightBlue;
+            this.A1457.Location = new System.Drawing.Point(466, 337);
+            this.A1457.Name = "A1457";
+            this.A1457.Size = new System.Drawing.Size(27, 30);
+            this.A1457.TabIndex = 1979;
+            this.A1457.Text = "16";
+            this.A1457.UseVisualStyleBackColor = false;
+            // 
+            // A1456
+            // 
+            this.A1456.BackColor = System.Drawing.Color.LightBlue;
+            this.A1456.Location = new System.Drawing.Point(438, 337);
+            this.A1456.Name = "A1456";
+            this.A1456.Size = new System.Drawing.Size(27, 30);
+            this.A1456.TabIndex = 1978;
+            this.A1456.Text = "16";
+            this.A1456.UseVisualStyleBackColor = false;
+            // 
+            // A1455
+            // 
+            this.A1455.BackColor = System.Drawing.Color.LightBlue;
+            this.A1455.Location = new System.Drawing.Point(410, 337);
+            this.A1455.Name = "A1455";
+            this.A1455.Size = new System.Drawing.Size(27, 30);
+            this.A1455.TabIndex = 1977;
+            this.A1455.Text = "16";
+            this.A1455.UseVisualStyleBackColor = false;
+            // 
+            // A1440
+            // 
+            this.A1440.BackColor = System.Drawing.Color.LightBlue;
+            this.A1440.Location = new System.Drawing.Point(802, 301);
+            this.A1440.Name = "A1440";
+            this.A1440.Size = new System.Drawing.Size(27, 30);
+            this.A1440.TabIndex = 1976;
+            this.A1440.Text = "16";
+            this.A1440.UseVisualStyleBackColor = false;
+            // 
+            // A1439
+            // 
+            this.A1439.BackColor = System.Drawing.Color.LightBlue;
+            this.A1439.Location = new System.Drawing.Point(774, 301);
+            this.A1439.Name = "A1439";
+            this.A1439.Size = new System.Drawing.Size(27, 30);
+            this.A1439.TabIndex = 1975;
+            this.A1439.Text = "16";
+            this.A1439.UseVisualStyleBackColor = false;
+            // 
+            // A1438
+            // 
+            this.A1438.BackColor = System.Drawing.Color.LightBlue;
+            this.A1438.Location = new System.Drawing.Point(746, 301);
+            this.A1438.Name = "A1438";
+            this.A1438.Size = new System.Drawing.Size(27, 30);
+            this.A1438.TabIndex = 1974;
+            this.A1438.Text = "16";
+            this.A1438.UseVisualStyleBackColor = false;
+            // 
+            // A1437
+            // 
+            this.A1437.BackColor = System.Drawing.Color.LightBlue;
+            this.A1437.Location = new System.Drawing.Point(718, 301);
+            this.A1437.Name = "A1437";
+            this.A1437.Size = new System.Drawing.Size(27, 30);
+            this.A1437.TabIndex = 1973;
+            this.A1437.Text = "16";
+            this.A1437.UseVisualStyleBackColor = false;
+            // 
+            // A1436
+            // 
+            this.A1436.BackColor = System.Drawing.Color.LightBlue;
+            this.A1436.Location = new System.Drawing.Point(690, 301);
+            this.A1436.Name = "A1436";
+            this.A1436.Size = new System.Drawing.Size(27, 30);
+            this.A1436.TabIndex = 1972;
+            this.A1436.Text = "16";
+            this.A1436.UseVisualStyleBackColor = false;
+            // 
+            // A1435
+            // 
+            this.A1435.BackColor = System.Drawing.Color.LightBlue;
+            this.A1435.Location = new System.Drawing.Point(662, 301);
+            this.A1435.Name = "A1435";
+            this.A1435.Size = new System.Drawing.Size(27, 30);
+            this.A1435.TabIndex = 1971;
+            this.A1435.Text = "16";
+            this.A1435.UseVisualStyleBackColor = false;
+            // 
+            // A1434
+            // 
+            this.A1434.BackColor = System.Drawing.Color.LightBlue;
+            this.A1434.Location = new System.Drawing.Point(634, 301);
+            this.A1434.Name = "A1434";
+            this.A1434.Size = new System.Drawing.Size(27, 30);
+            this.A1434.TabIndex = 1970;
+            this.A1434.Text = "16";
+            this.A1434.UseVisualStyleBackColor = false;
+            // 
+            // A1433
+            // 
+            this.A1433.BackColor = System.Drawing.Color.LightBlue;
+            this.A1433.Location = new System.Drawing.Point(606, 301);
+            this.A1433.Name = "A1433";
+            this.A1433.Size = new System.Drawing.Size(27, 30);
+            this.A1433.TabIndex = 1969;
+            this.A1433.Text = "16";
+            this.A1433.UseVisualStyleBackColor = false;
+            // 
+            // A1432
+            // 
+            this.A1432.BackColor = System.Drawing.Color.LightBlue;
+            this.A1432.Location = new System.Drawing.Point(578, 301);
+            this.A1432.Name = "A1432";
+            this.A1432.Size = new System.Drawing.Size(27, 30);
+            this.A1432.TabIndex = 1968;
+            this.A1432.Text = "16";
+            this.A1432.UseVisualStyleBackColor = false;
+            // 
+            // A1431
+            // 
+            this.A1431.BackColor = System.Drawing.Color.LightBlue;
+            this.A1431.Location = new System.Drawing.Point(550, 301);
+            this.A1431.Name = "A1431";
+            this.A1431.Size = new System.Drawing.Size(27, 30);
+            this.A1431.TabIndex = 1967;
+            this.A1431.Text = "16";
+            this.A1431.UseVisualStyleBackColor = false;
+            // 
+            // A1430
+            // 
+            this.A1430.BackColor = System.Drawing.Color.LightBlue;
+            this.A1430.Location = new System.Drawing.Point(522, 301);
+            this.A1430.Name = "A1430";
+            this.A1430.Size = new System.Drawing.Size(27, 30);
+            this.A1430.TabIndex = 1966;
+            this.A1430.Text = "16";
+            this.A1430.UseVisualStyleBackColor = false;
+            // 
+            // A1429
+            // 
+            this.A1429.BackColor = System.Drawing.Color.LightBlue;
+            this.A1429.Location = new System.Drawing.Point(494, 301);
+            this.A1429.Name = "A1429";
+            this.A1429.Size = new System.Drawing.Size(27, 30);
+            this.A1429.TabIndex = 1965;
+            this.A1429.Text = "16";
+            this.A1429.UseVisualStyleBackColor = false;
+            // 
+            // A1428
+            // 
+            this.A1428.BackColor = System.Drawing.Color.LightBlue;
+            this.A1428.Location = new System.Drawing.Point(466, 301);
+            this.A1428.Name = "A1428";
+            this.A1428.Size = new System.Drawing.Size(27, 30);
+            this.A1428.TabIndex = 1964;
+            this.A1428.Text = "16";
+            this.A1428.UseVisualStyleBackColor = false;
+            // 
+            // A1427
+            // 
+            this.A1427.BackColor = System.Drawing.Color.LightBlue;
+            this.A1427.Location = new System.Drawing.Point(438, 301);
+            this.A1427.Name = "A1427";
+            this.A1427.Size = new System.Drawing.Size(27, 30);
+            this.A1427.TabIndex = 1963;
+            this.A1427.Text = "16";
+            this.A1427.UseVisualStyleBackColor = false;
+            // 
+            // A1426
+            // 
+            this.A1426.BackColor = System.Drawing.Color.LightBlue;
+            this.A1426.Location = new System.Drawing.Point(410, 301);
+            this.A1426.Name = "A1426";
+            this.A1426.Size = new System.Drawing.Size(27, 30);
+            this.A1426.TabIndex = 1962;
+            this.A1426.Text = "16";
+            this.A1426.UseVisualStyleBackColor = false;
+            // 
+            // A1397
+            // 
+            this.A1397.BackColor = System.Drawing.Color.LightBlue;
+            this.A1397.Location = new System.Drawing.Point(802, 229);
+            this.A1397.Name = "A1397";
+            this.A1397.Size = new System.Drawing.Size(27, 30);
+            this.A1397.TabIndex = 1961;
+            this.A1397.Text = "16";
+            this.A1397.UseVisualStyleBackColor = false;
+            // 
+            // A1396
+            // 
+            this.A1396.BackColor = System.Drawing.Color.LightBlue;
+            this.A1396.Location = new System.Drawing.Point(774, 229);
+            this.A1396.Name = "A1396";
+            this.A1396.Size = new System.Drawing.Size(27, 30);
+            this.A1396.TabIndex = 1960;
+            this.A1396.Text = "16";
+            this.A1396.UseVisualStyleBackColor = false;
+            // 
+            // A1395
+            // 
+            this.A1395.BackColor = System.Drawing.Color.LightBlue;
+            this.A1395.Location = new System.Drawing.Point(746, 229);
+            this.A1395.Name = "A1395";
+            this.A1395.Size = new System.Drawing.Size(27, 30);
+            this.A1395.TabIndex = 1959;
+            this.A1395.Text = "16";
+            this.A1395.UseVisualStyleBackColor = false;
+            // 
+            // A1394
+            // 
+            this.A1394.BackColor = System.Drawing.Color.LightBlue;
+            this.A1394.Location = new System.Drawing.Point(718, 229);
+            this.A1394.Name = "A1394";
+            this.A1394.Size = new System.Drawing.Size(27, 30);
+            this.A1394.TabIndex = 1958;
+            this.A1394.Text = "16";
+            this.A1394.UseVisualStyleBackColor = false;
+            // 
+            // A1393
+            // 
+            this.A1393.BackColor = System.Drawing.Color.LightBlue;
+            this.A1393.Location = new System.Drawing.Point(494, 229);
+            this.A1393.Name = "A1393";
+            this.A1393.Size = new System.Drawing.Size(27, 30);
+            this.A1393.TabIndex = 1950;
+            this.A1393.Text = "16";
+            this.A1393.UseVisualStyleBackColor = false;
+            // 
+            // A1392
+            // 
+            this.A1392.BackColor = System.Drawing.Color.LightBlue;
+            this.A1392.Location = new System.Drawing.Point(466, 229);
+            this.A1392.Name = "A1392";
+            this.A1392.Size = new System.Drawing.Size(27, 30);
+            this.A1392.TabIndex = 1949;
+            this.A1392.Text = "16";
+            this.A1392.UseVisualStyleBackColor = false;
+            // 
+            // A1391
+            // 
+            this.A1391.BackColor = System.Drawing.Color.LightBlue;
+            this.A1391.Location = new System.Drawing.Point(438, 229);
+            this.A1391.Name = "A1391";
+            this.A1391.Size = new System.Drawing.Size(27, 30);
+            this.A1391.TabIndex = 1948;
+            this.A1391.Text = "16";
+            this.A1391.UseVisualStyleBackColor = false;
+            // 
+            // A1390
+            // 
+            this.A1390.BackColor = System.Drawing.Color.LightBlue;
+            this.A1390.Location = new System.Drawing.Point(410, 229);
+            this.A1390.Name = "A1390";
+            this.A1390.Size = new System.Drawing.Size(27, 30);
+            this.A1390.TabIndex = 1947;
+            this.A1390.Text = "16";
+            this.A1390.UseVisualStyleBackColor = false;
+            // 
+            // A1375
+            // 
+            this.A1375.BackColor = System.Drawing.Color.LightBlue;
+            this.A1375.Location = new System.Drawing.Point(802, 193);
+            this.A1375.Name = "A1375";
+            this.A1375.Size = new System.Drawing.Size(27, 30);
+            this.A1375.TabIndex = 1946;
+            this.A1375.Text = "16";
+            this.A1375.UseVisualStyleBackColor = false;
+            // 
+            // A1374
+            // 
+            this.A1374.BackColor = System.Drawing.Color.LightBlue;
+            this.A1374.Location = new System.Drawing.Point(774, 193);
+            this.A1374.Name = "A1374";
+            this.A1374.Size = new System.Drawing.Size(27, 30);
+            this.A1374.TabIndex = 1945;
+            this.A1374.Text = "16";
+            this.A1374.UseVisualStyleBackColor = false;
+            // 
+            // A1373
+            // 
+            this.A1373.BackColor = System.Drawing.Color.LightBlue;
+            this.A1373.Location = new System.Drawing.Point(746, 193);
+            this.A1373.Name = "A1373";
+            this.A1373.Size = new System.Drawing.Size(27, 30);
+            this.A1373.TabIndex = 1944;
+            this.A1373.Text = "16";
+            this.A1373.UseVisualStyleBackColor = false;
+            // 
+            // A1372
+            // 
+            this.A1372.BackColor = System.Drawing.Color.LightBlue;
+            this.A1372.Location = new System.Drawing.Point(718, 193);
+            this.A1372.Name = "A1372";
+            this.A1372.Size = new System.Drawing.Size(27, 30);
+            this.A1372.TabIndex = 1943;
+            this.A1372.Text = "16";
+            this.A1372.UseVisualStyleBackColor = false;
+            // 
+            // A1371
+            // 
+            this.A1371.BackColor = System.Drawing.Color.LightBlue;
+            this.A1371.Location = new System.Drawing.Point(494, 193);
+            this.A1371.Name = "A1371";
+            this.A1371.Size = new System.Drawing.Size(27, 30);
+            this.A1371.TabIndex = 1935;
+            this.A1371.Text = "16";
+            this.A1371.UseVisualStyleBackColor = false;
+            // 
+            // A1370
+            // 
+            this.A1370.BackColor = System.Drawing.Color.LightBlue;
+            this.A1370.Location = new System.Drawing.Point(466, 193);
+            this.A1370.Name = "A1370";
+            this.A1370.Size = new System.Drawing.Size(27, 30);
+            this.A1370.TabIndex = 1934;
+            this.A1370.Text = "16";
+            this.A1370.UseVisualStyleBackColor = false;
+            // 
+            // A1369
+            // 
+            this.A1369.BackColor = System.Drawing.Color.LightBlue;
+            this.A1369.Location = new System.Drawing.Point(438, 193);
+            this.A1369.Name = "A1369";
+            this.A1369.Size = new System.Drawing.Size(27, 30);
+            this.A1369.TabIndex = 1933;
+            this.A1369.Text = "16";
+            this.A1369.UseVisualStyleBackColor = false;
+            // 
+            // A1368
+            // 
+            this.A1368.BackColor = System.Drawing.Color.LightBlue;
+            this.A1368.Location = new System.Drawing.Point(410, 193);
+            this.A1368.Name = "A1368";
+            this.A1368.Size = new System.Drawing.Size(27, 30);
+            this.A1368.TabIndex = 1932;
+            this.A1368.Text = "16";
+            this.A1368.UseVisualStyleBackColor = false;
+            // 
             // metroTabPage3
             // 
             this.metroTabPage3.Controls.Add(this.panel4);
@@ -3964,12 +5821,12 @@
             // 
             this.materialLabel45.AutoSize = true;
             this.materialLabel45.Depth = 0;
-            this.materialLabel45.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel45.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel45.Location = new System.Drawing.Point(222, 22);
             this.materialLabel45.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel45.Name = "materialLabel45";
-            this.materialLabel45.Size = new System.Drawing.Size(150, 19);
+            this.materialLabel45.Size = new System.Drawing.Size(159, 18);
             this.materialLabel45.TabIndex = 0;
             this.materialLabel45.Text = "ESCENARIO TEATRO";
             // 
@@ -3978,12 +5835,12 @@
             this.materialLabel18.AutoSize = true;
             this.materialLabel18.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel18.Depth = 0;
-            this.materialLabel18.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel18.Location = new System.Drawing.Point(924, 361);
             this.materialLabel18.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel18.Name = "materialLabel18";
-            this.materialLabel18.Size = new System.Drawing.Size(25, 19);
+            this.materialLabel18.Size = new System.Drawing.Size(26, 18);
             this.materialLabel18.TabIndex = 1937;
             this.materialLabel18.Text = "FF";
             // 
@@ -3992,12 +5849,12 @@
             this.materialLabel26.AutoSize = true;
             this.materialLabel26.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel26.Depth = 0;
-            this.materialLabel26.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel26.Location = new System.Drawing.Point(924, 325);
             this.materialLabel26.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel26.Name = "materialLabel26";
-            this.materialLabel26.Size = new System.Drawing.Size(27, 19);
+            this.materialLabel26.Size = new System.Drawing.Size(28, 18);
             this.materialLabel26.TabIndex = 1936;
             this.materialLabel26.Text = "EE";
             // 
@@ -4006,12 +5863,12 @@
             this.materialLabel27.AutoSize = true;
             this.materialLabel27.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel27.Depth = 0;
-            this.materialLabel27.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel27.Location = new System.Drawing.Point(924, 289);
             this.materialLabel27.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel27.Name = "materialLabel27";
-            this.materialLabel27.Size = new System.Drawing.Size(29, 19);
+            this.materialLabel27.Size = new System.Drawing.Size(30, 18);
             this.materialLabel27.TabIndex = 1935;
             this.materialLabel27.Text = "DD";
             // 
@@ -4020,12 +5877,12 @@
             this.materialLabel28.AutoSize = true;
             this.materialLabel28.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel28.Depth = 0;
-            this.materialLabel28.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel28.Location = new System.Drawing.Point(924, 253);
             this.materialLabel28.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel28.Name = "materialLabel28";
-            this.materialLabel28.Size = new System.Drawing.Size(29, 19);
+            this.materialLabel28.Size = new System.Drawing.Size(30, 18);
             this.materialLabel28.TabIndex = 1934;
             this.materialLabel28.Text = "CC";
             // 
@@ -4034,12 +5891,12 @@
             this.materialLabel29.AutoSize = true;
             this.materialLabel29.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel29.Depth = 0;
-            this.materialLabel29.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel29.Location = new System.Drawing.Point(924, 217);
             this.materialLabel29.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel29.Name = "materialLabel29";
-            this.materialLabel29.Size = new System.Drawing.Size(27, 19);
+            this.materialLabel29.Size = new System.Drawing.Size(28, 18);
             this.materialLabel29.TabIndex = 1933;
             this.materialLabel29.Text = "BB";
             // 
@@ -4048,12 +5905,12 @@
             this.materialLabel30.AutoSize = true;
             this.materialLabel30.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel30.Depth = 0;
-            this.materialLabel30.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel30.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel30.Location = new System.Drawing.Point(924, 181);
             this.materialLabel30.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel30.Name = "materialLabel30";
-            this.materialLabel30.Size = new System.Drawing.Size(29, 19);
+            this.materialLabel30.Size = new System.Drawing.Size(26, 18);
             this.materialLabel30.TabIndex = 1932;
             this.materialLabel30.Text = "AA";
             // 
@@ -4062,12 +5919,12 @@
             this.materialLabel19.AutoSize = true;
             this.materialLabel19.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel19.Depth = 0;
-            this.materialLabel19.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel19.Location = new System.Drawing.Point(320, 361);
             this.materialLabel19.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel19.Name = "materialLabel19";
-            this.materialLabel19.Size = new System.Drawing.Size(25, 19);
+            this.materialLabel19.Size = new System.Drawing.Size(26, 18);
             this.materialLabel19.TabIndex = 1931;
             this.materialLabel19.Text = "FF";
             // 
@@ -4076,12 +5933,12 @@
             this.materialLabel20.AutoSize = true;
             this.materialLabel20.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel20.Depth = 0;
-            this.materialLabel20.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel20.Location = new System.Drawing.Point(320, 325);
             this.materialLabel20.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel20.Name = "materialLabel20";
-            this.materialLabel20.Size = new System.Drawing.Size(27, 19);
+            this.materialLabel20.Size = new System.Drawing.Size(28, 18);
             this.materialLabel20.TabIndex = 1930;
             this.materialLabel20.Text = "EE";
             // 
@@ -4090,12 +5947,12 @@
             this.materialLabel21.AutoSize = true;
             this.materialLabel21.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel21.Depth = 0;
-            this.materialLabel21.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel21.Location = new System.Drawing.Point(320, 289);
             this.materialLabel21.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel21.Name = "materialLabel21";
-            this.materialLabel21.Size = new System.Drawing.Size(29, 19);
+            this.materialLabel21.Size = new System.Drawing.Size(30, 18);
             this.materialLabel21.TabIndex = 1929;
             this.materialLabel21.Text = "DD";
             // 
@@ -4104,12 +5961,12 @@
             this.materialLabel22.AutoSize = true;
             this.materialLabel22.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel22.Depth = 0;
-            this.materialLabel22.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel22.Location = new System.Drawing.Point(320, 253);
             this.materialLabel22.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel22.Name = "materialLabel22";
-            this.materialLabel22.Size = new System.Drawing.Size(29, 19);
+            this.materialLabel22.Size = new System.Drawing.Size(30, 18);
             this.materialLabel22.TabIndex = 1928;
             this.materialLabel22.Text = "CC";
             // 
@@ -4118,12 +5975,12 @@
             this.materialLabel24.AutoSize = true;
             this.materialLabel24.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel24.Depth = 0;
-            this.materialLabel24.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel24.Location = new System.Drawing.Point(320, 217);
             this.materialLabel24.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel24.Name = "materialLabel24";
-            this.materialLabel24.Size = new System.Drawing.Size(27, 19);
+            this.materialLabel24.Size = new System.Drawing.Size(28, 18);
             this.materialLabel24.TabIndex = 1927;
             this.materialLabel24.Text = "BB";
             // 
@@ -4132,12 +5989,12 @@
             this.materialLabel25.AutoSize = true;
             this.materialLabel25.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel25.Depth = 0;
-            this.materialLabel25.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel25.Location = new System.Drawing.Point(320, 181);
             this.materialLabel25.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel25.Name = "materialLabel25";
-            this.materialLabel25.Size = new System.Drawing.Size(29, 19);
+            this.materialLabel25.Size = new System.Drawing.Size(26, 18);
             this.materialLabel25.TabIndex = 1926;
             this.materialLabel25.Text = "AA";
             // 
@@ -7996,1862 +9853,6 @@
             this.A1063.Text = "16";
             this.A1063.UseVisualStyleBackColor = false;
             // 
-            // metroTabPage4
-            // 
-            this.metroTabPage4.Controls.Add(this.materialLabel49);
-            this.metroTabPage4.Controls.Add(this.materialLabel48);
-            this.metroTabPage4.Controls.Add(this.A1504);
-            this.metroTabPage4.Controls.Add(this.A1503);
-            this.metroTabPage4.Controls.Add(this.A1502);
-            this.metroTabPage4.Controls.Add(this.A1501);
-            this.metroTabPage4.Controls.Add(this.A1500);
-            this.metroTabPage4.Controls.Add(this.A1499);
-            this.metroTabPage4.Controls.Add(this.A1498);
-            this.metroTabPage4.Controls.Add(this.A1497);
-            this.metroTabPage4.Controls.Add(this.A1496);
-            this.metroTabPage4.Controls.Add(this.A1495);
-            this.metroTabPage4.Controls.Add(this.A1494);
-            this.metroTabPage4.Controls.Add(this.A1493);
-            this.metroTabPage4.Controls.Add(this.A1492);
-            this.metroTabPage4.Controls.Add(this.A1491);
-            this.metroTabPage4.Controls.Add(this.panel8);
-            this.metroTabPage4.Controls.Add(this.panel7);
-            this.metroTabPage4.Controls.Add(this.panel6);
-            this.metroTabPage4.Controls.Add(this.A1380);
-            this.metroTabPage4.Controls.Add(this.A1403);
-            this.metroTabPage4.Controls.Add(this.A1381);
-            this.metroTabPage4.Controls.Add(this.A1418);
-            this.metroTabPage4.Controls.Add(this.A1404);
-            this.metroTabPage4.Controls.Add(this.A1382);
-            this.metroTabPage4.Controls.Add(this.A1363);
-            this.metroTabPage4.Controls.Add(this.A1384);
-            this.metroTabPage4.Controls.Add(this.A1362);
-            this.metroTabPage4.Controls.Add(this.A1405);
-            this.metroTabPage4.Controls.Add(this.A1383);
-            this.metroTabPage4.Controls.Add(this.A1361);
-            this.metroTabPage4.Controls.Add(this.materialLabel37);
-            this.metroTabPage4.Controls.Add(this.materialLabel38);
-            this.metroTabPage4.Controls.Add(this.materialLabel39);
-            this.metroTabPage4.Controls.Add(this.materialLabel40);
-            this.metroTabPage4.Controls.Add(this.materialLabel41);
-            this.metroTabPage4.Controls.Add(this.materialLabel42);
-            this.metroTabPage4.Controls.Add(this.A1490);
-            this.metroTabPage4.Controls.Add(this.A1489);
-            this.metroTabPage4.Controls.Add(this.A1488);
-            this.metroTabPage4.Controls.Add(this.A1487);
-            this.metroTabPage4.Controls.Add(this.A1486);
-            this.metroTabPage4.Controls.Add(this.A1485);
-            this.metroTabPage4.Controls.Add(this.A1484);
-            this.metroTabPage4.Controls.Add(this.A1476);
-            this.metroTabPage4.Controls.Add(this.A1475);
-            this.metroTabPage4.Controls.Add(this.A1474);
-            this.metroTabPage4.Controls.Add(this.A1473);
-            this.metroTabPage4.Controls.Add(this.A1472);
-            this.metroTabPage4.Controls.Add(this.A1471);
-            this.metroTabPage4.Controls.Add(this.A1470);
-            this.metroTabPage4.Controls.Add(this.A1447);
-            this.metroTabPage4.Controls.Add(this.A1446);
-            this.metroTabPage4.Controls.Add(this.A1445);
-            this.metroTabPage4.Controls.Add(this.A1444);
-            this.metroTabPage4.Controls.Add(this.A1443);
-            this.metroTabPage4.Controls.Add(this.A1442);
-            this.metroTabPage4.Controls.Add(this.A1441);
-            this.metroTabPage4.Controls.Add(this.A1417);
-            this.metroTabPage4.Controls.Add(this.A1416);
-            this.metroTabPage4.Controls.Add(this.A1415);
-            this.metroTabPage4.Controls.Add(this.A1414);
-            this.metroTabPage4.Controls.Add(this.A1413);
-            this.metroTabPage4.Controls.Add(this.A1412);
-            this.metroTabPage4.Controls.Add(this.A1402);
-            this.metroTabPage4.Controls.Add(this.A1401);
-            this.metroTabPage4.Controls.Add(this.A1400);
-            this.metroTabPage4.Controls.Add(this.A1399);
-            this.metroTabPage4.Controls.Add(this.A1398);
-            this.metroTabPage4.Controls.Add(this.A1379);
-            this.metroTabPage4.Controls.Add(this.A1378);
-            this.metroTabPage4.Controls.Add(this.A1377);
-            this.metroTabPage4.Controls.Add(this.A1376);
-            this.metroTabPage4.Controls.Add(this.materialLabel31);
-            this.metroTabPage4.Controls.Add(this.materialLabel32);
-            this.metroTabPage4.Controls.Add(this.materialLabel33);
-            this.metroTabPage4.Controls.Add(this.materialLabel34);
-            this.metroTabPage4.Controls.Add(this.materialLabel35);
-            this.metroTabPage4.Controls.Add(this.materialLabel36);
-            this.metroTabPage4.Controls.Add(this.A1483);
-            this.metroTabPage4.Controls.Add(this.A1482);
-            this.metroTabPage4.Controls.Add(this.A1481);
-            this.metroTabPage4.Controls.Add(this.A1480);
-            this.metroTabPage4.Controls.Add(this.A1479);
-            this.metroTabPage4.Controls.Add(this.A1478);
-            this.metroTabPage4.Controls.Add(this.A1477);
-            this.metroTabPage4.Controls.Add(this.A1454);
-            this.metroTabPage4.Controls.Add(this.A1453);
-            this.metroTabPage4.Controls.Add(this.A1452);
-            this.metroTabPage4.Controls.Add(this.A1451);
-            this.metroTabPage4.Controls.Add(this.A1450);
-            this.metroTabPage4.Controls.Add(this.A1449);
-            this.metroTabPage4.Controls.Add(this.A1448);
-            this.metroTabPage4.Controls.Add(this.A1425);
-            this.metroTabPage4.Controls.Add(this.A1424);
-            this.metroTabPage4.Controls.Add(this.A1423);
-            this.metroTabPage4.Controls.Add(this.A1422);
-            this.metroTabPage4.Controls.Add(this.A1421);
-            this.metroTabPage4.Controls.Add(this.A1420);
-            this.metroTabPage4.Controls.Add(this.A1419);
-            this.metroTabPage4.Controls.Add(this.A1411);
-            this.metroTabPage4.Controls.Add(this.A1410);
-            this.metroTabPage4.Controls.Add(this.A1409);
-            this.metroTabPage4.Controls.Add(this.A1408);
-            this.metroTabPage4.Controls.Add(this.A1407);
-            this.metroTabPage4.Controls.Add(this.A1406);
-            this.metroTabPage4.Controls.Add(this.A1389);
-            this.metroTabPage4.Controls.Add(this.A1388);
-            this.metroTabPage4.Controls.Add(this.A1387);
-            this.metroTabPage4.Controls.Add(this.A1386);
-            this.metroTabPage4.Controls.Add(this.A1385);
-            this.metroTabPage4.Controls.Add(this.A1367);
-            this.metroTabPage4.Controls.Add(this.A1366);
-            this.metroTabPage4.Controls.Add(this.A1365);
-            this.metroTabPage4.Controls.Add(this.A1364);
-            this.metroTabPage4.Controls.Add(this.A1469);
-            this.metroTabPage4.Controls.Add(this.A1468);
-            this.metroTabPage4.Controls.Add(this.A1467);
-            this.metroTabPage4.Controls.Add(this.A1466);
-            this.metroTabPage4.Controls.Add(this.A1465);
-            this.metroTabPage4.Controls.Add(this.A1464);
-            this.metroTabPage4.Controls.Add(this.A1463);
-            this.metroTabPage4.Controls.Add(this.A1462);
-            this.metroTabPage4.Controls.Add(this.A1461);
-            this.metroTabPage4.Controls.Add(this.A1460);
-            this.metroTabPage4.Controls.Add(this.A1459);
-            this.metroTabPage4.Controls.Add(this.A1458);
-            this.metroTabPage4.Controls.Add(this.A1457);
-            this.metroTabPage4.Controls.Add(this.A1456);
-            this.metroTabPage4.Controls.Add(this.A1455);
-            this.metroTabPage4.Controls.Add(this.A1440);
-            this.metroTabPage4.Controls.Add(this.A1439);
-            this.metroTabPage4.Controls.Add(this.A1438);
-            this.metroTabPage4.Controls.Add(this.A1437);
-            this.metroTabPage4.Controls.Add(this.A1436);
-            this.metroTabPage4.Controls.Add(this.A1435);
-            this.metroTabPage4.Controls.Add(this.A1434);
-            this.metroTabPage4.Controls.Add(this.A1433);
-            this.metroTabPage4.Controls.Add(this.A1432);
-            this.metroTabPage4.Controls.Add(this.A1431);
-            this.metroTabPage4.Controls.Add(this.A1430);
-            this.metroTabPage4.Controls.Add(this.A1429);
-            this.metroTabPage4.Controls.Add(this.A1428);
-            this.metroTabPage4.Controls.Add(this.A1427);
-            this.metroTabPage4.Controls.Add(this.A1426);
-            this.metroTabPage4.Controls.Add(this.A1397);
-            this.metroTabPage4.Controls.Add(this.A1396);
-            this.metroTabPage4.Controls.Add(this.A1395);
-            this.metroTabPage4.Controls.Add(this.A1394);
-            this.metroTabPage4.Controls.Add(this.A1393);
-            this.metroTabPage4.Controls.Add(this.A1392);
-            this.metroTabPage4.Controls.Add(this.A1391);
-            this.metroTabPage4.Controls.Add(this.A1390);
-            this.metroTabPage4.Controls.Add(this.A1375);
-            this.metroTabPage4.Controls.Add(this.A1374);
-            this.metroTabPage4.Controls.Add(this.A1373);
-            this.metroTabPage4.Controls.Add(this.A1372);
-            this.metroTabPage4.Controls.Add(this.A1371);
-            this.metroTabPage4.Controls.Add(this.A1370);
-            this.metroTabPage4.Controls.Add(this.A1369);
-            this.metroTabPage4.Controls.Add(this.A1368);
-            this.metroTabPage4.HorizontalScrollbarBarColor = true;
-            this.metroTabPage4.Location = new System.Drawing.Point(4, 35);
-            this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(1272, 667);
-            this.metroTabPage4.TabIndex = 3;
-            this.metroTabPage4.Text = "Mezzanine B";
-            this.metroTabPage4.VerticalScrollbarBarColor = true;
-            // 
-            // materialLabel49
-            // 
-            this.materialLabel49.AutoSize = true;
-            this.materialLabel49.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel49.Depth = 0;
-            this.materialLabel49.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel49.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel49.Location = new System.Drawing.Point(940, 414);
-            this.materialLabel49.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel49.Name = "materialLabel49";
-            this.materialLabel49.Size = new System.Drawing.Size(35, 19);
-            this.materialLabel49.TabIndex = 2105;
-            this.materialLabel49.Text = "MM";
-            // 
-            // materialLabel48
-            // 
-            this.materialLabel48.AutoSize = true;
-            this.materialLabel48.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel48.Depth = 0;
-            this.materialLabel48.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel48.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel48.Location = new System.Drawing.Point(320, 414);
-            this.materialLabel48.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel48.Name = "materialLabel48";
-            this.materialLabel48.Size = new System.Drawing.Size(35, 19);
-            this.materialLabel48.TabIndex = 2104;
-            this.materialLabel48.Text = "MM";
-            // 
-            // A1504
-            // 
-            this.A1504.BackColor = System.Drawing.Color.LightBlue;
-            this.A1504.Location = new System.Drawing.Point(1195, 409);
-            this.A1504.Name = "A1504";
-            this.A1504.Size = new System.Drawing.Size(27, 30);
-            this.A1504.TabIndex = 2103;
-            this.A1504.Text = "16";
-            this.A1504.UseVisualStyleBackColor = false;
-            // 
-            // A1503
-            // 
-            this.A1503.BackColor = System.Drawing.Color.LightBlue;
-            this.A1503.Location = new System.Drawing.Point(1167, 409);
-            this.A1503.Name = "A1503";
-            this.A1503.Size = new System.Drawing.Size(27, 30);
-            this.A1503.TabIndex = 2102;
-            this.A1503.Text = "16";
-            this.A1503.UseVisualStyleBackColor = false;
-            // 
-            // A1502
-            // 
-            this.A1502.BackColor = System.Drawing.Color.LightBlue;
-            this.A1502.Location = new System.Drawing.Point(1139, 409);
-            this.A1502.Name = "A1502";
-            this.A1502.Size = new System.Drawing.Size(27, 30);
-            this.A1502.TabIndex = 2101;
-            this.A1502.Text = "16";
-            this.A1502.UseVisualStyleBackColor = false;
-            // 
-            // A1501
-            // 
-            this.A1501.BackColor = System.Drawing.Color.LightBlue;
-            this.A1501.Location = new System.Drawing.Point(1111, 409);
-            this.A1501.Name = "A1501";
-            this.A1501.Size = new System.Drawing.Size(27, 30);
-            this.A1501.TabIndex = 2100;
-            this.A1501.Text = "16";
-            this.A1501.UseVisualStyleBackColor = false;
-            // 
-            // A1500
-            // 
-            this.A1500.BackColor = System.Drawing.Color.LightBlue;
-            this.A1500.Location = new System.Drawing.Point(1083, 409);
-            this.A1500.Name = "A1500";
-            this.A1500.Size = new System.Drawing.Size(27, 30);
-            this.A1500.TabIndex = 2099;
-            this.A1500.Text = "16";
-            this.A1500.UseVisualStyleBackColor = false;
-            // 
-            // A1499
-            // 
-            this.A1499.BackColor = System.Drawing.Color.LightBlue;
-            this.A1499.Location = new System.Drawing.Point(1055, 409);
-            this.A1499.Name = "A1499";
-            this.A1499.Size = new System.Drawing.Size(27, 30);
-            this.A1499.TabIndex = 2098;
-            this.A1499.Text = "16";
-            this.A1499.UseVisualStyleBackColor = false;
-            // 
-            // A1498
-            // 
-            this.A1498.BackColor = System.Drawing.Color.LightBlue;
-            this.A1498.Location = new System.Drawing.Point(1027, 409);
-            this.A1498.Name = "A1498";
-            this.A1498.Size = new System.Drawing.Size(27, 30);
-            this.A1498.TabIndex = 2097;
-            this.A1498.Text = "16";
-            this.A1498.UseVisualStyleBackColor = false;
-            // 
-            // A1497
-            // 
-            this.A1497.BackColor = System.Drawing.Color.LightBlue;
-            this.A1497.Location = new System.Drawing.Point(214, 409);
-            this.A1497.Name = "A1497";
-            this.A1497.Size = new System.Drawing.Size(27, 30);
-            this.A1497.TabIndex = 2096;
-            this.A1497.Text = "16";
-            this.A1497.UseVisualStyleBackColor = false;
-            // 
-            // A1496
-            // 
-            this.A1496.BackColor = System.Drawing.Color.LightBlue;
-            this.A1496.Location = new System.Drawing.Point(186, 409);
-            this.A1496.Name = "A1496";
-            this.A1496.Size = new System.Drawing.Size(27, 30);
-            this.A1496.TabIndex = 2095;
-            this.A1496.Text = "16";
-            this.A1496.UseVisualStyleBackColor = false;
-            // 
-            // A1495
-            // 
-            this.A1495.BackColor = System.Drawing.Color.LightBlue;
-            this.A1495.Location = new System.Drawing.Point(158, 409);
-            this.A1495.Name = "A1495";
-            this.A1495.Size = new System.Drawing.Size(27, 30);
-            this.A1495.TabIndex = 2094;
-            this.A1495.Text = "16";
-            this.A1495.UseVisualStyleBackColor = false;
-            // 
-            // A1494
-            // 
-            this.A1494.BackColor = System.Drawing.Color.LightBlue;
-            this.A1494.Location = new System.Drawing.Point(130, 409);
-            this.A1494.Name = "A1494";
-            this.A1494.Size = new System.Drawing.Size(27, 30);
-            this.A1494.TabIndex = 2093;
-            this.A1494.Text = "16";
-            this.A1494.UseVisualStyleBackColor = false;
-            // 
-            // A1493
-            // 
-            this.A1493.BackColor = System.Drawing.Color.LightBlue;
-            this.A1493.Location = new System.Drawing.Point(102, 409);
-            this.A1493.Name = "A1493";
-            this.A1493.Size = new System.Drawing.Size(27, 30);
-            this.A1493.TabIndex = 2092;
-            this.A1493.Text = "16";
-            this.A1493.UseVisualStyleBackColor = false;
-            // 
-            // A1492
-            // 
-            this.A1492.BackColor = System.Drawing.Color.LightBlue;
-            this.A1492.Location = new System.Drawing.Point(74, 409);
-            this.A1492.Name = "A1492";
-            this.A1492.Size = new System.Drawing.Size(27, 30);
-            this.A1492.TabIndex = 2091;
-            this.A1492.Text = "16";
-            this.A1492.UseVisualStyleBackColor = false;
-            // 
-            // A1491
-            // 
-            this.A1491.BackColor = System.Drawing.Color.LightBlue;
-            this.A1491.Location = new System.Drawing.Point(46, 409);
-            this.A1491.Name = "A1491";
-            this.A1491.Size = new System.Drawing.Size(27, 30);
-            this.A1491.TabIndex = 2090;
-            this.A1491.Text = "16";
-            this.A1491.UseVisualStyleBackColor = false;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.materialLabel47);
-            this.panel8.Location = new System.Drawing.Point(410, 378);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(419, 64);
-            this.panel8.TabIndex = 2089;
-            // 
-            // materialLabel47
-            // 
-            this.materialLabel47.AutoSize = true;
-            this.materialLabel47.Depth = 0;
-            this.materialLabel47.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel47.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel47.Location = new System.Drawing.Point(174, 23);
-            this.materialLabel47.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel47.Name = "materialLabel47";
-            this.materialLabel47.Size = new System.Drawing.Size(63, 19);
-            this.materialLabel47.TabIndex = 0;
-            this.materialLabel47.Text = "CABINA";
-            // 
-            // panel7
-            // 
-            this.panel7.Location = new System.Drawing.Point(527, 193);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(185, 64);
-            this.panel7.TabIndex = 2089;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.materialLabel46);
-            this.panel6.Location = new System.Drawing.Point(324, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(578, 64);
-            this.panel6.TabIndex = 2088;
-            // 
-            // materialLabel46
-            // 
-            this.materialLabel46.AutoSize = true;
-            this.materialLabel46.Depth = 0;
-            this.materialLabel46.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel46.Location = new System.Drawing.Point(222, 22);
-            this.materialLabel46.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel46.Name = "materialLabel46";
-            this.materialLabel46.Size = new System.Drawing.Size(150, 19);
-            this.materialLabel46.TabIndex = 0;
-            this.materialLabel46.Text = "ESCENARIO TEATRO";
-            // 
-            // A1380
-            // 
-            this.A1380.BackColor = System.Drawing.Color.LightBlue;
-            this.A1380.Location = new System.Drawing.Point(1139, 193);
-            this.A1380.Name = "A1380";
-            this.A1380.Size = new System.Drawing.Size(27, 30);
-            this.A1380.TabIndex = 2087;
-            this.A1380.Text = "16";
-            this.A1380.UseVisualStyleBackColor = false;
-            // 
-            // A1403
-            // 
-            this.A1403.BackColor = System.Drawing.Color.LightBlue;
-            this.A1403.Location = new System.Drawing.Point(1167, 229);
-            this.A1403.Name = "A1403";
-            this.A1403.Size = new System.Drawing.Size(27, 30);
-            this.A1403.TabIndex = 2086;
-            this.A1403.Text = "16";
-            this.A1403.UseVisualStyleBackColor = false;
-            // 
-            // A1381
-            // 
-            this.A1381.BackColor = System.Drawing.Color.LightBlue;
-            this.A1381.Location = new System.Drawing.Point(1167, 193);
-            this.A1381.Name = "A1381";
-            this.A1381.Size = new System.Drawing.Size(27, 30);
-            this.A1381.TabIndex = 2085;
-            this.A1381.Text = "16";
-            this.A1381.UseVisualStyleBackColor = false;
-            // 
-            // A1418
-            // 
-            this.A1418.BackColor = System.Drawing.Color.LightBlue;
-            this.A1418.Location = new System.Drawing.Point(1195, 265);
-            this.A1418.Name = "A1418";
-            this.A1418.Size = new System.Drawing.Size(27, 30);
-            this.A1418.TabIndex = 2084;
-            this.A1418.Text = "16";
-            this.A1418.UseVisualStyleBackColor = false;
-            // 
-            // A1404
-            // 
-            this.A1404.BackColor = System.Drawing.Color.LightBlue;
-            this.A1404.Location = new System.Drawing.Point(1195, 229);
-            this.A1404.Name = "A1404";
-            this.A1404.Size = new System.Drawing.Size(27, 30);
-            this.A1404.TabIndex = 2083;
-            this.A1404.Text = "16";
-            this.A1404.UseVisualStyleBackColor = false;
-            // 
-            // A1382
-            // 
-            this.A1382.BackColor = System.Drawing.Color.LightBlue;
-            this.A1382.Location = new System.Drawing.Point(1195, 193);
-            this.A1382.Name = "A1382";
-            this.A1382.Size = new System.Drawing.Size(27, 30);
-            this.A1382.TabIndex = 2082;
-            this.A1382.Text = "16";
-            this.A1382.UseVisualStyleBackColor = false;
-            // 
-            // A1363
-            // 
-            this.A1363.BackColor = System.Drawing.Color.LightBlue;
-            this.A1363.Location = new System.Drawing.Point(102, 193);
-            this.A1363.Name = "A1363";
-            this.A1363.Size = new System.Drawing.Size(27, 30);
-            this.A1363.TabIndex = 2081;
-            this.A1363.Text = "16";
-            this.A1363.UseVisualStyleBackColor = false;
-            // 
-            // A1384
-            // 
-            this.A1384.BackColor = System.Drawing.Color.LightBlue;
-            this.A1384.Location = new System.Drawing.Point(74, 229);
-            this.A1384.Name = "A1384";
-            this.A1384.Size = new System.Drawing.Size(27, 30);
-            this.A1384.TabIndex = 2080;
-            this.A1384.Text = "16";
-            this.A1384.UseVisualStyleBackColor = false;
-            // 
-            // A1362
-            // 
-            this.A1362.BackColor = System.Drawing.Color.LightBlue;
-            this.A1362.Location = new System.Drawing.Point(74, 193);
-            this.A1362.Name = "A1362";
-            this.A1362.Size = new System.Drawing.Size(27, 30);
-            this.A1362.TabIndex = 2079;
-            this.A1362.Text = "16";
-            this.A1362.UseVisualStyleBackColor = false;
-            // 
-            // A1405
-            // 
-            this.A1405.BackColor = System.Drawing.Color.LightBlue;
-            this.A1405.Location = new System.Drawing.Point(46, 265);
-            this.A1405.Name = "A1405";
-            this.A1405.Size = new System.Drawing.Size(27, 30);
-            this.A1405.TabIndex = 2078;
-            this.A1405.Text = "16";
-            this.A1405.UseVisualStyleBackColor = false;
-            // 
-            // A1383
-            // 
-            this.A1383.BackColor = System.Drawing.Color.LightBlue;
-            this.A1383.Location = new System.Drawing.Point(46, 229);
-            this.A1383.Name = "A1383";
-            this.A1383.Size = new System.Drawing.Size(27, 30);
-            this.A1383.TabIndex = 2077;
-            this.A1383.Text = "16";
-            this.A1383.UseVisualStyleBackColor = false;
-            // 
-            // A1361
-            // 
-            this.A1361.BackColor = System.Drawing.Color.LightBlue;
-            this.A1361.Location = new System.Drawing.Point(46, 193);
-            this.A1361.Name = "A1361";
-            this.A1361.Size = new System.Drawing.Size(27, 30);
-            this.A1361.TabIndex = 2076;
-            this.A1361.Text = "16";
-            this.A1361.UseVisualStyleBackColor = false;
-            // 
-            // materialLabel37
-            // 
-            this.materialLabel37.AutoSize = true;
-            this.materialLabel37.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel37.Depth = 0;
-            this.materialLabel37.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel37.Location = new System.Drawing.Point(940, 378);
-            this.materialLabel37.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel37.Name = "materialLabel37";
-            this.materialLabel37.Size = new System.Drawing.Size(25, 19);
-            this.materialLabel37.TabIndex = 2075;
-            this.materialLabel37.Text = "LL";
-            // 
-            // materialLabel38
-            // 
-            this.materialLabel38.AutoSize = true;
-            this.materialLabel38.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel38.Depth = 0;
-            this.materialLabel38.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel38.Location = new System.Drawing.Point(940, 342);
-            this.materialLabel38.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel38.Name = "materialLabel38";
-            this.materialLabel38.Size = new System.Drawing.Size(27, 19);
-            this.materialLabel38.TabIndex = 2074;
-            this.materialLabel38.Text = "KK";
-            // 
-            // materialLabel39
-            // 
-            this.materialLabel39.AutoSize = true;
-            this.materialLabel39.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel39.Depth = 0;
-            this.materialLabel39.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel39.Location = new System.Drawing.Point(940, 306);
-            this.materialLabel39.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel39.Name = "materialLabel39";
-            this.materialLabel39.Size = new System.Drawing.Size(25, 19);
-            this.materialLabel39.TabIndex = 2073;
-            this.materialLabel39.Text = "JJ";
-            // 
-            // materialLabel40
-            // 
-            this.materialLabel40.AutoSize = true;
-            this.materialLabel40.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel40.Depth = 0;
-            this.materialLabel40.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel40.Location = new System.Drawing.Point(940, 270);
-            this.materialLabel40.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel40.Name = "materialLabel40";
-            this.materialLabel40.Size = new System.Drawing.Size(17, 19);
-            this.materialLabel40.TabIndex = 2072;
-            this.materialLabel40.Text = "II";
-            // 
-            // materialLabel41
-            // 
-            this.materialLabel41.AutoSize = true;
-            this.materialLabel41.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel41.Depth = 0;
-            this.materialLabel41.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel41.Location = new System.Drawing.Point(940, 234);
-            this.materialLabel41.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel41.Name = "materialLabel41";
-            this.materialLabel41.Size = new System.Drawing.Size(31, 19);
-            this.materialLabel41.TabIndex = 2071;
-            this.materialLabel41.Text = "HH";
-            // 
-            // materialLabel42
-            // 
-            this.materialLabel42.AutoSize = true;
-            this.materialLabel42.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel42.Depth = 0;
-            this.materialLabel42.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel42.Location = new System.Drawing.Point(940, 198);
-            this.materialLabel42.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel42.Name = "materialLabel42";
-            this.materialLabel42.Size = new System.Drawing.Size(29, 19);
-            this.materialLabel42.TabIndex = 2070;
-            this.materialLabel42.Text = "GG";
-            // 
-            // A1490
-            // 
-            this.A1490.BackColor = System.Drawing.Color.LightBlue;
-            this.A1490.Location = new System.Drawing.Point(1195, 373);
-            this.A1490.Name = "A1490";
-            this.A1490.Size = new System.Drawing.Size(27, 30);
-            this.A1490.TabIndex = 2069;
-            this.A1490.Text = "16";
-            this.A1490.UseVisualStyleBackColor = false;
-            // 
-            // A1489
-            // 
-            this.A1489.BackColor = System.Drawing.Color.LightBlue;
-            this.A1489.Location = new System.Drawing.Point(1167, 373);
-            this.A1489.Name = "A1489";
-            this.A1489.Size = new System.Drawing.Size(27, 30);
-            this.A1489.TabIndex = 2068;
-            this.A1489.Text = "16";
-            this.A1489.UseVisualStyleBackColor = false;
-            // 
-            // A1488
-            // 
-            this.A1488.BackColor = System.Drawing.Color.LightBlue;
-            this.A1488.Location = new System.Drawing.Point(1139, 373);
-            this.A1488.Name = "A1488";
-            this.A1488.Size = new System.Drawing.Size(27, 30);
-            this.A1488.TabIndex = 2067;
-            this.A1488.Text = "16";
-            this.A1488.UseVisualStyleBackColor = false;
-            // 
-            // A1487
-            // 
-            this.A1487.BackColor = System.Drawing.Color.LightBlue;
-            this.A1487.Location = new System.Drawing.Point(1111, 373);
-            this.A1487.Name = "A1487";
-            this.A1487.Size = new System.Drawing.Size(27, 30);
-            this.A1487.TabIndex = 2066;
-            this.A1487.Text = "16";
-            this.A1487.UseVisualStyleBackColor = false;
-            // 
-            // A1486
-            // 
-            this.A1486.BackColor = System.Drawing.Color.LightBlue;
-            this.A1486.Location = new System.Drawing.Point(1083, 373);
-            this.A1486.Name = "A1486";
-            this.A1486.Size = new System.Drawing.Size(27, 30);
-            this.A1486.TabIndex = 2065;
-            this.A1486.Text = "16";
-            this.A1486.UseVisualStyleBackColor = false;
-            // 
-            // A1485
-            // 
-            this.A1485.BackColor = System.Drawing.Color.LightBlue;
-            this.A1485.Location = new System.Drawing.Point(1055, 373);
-            this.A1485.Name = "A1485";
-            this.A1485.Size = new System.Drawing.Size(27, 30);
-            this.A1485.TabIndex = 2064;
-            this.A1485.Text = "16";
-            this.A1485.UseVisualStyleBackColor = false;
-            // 
-            // A1484
-            // 
-            this.A1484.BackColor = System.Drawing.Color.LightBlue;
-            this.A1484.Location = new System.Drawing.Point(1027, 373);
-            this.A1484.Name = "A1484";
-            this.A1484.Size = new System.Drawing.Size(27, 30);
-            this.A1484.TabIndex = 2063;
-            this.A1484.Text = "16";
-            this.A1484.UseVisualStyleBackColor = false;
-            // 
-            // A1476
-            // 
-            this.A1476.BackColor = System.Drawing.Color.LightBlue;
-            this.A1476.Location = new System.Drawing.Point(1195, 337);
-            this.A1476.Name = "A1476";
-            this.A1476.Size = new System.Drawing.Size(27, 30);
-            this.A1476.TabIndex = 2062;
-            this.A1476.Text = "16";
-            this.A1476.UseVisualStyleBackColor = false;
-            // 
-            // A1475
-            // 
-            this.A1475.BackColor = System.Drawing.Color.LightBlue;
-            this.A1475.Location = new System.Drawing.Point(1167, 337);
-            this.A1475.Name = "A1475";
-            this.A1475.Size = new System.Drawing.Size(27, 30);
-            this.A1475.TabIndex = 2061;
-            this.A1475.Text = "16";
-            this.A1475.UseVisualStyleBackColor = false;
-            // 
-            // A1474
-            // 
-            this.A1474.BackColor = System.Drawing.Color.LightBlue;
-            this.A1474.Location = new System.Drawing.Point(1139, 337);
-            this.A1474.Name = "A1474";
-            this.A1474.Size = new System.Drawing.Size(27, 30);
-            this.A1474.TabIndex = 2060;
-            this.A1474.Text = "16";
-            this.A1474.UseVisualStyleBackColor = false;
-            // 
-            // A1473
-            // 
-            this.A1473.BackColor = System.Drawing.Color.LightBlue;
-            this.A1473.Location = new System.Drawing.Point(1111, 337);
-            this.A1473.Name = "A1473";
-            this.A1473.Size = new System.Drawing.Size(27, 30);
-            this.A1473.TabIndex = 2059;
-            this.A1473.Text = "16";
-            this.A1473.UseVisualStyleBackColor = false;
-            // 
-            // A1472
-            // 
-            this.A1472.BackColor = System.Drawing.Color.LightBlue;
-            this.A1472.Location = new System.Drawing.Point(1083, 337);
-            this.A1472.Name = "A1472";
-            this.A1472.Size = new System.Drawing.Size(27, 30);
-            this.A1472.TabIndex = 2058;
-            this.A1472.Text = "16";
-            this.A1472.UseVisualStyleBackColor = false;
-            // 
-            // A1471
-            // 
-            this.A1471.BackColor = System.Drawing.Color.LightBlue;
-            this.A1471.Location = new System.Drawing.Point(1055, 337);
-            this.A1471.Name = "A1471";
-            this.A1471.Size = new System.Drawing.Size(27, 30);
-            this.A1471.TabIndex = 2057;
-            this.A1471.Text = "16";
-            this.A1471.UseVisualStyleBackColor = false;
-            // 
-            // A1470
-            // 
-            this.A1470.BackColor = System.Drawing.Color.LightBlue;
-            this.A1470.Location = new System.Drawing.Point(1027, 337);
-            this.A1470.Name = "A1470";
-            this.A1470.Size = new System.Drawing.Size(27, 30);
-            this.A1470.TabIndex = 2056;
-            this.A1470.Text = "16";
-            this.A1470.UseVisualStyleBackColor = false;
-            // 
-            // A1447
-            // 
-            this.A1447.BackColor = System.Drawing.Color.LightBlue;
-            this.A1447.Location = new System.Drawing.Point(1195, 301);
-            this.A1447.Name = "A1447";
-            this.A1447.Size = new System.Drawing.Size(27, 30);
-            this.A1447.TabIndex = 2055;
-            this.A1447.Text = "16";
-            this.A1447.UseVisualStyleBackColor = false;
-            // 
-            // A1446
-            // 
-            this.A1446.BackColor = System.Drawing.Color.LightBlue;
-            this.A1446.Location = new System.Drawing.Point(1167, 301);
-            this.A1446.Name = "A1446";
-            this.A1446.Size = new System.Drawing.Size(27, 30);
-            this.A1446.TabIndex = 2054;
-            this.A1446.Text = "16";
-            this.A1446.UseVisualStyleBackColor = false;
-            // 
-            // A1445
-            // 
-            this.A1445.BackColor = System.Drawing.Color.LightBlue;
-            this.A1445.Location = new System.Drawing.Point(1139, 301);
-            this.A1445.Name = "A1445";
-            this.A1445.Size = new System.Drawing.Size(27, 30);
-            this.A1445.TabIndex = 2053;
-            this.A1445.Text = "16";
-            this.A1445.UseVisualStyleBackColor = false;
-            // 
-            // A1444
-            // 
-            this.A1444.BackColor = System.Drawing.Color.LightBlue;
-            this.A1444.Location = new System.Drawing.Point(1111, 301);
-            this.A1444.Name = "A1444";
-            this.A1444.Size = new System.Drawing.Size(27, 30);
-            this.A1444.TabIndex = 2052;
-            this.A1444.Text = "16";
-            this.A1444.UseVisualStyleBackColor = false;
-            // 
-            // A1443
-            // 
-            this.A1443.BackColor = System.Drawing.Color.LightBlue;
-            this.A1443.Location = new System.Drawing.Point(1083, 301);
-            this.A1443.Name = "A1443";
-            this.A1443.Size = new System.Drawing.Size(27, 30);
-            this.A1443.TabIndex = 2051;
-            this.A1443.Text = "16";
-            this.A1443.UseVisualStyleBackColor = false;
-            // 
-            // A1442
-            // 
-            this.A1442.BackColor = System.Drawing.Color.LightBlue;
-            this.A1442.Location = new System.Drawing.Point(1055, 301);
-            this.A1442.Name = "A1442";
-            this.A1442.Size = new System.Drawing.Size(27, 30);
-            this.A1442.TabIndex = 2050;
-            this.A1442.Text = "16";
-            this.A1442.UseVisualStyleBackColor = false;
-            // 
-            // A1441
-            // 
-            this.A1441.BackColor = System.Drawing.Color.LightBlue;
-            this.A1441.Location = new System.Drawing.Point(1027, 301);
-            this.A1441.Name = "A1441";
-            this.A1441.Size = new System.Drawing.Size(27, 30);
-            this.A1441.TabIndex = 2049;
-            this.A1441.Text = "16";
-            this.A1441.UseVisualStyleBackColor = false;
-            // 
-            // A1417
-            // 
-            this.A1417.BackColor = System.Drawing.Color.LightBlue;
-            this.A1417.Location = new System.Drawing.Point(1167, 265);
-            this.A1417.Name = "A1417";
-            this.A1417.Size = new System.Drawing.Size(27, 30);
-            this.A1417.TabIndex = 2048;
-            this.A1417.Text = "16";
-            this.A1417.UseVisualStyleBackColor = false;
-            // 
-            // A1416
-            // 
-            this.A1416.BackColor = System.Drawing.Color.LightBlue;
-            this.A1416.Location = new System.Drawing.Point(1139, 265);
-            this.A1416.Name = "A1416";
-            this.A1416.Size = new System.Drawing.Size(27, 30);
-            this.A1416.TabIndex = 2047;
-            this.A1416.Text = "16";
-            this.A1416.UseVisualStyleBackColor = false;
-            // 
-            // A1415
-            // 
-            this.A1415.BackColor = System.Drawing.Color.LightBlue;
-            this.A1415.Location = new System.Drawing.Point(1111, 265);
-            this.A1415.Name = "A1415";
-            this.A1415.Size = new System.Drawing.Size(27, 30);
-            this.A1415.TabIndex = 2046;
-            this.A1415.Text = "16";
-            this.A1415.UseVisualStyleBackColor = false;
-            // 
-            // A1414
-            // 
-            this.A1414.BackColor = System.Drawing.Color.LightBlue;
-            this.A1414.Location = new System.Drawing.Point(1083, 265);
-            this.A1414.Name = "A1414";
-            this.A1414.Size = new System.Drawing.Size(27, 30);
-            this.A1414.TabIndex = 2045;
-            this.A1414.Text = "16";
-            this.A1414.UseVisualStyleBackColor = false;
-            // 
-            // A1413
-            // 
-            this.A1413.BackColor = System.Drawing.Color.LightBlue;
-            this.A1413.Location = new System.Drawing.Point(1055, 265);
-            this.A1413.Name = "A1413";
-            this.A1413.Size = new System.Drawing.Size(27, 30);
-            this.A1413.TabIndex = 2044;
-            this.A1413.Text = "16";
-            this.A1413.UseVisualStyleBackColor = false;
-            // 
-            // A1412
-            // 
-            this.A1412.BackColor = System.Drawing.Color.LightBlue;
-            this.A1412.Location = new System.Drawing.Point(1027, 265);
-            this.A1412.Name = "A1412";
-            this.A1412.Size = new System.Drawing.Size(27, 30);
-            this.A1412.TabIndex = 2043;
-            this.A1412.Text = "16";
-            this.A1412.UseVisualStyleBackColor = false;
-            // 
-            // A1402
-            // 
-            this.A1402.BackColor = System.Drawing.Color.LightBlue;
-            this.A1402.Location = new System.Drawing.Point(1139, 229);
-            this.A1402.Name = "A1402";
-            this.A1402.Size = new System.Drawing.Size(27, 30);
-            this.A1402.TabIndex = 2042;
-            this.A1402.Text = "16";
-            this.A1402.UseVisualStyleBackColor = false;
-            // 
-            // A1401
-            // 
-            this.A1401.BackColor = System.Drawing.Color.LightBlue;
-            this.A1401.Location = new System.Drawing.Point(1111, 229);
-            this.A1401.Name = "A1401";
-            this.A1401.Size = new System.Drawing.Size(27, 30);
-            this.A1401.TabIndex = 2041;
-            this.A1401.Text = "16";
-            this.A1401.UseVisualStyleBackColor = false;
-            // 
-            // A1400
-            // 
-            this.A1400.BackColor = System.Drawing.Color.LightBlue;
-            this.A1400.Location = new System.Drawing.Point(1083, 229);
-            this.A1400.Name = "A1400";
-            this.A1400.Size = new System.Drawing.Size(27, 30);
-            this.A1400.TabIndex = 2040;
-            this.A1400.Text = "16";
-            this.A1400.UseVisualStyleBackColor = false;
-            // 
-            // A1399
-            // 
-            this.A1399.BackColor = System.Drawing.Color.LightBlue;
-            this.A1399.Location = new System.Drawing.Point(1055, 229);
-            this.A1399.Name = "A1399";
-            this.A1399.Size = new System.Drawing.Size(27, 30);
-            this.A1399.TabIndex = 2039;
-            this.A1399.Text = "16";
-            this.A1399.UseVisualStyleBackColor = false;
-            // 
-            // A1398
-            // 
-            this.A1398.BackColor = System.Drawing.Color.LightBlue;
-            this.A1398.Location = new System.Drawing.Point(1027, 229);
-            this.A1398.Name = "A1398";
-            this.A1398.Size = new System.Drawing.Size(27, 30);
-            this.A1398.TabIndex = 2038;
-            this.A1398.Text = "16";
-            this.A1398.UseVisualStyleBackColor = false;
-            // 
-            // A1379
-            // 
-            this.A1379.BackColor = System.Drawing.Color.LightBlue;
-            this.A1379.Location = new System.Drawing.Point(1111, 193);
-            this.A1379.Name = "A1379";
-            this.A1379.Size = new System.Drawing.Size(27, 30);
-            this.A1379.TabIndex = 2037;
-            this.A1379.Text = "16";
-            this.A1379.UseVisualStyleBackColor = false;
-            // 
-            // A1378
-            // 
-            this.A1378.BackColor = System.Drawing.Color.LightBlue;
-            this.A1378.Location = new System.Drawing.Point(1083, 193);
-            this.A1378.Name = "A1378";
-            this.A1378.Size = new System.Drawing.Size(27, 30);
-            this.A1378.TabIndex = 2036;
-            this.A1378.Text = "16";
-            this.A1378.UseVisualStyleBackColor = false;
-            // 
-            // A1377
-            // 
-            this.A1377.BackColor = System.Drawing.Color.LightBlue;
-            this.A1377.Location = new System.Drawing.Point(1055, 193);
-            this.A1377.Name = "A1377";
-            this.A1377.Size = new System.Drawing.Size(27, 30);
-            this.A1377.TabIndex = 2035;
-            this.A1377.Text = "16";
-            this.A1377.UseVisualStyleBackColor = false;
-            // 
-            // A1376
-            // 
-            this.A1376.BackColor = System.Drawing.Color.LightBlue;
-            this.A1376.Location = new System.Drawing.Point(1027, 193);
-            this.A1376.Name = "A1376";
-            this.A1376.Size = new System.Drawing.Size(27, 30);
-            this.A1376.TabIndex = 2034;
-            this.A1376.Text = "16";
-            this.A1376.UseVisualStyleBackColor = false;
-            // 
-            // materialLabel31
-            // 
-            this.materialLabel31.AutoSize = true;
-            this.materialLabel31.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel31.Depth = 0;
-            this.materialLabel31.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel31.Location = new System.Drawing.Point(320, 378);
-            this.materialLabel31.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel31.Name = "materialLabel31";
-            this.materialLabel31.Size = new System.Drawing.Size(25, 19);
-            this.materialLabel31.TabIndex = 2033;
-            this.materialLabel31.Text = "LL";
-            // 
-            // materialLabel32
-            // 
-            this.materialLabel32.AutoSize = true;
-            this.materialLabel32.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel32.Depth = 0;
-            this.materialLabel32.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel32.Location = new System.Drawing.Point(320, 342);
-            this.materialLabel32.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel32.Name = "materialLabel32";
-            this.materialLabel32.Size = new System.Drawing.Size(27, 19);
-            this.materialLabel32.TabIndex = 2032;
-            this.materialLabel32.Text = "KK";
-            // 
-            // materialLabel33
-            // 
-            this.materialLabel33.AutoSize = true;
-            this.materialLabel33.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel33.Depth = 0;
-            this.materialLabel33.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel33.Location = new System.Drawing.Point(320, 306);
-            this.materialLabel33.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel33.Name = "materialLabel33";
-            this.materialLabel33.Size = new System.Drawing.Size(25, 19);
-            this.materialLabel33.TabIndex = 2031;
-            this.materialLabel33.Text = "JJ";
-            // 
-            // materialLabel34
-            // 
-            this.materialLabel34.AutoSize = true;
-            this.materialLabel34.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel34.Depth = 0;
-            this.materialLabel34.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel34.Location = new System.Drawing.Point(320, 270);
-            this.materialLabel34.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel34.Name = "materialLabel34";
-            this.materialLabel34.Size = new System.Drawing.Size(17, 19);
-            this.materialLabel34.TabIndex = 2030;
-            this.materialLabel34.Text = "II";
-            // 
-            // materialLabel35
-            // 
-            this.materialLabel35.AutoSize = true;
-            this.materialLabel35.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel35.Depth = 0;
-            this.materialLabel35.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel35.Location = new System.Drawing.Point(320, 234);
-            this.materialLabel35.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel35.Name = "materialLabel35";
-            this.materialLabel35.Size = new System.Drawing.Size(31, 19);
-            this.materialLabel35.TabIndex = 2029;
-            this.materialLabel35.Text = "HH";
-            // 
-            // materialLabel36
-            // 
-            this.materialLabel36.AutoSize = true;
-            this.materialLabel36.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel36.Depth = 0;
-            this.materialLabel36.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel36.Location = new System.Drawing.Point(320, 198);
-            this.materialLabel36.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel36.Name = "materialLabel36";
-            this.materialLabel36.Size = new System.Drawing.Size(29, 19);
-            this.materialLabel36.TabIndex = 2028;
-            this.materialLabel36.Text = "GG";
-            // 
-            // A1483
-            // 
-            this.A1483.BackColor = System.Drawing.Color.LightBlue;
-            this.A1483.Location = new System.Drawing.Point(214, 373);
-            this.A1483.Name = "A1483";
-            this.A1483.Size = new System.Drawing.Size(27, 30);
-            this.A1483.TabIndex = 2027;
-            this.A1483.Text = "16";
-            this.A1483.UseVisualStyleBackColor = false;
-            // 
-            // A1482
-            // 
-            this.A1482.BackColor = System.Drawing.Color.LightBlue;
-            this.A1482.Location = new System.Drawing.Point(186, 373);
-            this.A1482.Name = "A1482";
-            this.A1482.Size = new System.Drawing.Size(27, 30);
-            this.A1482.TabIndex = 2026;
-            this.A1482.Text = "16";
-            this.A1482.UseVisualStyleBackColor = false;
-            // 
-            // A1481
-            // 
-            this.A1481.BackColor = System.Drawing.Color.LightBlue;
-            this.A1481.Location = new System.Drawing.Point(158, 373);
-            this.A1481.Name = "A1481";
-            this.A1481.Size = new System.Drawing.Size(27, 30);
-            this.A1481.TabIndex = 2025;
-            this.A1481.Text = "16";
-            this.A1481.UseVisualStyleBackColor = false;
-            // 
-            // A1480
-            // 
-            this.A1480.BackColor = System.Drawing.Color.LightBlue;
-            this.A1480.Location = new System.Drawing.Point(130, 373);
-            this.A1480.Name = "A1480";
-            this.A1480.Size = new System.Drawing.Size(27, 30);
-            this.A1480.TabIndex = 2024;
-            this.A1480.Text = "16";
-            this.A1480.UseVisualStyleBackColor = false;
-            // 
-            // A1479
-            // 
-            this.A1479.BackColor = System.Drawing.Color.LightBlue;
-            this.A1479.Location = new System.Drawing.Point(102, 373);
-            this.A1479.Name = "A1479";
-            this.A1479.Size = new System.Drawing.Size(27, 30);
-            this.A1479.TabIndex = 2023;
-            this.A1479.Text = "16";
-            this.A1479.UseVisualStyleBackColor = false;
-            // 
-            // A1478
-            // 
-            this.A1478.BackColor = System.Drawing.Color.LightBlue;
-            this.A1478.Location = new System.Drawing.Point(74, 373);
-            this.A1478.Name = "A1478";
-            this.A1478.Size = new System.Drawing.Size(27, 30);
-            this.A1478.TabIndex = 2022;
-            this.A1478.Text = "16";
-            this.A1478.UseVisualStyleBackColor = false;
-            // 
-            // A1477
-            // 
-            this.A1477.BackColor = System.Drawing.Color.LightBlue;
-            this.A1477.Location = new System.Drawing.Point(46, 373);
-            this.A1477.Name = "A1477";
-            this.A1477.Size = new System.Drawing.Size(27, 30);
-            this.A1477.TabIndex = 2021;
-            this.A1477.Text = "16";
-            this.A1477.UseVisualStyleBackColor = false;
-            // 
-            // A1454
-            // 
-            this.A1454.BackColor = System.Drawing.Color.LightBlue;
-            this.A1454.Location = new System.Drawing.Point(214, 337);
-            this.A1454.Name = "A1454";
-            this.A1454.Size = new System.Drawing.Size(27, 30);
-            this.A1454.TabIndex = 2020;
-            this.A1454.Text = "16";
-            this.A1454.UseVisualStyleBackColor = false;
-            // 
-            // A1453
-            // 
-            this.A1453.BackColor = System.Drawing.Color.LightBlue;
-            this.A1453.Location = new System.Drawing.Point(186, 337);
-            this.A1453.Name = "A1453";
-            this.A1453.Size = new System.Drawing.Size(27, 30);
-            this.A1453.TabIndex = 2019;
-            this.A1453.Text = "16";
-            this.A1453.UseVisualStyleBackColor = false;
-            // 
-            // A1452
-            // 
-            this.A1452.BackColor = System.Drawing.Color.LightBlue;
-            this.A1452.Location = new System.Drawing.Point(158, 337);
-            this.A1452.Name = "A1452";
-            this.A1452.Size = new System.Drawing.Size(27, 30);
-            this.A1452.TabIndex = 2018;
-            this.A1452.Text = "16";
-            this.A1452.UseVisualStyleBackColor = false;
-            // 
-            // A1451
-            // 
-            this.A1451.BackColor = System.Drawing.Color.LightBlue;
-            this.A1451.Location = new System.Drawing.Point(130, 337);
-            this.A1451.Name = "A1451";
-            this.A1451.Size = new System.Drawing.Size(27, 30);
-            this.A1451.TabIndex = 2017;
-            this.A1451.Text = "16";
-            this.A1451.UseVisualStyleBackColor = false;
-            // 
-            // A1450
-            // 
-            this.A1450.BackColor = System.Drawing.Color.LightBlue;
-            this.A1450.Location = new System.Drawing.Point(102, 337);
-            this.A1450.Name = "A1450";
-            this.A1450.Size = new System.Drawing.Size(27, 30);
-            this.A1450.TabIndex = 2016;
-            this.A1450.Text = "16";
-            this.A1450.UseVisualStyleBackColor = false;
-            // 
-            // A1449
-            // 
-            this.A1449.BackColor = System.Drawing.Color.LightBlue;
-            this.A1449.Location = new System.Drawing.Point(74, 337);
-            this.A1449.Name = "A1449";
-            this.A1449.Size = new System.Drawing.Size(27, 30);
-            this.A1449.TabIndex = 2015;
-            this.A1449.Text = "16";
-            this.A1449.UseVisualStyleBackColor = false;
-            // 
-            // A1448
-            // 
-            this.A1448.BackColor = System.Drawing.Color.LightBlue;
-            this.A1448.Location = new System.Drawing.Point(46, 337);
-            this.A1448.Name = "A1448";
-            this.A1448.Size = new System.Drawing.Size(27, 30);
-            this.A1448.TabIndex = 2014;
-            this.A1448.Text = "16";
-            this.A1448.UseVisualStyleBackColor = false;
-            // 
-            // A1425
-            // 
-            this.A1425.BackColor = System.Drawing.Color.LightBlue;
-            this.A1425.Location = new System.Drawing.Point(214, 301);
-            this.A1425.Name = "A1425";
-            this.A1425.Size = new System.Drawing.Size(27, 30);
-            this.A1425.TabIndex = 2013;
-            this.A1425.Text = "16";
-            this.A1425.UseVisualStyleBackColor = false;
-            // 
-            // A1424
-            // 
-            this.A1424.BackColor = System.Drawing.Color.LightBlue;
-            this.A1424.Location = new System.Drawing.Point(186, 301);
-            this.A1424.Name = "A1424";
-            this.A1424.Size = new System.Drawing.Size(27, 30);
-            this.A1424.TabIndex = 2012;
-            this.A1424.Text = "16";
-            this.A1424.UseVisualStyleBackColor = false;
-            // 
-            // A1423
-            // 
-            this.A1423.BackColor = System.Drawing.Color.LightBlue;
-            this.A1423.Location = new System.Drawing.Point(158, 301);
-            this.A1423.Name = "A1423";
-            this.A1423.Size = new System.Drawing.Size(27, 30);
-            this.A1423.TabIndex = 2011;
-            this.A1423.Text = "16";
-            this.A1423.UseVisualStyleBackColor = false;
-            // 
-            // A1422
-            // 
-            this.A1422.BackColor = System.Drawing.Color.LightBlue;
-            this.A1422.Location = new System.Drawing.Point(130, 301);
-            this.A1422.Name = "A1422";
-            this.A1422.Size = new System.Drawing.Size(27, 30);
-            this.A1422.TabIndex = 2010;
-            this.A1422.Text = "16";
-            this.A1422.UseVisualStyleBackColor = false;
-            // 
-            // A1421
-            // 
-            this.A1421.BackColor = System.Drawing.Color.LightBlue;
-            this.A1421.Location = new System.Drawing.Point(102, 301);
-            this.A1421.Name = "A1421";
-            this.A1421.Size = new System.Drawing.Size(27, 30);
-            this.A1421.TabIndex = 2009;
-            this.A1421.Text = "16";
-            this.A1421.UseVisualStyleBackColor = false;
-            // 
-            // A1420
-            // 
-            this.A1420.BackColor = System.Drawing.Color.LightBlue;
-            this.A1420.Location = new System.Drawing.Point(74, 301);
-            this.A1420.Name = "A1420";
-            this.A1420.Size = new System.Drawing.Size(27, 30);
-            this.A1420.TabIndex = 2008;
-            this.A1420.Text = "16";
-            this.A1420.UseVisualStyleBackColor = false;
-            // 
-            // A1419
-            // 
-            this.A1419.BackColor = System.Drawing.Color.LightBlue;
-            this.A1419.Location = new System.Drawing.Point(46, 301);
-            this.A1419.Name = "A1419";
-            this.A1419.Size = new System.Drawing.Size(27, 30);
-            this.A1419.TabIndex = 2007;
-            this.A1419.Text = "16";
-            this.A1419.UseVisualStyleBackColor = false;
-            // 
-            // A1411
-            // 
-            this.A1411.BackColor = System.Drawing.Color.LightBlue;
-            this.A1411.Location = new System.Drawing.Point(214, 265);
-            this.A1411.Name = "A1411";
-            this.A1411.Size = new System.Drawing.Size(27, 30);
-            this.A1411.TabIndex = 2006;
-            this.A1411.Text = "16";
-            this.A1411.UseVisualStyleBackColor = false;
-            // 
-            // A1410
-            // 
-            this.A1410.BackColor = System.Drawing.Color.LightBlue;
-            this.A1410.Location = new System.Drawing.Point(186, 265);
-            this.A1410.Name = "A1410";
-            this.A1410.Size = new System.Drawing.Size(27, 30);
-            this.A1410.TabIndex = 2005;
-            this.A1410.Text = "16";
-            this.A1410.UseVisualStyleBackColor = false;
-            // 
-            // A1409
-            // 
-            this.A1409.BackColor = System.Drawing.Color.LightBlue;
-            this.A1409.Location = new System.Drawing.Point(158, 265);
-            this.A1409.Name = "A1409";
-            this.A1409.Size = new System.Drawing.Size(27, 30);
-            this.A1409.TabIndex = 2004;
-            this.A1409.Text = "16";
-            this.A1409.UseVisualStyleBackColor = false;
-            // 
-            // A1408
-            // 
-            this.A1408.BackColor = System.Drawing.Color.LightBlue;
-            this.A1408.Location = new System.Drawing.Point(130, 265);
-            this.A1408.Name = "A1408";
-            this.A1408.Size = new System.Drawing.Size(27, 30);
-            this.A1408.TabIndex = 2003;
-            this.A1408.Text = "16";
-            this.A1408.UseVisualStyleBackColor = false;
-            // 
-            // A1407
-            // 
-            this.A1407.BackColor = System.Drawing.Color.LightBlue;
-            this.A1407.Location = new System.Drawing.Point(102, 265);
-            this.A1407.Name = "A1407";
-            this.A1407.Size = new System.Drawing.Size(27, 30);
-            this.A1407.TabIndex = 2002;
-            this.A1407.Text = "16";
-            this.A1407.UseVisualStyleBackColor = false;
-            // 
-            // A1406
-            // 
-            this.A1406.BackColor = System.Drawing.Color.LightBlue;
-            this.A1406.Location = new System.Drawing.Point(74, 265);
-            this.A1406.Name = "A1406";
-            this.A1406.Size = new System.Drawing.Size(27, 30);
-            this.A1406.TabIndex = 2001;
-            this.A1406.Text = "16";
-            this.A1406.UseVisualStyleBackColor = false;
-            // 
-            // A1389
-            // 
-            this.A1389.BackColor = System.Drawing.Color.LightBlue;
-            this.A1389.Location = new System.Drawing.Point(214, 229);
-            this.A1389.Name = "A1389";
-            this.A1389.Size = new System.Drawing.Size(27, 30);
-            this.A1389.TabIndex = 2000;
-            this.A1389.Text = "16";
-            this.A1389.UseVisualStyleBackColor = false;
-            // 
-            // A1388
-            // 
-            this.A1388.BackColor = System.Drawing.Color.LightBlue;
-            this.A1388.Location = new System.Drawing.Point(186, 229);
-            this.A1388.Name = "A1388";
-            this.A1388.Size = new System.Drawing.Size(27, 30);
-            this.A1388.TabIndex = 1999;
-            this.A1388.Text = "16";
-            this.A1388.UseVisualStyleBackColor = false;
-            // 
-            // A1387
-            // 
-            this.A1387.BackColor = System.Drawing.Color.LightBlue;
-            this.A1387.Location = new System.Drawing.Point(158, 229);
-            this.A1387.Name = "A1387";
-            this.A1387.Size = new System.Drawing.Size(27, 30);
-            this.A1387.TabIndex = 1998;
-            this.A1387.Text = "16";
-            this.A1387.UseVisualStyleBackColor = false;
-            // 
-            // A1386
-            // 
-            this.A1386.BackColor = System.Drawing.Color.LightBlue;
-            this.A1386.Location = new System.Drawing.Point(130, 229);
-            this.A1386.Name = "A1386";
-            this.A1386.Size = new System.Drawing.Size(27, 30);
-            this.A1386.TabIndex = 1997;
-            this.A1386.Text = "16";
-            this.A1386.UseVisualStyleBackColor = false;
-            // 
-            // A1385
-            // 
-            this.A1385.BackColor = System.Drawing.Color.LightBlue;
-            this.A1385.Location = new System.Drawing.Point(102, 229);
-            this.A1385.Name = "A1385";
-            this.A1385.Size = new System.Drawing.Size(27, 30);
-            this.A1385.TabIndex = 1996;
-            this.A1385.Text = "16";
-            this.A1385.UseVisualStyleBackColor = false;
-            // 
-            // A1367
-            // 
-            this.A1367.BackColor = System.Drawing.Color.LightBlue;
-            this.A1367.Location = new System.Drawing.Point(214, 193);
-            this.A1367.Name = "A1367";
-            this.A1367.Size = new System.Drawing.Size(27, 30);
-            this.A1367.TabIndex = 1995;
-            this.A1367.Text = "16";
-            this.A1367.UseVisualStyleBackColor = false;
-            // 
-            // A1366
-            // 
-            this.A1366.BackColor = System.Drawing.Color.LightBlue;
-            this.A1366.Location = new System.Drawing.Point(186, 193);
-            this.A1366.Name = "A1366";
-            this.A1366.Size = new System.Drawing.Size(27, 30);
-            this.A1366.TabIndex = 1994;
-            this.A1366.Text = "16";
-            this.A1366.UseVisualStyleBackColor = false;
-            // 
-            // A1365
-            // 
-            this.A1365.BackColor = System.Drawing.Color.LightBlue;
-            this.A1365.Location = new System.Drawing.Point(158, 193);
-            this.A1365.Name = "A1365";
-            this.A1365.Size = new System.Drawing.Size(27, 30);
-            this.A1365.TabIndex = 1993;
-            this.A1365.Text = "16";
-            this.A1365.UseVisualStyleBackColor = false;
-            // 
-            // A1364
-            // 
-            this.A1364.BackColor = System.Drawing.Color.LightBlue;
-            this.A1364.Location = new System.Drawing.Point(130, 193);
-            this.A1364.Name = "A1364";
-            this.A1364.Size = new System.Drawing.Size(27, 30);
-            this.A1364.TabIndex = 1992;
-            this.A1364.Text = "16";
-            this.A1364.UseVisualStyleBackColor = false;
-            // 
-            // A1469
-            // 
-            this.A1469.BackColor = System.Drawing.Color.LightBlue;
-            this.A1469.Location = new System.Drawing.Point(802, 337);
-            this.A1469.Name = "A1469";
-            this.A1469.Size = new System.Drawing.Size(27, 30);
-            this.A1469.TabIndex = 1991;
-            this.A1469.Text = "16";
-            this.A1469.UseVisualStyleBackColor = false;
-            // 
-            // A1468
-            // 
-            this.A1468.BackColor = System.Drawing.Color.LightBlue;
-            this.A1468.Location = new System.Drawing.Point(774, 337);
-            this.A1468.Name = "A1468";
-            this.A1468.Size = new System.Drawing.Size(27, 30);
-            this.A1468.TabIndex = 1990;
-            this.A1468.Text = "16";
-            this.A1468.UseVisualStyleBackColor = false;
-            // 
-            // A1467
-            // 
-            this.A1467.BackColor = System.Drawing.Color.LightBlue;
-            this.A1467.Location = new System.Drawing.Point(746, 337);
-            this.A1467.Name = "A1467";
-            this.A1467.Size = new System.Drawing.Size(27, 30);
-            this.A1467.TabIndex = 1989;
-            this.A1467.Text = "16";
-            this.A1467.UseVisualStyleBackColor = false;
-            // 
-            // A1466
-            // 
-            this.A1466.BackColor = System.Drawing.Color.LightBlue;
-            this.A1466.Location = new System.Drawing.Point(718, 337);
-            this.A1466.Name = "A1466";
-            this.A1466.Size = new System.Drawing.Size(27, 30);
-            this.A1466.TabIndex = 1988;
-            this.A1466.Text = "16";
-            this.A1466.UseVisualStyleBackColor = false;
-            // 
-            // A1465
-            // 
-            this.A1465.BackColor = System.Drawing.Color.LightBlue;
-            this.A1465.Location = new System.Drawing.Point(690, 337);
-            this.A1465.Name = "A1465";
-            this.A1465.Size = new System.Drawing.Size(27, 30);
-            this.A1465.TabIndex = 1987;
-            this.A1465.Text = "16";
-            this.A1465.UseVisualStyleBackColor = false;
-            // 
-            // A1464
-            // 
-            this.A1464.BackColor = System.Drawing.Color.LightBlue;
-            this.A1464.Location = new System.Drawing.Point(662, 337);
-            this.A1464.Name = "A1464";
-            this.A1464.Size = new System.Drawing.Size(27, 30);
-            this.A1464.TabIndex = 1986;
-            this.A1464.Text = "16";
-            this.A1464.UseVisualStyleBackColor = false;
-            // 
-            // A1463
-            // 
-            this.A1463.BackColor = System.Drawing.Color.LightBlue;
-            this.A1463.Location = new System.Drawing.Point(634, 337);
-            this.A1463.Name = "A1463";
-            this.A1463.Size = new System.Drawing.Size(27, 30);
-            this.A1463.TabIndex = 1985;
-            this.A1463.Text = "16";
-            this.A1463.UseVisualStyleBackColor = false;
-            // 
-            // A1462
-            // 
-            this.A1462.BackColor = System.Drawing.Color.LightBlue;
-            this.A1462.Location = new System.Drawing.Point(606, 337);
-            this.A1462.Name = "A1462";
-            this.A1462.Size = new System.Drawing.Size(27, 30);
-            this.A1462.TabIndex = 1984;
-            this.A1462.Text = "16";
-            this.A1462.UseVisualStyleBackColor = false;
-            // 
-            // A1461
-            // 
-            this.A1461.BackColor = System.Drawing.Color.LightBlue;
-            this.A1461.Location = new System.Drawing.Point(578, 337);
-            this.A1461.Name = "A1461";
-            this.A1461.Size = new System.Drawing.Size(27, 30);
-            this.A1461.TabIndex = 1983;
-            this.A1461.Text = "16";
-            this.A1461.UseVisualStyleBackColor = false;
-            // 
-            // A1460
-            // 
-            this.A1460.BackColor = System.Drawing.Color.LightBlue;
-            this.A1460.Location = new System.Drawing.Point(550, 337);
-            this.A1460.Name = "A1460";
-            this.A1460.Size = new System.Drawing.Size(27, 30);
-            this.A1460.TabIndex = 1982;
-            this.A1460.Text = "16";
-            this.A1460.UseVisualStyleBackColor = false;
-            // 
-            // A1459
-            // 
-            this.A1459.BackColor = System.Drawing.Color.LightBlue;
-            this.A1459.Location = new System.Drawing.Point(522, 337);
-            this.A1459.Name = "A1459";
-            this.A1459.Size = new System.Drawing.Size(27, 30);
-            this.A1459.TabIndex = 1981;
-            this.A1459.Text = "16";
-            this.A1459.UseVisualStyleBackColor = false;
-            // 
-            // A1458
-            // 
-            this.A1458.BackColor = System.Drawing.Color.LightBlue;
-            this.A1458.Location = new System.Drawing.Point(494, 337);
-            this.A1458.Name = "A1458";
-            this.A1458.Size = new System.Drawing.Size(27, 30);
-            this.A1458.TabIndex = 1980;
-            this.A1458.Text = "16";
-            this.A1458.UseVisualStyleBackColor = false;
-            // 
-            // A1457
-            // 
-            this.A1457.BackColor = System.Drawing.Color.LightBlue;
-            this.A1457.Location = new System.Drawing.Point(466, 337);
-            this.A1457.Name = "A1457";
-            this.A1457.Size = new System.Drawing.Size(27, 30);
-            this.A1457.TabIndex = 1979;
-            this.A1457.Text = "16";
-            this.A1457.UseVisualStyleBackColor = false;
-            // 
-            // A1456
-            // 
-            this.A1456.BackColor = System.Drawing.Color.LightBlue;
-            this.A1456.Location = new System.Drawing.Point(438, 337);
-            this.A1456.Name = "A1456";
-            this.A1456.Size = new System.Drawing.Size(27, 30);
-            this.A1456.TabIndex = 1978;
-            this.A1456.Text = "16";
-            this.A1456.UseVisualStyleBackColor = false;
-            // 
-            // A1455
-            // 
-            this.A1455.BackColor = System.Drawing.Color.LightBlue;
-            this.A1455.Location = new System.Drawing.Point(410, 337);
-            this.A1455.Name = "A1455";
-            this.A1455.Size = new System.Drawing.Size(27, 30);
-            this.A1455.TabIndex = 1977;
-            this.A1455.Text = "16";
-            this.A1455.UseVisualStyleBackColor = false;
-            // 
-            // A1440
-            // 
-            this.A1440.BackColor = System.Drawing.Color.LightBlue;
-            this.A1440.Location = new System.Drawing.Point(802, 301);
-            this.A1440.Name = "A1440";
-            this.A1440.Size = new System.Drawing.Size(27, 30);
-            this.A1440.TabIndex = 1976;
-            this.A1440.Text = "16";
-            this.A1440.UseVisualStyleBackColor = false;
-            // 
-            // A1439
-            // 
-            this.A1439.BackColor = System.Drawing.Color.LightBlue;
-            this.A1439.Location = new System.Drawing.Point(774, 301);
-            this.A1439.Name = "A1439";
-            this.A1439.Size = new System.Drawing.Size(27, 30);
-            this.A1439.TabIndex = 1975;
-            this.A1439.Text = "16";
-            this.A1439.UseVisualStyleBackColor = false;
-            // 
-            // A1438
-            // 
-            this.A1438.BackColor = System.Drawing.Color.LightBlue;
-            this.A1438.Location = new System.Drawing.Point(746, 301);
-            this.A1438.Name = "A1438";
-            this.A1438.Size = new System.Drawing.Size(27, 30);
-            this.A1438.TabIndex = 1974;
-            this.A1438.Text = "16";
-            this.A1438.UseVisualStyleBackColor = false;
-            // 
-            // A1437
-            // 
-            this.A1437.BackColor = System.Drawing.Color.LightBlue;
-            this.A1437.Location = new System.Drawing.Point(718, 301);
-            this.A1437.Name = "A1437";
-            this.A1437.Size = new System.Drawing.Size(27, 30);
-            this.A1437.TabIndex = 1973;
-            this.A1437.Text = "16";
-            this.A1437.UseVisualStyleBackColor = false;
-            // 
-            // A1436
-            // 
-            this.A1436.BackColor = System.Drawing.Color.LightBlue;
-            this.A1436.Location = new System.Drawing.Point(690, 301);
-            this.A1436.Name = "A1436";
-            this.A1436.Size = new System.Drawing.Size(27, 30);
-            this.A1436.TabIndex = 1972;
-            this.A1436.Text = "16";
-            this.A1436.UseVisualStyleBackColor = false;
-            // 
-            // A1435
-            // 
-            this.A1435.BackColor = System.Drawing.Color.LightBlue;
-            this.A1435.Location = new System.Drawing.Point(662, 301);
-            this.A1435.Name = "A1435";
-            this.A1435.Size = new System.Drawing.Size(27, 30);
-            this.A1435.TabIndex = 1971;
-            this.A1435.Text = "16";
-            this.A1435.UseVisualStyleBackColor = false;
-            // 
-            // A1434
-            // 
-            this.A1434.BackColor = System.Drawing.Color.LightBlue;
-            this.A1434.Location = new System.Drawing.Point(634, 301);
-            this.A1434.Name = "A1434";
-            this.A1434.Size = new System.Drawing.Size(27, 30);
-            this.A1434.TabIndex = 1970;
-            this.A1434.Text = "16";
-            this.A1434.UseVisualStyleBackColor = false;
-            // 
-            // A1433
-            // 
-            this.A1433.BackColor = System.Drawing.Color.LightBlue;
-            this.A1433.Location = new System.Drawing.Point(606, 301);
-            this.A1433.Name = "A1433";
-            this.A1433.Size = new System.Drawing.Size(27, 30);
-            this.A1433.TabIndex = 1969;
-            this.A1433.Text = "16";
-            this.A1433.UseVisualStyleBackColor = false;
-            // 
-            // A1432
-            // 
-            this.A1432.BackColor = System.Drawing.Color.LightBlue;
-            this.A1432.Location = new System.Drawing.Point(578, 301);
-            this.A1432.Name = "A1432";
-            this.A1432.Size = new System.Drawing.Size(27, 30);
-            this.A1432.TabIndex = 1968;
-            this.A1432.Text = "16";
-            this.A1432.UseVisualStyleBackColor = false;
-            // 
-            // A1431
-            // 
-            this.A1431.BackColor = System.Drawing.Color.LightBlue;
-            this.A1431.Location = new System.Drawing.Point(550, 301);
-            this.A1431.Name = "A1431";
-            this.A1431.Size = new System.Drawing.Size(27, 30);
-            this.A1431.TabIndex = 1967;
-            this.A1431.Text = "16";
-            this.A1431.UseVisualStyleBackColor = false;
-            // 
-            // A1430
-            // 
-            this.A1430.BackColor = System.Drawing.Color.LightBlue;
-            this.A1430.Location = new System.Drawing.Point(522, 301);
-            this.A1430.Name = "A1430";
-            this.A1430.Size = new System.Drawing.Size(27, 30);
-            this.A1430.TabIndex = 1966;
-            this.A1430.Text = "16";
-            this.A1430.UseVisualStyleBackColor = false;
-            // 
-            // A1429
-            // 
-            this.A1429.BackColor = System.Drawing.Color.LightBlue;
-            this.A1429.Location = new System.Drawing.Point(494, 301);
-            this.A1429.Name = "A1429";
-            this.A1429.Size = new System.Drawing.Size(27, 30);
-            this.A1429.TabIndex = 1965;
-            this.A1429.Text = "16";
-            this.A1429.UseVisualStyleBackColor = false;
-            // 
-            // A1428
-            // 
-            this.A1428.BackColor = System.Drawing.Color.LightBlue;
-            this.A1428.Location = new System.Drawing.Point(466, 301);
-            this.A1428.Name = "A1428";
-            this.A1428.Size = new System.Drawing.Size(27, 30);
-            this.A1428.TabIndex = 1964;
-            this.A1428.Text = "16";
-            this.A1428.UseVisualStyleBackColor = false;
-            // 
-            // A1427
-            // 
-            this.A1427.BackColor = System.Drawing.Color.LightBlue;
-            this.A1427.Location = new System.Drawing.Point(438, 301);
-            this.A1427.Name = "A1427";
-            this.A1427.Size = new System.Drawing.Size(27, 30);
-            this.A1427.TabIndex = 1963;
-            this.A1427.Text = "16";
-            this.A1427.UseVisualStyleBackColor = false;
-            // 
-            // A1426
-            // 
-            this.A1426.BackColor = System.Drawing.Color.LightBlue;
-            this.A1426.Location = new System.Drawing.Point(410, 301);
-            this.A1426.Name = "A1426";
-            this.A1426.Size = new System.Drawing.Size(27, 30);
-            this.A1426.TabIndex = 1962;
-            this.A1426.Text = "16";
-            this.A1426.UseVisualStyleBackColor = false;
-            // 
-            // A1397
-            // 
-            this.A1397.BackColor = System.Drawing.Color.LightBlue;
-            this.A1397.Location = new System.Drawing.Point(802, 229);
-            this.A1397.Name = "A1397";
-            this.A1397.Size = new System.Drawing.Size(27, 30);
-            this.A1397.TabIndex = 1961;
-            this.A1397.Text = "16";
-            this.A1397.UseVisualStyleBackColor = false;
-            // 
-            // A1396
-            // 
-            this.A1396.BackColor = System.Drawing.Color.LightBlue;
-            this.A1396.Location = new System.Drawing.Point(774, 229);
-            this.A1396.Name = "A1396";
-            this.A1396.Size = new System.Drawing.Size(27, 30);
-            this.A1396.TabIndex = 1960;
-            this.A1396.Text = "16";
-            this.A1396.UseVisualStyleBackColor = false;
-            // 
-            // A1395
-            // 
-            this.A1395.BackColor = System.Drawing.Color.LightBlue;
-            this.A1395.Location = new System.Drawing.Point(746, 229);
-            this.A1395.Name = "A1395";
-            this.A1395.Size = new System.Drawing.Size(27, 30);
-            this.A1395.TabIndex = 1959;
-            this.A1395.Text = "16";
-            this.A1395.UseVisualStyleBackColor = false;
-            // 
-            // A1394
-            // 
-            this.A1394.BackColor = System.Drawing.Color.LightBlue;
-            this.A1394.Location = new System.Drawing.Point(718, 229);
-            this.A1394.Name = "A1394";
-            this.A1394.Size = new System.Drawing.Size(27, 30);
-            this.A1394.TabIndex = 1958;
-            this.A1394.Text = "16";
-            this.A1394.UseVisualStyleBackColor = false;
-            // 
-            // A1393
-            // 
-            this.A1393.BackColor = System.Drawing.Color.LightBlue;
-            this.A1393.Location = new System.Drawing.Point(494, 229);
-            this.A1393.Name = "A1393";
-            this.A1393.Size = new System.Drawing.Size(27, 30);
-            this.A1393.TabIndex = 1950;
-            this.A1393.Text = "16";
-            this.A1393.UseVisualStyleBackColor = false;
-            // 
-            // A1392
-            // 
-            this.A1392.BackColor = System.Drawing.Color.LightBlue;
-            this.A1392.Location = new System.Drawing.Point(466, 229);
-            this.A1392.Name = "A1392";
-            this.A1392.Size = new System.Drawing.Size(27, 30);
-            this.A1392.TabIndex = 1949;
-            this.A1392.Text = "16";
-            this.A1392.UseVisualStyleBackColor = false;
-            // 
-            // A1391
-            // 
-            this.A1391.BackColor = System.Drawing.Color.LightBlue;
-            this.A1391.Location = new System.Drawing.Point(438, 229);
-            this.A1391.Name = "A1391";
-            this.A1391.Size = new System.Drawing.Size(27, 30);
-            this.A1391.TabIndex = 1948;
-            this.A1391.Text = "16";
-            this.A1391.UseVisualStyleBackColor = false;
-            // 
-            // A1390
-            // 
-            this.A1390.BackColor = System.Drawing.Color.LightBlue;
-            this.A1390.Location = new System.Drawing.Point(410, 229);
-            this.A1390.Name = "A1390";
-            this.A1390.Size = new System.Drawing.Size(27, 30);
-            this.A1390.TabIndex = 1947;
-            this.A1390.Text = "16";
-            this.A1390.UseVisualStyleBackColor = false;
-            // 
-            // A1375
-            // 
-            this.A1375.BackColor = System.Drawing.Color.LightBlue;
-            this.A1375.Location = new System.Drawing.Point(802, 193);
-            this.A1375.Name = "A1375";
-            this.A1375.Size = new System.Drawing.Size(27, 30);
-            this.A1375.TabIndex = 1946;
-            this.A1375.Text = "16";
-            this.A1375.UseVisualStyleBackColor = false;
-            // 
-            // A1374
-            // 
-            this.A1374.BackColor = System.Drawing.Color.LightBlue;
-            this.A1374.Location = new System.Drawing.Point(774, 193);
-            this.A1374.Name = "A1374";
-            this.A1374.Size = new System.Drawing.Size(27, 30);
-            this.A1374.TabIndex = 1945;
-            this.A1374.Text = "16";
-            this.A1374.UseVisualStyleBackColor = false;
-            // 
-            // A1373
-            // 
-            this.A1373.BackColor = System.Drawing.Color.LightBlue;
-            this.A1373.Location = new System.Drawing.Point(746, 193);
-            this.A1373.Name = "A1373";
-            this.A1373.Size = new System.Drawing.Size(27, 30);
-            this.A1373.TabIndex = 1944;
-            this.A1373.Text = "16";
-            this.A1373.UseVisualStyleBackColor = false;
-            // 
-            // A1372
-            // 
-            this.A1372.BackColor = System.Drawing.Color.LightBlue;
-            this.A1372.Location = new System.Drawing.Point(718, 193);
-            this.A1372.Name = "A1372";
-            this.A1372.Size = new System.Drawing.Size(27, 30);
-            this.A1372.TabIndex = 1943;
-            this.A1372.Text = "16";
-            this.A1372.UseVisualStyleBackColor = false;
-            // 
-            // A1371
-            // 
-            this.A1371.BackColor = System.Drawing.Color.LightBlue;
-            this.A1371.Location = new System.Drawing.Point(494, 193);
-            this.A1371.Name = "A1371";
-            this.A1371.Size = new System.Drawing.Size(27, 30);
-            this.A1371.TabIndex = 1935;
-            this.A1371.Text = "16";
-            this.A1371.UseVisualStyleBackColor = false;
-            // 
-            // A1370
-            // 
-            this.A1370.BackColor = System.Drawing.Color.LightBlue;
-            this.A1370.Location = new System.Drawing.Point(466, 193);
-            this.A1370.Name = "A1370";
-            this.A1370.Size = new System.Drawing.Size(27, 30);
-            this.A1370.TabIndex = 1934;
-            this.A1370.Text = "16";
-            this.A1370.UseVisualStyleBackColor = false;
-            // 
-            // A1369
-            // 
-            this.A1369.BackColor = System.Drawing.Color.LightBlue;
-            this.A1369.Location = new System.Drawing.Point(438, 193);
-            this.A1369.Name = "A1369";
-            this.A1369.Size = new System.Drawing.Size(27, 30);
-            this.A1369.TabIndex = 1933;
-            this.A1369.Text = "16";
-            this.A1369.UseVisualStyleBackColor = false;
-            // 
-            // A1368
-            // 
-            this.A1368.BackColor = System.Drawing.Color.LightBlue;
-            this.A1368.Location = new System.Drawing.Point(410, 193);
-            this.A1368.Name = "A1368";
-            this.A1368.Size = new System.Drawing.Size(27, 30);
-            this.A1368.TabIndex = 1932;
-            this.A1368.Text = "16";
-            this.A1368.UseVisualStyleBackColor = false;
-            // 
             // TheaterPirandello
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -9859,6 +9860,7 @@
             this.ClientSize = new System.Drawing.Size(1280, 772);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TheaterPirandello";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -9874,6 +9876,12 @@
             this.metroTabPage1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.metroTabPage4.ResumeLayout(false);
+            this.metroTabPage4.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -9885,12 +9893,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.metroTabPage4.ResumeLayout(false);
-            this.metroTabPage4.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }

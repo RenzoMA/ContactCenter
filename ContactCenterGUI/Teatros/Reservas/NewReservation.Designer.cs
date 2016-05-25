@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewReservation));
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
@@ -141,6 +142,7 @@
             this.Controls.Add(this.metroComboBox2);
             this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.materialRaisedButton1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "NewReservation";
             this.Sizable = false;

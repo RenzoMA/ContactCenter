@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManCreateUpdateUsuario));
             this.txtNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.txtApePaterno = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -441,6 +442,7 @@
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.materialLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManCreateUpdateUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManCreateUpdateUsuario";

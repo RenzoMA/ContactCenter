@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfirmReservation));
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.txtNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -54,11 +55,11 @@
             this.txtApeMat = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAplicarDescuento = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.cboPromocion = new MetroFramework.Controls.MetroComboBox();
-            this.btnAplicarDescuento = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -457,6 +458,42 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Cliente";
             // 
+            // btnAplicarDescuento
+            // 
+            this.btnAplicarDescuento.Depth = 0;
+            this.btnAplicarDescuento.Location = new System.Drawing.Point(427, 434);
+            this.btnAplicarDescuento.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAplicarDescuento.Name = "btnAplicarDescuento";
+            this.btnAplicarDescuento.Primary = true;
+            this.btnAplicarDescuento.Size = new System.Drawing.Size(148, 29);
+            this.btnAplicarDescuento.TabIndex = 31;
+            this.btnAplicarDescuento.Text = "Aplicar";
+            this.btnAplicarDescuento.UseVisualStyleBackColor = true;
+            this.btnAplicarDescuento.Click += new System.EventHandler(this.btnAplicarDescuento_Click);
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(15, 444);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(60, 19);
+            this.materialLabel3.TabIndex = 29;
+            this.materialLabel3.Text = "Detalle:";
+            // 
+            // cboPromocion
+            // 
+            this.cboPromocion.FormattingEnabled = true;
+            this.cboPromocion.ItemHeight = 23;
+            this.cboPromocion.Location = new System.Drawing.Point(142, 434);
+            this.cboPromocion.Name = "cboPromocion";
+            this.cboPromocion.Size = new System.Drawing.Size(266, 29);
+            this.cboPromocion.TabIndex = 28;
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
@@ -489,43 +526,7 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(15, 444);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(60, 19);
-            this.materialLabel3.TabIndex = 29;
-            this.materialLabel3.Text = "Detalle:";
-            // 
-            // cboPromocion
-            // 
-            this.cboPromocion.FormattingEnabled = true;
-            this.cboPromocion.ItemHeight = 23;
-            this.cboPromocion.Location = new System.Drawing.Point(142, 434);
-            this.cboPromocion.Name = "cboPromocion";
-            this.cboPromocion.Size = new System.Drawing.Size(266, 29);
-            this.cboPromocion.TabIndex = 28;
-            // 
-            // btnAplicarDescuento
-            // 
-            this.btnAplicarDescuento.Depth = 0;
-            this.btnAplicarDescuento.Location = new System.Drawing.Point(427, 434);
-            this.btnAplicarDescuento.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnAplicarDescuento.Name = "btnAplicarDescuento";
-            this.btnAplicarDescuento.Primary = true;
-            this.btnAplicarDescuento.Size = new System.Drawing.Size(148, 29);
-            this.btnAplicarDescuento.TabIndex = 31;
-            this.btnAplicarDescuento.Text = "Aplicar";
-            this.btnAplicarDescuento.UseVisualStyleBackColor = true;
-            this.btnAplicarDescuento.Click += new System.EventHandler(this.btnAplicarDescuento_Click);
-            // 
-            // PerInfoTheater
+            // ConfirmReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -534,8 +535,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.materialRaisedButton1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "PerInfoTheater";
+            this.Name = "ConfirmReservation";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Información Cliente";
