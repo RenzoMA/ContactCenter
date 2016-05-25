@@ -165,7 +165,7 @@ namespace ContactCenterDA.Repositories.CC.TH
         public List<Tarifa> GetListaByTeatroObra(int IdObra)
         {
             List<Tarifa> listTarifa = new List<Tarifa>();
-            String sql = "SELECT * FROM((TH_Tarifa T INNER JOIN TH_OBRA O ON O.IdObra = T.IdObra) INNER JOIN TH_ZONA Z ON Z.IdZona = T.IdZona) INNER JOIN TH_TEATRO TE ON TE.IdTeatro = Z.IdTeatro WHERE T.IDOBRA = @idObra";
+            String sql = "SELECT * FROM ((TH_Tarifa T INNER JOIN TH_OBRA O ON O.IdObra = T.IdObra) INNER JOIN TH_ZONA Z ON Z.IdZona = T.IdZona) INNER JOIN TH_TEATRO TE ON TE.IdTeatro = Z.IdTeatro WHERE T.IDOBRA = @idObra";
 
             OleDbParameter codigoObra = UtilDA.SetParameters("@idObra", OleDbType.Integer, IdObra);
 
@@ -203,6 +203,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                             frmTeatro = DataConvert.ToString(dtr["TE.frmTeatro"])
                         }
                     },
+                    Precio = DataConvert.ToSingle(dtr["T.Precio"]),
                     FechaCreacion = DataConvert.ToDateTime(dtr["T.FechaCrea"]),
                     UsuarioCreacion = DataConvert.ToString(dtr["T.UserCrea"]),
                     FechaModificacion = DataConvert.ToDateTime(dtr["T.FechaMod"]),
