@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBE.CC.Entidades.RolBE;
 using ContactCenterBL.BusinessInterfaces.CC;
-using ContactCenterBE.CC.Entidades.RolBE;
 
 namespace ContactCenterBL.BusinessServices.CC
 {

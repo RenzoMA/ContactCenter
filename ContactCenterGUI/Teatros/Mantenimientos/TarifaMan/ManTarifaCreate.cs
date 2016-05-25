@@ -15,6 +15,8 @@ using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.TH.Entidades.TarifaBE;
+using ContactCenterGUI.CC.Helpers;
+
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 {
@@ -40,16 +42,35 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            
+            if(Validar())
+            {
+                CrearTarifa();
+            }
         }
-
+        
+        private bool Validar()
+        {
+            if(String.IsNullOrEmpty(txtPrecio.Text) ||
+            cboTeatro.SelectedIndex == 0 || cboObra.SelectedIndex == 0 || cboZona.SelectedIndex == 0)
+            {
+              MessageBox.Show("Por favor, ingrese los datos correctamente", "Aviso");  
+              return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public void CrearTarifa()
         {
-            teatro = cboTeatro.SelectedItem as Teatro;
+            
             obra = cboObra.SelectedItem as Obra;
-
+            zona = cboZona.SelectedItem as Zona;
+            
             Tarifa tarifa = new Tarifa()
             {
+                Obra = obra,
+                Zona = zona,
                 Precio = Convert.ToSingle(txtPrecio.Text)
             };
 
@@ -67,6 +88,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         private void manFareCreate_Load(object sender, EventArgs e)
         {
             CargarTeatros();
+            SetEventos();
         }
 
         private async void CargarTeatros()
@@ -107,6 +129,11 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         {
             CargarObras();
             CargarZonas();
+        }
+        
+        private void SetEventos()
+        {
+            txtPrecio.KeyPress += HelperControl.EditTextDecimal;
         }
     }
 }
