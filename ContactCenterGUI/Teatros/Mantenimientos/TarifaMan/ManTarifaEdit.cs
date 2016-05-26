@@ -7,12 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
 using ContactCenterBE.CC.TH.Entidades.TarifaBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
-using MaterialSkin.Animations;
-using MaterialSkin.Controls;
 using ContactCenterServices;
 using Microsoft.Practices.Unity;
 using ContactCenterGUI.CC.Helpers;
@@ -26,7 +25,8 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         private List<Tarifa> listaTarifa;
         private Teatro teatro = null;
         private List<Teatro> listaTeatro;
-        private Obra obra =  null;
+        private Obra obra = null;
+        private Zona zona = null;
         private List<Obra> listaObra;
         private List<Zona> listaZona;
 
@@ -34,6 +34,13 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         {
             this.tarifa = tarifa;
             InitializeComponent();
+        }
+
+        private void ManTarifaEdit_Load(object sender, EventArgs e)
+        {
+            InicializarControles();
+            SetEventos();
+            LoadData();
         }
 
         private void InicializarControles()
@@ -44,26 +51,34 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         }
         private void LoadData()
         {
-            cboTeatro.SelectedItem = tarifa.Obra.Teatro.Nombre;
+            cboTeatro.SelectedIndex = tarifa.Obra.Teatro.IdTeatro;
+            cboTeatro.DisplayMember = "Nombre";
             cboObra.SelectedItem = tarifa.Obra.Nombre;
             cboZona.SelectedItem = tarifa.Zona.Nombre;
             txtPrecio.Text = tarifa.Precio.ToString();
+        }
+
+        private void CapturarDatos()
+        {
+            obra = cboObra.SelectedItem as Obra;
+            zona = cboZona.SelectedItem as Zona;
+
+            Tarifa tarifa = new Tarifa()
+            {
+                Obra = obra,
+                Zona = zona,
+                Precio = Convert.ToSingle(txtPrecio.Text)
+            };
         }
         private void SetEventos()
         {
             txtPrecio.KeyPress += HelperControl.EditTextDecimal;
         }
 
-        private void ManTarifaEdit_Load(object sender, EventArgs e)
-        {
-            //LoadData();
-            InicializarControles();
-            SetEventos();
-        }
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            
+            CapturarDatos();
+            servicio.Uptade(tarifa);
         }
     }
 }

@@ -408,5 +408,10 @@ namespace ContactCenterServices
         {
             return _asientoService.EliminarAsientoTemporalAntiguo();
         }
+
+        public bool Uptade(Tarifa tarifa)
+        {
+            return _tarifaService.Update(tarifa);
+        }
     }
 }

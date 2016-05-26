@@ -86,6 +86,9 @@ namespace ContactCenterServices
 
         bool InsertarTarifa(Tarifa tarifa);
         List<Funcion> ListarFuncionByObra(int idObra);
+
+        bool Uptade(Tarifa tarifa);
+
         List<Promocion> ListarPromocionByFuncion(int idFuncion);
         bool UpdatePromocion(Promocion datos);
         bool InsertPromocion(Promocion datos);

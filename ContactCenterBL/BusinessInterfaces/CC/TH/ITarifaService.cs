@@ -12,6 +12,8 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
         List<Tarifa> GetListaByTeatroObra(int IdObra);
 
         bool Insert(Tarifa tarifa);
+
+        bool Update(Tarifa tarifa);
     }
 
 }

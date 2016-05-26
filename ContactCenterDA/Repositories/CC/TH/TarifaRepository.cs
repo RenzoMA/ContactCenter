@@ -155,8 +155,8 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter idZona = UtilDA.SetParameters("@idZona", OleDbType.Integer, datos.Zona.IdZona);
             OleDbParameter idObra = UtilDA.SetParameters("@idObra", OleDbType.Integer, datos.Obra.IdObra);
             OleDbParameter precio = UtilDA.SetParameters("@precio", OleDbType.Single, datos.Precio);
-            OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter userCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
+            OleDbParameter userCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idTarifa = UtilDA.SetParameters("@IdTeatro", OleDbType.Integer, datos.IdTarifa);
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, idZona, idObra, precio, fechaCrea, userCrea, idTarifa);

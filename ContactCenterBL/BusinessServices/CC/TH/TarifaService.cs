@@ -26,5 +26,10 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         {
             return tarifaRepository.Insert(tarifa);
         }
+
+        public bool Update(Tarifa tarifa)
+        {
+            return tarifaRepository.Update(tarifa);
+        }
     }
 }
