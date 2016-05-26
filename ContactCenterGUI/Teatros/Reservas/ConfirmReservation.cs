@@ -45,7 +45,7 @@ namespace ContactCenterGUI.Teatros.Reservas
             InitializeComponent();
             timerConfirmacion.Enabled = true;
             timerConfirmacion.Interval = 1000;
-            span = timespan;
+            span = timespan.Subtract(TimeSpan.Parse("00:00:01"));
             reserva = _reserva;
             frmTeatro = form;
             frmTeatro.Visible = false;
