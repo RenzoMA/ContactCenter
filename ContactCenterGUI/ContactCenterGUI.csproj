@@ -83,6 +83,9 @@
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cc.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MaterialSkin">
       <HintPath>..\libs\MaterialSkin.dll</HintPath>
@@ -339,6 +342,15 @@
     <EmbeddedResource Include="ManPrincipal.resx">
       <DependentUpon>ManPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\FuncionMan\ManFuncionCreate.resx">
+      <DependentUpon>ManFuncionCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\FuncionMan\ManFuncionFind.resx">
+      <DependentUpon>ManFuncionFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\FuncionMan\ManFuncionMenu.resx">
+      <DependentUpon>ManFuncionMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManObra.resx">
       <DependentUpon>ManObra.cs</DependentUpon>
     </EmbeddedResource>
@@ -448,6 +460,7 @@
     <None Include="Resources\teatro.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cc.ico" />
     <Content Include="MetroFramework.txt" />
     <None Include="Resources\logo_oficial_2.png" />
     <None Include="Resources\ic_menu_edit.png" />

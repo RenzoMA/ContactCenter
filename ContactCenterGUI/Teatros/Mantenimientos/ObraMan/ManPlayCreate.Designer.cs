@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManPlayCreate));
             this.lblNomObra = new MaterialSkin.Controls.MaterialLabel();
             this.txtNomObra = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblFecIniObra = new MaterialSkin.Controls.MaterialLabel();
@@ -234,6 +235,7 @@
             this.ClientSize = new System.Drawing.Size(483, 547);
             this.Controls.Add(this.gbDatosObra);
             this.Controls.Add(this.btnAceptarObra);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ManPlayCreate";
             this.Sizable = false;

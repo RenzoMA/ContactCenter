@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManObra));
             this.gbFiltroObra = new System.Windows.Forms.GroupBox();
             this.lblFiltroObra = new MaterialSkin.Controls.MaterialLabel();
             this.cboTeFilObra = new MetroFramework.Controls.MetroComboBox();
             this.btnBuscarObra = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dgvObras = new System.Windows.Forms.DataGridView();
-            this.btnNuevaObra = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNuevaObra = new MaterialSkin.Controls.MaterialRaisedButton();
             this.gbFiltroObra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObras)).BeginInit();
             this.SuspendLayout();
@@ -116,6 +117,50 @@
             this.dgvObras.TabIndex = 13;
             this.dgvObras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObras_CellContentClick);
             // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 45;
+            // 
+            // FechaInicio
+            // 
+            this.FechaInicio.DataPropertyName = "FechaInicio";
+            this.FechaInicio.HeaderText = "FechaInicio";
+            this.FechaInicio.Name = "FechaInicio";
+            this.FechaInicio.ReadOnly = true;
+            // 
+            // FechaFin
+            // 
+            this.FechaFin.DataPropertyName = "FechaFin";
+            this.FechaFin.HeaderText = "FechaFin";
+            this.FechaFin.Name = "FechaFin";
+            this.FechaFin.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 200;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Obra";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
             // btnNuevaObra
             // 
             this.btnNuevaObra.Depth = 0;
@@ -129,50 +174,6 @@
             this.btnNuevaObra.UseVisualStyleBackColor = true;
             this.btnNuevaObra.Click += new System.EventHandler(this.btnNuevaObra_Click);
             // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Obra";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 200;
-            // 
-            // FechaFin
-            // 
-            this.FechaFin.DataPropertyName = "FechaFin";
-            this.FechaFin.HeaderText = "FechaFin";
-            this.FechaFin.Name = "FechaFin";
-            this.FechaFin.ReadOnly = true;
-            // 
-            // FechaInicio
-            // 
-            this.FechaInicio.DataPropertyName = "FechaInicio";
-            this.FechaInicio.HeaderText = "FechaInicio";
-            this.FechaInicio.Name = "FechaInicio";
-            this.FechaInicio.ReadOnly = true;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 45;
-            // 
             // ManObra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +182,7 @@
             this.Controls.Add(this.btnNuevaObra);
             this.Controls.Add(this.dgvObras);
             this.Controls.Add(this.gbFiltroObra);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManObra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManObra";

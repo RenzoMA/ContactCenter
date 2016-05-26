@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManAsiento));
             this.dgvAsientos = new System.Windows.Forms.DataGridView();
             this.checkAsiento = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.IdAsiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -252,6 +253,7 @@
             this.Controls.Add(this.btnDeshabilitar);
             this.Controls.Add(this.dgvAsientos);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManAsiento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configurar Asientos";
