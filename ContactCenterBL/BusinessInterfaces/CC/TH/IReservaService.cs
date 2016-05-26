@@ -12,7 +12,7 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
     {
         bool InsertarReserva(Reserva reserva,Cliente cliente);
         List<Reserva> ReporteReservas(int idTeatro, DateTime fecha);
-        List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fecha);
+        List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fechaInicio,DateTime fechaFin);
         bool CancelarReserva(int idReserva);
     }
 }

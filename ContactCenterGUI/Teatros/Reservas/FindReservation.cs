@@ -17,23 +17,33 @@ namespace ContactCenterGUI.Teatros.Reservas
     {
         IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
         private string filtro;
-        private DateTime fechaObra;
+        private DateTime fechaInicio;
+        private DateTime fechaFin;
         public FindReservation()
         {
             InitializeComponent();
             dgvResult.AutoGenerateColumns = false;
+            dtpFechaFin.Value = DateTime.Now.AddMonths(1);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            filtro = txtTelefono.Text.ToUpper().Trim();
-            fechaObra = dateTimePicker1.Value.Date;
-            Enlazar();
+            if (dtpFechaInicio.Value <= dtpFechaFin.Value)
+            {
+                filtro = txtTelefono.Text.ToUpper().Trim();
+                fechaInicio = dtpFechaInicio.Value.Date;
+                fechaFin = dtpFechaFin.Value.Date;
+                Enlazar();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese correctamente las fechas", "Aviso");
+            }
         }
 
         private void Enlazar()
         {
-            dgvResult.DataSource = servicio.BuscarByNamePhoneDate(filtro, fechaObra);
+            dgvResult.DataSource = servicio.BuscarByNamePhoneDate(filtro, fechaInicio,fechaFin);
         }
 
         private void dgvResult_CellContentClick(object sender, DataGridViewCellEventArgs e)

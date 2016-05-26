@@ -124,17 +124,18 @@ namespace ContactCenterDA.Repositories.CC.TH
             return listaReserva;
         }
 
-        public List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fecha)
+        public List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fechaInicio, DateTime fechaFin)
         {
             List<BusquedaReserva> listaReserva = new List<BusquedaReserva>();
             BusquedaReserva reserva = null;
 
-             string sql = "SELECT * FROM (((TH_RESERVA R INNER JOIN CC_CLIENTE C ON R.IDCLIENTE = C.IDCLIENTE) INNER JOIN TH_OBRA O ON O.IDOBRA = R.IDOBRA) INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO) INNER JOIN TH_ESTADO_RESERVA ER ON ER.IDESTADORESERVA = R.IDESTADORESERVA WHERE (C.NOMBRE + APEPATERNO + APEMATERNO + TELEFONO) LIKE '%' & @busqueda & '%' AND FECHARESERVA = @fecha";
+             string sql = "SELECT * FROM (((TH_RESERVA R INNER JOIN CC_CLIENTE C ON R.IDCLIENTE = C.IDCLIENTE) INNER JOIN TH_OBRA O ON O.IDOBRA = R.IDOBRA) INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO) INNER JOIN TH_ESTADO_RESERVA ER ON ER.IDESTADORESERVA = R.IDESTADORESERVA WHERE (C.NOMBRE + APEPATERNO + APEMATERNO + TELEFONO) LIKE '%' & @busqueda & '%' AND FECHARESERVA BETWEEN @fecha AND @fechaFin";
 
             OleDbParameter pNombrePhone = UtilDA.SetParameters("@busqueda", OleDbType.VarChar, nombrePhone);
-            OleDbParameter pFecha = UtilDA.SetParameters("@fecha", OleDbType.Date, fecha);
+            OleDbParameter pFecha = UtilDA.SetParameters("@fecha", OleDbType.Date, fechaInicio);
+            OleDbParameter pFechaFin = UtilDA.SetParameters("@fechaFin", OleDbType.Date, fechaFin);
 
-            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pNombrePhone, pFecha))
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pNombrePhone, pFecha,pFechaFin))
             {
                 while (dtr.Read())
                 {

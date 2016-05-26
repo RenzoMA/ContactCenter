@@ -173,9 +173,10 @@ namespace ContactCenterDA.Repositories.CC.TH
             List<AsientoPrecio> lAsiento = new List<AsientoPrecio>();
             AsientoPrecio asiento = null;
 
-            string sql = "SELECT * FROM TH_ASIENTO A "+
+            string sql = "SELECT * FROM (TH_ASIENTO A "+
                          "INNER JOIN TH_TARIFA T "+
-                         "ON A.IDZONA = T.IDZONA "+
+                         "ON A.IDZONA = T.IDZONA) "+
+                         "INNER JOIN TH_ZONA Z ON Z.IDZONA = T.IDZONA " +
                          "WHERE "+
                          "T.IDOBRA = @IdObra";
 
@@ -189,9 +190,15 @@ namespace ContactCenterDA.Repositories.CC.TH
                     {
                         Disponible = DataConvert.ToString(dtr["Disponible"]),
                         IdAsiento = DataConvert.ToInt(dtr["IdAsiento"]),
-                        Descripcion = DataConvert.ToString(dtr["Descripcion"]),
+                        Descripcion = DataConvert.ToString(dtr["A.Descripcion"]),
                         Fila = DataConvert.ToString(dtr["Fila"]),
-                        Precio = DataConvert.ToSingle(dtr["Precio"])
+                        Precio = DataConvert.ToSingle(dtr["Precio"]),
+                        Zona = new Zona()
+                        {
+                            IdZona = DataConvert.ToInt(dtr["Z.IdZona"]),
+                            Nombre = DataConvert.ToString(dtr["Nombre"]),
+                            Descripcion = DataConvert.ToString(dtr["Z.Descripcion"])
+                        }
                     };
                     lAsiento.Add(asiento);
                 }
