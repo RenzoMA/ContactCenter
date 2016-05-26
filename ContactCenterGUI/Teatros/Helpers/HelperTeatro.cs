@@ -24,6 +24,9 @@ namespace ContactCenterGUI.Teatros.Helpers
         private static List<AsientoPrecio> lAsientoTotal;
         private static IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
         private static List<AsientoPrecio> asientosReserva;
+        private static Timer timer;
+        private static TimeSpan span;
+        private static int contador;
 
         private static IEnumerable<Control> GetAll(Control control, Type type)
         {
@@ -92,6 +95,7 @@ namespace ContactCenterGUI.Teatros.Helpers
                 MessageBox.Show("Incongruencia en asignacion, Botones: "+contador+ " Asientos en BD: "+lAsientoTotal.Count);
             }
         }
+        private static Label tiempo;
         private static void SetEventosBoton()
         {
             MaterialRaisedButton btnContinue = (MaterialRaisedButton)GetAll(formTemp, typeof(MaterialRaisedButton)).Where(a => a.Name == "btnContinuar").FirstOrDefault();
@@ -109,6 +113,7 @@ namespace ContactCenterGUI.Teatros.Helpers
             MaterialLabel tituloX = (MaterialLabel)GetAll(formTemp, typeof(MaterialLabel)).Where(d => d.Name == "lblTituloTeatro").FirstOrDefault();
             tituloX.ForeColor = System.Drawing.Color.White;
 
+            tiempo = (Label)GetAll(formTemp, typeof(Label)).Where(d => d.Name == "lblTiempo").FirstOrDefault();
         }
 
         private static string GenerarToken()
@@ -140,13 +145,34 @@ namespace ContactCenterGUI.Teatros.Helpers
                 }
             }
         }
-
+        
+        private static void timerTeatro_Tick(object sender, EventArgs e)
+        {
+            contador++;
+            span = span.Subtract(TimeSpan.Parse("00:00:01"));
+            tiempo.Text = span.ToString();
+            if (span.Hours == 0 && span.Minutes == 0 && span.Seconds == 0)
+            {
+                EliminarSeparadas(tokenTemp);
+                formTemp.Close();
+                Timer timer = (Timer)sender;
+                timer.Dispose();
+            }
+            
+        }
         public static async void MostrarDisponibilidad(Form form,Reserva reserva)
         {
+            timer = new Timer();
+            timer.Interval = 1000;
+            timer.Enabled = true;
+            timer.Tick += new EventHandler(timerTeatro_Tick);
+
+            span = new TimeSpan(0, 15, 0);
             asientosReserva = new List<AsientoPrecio>();
             tokenTemp = GenerarToken();
             reservaTemp = reserva;
             formTemp = form;
+            contador = 0;
 
             try
             {
@@ -182,7 +208,7 @@ namespace ContactCenterGUI.Teatros.Helpers
         {
             if (asientosReserva.Count > 0)
             {
-                ConfirmReservation info = new ConfirmReservation(formTemp, reservaTemp);
+                ConfirmReservation info = new ConfirmReservation(formTemp, reservaTemp,span);
                 info.listaAsientoPrecio = Clonar(asientosReserva);
                 info.listaAsientoPrecio.ForEach(ap => {
                     lAsientoTotal.ForEach(a =>

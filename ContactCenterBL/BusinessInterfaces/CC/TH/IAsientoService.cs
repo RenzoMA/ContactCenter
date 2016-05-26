@@ -17,5 +17,6 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
         bool EliminarAsientoTemporalTotal(string token);
         List<Asiento> ListAsientoByZona(int IdZona);
         bool UpdateAsientoDisponible(string asientos, string estado);
+        bool EliminarAsientoTemporalAntiguo();
     }
 }

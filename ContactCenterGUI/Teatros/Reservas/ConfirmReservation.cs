@@ -33,15 +33,19 @@ namespace ContactCenterGUI.Teatros.Reservas
         public int validaSalida = 0;
         private Boolean AplicoPromocion = false;
         private String asientos;
+        private TimeSpan span;
 
 
         public ConfirmReservation()
         {
             InitializeComponent();
         }
-        public ConfirmReservation(Form form,Reserva _reserva)
+        public ConfirmReservation(Form form,Reserva _reserva,TimeSpan timespan)
         {
             InitializeComponent();
+            timerConfirmacion.Enabled = true;
+            timerConfirmacion.Interval = 1000;
+            span = timespan;
             reserva = _reserva;
             frmTeatro = form;
             frmTeatro.Visible = false;
@@ -182,6 +186,7 @@ namespace ContactCenterGUI.Teatros.Reservas
             if (resultado)
             {
                 MessageBox.Show("Reserva realizada correctamente", "Aviso",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmTeatro.Close();
                 this.Close();
             }
             else
@@ -278,6 +283,16 @@ namespace ContactCenterGUI.Teatros.Reservas
             else
             {
                 MessageBox.Show("Ya aplico un descuento", "Aviso");
+            }
+        }
+
+        private void timerConfirmacion_Tick(object sender, EventArgs e)
+        {
+            span = span.Subtract(TimeSpan.Parse("00:00:01"));
+            lblTiempo.Text = span.ToString();
+            if (span.Hours == 0 && span.Minutes == 0 && span.Seconds == 0)
+            {
+                this.Close();
             }
         }
     }

@@ -403,5 +403,10 @@ namespace ContactCenterServices
         {
             return _aplicacionService.Update(aplicacion);
         }
+
+        public bool EliminarAsientoTemporalAntiguo()
+        {
+            return _asientoService.EliminarAsientoTemporalAntiguo();
+        }
     }
 }

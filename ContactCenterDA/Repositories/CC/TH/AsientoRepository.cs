@@ -276,5 +276,12 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter pEstado = UtilDA.SetParameters("@Disponible", OleDbType.VarChar, estado);
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, pEstado);
         }
+
+        public bool EliminarAsientoTemporalAntiguo()
+        {
+            string sql = "DELETE FROM TH_ASIENTO_TEMPORAL WHERE FECHACREA < @fechaActual";
+            OleDbParameter fechaActual = UtilDA.SetParameters("@fechaActual", OleDbType.Date, DateTime.Now.AddMinutes(-18));
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, fechaActual);
+        }
     }
 }

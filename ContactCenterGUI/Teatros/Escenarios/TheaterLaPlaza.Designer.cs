@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TheaterLaPlaza));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnContinuar = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -275,6 +276,8 @@
             this.materialLabel18 = new MaterialSkin.Controls.MaterialLabel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
+            this.timerTeatro = new System.Windows.Forms.Timer(this.components);
+            this.lblTiempo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).BeginInit();
             this.panel5.SuspendLayout();
@@ -286,6 +289,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.panel1.Controls.Add(this.lblTiempo);
             this.panel1.Controls.Add(this.btnContinuar);
             this.panel1.Controls.Add(this.btnAtras);
             this.panel1.Controls.Add(this.btnMiminizar);
@@ -2819,6 +2823,16 @@
             this.materialLabel19.TabIndex = 0;
             this.materialLabel19.Text = "SALIDA ";
             // 
+            // lblTiempo
+            // 
+            this.lblTiempo.AutoSize = true;
+            this.lblTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempo.ForeColor = System.Drawing.Color.White;
+            this.lblTiempo.Location = new System.Drawing.Point(666, 35);
+            this.lblTiempo.Name = "lblTiempo";
+            this.lblTiempo.Size = new System.Drawing.Size(0, 20);
+            this.lblTiempo.TabIndex = 1913;
+            // 
             // TheaterLaPlaza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3332,5 +3346,7 @@
         private System.Windows.Forms.PictureBox btnAtras;
         private System.Windows.Forms.Label btnMiminizar;
         private System.Windows.Forms.Label btnCerrar;
+        private System.Windows.Forms.Timer timerTeatro;
+        private System.Windows.Forms.Label lblTiempo;
     }
 }
