@@ -51,51 +51,47 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         }
         private void LoadData()
         {
-            //listaTeatro = servicio.ListarTeatros();
-            //cboTeatro.DataSource = listaTeatro;
-            //cboTeatro.DisplayMember = "Nombre";
-            //cboTeatro.SelectedItem = FindTeatro(tarifa.Obra.Teatro.IdTeatro);
-            
-            //teatro = cboTeatro.SelectedItem as Teatro;
-            //listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
-            //cboObra.DataSource = listaObra;
-            //cboObra.DisplayMember = "Nombre";
-            //cboObra.SelectedItem = FindObra(tarifa.Obra.IdObra);
-    
-            //listaZona = servicio.ListZonaByTeatro(teatro.IdTeatro);
-            //cboZona.DataSource = listaZona;
-            //cboZona.DisplayMember = "Nombre";
-            //cboZona.SelectedItem = FindZona(tarifa.Zona.IdZona);
-            
-            //txtPrecio.Text = tarifa.Precio.ToString();
+            listaTeatro = servicio.ListarTeatros();
+            cboTeatro.DataSource = listaTeatro;
+            cboTeatro.DisplayMember = "Nombre";
+            cboTeatro.SelectedItem = FindTeatro(tarifa.Obra.Teatro.IdTeatro);
+
+            teatro = cboTeatro.SelectedItem as Teatro;
+            listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
+            cboObra.DataSource = listaObra;
+            cboObra.DisplayMember = "Nombre";
+            cboObra.SelectedItem = FindObra(tarifa.Obra.IdObra);
+
+            listaZona = servicio.ListZonaByTeatro(teatro.IdTeatro);
+            cboZona.DataSource = listaZona;
+            cboZona.DisplayMember = "Nombre";
+            cboZona.SelectedItem = FindZona(tarifa.Zona.IdZona);
+
+            txtPrecio.Text = tarifa.Precio.ToString();
         }
         
         private Teatro FindTeatro(int idTeatro)
         {
-            //return listaTeatro.Where(tx => tx.IdTeatro == idTeatro).FirstOrDefault();
+            return listaTeatro.Where(tx => tx.IdTeatro == idTeatro).FirstOrDefault();
         }
         
         private Obra FindObra(int idObra)
         {
-            //return listaObra.Where(tx => tx.IdObra == idObra).FirstOrDefault();
+            return listaObra.Where(tx => tx.IdObra == idObra).FirstOrDefault();
         }
         
         private Zona FindZona(int idZona)
         {
-            //return listaZona.Where(tx => tx.IdZona = idZona).FirstOrDefault();
+            return listaZona.Where(tx => tx.IdZona == idZona).FirstOrDefault();
         }
 
         private void CapturarDatos()
         {
             obra = cboObra.SelectedItem as Obra;
             zona = cboZona.SelectedItem as Zona;
-
-            Tarifa tarifa = new Tarifa()
-            {
-                Obra = obra,
-                Zona = zona,
-                Precio = Convert.ToSingle(txtPrecio.Text)
-            };
+            tarifa.Obra = obra;
+            tarifa.Zona = zona;
+            tarifa.Precio = Convert.ToSingle(txtPrecio.Text);
         }
         private void SetEventos()
         {
@@ -105,7 +101,14 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             CapturarDatos();
-            servicio.Uptade(tarifa);
+            if (servicio.Uptade(tarifa))
+            {
+                MessageBox.Show("La tarifa se actualizó correctamente");
+            }
+            else
+            {
+                MessageBox.Show("Hubo un error, intente nuevamente.");
+            }
         }
     }
 }
