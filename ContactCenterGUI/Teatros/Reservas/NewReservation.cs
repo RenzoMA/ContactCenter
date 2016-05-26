@@ -20,10 +20,12 @@ using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using System.Globalization;
 using ContactCenterGUI.CC.Helpers;
 
+
 namespace ContactCenterGUI.Teatros.Reservas
 {
     public partial class NewReservation : MaterialForm
     {
+        IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
         private List<Teatro> listaTeatro = null;
         private Teatro teatro = null;
 
@@ -59,7 +61,7 @@ namespace ContactCenterGUI.Teatros.Reservas
                 reserva.Obra = obra;
                 reserva.Funcion = funcion;
                 reserva.Usuario = Sesion.usuario;
-
+                servicio.EliminarAsientoTemporalAntiguo();
                 HelperForm.changeForm(funcion.Obra.Teatro.frmTeatro, "Teatros", true, this, reserva);
             }
             else

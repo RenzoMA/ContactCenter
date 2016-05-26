@@ -20,6 +20,7 @@ namespace ContactCenterServices
 {
     public interface IServiceContactCenter : IDisposable
     {
+        bool EliminarAsientoTemporalAntiguo();
         bool InsertarAplicacion(Aplicacion aplicacion);
         List<Aplicacion> ListarAplicaciones();
         bool UpdateAplicacion(Aplicacion aplicacion);

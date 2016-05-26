@@ -27,6 +27,11 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             return asientoRepository.EliminarAsientoTemporal(idFuncion, idAsiento, fechaObra, token);
         }
 
+        public bool EliminarAsientoTemporalAntiguo()
+        {
+            return asientoRepository.EliminarAsientoTemporalAntiguo();
+        }
+
         public bool EliminarAsientoTemporalTotal(string token)
         {
             return asientoRepository.EliminarAsientoTemporalTotal(token);
