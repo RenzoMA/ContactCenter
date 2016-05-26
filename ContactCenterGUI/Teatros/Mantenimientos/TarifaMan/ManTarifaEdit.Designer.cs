@@ -37,6 +37,8 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.cboEstado = new MetroFramework.Controls.MetroComboBox();
             this.SuspendLayout();
             // 
             // cboTeatro
@@ -75,7 +77,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(113, 344);
+            this.btnActualizar.Location = new System.Drawing.Point(114, 395);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(101, 36);
             this.btnActualizar.TabIndex = 4;
@@ -118,11 +120,31 @@
             this.metroLabel4.TabIndex = 8;
             this.metroLabel4.Text = "Precio";
             // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(23, 352);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel5.TabIndex = 9;
+            this.metroLabel5.Text = "Estado";
+            // 
+            // cboEstado
+            // 
+            this.cboEstado.FormattingEnabled = true;
+            this.cboEstado.ItemHeight = 23;
+            this.cboEstado.Location = new System.Drawing.Point(103, 342);
+            this.cboEstado.Name = "cboEstado";
+            this.cboEstado.Size = new System.Drawing.Size(195, 29);
+            this.cboEstado.TabIndex = 10;
+            // 
             // ManTarifaEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(331, 416);
+            this.ClientSize = new System.Drawing.Size(331, 466);
+            this.Controls.Add(this.cboEstado);
+            this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
@@ -151,5 +173,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroComboBox cboEstado;
     }
 }
