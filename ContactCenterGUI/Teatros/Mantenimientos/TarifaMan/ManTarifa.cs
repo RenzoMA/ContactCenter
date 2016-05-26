@@ -84,16 +84,37 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 
         private void cboObra_SelectedIndexChanged(object sender, EventArgs e)
         {
+                  
+        }
+
+        private void dgvTarifa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 0)
+            {
+                Tarifa tarifa = (Tarifa)dgvTarifa.CurrentRow.DataBoundItem;
+                ManTarifaEdit manTarifaEdit = new ManTarifaEdit(tarifa);
+                manTarifaEdit.ShowDialog();
+                EnlazarGrilla();
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            EnlazarGrilla();
+        }
+
+        private void EnlazarGrilla()
+        {
             teatro = cboTeatro.SelectedItem as Teatro;
             obra = cboObra.SelectedItem as Obra;
 
-            if(teatro.IdTeatro > 0 && obra.IdObra > 0)
+            if (teatro.IdTeatro > 0 && obra.IdObra > 0)
             {
                 using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
                 {
                     dgvTarifa.DataSource = servicio.GetListaByTeatroObra(obra.IdObra);
                 }
-            }          
+            }
         }
     }
 }

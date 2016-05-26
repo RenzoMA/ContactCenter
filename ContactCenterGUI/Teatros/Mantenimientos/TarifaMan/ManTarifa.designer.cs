@@ -37,10 +37,10 @@
             this.btnCrear = new MaterialSkin.Controls.MaterialRaisedButton();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvTarifa = new System.Windows.Forms.DataGridView();
-            this.tari = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.teat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.obr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tari = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarifa)).BeginInit();
@@ -49,6 +49,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.materialLabel4);
             this.groupBox1.Controls.Add(this.cboTeatro);
             this.groupBox1.Controls.Add(this.cboObra);
@@ -68,7 +69,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(32, 26);
+            this.materialLabel4.Location = new System.Drawing.Point(35, 36);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(53, 19);
@@ -138,24 +139,30 @@
             this.dgvTarifa.BackgroundColor = System.Drawing.Color.White;
             this.dgvTarifa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTarifa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.tari,
             this.edit,
-            this.teat,
-            this.obr,
+            this.tari,
+            this.zona,
             this.pre});
             this.dgvTarifa.Location = new System.Drawing.Point(13, 241);
             this.dgvTarifa.Name = "dgvTarifa";
             this.dgvTarifa.ReadOnly = true;
+            this.dgvTarifa.RowHeadersVisible = false;
             this.dgvTarifa.Size = new System.Drawing.Size(546, 285);
             this.dgvTarifa.TabIndex = 11;
+            this.dgvTarifa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarifa_CellContentClick);
             // 
-            // tari
+            // btnBuscar
             // 
-            this.tari.DataPropertyName = "T.IdTarifa";
-            this.tari.HeaderText = "Tarifa";
-            this.tari.Name = "tari";
-            this.tari.ReadOnly = true;
-            this.tari.Visible = false;
+            this.btnBuscar.Depth = 0;
+            this.btnBuscar.Location = new System.Drawing.Point(422, 23);
+            this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Primary = true;
+            this.btnBuscar.Size = new System.Drawing.Size(101, 32);
+            this.btnBuscar.TabIndex = 15;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // edit
             // 
@@ -164,23 +171,24 @@
             this.edit.Name = "edit";
             this.edit.ReadOnly = true;
             // 
-            // teat
+            // tari
             // 
-            this.teat.DataPropertyName = "O.IdTeatro";
-            this.teat.HeaderText = "Teatro";
-            this.teat.Name = "teat";
-            this.teat.ReadOnly = true;
+            this.tari.DataPropertyName = "IdTarifa";
+            this.tari.HeaderText = "Tarifa";
+            this.tari.Name = "tari";
+            this.tari.ReadOnly = true;
+            this.tari.Visible = false;
             // 
-            // obr
+            // zona
             // 
-            this.obr.DataPropertyName = "T.IdObra";
-            this.obr.HeaderText = "Obra";
-            this.obr.Name = "obr";
-            this.obr.ReadOnly = true;
+            this.zona.DataPropertyName = "Z.Nombre";
+            this.zona.HeaderText = "Zona";
+            this.zona.Name = "zona";
+            this.zona.ReadOnly = true;
             // 
             // pre
             // 
-            this.pre.DataPropertyName = "T.Precio";
+            this.pre.DataPropertyName = "Precio";
             this.pre.HeaderText = "Precio";
             this.pre.Name = "pre";
             this.pre.ReadOnly = true;
@@ -216,10 +224,10 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridView dgvTarifa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tari;
+        private MaterialSkin.Controls.MaterialRaisedButton btnBuscar;
         private System.Windows.Forms.DataGridViewImageColumn edit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn obr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tari;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zona;
         private System.Windows.Forms.DataGridViewTextBoxColumn pre;
     }
 }

@@ -167,12 +167,6 @@
     <Compile Include="CC\Mantenimientos\AplicacionMan\ManAppMenu.Designer.cs">
       <DependentUpon>ManAplicacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\Funcion\ManFuncion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Teatros\Funcion\ManFuncion.Designer.cs">
-      <DependentUpon>ManFuncion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +238,12 @@
     </Compile>
     <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifa.designer.cs">
       <DependentUpon>ManTarifa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaEdit.Designer.cs">
+      <DependentUpon>ManTarifaEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Reservas\FindReservation.cs">
       <SubType>Form</SubType>
@@ -380,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\PromocionMan\ManPromocionEdit.resx">
       <DependentUpon>ManPromocionEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\TarifaMan\ManTarifaEdit.resx">
+      <DependentUpon>ManTarifaEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reservas\FindReservation.resx">
       <DependentUpon>FindReservation.cs</DependentUpon>
