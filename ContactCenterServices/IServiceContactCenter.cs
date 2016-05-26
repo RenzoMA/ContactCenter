@@ -69,7 +69,7 @@ namespace ContactCenterServices
         List<TipoPromocion> GetListaTipoPromocion();
 
         List<Reserva> ReporteReservas(int idTeatro, DateTime fecha);
-        List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fecha);
+        List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fechaInicio,DateTime fechaFin);
         bool CancelarReserva(int idReserva);
         List<Zona> ListZonaByTeatro(int IdTeatro);
         List<Asiento> ListAsientoByZona(int IdZona);

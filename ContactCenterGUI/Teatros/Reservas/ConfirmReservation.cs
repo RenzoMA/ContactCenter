@@ -63,6 +63,8 @@ namespace ContactCenterGUI.Teatros.Reservas
             {
                 contador++;
                 result += obj.Fila + " - " +obj.Descripcion + ", ";
+                dgvDetalleAsientos.Rows.Add(obj.Zona.Descripcion, obj.Fila, obj.Descripcion);
+                
             }
             result = result.Substring(0, result.Length - 1);
             return result;
@@ -73,10 +75,10 @@ namespace ContactCenterGUI.Teatros.Reservas
             precioTotal = CalcularPrecio(listaAsientoPrecio);
             lblPrecio.Text = "S/. " + precioTotal.ToString();
             asientos = GenerarAsiento(listaAsientoPrecio);
-            lblAsientos.Text = asientos;
             lblObra.Text = reserva.Obra.Nombre;
             lblFuncion.Text = reserva.Funcion.Horario;
             lblTeatro.Text = reserva.Obra.Teatro.Nombre;
+            lblFecha.Text = reserva.FechaReserva.ToShortDateString();
             
         }
         private void PerInfoTheater_Load(object sender, EventArgs e)

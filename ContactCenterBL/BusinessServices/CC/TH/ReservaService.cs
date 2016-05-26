@@ -43,9 +43,9 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             return reservaRepository.ReporteReservas(idTeatro, fecha);
         }
 
-        public List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fecha)
+        public List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fechaInicio,DateTime fechaFin)
         {
-            return reservaRepository.BuscarByNamePhoneDate(nombrePhone, fecha);
+            return reservaRepository.BuscarByNamePhoneDate(nombrePhone, fechaInicio, fechaFin);
         }
 
         public bool CancelarReserva(int idReserva)

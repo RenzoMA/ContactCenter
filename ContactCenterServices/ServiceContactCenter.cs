@@ -318,9 +318,9 @@ namespace ContactCenterServices
             return _reservaService.ReporteReservas(idTeatro, fecha);
         }
 
-        public List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fecha)
+        public List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fechaInicio,DateTime fechaFin)
         {
-            return _reservaService.BuscarByNamePhoneDate(nombrePhone, fecha);
+            return _reservaService.BuscarByNamePhoneDate(nombrePhone, fechaInicio, fechaFin);
         }
 
         public bool CancelarReserva(int idReserva)

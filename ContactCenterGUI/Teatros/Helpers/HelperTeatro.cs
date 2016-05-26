@@ -184,6 +184,15 @@ namespace ContactCenterGUI.Teatros.Helpers
             {
                 ConfirmReservation info = new ConfirmReservation(formTemp, reservaTemp);
                 info.listaAsientoPrecio = Clonar(asientosReserva);
+                info.listaAsientoPrecio.ForEach(ap => {
+                    lAsientoTotal.ForEach(a =>
+                    {
+                        if (a.IdAsiento == ap.IdAsiento)
+                        {
+                            ap.Zona = a.Zona;
+                        }
+                    });
+                });
                 info.ShowDialog();
             }
             else

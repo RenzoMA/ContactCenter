@@ -10,7 +10,7 @@ namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
     public interface IReservaRepository : IBaseRepository<Reserva>
     {
         List<Reserva> ReporteReservas(int idTeatro, DateTime fecha);
-        List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fecha);
+        List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fechaInicio,DateTime fechaFin);
         bool CancelarReserva(int idReserva);
     }
 }
