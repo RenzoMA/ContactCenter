@@ -126,7 +126,7 @@
             this.btnAceptar.Primary = true;
             this.btnAceptar.Size = new System.Drawing.Size(118, 47);
             this.btnAceptar.TabIndex = 6;
-            this.btnAceptar.Text = "Grabar";
+            this.btnAceptar.Text = "Crear";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 

@@ -60,12 +60,12 @@ namespace ContactCenterGUI
                 manUsuario.ShowDialog();
                 this.Show();
             }
-            else if(metroComboBox1.SelectedItem.ToString() == "Funcion")
+            else if(metroComboBox1.SelectedItem.ToString() == "Función")
             {
-               // this.Hide();
-               // Mantenimientos.Funcion.ManFunctionMenu manfunmenu = new Mantenimientos.Funcion.ManFunctionMenu();
-               // manfunmenu.ShowDialog();
-                //this.Show();
+                this.Hide();
+                ManFuncion manFuncion = new ManFuncion();
+                manFuncion.ShowDialog();
+                this.Show();
             }
             else if (metroComboBox1.SelectedItem.ToString() == "Obra")
             {

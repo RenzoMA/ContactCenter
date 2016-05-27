@@ -1,6 +1,6 @@
-﻿namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
+﻿namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 {
-    partial class ManTarifa
+    partial class ManFuncion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManTarifa));
+            this.dgvFuncion = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.fun = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
@@ -36,15 +43,82 @@
             this.cboObra = new MetroFramework.Controls.MetroComboBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnCrear = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvTarifa = new System.Windows.Forms.DataGridView();
-            this.edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tari = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zona = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncion)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTarifa)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvFuncion
+            // 
+            this.dgvFuncion.AllowUserToAddRows = false;
+            this.dgvFuncion.AllowUserToDeleteRows = false;
+            this.dgvFuncion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvFuncion.BackgroundColor = System.Drawing.Color.White;
+            this.dgvFuncion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFuncion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar,
+            this.Eliminar,
+            this.fun,
+            this.obr,
+            this.Dia,
+            this.Horario,
+            this.Estado});
+            this.dgvFuncion.Location = new System.Drawing.Point(13, 227);
+            this.dgvFuncion.Name = "dgvFuncion";
+            this.dgvFuncion.ReadOnly = true;
+            this.dgvFuncion.RowHeadersVisible = false;
+            this.dgvFuncion.Size = new System.Drawing.Size(556, 240);
+            this.dgvFuncion.TabIndex = 0;
+            this.dgvFuncion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncion_CellContentClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::ContactCenterGUI.Properties.Resources.delete;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
+            // fun
+            // 
+            this.fun.DataPropertyName = "IdFuncion";
+            this.fun.HeaderText = "Funcion";
+            this.fun.Name = "fun";
+            this.fun.ReadOnly = true;
+            this.fun.Visible = false;
+            // 
+            // obr
+            // 
+            this.obr.DataPropertyName = "IdObra";
+            this.obr.HeaderText = "Obra";
+            this.obr.Name = "obr";
+            this.obr.ReadOnly = true;
+            // 
+            // Dia
+            // 
+            this.Dia.DataPropertyName = "Dia";
+            this.Dia.HeaderText = "Día";
+            this.Dia.Name = "Dia";
+            this.Dia.ReadOnly = true;
+            // 
+            // Horario
+            // 
+            this.Horario.DataPropertyName = "Horario";
+            this.Horario.HeaderText = "Horario";
+            this.Horario.Name = "Horario";
+            this.Horario.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -54,10 +128,10 @@
             this.groupBox1.Controls.Add(this.cboTeatro);
             this.groupBox1.Controls.Add(this.cboObra);
             this.groupBox1.Controls.Add(this.materialLabel1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 80);
+            this.groupBox1.Location = new System.Drawing.Point(13, 81);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(547, 140);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.Size = new System.Drawing.Size(556, 140);
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -107,7 +181,6 @@
             this.cboObra.Name = "cboObra";
             this.cboObra.Size = new System.Drawing.Size(177, 29);
             this.cboObra.TabIndex = 12;
-            this.cboObra.SelectedIndexChanged += new System.EventHandler(this.cboObra_SelectedIndexChanged);
             // 
             // materialLabel1
             // 
@@ -126,108 +199,50 @@
             // btnCrear
             // 
             this.btnCrear.Depth = 0;
-            this.btnCrear.Location = new System.Drawing.Point(231, 545);
+            this.btnCrear.Location = new System.Drawing.Point(232, 475);
             this.btnCrear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Primary = true;
             this.btnCrear.Size = new System.Drawing.Size(101, 32);
-            this.btnCrear.TabIndex = 10;
+            this.btnCrear.TabIndex = 16;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Editar.Name = "Editar";
-            this.Editar.Width = 101;
-            // 
-            // dgvTarifa
-            // 
-            this.dgvTarifa.AllowUserToAddRows = false;
-            this.dgvTarifa.AllowUserToDeleteRows = false;
-            this.dgvTarifa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTarifa.BackgroundColor = System.Drawing.Color.White;
-            this.dgvTarifa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTarifa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.edit,
-            this.tari,
-            this.zona,
-            this.pre});
-            this.dgvTarifa.Location = new System.Drawing.Point(13, 241);
-            this.dgvTarifa.Name = "dgvTarifa";
-            this.dgvTarifa.ReadOnly = true;
-            this.dgvTarifa.RowHeadersVisible = false;
-            this.dgvTarifa.Size = new System.Drawing.Size(546, 285);
-            this.dgvTarifa.TabIndex = 11;
-            this.dgvTarifa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarifa_CellContentClick);
-            // 
-            // edit
-            // 
-            this.edit.HeaderText = "Editar";
-            this.edit.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
-            this.edit.Name = "edit";
-            this.edit.ReadOnly = true;
-            // 
-            // tari
-            // 
-            this.tari.DataPropertyName = "IdTarifa";
-            this.tari.HeaderText = "Tarifa";
-            this.tari.Name = "tari";
-            this.tari.ReadOnly = true;
-            this.tari.Visible = false;
-            // 
-            // zona
-            // 
-            this.zona.DataPropertyName = "Tarifa.Zona.Nombre";
-            this.zona.HeaderText = "Zona";
-            this.zona.Name = "zona";
-            this.zona.ReadOnly = true;
-            // 
-            // pre
-            // 
-            this.pre.DataPropertyName = "Precio";
-            this.pre.HeaderText = "Precio";
-            this.pre.Name = "pre";
-            this.pre.ReadOnly = true;
-            // 
-            // ManTarifa
+            // ManFuncion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(579, 595);
-            this.Controls.Add(this.dgvTarifa);
+            this.ClientSize = new System.Drawing.Size(581, 519);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.groupBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ManTarifa";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestión de Tarifas";
-            this.Load += new System.EventHandler(this.ManTarifa_Load);
+            this.Controls.Add(this.dgvFuncion);
+            this.Name = "ManFuncion";
+            this.Text = "Gestión de función";
+            this.Load += new System.EventHandler(this.ManFuncion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncion)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTarifa)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.DataGridView dgvFuncion;
         private System.Windows.Forms.GroupBox groupBox1;
-        private MaterialSkin.Controls.MaterialRaisedButton btnCrear;
+        private MaterialSkin.Controls.MaterialRaisedButton btnBuscar;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MetroFramework.Controls.MetroComboBox cboTeatro;
         private MetroFramework.Controls.MetroComboBox cboObra;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.DataGridView dgvTarifa;
-        private MaterialSkin.Controls.MaterialRaisedButton btnBuscar;
-        private System.Windows.Forms.DataGridViewImageColumn edit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tari;
-        private System.Windows.Forms.DataGridViewTextBoxColumn zona;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pre;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fun;
+        private System.Windows.Forms.DataGridViewTextBoxColumn obr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Horario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private MaterialSkin.Controls.MaterialRaisedButton btnCrear;
     }
 }

@@ -173,29 +173,29 @@
     <Compile Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.Designer.cs">
       <DependentUpon>ManAsiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncion.Designer.cs">
+      <DependentUpon>ManFuncion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncionCreate.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncionCreate.Designer.cs">
       <DependentUpon>ManFuncionCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncionFind.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncionFind.Designer.cs">
-      <DependentUpon>ManFuncionFind.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncionMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncionMenu.Designer.cs">
-      <DependentUpon>ManFuncionMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManPrincipal.Designer.cs">
       <DependentUpon>ManPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncionEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncionEdit.Designer.cs">
+      <DependentUpon>ManFuncionEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Mantenimientos\ObraMan\ManObra.cs">
       <SubType>Form</SubType>
@@ -342,14 +342,14 @@
     <EmbeddedResource Include="ManPrincipal.resx">
       <DependentUpon>ManPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\FuncionMan\ManFuncion.resx">
+      <DependentUpon>ManFuncion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\FuncionMan\ManFuncionCreate.resx">
       <DependentUpon>ManFuncionCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\Mantenimientos\FuncionMan\ManFuncionFind.resx">
-      <DependentUpon>ManFuncionFind.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\Mantenimientos\FuncionMan\ManFuncionMenu.resx">
-      <DependentUpon>ManFuncionMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Teatros\Mantenimientos\FuncionMan\ManFuncionEdit.resx">
+      <DependentUpon>ManFuncionEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManObra.resx">
       <DependentUpon>ManObra.cs</DependentUpon>
