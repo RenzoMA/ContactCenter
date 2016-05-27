@@ -37,12 +37,14 @@
             this.cboTeatro = new MetroFramework.Controls.MetroComboBox();
             this.cboObra = new MetroFramework.Controls.MetroComboBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.cboEstado = new MetroFramework.Controls.MetroComboBox();
             this.SuspendLayout();
             // 
             // btnActualizar
             // 
             this.btnActualizar.Depth = 0;
-            this.btnActualizar.Location = new System.Drawing.Point(121, 290);
+            this.btnActualizar.Location = new System.Drawing.Point(121, 332);
             this.btnActualizar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Primary = true;
@@ -160,11 +162,36 @@
             this.materialLabel1.TabIndex = 24;
             this.materialLabel1.Text = "Obra";
             // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.BackColor = System.Drawing.Color.White;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(38, 291);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(55, 19);
+            this.materialLabel2.TabIndex = 33;
+            this.materialLabel2.Text = "Estad0";
+            // 
+            // cboEstado
+            // 
+            this.cboEstado.FormattingEnabled = true;
+            this.cboEstado.ItemHeight = 23;
+            this.cboEstado.Location = new System.Drawing.Point(131, 281);
+            this.cboEstado.Name = "cboEstado";
+            this.cboEstado.Size = new System.Drawing.Size(177, 29);
+            this.cboEstado.TabIndex = 34;
+            // 
             // ManFuncionEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 375);
+            this.ClientSize = new System.Drawing.Size(350, 422);
+            this.Controls.Add(this.cboEstado);
+            this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.txtHoarario);
             this.Controls.Add(this.materialLabel3);
@@ -193,5 +220,7 @@
         private MetroFramework.Controls.MetroComboBox cboTeatro;
         private MetroFramework.Controls.MetroComboBox cboObra;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MetroFramework.Controls.MetroComboBox cboEstado;
     }
 }

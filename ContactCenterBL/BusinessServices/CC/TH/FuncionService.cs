@@ -61,11 +61,11 @@ namespace ContactCenterBL.BusinessServices.CC.TH
 
             return listaFuncion;
         }
-        
-        //public List<Funcion> ListarFuncionByObraGrilla(int idObra)
-        //{
-          //  List<Funcion> listaFuncion = _funcionRepository.ListarFuncionByObra(idObra);
-          //    return listaFuncion;
-        //}
+
+        public List<Funcion> ListarFuncionByObraGrilla(int idObra)
+        {
+            List<Funcion> listaFuncion = _funcionRepository.ListarFuncionByObraGrilla(idObra);
+            return listaFuncion;
+        }
     }
 }

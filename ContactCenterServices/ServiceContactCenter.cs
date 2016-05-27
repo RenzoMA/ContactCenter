@@ -367,11 +367,11 @@ namespace ContactCenterServices
         {
             return _funcionService.ListarFuncionByObra(idObra);
         }
-        
-        //public ListarFuncionByObraGrilla(int idObra)
-        //{
-          //  return _funcionService.ListarFuncionByObraGrilla(idObra);
-        //}
+
+        public List<Funcion> ListarFuncionByObraGrilla(int idObra)
+        {
+            return _funcionService.ListarFuncionByObraGrilla(idObra);
+        }
 
         public List<Promocion> ListarPromocionByFuncion(int idFuncion)
         {

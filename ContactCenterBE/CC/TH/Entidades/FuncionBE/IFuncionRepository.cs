@@ -11,5 +11,6 @@ namespace ContactCenterBE.CC.TH.Entidades.FuncionBE
     {
         List<Funcion> ListarFuncionDiaObra(int dia, int obra);
         List<Funcion> ListarFuncionByObra(int idObra);
+        List<Funcion> ListarFuncionByObraGrilla(int idObra);
     }
 }

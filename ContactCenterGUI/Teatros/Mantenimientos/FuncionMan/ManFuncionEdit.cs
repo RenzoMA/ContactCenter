@@ -43,7 +43,6 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
         {
             cboObra.Enabled = false;
             cboTeatro.Enabled = false;
-            cboDia.Enabled = false;
         }
 
         private void LoadData()
@@ -56,10 +55,11 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
             teatro = cboTeatro.SelectedItem as Teatro;
             listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
             cboObra.DataSource = listaObra;
+            cboObra.DisplayMember = "Nombre";
             cboObra.SelectedItem = FindObra(funcion.Obra.IdObra);
 
-            cboDia.SelectedItem = funcion.Dia;
-
+            cboDia.SelectedIndex = funcion.Dia;
+            cboEstado.SelectedIndex = funcion.Estado == "A" ? 0 : 1;
             txtHoarario.Text = funcion.Horario;
             }
 

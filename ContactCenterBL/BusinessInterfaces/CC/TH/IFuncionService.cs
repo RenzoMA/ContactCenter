@@ -16,6 +16,6 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
         bool Insert(Funcion datos);
         bool Update(Funcion datos);
         List<Funcion> ListarFuncionByObra(int idObra);
-        //List<Funcion> ListarFuncionByObraGrilla(int idObra);
+        List<Funcion> ListarFuncionByObraGrilla(int idObra);
     }
 }
