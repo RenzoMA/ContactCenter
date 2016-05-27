@@ -85,7 +85,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
             {
                 using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
                 {
-                    dgvFuncion.DataSource = servicio.ListarFuncionByObra(obra.IdObra);
+                    dgvFuncion.DataSource = servicio.ListarFuncionByObraGrilla(obra.IdObra);
                 }
             }
         }
