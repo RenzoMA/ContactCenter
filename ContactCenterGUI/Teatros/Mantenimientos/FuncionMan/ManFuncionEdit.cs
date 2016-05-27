@@ -18,7 +18,7 @@ using ContactCenterGUI.CC.Helpers;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 {
-    public partial class ManFuncionEdit : Form
+    public partial class ManFuncionEdit : MaterialForm
     {
         Funcion funcion = null;
         private IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
@@ -50,7 +50,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
         {
             listaTeatro = servicio.ListarTeatros();
             cboTeatro.DataSource = listaTeatro;
-            cboTeatro.DisplayMember = "Nombre";
+            //cboTeatro.DisplayMember = "Nombre";
             cboTeatro.SelectedItem = FindTeatro(funcion.Obra.Teatro.IdTeatro);
 
             teatro = cboTeatro.SelectedItem as Teatro;
@@ -71,6 +71,11 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
         private Obra FindObra(int idObra)
         {
             return listaObra.Where(tx => tx.IdObra == idObra).FirstOrDefault();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

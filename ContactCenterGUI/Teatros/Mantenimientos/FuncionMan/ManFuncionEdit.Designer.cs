@@ -42,7 +42,7 @@
             // btnActualizar
             // 
             this.btnActualizar.Depth = 0;
-            this.btnActualizar.Location = new System.Drawing.Point(110, 234);
+            this.btnActualizar.Location = new System.Drawing.Point(121, 290);
             this.btnActualizar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Primary = true;
@@ -50,12 +50,13 @@
             this.btnActualizar.TabIndex = 32;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // txtHoarario
             // 
             this.txtHoarario.Depth = 0;
             this.txtHoarario.Hint = "";
-            this.txtHoarario.Location = new System.Drawing.Point(120, 182);
+            this.txtHoarario.Location = new System.Drawing.Point(131, 238);
             this.txtHoarario.MaxLength = 32767;
             this.txtHoarario.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtHoarario.Name = "txtHoarario";
@@ -75,7 +76,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(27, 186);
+            this.materialLabel3.Location = new System.Drawing.Point(38, 242);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(60, 19);
@@ -94,7 +95,7 @@
             "Viernes",
             "Sábado",
             "Domingo"});
-            this.cboDia.Location = new System.Drawing.Point(120, 130);
+            this.cboDia.Location = new System.Drawing.Point(131, 186);
             this.cboDia.Name = "cboDia";
             this.cboDia.Size = new System.Drawing.Size(177, 29);
             this.cboDia.TabIndex = 29;
@@ -106,7 +107,7 @@
             this.Día.Depth = 0;
             this.Día.Font = new System.Drawing.Font("Roboto", 11F);
             this.Día.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Día.Location = new System.Drawing.Point(27, 140);
+            this.Día.Location = new System.Drawing.Point(38, 196);
             this.Día.MouseState = MaterialSkin.MouseState.HOVER;
             this.Día.Name = "Día";
             this.Día.Size = new System.Drawing.Size(31, 19);
@@ -120,7 +121,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(27, 43);
+            this.materialLabel4.Location = new System.Drawing.Point(38, 99);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(53, 19);
@@ -131,7 +132,7 @@
             // 
             this.cboTeatro.FormattingEnabled = true;
             this.cboTeatro.ItemHeight = 23;
-            this.cboTeatro.Location = new System.Drawing.Point(120, 33);
+            this.cboTeatro.Location = new System.Drawing.Point(131, 89);
             this.cboTeatro.Name = "cboTeatro";
             this.cboTeatro.Size = new System.Drawing.Size(177, 29);
             this.cboTeatro.TabIndex = 26;
@@ -140,7 +141,7 @@
             // 
             this.cboObra.FormattingEnabled = true;
             this.cboObra.ItemHeight = 23;
-            this.cboObra.Location = new System.Drawing.Point(120, 82);
+            this.cboObra.Location = new System.Drawing.Point(131, 138);
             this.cboObra.Name = "cboObra";
             this.cboObra.Size = new System.Drawing.Size(177, 29);
             this.cboObra.TabIndex = 25;
@@ -152,7 +153,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(27, 92);
+            this.materialLabel1.Location = new System.Drawing.Point(38, 148);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(40, 19);
@@ -163,7 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(331, 294);
+            this.ClientSize = new System.Drawing.Size(350, 375);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.txtHoarario);
             this.Controls.Add(this.materialLabel3);
