@@ -66,7 +66,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         {
             List<Funcion> listaFuncion = _funcionRepository.ListarFuncionByObraGrilla(idObra);
             listaFuncion.ForEach(tx => {
-               tx.Estado == "A" ? "Activo" : "Inactivo";
+              tx.Estado =  tx.Estado == "A" ? "Activo" : "Inactivo";
             });
             return listaFuncion;
         }
