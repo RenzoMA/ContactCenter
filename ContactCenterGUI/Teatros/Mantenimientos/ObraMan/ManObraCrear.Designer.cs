@@ -1,6 +1,6 @@
 ﻿namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 {
-    partial class ManPlayCreate
+    partial class ManObraCrear
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManPlayCreate));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManObraCrear));
             this.lblNomObra = new MaterialSkin.Controls.MaterialLabel();
             this.txtNomObra = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblFecIniObra = new MaterialSkin.Controls.MaterialLabel();

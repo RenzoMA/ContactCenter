@@ -161,10 +161,8 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Update(Obra datos)
         {
-            String sql = "UPDATE TH_OBRA SET Nombre = @nombre, FechaInicio = @fechaini, FechaFin = @fechafin, Descripcion = @descripcion, Estado = @estado, , IdTeatro = @idteatro, " +
-                            "FechaMod = @fechaMod, UserMod = @usuarioMod WHERE IdObra = @idobra";
+            String sql = "UPDATE TH_OBRA SET Nombre = @nombre, FechaInicio = @fechaini, FechaFin = @fechafin, Descripcion = @descripcion, Estado = @estado, IdTeatro = @idteatro, FechaMod = @fechaMod, UserMod = @usuarioMod WHERE IdObra = @idobra";
 
-           
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter fechaini = UtilDA.SetParameters("@fechaini", OleDbType.Date, datos.FechaInicio);
             OleDbParameter fechafin = UtilDA.SetParameters("@fechafin", OleDbType.Date, datos.FechaFin);

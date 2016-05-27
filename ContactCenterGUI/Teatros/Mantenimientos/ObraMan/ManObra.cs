@@ -27,8 +27,9 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 
         private void btnNuevaObra_Click(object sender, EventArgs e)
         {
-            ManPlayCreate manPlayCreate = new ManPlayCreate();
+            ManObraCrear manPlayCreate = new ManObraCrear();
             manPlayCreate.ShowDialog();
+            llenarGrilla();
         }
 
         private void ManObra_Load(object sender, EventArgs e)
@@ -53,8 +54,10 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
         }
 
         private void llenarGrilla() {
-            Obra obra = cboTeFilObra.SelectedItem as Obra;
-            dgvObras.DataSource = servicio.ListarObraByTeatro(34);
+            Teatro Teatro = cboTeFilObra.SelectedItem as Teatro;
+            dgvObras.DataSource = servicio.ListarObraByTeatro(Teatro.IdTeatro);
+
+
 
         }
 
