@@ -178,6 +178,7 @@
             this.Controls.Add(this.materialLabel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManFuncionCreate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear función";
             this.Load += new System.EventHandler(this.ManFuncionCreate_Load);
             this.ResumeLayout(false);

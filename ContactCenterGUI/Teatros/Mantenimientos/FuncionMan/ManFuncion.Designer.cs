@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.dgvFuncion = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.fun = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
@@ -36,12 +42,6 @@
             this.cboObra = new MetroFramework.Controls.MetroComboBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnCrear = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.fun = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncion)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,49 @@
             this.dgvFuncion.Size = new System.Drawing.Size(556, 240);
             this.dgvFuncion.TabIndex = 0;
             this.dgvFuncion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncion_CellContentClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::ContactCenterGUI.Properties.Resources.delete;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
+            // fun
+            // 
+            this.fun.DataPropertyName = "IdFuncion";
+            this.fun.HeaderText = "Funcion";
+            this.fun.Name = "fun";
+            this.fun.ReadOnly = true;
+            this.fun.Visible = false;
+            // 
+            // Dia
+            // 
+            this.Dia.DataPropertyName = "Dia";
+            this.Dia.HeaderText = "Día";
+            this.Dia.Name = "Dia";
+            this.Dia.ReadOnly = true;
+            // 
+            // Horario
+            // 
+            this.Horario.DataPropertyName = "Horario";
+            this.Horario.HeaderText = "Horario";
+            this.Horario.Name = "Horario";
+            this.Horario.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -157,49 +200,6 @@
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::ContactCenterGUI.Properties.Resources.delete;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            // 
-            // fun
-            // 
-            this.fun.DataPropertyName = "IdFuncion";
-            this.fun.HeaderText = "Funcion";
-            this.fun.Name = "fun";
-            this.fun.ReadOnly = true;
-            this.fun.Visible = false;
-            // 
-            // Dia
-            // 
-            this.Dia.DataPropertyName = "Dia";
-            this.Dia.HeaderText = "Día";
-            this.Dia.Name = "Dia";
-            this.Dia.ReadOnly = true;
-            // 
-            // Horario
-            // 
-            this.Horario.DataPropertyName = "Horario";
-            this.Horario.HeaderText = "Horario";
-            this.Horario.Name = "Horario";
-            this.Horario.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
             // ManFuncion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +209,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvFuncion);
             this.Name = "ManFuncion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de función";
             this.Load += new System.EventHandler(this.ManFuncion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncion)).EndInit();

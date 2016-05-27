@@ -202,6 +202,7 @@
             this.Controls.Add(this.cboObra);
             this.Controls.Add(this.materialLabel1);
             this.Name = "ManFuncionEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManFuncionEdit";
             this.Load += new System.EventHandler(this.ManFuncionEdit_Load);
             this.ResumeLayout(false);
