@@ -109,7 +109,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             String sql = "INSERT INTO TH_FUNCION(DIA, HORARIO, ESTADO, IDOBRA, FECHACREA, USERCREA) " +
                             "VALUES(@dia, @horario, @estado, @idobra, @fechacrea, @usuariocrea)";
 
-            OleDbParameter dia = UtilDA.SetParameters("@nombre", OleDbType.Integer, datos.Dia);
+            OleDbParameter dia = UtilDA.SetParameters("@dia", OleDbType.Integer, datos.Dia);
             OleDbParameter horario = UtilDA.SetParameters("@horario", OleDbType.VarChar, datos.Horario);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter idobra = UtilDA.SetParameters("@IdZona", OleDbType.Integer, datos.Obra.IdObra);
@@ -194,7 +194,7 @@ namespace ContactCenterDA.Repositories.CC.TH
         {
             List<Funcion> listaFuncion = new List<Funcion>(); ;
 
-            String sql = "SELECT * FROM (TH_FUNCION F INNER JOIN TH_OBRA O ON F.IDOBRA = O.IDOBRA)  INNER JOIN TH_TEATRO T ON O.IDTEATRO = T.IDTEATRO WHERE F.IDOBRA = @IdObra";
+            String sql = "SELECT * FROM (TH_FUNCION F INNER JOIN TH_OBRA O ON F.IDOBRA = O.IDOBRA)  INNER JOIN TH_TEATRO T ON O.IDTEATRO = T.IDTEATRO WHERE F.IDOBRA = @IdObra AND F.ESTADO = 'A' ";
 
             OleDbParameter pIdObra = UtilDA.SetParameters("@IdObra", OleDbType.Integer, idObra);
 

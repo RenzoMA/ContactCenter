@@ -280,17 +280,17 @@ namespace ContactCenterServices
 
         public bool InsertarFuncion(Funcion funcion)
         {
-            throw new NotImplementedException();
+           return  _funcionService.Insert(funcion);
         }
 
         public bool EliminarFuncion(int id)
         {
-            throw new NotImplementedException();
+            return _funcionService.Delete(id);
         }
 
         public bool ActualizarFuncion(Funcion funcion)
         {
-            throw new NotImplementedException();
+            return _funcionService.Update(funcion);
         }
 
         public IList<Funcion> ListarFunciones()
