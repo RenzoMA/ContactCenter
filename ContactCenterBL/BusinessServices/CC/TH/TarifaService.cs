@@ -20,9 +20,6 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         public List<Tarifa> GetListaByTeatroObra(int IdObra)
         {
             List<Tarifa> listTarifa = tarifaRepository.GetListaByTeatroObra(IdObra);
-            listTarifa.ForEach(tx => {
-             tx.Estado == "A" ? "Activo" : "Inactivo";   
-            });
             return listTarifa;
         }
 
