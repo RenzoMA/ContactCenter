@@ -59,7 +59,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
             cboObra.SelectedItem = FindObra(funcion.Obra.IdObra);
 
             cboDia.SelectedIndex = funcion.Dia;
-            cboEstado.SelectedIndex = funcion.Estado == "A" ? 0 : 1;
+            cboEstado.SelectedIndex = funcion.Estado == "Activo" ? 0 : 1;
             txtHoarario.Text = funcion.Horario;
             }
 
