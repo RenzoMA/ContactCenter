@@ -16,11 +16,11 @@ using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 {
-    public partial class ManPlayCreate : MaterialForm
+    public partial class ManObraCrear : MaterialForm
     {
         IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
 
-        public ManPlayCreate()
+        public ManObraCrear()
         {
             InitializeComponent();
         }

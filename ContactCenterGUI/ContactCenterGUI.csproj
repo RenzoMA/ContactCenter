@@ -210,11 +210,11 @@
     <Compile Include="Teatros\Mantenimientos\ObraMan\ManObraEditar.Designer.cs">
       <DependentUpon>ManObraEditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayCreate.cs">
+    <Compile Include="Teatros\Mantenimientos\ObraMan\ManObraCrear.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\Mantenimientos\ObraMan\ManPlayCreate.Designer.cs">
-      <DependentUpon>ManPlayCreate.cs</DependentUpon>
+    <Compile Include="Teatros\Mantenimientos\ObraMan\ManObraCrear.Designer.cs">
+      <DependentUpon>ManObraCrear.cs</DependentUpon>
     </Compile>
     <Compile Include="CC\Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.cs">
       <SubType>Form</SubType>
@@ -358,8 +358,8 @@
     <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManObraEditar.resx">
       <DependentUpon>ManObraEditar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManPlayCreate.resx">
-      <DependentUpon>ManPlayCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManObraCrear.resx">
+      <DependentUpon>ManObraCrear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CC\Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.resx">
       <DependentUpon>ManCreateUpdateUsuario.cs</DependentUpon>
