@@ -194,7 +194,7 @@ namespace ContactCenterDA.Repositories.CC.TH
         {
             List<Funcion> listaFuncion = new List<Funcion>(); ;
 
-            String sql = "SELECT * FROM (TH_FUNCION F INNER JOIN TH_OBRA O ON F.IDOBRA = O.IDOBRA)  INNER JOIN TH_TEATRO T ON O.IDTEATRO = T.IDTEATRO WHERE F.IDOBRA = @IdObra AND F.ESTADO = 'A' OR F.ESTADO = 'I'";
+            String sql = "SELECT * FROM (TH_FUNCION F INNER JOIN TH_OBRA O ON F.IDOBRA = O.IDOBRA)  INNER JOIN TH_TEATRO T ON O.IDTEATRO = T.IDTEATRO WHERE F.IDOBRA = @IdObra AND F.ESTADO NOT IN ('E')";
 
             OleDbParameter pIdObra = UtilDA.SetParameters("@IdObra", OleDbType.Integer, idObra);
 
