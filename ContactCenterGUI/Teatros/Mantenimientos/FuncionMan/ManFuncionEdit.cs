@@ -50,7 +50,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
         {
             listaTeatro = servicio.ListarTeatros();
             cboTeatro.DataSource = listaTeatro;
-            //cboTeatro.DisplayMember = "Nombre";
+            cboTeatro.DisplayMember = "Nombre";
             cboTeatro.SelectedItem = FindTeatro(funcion.Obra.Teatro.IdTeatro);
 
             teatro = cboTeatro.SelectedItem as Teatro;
@@ -73,9 +73,27 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
             return listaObra.Where(tx => tx.IdObra == idObra).FirstOrDefault();
         }
 
+        private void CapturarDatos()
+        {
+            obra = cboObra.SelectedItem as Obra;
+
+            funcion.Obra = obra;
+            funcion.Dia = Convert.ToInt32(cboDia.SelectedValue);
+            funcion.Horario = txtHoarario.Text;
+        }
+
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-
+            CapturarDatos();
+            if (servicio.ActualizarFuncion(funcion))
+            {
+                MessageBox.Show("Proceso realizado correctamente", "Aviso");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un error", "Aviso");
+            }
         }
     }
 }
