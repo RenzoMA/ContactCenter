@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManFuncionEdit));
             this.btnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtHoarario = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -44,11 +45,11 @@
             // btnActualizar
             // 
             this.btnActualizar.Depth = 0;
-            this.btnActualizar.Location = new System.Drawing.Point(121, 332);
+            this.btnActualizar.Location = new System.Drawing.Point(94, 338);
             this.btnActualizar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Primary = true;
-            this.btnActualizar.Size = new System.Drawing.Size(118, 47);
+            this.btnActualizar.Size = new System.Drawing.Size(168, 40);
             this.btnActualizar.TabIndex = 32;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -90,6 +91,7 @@
             this.cboDia.FormattingEnabled = true;
             this.cboDia.ItemHeight = 23;
             this.cboDia.Items.AddRange(new object[] {
+            "Seleccione día",
             "Lunes",
             "Martes",
             "Miércoles",
@@ -172,9 +174,9 @@
             this.materialLabel2.Location = new System.Drawing.Point(38, 291);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(55, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(56, 19);
             this.materialLabel2.TabIndex = 33;
-            this.materialLabel2.Text = "Estad0";
+            this.materialLabel2.Text = "Estado";
             // 
             // cboEstado
             // 
@@ -192,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 422);
+            this.ClientSize = new System.Drawing.Size(350, 406);
             this.Controls.Add(this.cboEstado);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.btnActualizar);
@@ -204,9 +206,12 @@
             this.Controls.Add(this.cboTeatro);
             this.Controls.Add(this.cboObra);
             this.Controls.Add(this.materialLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ManFuncionEdit";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ManFuncionEdit";
+            this.Text = "Editar función";
             this.Load += new System.EventHandler(this.ManFuncionEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

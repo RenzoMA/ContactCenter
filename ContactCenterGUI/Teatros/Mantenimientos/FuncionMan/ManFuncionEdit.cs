@@ -35,6 +35,8 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 
         private void ManFuncionEdit_Load(object sender, EventArgs e)
         {
+            //SetEventos();
+            SetTextCboDia();
             InicializarControles();
             LoadData();
         }
@@ -44,6 +46,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
             cboObra.Enabled = false;
             cboTeatro.Enabled = false;
         }
+
 
         private void LoadData()
         {
@@ -58,7 +61,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
             cboObra.DisplayMember = "Nombre";
             cboObra.SelectedItem = FindObra(funcion.Obra.IdObra);
 
-            cboDia.SelectedIndex = funcion.Dia;
+            cboDia.SelectedIndex = funcion.Dia + 1;
             cboEstado.SelectedIndex = funcion.Estado == "Activo" ? 0 : 1;
             txtHoarario.Text = funcion.Horario;
             }
@@ -78,23 +81,43 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
             obra = cboObra.SelectedItem as Obra;
 
             funcion.Obra = obra;
-            funcion.Dia = Convert.ToInt32(cboDia.SelectedValue);
+            funcion.Dia = Convert.ToInt32(cboDia.SelectedIndex) - 1;
             funcion.Horario = txtHoarario.Text;
             funcion.Estado = cboEstado.SelectedIndex == 0 ? "A"  :"I";
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            CapturarDatos();
-            if (servicio.ActualizarFuncion(funcion))
+            if (cboTeatro.SelectedIndex != 0 || cboObra.SelectedIndex != 0
+                || cboDia.SelectedIndex != 0 || txtHoarario.Text.Trim().Equals(String.Empty))
             {
-                MessageBox.Show("Proceso realizado correctamente", "Aviso");
-                this.Close();
+                CapturarDatos();
+                if (servicio.ActualizarFuncion(funcion))
+                {
+                    MessageBox.Show("Proceso realizado correctamente", "Aviso");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error", "Aviso");
+                }
             }
             else
             {
-                MessageBox.Show("Ocurrio un error", "Aviso");
+                MessageBox.Show("Completo los campos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void SetEventos()
+        {
+            txtHoarario.KeyPress += HelperControl.EditTextDecimal;
+        }
+
+        private void SetTextCboDia()
+        {
+            cboDia.DropDownStyle = ComboBoxStyle.DropDown;
+            cboDia.Text = "Seleccione día";
+        }
+
     }
 }

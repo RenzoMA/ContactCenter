@@ -17,9 +17,9 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         {
             tarifaRepository = _tarifaRepository;
         }
-        public List<Tarifa> GetListaByTeatroObra(int IdObra)
+        public List<TarifaView> GetListaByTeatroObra(int IdObra)
         {
-            List<Tarifa> listTarifa = tarifaRepository.GetListaByTeatroObra(IdObra);
+            List<TarifaView> listTarifa = tarifaRepository.GetListaByTeatroObra(IdObra);
             return listTarifa;
         }
 

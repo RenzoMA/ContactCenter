@@ -38,21 +38,30 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            CrearTarifa();
+            if (Validar())
+            {
+                CrearTarifa();
+            }
         }
 
         private bool Validar()
         {
-            if (String.IsNullOrEmpty(txtHoarario.Text) ||
-            cboTeatro.SelectedIndex == 0 || cboObra.SelectedIndex == 0)
+            if (txtHoarario.Text.Trim().Equals(String.Empty) ||
+            cboTeatro.SelectedIndex == 0 || cboObra.SelectedIndex == 0
+            || cboDia.SelectedIndex == 0)
             {
-                MessageBox.Show("Por favor, ingrese los datos correctamente", "Aviso");
+                MessageBox.Show("Complete los campos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             else
             {
                 return true;
             }
+        }
+
+        private void SetEventos()
+        {
+            txtHoarario.KeyPress += HelperControl.EditTextDecimal;
         }
 
         private async void CargarTeatros()
@@ -84,7 +93,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 
             Funcion funcion = new Funcion()
             {
-                Dia = Convert.ToInt32(cboDia.SelectedIndex),
+                Dia = Convert.ToInt32(cboDia.SelectedIndex) - 1,
                 Horario = txtHoarario.Text,
                 Obra = obra,
                 Estado = "A"
@@ -104,11 +113,19 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
         private void ManFuncionCreate_Load(object sender, EventArgs e)
         {
             CargarTeatros();
+            SetTextCboDia();
+           // SetEventos();
         }
 
         private void cboTeatro_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarObras();
+        }
+
+        private void SetTextCboDia()
+        {
+            cboDia.DropDownStyle = ComboBoxStyle.DropDown;
+            cboDia.Text = "Seleccione día";
         }
     }
 }

@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ContactCenterBE.Base;
 
 namespace ContactCenterBE.CC.TH.Entidades.TarifaBE
 {
-    public interface ITarifaRepository : IBaseRepository<Tarifa>
+    public class TarifaView:Tarifa
     {
-        List<TarifaView> GetListaByTeatroObra(int IdObra);
+        public String NombreZona
+        {
+            get
+            {
+                return Zona.Nombre;
+            }
+        }
     }
 }

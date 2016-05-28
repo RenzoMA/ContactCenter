@@ -68,7 +68,14 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            EnlazarGrilla();
+            if(cboObra.SelectedIndex != 0 && cboTeatro.SelectedIndex != 0)
+            {
+                EnlazarGrilla();
+            }
+            else
+            {
+                MessageBox.Show("Completar todos los campos","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cboTeatro_SelectedIndexChanged(object sender, EventArgs e)

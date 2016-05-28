@@ -181,7 +181,7 @@
             // 
             // zona
             // 
-            this.zona.DataPropertyName = "Tarifa.Zona.Nombre";
+            this.zona.DataPropertyName = "NombreZona";
             this.zona.HeaderText = "Zona";
             this.zona.Name = "zona";
             this.zona.ReadOnly = true;

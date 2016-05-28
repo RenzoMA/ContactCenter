@@ -389,7 +389,7 @@ namespace ContactCenterServices
             return _promocionService.Update(datos);
         }
 
-        public List<Tarifa> GetListaByTeatroObra(int IdObra)
+        public List<TarifaView> GetListaByTeatroObra(int IdObra)
         {
             return _tarifaService.GetListaByTeatroObra(IdObra);
         }

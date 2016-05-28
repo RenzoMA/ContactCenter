@@ -82,7 +82,7 @@ namespace ContactCenterServices
 
         //Tarifa
 
-        List<Tarifa> GetListaByTeatroObra(int IdObra);
+        List<TarifaView> GetListaByTeatroObra(int IdObra);
 
         bool InsertarTarifa(Tarifa tarifa);
         List<Funcion> ListarFuncionByObra(int idObra);
