@@ -35,7 +35,7 @@ namespace ContactCenterGUI
         {
             if (metroComboBox1.SelectedIndex == 0)
             {
-                MessageBox.Show("Seleccione un mantenimiento", "ERROR");
+                MessageBox.Show("Seleccione un mantenimiento", "ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else if (metroComboBox1.SelectedItem.ToString() == "Aplicación")
             {

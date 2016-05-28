@@ -44,11 +44,11 @@
             // materialRaisedButton1
             // 
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(164, 349);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(286, 343);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(101, 32);
+            this.materialRaisedButton1.Size = new System.Drawing.Size(168, 40);
             this.materialRaisedButton1.TabIndex = 10;
             this.materialRaisedButton1.Text = "Editar";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;

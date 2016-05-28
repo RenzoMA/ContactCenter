@@ -116,9 +116,9 @@
             this.materialLabel1.Location = new System.Drawing.Point(23, 85);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(89, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(93, 19);
             this.materialLabel1.TabIndex = 37;
-            this.materialLabel1.Text = "Descripción";
+            this.materialLabel1.Text = "Descripción:";
             // 
             // materialLabel7
             // 
@@ -216,11 +216,11 @@
             // btnEditar
             // 
             this.btnEditar.Depth = 0;
-            this.btnEditar.Location = new System.Drawing.Point(226, 366);
+            this.btnEditar.Location = new System.Drawing.Point(292, 375);
             this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Primary = true;
-            this.btnEditar.Size = new System.Drawing.Size(101, 32);
+            this.btnEditar.Size = new System.Drawing.Size(168, 40);
             this.btnEditar.TabIndex = 50;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -248,7 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 410);
+            this.ClientSize = new System.Drawing.Size(472, 427);
             this.Controls.Add(this.dtpFechaFin);
             this.Controls.Add(this.dtpFechaInicio);
             this.Controls.Add(this.btnEditar);
@@ -265,9 +265,11 @@
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.materialLabel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ManPromocionEdit";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Editar Promocion";
+            this.Text = "Editar Promoción";
             this.Load += new System.EventHandler(this.ManPromocionEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

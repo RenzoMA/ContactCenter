@@ -79,11 +79,11 @@
             // materialRaisedButton1
             // 
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(317, 99);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(325, 84);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(110, 32);
+            this.materialRaisedButton1.Size = new System.Drawing.Size(168, 40);
             this.materialRaisedButton1.TabIndex = 10;
             this.materialRaisedButton1.Text = "Generar";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(35, 111);
+            this.materialLabel1.Location = new System.Drawing.Point(37, 111);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(53, 19);
@@ -129,7 +129,9 @@
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.cboTeatro);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "RptReservas";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de reservas";
             this.Load += new System.EventHandler(this.rptReservas_Load);

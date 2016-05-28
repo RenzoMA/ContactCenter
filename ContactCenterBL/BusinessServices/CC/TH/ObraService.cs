@@ -28,7 +28,13 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         }
 
         public List<Obra> ListarObraByTeatro(int idTeatro) {
-            return _obraRepository.ListarObraByTeatro(idTeatro);
+
+            List<Obra> listaObraTeatro = _obraRepository.ListarObraByTeatro(idTeatro);
+            listaObraTeatro.ForEach(tx => {
+                
+                tx.Estado = tx.Estado == "A" ? "Activo" : "Inactivo";
+            });
+            return listaObraTeatro;
         }
 
         public Obra GetByName(string name) {
