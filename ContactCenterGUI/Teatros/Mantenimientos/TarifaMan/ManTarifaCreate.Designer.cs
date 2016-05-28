@@ -44,9 +44,9 @@
             // 
             this.cboObra.FormattingEnabled = true;
             this.cboObra.ItemHeight = 23;
-            this.cboObra.Location = new System.Drawing.Point(159, 144);
+            this.cboObra.Location = new System.Drawing.Point(94, 134);
             this.cboObra.Name = "cboObra";
-            this.cboObra.Size = new System.Drawing.Size(177, 29);
+            this.cboObra.Size = new System.Drawing.Size(214, 29);
             this.cboObra.TabIndex = 0;
             // 
             // materialLabel1
@@ -56,7 +56,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(13, 154);
+            this.materialLabel1.Location = new System.Drawing.Point(13, 144);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(40, 19);
@@ -70,7 +70,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(13, 205);
+            this.materialLabel2.Location = new System.Drawing.Point(13, 195);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(43, 19);
@@ -81,9 +81,9 @@
             // 
             this.cboZona.FormattingEnabled = true;
             this.cboZona.ItemHeight = 23;
-            this.cboZona.Location = new System.Drawing.Point(159, 195);
+            this.cboZona.Location = new System.Drawing.Point(94, 185);
             this.cboZona.Name = "cboZona";
-            this.cboZona.Size = new System.Drawing.Size(177, 29);
+            this.cboZona.Size = new System.Drawing.Size(214, 29);
             this.cboZona.TabIndex = 3;
             // 
             // materialLabel3
@@ -93,7 +93,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(13, 252);
+            this.materialLabel3.Location = new System.Drawing.Point(13, 241);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(52, 19);
@@ -104,7 +104,7 @@
             // 
             this.txtPrecio.Depth = 0;
             this.txtPrecio.Hint = "";
-            this.txtPrecio.Location = new System.Drawing.Point(159, 247);
+            this.txtPrecio.Location = new System.Drawing.Point(94, 237);
             this.txtPrecio.MaxLength = 32767;
             this.txtPrecio.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPrecio.Name = "txtPrecio";
@@ -112,7 +112,7 @@
             this.txtPrecio.SelectedText = "";
             this.txtPrecio.SelectionLength = 0;
             this.txtPrecio.SelectionStart = 0;
-            this.txtPrecio.Size = new System.Drawing.Size(177, 23);
+            this.txtPrecio.Size = new System.Drawing.Size(214, 23);
             this.txtPrecio.TabIndex = 5;
             this.txtPrecio.TabStop = false;
             this.txtPrecio.UseSystemPasswordChar = false;
@@ -120,11 +120,11 @@
             // btnAceptar
             // 
             this.btnAceptar.Depth = 0;
-            this.btnAceptar.Location = new System.Drawing.Point(140, 312);
+            this.btnAceptar.Location = new System.Drawing.Point(94, 293);
             this.btnAceptar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Primary = true;
-            this.btnAceptar.Size = new System.Drawing.Size(118, 47);
+            this.btnAceptar.Size = new System.Drawing.Size(168, 40);
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Crear";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -148,9 +148,9 @@
             // 
             this.cboTeatro.FormattingEnabled = true;
             this.cboTeatro.ItemHeight = 23;
-            this.cboTeatro.Location = new System.Drawing.Point(159, 95);
+            this.cboTeatro.Location = new System.Drawing.Point(94, 85);
             this.cboTeatro.Name = "cboTeatro";
-            this.cboTeatro.Size = new System.Drawing.Size(177, 29);
+            this.cboTeatro.Size = new System.Drawing.Size(214, 29);
             this.cboTeatro.TabIndex = 7;
             this.cboTeatro.SelectedIndexChanged += new System.EventHandler(this.cboTeatro_SelectedIndexChanged);
             // 
@@ -158,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 393);
+            this.ClientSize = new System.Drawing.Size(350, 359);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.cboTeatro);
             this.Controls.Add(this.btnAceptar);
@@ -172,7 +172,7 @@
             this.MaximizeBox = false;
             this.Name = "ManTarifaCreate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "manFareCreate";
+            this.Text = "Crear tarifa";
             this.Load += new System.EventHandler(this.manFareCreate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

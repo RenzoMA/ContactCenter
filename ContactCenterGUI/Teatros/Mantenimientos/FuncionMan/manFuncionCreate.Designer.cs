@@ -153,7 +153,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Depth = 0;
-            this.btnAceptar.Location = new System.Drawing.Point(67, 300);
+            this.btnAceptar.Location = new System.Drawing.Point(78, 300);
             this.btnAceptar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Primary = true;
@@ -178,7 +178,9 @@
             this.Controls.Add(this.cboObra);
             this.Controls.Add(this.materialLabel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ManFuncionCreate";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear función";
             this.Load += new System.EventHandler(this.ManFuncionCreate_Load);

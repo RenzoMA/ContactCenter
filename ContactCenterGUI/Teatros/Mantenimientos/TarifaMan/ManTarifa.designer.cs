@@ -56,7 +56,7 @@
             this.groupBox1.Controls.Add(this.materialLabel1);
             this.groupBox1.Location = new System.Drawing.Point(12, 80);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(547, 140);
+            this.groupBox1.Size = new System.Drawing.Size(699, 140);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -65,11 +65,11 @@
             // btnBuscar
             // 
             this.btnBuscar.Depth = 0;
-            this.btnBuscar.Location = new System.Drawing.Point(422, 23);
+            this.btnBuscar.Location = new System.Drawing.Point(525, 15);
             this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Primary = true;
-            this.btnBuscar.Size = new System.Drawing.Size(101, 32);
+            this.btnBuscar.Size = new System.Drawing.Size(168, 40);
             this.btnBuscar.TabIndex = 15;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -93,9 +93,9 @@
             // 
             this.cboTeatro.FormattingEnabled = true;
             this.cboTeatro.ItemHeight = 23;
-            this.cboTeatro.Location = new System.Drawing.Point(178, 26);
+            this.cboTeatro.Location = new System.Drawing.Point(121, 26);
             this.cboTeatro.Name = "cboTeatro";
-            this.cboTeatro.Size = new System.Drawing.Size(177, 29);
+            this.cboTeatro.Size = new System.Drawing.Size(243, 29);
             this.cboTeatro.TabIndex = 13;
             this.cboTeatro.SelectedIndexChanged += new System.EventHandler(this.cboTeatro_SelectedIndexChanged);
             // 
@@ -103,9 +103,9 @@
             // 
             this.cboObra.FormattingEnabled = true;
             this.cboObra.ItemHeight = 23;
-            this.cboObra.Location = new System.Drawing.Point(178, 75);
+            this.cboObra.Location = new System.Drawing.Point(121, 75);
             this.cboObra.Name = "cboObra";
-            this.cboObra.Size = new System.Drawing.Size(177, 29);
+            this.cboObra.Size = new System.Drawing.Size(243, 29);
             this.cboObra.TabIndex = 12;
             this.cboObra.SelectedIndexChanged += new System.EventHandler(this.cboObra_SelectedIndexChanged);
             // 
@@ -126,11 +126,11 @@
             // btnCrear
             // 
             this.btnCrear.Depth = 0;
-            this.btnCrear.Location = new System.Drawing.Point(231, 545);
+            this.btnCrear.Location = new System.Drawing.Point(275, 543);
             this.btnCrear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Primary = true;
-            this.btnCrear.Size = new System.Drawing.Size(101, 32);
+            this.btnCrear.Size = new System.Drawing.Size(168, 40);
             this.btnCrear.TabIndex = 10;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = true;
@@ -160,7 +160,7 @@
             this.dgvTarifa.Name = "dgvTarifa";
             this.dgvTarifa.ReadOnly = true;
             this.dgvTarifa.RowHeadersVisible = false;
-            this.dgvTarifa.Size = new System.Drawing.Size(546, 285);
+            this.dgvTarifa.Size = new System.Drawing.Size(698, 285);
             this.dgvTarifa.TabIndex = 11;
             this.dgvTarifa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarifa_CellContentClick);
             // 
@@ -198,12 +198,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(579, 595);
+            this.ClientSize = new System.Drawing.Size(723, 595);
             this.Controls.Add(this.dgvTarifa);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ManTarifa";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Tarifas";
             this.Load += new System.EventHandler(this.ManTarifa_Load);
