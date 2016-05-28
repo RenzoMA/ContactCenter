@@ -61,7 +61,15 @@ namespace ContactCenterGUI.Teatros.Reservas
                 reserva.Obra = obra;
                 reserva.Funcion = funcion;
                 reserva.Usuario = Sesion.usuario;
-                servicio.EliminarAsientoTemporalAntiguo();
+                try
+                {
+                    servicio.EliminarAsientoTemporalAntiguo();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
                 HelperForm.changeForm(funcion.Obra.Teatro.frmTeatro, "Teatros", true, this, reserva);
             }
             else
@@ -97,7 +105,14 @@ namespace ContactCenterGUI.Teatros.Reservas
             using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
             {
                 Animacion.ShowLoader(this);
-                listaTeatro = await servicio.ListarTeatrosAsync();
+                try
+                {
+                    listaTeatro = await servicio.ListarTeatrosAsync();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 Animacion.HideLoader(this);
                 metroComboBox1.DataSource = listaTeatro;
                 metroComboBox1.DisplayMember = "Nombre";
@@ -113,20 +128,36 @@ namespace ContactCenterGUI.Teatros.Reservas
             FechaFuncion = dateTimePicker1.Value.Date;
             using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
             {
-                listaFuncion = servicio.ListarFuncionDiaObra(diaFuncion, obra.IdObra);
-                metroComboBox3.DataSource = listaFuncion;
-                metroComboBox3.DisplayMember = "Horario";
+                try
+                {
+                    listaFuncion = servicio.ListarFuncionDiaObra(diaFuncion, obra.IdObra);
+                    metroComboBox3.DataSource = listaFuncion;
+                    metroComboBox3.DisplayMember = "Horario";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             
+
         }
         private void CargarObras()
         {
             teatro = metroComboBox1.SelectedItem as Teatro;
             using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
             {
-                listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
-                metroComboBox2.DataSource = listaObra;
-                metroComboBox2.DisplayMember = "Nombre";
+                try
+                {
+                    listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
+                    metroComboBox2.DataSource = listaObra;
+                    metroComboBox2.DisplayMember = "Nombre";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             CargarFuncion();
         }

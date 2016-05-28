@@ -29,8 +29,15 @@ namespace ContactCenterGUI.Teatros.Reportes
         {
             using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
             {
-                cboTeatro.DataSource = servicio.ListarTeatros();
-                cboTeatro.DisplayMember = "Nombre";
+                try
+                {
+                    cboTeatro.DataSource = servicio.ListarTeatros();
+                    cboTeatro.DisplayMember = "Nombre";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
                 
 
@@ -43,32 +50,39 @@ namespace ContactCenterGUI.Teatros.Reportes
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            fechaObra = dtpFechaObra.Value.Date;
-            teatro = cboTeatro.SelectedItem as Teatro;
-            List<Reserva> lista = new List<Reserva>();
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            try
             {
-                lista = servicio.ReporteReservas(teatro.IdTeatro, fechaObra);
+                fechaObra = dtpFechaObra.Value.Date;
+                teatro = cboTeatro.SelectedItem as Teatro;
+                List<Reserva> lista = new List<Reserva>();
+                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                {
+                    lista = servicio.ReporteReservas(teatro.IdTeatro, fechaObra);
+                }
+
+                reportViewer1.ProcessingMode = ProcessingMode.Local;
+
+                reportViewer1.LocalReport.DataSources.Clear();
+
+                ReportDataSource Reporte = new ReportDataSource("DataSetReserva", lista);
+
+                reportViewer1.LocalReport.DataSources.Add(Reporte);
+
+                //reportViewer1.LocalReport.ReportEmbeddedResource = "MadScienceGUI.reportPago.rdlc";
+
+                List<ReportParameter> parametros = new List<ReportParameter>();
+                parametros.Add(new ReportParameter("NombreTeatro", "" + teatro.Nombre));
+                parametros.Add(new ReportParameter("FechaObra", "" + fechaObra));
+                //Añado parametros al reportviewer
+                this.reportViewer1.LocalReport.SetParameters(parametros);
+                reportViewer1.RefreshReport();
+
+                reportViewer1.Focus();
             }
-
-            reportViewer1.ProcessingMode = ProcessingMode.Local;
-
-            reportViewer1.LocalReport.DataSources.Clear();
-
-            ReportDataSource Reporte = new ReportDataSource("DataSetReserva",lista);
-
-            reportViewer1.LocalReport.DataSources.Add(Reporte);
-
-            //reportViewer1.LocalReport.ReportEmbeddedResource = "MadScienceGUI.reportPago.rdlc";
-
-            List<ReportParameter> parametros = new List<ReportParameter>();
-            parametros.Add(new ReportParameter("NombreTeatro", "" + teatro.Nombre));
-            parametros.Add(new ReportParameter("FechaObra", "" + fechaObra));
-            //Añado parametros al reportviewer
-            this.reportViewer1.LocalReport.SetParameters(parametros);
-            reportViewer1.RefreshReport();
-
-            reportViewer1.Focus();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

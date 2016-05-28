@@ -43,7 +43,14 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         private void Enlazar()
         {
-            dgvResult.DataSource = servicio.BuscarByNamePhoneDate(filtro, fechaInicio,fechaFin);
+            try
+            {
+                dgvResult.DataSource = servicio.BuscarByNamePhoneDate(filtro, fechaInicio, fechaFin);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -54,14 +61,21 @@ namespace ContactCenterGUI.Teatros.Reservas
                 DialogResult dialog = MessageBox.Show("¿Seguro de cancelar la reserva?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
-                    if (servicio.CancelarReserva(codigoReserva))
+                    try
                     {
-                        MessageBox.Show("Reserva cancelada correctamente", "Aviso");
-                        Enlazar();
+                        if (servicio.CancelarReserva(codigoReserva))
+                        {
+                            MessageBox.Show("Reserva cancelada correctamente", "Aviso");
+                            Enlazar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

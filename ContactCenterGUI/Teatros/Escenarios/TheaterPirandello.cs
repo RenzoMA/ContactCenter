@@ -23,7 +23,14 @@ namespace ContactCenterGUI.Teatros.Escenarios
 
         private void TheaterPirandello_Load(object sender, EventArgs e)
         {
-            HelperTeatro.MostrarDisponibilidad(this, (Reserva)this.Tag);
+            try
+            {
+                HelperTeatro.MostrarDisponibilidad(this, (Reserva)this.Tag);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button221_Click(object sender, EventArgs e)

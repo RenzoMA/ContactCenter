@@ -23,7 +23,14 @@ namespace ContactCenterGUI.Teatros.Escenarios
 
         private void TheaterPerJapones_Load(object sender, EventArgs e)
         {
-            HelperTeatro.MostrarDisponibilidad(this, (Reserva)this.Tag);
+            try
+            {
+                HelperTeatro.MostrarDisponibilidad(this, (Reserva)this.Tag);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void A1534_Click(object sender, EventArgs e)

@@ -110,12 +110,19 @@ namespace ContactCenterGUI.Teatros.Reservas
         }
         private void LoadCombos()
         {
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            try
             {
-                cboTipoPromocion.DataSource = servicio.GetListaTipoPromocion();
-                cboTipoPromocion.DisplayMember = "Descripcion";
+                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                {
+                    cboTipoPromocion.DataSource = servicio.GetListaTipoPromocion();
+                    cboTipoPromocion.DisplayMember = "Descripcion";
+                }
             }
-                
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
         private void SetEventos()
         {
@@ -179,19 +186,26 @@ namespace ContactCenterGUI.Teatros.Reservas
         }
         private async void ProcesarReserva(Cliente cliente)
         {
-            Animacion.ShowLoader(this);
-            IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
-            bool resultado = await servicio.InsertarReservaAsync(reserva, cliente);
-            Animacion.HideLoader(this);
-            if (resultado)
+            try
             {
-                MessageBox.Show("Reserva realizada correctamente", "Aviso",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                frmTeatro.Close();
-                this.Close();
+                Animacion.ShowLoader(this);
+                IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+                bool resultado = await servicio.InsertarReservaAsync(reserva, cliente);
+                Animacion.HideLoader(this);
+                if (resultado)
+                {
+                    MessageBox.Show("Reserva realizada correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmTeatro.Close();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No se registro la reserva!!!", "Aviso");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se registro la reserva!!!", "Aviso");
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -201,30 +215,37 @@ namespace ContactCenterGUI.Teatros.Reservas
         }
         private async void ObtenerCliente()
         {
-            string telefono = txtTelefono.Text.ToUpper().Trim();
-            if (telefono != "")
+            try
             {
-                IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
-                Animacion.ShowLoader(this);
-                cliente = await servicio.GetClienteByTelefonoAsync(telefono);
-                if (cliente != null)
+                string telefono = txtTelefono.Text.ToUpper().Trim();
+                if (telefono != "")
                 {
-                    txtApeMat.Text = cliente.Apellidomaterno;
-                    txtApePat.Text = cliente.ApellidoPaterno;
-                    txtCorreo.Text = cliente.Correo;
-                    txtNombre.Text = cliente.Nombre;
-                    txtTelefono.Text = cliente.Telefono;
-                    txtDNI.Text = cliente.DNI;
+                    IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+                    Animacion.ShowLoader(this);
+                    cliente = await servicio.GetClienteByTelefonoAsync(telefono);
+                    if (cliente != null)
+                    {
+                        txtApeMat.Text = cliente.Apellidomaterno;
+                        txtApePat.Text = cliente.ApellidoPaterno;
+                        txtCorreo.Text = cliente.Correo;
+                        txtNombre.Text = cliente.Nombre;
+                        txtTelefono.Text = cliente.Telefono;
+                        txtDNI.Text = cliente.DNI;
+                    }
+                    else
+                    {
+                        txtApeMat.Text = "";
+                        txtApePat.Text = "";
+                        txtCorreo.Text = "";
+                        txtNombre.Text = "";
+                        txtDNI.Text = "";
+                    }
+                    Animacion.HideLoader(this);
                 }
-                else
-                {
-                    txtApeMat.Text = "";
-                    txtApePat.Text = "";
-                    txtCorreo.Text = "";
-                    txtNombre.Text = "";
-                    txtDNI.Text = "";
-                }
-                Animacion.HideLoader(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
