@@ -100,18 +100,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (Validar())
-            {
-                CapturarDatos();
-                if (servicio.Uptade(tarifa))
-                {
-                    MessageBox.Show("La tarifa se actualizó correctamente");
-                }
-                else
-                {
-                    MessageBox.Show("Hubo un error, intente nuevamente.");
-                }
-            }
+            
         }
 
         private bool Validar()
@@ -124,6 +113,22 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
             else
             {
                 return true;
+            }
+        }
+
+        private void btnActualizar_Click_1(object sender, EventArgs e)
+        {
+            if (Validar())
+            {
+                CapturarDatos();
+                if (servicio.Uptade(tarifa))
+                {
+                    MessageBox.Show("La tarifa se actualizó correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error, intente nuevamente.");
+                }
             }
         }
     }

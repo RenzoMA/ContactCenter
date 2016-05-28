@@ -152,8 +152,9 @@
             this.btnActualizar.Primary = true;
             this.btnActualizar.Size = new System.Drawing.Size(168, 40);
             this.btnActualizar.TabIndex = 56;
-            this.btnActualizar.Text = "Crear";
+            this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click_1);
             // 
             // ManTarifaEdit
             // 
