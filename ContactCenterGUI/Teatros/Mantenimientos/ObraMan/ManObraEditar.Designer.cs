@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManObraEditar));
             this.gbDatosObra = new System.Windows.Forms.GroupBox();
-            this.lblObraNom = new MaterialSkin.Controls.MaterialLabel();
             this.dtpFecFinObra = new System.Windows.Forms.DateTimePicker();
             this.lblNomObra = new MaterialSkin.Controls.MaterialLabel();
             this.dtpFecIniObra = new System.Windows.Forms.DateTimePicker();
@@ -43,13 +42,14 @@
             this.lblEstadoObra = new MaterialSkin.Controls.MaterialLabel();
             this.cboEstadoObra = new MetroFramework.Controls.MetroComboBox();
             this.btnAceptarObra = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtNomObra = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.gbDatosObra.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbDatosObra
             // 
             this.gbDatosObra.BackColor = System.Drawing.Color.White;
-            this.gbDatosObra.Controls.Add(this.lblObraNom);
+            this.gbDatosObra.Controls.Add(this.txtNomObra);
             this.gbDatosObra.Controls.Add(this.dtpFecFinObra);
             this.gbDatosObra.Controls.Add(this.lblNomObra);
             this.gbDatosObra.Controls.Add(this.dtpFecIniObra);
@@ -67,19 +67,6 @@
             this.gbDatosObra.TabIndex = 18;
             this.gbDatosObra.TabStop = false;
             this.gbDatosObra.Text = "Datos Obra";
-            // 
-            // lblObraNom
-            // 
-            this.lblObraNom.AutoSize = true;
-            this.lblObraNom.BackColor = System.Drawing.Color.Transparent;
-            this.lblObraNom.Depth = 0;
-            this.lblObraNom.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblObraNom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblObraNom.Location = new System.Drawing.Point(169, 36);
-            this.lblObraNom.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblObraNom.Name = "lblObraNom";
-            this.lblObraNom.Size = new System.Drawing.Size(0, 19);
-            this.lblObraNom.TabIndex = 16;
             // 
             // dtpFecFinObra
             // 
@@ -223,6 +210,24 @@
             this.btnAceptarObra.UseVisualStyleBackColor = true;
             this.btnAceptarObra.Click += new System.EventHandler(this.btnAceptarObra_Click);
             // 
+            // txtNomObra
+            // 
+            this.txtNomObra.BackColor = System.Drawing.Color.White;
+            this.txtNomObra.Depth = 0;
+            this.txtNomObra.Hint = "";
+            this.txtNomObra.Location = new System.Drawing.Point(173, 32);
+            this.txtNomObra.MaxLength = 32767;
+            this.txtNomObra.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNomObra.Name = "txtNomObra";
+            this.txtNomObra.PasswordChar = '\0';
+            this.txtNomObra.SelectedText = "";
+            this.txtNomObra.SelectionLength = 0;
+            this.txtNomObra.SelectionStart = 0;
+            this.txtNomObra.Size = new System.Drawing.Size(241, 23);
+            this.txtNomObra.TabIndex = 16;
+            this.txtNomObra.TabStop = false;
+            this.txtNomObra.UseSystemPasswordChar = false;
+            // 
             // ManObraEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +262,6 @@
         private MaterialSkin.Controls.MaterialLabel lblEstadoObra;
         private MetroFramework.Controls.MetroComboBox cboEstadoObra;
         private MaterialSkin.Controls.MaterialRaisedButton btnAceptarObra;
-        private MaterialSkin.Controls.MaterialLabel lblObraNom;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtNomObra;
     }
 }
