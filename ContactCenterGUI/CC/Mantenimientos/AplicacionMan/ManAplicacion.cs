@@ -26,7 +26,13 @@ namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
 
         private void EnlazarGrilla()
         {
-            dgbAplicacion.DataSource = servicio.ListarAplicaciones();
+            try
+            {
+                dgbAplicacion.DataSource = servicio.ListarAplicaciones();
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgbAplicacion_CellContentClick_1(object sender, DataGridViewCellEventArgs e)

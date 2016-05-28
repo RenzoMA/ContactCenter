@@ -42,6 +42,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
                 obra.Descripcion = txtDescripcionObra.Text;
                 obra.Estado = cboEstadoObra.SelectedIndex == 0 ? "A" : "I";
                 obra.Teatro = cboTeatroObra.SelectedItem as Teatro;
+                try { 
                 if (servicio.InsertarObra(obra) == true)
                 {
 
@@ -53,8 +54,13 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 
                     MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-            }else
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
             {
                 MessageBox.Show("Completar todos los campos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -79,9 +85,15 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
         }
         private void ManPlayCreate_Load(object sender, EventArgs e)
         {
+            try { 
             cboTeatroObra.DataSource = servicio.ListarTeatros();
             cboTeatroObra.DisplayMember = "Nombre";
             cboEstadoObra.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
     }

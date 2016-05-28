@@ -72,6 +72,7 @@ namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
                 ms.Read(photo_aray, 0, photo_aray.Length);
                 aplicacion.Image = photo_aray;
             }
+            try { 
             if (servicio.UpdateAplicacion(aplicacion))
             {
                 MessageBox.Show("Proceso realizado correctamente", "Aviso");
@@ -80,6 +81,11 @@ namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
             else
             {
                 MessageBox.Show("Ocurrio un error", "verifique");
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

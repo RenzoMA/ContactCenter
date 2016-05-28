@@ -76,6 +76,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
             CapturarDatos();
             if (ValidarDatos())
             {
+                try { 
                 if (servicio.ActualizarObra(obra))
                 {
                     MessageBox.Show("Proceso realizado correctamente", "Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -84,6 +85,11 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
                 else
                 {
                     MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
