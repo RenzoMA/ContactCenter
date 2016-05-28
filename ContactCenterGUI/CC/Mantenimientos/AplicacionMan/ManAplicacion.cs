@@ -24,16 +24,12 @@ namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
             dgbAplicacion.AutoGenerateColumns = false;
         }
 
-        private void ManAppMenu_Load(object sender, EventArgs e)
-        {
-            EnlazarGrilla();
-        }
         private void EnlazarGrilla()
         {
             dgbAplicacion.DataSource = servicio.ListarAplicaciones();
         }
 
-        private void dgbAplicacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgbAplicacion_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
             {
@@ -42,6 +38,11 @@ namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
                 editarAplicacion.ShowDialog();
                 EnlazarGrilla();
             }
+        }
+
+        private void ManAplicacion_Load(object sender, EventArgs e)
+        {
+            EnlazarGrilla();
         }
     }
 }

@@ -42,11 +42,11 @@
             // materialRaisedButton1
             // 
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(202, 387);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(144, 379);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(110, 32);
+            this.materialRaisedButton1.Size = new System.Drawing.Size(168, 40);
             this.materialRaisedButton1.TabIndex = 3;
             this.materialRaisedButton1.Text = "Siguiente";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
@@ -56,9 +56,9 @@
             // 
             this.metroComboBox1.FormattingEnabled = true;
             this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(77, 100);
+            this.metroComboBox1.Location = new System.Drawing.Point(37, 100);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(170, 29);
+            this.metroComboBox1.Size = new System.Drawing.Size(247, 29);
             this.metroComboBox1.TabIndex = 4;
             this.metroComboBox1.SelectionChangeCommitted += new System.EventHandler(this.metroComboBox1_SelectionChangeCommitted);
             // 
@@ -71,9 +71,9 @@
             "Obra A",
             "Obra B",
             "Obra C"});
-            this.metroComboBox2.Location = new System.Drawing.Point(77, 167);
+            this.metroComboBox2.Location = new System.Drawing.Point(37, 167);
             this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(170, 29);
+            this.metroComboBox2.Size = new System.Drawing.Size(247, 29);
             this.metroComboBox2.TabIndex = 5;
             this.metroComboBox2.SelectionChangeCommitted += new System.EventHandler(this.metroComboBox2_SelectionChangeCommitted);
             // 
@@ -86,15 +86,15 @@
             "3:00pm - 5:00pm",
             "5:00pm - 7:00pm",
             "7:00pm - 9:00pm"});
-            this.metroComboBox3.Location = new System.Drawing.Point(77, 294);
+            this.metroComboBox3.Location = new System.Drawing.Point(37, 294);
             this.metroComboBox3.Name = "metroComboBox3";
-            this.metroComboBox3.Size = new System.Drawing.Size(170, 29);
+            this.metroComboBox3.Size = new System.Drawing.Size(247, 29);
             this.metroComboBox3.TabIndex = 6;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(77, 233);
+            this.dateTimePicker1.Location = new System.Drawing.Point(68, 233);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(170, 20);
             this.dateTimePicker1.TabIndex = 7;
@@ -116,7 +116,7 @@
             // 
             this.txtFecha.Depth = 0;
             this.txtFecha.Hint = "";
-            this.txtFecha.Location = new System.Drawing.Point(77, 233);
+            this.txtFecha.Location = new System.Drawing.Point(37, 233);
             this.txtFecha.MaxLength = 32767;
             this.txtFecha.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtFecha.Name = "txtFecha";
@@ -124,7 +124,7 @@
             this.txtFecha.SelectedText = "";
             this.txtFecha.SelectionLength = 0;
             this.txtFecha.SelectionStart = 0;
-            this.txtFecha.Size = new System.Drawing.Size(170, 23);
+            this.txtFecha.Size = new System.Drawing.Size(247, 23);
             this.txtFecha.TabIndex = 16;
             this.txtFecha.TabStop = false;
             this.txtFecha.UseSystemPasswordChar = false;

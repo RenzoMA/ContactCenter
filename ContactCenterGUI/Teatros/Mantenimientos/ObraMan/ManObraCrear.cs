@@ -32,28 +32,51 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            
+            if (ValidarDatos())
+            {
 
                 Obra obra = new Obra();
                 obra.Nombre = txtNomObra.Text;
                 obra.FechaInicio = dtpFecIniObra.Value.Date;
                 obra.FechaFin = dtpFecFinObra.Value.Date;
                 obra.Descripcion = txtDescripcionObra.Text;
-                obra.Estado = cboEstadoObra.SelectedIndex == 0?"A":"I";
+                obra.Estado = cboEstadoObra.SelectedIndex == 0 ? "A" : "I";
                 obra.Teatro = cboTeatroObra.SelectedItem as Teatro;
-            if(servicio.InsertarObra(obra) == true) {
+                if (servicio.InsertarObra(obra) == true)
+                {
 
-                MessageBox.Show("Obra registrada correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            } else {
+                    MessageBox.Show("Proceso realizado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
 
-                MessageBox.Show("Error al registrar la reserva. Intentelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }else
+            {
+                MessageBox.Show("Completar todos los campos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
             
         }
 
+       
+
+        private bool ValidarDatos()
+        {
+            if (txtNomObra.Text.ToUpper().Trim().Equals(string.Empty))
+                return false;
+            if (txtDescripcionObra.Text.ToUpper().Trim().Equals(string.Empty))
+                return false;
+            if (cboEstadoObra.SelectedIndex == 0)
+                return false;
+            if (cboTeatroObra.SelectedIndex == 0)
+                return false;
+
+            return true;
+
+        }
         private void ManPlayCreate_Load(object sender, EventArgs e)
         {
             cboTeatroObra.DataSource = servicio.ListarTeatros();

@@ -33,13 +33,14 @@ namespace ContactCenterGUI.CC
         public void LimpiarMensajesError()
         {
             ep1.Clear();
-            lblMensaje.Text = "";
+            //lblMensaje.Text = "";
         }
 
         public void SetErrorIngreso()
         {
-            lblMensaje.Text = "Contraseña incorrecta";
-            lblMensaje.ForeColor = Color.Red;
+            //lblMensaje.Text = "Contraseña incorrecta";
+            //lblMensaje.ForeColor = Color.Red;
+            MessageBox.Show("Contrasea incorrecta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public Login()
@@ -101,7 +102,7 @@ namespace ContactCenterGUI.CC
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un error: " + ex.Message);
+                MessageBox.Show("Ocurrio un error: " + ex.Message,"ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             finally
             {

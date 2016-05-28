@@ -71,11 +71,11 @@
             // btnCrear
             // 
             this.btnCrear.Depth = 0;
-            this.btnCrear.Location = new System.Drawing.Point(170, 446);
+            this.btnCrear.Location = new System.Drawing.Point(274, 448);
             this.btnCrear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Primary = true;
-            this.btnCrear.Size = new System.Drawing.Size(101, 32);
+            this.btnCrear.Size = new System.Drawing.Size(168, 40);
             this.btnCrear.TabIndex = 65;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = true;
@@ -218,9 +218,9 @@
             this.materialLabel1.Location = new System.Drawing.Point(23, 203);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(89, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(93, 19);
             this.materialLabel1.TabIndex = 55;
-            this.materialLabel1.Text = "Descripción";
+            this.materialLabel1.Text = "Descripción:";
             // 
             // materialLabel6
             // 
@@ -232,9 +232,9 @@
             this.materialLabel6.Location = new System.Drawing.Point(26, 170);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Size = new System.Drawing.Size(62, 19);
+            this.materialLabel6.Size = new System.Drawing.Size(66, 19);
             this.materialLabel6.TabIndex = 73;
-            this.materialLabel6.Text = "Función";
+            this.materialLabel6.Text = "Función:";
             // 
             // cboFuncion
             // 
@@ -318,7 +318,9 @@
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.materialLabel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ManPromocionCreate";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Promoción";
             this.Load += new System.EventHandler(this.ManPromocionCreate_Load);

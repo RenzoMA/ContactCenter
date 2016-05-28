@@ -54,11 +54,11 @@
             // btnCrear
             // 
             this.btnCrear.Depth = 0;
-            this.btnCrear.Location = new System.Drawing.Point(331, 549);
+            this.btnCrear.Location = new System.Drawing.Point(605, 549);
             this.btnCrear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Primary = true;
-            this.btnCrear.Size = new System.Drawing.Size(101, 32);
+            this.btnCrear.Size = new System.Drawing.Size(168, 40);
             this.btnCrear.TabIndex = 12;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = true;
@@ -91,9 +91,9 @@
             this.materialLabel2.Location = new System.Drawing.Point(22, 98);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(62, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(66, 19);
             this.materialLabel2.TabIndex = 16;
-            this.materialLabel2.Text = "Función";
+            this.materialLabel2.Text = "Función:";
             // 
             // cboFuncion
             // 
@@ -155,11 +155,11 @@
             // btnBuscar
             // 
             this.btnBuscar.Depth = 0;
-            this.btnBuscar.Location = new System.Drawing.Point(493, 22);
+            this.btnBuscar.Location = new System.Drawing.Point(483, 28);
             this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Primary = true;
-            this.btnBuscar.Size = new System.Drawing.Size(101, 32);
+            this.btnBuscar.Size = new System.Drawing.Size(168, 40);
             this.btnBuscar.TabIndex = 10;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -258,7 +258,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvPromociones);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ManPromocion";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Promociones";
             this.Load += new System.EventHandler(this.ManFuncion_Load);

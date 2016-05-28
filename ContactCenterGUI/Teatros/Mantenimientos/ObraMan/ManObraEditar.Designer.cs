@@ -213,11 +213,11 @@
             // btnAceptarObra
             // 
             this.btnAceptarObra.Depth = 0;
-            this.btnAceptarObra.Location = new System.Drawing.Point(326, 499);
+            this.btnAceptarObra.Location = new System.Drawing.Point(303, 495);
             this.btnAceptarObra.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAceptarObra.Name = "btnAceptarObra";
             this.btnAceptarObra.Primary = true;
-            this.btnAceptarObra.Size = new System.Drawing.Size(145, 36);
+            this.btnAceptarObra.Size = new System.Drawing.Size(168, 40);
             this.btnAceptarObra.TabIndex = 17;
             this.btnAceptarObra.Text = "Aceptar";
             this.btnAceptarObra.UseVisualStyleBackColor = true;
@@ -231,9 +231,10 @@
             this.Controls.Add(this.gbDatosObra);
             this.Controls.Add(this.btnAceptarObra);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ManObraEditar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ManObraEditar";
+            this.Text = "Editar Obra";
             this.Load += new System.EventHandler(this.ManObraEditar_Load);
             this.gbDatosObra.ResumeLayout(false);
             this.gbDatosObra.PerformLayout();

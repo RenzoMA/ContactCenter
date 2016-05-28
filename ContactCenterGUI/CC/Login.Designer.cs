@@ -45,11 +45,11 @@
             // btnLogin
             // 
             this.btnLogin.Depth = 0;
-            this.btnLogin.Location = new System.Drawing.Point(149, 370);
+            this.btnLogin.Location = new System.Drawing.Point(171, 419);
             this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Primary = true;
-            this.btnLogin.Size = new System.Drawing.Size(163, 38);
+            this.btnLogin.Size = new System.Drawing.Size(168, 40);
             this.btnLogin.TabIndex = 9;
             this.btnLogin.Text = "Ingresar";
             this.btnLogin.UseVisualStyleBackColor = true;

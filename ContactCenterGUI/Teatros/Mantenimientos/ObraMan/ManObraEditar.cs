@@ -78,17 +78,17 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
             {
                 if (servicio.ActualizarObra(obra))
                 {
-                    MessageBox.Show("Proceso realizado correctamente", "Aviso");
+                    MessageBox.Show("Proceso realizado correctamente", "Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error", "Aviso");
+                    MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Completar todos los campos", "Aviso");
+                MessageBox.Show("Completar todos los campos", "Aviso",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }

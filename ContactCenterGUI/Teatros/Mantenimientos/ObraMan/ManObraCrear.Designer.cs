@@ -180,11 +180,11 @@
             // btnAceptarObra
             // 
             this.btnAceptarObra.Depth = 0;
-            this.btnAceptarObra.Location = new System.Drawing.Point(326, 499);
+            this.btnAceptarObra.Location = new System.Drawing.Point(303, 495);
             this.btnAceptarObra.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAceptarObra.Name = "btnAceptarObra";
             this.btnAceptarObra.Primary = true;
-            this.btnAceptarObra.Size = new System.Drawing.Size(145, 36);
+            this.btnAceptarObra.Size = new System.Drawing.Size(168, 40);
             this.btnAceptarObra.TabIndex = 12;
             this.btnAceptarObra.Text = "Aceptar";
             this.btnAceptarObra.UseVisualStyleBackColor = true;
@@ -228,7 +228,7 @@
             this.gbDatosObra.TabStop = false;
             this.gbDatosObra.Text = "Datos Obra";
             // 
-            // ManPlayCreate
+            // ManObraCrear
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -237,10 +237,10 @@
             this.Controls.Add(this.btnAceptarObra);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "ManPlayCreate";
+            this.Name = "ManObraCrear";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ManPlayCreate";
+            this.Text = "Crear Obra";
             this.Load += new System.EventHandler(this.ManPlayCreate_Load);
             this.gbDatosObra.ResumeLayout(false);
             this.gbDatosObra.PerformLayout();

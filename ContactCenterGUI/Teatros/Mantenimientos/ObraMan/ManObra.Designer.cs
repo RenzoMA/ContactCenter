@@ -51,7 +51,7 @@
             this.gbFiltroObra.Controls.Add(this.lblFiltroObra);
             this.gbFiltroObra.Controls.Add(this.cboTeFilObra);
             this.gbFiltroObra.Controls.Add(this.btnBuscarObra);
-            this.gbFiltroObra.Location = new System.Drawing.Point(65, 78);
+            this.gbFiltroObra.Location = new System.Drawing.Point(22, 78);
             this.gbFiltroObra.Name = "gbFiltroObra";
             this.gbFiltroObra.Size = new System.Drawing.Size(648, 148);
             this.gbFiltroObra.TabIndex = 12;
@@ -65,7 +65,7 @@
             this.lblFiltroObra.Depth = 0;
             this.lblFiltroObra.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblFiltroObra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblFiltroObra.Location = new System.Drawing.Point(22, 28);
+            this.lblFiltroObra.Location = new System.Drawing.Point(17, 48);
             this.lblFiltroObra.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblFiltroObra.Name = "lblFiltroObra";
             this.lblFiltroObra.Size = new System.Drawing.Size(57, 19);
@@ -76,7 +76,7 @@
             // 
             this.cboTeFilObra.FormattingEnabled = true;
             this.cboTeFilObra.ItemHeight = 23;
-            this.cboTeFilObra.Location = new System.Drawing.Point(102, 19);
+            this.cboTeFilObra.Location = new System.Drawing.Point(97, 39);
             this.cboTeFilObra.Name = "cboTeFilObra";
             this.cboTeFilObra.Size = new System.Drawing.Size(241, 29);
             this.cboTeFilObra.TabIndex = 12;
@@ -84,11 +84,11 @@
             // btnBuscarObra
             // 
             this.btnBuscarObra.Depth = 0;
-            this.btnBuscarObra.Location = new System.Drawing.Point(502, 22);
+            this.btnBuscarObra.Location = new System.Drawing.Point(438, 48);
             this.btnBuscarObra.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscarObra.Name = "btnBuscarObra";
             this.btnBuscarObra.Primary = true;
-            this.btnBuscarObra.Size = new System.Drawing.Size(101, 32);
+            this.btnBuscarObra.Size = new System.Drawing.Size(168, 40);
             this.btnBuscarObra.TabIndex = 10;
             this.btnBuscarObra.Text = "Buscar";
             this.btnBuscarObra.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@
             this.Descripcion,
             this.Nombre,
             this.Estado});
-            this.dgvObras.Location = new System.Drawing.Point(65, 232);
+            this.dgvObras.Location = new System.Drawing.Point(22, 232);
             this.dgvObras.Name = "dgvObras";
             this.dgvObras.ReadOnly = true;
             this.dgvObras.RowHeadersVisible = false;
@@ -164,11 +164,11 @@
             // btnNuevaObra
             // 
             this.btnNuevaObra.Depth = 0;
-            this.btnNuevaObra.Location = new System.Drawing.Point(594, 551);
+            this.btnNuevaObra.Location = new System.Drawing.Point(502, 543);
             this.btnNuevaObra.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNuevaObra.Name = "btnNuevaObra";
             this.btnNuevaObra.Primary = true;
-            this.btnNuevaObra.Size = new System.Drawing.Size(168, 32);
+            this.btnNuevaObra.Size = new System.Drawing.Size(168, 40);
             this.btnNuevaObra.TabIndex = 14;
             this.btnNuevaObra.Text = "Nueva Obra";
             this.btnNuevaObra.UseVisualStyleBackColor = true;
@@ -178,14 +178,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 595);
+            this.ClientSize = new System.Drawing.Size(695, 595);
             this.Controls.Add(this.btnNuevaObra);
             this.Controls.Add(this.dgvObras);
             this.Controls.Add(this.gbFiltroObra);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ManObra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ManObra";
+            this.Text = "Gestión Obra";
             this.Load += new System.EventHandler(this.ManObra_Load);
             this.gbFiltroObra.ResumeLayout(false);
             this.gbFiltroObra.PerformLayout();

@@ -156,17 +156,17 @@
     <Compile Include="CC\Helpers\HelperConexion.cs" />
     <Compile Include="CC\Helpers\HelperControl.cs" />
     <Compile Include="CC\Helpers\HelperForm.cs" />
+    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAplicacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAplicacion.Designer.cs">
+      <DependentUpon>ManAplicacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.Designer.cs">
       <DependentUpon>ManAplicacionEditar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAplicacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAppMenu.Designer.cs">
-      <DependentUpon>ManAplicacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.cs">
       <SubType>Form</SubType>
@@ -331,11 +331,11 @@
     <EmbeddedResource Include="CC\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CC\Mantenimientos\AplicacionMan\ManAplicacion.resx">
+      <DependentUpon>ManAplicacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.resx">
       <DependentUpon>ManAplicacionEditar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CC\Mantenimientos\AplicacionMan\ManAppMenu.resx">
-      <DependentUpon>ManAplicacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.resx">
       <DependentUpon>ManAsiento.cs</DependentUpon>

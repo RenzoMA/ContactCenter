@@ -222,11 +222,11 @@
             // btnCreaUpdate
             // 
             this.btnCreaUpdate.Depth = 0;
-            this.btnCreaUpdate.Location = new System.Drawing.Point(161, 655);
+            this.btnCreaUpdate.Location = new System.Drawing.Point(276, 654);
             this.btnCreaUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCreaUpdate.Name = "btnCreaUpdate";
             this.btnCreaUpdate.Primary = true;
-            this.btnCreaUpdate.Size = new System.Drawing.Size(101, 32);
+            this.btnCreaUpdate.Size = new System.Drawing.Size(168, 40);
             this.btnCreaUpdate.TabIndex = 19;
             this.btnCreaUpdate.UseVisualStyleBackColor = true;
             // 
@@ -443,9 +443,11 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.materialLabel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ManCreateUpdateUsuario";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ManCreateUpdateUsuario";
+            this.Text = "Gestión Usuario";
             this.Load += new System.EventHandler(this.ManCreateUpdateUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).EndInit();
