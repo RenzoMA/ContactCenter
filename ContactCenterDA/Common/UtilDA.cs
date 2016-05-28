@@ -145,7 +145,6 @@ namespace ContactCenterDA.Common
             catch (Exception ex)
             {
                 SaveLog(ex, sql, parameters);
-                throw new Exception(ex.Message);
                 return false;
             }
             finally
@@ -336,7 +335,7 @@ namespace ContactCenterDA.Common
             catch (Exception ex)
             {
                 SaveLog(ex, sqlEjecucion, parameters);
-                throw new Exception(ex.Message);
+                return false;
             }
             finally
             {
