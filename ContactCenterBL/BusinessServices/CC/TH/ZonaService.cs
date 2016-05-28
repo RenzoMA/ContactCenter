@@ -17,7 +17,15 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         }
         public List<Zona> ListZonaByTeatro(int IdTeatro)
         {
-            return zonaRepository.ListZonaByTeatro(IdTeatro);
+            List<Zona> listaZona = zonaRepository.ListZonaByTeatro(IdTeatro);
+
+            Zona zona = new Zona()
+            {
+                IdZona = 0,
+                Nombre = "Seleccione obra"
+            };
+            listaZona.Insert(0, zona);
+            return listaZona;
         }
     }
 }

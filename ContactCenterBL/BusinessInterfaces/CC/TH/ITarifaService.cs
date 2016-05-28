@@ -9,7 +9,7 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
 {
     public interface ITarifaService
     {
-        List<Tarifa> GetListaByTeatroObra(int IdObra);
+        List<TarifaView> GetListaByTeatroObra(int IdObra);
 
         bool Insert(Tarifa tarifa);
 

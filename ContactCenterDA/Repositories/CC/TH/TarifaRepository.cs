@@ -162,9 +162,9 @@ namespace ContactCenterDA.Repositories.CC.TH
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, idZona, idObra, precio, fechaCrea, userCrea, idTarifa);
         }
 
-        public List<Tarifa> GetListaByTeatroObra(int IdObra)
+        public List<TarifaView> GetListaByTeatroObra(int IdObra)
         {
-            List<Tarifa> listTarifa = new List<Tarifa>();
+            List<TarifaView> listTarifa = new List<TarifaView>();
             String sql = "SELECT * FROM ((TH_Tarifa T INNER JOIN TH_OBRA O ON O.IdObra = T.IdObra) INNER JOIN TH_ZONA Z ON Z.IdZona = T.IdZona) INNER JOIN TH_TEATRO TE ON TE.IdTeatro = Z.IdTeatro WHERE T.IDOBRA = @idObra";
 
             OleDbParameter codigoObra = UtilDA.SetParameters("@idObra", OleDbType.Integer, IdObra);
@@ -173,7 +173,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             {
                 while(dtr.Read())
                 {
-                    Tarifa objTarifa = new Tarifa()
+                    TarifaView objTarifa = new TarifaView()
                 {
                     IdTarifa = DataConvert.ToInt(dtr["IdTarifa"]),
                     Zona = new Zona()

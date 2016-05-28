@@ -106,6 +106,7 @@
             this.cboDia.FormattingEnabled = true;
             this.cboDia.ItemHeight = 23;
             this.cboDia.Items.AddRange(new object[] {
+            "Seleccione día",
             "Lunes",
             "Martes",
             "Miércoles",
@@ -113,7 +114,7 @@
             "Viernes",
             "Sábado",
             "Domingo"});
-            this.cboDia.Location = new System.Drawing.Point(105, 191);
+            this.cboDia.Location = new System.Drawing.Point(105, 193);
             this.cboDia.Name = "cboDia";
             this.cboDia.Size = new System.Drawing.Size(177, 29);
             this.cboDia.TabIndex = 20;
@@ -152,11 +153,11 @@
             // btnAceptar
             // 
             this.btnAceptar.Depth = 0;
-            this.btnAceptar.Location = new System.Drawing.Point(95, 295);
+            this.btnAceptar.Location = new System.Drawing.Point(67, 300);
             this.btnAceptar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Primary = true;
-            this.btnAceptar.Size = new System.Drawing.Size(118, 47);
+            this.btnAceptar.Size = new System.Drawing.Size(168, 40);
             this.btnAceptar.TabIndex = 23;
             this.btnAceptar.Text = "Crear";
             this.btnAceptar.UseVisualStyleBackColor = true;
