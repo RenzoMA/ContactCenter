@@ -172,9 +172,9 @@
             this.materialLabel2.Location = new System.Drawing.Point(38, 291);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(55, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(56, 19);
             this.materialLabel2.TabIndex = 33;
-            this.materialLabel2.Text = "Estad0";
+            this.materialLabel2.Text = "Estado";
             // 
             // cboEstado
             // 
