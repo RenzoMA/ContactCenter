@@ -123,10 +123,16 @@ namespace ContactCenterGUI.Teatros.Helpers
             int randomNumber2 = new Random().Next(1000000, 10000000);
             return Util.Encriptar(randomNumber1 + usuarioActual + randomNumber2);
         }
+        private static bool procesando = false;
         private static async void AsignarListaOcupada(List<Asiento> lOcupada)
         {
-            lOcupada = await servicio.ListarAsientoDisponibleAsync(reservaTemp.Obra.IdObra, reservaTemp.Funcion.IdFuncion, reservaTemp.FechaReserva,tokenTemp);
-            CruzarBotonOcupado(lOcupada);
+            if (!procesando)
+            {
+                procesando = true;
+                lOcupada = await servicio.ListarAsientoDisponibleAsync(reservaTemp.Obra.IdObra, reservaTemp.Funcion.IdFuncion, reservaTemp.FechaReserva, tokenTemp);
+                CruzarBotonOcupado(lOcupada);
+                procesando = false;
+            }
         }
         private static void CruzarBotonOcupado(List<Asiento> lista)
         {

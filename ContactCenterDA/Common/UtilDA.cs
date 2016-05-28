@@ -304,6 +304,8 @@ namespace ContactCenterDA.Common
             {
                 if (!transaction)
                 {
+                    oleDbCommand = new OleDbCommand();
+                    oleDbConnection = new OleDbConnection();
                     oleDbCommand.Connection = oleDbConnection;
                     oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
                 }
