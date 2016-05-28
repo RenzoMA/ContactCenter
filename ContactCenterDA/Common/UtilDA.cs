@@ -9,6 +9,7 @@ using ContactCenterCommon;
 using System.IO;
 using System.Threading;
 using System.Globalization;
+using System.Configuration;
 
 namespace ContactCenterDA.Common
 {
@@ -22,21 +23,23 @@ namespace ContactCenterDA.Common
         private static String GetConexion(this OleDbConnection con)
         {
 
-            string ruta = System.IO.Directory.GetCurrentDirectory();
-            if (ruta.Contains("TestResults"))
-            {
-                int since = ruta.LastIndexOf("TestResults");
-                ruta = ruta.Substring(0, since) + "ContactCenterDA";
-            }
+            //string ruta = System.IO.Directory.GetCurrentDirectory();
+            //if (ruta.Contains("TestResults"))
+            //{
+            //    int since = ruta.LastIndexOf("TestResults");
+            //    ruta = ruta.Substring(0, since) + "ContactCenterDA";
+            //}
 
-            if (ruta.Contains("ContactCenterGUI\\bin\\Debug"))
-                ruta = ruta.Replace("ContactCenterGUI\\bin\\Debug", "ContactCenterDA");
+            //if (ruta.Contains("ContactCenterGUI\\bin\\Debug"))
+            //    ruta = ruta.Replace("ContactCenterGUI\\bin\\Debug", "ContactCenterDA");
 
-            if(ruta.Contains("ContactCenterUnitTest\\bin\\Debug"))
-                ruta = ruta.Replace("ContactCenterUnitTest\\bin\\Debug", "ContactCenterDA");
+            //if(ruta.Contains("ContactCenterUnitTest\\bin\\Debug"))
+            //    ruta = ruta.Replace("ContactCenterUnitTest\\bin\\Debug", "ContactCenterDA");
 
-            string strCnx =
-                "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + ruta + "\\ContactCenter.accdb; Persist Security Info = True;";
+            //string ip = @"\\DESKTOP-IP4QSRA\ContactCenterBD\ContactCenter.accdb"; 
+            //string strCnx =
+            //    "Provider = Microsoft.ACE.OLEDB.12.0; Data Source="+ ip + "; Persist Security Info = True;";
+            string strCnx = ConfigurationManager.ConnectionStrings["Teatros"].ConnectionString;
 
             if (object.ReferenceEquals(strCnx, string.Empty))
             {
