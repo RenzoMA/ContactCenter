@@ -80,6 +80,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
             funcion.Obra = obra;
             funcion.Dia = Convert.ToInt32(cboDia.SelectedValue);
             funcion.Horario = txtHoarario.Text;
+            funcion.Estado = cboEstado.SelectedIndex == 0 ? "A"  :"I";
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

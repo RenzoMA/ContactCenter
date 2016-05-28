@@ -85,7 +85,20 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
             {
                 using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
                 {
-                    dgvFuncion.DataSource = servicio.ListarFuncionByObraGrilla(obra.IdObra);
+                    List<Funcion> listFuncion = servicio.ListarFuncionByObraGrilla(obra.IdObra); 
+                    dgvFuncion.DataSource = listFuncion;
+
+                    String[] diasNombre = new String[7] { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
+
+                    foreach (DataGridViewRow row in dgvFuncion.Rows)
+                    {
+
+                        int indice = Convert.ToInt32(row.Cells[3].Value);
+
+                        String nombre = diasNombre.ElementAt(indice);
+
+                        row.Cells[6].Value = nombre;
+                    }
                 }
             }
         }

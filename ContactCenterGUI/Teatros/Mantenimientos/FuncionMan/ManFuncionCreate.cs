@@ -84,7 +84,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 
             Funcion funcion = new Funcion()
             {
-                Dia = Convert.ToInt32(cboDia.SelectedValue),
+                Dia = Convert.ToInt32(cboDia.SelectedIndex),
                 Horario = txtHoarario.Text,
                 Obra = obra,
                 Estado = "A"

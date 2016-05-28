@@ -180,6 +180,9 @@
             // 
             this.cboEstado.FormattingEnabled = true;
             this.cboEstado.ItemHeight = 23;
+            this.cboEstado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
             this.cboEstado.Location = new System.Drawing.Point(131, 281);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(177, 29);
