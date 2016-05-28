@@ -36,7 +36,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 
         private void cargarData() {
 
-            lblObraNom.Text = obra.Nombre;
+            txtNomObra.Text = obra.Nombre;
             dtpFecIniObra.Value = obra.FechaInicio;
             dtpFecFinObra.Value = obra.FechaFin;
             cboEstadoObra.SelectedIndex = obra.Estado == "Activo" ? 0 : 1;
@@ -54,7 +54,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 
         private void CapturarDatos()
         {
-            obra.Nombre = lblObraNom.Text;
+            obra.Nombre = txtNomObra.Text;
             obra.FechaInicio = dtpFecIniObra.Value.Date;
             obra.FechaFin = dtpFecFinObra.Value.Date;
             obra.Descripcion = txtDescripcionObra.Text;
@@ -91,5 +91,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
                 MessageBox.Show("Completar todos los campos", "Aviso",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
+
+       
     }
 }
