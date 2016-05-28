@@ -66,47 +66,67 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 
         private async void CargarTeatros()
         {
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            try
             {
-                listaTeatro = await servicio.ListarTeatrosAsync();
-                cboTeatro.DataSource = listaTeatro;
-                cboTeatro.DisplayMember = "Nombre";
+                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                {
+                    listaTeatro = await servicio.ListarTeatrosAsync();
+                    cboTeatro.DataSource = listaTeatro;
+                    cboTeatro.DisplayMember = "Nombre";
+                }
+                CargarObras();
             }
-            CargarObras();
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CargarObras()
         {
-            teatro = cboTeatro.SelectedItem as Teatro;
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            try
             {
-                listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
-                cboObra.DataSource = listaObra;
-                cboObra.DisplayMember = "Nombre";
+                teatro = cboTeatro.SelectedItem as Teatro;
+                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                {
+                    listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
+                    cboObra.DataSource = listaObra;
+                    cboObra.DisplayMember = "Nombre";
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         public void CrearTarifa()
         {
-
-            obra = cboObra.SelectedItem as Obra;
-
-            Funcion funcion = new Funcion()
+            try
             {
-                Dia = Convert.ToInt32(cboDia.SelectedIndex) - 1,
-                Horario = txtHoarario.Text,
-                Obra = obra,
-                Estado = "A"
-            };
+                obra = cboObra.SelectedItem as Obra;
 
-            if (servicio.InsertarFuncion(funcion))
-            {
-                MessageBox.Show("Función creada correctamente", "Aviso");
-                this.Close();
+                Funcion funcion = new Funcion()
+                {
+                    Dia = Convert.ToInt32(cboDia.SelectedIndex) - 1,
+                    Horario = txtHoarario.Text,
+                    Obra = obra,
+                    Estado = "A"
+                };
+
+                if (servicio.InsertarFuncion(funcion))
+                {
+                    MessageBox.Show("Función creada correctamente", "Aviso");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

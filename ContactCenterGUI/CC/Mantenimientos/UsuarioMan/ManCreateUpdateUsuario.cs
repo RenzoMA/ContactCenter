@@ -55,9 +55,16 @@ namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
 
         private void LoadRoles()
         {
-            listaRol = servicio.ListarRol();
-            cboRol.DataSource = listaRol;
-            cboRol.DisplayMember = "Nombre";
+            try
+            {
+                listaRol = servicio.ListarRol();
+                cboRol.DataSource = listaRol;
+                cboRol.DisplayMember = "Nombre";
+            }
+            catch(Exception ex )
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void ManCreateUpdateUsuario_Load(object sender, EventArgs e)
         {
@@ -96,8 +103,15 @@ namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
         }
         private void EnlazarListaAplicacion()
         {
-            lstAplicaciones.DataSource = servicio.ListarAplicaciones();
-            lstAplicaciones.DisplayMember = "Nombre";
+            try
+            {
+                lstAplicaciones.DataSource = servicio.ListarAplicaciones();
+                lstAplicaciones.DisplayMember = "Nombre";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void OcultarCamposEdicion()
         {
@@ -127,32 +141,40 @@ namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
 
         private void CrearUsuario(object sender, EventArgs e)
         {
-            if (ValidarContraseñas() && ValidarCampos())
+            try
             {
-                Usuario usuario = new Usuario()
+                if (ValidarContraseñas() && ValidarCampos())
                 {
-                    Nombre = txtNombre.Text,
-                    ApellidoMaterno = txtApeMaterno.Text,
-                    ApellidoPaterno = txtApePaterno.Text,
-                    Contraseña = txtContraseña.Text,
-                    Correo = txtCorreo.Text,
-                    Login = txtLogin.Text,
-                    Aplicaciones = listaAplicacion,
-                    Rol = cboRol.SelectedItem as Rol
-                };
-                if (servicio.InsertarUsuario(usuario))
-                {
-                    MessageBox.Show("Usuario creado correctamente", "Aviso");
-                    this.Close();
+                    Usuario usuario = new Usuario()
+                    {
+                        Nombre = txtNombre.Text,
+                        ApellidoMaterno = txtApeMaterno.Text,
+                        ApellidoPaterno = txtApePaterno.Text,
+                        Contraseña = txtContraseña.Text,
+                        Correo = txtCorreo.Text,
+                        Login = txtLogin.Text,
+                        Aplicaciones = listaAplicacion,
+                        Rol = cboRol.SelectedItem as Rol
+                    };
+                    if (servicio.InsertarUsuario(usuario))
+                    {
+                        MessageBox.Show("Usuario creado correctamente", "Aviso");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Verifique todos los campos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Verifique todos los campos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
         private bool ValidarCampos()
@@ -174,35 +196,43 @@ namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
         private void EditarUsuario(object sender, EventArgs e)
         {
             bool CambioContraseña = false;
-            if (ValidarCampos())
+            try
             {
-                usuario.Nombre = txtNombre.Text.Trim();
-                usuario.ApellidoMaterno = txtApeMaterno.Text.Trim();
-                usuario.ApellidoPaterno = txtApePaterno.Text.Trim();
-                usuario.Correo = txtCorreo.Text.Trim();
-                usuario.Login = txtLogin.Text.Trim();
-                usuario.Aplicaciones = listaAplicacion;
-                usuario.Rol = cboRol.SelectedItem as Rol;
-                usuario.Estado = cboEstado.SelectedIndex == 0 ? "A" : "I";
-                if (!txtContraseña.Text.Trim().Equals(String.Empty))
+                if (ValidarCampos())
                 {
-                    usuario.Contraseña = txtContraseña.Text.Trim();
-                    CambioContraseña = true;
-                }
+                    usuario.Nombre = txtNombre.Text.Trim();
+                    usuario.ApellidoMaterno = txtApeMaterno.Text.Trim();
+                    usuario.ApellidoPaterno = txtApePaterno.Text.Trim();
+                    usuario.Correo = txtCorreo.Text.Trim();
+                    usuario.Login = txtLogin.Text.Trim();
+                    usuario.Aplicaciones = listaAplicacion;
+                    usuario.Rol = cboRol.SelectedItem as Rol;
+                    usuario.Estado = cboEstado.SelectedIndex == 0 ? "A" : "I";
+                    if (!txtContraseña.Text.Trim().Equals(String.Empty))
+                    {
+                        usuario.Contraseña = txtContraseña.Text.Trim();
+                        CambioContraseña = true;
+                    }
 
-                if (servicio.UpdateUsuario(usuario, CambioContraseña))
-                {
-                    MessageBox.Show("Usuario editado correctamente", "Aviso");
-                    this.Close();
+                    if (servicio.UpdateUsuario(usuario, CambioContraseña))
+                    {
+                        MessageBox.Show("Usuario editado correctamente", "Aviso");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Verifique todos los campos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Verifique todos los campos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
         private void EnlazarListaPermiso()

@@ -38,9 +38,16 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
         }
         private void AsociarZona()
         {
-            Teatro teatro = cboTeatro.SelectedItem as Teatro;
-            cboZona.DataSource = servicio.ListZonaByTeatro(teatro.IdTeatro);
-            cboZona.DisplayMember = "Nombre";
+            try
+            {
+                Teatro teatro = cboTeatro.SelectedItem as Teatro;
+                cboZona.DataSource = servicio.ListZonaByTeatro(teatro.IdTeatro);
+                cboZona.DisplayMember = "Nombre";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cboTeatro_SelectionChangeCommitted(object sender, EventArgs e)
@@ -57,8 +64,15 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
         }
         private void EnlazarDataGrid()
         {
-            zona = cboZona.SelectedItem as Zona;
-            dgvAsientos.DataSource = servicio.ListAsientoByZona(zona.IdZona);
+            try
+            {
+                zona = cboZona.SelectedItem as Zona;
+                dgvAsientos.DataSource = servicio.ListAsientoByZona(zona.IdZona);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvAsientos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -78,6 +92,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
         }
         private string CapturarSeleccionados()
         {
+
             string cadenaIds = "";
             foreach (DataGridViewRow row in dgvAsientos.Rows)
             {
@@ -105,17 +120,24 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
         }
         private void btnDeshabilitar_Click(object sender, EventArgs e)
         {
-            if (ValidarSeleccionado())
+            try
             {
-                if (servicio.UpdateAsientoDisponible(CapturarSeleccionados(), "N"))
+                if (ValidarSeleccionado())
                 {
-                    MessageBox.Show("Proceso correcto");
-                    EnlazarDataGrid();
+                    if (servicio.UpdateAsientoDisponible(CapturarSeleccionados(), "N"))
+                    {
+                        MessageBox.Show("Proceso correcto");
+                        EnlazarDataGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Error");
-                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

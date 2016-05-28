@@ -51,23 +51,30 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         }
         private void LoadData()
         {
-            listaTeatro = servicio.ListarTeatros();
-            cboTeatro.DataSource = listaTeatro;
-            cboTeatro.DisplayMember = "Nombre";
-            cboTeatro.SelectedItem = FindTeatro(tarifa.Obra.Teatro.IdTeatro);
+            try
+            {
+                listaTeatro = servicio.ListarTeatros();
+                cboTeatro.DataSource = listaTeatro;
+                cboTeatro.DisplayMember = "Nombre";
+                cboTeatro.SelectedItem = FindTeatro(tarifa.Obra.Teatro.IdTeatro);
 
-            teatro = cboTeatro.SelectedItem as Teatro;
-            listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
-            cboObra.DataSource = listaObra;
-            cboObra.DisplayMember = "Nombre";
-            cboObra.SelectedItem = FindObra(tarifa.Obra.IdObra);
+                teatro = cboTeatro.SelectedItem as Teatro;
+                listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
+                cboObra.DataSource = listaObra;
+                cboObra.DisplayMember = "Nombre";
+                cboObra.SelectedItem = FindObra(tarifa.Obra.IdObra);
 
-            listaZona = servicio.ListZonaByTeatro(teatro.IdTeatro);
-            cboZona.DataSource = listaZona;
-            cboZona.DisplayMember = "Nombre";
-            cboZona.SelectedItem = FindZona(tarifa.Zona.IdZona);
+                listaZona = servicio.ListZonaByTeatro(teatro.IdTeatro);
+                cboZona.DataSource = listaZona;
+                cboZona.DisplayMember = "Nombre";
+                cboZona.SelectedItem = FindZona(tarifa.Zona.IdZona);
 
-            txtPrecio.Text = tarifa.Precio.ToString();
+                txtPrecio.Text = tarifa.Precio.ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         
         private Teatro FindTeatro(int idTeatro)
@@ -118,17 +125,24 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 
         private void btnActualizar_Click_1(object sender, EventArgs e)
         {
-            if (Validar())
+            try
             {
-                CapturarDatos();
-                if (servicio.Uptade(tarifa))
+                if (Validar())
                 {
-                    MessageBox.Show("La tarifa se actualizó correctamente");
+                    CapturarDatos();
+                    if (servicio.Uptade(tarifa))
+                    {
+                        MessageBox.Show("La tarifa se actualizó correctamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error, intente nuevamente.");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Hubo un error, intente nuevamente.");
-                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

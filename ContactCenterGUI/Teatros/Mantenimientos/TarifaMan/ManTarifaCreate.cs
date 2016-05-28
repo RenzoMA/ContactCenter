@@ -63,25 +63,31 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         }
         public void CrearTarifa()
         {
-            
-            obra = cboObra.SelectedItem as Obra;
-            zona = cboZona.SelectedItem as Zona;
-            
-            Tarifa tarifa = new Tarifa()
+            try
             {
-                Obra = obra,
-                Zona = zona,
-                Precio = Convert.ToSingle(txtPrecio.Text)
-            };
+                obra = cboObra.SelectedItem as Obra;
+                zona = cboZona.SelectedItem as Zona;
 
-            if (servicio.InsertarTarifa(tarifa))
-            {
-                MessageBox.Show("Tarifa creada correctamente", "Aviso");
-                this.Close();
+                Tarifa tarifa = new Tarifa()
+                {
+                    Obra = obra,
+                    Zona = zona,
+                    Precio = Convert.ToSingle(txtPrecio.Text)
+                };
+
+                if (servicio.InsertarTarifa(tarifa))
+                {
+                    MessageBox.Show("Tarifa creada correctamente", "Aviso");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -93,35 +99,56 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 
         private async void CargarTeatros()
         {
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            try
             {
-                listaTeatro = await servicio.ListarTeatrosAsync();
-                cboTeatro.DataSource = listaTeatro;
-                cboTeatro.DisplayMember = "Nombre";
+                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                {
+                    listaTeatro = await servicio.ListarTeatrosAsync();
+                    cboTeatro.DataSource = listaTeatro;
+                    cboTeatro.DisplayMember = "Nombre";
+                }
+                CargarObras();
+                CargarZonas();
             }
-            CargarObras();
-            CargarZonas();
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CargarObras()
         {
-            teatro = cboTeatro.SelectedItem as Teatro;
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            try
             {
-                listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
-                cboObra.DataSource = listaObra;
-                cboObra.DisplayMember = "Nombre";
+                teatro = cboTeatro.SelectedItem as Teatro;
+                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                {
+                    listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
+                    cboObra.DataSource = listaObra;
+                    cboObra.DisplayMember = "Nombre";
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void CargarZonas()
         {
-            teatro = cboTeatro.SelectedItem as Teatro;
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            try
             {
-                listaZona = servicio.ListZonaByTeatro(teatro.IdTeatro);
-                cboZona.DataSource = listaZona;
-                cboZona.DisplayMember = "Nombre";
+                teatro = cboTeatro.SelectedItem as Teatro;
+                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                {
+                    listaZona = servicio.ListZonaByTeatro(teatro.IdTeatro);
+                    cboZona.DataSource = listaZona;
+                    cboZona.DisplayMember = "Nombre";
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
