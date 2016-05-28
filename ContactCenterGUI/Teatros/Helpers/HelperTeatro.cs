@@ -162,10 +162,7 @@ namespace ContactCenterGUI.Teatros.Helpers
         }
         public static async void MostrarDisponibilidad(Form form,Reserva reserva)
         {
-            timer = new Timer();
-            timer.Interval = 1000;
-            timer.Enabled = true;
-            timer.Tick += new EventHandler(timerTeatro_Tick);
+            
 
             span = new TimeSpan(0, 15, 0);
             asientosReserva = new List<AsientoPrecio>();
@@ -182,7 +179,11 @@ namespace ContactCenterGUI.Teatros.Helpers
                 CruzarBotonData(lAsientoTotal, form);
                 AsignarListaOcupada(lOcupados);
                 SetEventosBoton();
-               
+                timer = new Timer();
+                timer.Interval = 1000;
+                timer.Enabled = true;
+                timer.Tick += new EventHandler(timerTeatro_Tick);
+
             }
             catch (Exception ex)
             {
