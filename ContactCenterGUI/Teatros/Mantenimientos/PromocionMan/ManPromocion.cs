@@ -33,9 +33,15 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
         }
         private void LoadComboTeatro()
         {
+            try { 
             cboTeatro.DataSource = servicio.ListarTeatros();
             cboTeatro.DisplayMember = "Nombre";
             LoadComboObra();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void LoadComboObra()
         {
@@ -71,8 +77,14 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
         }
         private void EnlazarGrilla()
         {
+            try { 
             Funcion funcion = cboFuncion.SelectedItem as Funcion;
             dgvPromociones.DataSource = servicio.ListarPromocionByFuncion(funcion.IdFuncion);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvPromociones_CellContentClick(object sender, DataGridViewCellEventArgs e)

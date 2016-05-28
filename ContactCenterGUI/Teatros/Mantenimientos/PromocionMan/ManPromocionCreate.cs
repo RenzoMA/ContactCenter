@@ -29,9 +29,15 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
         }
         private void LoadComboTeatro()
         {
+            try { 
             cboTeatro.DataSource = servicio.ListarTeatros();
             cboTeatro.DisplayMember = "Nombre";
             LoadComboObra();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void LoadComboTipoPromocion()
         {
@@ -109,6 +115,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
                     TipoDescuento = cboTipoDescuento.SelectedIndex == 0 ? "M" : "R",
                     TipoPromocion = cboTipoPromocion.SelectedItem as TipoPromocion
                 };
+                try { 
                 if (servicio.InsertPromocion(promocion))
                 {
                     MessageBox.Show("Proceso realizado correctamente", "Aviso");
@@ -117,6 +124,11 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
                 else
                 {
                     MessageBox.Show("Ha ocurrido un error", "Aviso");
+                }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

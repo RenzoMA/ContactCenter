@@ -35,8 +35,15 @@ namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            capturarDatos();
-            dgvUsuarios.DataSource = servicio.SearchUsuarioByName(userName);
+            try
+            {
+                capturarDatos();
+                dgvUsuarios.DataSource = servicio.SearchUsuarioByName(userName);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -48,6 +55,11 @@ namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
                 createUsuario.ShowDialog();
                 dgvUsuarios.DataSource = servicio.SearchUsuarioByName(userName);
             }
+        }
+
+        private void ManUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

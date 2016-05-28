@@ -55,25 +55,39 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 
         private async void CargarTeatros()
         {
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            try
             {
-                Animacion.ShowLoader(this);
-                listaTeatro = await servicio.ListarTeatrosAsync();
-                Animacion.HideLoader(this);
-                cboTeatro.DataSource = listaTeatro;
-                cboTeatro.DisplayMember = "Nombre";
+                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                {
+                    Animacion.ShowLoader(this);
+                    listaTeatro = await servicio.ListarTeatrosAsync();
+                    Animacion.HideLoader(this);
+                    cboTeatro.DataSource = listaTeatro;
+                    cboTeatro.DisplayMember = "Nombre";
+                }
+                CargarObras();
             }
-            CargarObras();
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CargarObras()
         {
-            teatro = cboTeatro.SelectedItem as Teatro;
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            try
             {
-                listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
-                cboObra.DataSource = listaObra;
-                cboObra.DisplayMember = "Nombre";
+                teatro = cboTeatro.SelectedItem as Teatro;
+                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                {
+                    listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
+                    cboObra.DataSource = listaObra;
+                    cboObra.DisplayMember = "Nombre";
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
@@ -105,15 +119,22 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 
         private void EnlazarGrilla()
         {
-            teatro = cboTeatro.SelectedItem as Teatro;
-            obra = cboObra.SelectedItem as Obra;
-
-            if (teatro.IdTeatro > 0 && obra.IdObra > 0)
+            try
             {
-                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                teatro = cboTeatro.SelectedItem as Teatro;
+                obra = cboObra.SelectedItem as Obra;
+
+                if (teatro.IdTeatro > 0 && obra.IdObra > 0)
                 {
-                    dgvTarifa.DataSource = servicio.GetListaByTeatroObra(obra.IdObra);
+                    using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                    {
+                        dgvTarifa.DataSource = servicio.GetListaByTeatroObra(obra.IdObra);
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

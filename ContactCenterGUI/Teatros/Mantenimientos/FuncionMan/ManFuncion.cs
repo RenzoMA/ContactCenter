@@ -44,25 +44,40 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 
         private async void CargarTeatros()
         {
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            try
             {
-                Animacion.ShowLoader(this);
-                listaTeatro = await servicio.ListarTeatrosAsync();
-                Animacion.HideLoader(this);
-                cboTeatro.DataSource = listaTeatro;
-                cboTeatro.DisplayMember = "Nombre";
+                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                {
+                    Animacion.ShowLoader(this);
+                    listaTeatro = await servicio.ListarTeatrosAsync();
+                    Animacion.HideLoader(this);
+                    cboTeatro.DataSource = listaTeatro;
+                    cboTeatro.DisplayMember = "Nombre";
+                }
+                CargarObras();
             }
-            CargarObras();
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         private void CargarObras()
         {
-            teatro = cboTeatro.SelectedItem as Teatro;
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            try
             {
-                listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
-                cboObra.DataSource = listaObra;
-                cboObra.DisplayMember = "Nombre";
+                teatro = cboTeatro.SelectedItem as Teatro;
+                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                {
+                    listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
+                    cboObra.DataSource = listaObra;
+                    cboObra.DisplayMember = "Nombre";
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -85,28 +100,35 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 
         private void EnlazarGrilla()
         {
-            teatro = cboTeatro.SelectedItem as Teatro;
-            obra = cboObra.SelectedItem as Obra;
-
-            if (teatro.IdTeatro > 0 && obra.IdObra > 0)
+            try
             {
-                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                teatro = cboTeatro.SelectedItem as Teatro;
+                obra = cboObra.SelectedItem as Obra;
+
+                if (teatro.IdTeatro > 0 && obra.IdObra > 0)
                 {
-                    List<Funcion> listFuncion = servicio.ListarFuncionByObraGrilla(obra.IdObra); 
-                    dgvFuncion.DataSource = listFuncion;
-
-                    String[] diasNombre = new String[7] { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
-
-                    foreach (DataGridViewRow row in dgvFuncion.Rows)
+                    using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
                     {
+                        List<Funcion> listFuncion = servicio.ListarFuncionByObraGrilla(obra.IdObra);
+                        dgvFuncion.DataSource = listFuncion;
 
-                        int indice = Convert.ToInt32(row.Cells[3].Value);
+                        String[] diasNombre = new String[7] { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
 
-                        String nombre = diasNombre.ElementAt(indice);
+                        foreach (DataGridViewRow row in dgvFuncion.Rows)
+                        {
 
-                        row.Cells[6].Value = nombre;
+                            int indice = Convert.ToInt32(row.Cells[3].Value);
+
+                            String nombre = diasNombre.ElementAt(indice);
+
+                            row.Cells[6].Value = nombre;
+                        }
                     }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -124,26 +146,32 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
         private void dgvFuncion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int idTarifa = Convert.ToInt32(dgvFuncion.CurrentRow.Cells[2].Value);
-
-            if (e.ColumnIndex == 1)
+            try
             {
-                if(servicio.EliminarFuncion(idTarifa))
+                if (e.ColumnIndex == 1)
                 {
-                    MessageBox.Show("La función se eliminó correctamente");
+                    if (servicio.EliminarFuncion(idTarifa))
+                    {
+                        MessageBox.Show("La función se eliminó correctamente");
+                        EnlazarGrilla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo inconvenientes al eliminar la reserva, por favor intente nuevamente");
+                    }
+                }
+
+                else if (e.ColumnIndex == 0)
+                {
+                    Funcion funcion = (Funcion)dgvFuncion.CurrentRow.DataBoundItem;
+                    ManFuncionEdit manFuncionEdit = new ManFuncionEdit(funcion);
+                    manFuncionEdit.ShowDialog();
                     EnlazarGrilla();
                 }
-                else
-                {
-                    MessageBox.Show("Hubo inconvenientes al eliminar la reserva, por favor intente nuevamente");
-                }
             }
-
-            else if(e.ColumnIndex == 0)
+            catch(Exception ex)
             {
-                Funcion funcion = (Funcion)dgvFuncion.CurrentRow.DataBoundItem;
-                ManFuncionEdit manFuncionEdit = new ManFuncionEdit(funcion);
-                manFuncionEdit.ShowDialog();
-                EnlazarGrilla();
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

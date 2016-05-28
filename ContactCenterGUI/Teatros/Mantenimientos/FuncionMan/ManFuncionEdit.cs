@@ -50,21 +50,28 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 
         private void LoadData()
         {
-            listaTeatro = servicio.ListarTeatros();
-            cboTeatro.DataSource = listaTeatro;
-            cboTeatro.DisplayMember = "Nombre";
-            cboTeatro.SelectedItem = FindTeatro(funcion.Obra.Teatro.IdTeatro);
+            try
+            {
+                listaTeatro = servicio.ListarTeatros();
+                cboTeatro.DataSource = listaTeatro;
+                cboTeatro.DisplayMember = "Nombre";
+                cboTeatro.SelectedItem = FindTeatro(funcion.Obra.Teatro.IdTeatro);
 
-            teatro = cboTeatro.SelectedItem as Teatro;
-            listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
-            cboObra.DataSource = listaObra;
-            cboObra.DisplayMember = "Nombre";
-            cboObra.SelectedItem = FindObra(funcion.Obra.IdObra);
+                teatro = cboTeatro.SelectedItem as Teatro;
+                listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
+                cboObra.DataSource = listaObra;
+                cboObra.DisplayMember = "Nombre";
+                cboObra.SelectedItem = FindObra(funcion.Obra.IdObra);
 
-            cboDia.SelectedIndex = funcion.Dia + 1;
-            cboEstado.SelectedIndex = funcion.Estado == "Activo" ? 0 : 1;
-            txtHoarario.Text = funcion.Horario;
+                cboDia.SelectedIndex = funcion.Dia + 1;
+                cboEstado.SelectedIndex = funcion.Estado == "Activo" ? 0 : 1;
+                txtHoarario.Text = funcion.Horario;
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private Teatro FindTeatro(int idTeatro)
         {
@@ -88,23 +95,30 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (cboTeatro.SelectedIndex != 0 || cboObra.SelectedIndex != 0
-                || cboDia.SelectedIndex != 0 || txtHoarario.Text.Trim().Equals(String.Empty))
+            try
             {
-                CapturarDatos();
-                if (servicio.ActualizarFuncion(funcion))
+                if (cboTeatro.SelectedIndex != 0 || cboObra.SelectedIndex != 0
+                    || cboDia.SelectedIndex != 0 || txtHoarario.Text.Trim().Equals(String.Empty))
                 {
-                    MessageBox.Show("Proceso realizado correctamente", "Aviso");
-                    this.Close();
+                    CapturarDatos();
+                    if (servicio.ActualizarFuncion(funcion))
+                    {
+                        MessageBox.Show("Proceso realizado correctamente", "Aviso");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error", "Aviso");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error", "Aviso");
+                    MessageBox.Show("Completo los campos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Completo los campos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

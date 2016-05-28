@@ -39,9 +39,16 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
         }
 
         private void CargarTeatros() {
-            cboTeFilObra.DataSource = servicio.ListarTeatros();
-            cboTeFilObra.DisplayMember = "Nombre";
-            //cboTeFilObra.SelectedIndex = 0;
+            try
+            {
+                cboTeFilObra.DataSource = servicio.ListarTeatros();
+                cboTeFilObra.DisplayMember = "Nombre";
+                //cboTeFilObra.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ConfigurarGrilla() {
@@ -54,9 +61,14 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
         }
 
         private void llenarGrilla() {
+            try { 
             Teatro Teatro = cboTeFilObra.SelectedItem as Teatro;
             dgvObras.DataSource = servicio.ListarObraByTeatro(Teatro.IdTeatro);
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
         }
