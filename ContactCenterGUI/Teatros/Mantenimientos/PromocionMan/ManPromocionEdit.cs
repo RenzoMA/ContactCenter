@@ -36,10 +36,16 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
             cboTipoDescuento.SelectedIndex = promocion.TipoDescuento == "Multiplica" ? 0 : 1;
             dtpFechaFin.Value = promocion.FechaFin;
             dtpFechaInicio.Value = promocion.FechaInicio;
+            try { 
             listaPromocion = servicio.GetListaTipoPromocion();
             cboTipoPromocion.DataSource = listaPromocion;
             cboTipoPromocion.DisplayMember = "Descripcion";
             cboTipoPromocion.SelectedItem = FindPromocion(promocion.TipoPromocion.IdTipoPromocion);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void SetEventos()
         {
@@ -79,6 +85,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
             CapturarDatos();
             if (ValidarDatos())
             {
+                try { 
                 if (servicio.UpdatePromocion(promocion))
                 {
                     MessageBox.Show("Proceso realizado correctamente", "Aviso");
@@ -87,6 +94,11 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
                 else
                 {
                     MessageBox.Show("Ocurrio un error", "Aviso");
+                }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
