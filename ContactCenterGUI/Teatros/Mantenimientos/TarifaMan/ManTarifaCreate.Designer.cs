@@ -120,7 +120,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Depth = 0;
-            this.btnAceptar.Location = new System.Drawing.Point(94, 293);
+            this.btnAceptar.Location = new System.Drawing.Point(170, 292);
             this.btnAceptar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Primary = true;
@@ -158,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 359);
+            this.ClientSize = new System.Drawing.Size(350, 344);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.cboTeatro);
             this.Controls.Add(this.btnAceptar);

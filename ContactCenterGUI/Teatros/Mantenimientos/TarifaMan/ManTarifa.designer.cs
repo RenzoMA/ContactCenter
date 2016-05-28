@@ -126,7 +126,7 @@
             // btnCrear
             // 
             this.btnCrear.Depth = 0;
-            this.btnCrear.Location = new System.Drawing.Point(275, 543);
+            this.btnCrear.Location = new System.Drawing.Point(543, 532);
             this.btnCrear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Primary = true;
@@ -198,7 +198,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(723, 595);
+            this.ClientSize = new System.Drawing.Size(723, 578);
             this.Controls.Add(this.dgvTarifa);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.groupBox1);

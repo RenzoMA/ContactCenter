@@ -153,7 +153,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Depth = 0;
-            this.btnAceptar.Location = new System.Drawing.Point(78, 300);
+            this.btnAceptar.Location = new System.Drawing.Point(126, 292);
             this.btnAceptar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Primary = true;
@@ -167,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(306, 364);
+            this.ClientSize = new System.Drawing.Size(306, 340);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtHoarario);
             this.Controls.Add(this.materialLabel3);
