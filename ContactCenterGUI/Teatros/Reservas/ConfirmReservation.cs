@@ -61,6 +61,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         }
         public string GenerarAsiento(List<AsientoPrecio> lista)
         {
+            dgvDetalleAsientos.Rows.Clear();
             int contador = 0;
             string result = "";
             foreach (AsientoPrecio obj in lista)

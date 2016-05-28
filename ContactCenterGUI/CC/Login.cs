@@ -134,8 +134,7 @@ namespace ContactCenterGUI.CC
 
         private void Login_Load(object sender, EventArgs e)
         {
-            txtUser.Text = "rmaldonado";
-            txtPassword.Text = "123456";
+            
         }
     }
 }

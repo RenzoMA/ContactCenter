@@ -124,6 +124,9 @@ namespace ContactCenterDA.Repositories.CC.TH
                         NombrePromocion = DataConvert.ToString(dtr["NombrePromocion"]),
                         PrecioTotal = DataConvert.ToSingle(dtr["PrecioTotal"]),
                         Asientos = DataConvert.ToString(dtr["Asientos"]),
+                        FechaCreacion = DataConvert.ToDateTime(dtr["R.FechaCrea"]),
+                        UsuarioCreacion = DataConvert.ToString(dtr["R.UserCrea"]),
+
                         Obra = new Obra()
                         {
                             IdObra = DataConvert.ToInt(dtr["O.IdObra"]),
