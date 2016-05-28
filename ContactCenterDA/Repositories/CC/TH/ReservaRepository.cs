@@ -51,10 +51,28 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter pTotal = UtilDA.SetParameters("@PrecioTotal", OleDbType.Single, datos.PrecioTotal);
             OleDbParameter pAsientos = UtilDA.SetParameters("@Asientos", OleDbType.VarChar, datos.Asientos);
 
+            string asientos = "";
+            datos.ListaDetalles.ForEach(tx => {
+                asientos += tx.Asiento.IdAsiento+",";
+            });
+            asientos = asientos.Substring(0, asientos.Length - 1);
+
+            String ValidaRegistroAsientos = "SELECT R.IDRESERVA FROM TH_RESERVA R INNER JOIN TH_DETALLE_RESERVA DR ON DR.IDRESERVA = R.IDRESERVA WHERE R.IDESTADORESERVA = 1 AND R.FECHARESERVA = @fechaReserva AND R.IDFUNCION = @idFuncion AND DR.IDASIENTO IN (" + asientos + ")";
+
             UtilDA.ExecuteBeginTransaction(cmd, cnx);
 
-            int id = UtilDA.ExecuteNonQueryGetId(cmd, CommandType.Text, sql, cnx,true, pFechaReserva, pHorario, pEstadoReserva, pIdObra, pIdFuncion, pIdCliente,
-                pIdUsuario, pPromocion, pNombrePromo, pFechaCrea, pUserCrea, pTotal, pAsientos);
+            using (var dtr = UtilDA.ExecuteSubReader(cmd, CommandType.Text, ValidaRegistroAsientos, cnx, pFechaReserva, pIdFuncion))
+            {
+                if (dtr.HasRows)
+                {
+                    dtr.Close();
+                    UtilDA.ExecuteRollback(cmd, cnx);
+                    return false;
+                }
+            }
+
+                int id = UtilDA.ExecuteNonQueryGetId(cmd, CommandType.Text, sql, cnx, true, pFechaReserva, pHorario, pEstadoReserva, pIdObra, pIdFuncion, pIdCliente,
+                    pIdUsuario, pPromocion, pNombrePromo, pFechaCrea, pUserCrea, pTotal, pAsientos);
 
             string sqlDetalle = "INSERT INTO TH_DETALLE_RESERVA (idReserva,Precio,Estado,idAsiento,FechaCrea,UserCrea) " +
                                 "VALUES (@idReserva,@precio,@estado,@idAsiento,@fechaCrea,@userCrea)";

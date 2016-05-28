@@ -200,7 +200,7 @@ namespace ContactCenterGUI.Teatros.Reservas
                 }
                 else
                 {
-                    MessageBox.Show("No se registro la reserva!!!", "Aviso");
+                    MessageBox.Show("No se registro la reserva!!!", "Aviso",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
