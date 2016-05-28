@@ -19,7 +19,8 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         }
         public List<Tarifa> GetListaByTeatroObra(int IdObra)
         {
-            return tarifaRepository.GetListaByTeatroObra(IdObra);
+            List<Tarifa> listTarifa = tarifaRepository.GetListaByTeatroObra(IdObra);
+            return listTarifa;
         }
 
         public bool Insert(Tarifa tarifa)

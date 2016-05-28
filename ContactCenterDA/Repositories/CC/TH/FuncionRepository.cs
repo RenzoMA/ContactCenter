@@ -194,10 +194,7 @@ namespace ContactCenterDA.Repositories.CC.TH
         {
             List<Funcion> listaFuncion = new List<Funcion>(); ;
 
-            String sql = "SELECT SWITCH " +
-                        "(F.DIA = 0, 'Lunes',  F.DIA = 1, 'Martes', F.DIA = 2, 'Miercoles',F.DIA = 3, 'Jueves', F.DIA = 4, 'Viernes', F.DIA = 5, 'Sábado',F.DIA = 6, 'Domingo') AS DIA_STRING, " +
-                        "F.*, O.*, T.* FROM(TH_FUNCION F INNER JOIN TH_OBRA O ON F.IDOBRA = O.IDOBRA)  INNER JOIN TH_TEATRO T ON O.IDTEATRO = T.IDTEATRO WHERE F.IDOBRA = @IdObra AND F.ESTADO = 'A' OR F.ESTADO = 'I'";
-
+            String sql = "SELECT * FROM (TH_FUNCION F INNER JOIN TH_OBRA O ON F.IDOBRA = O.IDOBRA)  INNER JOIN TH_TEATRO T ON O.IDTEATRO = T.IDTEATRO WHERE F.IDOBRA = @IdObra AND F.ESTADO NOT IN ('E')";
 
             OleDbParameter pIdObra = UtilDA.SetParameters("@IdObra", OleDbType.Integer, idObra);
 
