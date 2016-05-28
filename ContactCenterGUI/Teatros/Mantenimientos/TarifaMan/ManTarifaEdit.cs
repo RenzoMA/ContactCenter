@@ -100,14 +100,30 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            CapturarDatos();
-            if (servicio.Uptade(tarifa))
+            if (Validar())
             {
-                MessageBox.Show("La tarifa se actualizó correctamente");
+                CapturarDatos();
+                if (servicio.Uptade(tarifa))
+                {
+                    MessageBox.Show("La tarifa se actualizó correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error, intente nuevamente.");
+                }
+            }
+        }
+
+        private bool Validar()
+        {
+            if(cboZona.SelectedIndex == 0 || txtPrecio.Text.Trim().Equals(String.Empty))
+            {
+                MessageBox.Show("Complete los campos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             else
             {
-                MessageBox.Show("Hubo un error, intente nuevamente.");
+                return true;
             }
         }
     }

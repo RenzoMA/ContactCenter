@@ -50,10 +50,10 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         
         private bool Validar()
         {
-            if(String.IsNullOrEmpty(txtPrecio.Text) ||
+            if(txtPrecio.Text.Trim().Equals(String.Empty) ||
             cboTeatro.SelectedIndex == 0 || cboObra.SelectedIndex == 0 || cboZona.SelectedIndex == 0)
             {
-              MessageBox.Show("Por favor, ingrese los datos correctamente", "Aviso");  
+              MessageBox.Show("Complete los campos", "Aviso",MessageBoxButtons.OK, MessageBoxIcon.Error);  
               return false;
             }
             else

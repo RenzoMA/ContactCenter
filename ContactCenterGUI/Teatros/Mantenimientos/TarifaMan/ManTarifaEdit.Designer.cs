@@ -28,22 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManTarifaEdit));
             this.cboTeatro = new MetroFramework.Controls.MetroComboBox();
             this.cboObra = new MetroFramework.Controls.MetroComboBox();
             this.cboZona = new MetroFramework.Controls.MetroComboBox();
             this.txtPrecio = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.btnActualizar = new MetroFramework.Controls.MetroButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.btnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
             // cboTeatro
             // 
             this.cboTeatro.FormattingEnabled = true;
             this.cboTeatro.ItemHeight = 23;
-            this.cboTeatro.Location = new System.Drawing.Point(133, 94);
+            this.cboTeatro.Location = new System.Drawing.Point(88, 94);
             this.cboTeatro.Name = "cboTeatro";
             this.cboTeatro.Size = new System.Drawing.Size(235, 29);
             this.cboTeatro.TabIndex = 47;
@@ -54,7 +55,7 @@
             this.cboObra.ItemHeight = 23;
             this.cboObra.Items.AddRange(new object[] {
             ""});
-            this.cboObra.Location = new System.Drawing.Point(133, 156);
+            this.cboObra.Location = new System.Drawing.Point(88, 156);
             this.cboObra.Name = "cboObra";
             this.cboObra.Size = new System.Drawing.Size(235, 29);
             this.cboObra.TabIndex = 48;
@@ -63,7 +64,7 @@
             // 
             this.cboZona.FormattingEnabled = true;
             this.cboZona.ItemHeight = 23;
-            this.cboZona.Location = new System.Drawing.Point(133, 223);
+            this.cboZona.Location = new System.Drawing.Point(88, 223);
             this.cboZona.Name = "cboZona";
             this.cboZona.Size = new System.Drawing.Size(235, 29);
             this.cboZona.TabIndex = 49;
@@ -73,7 +74,7 @@
             this.txtPrecio.BackColor = System.Drawing.Color.White;
             this.txtPrecio.Depth = 0;
             this.txtPrecio.Hint = "";
-            this.txtPrecio.Location = new System.Drawing.Point(133, 288);
+            this.txtPrecio.Location = new System.Drawing.Point(88, 288);
             this.txtPrecio.MaxLength = 32767;
             this.txtPrecio.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPrecio.Name = "txtPrecio";
@@ -85,15 +86,6 @@
             this.txtPrecio.TabIndex = 50;
             this.txtPrecio.TabStop = false;
             this.txtPrecio.UseSystemPasswordChar = false;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Location = new System.Drawing.Point(159, 344);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(86, 40);
-            this.btnActualizar.TabIndex = 51;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // materialLabel1
             // 
@@ -151,21 +143,36 @@
             this.materialLabel4.TabIndex = 55;
             this.materialLabel4.Text = "Precio";
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Depth = 0;
+            this.btnActualizar.Location = new System.Drawing.Point(107, 344);
+            this.btnActualizar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Primary = true;
+            this.btnActualizar.Size = new System.Drawing.Size(168, 40);
+            this.btnActualizar.TabIndex = 56;
+            this.btnActualizar.Text = "Crear";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            // 
             // ManTarifaEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 396);
+            this.ClientSize = new System.Drawing.Size(366, 396);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.cboZona);
             this.Controls.Add(this.cboObra);
             this.Controls.Add(this.cboTeatro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ManTarifaEdit";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar tarifa";
             this.Load += new System.EventHandler(this.ManTarifaEdit_Load);
@@ -180,10 +187,10 @@
         private MetroFramework.Controls.MetroComboBox cboObra;
         private MetroFramework.Controls.MetroComboBox cboZona;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtPrecio;
-        private MetroFramework.Controls.MetroButton btnActualizar;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialRaisedButton btnActualizar;
     }
 }
