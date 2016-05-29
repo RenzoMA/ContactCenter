@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ContactCenterBL.BusinessInterfaces.CC;
-using ContactCenterBE.CC.Entidades.CLienteBE;
+using ContactCenterBL.BusinessInterfaces.CC.TH;
+using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 
-namespace ContactCenterBL.BusinessServices.CC
+namespace ContactCenterBL.BusinessServices.CC.TH
 {
     public class ClienteService : IClienteService
     {

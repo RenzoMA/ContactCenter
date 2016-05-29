@@ -11,16 +11,17 @@ using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using MaterialSkin.Controls;
-using ContactCenterServices;
+using ContactCenterServices.ServicioTeatro;
 using Microsoft.Practices.Unity;
 using MaterialSkin.Animations;
 using ContactCenterGUI.CC.Helpers;
+using ContactCenterServices;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 {
     public partial class ManFuncion : MaterialForm
     {
-        IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+        IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
 
         private List<Teatro> listaTeatro = null;
         private Teatro teatro = null;
@@ -28,8 +29,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
         private List<Obra> listaObra = null;
         private Obra obra = null;
 
-        private List<Funcion> listaFuncion = null;
-        private Funcion funcion = null;
+
 
         public ManFuncion()
         {
@@ -46,7 +46,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
         {
             try
             {
-                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
                     Animacion.ShowLoader(this);
                     listaTeatro = await servicio.ListarTeatrosAsync();
@@ -68,7 +68,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
             try
             {
                 teatro = cboTeatro.SelectedItem as Teatro;
-                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
                     listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
                     cboObra.DataSource = listaObra;
@@ -107,7 +107,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 
                 if (teatro.IdTeatro > 0 && obra.IdObra > 0)
                 {
-                    using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                    using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                     {
                         List<Funcion> listFuncion = servicio.ListarFuncionByObraGrilla(obra.IdObra);
                         dgvFuncion.DataSource = listFuncion;

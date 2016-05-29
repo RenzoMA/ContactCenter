@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{81564275-EB77-40A9-8E03-20FC50B43CF2}"
 	ProjectSection(SolutionItems) = preProject
@@ -19,8 +19,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactCenterServices", "ContactCenterServices\ContactCenterServices.csproj", "{6C5010B3-017B-4C09-9FD3-F46808595730}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactCenterCommon", "ContactCenterCommon\ContactCenterCommon.csproj", "{53DECD57-C35A-4780-8A55-245E366FA6A1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactCenterUnitTest", "ContactCenterUnitTest\ContactCenterUnitTest.csproj", "{98477EA3-8C34-4CEB-A5FC-5A28897DA943}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,10 +50,6 @@ Global
 		{53DECD57-C35A-4780-8A55-245E366FA6A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53DECD57-C35A-4780-8A55-245E366FA6A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53DECD57-C35A-4780-8A55-245E366FA6A1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98477EA3-8C34-4CEB-A5FC-5A28897DA943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98477EA3-8C34-4CEB-A5FC-5A28897DA943}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98477EA3-8C34-4CEB-A5FC-5A28897DA943}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98477EA3-8C34-4CEB-A5FC-5A28897DA943}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

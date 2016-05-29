@@ -57,10 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ServicioContactCenter\ServiceContactCenter.cs" />
     <Compile Include="Contenedor.cs" />
-    <Compile Include="IServiceContactCenter.cs" />
+    <Compile Include="ServicioContactCenter\IServiceContactCenter.cs" />
+    <Compile Include="ServicioTeatro\IServiceTeatro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceContactCenter.cs" />
+    <Compile Include="ServicioTeatro\ServiceTeatro.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

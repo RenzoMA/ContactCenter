@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
-using ContactCenterServices;
+using ContactCenterServices.ServicioTeatro;
 using Microsoft.Practices.Unity;
 using MaterialSkin.Controls;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
@@ -16,13 +16,14 @@ using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.TH.Entidades.TarifaBE;
 using ContactCenterGUI.CC.Helpers;
+using ContactCenterServices;
 
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 {
     public partial class ManTarifaCreate : MaterialForm
     {
-        private IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+        private IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
 
         private Teatro teatro = null;
         private List<Teatro> listaTeatro;
@@ -33,7 +34,6 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         private List<Zona> listaZona = null;
         private Zona zona = null;
 
-        private Single precio = 0;
 
         public ManTarifaCreate()
         {
@@ -101,7 +101,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         {
             try
             {
-                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
                     listaTeatro = await servicio.ListarTeatrosAsync();
                     cboTeatro.DataSource = listaTeatro;
@@ -121,7 +121,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
             try
             {
                 teatro = cboTeatro.SelectedItem as Teatro;
-                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
                     listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
                     cboObra.DataSource = listaObra;
@@ -139,7 +139,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
             try
             {
                 teatro = cboTeatro.SelectedItem as Teatro;
-                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
                     listaZona = servicio.ListZonaByTeatro(teatro.IdTeatro);
                     cboZona.DataSource = listaZona;

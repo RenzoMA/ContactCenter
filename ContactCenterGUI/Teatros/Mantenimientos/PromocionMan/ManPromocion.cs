@@ -14,13 +14,14 @@ using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
+using ContactCenterServices.ServicioTeatro;
 using ContactCenterServices;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
 {
     public partial class ManPromocion : MaterialForm
     {
-        IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+        IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
         public ManPromocion()
         {
             InitializeComponent();

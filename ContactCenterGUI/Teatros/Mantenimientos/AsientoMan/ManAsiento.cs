@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Practices.Unity;
 using MaterialSkin.Controls;
-using ContactCenterServices;
+using ContactCenterServices.ServicioTeatro;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
+using ContactCenterServices;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
 {
     public partial class ManAsiento : MaterialForm
     {
-        IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+        IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
         private Zona zona;
         public ManAsiento()
         {

@@ -45,9 +45,9 @@
     <Compile Include="Base\IBaseRepository.cs" />
     <Compile Include="CC\Entidades\AplicacionBE\Aplicacion.cs" />
     <Compile Include="Base\BaseEntity.cs" />
-    <Compile Include="CC\Entidades\ClienteBE\Cliente.cs" />
+    <Compile Include="CC\TH\Entidades\ClienteBE\Cliente.cs" />
     <Compile Include="CC\Entidades\AplicacionBE\IAplicacionRepository.cs" />
-    <Compile Include="CC\Entidades\ClienteBE\IClienteRepository.cs" />
+    <Compile Include="CC\TH\Entidades\ClienteBE\IClienteRepository.cs" />
     <Compile Include="CC\Entidades\RolBE\IRolRepository.cs" />
     <Compile Include="CC\Entidades\UsuarioBE\IUsuarioRepository.cs" />
     <Compile Include="CC\Entidades\RolBE\Rol.cs" />

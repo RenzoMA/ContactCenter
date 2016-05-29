@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
-using ContactCenterBE.CC.Entidades.CLienteBE;
+using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 using System.Data.OleDb;
 using System.Data;
 using ContactCenterDA.Common;
@@ -107,7 +107,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             List<Reserva> listaReserva = new List<Reserva>();
             Reserva reserva = null;
 
-            string sql = "SELECT * FROM (((TH_RESERVA R INNER JOIN TH_OBRA O ON O.IDOBRA = R.IDOBRA) INNER JOIN TH_FUNCION F ON F.IDFUNCION = R.IDFUNCION) INNER JOIN CC_CLIENTE C ON C.IDCLIENTE = R.IDCLIENTE) INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO WHERE T.IDTEATRO = @IdTeatro AND R.FechaReserva = @FechaReserva AND IdEstadoReserva = 1 ORDER BY C.Nombre ASC";
+            string sql = "SELECT * FROM (((TH_RESERVA R INNER JOIN TH_OBRA O ON O.IDOBRA = R.IDOBRA) INNER JOIN TH_FUNCION F ON F.IDFUNCION = R.IDFUNCION) INNER JOIN TH_CLIENTE C ON C.IDCLIENTE = R.IDCLIENTE) INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO WHERE T.IDTEATRO = @IdTeatro AND R.FechaReserva = @FechaReserva AND IdEstadoReserva = 1 ORDER BY C.Nombre ASC";
 
             OleDbParameter pIdTeatro = UtilDA.SetParameters("@IdTeatro", OleDbType.Integer, idTeatro);
             OleDbParameter pFecha = UtilDA.SetParameters("@FechaReserva", OleDbType.Date, fecha);
@@ -150,7 +150,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             List<BusquedaReserva> listaReserva = new List<BusquedaReserva>();
             BusquedaReserva reserva = null;
 
-             string sql = "SELECT * FROM (((TH_RESERVA R INNER JOIN CC_CLIENTE C ON R.IDCLIENTE = C.IDCLIENTE) INNER JOIN TH_OBRA O ON O.IDOBRA = R.IDOBRA) INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO) INNER JOIN TH_ESTADO_RESERVA ER ON ER.IDESTADORESERVA = R.IDESTADORESERVA WHERE (C.NOMBRE + APEPATERNO + APEMATERNO + TELEFONO) LIKE '%' & @busqueda & '%' AND FECHARESERVA BETWEEN @fecha AND @fechaFin";
+             string sql = "SELECT * FROM (((TH_RESERVA R INNER JOIN TH_CLIENTE C ON R.IDCLIENTE = C.IDCLIENTE) INNER JOIN TH_OBRA O ON O.IDOBRA = R.IDOBRA) INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO) INNER JOIN TH_ESTADO_RESERVA ER ON ER.IDESTADORESERVA = R.IDESTADORESERVA WHERE (C.NOMBRE + APEPATERNO + APEMATERNO + TELEFONO) LIKE '%' & @busqueda & '%' AND FECHARESERVA BETWEEN @fecha AND @fechaFin";
 
             OleDbParameter pNombrePhone = UtilDA.SetParameters("@busqueda", OleDbType.VarChar, nombrePhone);
             OleDbParameter pFecha = UtilDA.SetParameters("@fecha", OleDbType.Date, fechaInicio);

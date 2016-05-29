@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessInterfaces\CC\IAplicacionService.cs" />
-    <Compile Include="BusinessInterfaces\CC\IClienteService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IClienteService.cs" />
     <Compile Include="BusinessInterfaces\CC\IRolService.cs" />
     <Compile Include="BusinessInterfaces\CC\IUsuarioService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\IAsientoService.cs" />
@@ -59,7 +59,7 @@
     <Compile Include="BusinessInterfaces\CC\TH\ITipoPromocionService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\IZonaService.cs" />
     <Compile Include="BusinessServices\CC\AplicacionService.cs" />
-    <Compile Include="BusinessServices\CC\ClienteService.cs" />
+    <Compile Include="BusinessServices\CC\TH\ClienteService.cs" />
     <Compile Include="BusinessServices\CC\RolService.cs" />
     <Compile Include="BusinessServices\CC\TH\AsientoService.cs" />
     <Compile Include="BusinessServices\CC\TH\DetalleReservaService.cs" />

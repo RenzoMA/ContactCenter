@@ -11,15 +11,16 @@ using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
-using ContactCenterServices;
+using ContactCenterServices.ServicioTeatro;
 using Microsoft.Practices.Unity;
 using ContactCenterGUI.CC.Helpers;
+using ContactCenterServices;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 {
     public partial class ManObraEditar : MaterialForm
     {
-        private IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+        private IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
         private Obra obra;
         private List<Teatro> listaTeatro;
 

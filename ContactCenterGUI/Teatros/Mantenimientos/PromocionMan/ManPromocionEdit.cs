@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
+using ContactCenterServices.ServicioTeatro;
 using ContactCenterServices;
 using Microsoft.Practices.Unity;
 using ContactCenterGUI.CC.Helpers;
@@ -20,7 +21,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
 {
     public partial class ManPromocionEdit : MaterialForm
     {
-        private IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+        private IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
         private Promocion promocion;
         private List<TipoPromocion> listaPromocion;
         public ManPromocionEdit(Promocion promocion)

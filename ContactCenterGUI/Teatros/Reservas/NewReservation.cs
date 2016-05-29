@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using MaterialSkin.Animations;
 using ContactCenterCommon;
 using MaterialSkin.Controls;
-using ContactCenterServices;
+using ContactCenterServices.ServicioTeatro;
 using Microsoft.Practices.Unity;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
@@ -19,13 +19,14 @@ using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using System.Globalization;
 using ContactCenterGUI.CC.Helpers;
+using ContactCenterServices;
 
 
 namespace ContactCenterGUI.Teatros.Reservas
 {
     public partial class NewReservation : MaterialForm
     {
-        IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+        IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
         private List<Teatro> listaTeatro = null;
         private Teatro teatro = null;
 
@@ -102,7 +103,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         }
         private async void CargarTeatros()
         {
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
             {
                 Animacion.ShowLoader(this);
                 try
@@ -126,7 +127,7 @@ namespace ContactCenterGUI.Teatros.Reservas
             obra = metroComboBox2.SelectedItem as Obra;
             diaFuncion = Util.DayOfWeekHelper(dateTimePicker1.Value.Date.DayOfWeek);
             FechaFuncion = dateTimePicker1.Value.Date;
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
             {
                 try
                 {
@@ -145,7 +146,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         private void CargarObras()
         {
             teatro = metroComboBox1.SelectedItem as Teatro;
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
             {
                 try
                 {

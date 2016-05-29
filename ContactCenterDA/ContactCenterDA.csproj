@@ -46,7 +46,7 @@
     <Compile Include="Common\UtilDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CC\AplicacionRepository.cs" />
-    <Compile Include="Repositories\CC\ClienteRepository.cs" />
+    <Compile Include="Repositories\CC\TH\ClienteRepository.cs" />
     <Compile Include="Repositories\CC\RolRepository.cs" />
     <Compile Include="Repositories\CC\TH\AsientoRepository.cs" />
     <Compile Include="Repositories\CC\TH\DetalleReservaRepository.cs" />

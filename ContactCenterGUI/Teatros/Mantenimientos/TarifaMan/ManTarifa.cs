@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ContactCenterServices;
+using ContactCenterServices.ServicioTeatro;
 using Microsoft.Practices.Unity;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
@@ -16,7 +16,7 @@ using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.TH.Entidades.TarifaBE;
-
+using ContactCenterServices;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 {
@@ -28,8 +28,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         private List<Obra> listaObra = null;
         private Obra obra = null;
 
-        private List<Tarifa> listaTarifa = null;
-        private Tarifa tarifa = null;
+
 
         public ManTarifa()
         {
@@ -57,7 +56,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         {
             try
             {
-                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
                     Animacion.ShowLoader(this);
                     listaTeatro = await servicio.ListarTeatrosAsync();
@@ -78,7 +77,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
             try
             {
                 teatro = cboTeatro.SelectedItem as Teatro;
-                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
                     listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
                     cboObra.DataSource = listaObra;
@@ -126,7 +125,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
 
                 if (teatro.IdTeatro > 0 && obra.IdObra > 0)
                 {
-                    using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                    using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                     {
                         dgvTarifa.DataSource = servicio.GetListaByTeatroObra(obra.IdObra);
                     }

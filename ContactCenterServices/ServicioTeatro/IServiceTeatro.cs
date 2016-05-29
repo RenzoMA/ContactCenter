@@ -13,21 +13,14 @@ using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterBE.CC.TH.Entidades.TarifaBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
-using ContactCenterBE.CC.Entidades.CLienteBE;
+using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 using ContactCenterBE.CC.Entidades.RolBE;
 
-namespace ContactCenterServices
+namespace ContactCenterServices.ServicioTeatro
 {
-    public interface IServiceContactCenter : IDisposable
+    public interface IServiceTeatro : IDisposable
     {
         bool EliminarAsientoTemporalAntiguo();
-        bool InsertarAplicacion(Aplicacion aplicacion);
-        List<Aplicacion> ListarAplicaciones();
-        bool UpdateAplicacion(Aplicacion aplicacion);
-        Usuario ValidarUsuario(string login, string password);
-        Task<Usuario> ValidarUsuarioAsync(string login, string password);
-        List<Aplicacion> ListarAplicacionUsuario(Usuario usuario);
-        Task<List<Aplicacion>> ListarAplicacionUsuarioAsync(Usuario usuario);
         Task<List<Asiento>> ListarAsientoDisponibleAsync(int idObra, int idFuncion, DateTime FechaObra,string token);
         Task<List<AsientoPrecio>> listarAsientoTeatroAsync(int idObra);
         List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime FechaObra, string token);
@@ -75,10 +68,6 @@ namespace ContactCenterServices
         List<Zona> ListZonaByTeatro(int IdTeatro);
         List<Asiento> ListAsientoByZona(int IdZona);
         bool UpdateAsientoDisponible(string asientos, string estado);
-        List<Usuario> SearchUsuarioByName(string name);
-        List<Rol> ListarRol();
-        bool InsertarUsuario(Usuario usuario);
-        bool UpdateUsuario(Usuario usuario,bool cambioContraseña);
 
         //Tarifa
 

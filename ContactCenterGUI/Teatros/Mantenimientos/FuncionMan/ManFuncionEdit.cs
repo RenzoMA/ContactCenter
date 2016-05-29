@@ -11,17 +11,18 @@ using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using MaterialSkin.Controls;
-using ContactCenterServices;
+using ContactCenterServices.ServicioTeatro;
 using Microsoft.Practices.Unity;
 using MaterialSkin.Animations;
 using ContactCenterGUI.CC.Helpers;
+using ContactCenterServices;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 {
     public partial class ManFuncionEdit : MaterialForm
     {
         Funcion funcion = null;
-        private IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+        private IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
         private Teatro teatro = null;
         private List<Teatro> listaTeatro;
         private Obra obra = null;

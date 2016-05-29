@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using ContactCenterBE.Base;
 
 
-namespace ContactCenterBE.CC.Entidades.CLienteBE
+namespace ContactCenterBE.CC.TH.Entidades.ClienteBE
 {
     [Serializable]
     public class Cliente : BaseEntity

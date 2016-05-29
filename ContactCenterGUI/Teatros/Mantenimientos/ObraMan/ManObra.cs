@@ -9,16 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
-using ContactCenterServices;
+using ContactCenterServices.ServicioTeatro;
 using Microsoft.Practices.Unity;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
+using ContactCenterServices;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 {
     public partial class ManObra : MaterialForm
     {
-        IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+        IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
         public ManObra()
         {
             InitializeComponent();

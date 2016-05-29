@@ -40,6 +40,12 @@ namespace ContactCenterDA.Common
             //string strCnx =
             //    "Provider = Microsoft.ACE.OLEDB.12.0; Data Source="+ ip + "; Persist Security Info = True;";
             string strCnx = ConfigurationManager.ConnectionStrings["Teatros"].ConnectionString;
+#if DEBUG
+            if (strCnx.Contains("reemplazame"))
+            {
+                strCnx = strCnx.Replace("reemplazame", System.IO.Directory.GetCurrentDirectory().Replace("ContactCenterGUI\\bin\\Debug", "ContactCenterDA"));
+            }
+#endif
 
             if (object.ReferenceEquals(strCnx, string.Empty))
             {

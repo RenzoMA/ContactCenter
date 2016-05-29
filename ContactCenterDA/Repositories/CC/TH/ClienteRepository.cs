@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ContactCenterBE.CC.Entidades.CLienteBE;
+using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 using System.Data.OleDb;
 using System.Data;
 using ContactCenterDA.Common;
 using ContactCenterCommon;
 
-namespace ContactCenterDA.Repositories.CC
+namespace ContactCenterDA.Repositories.CC.TH
 {
     public class ClienteRepository : IClienteRepository
     {
@@ -18,7 +18,7 @@ namespace ContactCenterDA.Repositories.CC
 
         public bool Delete(int id)
         {
-            String sql = "UPDATE CC_Cliente SET ESTADO = 'I', FechaMod = @FechaMod, UserMod = @UserMod WHERE IdCliente = @codigo";
+            String sql = "UPDATE TH_CLIENTE SET ESTADO = 'I', FechaMod = @FechaMod, UserMod = @UserMod WHERE IdCliente = @codigo";
 
             OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
             OleDbParameter fechaMod = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
@@ -31,7 +31,7 @@ namespace ContactCenterDA.Repositories.CC
         {
             Cliente objCliente = null;
 
-            String sql = "SELECT * FROM CC_Cliente WHERE IdCliente = @idCliente";
+            String sql = "SELECT * FROM TH_CLIENTE WHERE IdCliente = @idCliente";
 
             OleDbParameter codigo = UtilDA.SetParameters("@idCliente", OleDbType.Integer, id);
 
@@ -61,7 +61,7 @@ namespace ContactCenterDA.Repositories.CC
         {
             List<Cliente> listaCliente = new List<Cliente>();
 
-            String sql = "SELECT * FROM CC_Cliente";
+            String sql = "SELECT * FROM TH_CLIENTE";
 
             using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx))
             {
@@ -89,7 +89,7 @@ namespace ContactCenterDA.Repositories.CC
         public bool Insert(Cliente datos)
         {
 
-            String sql = "INSERT INTO CC_Cliente(Nombre, ApePaterno, ApeMaterno, Correo, Telefono, FechaCrea, UserCrea,DNI) " +
+            String sql = "INSERT INTO TH_CLIENTE(Nombre, ApePaterno, ApeMaterno, Correo, Telefono, FechaCrea, UserCrea,DNI) " +
                                        "VALUES(@nombre,@apePaterno,@apeMaterno,@correo,@telefono ,@fechaCrea, @usuarioCrea,@DNI)";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
@@ -106,7 +106,7 @@ namespace ContactCenterDA.Repositories.CC
 
         public bool Update(Cliente datos)
         {
-            String sql = "UPDATE CC_Cliente SET Nombre = @nombre, ApePaterno = @apePaterno, ApeMaterno = @apeMaterno, Correo = @correo, " +
+            String sql = "UPDATE TH_CLIENTE SET Nombre = @nombre, ApePaterno = @apePaterno, ApeMaterno = @apeMaterno, Correo = @correo, " +
                                        "Telefono = @telefono, FechaMod = @fechaMod, UserMod = @usuarioMod, DNI = @DNI WHERE IdCliente = @idCliente";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
@@ -126,7 +126,7 @@ namespace ContactCenterDA.Repositories.CC
         {
             Cliente objCliente = null;
 
-            String sql = "SELECT * FROM CC_Cliente WHERE Telefono = @telefono";
+            String sql = "SELECT * FROM TH_CLIENTE WHERE Telefono = @telefono";
 
             OleDbParameter pTelefono = UtilDA.SetParameters("@telefono", OleDbType.VarChar, telefono);
 
@@ -155,7 +155,7 @@ namespace ContactCenterDA.Repositories.CC
         public int GetNewIdCliente(Cliente cliente)
         {
 
-            String sql = "INSERT INTO CC_Cliente(Nombre, ApePaterno, ApeMaterno, Correo, Telefono, FechaCrea, UserCrea,DNI) " +
+            String sql = "INSERT INTO TH_CLIENTE(Nombre, ApePaterno, ApeMaterno, Correo, Telefono, FechaCrea, UserCrea,DNI) " +
                                        "VALUES(@nombre,@apePaterno,@apeMaterno,@correo,@telefono ,@fechaCrea, @usuarioCrea,@DNI)";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, cliente.Nombre);

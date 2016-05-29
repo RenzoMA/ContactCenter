@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBL.BusinessInterfaces.CC.TH;
-using ContactCenterBE.CC.Entidades.CLienteBE;
+using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 
 namespace ContactCenterBL.BusinessServices.CC.TH
 {

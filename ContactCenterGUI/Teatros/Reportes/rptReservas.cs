@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
-using ContactCenterServices;
+using ContactCenterServices.ServicioTeatro;
 using Microsoft.Practices.Unity;
 using Microsoft.Reporting.WinForms;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
+using ContactCenterServices;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 
 namespace ContactCenterGUI.Teatros.Reportes
@@ -27,7 +28,7 @@ namespace ContactCenterGUI.Teatros.Reportes
         }
         private void PopulateCombobox()
         {
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
             {
                 try
                 {
@@ -55,7 +56,7 @@ namespace ContactCenterGUI.Teatros.Reportes
                 fechaObra = dtpFechaObra.Value.Date;
                 teatro = cboTeatro.SelectedItem as Teatro;
                 List<Reserva> lista = new List<Reserva>();
-                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
                     lista = servicio.ReporteReservas(teatro.IdTeatro, fechaObra);
                 }

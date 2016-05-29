@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ContactCenterBE.CC.Entidades.CLienteBE;
+using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 
-namespace ContactCenterBL.BusinessInterfaces.CC
+namespace ContactCenterBL.BusinessInterfaces.CC.TH
 {
     public interface IClienteService
     {

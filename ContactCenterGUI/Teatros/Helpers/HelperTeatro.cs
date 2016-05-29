@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 using System.Windows.Forms;
-using ContactCenterServices;
+using ContactCenterServices.ServicioTeatro;
 using Microsoft.Practices.Unity;
 using ContactCenterCommon;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterGUI.Teatros.Reservas;
 using MaterialSkin.Controls;
 using ContactCenterGUI.CC.Helpers;
+using ContactCenterServices;
 
 namespace ContactCenterGUI.Teatros.Helpers
 {
@@ -22,7 +23,7 @@ namespace ContactCenterGUI.Teatros.Helpers
         private static Form formTemp;
         private static List<Asiento> lOcupados;
         private static List<AsientoPrecio> lAsientoTotal;
-        private static IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+        private static IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
         private static List<AsientoPrecio> asientosReserva;
         private static Timer timer;
         private static TimeSpan span;

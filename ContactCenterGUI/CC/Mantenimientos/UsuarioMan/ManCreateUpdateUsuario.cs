@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
-using ContactCenterServices;
+using ContactCenterServices.ServicioContactCenter;
 using Microsoft.Practices.Unity;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
 using ContactCenterBE.CC.Entidades.RolBE;
 using ContactCenterGUI.CC.Helpers;
+using ContactCenterServices;
 
 namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
 {

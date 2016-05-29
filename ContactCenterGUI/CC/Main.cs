@@ -1,22 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin.Animations;
 using MaterialSkin.Controls;
-using ContactCenterServices;
+using ContactCenterServices.ServicioContactCenter;
 using Microsoft.Practices.Unity;
-using ContactCenterGUI.Teatros.Helpers;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
 using ContactCenterCommon;
 using ContactCenterGUI.CC.Helpers;
 using System.IO;
+using ContactCenterServices;
 
 namespace ContactCenterGUI.CC
 {

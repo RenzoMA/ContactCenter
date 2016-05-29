@@ -15,20 +15,18 @@ using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
-using ContactCenterBE.CC.Entidades.CLienteBE;
+using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.Entidades.RolBE;
 using ContactCenterBE.CC.TH.Entidades.TarifaBE;
 
-namespace ContactCenterServices
+namespace ContactCenterServices.ServicioTeatro
 {
-    public class ServiceContactCenter : IServiceContactCenter
+    public class ServiceTeatro : IServiceTeatro
     {
 
         private IAsientoService _asientoService;
-        private IAplicacionService _aplicacionService;
-        private IUsuarioService _usuarioService;
         private ITeatroService _teatroService;
         private IObraService _obraService;
         private IFuncionService _funcionService;
@@ -37,10 +35,9 @@ namespace ContactCenterServices
         private IPromocionService _promocionService;
         private ITipoPromocionService _tipoPromocionService;
         private IZonaService _zonaService;
-        private IRolService _rolService;
         private ITarifaService _tarifaService;
 
-        public ServiceContactCenter(
+        public ServiceTeatro(
             IAsientoService asientoService,
             IAplicacionService aplicacionService,
             IUsuarioService usuarioService,
@@ -52,13 +49,10 @@ namespace ContactCenterServices
             IPromocionService promocionService,
             ITipoPromocionService tipoPromocionService,
             IZonaService zonaService,
-            IRolService rolService,
             ITarifaService tarifaService)
         {
             _clienteService = clienteService;
             _asientoService = asientoService;
-            _aplicacionService = aplicacionService;
-            _usuarioService = usuarioService;
             _teatroService = teatroService;
             _obraService = obraService;
             _funcionService = funcionService;
@@ -66,56 +60,12 @@ namespace ContactCenterServices
             _reservaService = reservaService;
             _tipoPromocionService = tipoPromocionService;
             _zonaService = zonaService;
-            _rolService = rolService;
             _tarifaService = tarifaService;
         }
 
         public void Dispose()
         {
             _asientoService = null;
-            _aplicacionService = null;
-            _usuarioService = null;
-        }
-
-        public bool InsertarAplicacion(Aplicacion aplicacion)
-        {
-            return _aplicacionService.Insertar(aplicacion);
-        }
-
-
-        public List<Aplicacion> ListarAplicaciones()
-        {
-            return _aplicacionService.Listar();
-        }
-
-        public List<Aplicacion> ListarAplicacionUsuario(Usuario usuario)
-        {
-            return _aplicacionService.ListarAplicacionUsuario(usuario);
-        }
-
-        public Usuario ValidarUsuario(string login, string password)
-        {
-            return _usuarioService.ValidarUsuario(login, password);
-        }
-
-        public async Task<Usuario> ValidarUsuarioAsync(string login, string password)
-        {
-            Usuario usuario = null;
-            await Task.Run(() =>
-            {
-                usuario = _usuarioService.ValidarUsuario(login, password);
-            });
-            return usuario;
-        }
-
-        public async Task<List<Aplicacion>> ListarAplicacionUsuarioAsync(Usuario usuario)
-        {
-            List<Aplicacion> lAplicacion = null;
-            await Task.Run(() =>
-            {
-                lAplicacion = _aplicacionService.ListarAplicacionUsuario(usuario);
-            });
-            return lAplicacion;
         }
 
         public List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime FechaObra,string token)
@@ -342,26 +292,7 @@ namespace ContactCenterServices
         {
             return _asientoService.UpdateAsientoDisponible(asientos, estado);
         }
-
-        public List<Usuario> SearchUsuarioByName(string name)
-        {
-            return _usuarioService.SearchByName(name);
-        }
-
-        public List<Rol> ListarRol()
-        {
-            return _rolService.GetLista();
-        }
-
-        public bool InsertarUsuario(Usuario usuario)
-        {
-            return _usuarioService.InsertarUsuario(usuario);
-        }
-
-        public bool UpdateUsuario(Usuario usuario, bool CambioContraseña)
-        {
-            return _usuarioService.UpdateUsuario(usuario,CambioContraseña);
-        }
+        
 
         public List<Funcion> ListarFuncionByObra(int idObra)
         {
@@ -377,7 +308,6 @@ namespace ContactCenterServices
         {
             return _promocionService.ListarPromocionByFuncion(idFuncion);
         }
-
 
         public List<TipoPromocion> GetListaTipoPromocion()
         {
@@ -403,12 +333,6 @@ namespace ContactCenterServices
         {
             return _promocionService.Insert(datos);
         }
-
-        public bool UpdateAplicacion(Aplicacion aplicacion)
-        {
-            return _aplicacionService.Update(aplicacion);
-        }
-
         public bool EliminarAsientoTemporalAntiguo()
         {
             return _asientoService.EliminarAsientoTemporalAntiguo();

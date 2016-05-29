@@ -14,15 +14,16 @@ using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterGUI.CC.Helpers;
-using ContactCenterServices;
+using ContactCenterServices.ServicioTeatro;
 using System.Threading;
 using System.Globalization;
+using ContactCenterServices;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
 {
     public partial class ManPromocionCreate : MaterialForm
     {
-        IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+        IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
         public ManPromocionCreate()
         {
             InitializeComponent();

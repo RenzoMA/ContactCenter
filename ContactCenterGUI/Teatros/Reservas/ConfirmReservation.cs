@@ -12,11 +12,12 @@ using MaterialSkin.Controls;
 using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
-using ContactCenterBE.CC.Entidades.CLienteBE;
-using ContactCenterServices;
+using ContactCenterBE.CC.TH.Entidades.ClienteBE;
+using ContactCenterServices.ServicioTeatro;
 using ContactCenterGUI.CC.Helpers;
 using ContactCenterGUI.Teatros.Helpers;
 using Microsoft.Practices.Unity;
+using ContactCenterServices;
 
 namespace ContactCenterGUI.Teatros.Reservas
 {
@@ -113,10 +114,11 @@ namespace ContactCenterGUI.Teatros.Reservas
         {
             try
             {
-                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
                     cboTipoPromocion.DataSource = servicio.GetListaTipoPromocion();
                     cboTipoPromocion.DisplayMember = "Descripcion";
+                    EnlazarDetallePromocion();
                 }
             }
             catch (Exception ex)
@@ -190,7 +192,7 @@ namespace ContactCenterGUI.Teatros.Reservas
             try
             {
                 Animacion.ShowLoader(this);
-                IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+                IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
                 bool resultado = await servicio.InsertarReservaAsync(reserva, cliente);
                 Animacion.HideLoader(this);
                 if (resultado)
@@ -221,7 +223,7 @@ namespace ContactCenterGUI.Teatros.Reservas
                 string telefono = txtTelefono.Text.ToUpper().Trim();
                 if (telefono != "")
                 {
-                    IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+                    IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
                     Animacion.ShowLoader(this);
                     cliente = await servicio.GetClienteByTelefonoAsync(telefono);
                     if (cliente != null)
@@ -256,15 +258,18 @@ namespace ContactCenterGUI.Teatros.Reservas
             frmTeatro.Visible = true;
             this.Close();
         }
-
-        private void cboTipoPromocion_SelectionChangeCommitted(object sender, EventArgs e)
+        private void EnlazarDetallePromocion()
         {
-            using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+            using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
             {
                 TipoPromocion tipoPromocion = cboTipoPromocion.SelectedItem as TipoPromocion;
                 cboPromocion.DataSource = servicio.ListPromocionByFuncionTipoPromo(reserva.Funcion.IdFuncion, tipoPromocion.IdTipoPromocion);
                 cboPromocion.DisplayMember = "Descripcion";
             }
+        }
+        private void cboTipoPromocion_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            EnlazarDetallePromocion();
         }
 
         private void btnAplicarDescuento_Click(object sender, EventArgs e)

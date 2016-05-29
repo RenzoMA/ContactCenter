@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using Microsoft.Practices.Unity;
+using ContactCenterServices.ServicioTeatro;
 using ContactCenterServices;
 
 namespace ContactCenterGUI.Teatros.Reservas
 {
     public partial class FindReservation : MaterialForm
     {
-        IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+        IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
         private string filtro;
         private DateTime fechaInicio;
         private DateTime fechaFin;

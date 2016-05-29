@@ -789,7 +789,7 @@
         </Field>
         <Field Name="Cliente">
           <DataField>Cliente</DataField>
-          <rd:TypeName>ContactCenterBE.CC.Entidades.CLienteBE.Cliente</rd:TypeName>
+          <rd:TypeName>ContactCenterBE.CC.TH.Entidades.ClienteBE.Cliente</rd:TypeName>
         </Field>
         <Field Name="EstadoReserva">
           <DataField>EstadoReserva</DataField>

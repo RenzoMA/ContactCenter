@@ -11,11 +11,12 @@ using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
-using ContactCenterServices;
+using ContactCenterServices.ServicioContactCenter;
 using Microsoft.Practices.Unity;
 using ContactCenterGUI.Teatros.Helpers;
 using ContactCenterCommon;
 using ContactCenterGUI.CC.Helpers;
+using ContactCenterServices;
 
 namespace ContactCenterGUI.CC
 {

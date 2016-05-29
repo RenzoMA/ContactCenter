@@ -19,12 +19,13 @@ using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
-using ContactCenterBE.CC.Entidades.CLienteBE;
+using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterBE.CC.TH.Entidades.TarifaBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.Entidades.RolBE;
-
+using ContactCenterServices.ServicioContactCenter;
+using ContactCenterServices.ServicioTeatro;
 
 
 namespace ContactCenterServices
@@ -36,6 +37,7 @@ namespace ContactCenterServices
         {
             current = new UnityContainer();
             //Servicio
+            current.RegisterType<IServiceTeatro, ServiceTeatro>();
             current.RegisterType<IServiceContactCenter, ServiceContactCenter>();
 
             // Bussiness

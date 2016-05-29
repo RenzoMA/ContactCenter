@@ -13,6 +13,7 @@ using ContactCenterBE.CC.Entidades.AplicacionBE;
 using System.IO;
 using ContactCenterGUI.CC.Helpers;
 using System.Drawing.Imaging;
+using ContactCenterServices.ServicioContactCenter;
 using ContactCenterServices;
 using Microsoft.Practices.Unity;
 

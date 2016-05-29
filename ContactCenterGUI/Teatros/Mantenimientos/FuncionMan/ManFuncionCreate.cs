@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
-using ContactCenterServices;
+using ContactCenterServices.ServicioTeatro;
 using Microsoft.Practices.Unity;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterGUI.CC.Helpers;
-
+using ContactCenterServices;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 {
     public partial class ManFuncionCreate : MaterialForm
     {
-        private IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
+        private IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
 
         private Teatro teatro = null;
         private List<Teatro> listaTeatro;
@@ -68,7 +68,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
         {
             try
             {
-                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
                     listaTeatro = await servicio.ListarTeatrosAsync();
                     cboTeatro.DataSource = listaTeatro;
@@ -87,7 +87,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
             try
             {
                 teatro = cboTeatro.SelectedItem as Teatro;
-                using (IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>())
+                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
                     listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
                     cboObra.DataSource = listaObra;
