@@ -41,7 +41,7 @@ namespace ContactCenterGUI.CC
         {
             //lblMensaje.Text = "Contraseña incorrecta";
             //lblMensaje.ForeColor = Color.Red;
-            MessageBox.Show("Contrasea incorrecta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Contraseña incorrecta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public Login()
