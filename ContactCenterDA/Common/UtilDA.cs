@@ -22,7 +22,6 @@ namespace ContactCenterDA.Common
         /// <returns></returns>
         private static String GetConexion(this OleDbConnection con)
         {
-
             //string ruta = System.IO.Directory.GetCurrentDirectory();
             //if (ruta.Contains("TestResults"))
             //{
@@ -130,7 +129,8 @@ namespace ContactCenterDA.Common
                 if (!transaction)
                 {
                     oleDbCommand.Connection = oleDbConnection;
-                    oleDbConnection.ConnectionString = oleDbConnection.GetConexion();  
+                    oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
+                    string prueba = oleDbConnection.Provider;
                 }
 
                 oleDbCommand.Parameters.Clear();
