@@ -247,6 +247,12 @@
     <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaEdit.Designer.cs">
       <DependentUpon>ManTarifaEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Reportes\RptRankingCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Reportes\RptRankingCliente.Designer.cs">
+      <DependentUpon>RptRankingCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Reservas\FindReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -386,6 +392,10 @@
     <EmbeddedResource Include="Teatros\Mantenimientos\TarifaMan\ManTarifaEdit.resx">
       <DependentUpon>ManTarifaEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Reportes\RptRankingCliente.rdlc" />
+    <EmbeddedResource Include="Teatros\Reportes\RptRankingCliente.resx">
+      <DependentUpon>RptRankingCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reservas\FindReservation.resx">
       <DependentUpon>FindReservation.cs</DependentUpon>
     </EmbeddedResource>
@@ -426,6 +436,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\ContactCenterBE.CC.TH.Entidades.ClienteBE.RankingCliente.datasource" />
     <None Include="Properties\DataSources\ContactCenterBE.CC.TH.Entidades.ReservaBE.Reserva.datasource" />
     <None Include="Properties\DataSources\ContactCenterServices.ServiceContactCenter.datasource" />
     <None Include="Properties\Settings.settings">

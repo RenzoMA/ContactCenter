@@ -11,5 +11,6 @@ namespace ContactCenterBE.CC.TH.Entidades.ClienteBE
     {
         Cliente GetByTelefono(string telefono);
         int GetNewIdCliente(Cliente cliente);
+        List<RankingCliente> ObtenerRankingCliente(DateTime fechaInicio, DateTime fechaFin);
     }
 }

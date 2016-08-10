@@ -45,5 +45,11 @@ namespace ContactCenterGUI.Teatros.Reservas
             FindReservation findReservation = new FindReservation();
             findReservation.ShowDialog();
         }
+
+        private void btnReporteCliente_Click(object sender, EventArgs e)
+        {
+            RptRankingCliente rptRankingCliente = new RptRankingCliente();
+            rptRankingCliente.ShowDialog();
+        }
     }
 }

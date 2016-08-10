@@ -55,6 +55,7 @@
     <Compile Include="CC\TH\Entidades\AsientoBE\Asiento.cs" />
     <Compile Include="CC\TH\Entidades\AsientoBE\AsientoPrecio.cs" />
     <Compile Include="CC\TH\Entidades\AsientoBE\IAsientoRepository.cs" />
+    <Compile Include="CC\TH\Entidades\ClienteBE\RankingCliente.cs" />
     <Compile Include="CC\TH\Entidades\FuncionBE\IFuncionRepository.cs" />
     <Compile Include="CC\TH\Entidades\LogEmailBE\ILogEmailRepository.cs" />
     <Compile Include="CC\TH\Entidades\ObraBE\IObraRepository.cs" />

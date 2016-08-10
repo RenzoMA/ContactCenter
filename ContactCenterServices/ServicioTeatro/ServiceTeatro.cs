@@ -342,5 +342,10 @@ namespace ContactCenterServices.ServicioTeatro
         {
             return _tarifaService.Update(tarifa);
         }
+
+        public List<RankingCliente> ObtenerRankingCliente(DateTime fechaInicio, DateTime fechaFin)
+        {
+            return _clienteService.ObtenerRankingCliente(fechaInicio, fechaFin);
+        }
     }
 }

@@ -22,5 +22,10 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         {
             return clienteRepository.GetByTelefono(telefono);
         }
+
+        public List<RankingCliente> ObtenerRankingCliente(DateTime fechaInicio, DateTime fechaFin)
+        {
+            return clienteRepository.ObtenerRankingCliente(fechaInicio, fechaFin);
+        }
     }
 }

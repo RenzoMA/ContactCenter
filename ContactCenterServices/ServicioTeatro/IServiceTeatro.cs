@@ -81,5 +81,7 @@ namespace ContactCenterServices.ServicioTeatro
         List<Promocion> ListarPromocionByFuncion(int idFuncion);
         bool UpdatePromocion(Promocion datos);
         bool InsertPromocion(Promocion datos);
+
+        List<RankingCliente> ObtenerRankingCliente(DateTime fechaInicio, DateTime fechaFin);
     }
 }

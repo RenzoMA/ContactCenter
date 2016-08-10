@@ -33,6 +33,7 @@
             this.btnGenerarReporte = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnNuevoRegistro = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnReporteCliente = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,11 +88,25 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // btnReporteCliente
+            // 
+            this.btnReporteCliente.Depth = 0;
+            this.btnReporteCliente.Location = new System.Drawing.Point(47, 290);
+            this.btnReporteCliente.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnReporteCliente.Name = "btnReporteCliente";
+            this.btnReporteCliente.Primary = true;
+            this.btnReporteCliente.Size = new System.Drawing.Size(244, 45);
+            this.btnReporteCliente.TabIndex = 15;
+            this.btnReporteCliente.Text = "RANKING CLIENTES";
+            this.btnReporteCliente.UseVisualStyleBackColor = true;
+            this.btnReporteCliente.Click += new System.EventHandler(this.btnReporteCliente_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 306);
+            this.ClientSize = new System.Drawing.Size(334, 368);
+            this.Controls.Add(this.btnReporteCliente);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.btnGenerarReporte);
@@ -113,5 +128,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnGenerarReporte;
         private MaterialSkin.Controls.MaterialRaisedButton btnNuevoRegistro;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnReporteCliente;
     }
 }

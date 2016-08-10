@@ -10,5 +10,7 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
     public interface IClienteService
     {
         Cliente GetClienteByTelefono(string telefono);
+        List<RankingCliente> ObtenerRankingCliente(DateTime fechaInicio, DateTime fechaFin);
+
     }
 }
