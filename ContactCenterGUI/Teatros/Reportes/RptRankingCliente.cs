@@ -20,6 +20,7 @@ namespace ContactCenterGUI.Teatros.Reportes
     {
         private DateTime fechaInicio;
         private DateTime fechaFin;
+
         public RptRankingCliente()
         {
             InitializeComponent();
