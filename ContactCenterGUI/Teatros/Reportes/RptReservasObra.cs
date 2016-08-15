@@ -64,7 +64,7 @@ namespace ContactCenterGUI.Teatros.Reportes
 
                 rptcro.LocalReport.DataSources.Clear();
 
-                ReportDataSource Reporte = new ReportDataSource("DataSetReservaObra", listaReservaObra);
+                ReportDataSource Reporte = new ReportDataSource("DataSet1", listaReservaObra);
 
                 rptcro.LocalReport.DataSources.Add(Reporte);
 

@@ -457,6 +457,7 @@
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\ContactCenterBE.CC.TH.Entidades.ClienteBE.RankingCliente.datasource" />
     <None Include="Properties\DataSources\ContactCenterBE.CC.TH.Entidades.ReservaBE.Reserva.datasource" />
+    <None Include="Properties\DataSources\ContactCenterBE.CC.TH.Entidades.ReservaBE.ReservaObra.datasource" />
     <None Include="Properties\DataSources\ContactCenterServices.ServiceContactCenter.datasource" />
     <None Include="Properties\DataSources\ContactCenterServices.ServicioTeatro.IServiceTeatro.datasource" />
     <None Include="Properties\DataSources\ContactCenterServices.ServicioTeatro.ServiceTeatro.datasource" />

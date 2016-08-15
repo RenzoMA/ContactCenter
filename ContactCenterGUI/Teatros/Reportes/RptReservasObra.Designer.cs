@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.lblTituloTeatro = new MaterialSkin.Controls.MaterialLabel();
             this.btnGenRep = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -36,6 +38,8 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.dtpFechaReservaF = new System.Windows.Forms.DateTimePicker();
             this.rptcro = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reservaObraBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.reservaObraBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -124,11 +128,18 @@
             this.rptcro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.reservaObraBindingSource;
+            this.rptcro.LocalReport.DataSources.Add(reportDataSource1);
             this.rptcro.LocalReport.ReportEmbeddedResource = "ContactCenterGUI.Teatros.Reportes.RptReservasObra.rdlc";
             this.rptcro.Location = new System.Drawing.Point(40, 190);
             this.rptcro.Name = "rptcro";
             this.rptcro.Size = new System.Drawing.Size(1175, 448);
             this.rptcro.TabIndex = 20;
+            // 
+            // reservaObraBindingSource
+            // 
+            this.reservaObraBindingSource.DataSource = typeof(ContactCenterBE.CC.TH.Entidades.ReservaBE.ReservaObra);
             // 
             // RptReservasObra
             // 
@@ -149,6 +160,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte Cantidad Reservas";
             this.Load += new System.EventHandler(this.RptReservasObra_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.reservaObraBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,5 +176,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.DateTimePicker dtpFechaReservaF;
         private Microsoft.Reporting.WinForms.ReportViewer rptcro;
+        private System.Windows.Forms.BindingSource reservaObraBindingSource;
     }
 }
