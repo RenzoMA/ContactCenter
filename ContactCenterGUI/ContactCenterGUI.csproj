@@ -259,6 +259,12 @@
     <Compile Include="Teatros\Reportes\RptRankingCliente.Designer.cs">
       <DependentUpon>RptRankingCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Reportes\RptReservasObra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Reportes\RptReservasObra.Designer.cs">
+      <DependentUpon>RptReservasObra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Reservas\FindReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,6 +411,10 @@
     <EmbeddedResource Include="Teatros\Reportes\RptRankingCliente.resx">
       <DependentUpon>RptRankingCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Reportes\RptReservasObra.rdlc" />
+    <EmbeddedResource Include="Teatros\Reportes\RptReservasObra.resx">
+      <DependentUpon>RptReservasObra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reservas\FindReservation.resx">
       <DependentUpon>FindReservation.cs</DependentUpon>
     </EmbeddedResource>
@@ -448,6 +458,8 @@
     <None Include="Properties\DataSources\ContactCenterBE.CC.TH.Entidades.ClienteBE.RankingCliente.datasource" />
     <None Include="Properties\DataSources\ContactCenterBE.CC.TH.Entidades.ReservaBE.Reserva.datasource" />
     <None Include="Properties\DataSources\ContactCenterServices.ServiceContactCenter.datasource" />
+    <None Include="Properties\DataSources\ContactCenterServices.ServicioTeatro.IServiceTeatro.datasource" />
+    <None Include="Properties\DataSources\ContactCenterServices.ServicioTeatro.ServiceTeatro.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -575,7 +587,9 @@
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

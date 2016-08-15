@@ -212,5 +212,36 @@ namespace ContactCenterDA.Repositories.CC.TH
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, pFechaMod, pUserMod, pIdReserva);
         }
+
+
+        //Reporte Cantidad de reservas por obra entre dos fechas
+        public List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin, int idObra )
+        {
+            List<ReservaObra> listaReservaObra = new List<ReservaObra>();
+
+            String sql = "SELECT O.Nombre AS NombreO, COUNT(*) AS TotalR from TH_RESERVA R INNER JOIN TH_OBRA O ON R.IdObra = O.IdObra where R.IdEstadoReserva <> 2 and R.FechaReserva BETWEEN @FechaIni AND @FechaFin AND R.IdObra = @idObra GROUP BY O.Nombre";
+
+            OleDbParameter pFechaInicio = UtilDA.SetParameters("@FechaIni", OleDbType.Date, fechaInicio);
+            OleDbParameter pFechaFin = UtilDA.SetParameters("@FechaFin", OleDbType.Date, fechaFin);
+            OleDbParameter pObra = UtilDA.SetParameters("@idObra", OleDbType.Integer, idObra);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pFechaInicio, pFechaFin, pObra))
+            {
+                while (dtr.Read())
+                {
+                    ReservaObra objReservaObra = new ReservaObra();
+                    objReservaObra.NombreObra = DataConvert.ToString(dtr["NombreO"]);
+                    objReservaObra.CantidadReservas = DataConvert.ToInt(dtr["TotalR"]);
+
+                    listaReservaObra.Add(objReservaObra);
+                }
+            }
+            UtilDA.Close(cnx);
+            return listaReservaObra;
+        }
+
+
+
+
     }
 }

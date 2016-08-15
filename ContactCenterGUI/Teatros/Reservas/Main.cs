@@ -51,5 +51,11 @@ namespace ContactCenterGUI.Teatros.Reservas
             RptRankingCliente rptRankingCliente = new RptRankingCliente();
             rptRankingCliente.ShowDialog();
         }
+
+        private void materialRaisedButton2_Click(object sender, EventArgs e)
+        {
+            RptReservasObra rptReservaObra = new RptReservasObra();
+            rptReservaObra.ShowDialog();
+        }
     }
 }

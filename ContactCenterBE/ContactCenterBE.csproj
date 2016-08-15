@@ -47,7 +47,7 @@
     <Compile Include="Base\BaseEntity.cs" />
     <Compile Include="CC\TH\Entidades\ClienteBE\Cliente.cs" />
     <Compile Include="CC\Entidades\AplicacionBE\IAplicacionRepository.cs" />
-    <Compile Include="CC\TH\Entidades\ClienteBE\IClienteRepository.cs" />
+    <Compile Include="CC\TH\Entidades\PromocionBE\IClienteRepository.cs" />
     <Compile Include="CC\Entidades\RolBE\IRolRepository.cs" />
     <Compile Include="CC\Entidades\UsuarioBE\IUsuarioRepository.cs" />
     <Compile Include="CC\Entidades\RolBE\Rol.cs" />
@@ -72,6 +72,7 @@
     <Compile Include="CC\TH\Entidades\ReservaBE\IEstadoReservaRepository.cs" />
     <Compile Include="CC\TH\Entidades\ReservaBE\IReservaRepository.cs" />
     <Compile Include="CC\TH\Entidades\ReservaBE\Reserva.cs" />
+    <Compile Include="CC\TH\Entidades\ReservaBE\ReservaObra.cs" />
     <Compile Include="CC\TH\Entidades\TarifaBE\ITarifaRepository.cs" />
     <Compile Include="CC\TH\Entidades\TarifaBE\Tarifa.cs" />
     <Compile Include="CC\TH\Entidades\TarifaBE\TarifaView.cs" />

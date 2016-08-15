@@ -52,5 +52,9 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         {
             return reservaRepository.CancelarReserva(idReserva);
         }
+
+        public List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin, int idObra) {
+            return reservaRepository.ReporteReservaObra(fechaInicio, fechaFin, idObra);
+        }
     }
 }
