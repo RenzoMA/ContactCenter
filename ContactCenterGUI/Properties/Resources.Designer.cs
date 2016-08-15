@@ -123,6 +123,16 @@ namespace ContactCenterGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_picture_in_picture_black_24dp_1x {
+            get {
+                object obj = ResourceManager.GetObject("ic_picture_in_picture_black_24dp_1x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap krieger2_2 {
             get {
                 object obj = ResourceManager.GetObject("krieger2_2", resourceCulture);
@@ -236,6 +246,66 @@ namespace ContactCenterGUI.Properties {
         internal static System.Drawing.Bitmap padlock {
             get {
                 object obj = ResourceManager.GetObject("padlock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PIRANDELLO_MEZZANINE {
+            get {
+                object obj = ResourceManager.GetObject("PIRANDELLO_MEZZANINE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PIRANDELLO_PLATEA {
+            get {
+                object obj = ResourceManager.GetObject("PIRANDELLO_PLATEA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PJ_MEZZANINE {
+            get {
+                object obj = ResourceManager.GetObject("PJ_MEZZANINE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PJ_PLATEA {
+            get {
+                object obj = ResourceManager.GetObject("PJ_PLATEA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PN_MEZZANINE {
+            get {
+                object obj = ResourceManager.GetObject("PN_MEZZANINE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PN_PLATEA1 {
+            get {
+                object obj = ResourceManager.GetObject("PN_PLATEA1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

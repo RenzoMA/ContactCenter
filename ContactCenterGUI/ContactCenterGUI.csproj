@@ -169,6 +169,12 @@
     <Compile Include="CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.Designer.cs">
       <DependentUpon>ManAplicacionEditar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Escenarios\Vista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Escenarios\Vista.Designer.cs">
+      <DependentUpon>Vista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,6 +350,9 @@
     <EmbeddedResource Include="CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.resx">
       <DependentUpon>ManAplicacionEditar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Escenarios\Vista.resx">
+      <DependentUpon>Vista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.resx">
       <DependentUpon>ManAsiento.cs</DependentUpon>
     </EmbeddedResource>
@@ -478,6 +487,13 @@
   <ItemGroup>
     <Content Include="cc.ico" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\PN_PLATEA1.jpg" />
+    <None Include="Resources\PN_MEZZANINE.jpg" />
+    <None Include="Resources\PIRANDELLO_PLATEA.jpg" />
+    <None Include="Resources\PIRANDELLO_MEZZANINE.jpg" />
+    <None Include="Resources\PJ_MEZZANINE.jpg" />
+    <None Include="Resources\ic_picture_in_picture_black_24dp_1x.png" />
+    <None Include="Resources\PJ_PLATEA.jpg" />
     <None Include="Resources\logo_oficial_2.png" />
     <None Include="Resources\ic_menu_edit.png" />
     <None Include="Resources\delete.png" />
