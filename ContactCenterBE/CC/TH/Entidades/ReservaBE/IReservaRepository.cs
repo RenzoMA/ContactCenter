@@ -13,7 +13,7 @@ namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
         List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fechaInicio,DateTime fechaFin);
         bool CancelarReserva(int idReserva);
         //reporte por cantidad de obras
-        List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin, int idObra);
+        List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin);
 
     }
 }

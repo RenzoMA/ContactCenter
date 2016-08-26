@@ -83,6 +83,6 @@ namespace ContactCenterServices.ServicioTeatro
         bool InsertPromocion(Promocion datos);
 
         List<RankingCliente> ObtenerRankingCliente(DateTime fechaInicio, DateTime fechaFin);
-        List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin, int idObra);
+        List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin);
     }
 }

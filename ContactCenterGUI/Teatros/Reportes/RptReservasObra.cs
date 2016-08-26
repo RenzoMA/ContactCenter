@@ -23,41 +23,25 @@ namespace ContactCenterGUI.Teatros.Reportes
 
         private DateTime fechaInicio;
         private DateTime fechaFin;
-        private Obra obra;
+        
         public RptReservasObra()
         {
             InitializeComponent();
         }
 
-        private void PopulateCombobox()
-        {
-            using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
-            {
-                try
-                {
-                    cboObra.DataSource = servicio.ListarObras();
-                    cboObra.DisplayMember = "Nombre";
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-
-        }
+        
         private void btnGenRep_Click(object sender, EventArgs e)
         {
             try
             {
                 fechaInicio = dtpFechaReservaI.Value.Date;
                 fechaFin = dtpFechaReservaF.Value.Date;
-                obra = cboObra.SelectedItem as Obra;
+               
                 List<ReservaObra> listaReservaObra;
 
                 using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
-                    listaReservaObra = servicio.ReporteReservaObra(fechaInicio, fechaFin, obra.IdObra);
+                    listaReservaObra = servicio.ReporteReservaObra(fechaInicio, fechaFin);
                 }
 
                 rptcro.ProcessingMode = ProcessingMode.Local;
@@ -71,7 +55,6 @@ namespace ContactCenterGUI.Teatros.Reportes
                 //reportViewer1.LocalReport.ReportEmbeddedResource = "MadScienceGUI.reportPago.rdlc";
 
                 List<ReportParameter> parametros = new List<ReportParameter>();
-                parametros.Add(new ReportParameter("NombreO", "" + obra.Nombre));
                 parametros.Add(new ReportParameter("FechaIni", "" + fechaInicio));
                 parametros.Add(new ReportParameter("FechaFin", "" + fechaFin));
                 //Añado parametros al reportviewer
@@ -88,7 +71,6 @@ namespace ContactCenterGUI.Teatros.Reportes
 
         private void RptReservasObra_Load(object sender, EventArgs e)
         {
-            PopulateCombobox();
             this.rptcro.RefreshReport();
         }
     }

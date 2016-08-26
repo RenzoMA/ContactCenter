@@ -215,17 +215,17 @@ namespace ContactCenterDA.Repositories.CC.TH
 
 
         //Reporte Cantidad de reservas por obra entre dos fechas
-        public List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin, int idObra )
+        public List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin )
         {
             List<ReservaObra> listaReservaObra = new List<ReservaObra>();
 
-            String sql = "SELECT O.Nombre AS NombreO, COUNT(*) AS TotalR from TH_RESERVA R INNER JOIN TH_OBRA O ON R.IdObra = O.IdObra where R.IdEstadoReserva <> 2 and R.FechaReserva BETWEEN @FechaIni AND @FechaFin AND R.IdObra = @idObra GROUP BY O.Nombre";
+            String sql = "SELECT O.Nombre AS NombreO, COUNT(*) AS TotalR from TH_RESERVA R INNER JOIN TH_OBRA O ON R.IdObra = O.IdObra where R.IdEstadoReserva <> 2 and R.FechaReserva BETWEEN @FechaIni AND @FechaFin GROUP BY O.Nombre";
 
             OleDbParameter pFechaInicio = UtilDA.SetParameters("@FechaIni", OleDbType.Date, fechaInicio);
             OleDbParameter pFechaFin = UtilDA.SetParameters("@FechaFin", OleDbType.Date, fechaFin);
-            OleDbParameter pObra = UtilDA.SetParameters("@idObra", OleDbType.Integer, idObra);
+            
 
-            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pFechaInicio, pFechaFin, pObra))
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pFechaInicio, pFechaFin))
             {
                 while (dtr.Read())
                 {

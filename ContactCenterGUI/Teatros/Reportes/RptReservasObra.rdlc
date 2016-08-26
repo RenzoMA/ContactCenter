@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Reservas Por Obra</Value>
+                <Value>RESERVAS POR OBRA</Value>
                 <Style>
                   <FontSize>20pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -25,9 +25,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
         <Top>0.75833cm</Top>
-        <Left>8.16066cm</Left>
+        <Left>4.53587cm</Left>
         <Height>0.97042cm</Height>
-        <Width>8.12618cm</Width>
+        <Width>8.78764cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -49,7 +49,9 @@
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox40</rd:DefaultName>
@@ -79,7 +81,9 @@
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox40</rd:DefaultName>
@@ -293,7 +297,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>6.24099cm</Top>
-        <Left>5.1562cm</Left>
+        <Left>2.58974cm</Left>
         <Height>1.2cm</Height>
         <Width>11.79979cm</Width>
         <ZIndex>3</ZIndex>
@@ -378,12 +382,14 @@
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>3.36021cm</Top>
-        <Left>17.88266cm</Left>
+        <Left>12.57745cm</Left>
         <Height>0.6cm</Height>
         <Width>3.61125cm</Width>
         <ZIndex>6</ZIndex>
@@ -408,12 +414,14 @@
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
         <Top>4.17188cm</Top>
-        <Left>17.88266cm</Left>
+        <Left>12.57745cm</Left>
         <Height>0.6cm</Height>
         <Width>3.61125cm</Width>
         <ZIndex>7</ZIndex>
@@ -431,7 +439,7 @@
     <Height>4.23958in</Height>
     <Style />
   </Body>
-  <Width>9.79167in</Width>
+  <Width>7.47917in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -540,10 +548,6 @@
     </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="NombreO">
-      <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
     <ReportParameter Name="FechaIni">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
