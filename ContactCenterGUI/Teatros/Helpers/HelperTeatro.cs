@@ -87,7 +87,7 @@ namespace ContactCenterGUI.Teatros.Helpers
                     }
                     else
                     {
-                        MessageBox.Show("Asiento no encontrado en la BD "+IdAsiento);
+                        MessageBox.Show("Asiento no encontrado en la BD "+IdAsiento, "Verifique que todas las zonas tengan una tarifa");
                     }
                 }
             }
