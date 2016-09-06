@@ -34,6 +34,18 @@ namespace ContactCenterGUI.Teatros.Escenarios
             }
         }
 
-       
+        private void pnvp_Click(object sender, EventArgs e)
+        {
+            Image i = ContactCenterGUI.Properties.Resources.PN_PLATEA1;
+            Vista frm = new Vista(i);
+            frm.Show();
+        }
+
+        private void pnvm_Click(object sender, EventArgs e)
+        {
+            Image i = ContactCenterGUI.Properties.Resources.PN_MEZZANINE;
+            Vista frm = new Vista(i);
+            frm.Show();
+        }
     }
 }

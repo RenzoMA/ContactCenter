@@ -34,6 +34,7 @@
             this.btnNuevoRegistro = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnReporteCliente = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,11 +102,25 @@
             this.btnReporteCliente.UseVisualStyleBackColor = true;
             this.btnReporteCliente.Click += new System.EventHandler(this.btnReporteCliente_Click);
             // 
+            // materialRaisedButton2
+            // 
+            this.materialRaisedButton2.Depth = 0;
+            this.materialRaisedButton2.Location = new System.Drawing.Point(47, 354);
+            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton2.Name = "materialRaisedButton2";
+            this.materialRaisedButton2.Primary = true;
+            this.materialRaisedButton2.Size = new System.Drawing.Size(244, 45);
+            this.materialRaisedButton2.TabIndex = 16;
+            this.materialRaisedButton2.Text = "REPORTE RESERVA  POR OBRA";
+            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 368);
+            this.ClientSize = new System.Drawing.Size(338, 420);
+            this.Controls.Add(this.materialRaisedButton2);
             this.Controls.Add(this.btnReporteCliente);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.materialRaisedButton1);
@@ -129,5 +144,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnNuevoRegistro;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialRaisedButton btnReporteCliente;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
     }
 }

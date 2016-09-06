@@ -347,5 +347,11 @@ namespace ContactCenterServices.ServicioTeatro
         {
             return _clienteService.ObtenerRankingCliente(fechaInicio, fechaFin);
         }
+
+        public List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin)
+        {
+            return _reservaService.ReporteReservaObra(fechaInicio, fechaFin);
+        }
+
     }
 }

@@ -169,6 +169,12 @@
     <Compile Include="CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.Designer.cs">
       <DependentUpon>ManAplicacionEditar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Escenarios\Vista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Escenarios\Vista.Designer.cs">
+      <DependentUpon>Vista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,12 @@
     </Compile>
     <Compile Include="Teatros\Reportes\RptRankingCliente.Designer.cs">
       <DependentUpon>RptRankingCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teatros\Reportes\RptReservasObra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Reportes\RptReservasObra.Designer.cs">
+      <DependentUpon>RptReservasObra.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Reservas\FindReservation.cs">
       <SubType>Form</SubType>
@@ -344,6 +356,9 @@
     <EmbeddedResource Include="CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.resx">
       <DependentUpon>ManAplicacionEditar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Escenarios\Vista.resx">
+      <DependentUpon>Vista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.resx">
       <DependentUpon>ManAsiento.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,6 +411,10 @@
     <EmbeddedResource Include="Teatros\Reportes\RptRankingCliente.resx">
       <DependentUpon>RptRankingCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Reportes\RptReservasObra.rdlc" />
+    <EmbeddedResource Include="Teatros\Reportes\RptReservasObra.resx">
+      <DependentUpon>RptReservasObra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reservas\FindReservation.resx">
       <DependentUpon>FindReservation.cs</DependentUpon>
     </EmbeddedResource>
@@ -438,7 +457,10 @@
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\ContactCenterBE.CC.TH.Entidades.ClienteBE.RankingCliente.datasource" />
     <None Include="Properties\DataSources\ContactCenterBE.CC.TH.Entidades.ReservaBE.Reserva.datasource" />
+    <None Include="Properties\DataSources\ContactCenterBE.CC.TH.Entidades.ReservaBE.ReservaObra.datasource" />
     <None Include="Properties\DataSources\ContactCenterServices.ServiceContactCenter.datasource" />
+    <None Include="Properties\DataSources\ContactCenterServices.ServicioTeatro.IServiceTeatro.datasource" />
+    <None Include="Properties\DataSources\ContactCenterServices.ServicioTeatro.ServiceTeatro.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -478,6 +500,13 @@
   <ItemGroup>
     <Content Include="cc.ico" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\PN_PLATEA1.jpg" />
+    <None Include="Resources\PN_MEZZANINE.jpg" />
+    <None Include="Resources\PIRANDELLO_PLATEA.jpg" />
+    <None Include="Resources\PIRANDELLO_MEZZANINE.jpg" />
+    <None Include="Resources\PJ_MEZZANINE.jpg" />
+    <None Include="Resources\ic_picture_in_picture_black_24dp_1x.png" />
+    <None Include="Resources\PJ_PLATEA.jpg" />
     <None Include="Resources\logo_oficial_2.png" />
     <None Include="Resources\ic_menu_edit.png" />
     <None Include="Resources\delete.png" />
@@ -559,7 +588,9 @@
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

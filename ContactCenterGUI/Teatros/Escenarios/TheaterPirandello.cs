@@ -37,5 +37,39 @@ namespace ContactCenterGUI.Teatros.Escenarios
         {
 
         }
+
+        private void pvpa_Click(object sender, EventArgs e)
+        {
+            vistaPlatea();
+        }
+
+        private void vistaPlatea()
+        {
+            Image i = ContactCenterGUI.Properties.Resources.PIRANDELLO_PLATEA;
+            Vista frm = new Vista(i);
+            frm.Show();
+        }
+
+        private void vistaMezzanine()
+        {
+            Image i = ContactCenterGUI.Properties.Resources.PIRANDELLO_MEZZANINE;
+            Vista frm = new Vista(i);
+            frm.Show();
+        }
+
+        private void pvpb_Click(object sender, EventArgs e)
+        {
+            vistaPlatea();
+        }
+
+        private void pvma_Click(object sender, EventArgs e)
+        {
+            vistaMezzanine();
+        }
+
+        private void pvmb_Click(object sender, EventArgs e)
+        {
+            vistaMezzanine();
+        }
     }
 }
