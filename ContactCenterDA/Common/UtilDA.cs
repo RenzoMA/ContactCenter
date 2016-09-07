@@ -435,8 +435,10 @@ namespace ContactCenterDA.Common
             catch (Exception ex)
             {
                 SaveLog(ex, sql, parameters);
+                UtilDA.Close(oleDbConnection);
                 throw new Exception(ex.Message);
             }
+            
         }
 
         public static OleDbDataReader ExecuteSubReader(OleDbCommand oleDbCommand, CommandType commandType, String sql, OleDbConnection oleDbConnection, params OleDbParameter[] parameters)

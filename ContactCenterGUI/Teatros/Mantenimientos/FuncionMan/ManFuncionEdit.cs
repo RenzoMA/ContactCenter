@@ -59,7 +59,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
                 cboTeatro.SelectedItem = FindTeatro(funcion.Obra.Teatro.IdTeatro);
 
                 teatro = cboTeatro.SelectedItem as Teatro;
-                listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
+                listaObra = servicio.ComboManGetListaTeatro(teatro.IdTeatro);
                 cboObra.DataSource = listaObra;
                 cboObra.DisplayMember = "Nombre";
                 cboObra.SelectedItem = FindObra(funcion.Obra.IdObra);

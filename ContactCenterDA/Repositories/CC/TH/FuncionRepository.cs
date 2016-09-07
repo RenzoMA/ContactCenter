@@ -123,7 +123,7 @@ namespace ContactCenterDA.Repositories.CC.TH
         {
             List<Funcion> lFuncion = new List<Funcion>();
             Funcion funcion = null;
-            string sql = "SELECT * FROM (TH_FUNCION F INNER JOIN TH_OBRA O ON F.IDOBRA = O.IDOBRA) INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO WHERE F.IDOBRA = @Obra AND Dia = @Dia";
+            string sql = "SELECT * FROM (TH_FUNCION F INNER JOIN TH_OBRA O ON F.IDOBRA = O.IDOBRA) INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO WHERE F.IDOBRA = @Obra AND Dia = @Dia AND F.ESTADO = 'A'";
             OleDbParameter pObra = UtilDA.SetParameters("@Obra", OleDbType.Integer, obra);
             OleDbParameter pDia = UtilDA.SetParameters("@Dia", OleDbType.Integer, dia);
 

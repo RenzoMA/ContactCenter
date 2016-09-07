@@ -14,7 +14,7 @@ using ContactCenterGUI.Teatros.Mantenimientos.AsientoMan;
 using ContactCenterGUI.Teatros.Mantenimientos.FuncionMan;
 using ContactCenterGUI.Teatros.Mantenimientos.ObraMan;
 using ContactCenterGUI.Teatros.Mantenimientos.PromocionMan;
-using ContactCenterGUI.Teatros.Mantenimientos.TarifaMan;
+using ContactCenterGUI.Teatros.Mantenimientos.ZonaMan;
 using ContactCenterGUI.CC.Mantenimientos.UsuarioMan;
 
 namespace ContactCenterGUI
@@ -75,17 +75,17 @@ namespace ContactCenterGUI
                 this.Show();
             }
 
-            else if (metroComboBox1.SelectedItem.ToString() == "Tarifa")
-            {
-                this.Hide();
-                ManTarifa manfaremenu = new ManTarifa();
-                manfaremenu.ShowDialog();
-                this.Show();
-            }
             else if (metroComboBox1.SelectedItem.ToString() == "Promoción")
             {
                 this.Hide();
                 ManPromocion manfaremenu = new ManPromocion();
+                manfaremenu.ShowDialog();
+                this.Show();
+            }
+            else if (metroComboBox1.SelectedItem.ToString() == "Zona")
+            {
+                this.Hide();
+                ManZona manfaremenu = new ManZona();
                 manfaremenu.ShowDialog();
                 this.Show();
             }

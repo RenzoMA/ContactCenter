@@ -70,7 +70,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
                 teatro = cboTeatro.SelectedItem as Teatro;
                 using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
-                    listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
+                    listaObra = servicio.ComboManGetListaTeatro(teatro.IdTeatro);
                     cboObra.DataSource = listaObra;
                     cboObra.DisplayMember = "Nombre";
                 }

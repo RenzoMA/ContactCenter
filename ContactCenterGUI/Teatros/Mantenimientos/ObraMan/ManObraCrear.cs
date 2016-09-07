@@ -76,8 +76,6 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
                 return false;
             if (txtDescripcionObra.Text.ToUpper().Trim().Equals(string.Empty))
                 return false;
-            if (cboEstadoObra.SelectedIndex == 0)
-                return false;
             if (cboTeatroObra.SelectedIndex == 0)
                 return false;
 

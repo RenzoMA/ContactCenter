@@ -45,21 +45,6 @@ namespace ContactCenterDA.Repositories.CC.TH
                 objAsiento.IdAsiento = DataConvert.ToInt(dtr["IdAsiento"]);
                 objAsiento.Descripcion = DataConvert.ToString(dtr["A.Descripcion"]);
                 objAsiento.Fila = DataConvert.ToString(dtr["Fila"]);
-                objAsiento.Disponible = DataConvert.ToString(dtr["Disponible"]);
-                objAsiento.Zona = new Zona()
-                {
-                    IdZona = DataConvert.ToInt(dtr["Z.IdZona"]),
-                    Nombre = DataConvert.ToString(dtr["Z.Nombre"]),
-                    Descripcion = DataConvert.ToString(dtr["Z.Descripcion"]),
-                    Estado = DataConvert.ToString(dtr["Z.Estado"]),
-                    Teatro = new Teatro()
-                    {
-                        IdTeatro = DataConvert.ToInt(dtr["T.IdTeatro"]),
-                        Nombre = DataConvert.ToString(dtr["T.Nombre"]),
-                        Estado = DataConvert.ToString(dtr["T.Estado"]),
-                        frmTeatro = DataConvert.ToString(dtr["T.frmTeatro"])
-                    },
-                };
                 objAsiento.FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]);
                 objAsiento.UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]);
                 objAsiento.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
@@ -81,20 +66,6 @@ namespace ContactCenterDA.Repositories.CC.TH
                 objAsiento.IdAsiento = DataConvert.ToInt(dtr["IdAsiento"]);
                 objAsiento.Descripcion = DataConvert.ToString(dtr["A.Descripcion"]);
                 objAsiento.Fila = DataConvert.ToString(dtr["Fila"]);
-                objAsiento.Disponible = DataConvert.ToString(dtr["Disponible"]);
-                objAsiento.Zona = new Zona()
-                {
-                    IdZona = DataConvert.ToInt(dtr["Z.IdZona"]),
-                    Nombre = DataConvert.ToString(dtr["Z.Nombre"]),
-                    Descripcion = DataConvert.ToString(dtr["Z.Descripcion"]),
-                    Estado = DataConvert.ToString(dtr["Z.Estado"]),
-                    Teatro = new Teatro()
-                    {
-                        IdTeatro = DataConvert.ToInt(dtr["T.IdTeatro"]),
-                        Nombre = DataConvert.ToString(dtr["T.Nombre"]),
-                        Estado = DataConvert.ToString(dtr["T.Estado"])
-                    },
-                };
                 objAsiento.FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]);
                 objAsiento.UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]);
                 objAsiento.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
@@ -107,32 +78,28 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Insert(Asiento datos)
         {
-            String sql = "INSERT INTO TH_Asiento(Descripcion, Fila, Disponible, IdZona, FechaCrea, UserCrea) " +
-                            "VALUES(@descripciom, @fila, @disponible, @idZona, @fechaCrea, @usuarioCrea)";
+            String sql = "INSERT INTO TH_Asiento(Descripcion, Fila, FechaCrea, UserCrea) " +
+                            "VALUES(@descripciom, @fila, @fechaCrea, @usuarioCrea)";
 
             OleDbParameter descripcion = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Descripcion);
             OleDbParameter fila = UtilDA.SetParameters("@fila", OleDbType.VarChar, datos.Fila);
-            OleDbParameter disponible = UtilDA.SetParameters("@disponible", OleDbType.VarChar, datos.Disponible);
-            OleDbParameter idzona = UtilDA.SetParameters("@IdZona", OleDbType.Integer, datos.Zona.IdZona);
             OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, descripcion, fila, disponible, idzona, fechaCreacion, usuarioCrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, descripcion, fila, fechaCreacion, usuarioCrea);
         }
 
         public bool Update(Asiento datos)
         {
-            String sql = "UPDATE TH_Asiento SET Descripcion = @descripcion, Fila = @fila, Disponible = @disponible, IdZona = @IdZona, " +
+            String sql = "UPDATE TH_Asiento SET Descripcion = @descripcion, Fila = @fila,   " +
                             "FechaMod = @fechaMod, UserMod = @usuarioMod WHERE IdAsiento = @idAsiento";
 
             OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
             OleDbParameter fila = UtilDA.SetParameters("@fila", OleDbType.VarChar, datos.Fila);
-            OleDbParameter disponible = UtilDA.SetParameters("@disponible", OleDbType.VarChar, datos.Disponible);
-            OleDbParameter idzona = UtilDA.SetParameters("@IdZona", OleDbType.Integer, datos.Zona.IdZona);
             OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idAsiento = UtilDA.SetParameters("@idAsiento", OleDbType.Integer, datos.IdAsiento);
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, descripcion, fila, disponible, idzona, fechaMod, usuarioMod, idAsiento);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, descripcion, fila, fechaMod, usuarioMod, idAsiento);
         }
 
         public List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime fechaReserva,string token)
@@ -158,7 +125,6 @@ namespace ContactCenterDA.Repositories.CC.TH
                 {
                     asiento = new Asiento()
                     {
-                        Disponible = DataConvert.ToString(dtr["Estado"]),
                         IdAsiento = DataConvert.ToInt(dtr["IdAsiento"])
                     };
                     lAsiento.Add(asiento);
@@ -168,43 +134,58 @@ namespace ContactCenterDA.Repositories.CC.TH
             return lAsiento;
         }
 
-        public List<AsientoPrecio> ListarTeatroAsiento(int idObra)
+        public List<AsientoZona> ListarTeatroAsiento(int idObra)
         {
-            List<AsientoPrecio> lAsiento = new List<AsientoPrecio>();
-            AsientoPrecio asiento = null;
+            List<AsientoZona> lAsientoZona = new List<AsientoZona>();
+            AsientoZona asiento = null;
 
-            string sql = "SELECT * FROM (TH_ASIENTO A "+
-                         "INNER JOIN TH_TARIFA T "+
-                         "ON A.IDZONA = T.IDZONA) "+
-                         "INNER JOIN TH_ZONA Z ON Z.IDZONA = T.IDZONA " +
-                         "WHERE "+
-                         "T.IDOBRA = @IdObra";
+            string sql = "SELECT * FROM (TH_ZONA Z INNER JOIN TH_ASIENTO_ZONA AZ ON AZ.IDZONA = Z.IDZONA) INNER JOIN TH_ASIENTO A ON A.IDASIENTO = AZ.IDASIENTO WHERE Z.IDOBRA = @IdObra AND Z.ESTADO = 'A'";
 
-            OleDbParameter _idTeatro = UtilDA.SetParameters("@IdObra", OleDbType.Integer, idObra);
+            OleDbParameter pIdObra = UtilDA.SetParameters("@IdObra", OleDbType.Integer, idObra);
 
-            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, _idTeatro))
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pIdObra))
             {
                 while (dtr.Read())
                 {
-                    asiento = new AsientoPrecio()
+                    asiento = new AsientoZona()
                     {
-                        Disponible = DataConvert.ToString(dtr["Disponible"]),
-                        IdAsiento = DataConvert.ToInt(dtr["IdAsiento"]),
-                        Descripcion = DataConvert.ToString(dtr["A.Descripcion"]),
-                        Fila = DataConvert.ToString(dtr["Fila"]),
-                        Precio = DataConvert.ToSingle(dtr["Precio"]),
                         Zona = new Zona()
                         {
                             IdZona = DataConvert.ToInt(dtr["Z.IdZona"]),
                             Nombre = DataConvert.ToString(dtr["Nombre"]),
-                            Descripcion = DataConvert.ToString(dtr["Z.Descripcion"])
+                            Descripcion = DataConvert.ToString(dtr["Z.Descripcion"]),
+                            Estado = DataConvert.ToString(dtr["Z.Estado"]),
+                            UsuarioCreacion = DataConvert.ToString(dtr["Z.UserCrea"]),
+                            FechaCreacion = DataConvert.ToDateTime(dtr["Z.FechaCrea"]),
+                            FechaModificacion = DataConvert.ToDateTime(dtr["Z.FechaMod"]),
+                            UsuarioModificacion = DataConvert.ToString(dtr["Z.UserMod"]),
+                            Precio = DataConvert.ToSingle(dtr["Precio"]),
+                            R = DataConvert.ToInt(dtr["R"]),
+                            G = DataConvert.ToInt(dtr["G"]),
+                            B = DataConvert.ToInt(dtr["B"]),
+                        },
+                        IdAsientoZona = DataConvert.ToInt(dtr["IdAsientoZona"]),
+                        Disponible = DataConvert.ToString(dtr["Disponible"]),
+                        FechaCreacion = DataConvert.ToDateTime(dtr["AZ.FechaCrea"]),
+                        UsuarioCreacion = DataConvert.ToString(dtr["AZ.UserCrea"]),
+                        FechaModificacion = DataConvert.ToDateTime(dtr["AZ.FechaMod"]),
+                        UsuarioModificacion = DataConvert.ToString(dtr["AZ.UserMod"]),
+                        Asiento = new Asiento()
+                        {
+                            IdAsiento = DataConvert.ToInt(dtr["A.IdAsiento"]),
+                            Descripcion = DataConvert.ToString(dtr["A.Descripcion"]),
+                            Fila = DataConvert.ToString(dtr["Fila"]),
+                            FechaCreacion = DataConvert.ToDateTime(dtr["A.FechaCrea"]),
+                            UsuarioCreacion = DataConvert.ToString(dtr["A.UserCrea"]),
+                            FechaModificacion = DataConvert.ToDateTime(dtr["A.FechaMod"]),
+                            UsuarioModificacion = DataConvert.ToString(dtr["A.UserMod"])
                         }
                     };
-                    lAsiento.Add(asiento);
+                    lAsientoZona.Add(asiento);
                 }
             }
             UtilDA.Close(cnx);
-            return lAsiento;
+            return lAsientoZona;
         }
 
         public bool InserAsientoTemporal(int idFuncion, int idAsiento, DateTime fechaObra, string token)
@@ -242,12 +223,12 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         }
 
-        public List<Asiento> ListAsientoByZona(int IdZona)
+        public List<AsientoZona> ListAsientoByZona(int IdZona)
         {
-            List<Asiento> listaAsiento = new List<Asiento>();
-            Asiento asiento = null;
+            List<AsientoZona> listaAsiento = new List<AsientoZona>();
+            AsientoZona asiento = null;
 
-            string sql = "SELECT * FROM TH_ASIENTO WHERE IdZona = @IdZona ORDER BY IdAsiento";
+            string sql = "SELECT * FROM TH_ASIENTO_ZONA AZ INNER JOIN TH_ASIENTO A ON A.IDASIENTO = AZ.IDASIENTO  WHERE AZ.IdZona = @IdZona ORDER BY A.IdAsiento";
             OleDbParameter pIdZona = UtilDA.SetParameters("@IdZona", OleDbType.Integer, IdZona);
 
 
@@ -255,12 +236,23 @@ namespace ContactCenterDA.Repositories.CC.TH
             {
                 while (dtr.Read())
                 {
-                    asiento = new Asiento()
+                    asiento = new AsientoZona()
                     {
-                        IdAsiento = DataConvert.ToInt(dtr["IdAsiento"]),
-                        Descripcion = DataConvert.ToString(dtr["Descripcion"]),
-                        Fila = DataConvert.ToString(dtr["Fila"]),
-                        Disponible = DataConvert.ToString(dtr["Disponible"])
+                        IdAsientoZona = DataConvert.ToInt(dtr["IdAsientoZona"]),
+                        IdAsiento = DataConvert.ToInt(dtr["A.IdAsiento"]),
+                        Asiento = new Asiento()
+                        {
+                            IdAsiento = DataConvert.ToInt(dtr["A.IdAsiento"]),
+                            Descripcion = DataConvert.ToString(dtr["Descripcion"]),
+                            Fila = DataConvert.ToString(dtr["Fila"]),
+                            FechaCreacion = DataConvert.ToDateTime(dtr["A.FechaCrea"]),
+                            UsuarioCreacion = DataConvert.ToString(dtr["A.UserCrea"])
+                        },
+                        Disponible = DataConvert.ToString(dtr["Disponible"]),
+                        FechaCreacion = DataConvert.ToDateTime(dtr["AZ.FechaCrea"]),
+                        FechaModificacion = DataConvert.ToDateTime(dtr["AZ.FechaMod"]),
+                        UsuarioCreacion = DataConvert.ToString(dtr["AZ.UserCrea"]),
+                        UsuarioModificacion = DataConvert.ToString(dtr["AZ.UserMod"])
                     };
                     listaAsiento.Add(asiento);
                 }
@@ -270,11 +262,12 @@ namespace ContactCenterDA.Repositories.CC.TH
             return listaAsiento;
         }
 
-        public bool UpdateAsientoDisponible(string asientos, string estado)
+        public bool UpdateAsientoDisponible(string asientos, string estado, int idZona)
         {
-            string sql = "UPDATE TH_ASIENTO SET DISPONIBLE = @Disponible WHERE IdAsiento IN (" + asientos + ")";
+            string sql = "UPDATE TH_ASIENTO_ZONA SET DISPONIBLE = @Disponible WHERE IdAsiento IN (" + asientos + ") AND IdZona = @IdZona";
             OleDbParameter pEstado = UtilDA.SetParameters("@Disponible", OleDbType.VarChar, estado);
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, pEstado);
+            OleDbParameter pIdZona = UtilDA.SetParameters("@IdZona", OleDbType.Integer, idZona);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, pEstado, pIdZona);
         }
 
         public bool EliminarAsientoTemporalAntiguo()
@@ -282,6 +275,64 @@ namespace ContactCenterDA.Repositories.CC.TH
             string sql = "DELETE FROM TH_ASIENTO_TEMPORAL WHERE FECHACREA < @fechaActual";
             OleDbParameter fechaActual = UtilDA.SetParameters("@fechaActual", OleDbType.Date, DateTime.Now.AddMinutes(-18));
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, fechaActual);
+        }
+
+        public bool EliminarAsientoDisponible(string asientos, int idZona)
+        {
+            string sql = "DELETE FROM TH_ASIENTO_ZONA WHERE IdAsiento IN (" + asientos + ") AND IdZona = @IdZona";
+            OleDbParameter pIdZona = UtilDA.SetParameters("@IdZona", OleDbType.Integer, idZona);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, pIdZona);
+        }
+
+        public List<Asiento> ListAsientoNoAsignado(int idObra, int idTeatro)
+        {
+            List<Asiento> listaAsiento = new List<Asiento>();
+            Asiento asiento = null;
+            string sql = "SELECT * FROM TH_ASIENTO A LEFT JOIN (SELECT * FROM TH_ASIENTO_ZONA AZ INNER JOIN TH_ZONA Z ON Z.IDZONA = AZ.IDZONA WHERE Z.IDOBRA = @IdObra AND Z.ESTADO = 'A') AS RES ON RES.IDASIENTO = A.IDASIENTO WHERE IDTEATRO = @IdTeatro AND IDASIENTOZONA IS NULL ORDER BY A.IDASIENTO";
+            OleDbParameter pIdObra = UtilDA.SetParameters("@IdObra", OleDbType.Integer, idObra);
+            OleDbParameter pIdTeatro = UtilDA.SetParameters("@IdTeatro", OleDbType.Integer, idTeatro);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pIdObra, pIdTeatro))
+            {
+                while (dtr.Read())
+                {
+                    asiento = new Asiento()
+                    {
+                        IdAsiento = DataConvert.ToInt(dtr["A.IdAsiento"]),
+                        Descripcion = DataConvert.ToString(dtr["A.Descripcion"]),
+                        Fila = DataConvert.ToString(dtr["Fila"]),
+                        FechaCreacion = DataConvert.ToDateTime(dtr["A.FechaCrea"]),
+                        UsuarioCreacion = DataConvert.ToString(dtr["A.UserCrea"]),
+
+                    };
+                    listaAsiento.Add(asiento);
+                }
+            }
+            UtilDA.Close(cnx);
+
+            return listaAsiento;
+        }
+
+        public bool InsertarAsientoZona(List<Asiento> listaAsientos, Zona zona)
+        {
+            String sql = "INSERT INTO TH_ASIENTO_ZONA(IdAsiento, IdZona, Disponible, FechaCrea,UserCrea) " +
+                            "VALUES(@idAsiento, @idZona,'S', @fechaCrea, @usuarioCrea)";
+
+                UtilDA.ExecuteBeginTransaction(cmd, cnx);
+                foreach (Asiento asiento in listaAsientos)
+                {
+                    OleDbParameter pIdAsiento = UtilDA.SetParameters("@idAsiento", OleDbType.Integer, asiento.IdAsiento);
+                    OleDbParameter pIdZona = UtilDA.SetParameters("@idZona", OleDbType.Integer, zona.IdZona);
+                    OleDbParameter pFechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
+                    OleDbParameter pUsuarioCreacion = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
+                    if (!UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, true, pIdAsiento, pIdZona, pFechaCreacion, pUsuarioCreacion))
+                    {
+                        UtilDA.ExecuteRollback(cmd, cnx);
+                        return false;
+                    }
+                }
+            UtilDA.ExecuteCommit(cmd, cnx);
+            return true;
         }
     }
 }

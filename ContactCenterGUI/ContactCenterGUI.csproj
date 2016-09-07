@@ -181,6 +181,12 @@
     <Compile Include="Teatros\Mantenimientos\AsientoMan\ManAsiento.Designer.cs">
       <DependentUpon>ManAsiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Mantenimientos\AsientoMan\ManAsientoZona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\AsientoMan\ManAsientoZona.Designer.cs">
+      <DependentUpon>ManAsientoZona.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,17 +247,23 @@
     <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionCreate.Designer.cs">
       <DependentUpon>ManPromocionCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifa.cs">
+    <Compile Include="Teatros\Mantenimientos\ZonaMan\ManZona.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifa.designer.cs">
-      <DependentUpon>ManTarifa.cs</DependentUpon>
+    <Compile Include="Teatros\Mantenimientos\ZonaMan\ManZona.Designer.cs">
+      <DependentUpon>ManZona.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaEdit.cs">
+    <Compile Include="Teatros\Mantenimientos\ZonaMan\ManZonaCreate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaEdit.Designer.cs">
-      <DependentUpon>ManTarifaEdit.cs</DependentUpon>
+    <Compile Include="Teatros\Mantenimientos\ZonaMan\ManZonaCreate.Designer.cs">
+      <DependentUpon>ManZonaCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\ZonaMan\ManZonaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\ZonaMan\ManZonaEdit.Designer.cs">
+      <DependentUpon>ManZonaEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Reportes\RptRankingCliente.cs">
       <SubType>Form</SubType>
@@ -282,12 +294,6 @@
     </Compile>
     <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionEdit.Designer.cs">
       <DependentUpon>ManPromocionEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaCreate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Teatros\Mantenimientos\TarifaMan\ManTarifaCreate.Designer.cs">
-      <DependentUpon>ManTarifaCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Reportes\RptReservas.cs">
       <SubType>Form</SubType>
@@ -365,6 +371,9 @@
     <EmbeddedResource Include="ManPrincipal.resx">
       <DependentUpon>ManPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\AsientoMan\ManAsientoZona.resx">
+      <DependentUpon>ManAsientoZona.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\FuncionMan\ManFuncion.resx">
       <DependentUpon>ManFuncion.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,20 +401,20 @@
     <EmbeddedResource Include="Teatros\Mantenimientos\PromocionMan\ManPromocionCreate.resx">
       <DependentUpon>ManPromocionCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\Mantenimientos\TarifaMan\ManTarifa.resx">
-      <DependentUpon>ManTarifa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\Mantenimientos\TarifaMan\ManTarifaCreate.resx">
-      <DependentUpon>ManTarifaCreate.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\PromocionMan\ManPromocion.resx">
       <DependentUpon>ManPromocion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\PromocionMan\ManPromocionEdit.resx">
       <DependentUpon>ManPromocionEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\Mantenimientos\TarifaMan\ManTarifaEdit.resx">
-      <DependentUpon>ManTarifaEdit.cs</DependentUpon>
+    <EmbeddedResource Include="Teatros\Mantenimientos\ZonaMan\ManZona.resx">
+      <DependentUpon>ManZona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\ZonaMan\ManZonaCreate.resx">
+      <DependentUpon>ManZonaCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\ZonaMan\ManZonaEdit.resx">
+      <DependentUpon>ManZonaEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reportes\RptRankingCliente.rdlc" />
     <EmbeddedResource Include="Teatros\Reportes\RptRankingCliente.resx">

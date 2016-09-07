@@ -19,7 +19,6 @@ using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.Entidades.RolBE;
-using ContactCenterBE.CC.TH.Entidades.TarifaBE;
 
 namespace ContactCenterServices.ServicioTeatro
 {
@@ -35,7 +34,6 @@ namespace ContactCenterServices.ServicioTeatro
         private IPromocionService _promocionService;
         private ITipoPromocionService _tipoPromocionService;
         private IZonaService _zonaService;
-        private ITarifaService _tarifaService;
 
         public ServiceTeatro(
             IAsientoService asientoService,
@@ -48,8 +46,7 @@ namespace ContactCenterServices.ServicioTeatro
             IClienteService clienteService,
             IPromocionService promocionService,
             ITipoPromocionService tipoPromocionService,
-            IZonaService zonaService,
-            ITarifaService tarifaService)
+            IZonaService zonaService)
         {
             _clienteService = clienteService;
             _asientoService = asientoService;
@@ -60,7 +57,6 @@ namespace ContactCenterServices.ServicioTeatro
             _reservaService = reservaService;
             _tipoPromocionService = tipoPromocionService;
             _zonaService = zonaService;
-            _tarifaService = tarifaService;
         }
 
         public void Dispose()
@@ -83,9 +79,9 @@ namespace ContactCenterServices.ServicioTeatro
             return lAsiento;
         }
 
-        public async Task<List<AsientoPrecio>> listarAsientoTeatroAsync(int idObra)
+        public async Task<List<AsientoZona>> listarAsientoTeatroAsync(int idObra)
         {
-            List<AsientoPrecio> lAsiento = null;
+            List<AsientoZona> lAsiento = null;
             await Task.Run(() =>
             {
                 lAsiento = _asientoService.ListarAsientoTeatro(idObra);
@@ -97,7 +93,10 @@ namespace ContactCenterServices.ServicioTeatro
         {
             return _teatroService.Listar();
         }
-
+        public List<Obra> ComboManGetListaTeatro(int idTeatro)
+        {
+            return _obraService.ComboManGetListaTeatro(idTeatro);
+        }
         public List<Obra> ListarObraTeatro(int idTeatro)
         {
             return _obraService.ListarObraTeatro(idTeatro);
@@ -263,9 +262,9 @@ namespace ContactCenterServices.ServicioTeatro
             return _tipoPromocionService.GetListaSeleccionable();
         }
 
-        public List<Reserva> ReporteReservas(int idTeatro, DateTime fecha)
+        public List<Reserva> ReporteReservas(int idTeatro, DateTime fecha, DateTime fechaFin)
         {
-            return _reservaService.ReporteReservas(idTeatro, fecha);
+            return _reservaService.ReporteReservas(idTeatro, fecha, fechaFin);
         }
 
         public List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fechaInicio,DateTime fechaFin)
@@ -278,19 +277,23 @@ namespace ContactCenterServices.ServicioTeatro
             return _reservaService.CancelarReserva(idReserva);
         }
 
-        public List<Zona> ListZonaByTeatro(int IdTeatro)
+        public List<Zona> ComboListZonaByObra(int IdObra)
         {
-            return _zonaService.ListZonaByTeatro(IdTeatro);
+            return _zonaService.ComboListZonaByObra(IdObra);
+        }
+        public List<Zona> ListZonaByObra(int IdObra)
+        {
+            return _zonaService.ListZonaByObra(IdObra);
         }
 
-        public List<Asiento> ListAsientoByZona(int IdZona)
+        public List<AsientoZona> ListAsientoByZona(int IdZona)
         {
             return _asientoService.ListAsientoByZona(IdZona);
         }
 
-        public bool UpdateAsientoDisponible(string asientos, string estado)
+        public bool UpdateAsientoDisponible(string asientos, string estado, int idZona)
         {
-            return _asientoService.UpdateAsientoDisponible(asientos, estado);
+            return _asientoService.UpdateAsientoDisponible(asientos, estado, idZona);
         }
         
 
@@ -319,15 +322,6 @@ namespace ContactCenterServices.ServicioTeatro
             return _promocionService.Update(datos);
         }
 
-        public List<TarifaView> GetListaByTeatroObra(int IdObra)
-        {
-            return _tarifaService.GetListaByTeatroObra(IdObra);
-        }
-
-        public bool InsertarTarifa(Tarifa tarifa)
-        {
-            return _tarifaService.Insert(tarifa);
-        }
 
         public bool InsertPromocion(Promocion datos)
         {
@@ -338,10 +332,6 @@ namespace ContactCenterServices.ServicioTeatro
             return _asientoService.EliminarAsientoTemporalAntiguo();
         }
 
-        public bool Uptade(Tarifa tarifa)
-        {
-            return _tarifaService.Update(tarifa);
-        }
 
         public List<RankingCliente> ObtenerRankingCliente(DateTime fechaInicio, DateTime fechaFin)
         {
@@ -353,5 +343,54 @@ namespace ContactCenterServices.ServicioTeatro
             return _reservaService.ReporteReservaObra(fechaInicio, fechaFin);
         }
 
+        public bool EliminarAsientoDisponible(string asientos, int idZona)
+        {
+            return _asientoService.EliminarAsientoDisponible(asientos, idZona);
+        }
+
+        public List<Asiento> ListAsientoNoAsignado(int idObra, int idTeatro)
+        {
+            return _asientoService.ListAsientoNoAsignado(idObra, idTeatro);
+        }
+
+        public bool InsertarAsientoZona(List<Asiento> listaAsientos, Zona zona)
+        {
+            return _asientoService.InsertarAsientoZona(listaAsientos, zona);
+        }
+
+        public bool InsertarZona(Zona zona)
+        {
+            return _zonaService.InsertarZona(zona);
+        }
+
+        public async Task<bool> InsertarZonaAsync(Zona zona)
+        {
+            bool obj = false;
+            await Task.Run(() =>
+            {
+                obj = _zonaService.InsertarZona(zona);
+            });
+            return obj;
+        }
+
+        public async Task<bool> InsertarAsientoZonaAsync(List<Asiento> listaAsientos, Zona zona)
+        {
+            bool obj = false;
+            await Task.Run(() =>
+            {
+                obj = _asientoService.InsertarAsientoZona(listaAsientos, zona);
+            });
+            return obj;
+        }
+
+        public bool ActualizarZona(Zona zona)
+        {
+            return _zonaService.ActualizarZona(zona);
+        }
+
+        public List<Obra> ComboListarObraByTeatro(int idTeatro)
+        {
+            return _obraService.ComboListarObraByTeatro(idTeatro);
+        }
     }
 }

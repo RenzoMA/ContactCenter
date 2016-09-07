@@ -26,12 +26,44 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             listaObra.Insert(0, obra);
             return listaObra;
         }
+        public List<Obra> ComboManGetListaTeatro(int idTeatro)
+        {
+            List<Obra> listaObraTeatro = _obraRepository.ComboManGetListaTeatro(idTeatro);
+            listaObraTeatro.ForEach(tx => {
+
+                tx.Estado = tx.Estado == "A" ? "Activo" : "Inactivo";
+            });
+            Obra obra = new Obra()
+            {
+                IdObra = 0,
+                Nombre = "Seleccione obra"
+            };
+            listaObraTeatro.Insert(0,obra);
+            return listaObraTeatro;
+        }
 
         public List<Obra> ListarObraByTeatro(int idTeatro) {
 
             List<Obra> listaObraTeatro = _obraRepository.ListarObraByTeatro(idTeatro);
             listaObraTeatro.ForEach(tx => {
                 
+                tx.Estado = tx.Estado == "A" ? "Activo" : "Inactivo";
+            });
+            return listaObraTeatro;
+        }
+
+        public List<Obra> ComboListarObraByTeatro(int idTeatro)
+        {
+
+            List<Obra> listaObraTeatro = _obraRepository.ListarObraByTeatro(idTeatro);
+            Obra obra = new Obra()
+            {
+                IdObra = 0,
+                Nombre = "Seleccione obra"
+            };
+            listaObraTeatro.Insert(0, obra);
+            listaObraTeatro.ForEach(tx => {
+
                 tx.Estado = tx.Estado == "A" ? "Activo" : "Inactivo";
             });
             return listaObraTeatro;

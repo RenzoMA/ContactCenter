@@ -12,6 +12,7 @@ using MaterialSkin.Controls;
 using ContactCenterServices.ServicioTeatro;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
+using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterServices;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
@@ -20,6 +21,9 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
     {
         IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
         private Zona zona;
+        private Teatro teatro;
+        private Obra obra;
+
         public ManAsiento()
         {
             InitializeComponent();
@@ -35,15 +39,24 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
         {
             cboTeatro.DataSource = servicio.ListarTeatros();
             cboTeatro.DisplayMember = "Nombre";
-            AsociarZona();
+            AsociarObra();
         }
         private void AsociarZona()
         {
+            obra = cboObra.SelectedItem as Obra;
+            cboZona.DataSource = servicio.ComboListZonaByObra(obra.IdObra).Where(x => x.Estado == "Activo").ToList();
+            cboZona.DisplayMember = "Nombre";
+            zona = cboZona.SelectedItem as Zona;
+
+        }
+        private void AsociarObra()
+        {
             try
             {
-                Teatro teatro = cboTeatro.SelectedItem as Teatro;
-                cboZona.DataSource = servicio.ListZonaByTeatro(teatro.IdTeatro);
-                cboZona.DisplayMember = "Nombre";
+                teatro = cboTeatro.SelectedItem as Teatro;
+                cboObra.DataSource = servicio.ComboListarObraByTeatro(teatro.IdTeatro);
+                cboObra.DisplayMember = "Nombre";
+                AsociarZona();
             }
             catch(Exception ex)
             {
@@ -53,7 +66,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
 
         private void cboTeatro_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            AsociarZona();
+            AsociarObra();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -125,7 +138,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
             {
                 if (ValidarSeleccionado())
                 {
-                    if (servicio.UpdateAsientoDisponible(CapturarSeleccionados(), "N"))
+                    if (servicio.UpdateAsientoDisponible(CapturarSeleccionados(), "N", zona.IdZona))
                     {
                         MessageBox.Show("Proceso correcto");
                         EnlazarDataGrid();
@@ -146,7 +159,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
         {
             if (ValidarSeleccionado())
             {
-                if (servicio.UpdateAsientoDisponible(CapturarSeleccionados(), "S"))
+                if (servicio.UpdateAsientoDisponible(CapturarSeleccionados(), "S", zona.IdZona))
                 {
                     MessageBox.Show("Proceso correcto");
                     EnlazarDataGrid();
@@ -165,6 +178,46 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
                 chk.Value = (chk.Value == null ? true : Convert.ToBoolean(chk.Value) == false ? true : false);
             }
+        }
+
+        private void cboObra_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            AsociarZona();
+        }
+
+        private void materialRaisedButton2_Click(object sender, EventArgs e)
+        {
+            if (ValidarSeleccionado())
+            {
+                if (servicio.EliminarAsientoDisponible(CapturarSeleccionados(), zona.IdZona))
+                {
+                    MessageBox.Show("Proceso correcto");
+                    EnlazarDataGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+            }
+        }
+
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            if (zona.IdZona != 0 & teatro.IdTeatro != 0 && obra.IdObra != 0)
+            {
+                ManAsientoZona manAsientoZona = new ManAsientoZona(teatro, obra, zona);
+                manAsientoZona.ShowDialog();
+                EnlazarDataGrid();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione todos los campos", "Aviso");
+            }
+        }
+
+        private void cboZona_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            EnlazarDataGrid();
         }
     }
 }

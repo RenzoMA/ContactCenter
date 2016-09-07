@@ -74,8 +74,8 @@ namespace ContactCenterDA.Repositories.CC.TH
                 int id = UtilDA.ExecuteNonQueryGetId(cmd, CommandType.Text, sql, cnx, true, pFechaReserva, pHorario, pEstadoReserva, pIdObra, pIdFuncion, pIdCliente,
                     pIdUsuario, pPromocion, pNombrePromo, pFechaCrea, pUserCrea, pTotal, pAsientos);
 
-            string sqlDetalle = "INSERT INTO TH_DETALLE_RESERVA (idReserva,Precio,Estado,idAsiento,FechaCrea,UserCrea) " +
-                                "VALUES (@idReserva,@precio,@estado,@idAsiento,@fechaCrea,@userCrea)";
+            string sqlDetalle = "INSERT INTO TH_DETALLE_RESERVA (idReserva,Precio,Estado,idAsiento,FechaCrea,UserCrea,NombreZona) " +
+                                "VALUES (@idReserva,@precio,@estado,@idAsiento,@fechaCrea,@userCrea,@NombreZona)";
 
             foreach (DetalleReserva det in datos.ListaDetalles)
             {
@@ -85,8 +85,9 @@ namespace ContactCenterDA.Repositories.CC.TH
                 OleDbParameter pIdAsiento = UtilDA.SetParameters("@idAsiento", OleDbType.Integer, det.Asiento.IdAsiento);
                 OleDbParameter pFechaCrea2 = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
                 OleDbParameter pUserCrea2 = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
+                OleDbParameter pNombreZona = UtilDA.SetParameters("@NombreZona", OleDbType.VarChar, det.NombreZona);
 
-                if (!UtilDA.ExecuteNonQuery(cmd,CommandType.Text, sqlDetalle,cnx, true, pIdReserva, pPrecio, pEstado, pIdAsiento, pFechaCrea2, pUserCrea2))
+                if (!UtilDA.ExecuteNonQuery(cmd,CommandType.Text, sqlDetalle,cnx, true, pIdReserva, pPrecio, pEstado, pIdAsiento, pFechaCrea2, pUserCrea2,pNombreZona))
                 {
                     UtilDA.ExecuteRollback(cmd,cnx);
                     return false;
@@ -102,17 +103,18 @@ namespace ContactCenterDA.Repositories.CC.TH
             throw new NotImplementedException();
         }
 
-        public List<Reserva> ReporteReservas(int idTeatro, DateTime fecha)
+        public List<Reserva> ReporteReservas(int idTeatro, DateTime fecha,DateTime fechaFin)
         {
             List<Reserva> listaReserva = new List<Reserva>();
             Reserva reserva = null;
 
-            string sql = "SELECT * FROM (((TH_RESERVA R INNER JOIN TH_OBRA O ON O.IDOBRA = R.IDOBRA) INNER JOIN TH_FUNCION F ON F.IDFUNCION = R.IDFUNCION) INNER JOIN TH_CLIENTE C ON C.IDCLIENTE = R.IDCLIENTE) INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO WHERE T.IDTEATRO = @IdTeatro AND R.FechaReserva = @FechaReserva AND IdEstadoReserva = 1 ORDER BY C.Nombre ASC";
+            string sql = "SELECT * FROM (((TH_RESERVA R INNER JOIN TH_OBRA O ON O.IDOBRA = R.IDOBRA) INNER JOIN TH_FUNCION F ON F.IDFUNCION = R.IDFUNCION) INNER JOIN TH_CLIENTE C ON C.IDCLIENTE = R.IDCLIENTE) INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO WHERE T.IDTEATRO = @IdTeatro AND IdEstadoReserva = 1 AND R.FechaReserva between @FechaReserva and @fechaFin ORDER BY C.Nombre ASC";
 
             OleDbParameter pIdTeatro = UtilDA.SetParameters("@IdTeatro", OleDbType.Integer, idTeatro);
             OleDbParameter pFecha = UtilDA.SetParameters("@FechaReserva", OleDbType.Date, fecha);
+            OleDbParameter pFechaFin = UtilDA.SetParameters("@fechaFin", OleDbType.Date, fechaFin);
 
-            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx,pIdTeatro,pFecha))
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx,pIdTeatro, pFecha, pFechaFin))
             {
                 while (dtr.Read())
                 {

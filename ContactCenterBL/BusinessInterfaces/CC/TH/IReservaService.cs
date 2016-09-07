@@ -11,7 +11,7 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
     public interface IReservaService
     {
         bool InsertarReserva(Reserva reserva,Cliente cliente);
-        List<Reserva> ReporteReservas(int idTeatro, DateTime fecha);
+        List<Reserva> ReporteReservas(int idTeatro, DateTime fecha, DateTime fechaFin);
         List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fechaInicio,DateTime fechaFin);
         bool CancelarReserva(int idReserva);
         List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin);

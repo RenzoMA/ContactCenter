@@ -15,16 +15,41 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         {
             zonaRepository = _zonaRepository;
         }
-        public List<Zona> ListZonaByTeatro(int IdTeatro)
-        {
-            List<Zona> listaZona = zonaRepository.ListZonaByTeatro(IdTeatro);
 
+        public bool ActualizarZona(Zona zona)
+        {
+            return zonaRepository.Update(zona);
+        }
+
+        public List<Zona> ComboListZonaByObra(int IdObra)
+        {
+            List<Zona> listaZona = zonaRepository.ListZonaByObra(IdObra);
+            listaZona.ForEach(tx => {
+
+                tx.Estado = tx.Estado == "A" ? "Activo" : "Inactivo";
+            });
             Zona zona = new Zona()
             {
                 IdZona = 0,
-                Nombre = "Seleccione obra"
+                Nombre = "Seleccione obra",
+                Estado = "Activo"
             };
             listaZona.Insert(0, zona);
+            return listaZona;
+        }
+
+        public bool InsertarZona(Zona zona)
+        {
+            return zonaRepository.Insert(zona);
+        }
+
+        public List<Zona> ListZonaByObra(int IdObra)
+        {
+            List<Zona> listaZona = zonaRepository.ListZonaByObra(IdObra);
+            listaZona.ForEach(tx => {
+
+                tx.Estado = tx.Estado == "A" ? "Activo" : "Inactivo";
+            });
             return listaZona;
         }
     }

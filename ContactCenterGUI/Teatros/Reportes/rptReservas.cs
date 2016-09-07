@@ -21,7 +21,8 @@ namespace ContactCenterGUI.Teatros.Reportes
     public partial class RptReservas : MaterialForm
     {
         private Teatro teatro;
-        private DateTime fechaObra; 
+        private DateTime fechaObra;
+        private DateTime fechaObraFin;
         public RptReservas()
         {
             InitializeComponent();
@@ -54,11 +55,12 @@ namespace ContactCenterGUI.Teatros.Reportes
             try
             {
                 fechaObra = dtpFechaObra.Value.Date;
+                fechaObraFin = dtpFechaObraFin.Value.Date.AddDays(1);
                 teatro = cboTeatro.SelectedItem as Teatro;
                 List<Reserva> lista = new List<Reserva>();
                 using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
-                    lista = servicio.ReporteReservas(teatro.IdTeatro, fechaObra);
+                    lista = servicio.ReporteReservas(teatro.IdTeatro, fechaObra,fechaObraFin);
                 }
 
                 reportViewer1.ProcessingMode = ProcessingMode.Local;

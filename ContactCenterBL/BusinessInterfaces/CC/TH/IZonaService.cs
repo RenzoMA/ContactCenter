@@ -9,6 +9,9 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
 {
     public interface IZonaService
     {
-        List<Zona> ListZonaByTeatro(int IdTeatro);
+        List<Zona> ComboListZonaByObra(int IdObra);
+        List<Zona> ListZonaByObra(int IdObra);
+        bool InsertarZona(Zona zona);
+        bool ActualizarZona(Zona zona);
     }
 }

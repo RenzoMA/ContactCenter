@@ -17,5 +17,7 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
         bool Update(Obra datos);
         Obra GetByName(string name);
         List<Obra> ListarObraByTeatro(int idTeatro);
+        List<Obra> ComboListarObraByTeatro(int idTeatro);
+        List<Obra> ComboManGetListaTeatro(int idTeatro);
     }
 }

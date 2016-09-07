@@ -45,6 +45,7 @@
     <Compile Include="Base\IBaseRepository.cs" />
     <Compile Include="CC\Entidades\AplicacionBE\Aplicacion.cs" />
     <Compile Include="Base\BaseEntity.cs" />
+    <Compile Include="CC\TH\Entidades\AsientoBE\AsientoZona.cs" />
     <Compile Include="CC\TH\Entidades\ClienteBE\Cliente.cs" />
     <Compile Include="CC\Entidades\AplicacionBE\IAplicacionRepository.cs" />
     <Compile Include="CC\TH\Entidades\PromocionBE\IClienteRepository.cs" />
@@ -53,7 +54,6 @@
     <Compile Include="CC\Entidades\RolBE\Rol.cs" />
     <Compile Include="CC\Entidades\UsuarioBE\Usuario.cs" />
     <Compile Include="CC\TH\Entidades\AsientoBE\Asiento.cs" />
-    <Compile Include="CC\TH\Entidades\AsientoBE\AsientoPrecio.cs" />
     <Compile Include="CC\TH\Entidades\AsientoBE\IAsientoRepository.cs" />
     <Compile Include="CC\TH\Entidades\ClienteBE\RankingCliente.cs" />
     <Compile Include="CC\TH\Entidades\FuncionBE\IFuncionRepository.cs" />
@@ -73,9 +73,6 @@
     <Compile Include="CC\TH\Entidades\ReservaBE\IReservaRepository.cs" />
     <Compile Include="CC\TH\Entidades\ReservaBE\Reserva.cs" />
     <Compile Include="CC\TH\Entidades\ReservaBE\ReservaObra.cs" />
-    <Compile Include="CC\TH\Entidades\TarifaBE\ITarifaRepository.cs" />
-    <Compile Include="CC\TH\Entidades\TarifaBE\Tarifa.cs" />
-    <Compile Include="CC\TH\Entidades\TarifaBE\TarifaView.cs" />
     <Compile Include="CC\TH\Entidades\TeatroBE\ITeatroRepository.cs" />
     <Compile Include="CC\TH\Entidades\TeatroBE\Teatro.cs" />
     <Compile Include="CC\TH\Entidades\PromocionBE\TipoPromocion.cs" />

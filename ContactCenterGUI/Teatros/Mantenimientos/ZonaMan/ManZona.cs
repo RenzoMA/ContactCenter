@@ -11,16 +11,15 @@ using ContactCenterServices.ServicioTeatro;
 using Microsoft.Practices.Unity;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
-using ContactCenterGUI.CC.Helpers;
+using ContactCenterServices;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
-using ContactCenterBE.CC.TH.Entidades.TarifaBE;
-using ContactCenterServices;
+using ContactCenterGUI.CC.Helpers;
 
-namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
+namespace ContactCenterGUI.Teatros.Mantenimientos.ZonaMan
 {
-    public partial class ManTarifa : MaterialForm
+    public partial class ManZona : MaterialForm
     {
         private List<Teatro> listaTeatro = null;
         private Teatro teatro = null;
@@ -28,30 +27,11 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
         private List<Obra> listaObra = null;
         private Obra obra = null;
 
-
-
-        public ManTarifa()
+        public ManZona()
         {
             InitializeComponent();
             dgvTarifa.AutoGenerateColumns = false;
         }
-
-        private void ManTarifa_Load(object sender, EventArgs e)
-        {
-            CargarTeatros();
-        }
-
-        private void btnCrear_Click(object sender, EventArgs e)
-        {
-            ManTarifaCreate manTarifaCreate = new ManTarifaCreate();
-            manTarifaCreate.ShowDialog();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private async void CargarTeatros()
         {
             try
@@ -66,12 +46,11 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
                 }
                 CargarObras();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void CargarObras()
         {
             try
@@ -84,56 +63,54 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.TarifaMan
                     cboObra.DisplayMember = "Nombre";
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        
-        private void cboTeatro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CargarObras();
-        }
-
-        private void cboObra_SelectedIndexChanged(object sender, EventArgs e)
-        {
-                  
-        }
-
-        private void dgvTarifa_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(e.ColumnIndex == 0)
-            {
-                Tarifa tarifa = (Tarifa)dgvTarifa.CurrentRow.DataBoundItem;
-                ManTarifaEdit manTarifaEdit = new ManTarifaEdit(tarifa);
-                manTarifaEdit.ShowDialog();
-                EnlazarGrilla();
             }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            EnlazarGrilla();
-        }
 
-        private void EnlazarGrilla()
-        {
-            try
+            obra = cboObra.SelectedItem as Obra;
+            if (obra.IdObra > 0)
             {
-                teatro = cboTeatro.SelectedItem as Teatro;
-                obra = cboObra.SelectedItem as Obra;
-
-                if (teatro.IdTeatro > 0 && obra.IdObra > 0)
+                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
-                    using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
-                    {
-                        dgvTarifa.DataSource = servicio.GetListaByTeatroObra(obra.IdObra);
-                    }
+
+                    dgvTarifa.DataSource = servicio.ListZonaByObra(obra.IdObra);
                 }
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Seleccione una obra", "Aviso");
+            }
+        }
+
+        private void ManZona_Load(object sender, EventArgs e)
+        {
+            CargarTeatros();
+        }
+
+        private void cboTeatro_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            CargarObras();
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            ManZonaCreate zona = new ManZonaCreate();
+            zona.ShowDialog();
+
+        }
+
+        private void dgvTarifa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                Zona zona = (Zona)dgvTarifa.CurrentRow.DataBoundItem;
+                ManZonaEdit manZonaEdit = new ManZonaEdit(zona);
+                manZonaEdit.ShowDialog();
             }
         }
     }
