@@ -88,6 +88,7 @@ namespace ContactCenterGUI.CC
                 Animacion.ShowLoader(this);
                 IServiceContactCenter servicio = Contenedor.current.Resolve<IServiceContactCenter>();
                 Sesion.usuario = await servicio.ValidarUsuarioAsync(login, password);
+
                 if (Sesion.usuario != null)
                 {
                     this.Hide();
