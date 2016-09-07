@@ -28,7 +28,8 @@ namespace ContactCenterGUI.Teatros.Helpers
         private static Timer timer;
         private static TimeSpan span;
         private static int contador;
-        
+        private static int limitMinutesTime = 0;
+        private static int limitSecondsTime = 20;
 
         private static IEnumerable<Control> GetAll(Control control, Type type)
         {
@@ -180,7 +181,7 @@ namespace ContactCenterGUI.Teatros.Helpers
         {
             
 
-            span = new TimeSpan(0, 15, 0);
+            span = new TimeSpan(0, limitMinutesTime, limitSecondsTime);
             asientosReserva = new List<AsientoZona>();
             tokenTemp = GenerarToken();
             reservaTemp = reserva;
@@ -230,7 +231,7 @@ namespace ContactCenterGUI.Teatros.Helpers
                 info.listaAsientoPrecio.ForEach(ap => {
                     lAsientoTotal.ForEach(a =>
                     {
-                        if (a.IdAsiento == ap.IdAsiento)
+                        if (a.Asiento.IdAsiento == ap.Asiento.IdAsiento)
                         {
                             ap.Zona = a.Zona;
                         }

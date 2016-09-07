@@ -318,7 +318,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         {
             span = span.Subtract(TimeSpan.Parse("00:00:01"));
             lblTiempo.Text = span.ToString();
-            if (span.Hours == 0 && span.Minutes == 0 && span.Seconds == 0)
+            if (span.Hours == 0 && span.Minutes == 0 && span.Seconds <= 0)
             {
                 this.Close();
             }
