@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManZonaCreate));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.txtPrecioZona = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -256,6 +257,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 468);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManZonaCreate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Zonas";
