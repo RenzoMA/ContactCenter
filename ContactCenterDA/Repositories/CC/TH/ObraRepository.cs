@@ -18,6 +18,7 @@ namespace ContactCenterDA.Repositories.CC.TH
         OleDbConnection cnx = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
 
+
         public bool Delete(int id)
         {
             String sql = "UPDATE TH_OBRA SET ESTADO = 'I', FechaMod = @FechaMod, UserMod = @UserMod WHERE IdObra = @codigo";

@@ -4,11 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
+using System.Data.OleDb;
+using System.Data;
+using ContactCenterDA.Common;
 
 namespace ContactCenterDA.Repositories.CC.TH
 {
     public class DetalleReservaRepository : IDetalleReservaRepository
     {
+        OleDbConnection cnx = new OleDbConnection();
+        OleDbCommand cmd = new OleDbCommand();
+
         public bool Delete(int id)
         {
             throw new NotImplementedException();

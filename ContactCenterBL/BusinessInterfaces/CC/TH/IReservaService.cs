@@ -15,5 +15,6 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
         List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fechaInicio,DateTime fechaFin);
         bool CancelarReserva(int idReserva);
         List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin);
+        bool CargaMasiva(string path);
     }
 }

@@ -69,7 +69,7 @@ namespace ContactCenterGUI.Teatros.Reservas
             {
                 contador++;
                 result += "F: "+obj.Asiento.Fila + " - A: " +obj.Asiento.Descripcion + ", ";
-                dgvDetalleAsientos.Rows.Add(obj.Zona.Descripcion, obj.Asiento.Fila, obj.Asiento.Descripcion);
+                dgvDetalleAsientos.Rows.Add(obj.Zona.Nombre, obj.Asiento.Fila, obj.Asiento.Descripcion);
                 
             }
             result = result.Substring(0, result.Length - 1);

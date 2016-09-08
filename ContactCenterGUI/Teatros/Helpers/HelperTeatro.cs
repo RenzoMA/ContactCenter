@@ -28,8 +28,8 @@ namespace ContactCenterGUI.Teatros.Helpers
         private static Timer timer;
         private static TimeSpan span;
         private static int contador;
-        private static int limitMinutesTime = 0;
-        private static int limitSecondsTime = 20;
+        private static int limitMinutesTime = 15;
+        private static int limitSecondsTime = 30;
 
         private static IEnumerable<Control> GetAll(Control control, Type type)
         {

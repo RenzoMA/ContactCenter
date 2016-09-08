@@ -56,21 +56,35 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public IList<Asiento> GetLista()
         {
-            List<Asiento> listaAsiento = null;
+            List<Asiento> listaAsiento = new List<Asiento>();
 
-            String sql = "SELECT * FROM TH_Asiento A INNER JOIN TH_Zona Z ON Z.IdZona = A.IdZona INNER JOIN TH_TEATRO T ON T.IdTeatro = Z.IdTeatro";
+            String sql = "SELECT * FROM TH_Asiento A INNER JOIN TH_TEATRO T ON A.IdTeatro = T.IdTeatro";
 
             using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx))
             {
-                Asiento objAsiento = new Asiento();
-                objAsiento.IdAsiento = DataConvert.ToInt(dtr["IdAsiento"]);
-                objAsiento.Descripcion = DataConvert.ToString(dtr["A.Descripcion"]);
-                objAsiento.Fila = DataConvert.ToString(dtr["Fila"]);
-                objAsiento.FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]);
-                objAsiento.UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]);
-                objAsiento.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
-                objAsiento.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
-                listaAsiento.Add(objAsiento);
+                while (dtr.Read())
+                {
+                    Asiento objAsiento = new Asiento();
+                    objAsiento.IdAsiento = DataConvert.ToInt(dtr["IdAsiento"]);
+                    objAsiento.Descripcion = DataConvert.ToString(dtr["Descripcion"]);
+                    objAsiento.Fila = DataConvert.ToString(dtr["Fila"]);
+                    objAsiento.FechaCreacion = DataConvert.ToDateTime(dtr["A.FechaCrea"]);
+                    objAsiento.UsuarioCreacion = DataConvert.ToString(dtr["A.UserCrea"]);
+                    objAsiento.FechaModificacion = DataConvert.ToDateTime(dtr["A.FechaMod"]);
+                    objAsiento.UsuarioModificacion = DataConvert.ToString(dtr["A.UserMod"]);
+                    objAsiento.Teatro = new Teatro()
+                    {
+                        IdTeatro = DataConvert.ToInt(dtr["T.IdTeatro"]),
+                        Estado = DataConvert.ToString(dtr["T.Estado"]),
+                        Nombre = DataConvert.ToString(dtr["Nombre"]),
+                        FechaCreacion = DataConvert.ToDateTime(dtr["T.FechaCrea"]),
+                        UsuarioCreacion = DataConvert.ToString(dtr["T.UserCrea"]),
+                        FechaModificacion = DataConvert.ToDateTime(dtr["T.FechaMod"]),
+                        UsuarioModificacion = DataConvert.ToString(dtr["T.UserMod"]),
+                        frmTeatro = DataConvert.ToString(dtr["frmTeatro"])
+                    };
+                    listaAsiento.Add(objAsiento);
+                }
             }
             UtilDA.Close(cnx);
             return listaAsiento;

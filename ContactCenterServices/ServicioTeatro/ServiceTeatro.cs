@@ -392,5 +392,19 @@ namespace ContactCenterServices.ServicioTeatro
         {
             return _obraService.ComboListarObraByTeatro(idTeatro);
         }
+
+        public bool CargaMasiva(string path)
+        {
+            return _reservaService.CargaMasiva(path);
+        }
+        public async Task<bool> CargaMasivaAsync(string path)
+        {
+            bool obj = false;
+            await Task.Run(() =>
+            {
+                obj = _reservaService.CargaMasiva(path);
+            });
+            return obj;
+        }
     }
 }

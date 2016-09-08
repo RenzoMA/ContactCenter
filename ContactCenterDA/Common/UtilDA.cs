@@ -15,6 +15,7 @@ namespace ContactCenterDA.Common
 {
     static class UtilDA
     {
+        
         /// <summary>
         /// Metodo de extension para obtener la cadena de conexión.
         /// </summary>
@@ -130,7 +131,6 @@ namespace ContactCenterDA.Common
                 {
                     oleDbCommand.Connection = oleDbConnection;
                     oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
-                    string prueba = oleDbConnection.Provider;
                 }
 
                 oleDbCommand.Parameters.Clear();

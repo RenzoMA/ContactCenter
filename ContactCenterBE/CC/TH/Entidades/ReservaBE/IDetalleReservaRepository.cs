@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using ContactCenterBE.Base;
 
+
 namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
 {
     public interface IDetalleReservaRepository : IBaseRepository<DetalleReserva>
     {
-
+        
     }
 }

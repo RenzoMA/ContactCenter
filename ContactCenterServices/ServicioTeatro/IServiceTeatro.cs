@@ -19,9 +19,11 @@ namespace ContactCenterServices.ServicioTeatro
 {
     public interface IServiceTeatro : IDisposable
     {
+        bool CargaMasiva(string path);
         bool EliminarAsientoTemporalAntiguo();
         Task<List<Asiento>> ListarAsientoDisponibleAsync(int idObra, int idFuncion, DateTime FechaObra,string token);
         Task<List<AsientoZona>> listarAsientoTeatroAsync(int idObra);
+        Task<bool> CargaMasivaAsync(string path);
         List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime FechaObra, string token);
         List<Teatro> ListarTeatros();
         Task<List<Teatro>> ListarTeatrosAsync();

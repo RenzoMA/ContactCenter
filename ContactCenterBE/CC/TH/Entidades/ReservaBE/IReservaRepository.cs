@@ -14,6 +14,8 @@ namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
         bool CancelarReserva(int idReserva);
         //reporte por cantidad de obras
         List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin);
+        bool InsertMasivo(List<Reserva> listaReserva);
+        Reserva ReservaExiste(DateTime fechaReserva, int idFuncion, int idCliente);
 
     }
 }

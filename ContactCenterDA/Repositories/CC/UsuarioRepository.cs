@@ -19,7 +19,20 @@ namespace ContactCenterDA.Repositories.CC
         OleDbConnection cnx = new OleDbConnection();
         OleDbCommand cmd = new OleDbCommand();
 
+        public void BeginTransaction()
+        {
+            UtilDA.ExecuteBeginTransaction(cmd, cnx);
+        }
 
+        public void CommitTransaction()
+        {
+            UtilDA.ExecuteCommit(cmd, cnx);
+        }
+
+        public void RollbackTransaction()
+        {
+            UtilDA.ExecuteRollback(cmd, cnx);
+        }
         public bool Delete(int id)
         {
             String sql = "UPDATE CC_USUARIO SET ESTADO = 'I', FechaMod = @fechaMod, UserMod = @userMod WHERE IdUsuario = @codigo";

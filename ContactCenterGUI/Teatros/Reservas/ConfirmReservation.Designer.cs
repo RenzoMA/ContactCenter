@@ -310,7 +310,7 @@
             // materialRaisedButton1
             // 
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(464, 428);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(277, 422);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -447,7 +447,7 @@
             this.groupBox1.Controls.Add(this.txtDNI);
             this.groupBox1.Location = new System.Drawing.Point(12, 90);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(641, 482);
+            this.groupBox1.Size = new System.Drawing.Size(622, 482);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Cliente";
@@ -504,9 +504,9 @@
             this.groupBox2.Controls.Add(this.lblObra);
             this.groupBox2.Controls.Add(this.materialLabel15);
             this.groupBox2.Controls.Add(this.lblFuncion);
-            this.groupBox2.Location = new System.Drawing.Point(659, 91);
+            this.groupBox2.Location = new System.Drawing.Point(640, 91);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(641, 481);
+            this.groupBox2.Size = new System.Drawing.Size(466, 481);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Reserva";
@@ -610,7 +610,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1320, 607);
+            this.ClientSize = new System.Drawing.Size(1127, 607);
             this.Controls.Add(this.lblTiempo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
