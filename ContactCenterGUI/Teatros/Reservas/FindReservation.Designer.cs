@@ -39,6 +39,7 @@
             this.txtTelefono = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.dgvResult = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Cancelar = new System.Windows.Forms.DataGridViewImageColumn();
             this.IdReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +49,8 @@
             this.Horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.SuspendLayout();
@@ -183,7 +185,9 @@
             this.Asientos,
             this.Horario,
             this.FechaReserva,
-            this.PrecioTotal});
+            this.PrecioTotal,
+            this.Telefono,
+            this.Correo});
             this.dgvResult.GridColor = System.Drawing.Color.White;
             this.dgvResult.Location = new System.Drawing.Point(12, 212);
             this.dgvResult.Name = "dgvResult";
@@ -193,6 +197,16 @@
             this.dgvResult.Size = new System.Drawing.Size(1245, 335);
             this.dgvResult.TabIndex = 1;
             this.dgvResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResult_CellContentClick);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Cancelar";
+            this.dataGridViewImageColumn1.Image = global::ContactCenterGUI.Properties.Resources.cancel_256;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn1.Width = 25;
             // 
             // Cancelar
             // 
@@ -266,15 +280,21 @@
             this.PrecioTotal.ReadOnly = true;
             this.PrecioTotal.Width = 80;
             // 
-            // dataGridViewImageColumn1
+            // Telefono
             // 
-            this.dataGridViewImageColumn1.HeaderText = "Cancelar";
-            this.dataGridViewImageColumn1.Image = global::ContactCenterGUI.Properties.Resources.cancel_256;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewImageColumn1.Width = 25;
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            this.Telefono.Width = 150;
+            // 
+            // Correo
+            // 
+            this.Correo.DataPropertyName = "Correo";
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            this.Correo.Width = 200;
             // 
             // FindReservation
             // 
@@ -304,6 +324,8 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscar;
         private System.Windows.Forms.DataGridView dgvResult;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DateTimePicker dtpFechaFin;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.DataGridViewImageColumn Cancelar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdReserva;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoReserva;
@@ -313,7 +335,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Horario;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaReserva;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioTotal;
-        private System.Windows.Forms.DateTimePicker dtpFechaFin;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
     }
 }
