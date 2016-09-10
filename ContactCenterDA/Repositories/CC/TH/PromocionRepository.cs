@@ -89,52 +89,42 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public IList<Promocion> GetLista()
         {
-            List<Promocion> listaPromocion = null;
+            List<Promocion> listaPromocion = new List<Promocion>();
 
-            String sql = "SELECT * FROM TH_PROMOCION P INNER JOIN TH_FUNCION F ON F.IDFUNCION = P.IDFUNCION INNER JOIN TH_TIPO_PROMOCION TP ON TP.IDTIPOPROMCION = P.IDTIPOPROMOCION ";
+            String sql = "SELECT * FROM (TH_PROMOCION P INNER JOIN TH_FUNCION F ON F.IDFUNCION = P.IDFUNCION) INNER JOIN TH_TIPO_PROMOCION TP ON TP.IDTIPOPROMOCION = P.IDTIPOPROMOCION ";
 
             using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx))
             {
-                Promocion objPromocion = new Promocion();
-                objPromocion.IdPromocion = DataConvert.ToInt(dtr["P.IdPromocion"]);
-                objPromocion.Descripcion = DataConvert.ToString(dtr["P.Descripcion"]);
-                objPromocion.Estado = DataConvert.ToString(dtr["P.Estado"]);
-                objPromocion.FechaInicio = DataConvert.ToDateTime(dtr["P.FechaInicio"]);
-                objPromocion.FechaFin = DataConvert.ToDateTime(dtr["P.FechaFin"]);
-                objPromocion.Funcion = new Funcion()
+                while (dtr.Read())
                 {
-                    IdFuncion = DataConvert.ToInt(dtr["F.IdFuncion"]),
-                    Dia = DataConvert.ToInt(dtr["F.Dia"]),
-                    Horario = DataConvert.ToString(dtr["F.Horario"]),
-                    Estado = DataConvert.ToString(dtr["F.Estado"]),
-                    Obra = new Obra()
+                    Promocion objPromocion = new Promocion();
+                    objPromocion.IdPromocion = DataConvert.ToInt(dtr["IdPromocion"]);
+                    objPromocion.Descripcion = DataConvert.ToString(dtr["P.Descripcion"]);
+                    objPromocion.Estado = DataConvert.ToString(dtr["P.Estado"]);
+                    objPromocion.FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]);
+                    objPromocion.FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]);
+                    objPromocion.Funcion = new Funcion()
                     {
-                        Nombre = DataConvert.ToString(dtr["Nombre"]),
-                        FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]),
-                        FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]),
-                        Descripcion = DataConvert.ToString(dtr["Descripcion"]),
-                        Teatro = new Teatro()
-                        {
-                            IdTeatro = DataConvert.ToInt(dtr["IdTeatro"]),
-                            Nombre = DataConvert.ToString(dtr["Nombre"]),
-                            Estado = DataConvert.ToString(dtr["Estado"]),
-                            frmTeatro = DataConvert.ToString(dtr["frmTeatro"])
-                        }
-                    },
-                };
-                objPromocion.TipoPromocion = new TipoPromocion()
-                {
-                    IdTipoPromocion = DataConvert.ToInt(dtr["TP.IdTipoPromocion"]),
-                    Descripcion = DataConvert.ToString(dtr["TP.Descripcion"]),
-                    Estado = DataConvert.ToString(dtr["TP.Estado"])
-                };
-                objPromocion.FechaCreacion = DataConvert.ToDateTime(dtr["P.FechaCrea"]);
-                objPromocion.UsuarioCreacion = DataConvert.ToString(dtr["P.UserCrea"]);
-                objPromocion.FechaModificacion = DataConvert.ToDateTime(dtr["P.FechaMod"]);
-                objPromocion.UsuarioModificacion = DataConvert.ToString(dtr["P.UserMod"]);
-                objPromocion.Descuento = DataConvert.ToSingle(dtr["P.Descuento"]);
-                objPromocion.TipoDescuento = DataConvert.ToString(dtr["P.TipoDescuento"]);
-                listaPromocion.Add(objPromocion);
+                        IdFuncion = DataConvert.ToInt(dtr["F.IdFuncion"]),
+                        Dia = DataConvert.ToInt(dtr["Dia"]),
+                        Horario = DataConvert.ToString(dtr["Horario"]),
+                        Estado = DataConvert.ToString(dtr["F.Estado"]),
+                        
+                    };
+                    objPromocion.TipoPromocion = new TipoPromocion()
+                    {
+                        IdTipoPromocion = DataConvert.ToInt(dtr["TP.IdTipoPromocion"]),
+                        Descripcion = DataConvert.ToString(dtr["TP.Descripcion"]),
+                        Estado = DataConvert.ToString(dtr["TP.Estado"])
+                    };
+                    objPromocion.FechaCreacion = DataConvert.ToDateTime(dtr["P.FechaCrea"]);
+                    objPromocion.UsuarioCreacion = DataConvert.ToString(dtr["P.UserCrea"]);
+                    objPromocion.FechaModificacion = DataConvert.ToDateTime(dtr["P.FechaMod"]);
+                    objPromocion.UsuarioModificacion = DataConvert.ToString(dtr["P.UserMod"]);
+                    objPromocion.Descuento = DataConvert.ToSingle(dtr["Descuento"]);
+                    objPromocion.TipoDescuento = DataConvert.ToString(dtr["TipoDescuento"]);
+                    listaPromocion.Add(objPromocion);
+                }
             }
             UtilDA.Close(cnx);
             return listaPromocion;

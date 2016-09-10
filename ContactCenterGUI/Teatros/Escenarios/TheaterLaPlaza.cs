@@ -17,6 +17,9 @@ namespace ContactCenterGUI.Teatros.Escenarios
 {
     public partial class TheaterLaPlaza : MaterialForm
     {
+        private bool mouseDown;
+        private Point lastLocation;
+
         public TheaterLaPlaza()
         {
             InitializeComponent();
@@ -32,6 +35,28 @@ namespace ContactCenterGUI.Teatros.Escenarios
             {
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void panel3_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void panel3_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }

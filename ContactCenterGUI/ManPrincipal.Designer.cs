@@ -45,7 +45,7 @@
             "Función",
             "Obra",
             "Promoción",
-            "Tarifa"});
+            "Zona"});
             this.metroComboBox1.Location = new System.Drawing.Point(47, 126);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(256, 29);

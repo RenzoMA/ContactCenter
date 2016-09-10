@@ -10,6 +10,13 @@ using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 using ContactCenterGUI.Teatros.Reportes;
+using ContactCenterServices.ServicioTeatro;
+using ContactCenterGUI.CC.Helpers;
+using ContactCenterGUI.Teatros.Helpers;
+using Microsoft.Practices.Unity;
+using ContactCenterServices;
+using System.IO;
+using OfficeOpenXml;
 
 namespace ContactCenterGUI.Teatros.Reservas
 {
@@ -56,6 +63,83 @@ namespace ContactCenterGUI.Teatros.Reservas
         {
             RptReservasObra rptReservaObra = new RptReservasObra();
             rptReservaObra.ShowDialog();
+        }
+
+        private void btnCargaMasiva_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Excel Files|*.xlsx;";
+            openFileDialog1.FileName = "";
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string file = openFileDialog1.FileName;
+                RealizarCargaMasiva(file);
+            }
+        }
+        private async void RealizarCargaMasiva(String path)
+        {
+            try
+            {
+                Animacion.ShowLoader(this);
+                IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
+                bool resultado = await servicio.CargaMasivaAsync(path);
+                Animacion.HideLoader(this);
+                if (resultado)
+                {
+                    MessageBox.Show("Proceso realizado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("El proceso no se realizo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error importando el archivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Animacion.HideLoader(this);
+            }
+        }
+
+        private void btnGenerarFile_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.FileName = "Formato.xlsx";
+            saveFileDialog1.Filter = "Excel Files|*.xlsx;";
+            DialogResult result = saveFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+
+
+                FileInfo newFile = new FileInfo(saveFileDialog1.FileName);
+
+                ExcelPackage pck = new ExcelPackage(newFile);
+                int hojas = pck.Workbook.Worksheets.Where(x => x.Name == "Formato").ToList().Count;
+                if (hojas > 0)
+                {
+                    pck.Workbook.Worksheets.Delete("Formato");
+                }
+                var ws = pck.Workbook.Worksheets.Add("Formato");
+                ws.Cells["A1"].Value = "TEATRO";
+                ws.Cells["B1"].Value = "OBRA";
+                ws.Cells["C1"].Value = "FECHA RESERVA";
+                ws.Cells["D1"].Value = "FUNCION";
+                ws.Cells["E1"].Value = "ZONA";
+                ws.Cells["F1"].Value = "FILA";
+                ws.Cells["G1"].Value = "ASIENTO";
+                ws.Cells["H1"].Value = "PROMOCION";
+                ws.Cells["I1"].Value = "PRECIO";
+                ws.Cells["J1"].Value = "TELEFONO";
+                ws.Cells["K1"].Value = "NOMBRE";
+                ws.Cells["L1"].Value = "APELLIDOS";
+                ws.Cells["M1"].Value = "CORREO";
+                ws.Cells["N1"].Value = "USUARIO REGISTRO";
+                ws.Cells["A1:N1"].Style.Font.Bold = true;
+                pck.Save();
+                System.Diagnostics.Process.Start(saveFileDialog1.FileName);
+            }
+
         }
     }
 }

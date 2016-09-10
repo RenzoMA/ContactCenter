@@ -35,6 +35,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnReporteCliente = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnCargaMasiva = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnGenerarFile = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,11 +119,43 @@
             this.materialRaisedButton2.UseVisualStyleBackColor = true;
             this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
             // 
+            // btnCargaMasiva
+            // 
+            this.btnCargaMasiva.Depth = 0;
+            this.btnCargaMasiva.Location = new System.Drawing.Point(47, 415);
+            this.btnCargaMasiva.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCargaMasiva.Name = "btnCargaMasiva";
+            this.btnCargaMasiva.Primary = true;
+            this.btnCargaMasiva.Size = new System.Drawing.Size(244, 45);
+            this.btnCargaMasiva.TabIndex = 17;
+            this.btnCargaMasiva.Text = "CARGA MASIVA";
+            this.btnCargaMasiva.UseVisualStyleBackColor = true;
+            this.btnCargaMasiva.Click += new System.EventHandler(this.btnCargaMasiva_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnGenerarFile
+            // 
+            this.btnGenerarFile.Depth = 0;
+            this.btnGenerarFile.Location = new System.Drawing.Point(275, 446);
+            this.btnGenerarFile.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnGenerarFile.Name = "btnGenerarFile";
+            this.btnGenerarFile.Primary = true;
+            this.btnGenerarFile.Size = new System.Drawing.Size(16, 14);
+            this.btnGenerarFile.TabIndex = 18;
+            this.btnGenerarFile.Text = "..";
+            this.btnGenerarFile.UseVisualStyleBackColor = true;
+            this.btnGenerarFile.Click += new System.EventHandler(this.btnGenerarFile_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 420);
+            this.ClientSize = new System.Drawing.Size(338, 482);
+            this.Controls.Add(this.btnGenerarFile);
+            this.Controls.Add(this.btnCargaMasiva);
             this.Controls.Add(this.materialRaisedButton2);
             this.Controls.Add(this.btnReporteCliente);
             this.Controls.Add(this.pictureBox1);
@@ -145,5 +181,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialRaisedButton btnReporteCliente;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
+        private MaterialSkin.Controls.MaterialRaisedButton btnCargaMasiva;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnGenerarFile;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

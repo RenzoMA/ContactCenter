@@ -161,5 +161,19 @@ namespace ContactCenterDA.Repositories.CC
             return UtilDA.ExecuteQueryValidador(cmd, CommandType.Text, sqlValidador, sql, cnx, false, pIdUsuario, pIdAplicacion, FechaCrea, UserCrea);
 
         }
+        public void BeginTransaction()
+        {
+            UtilDA.ExecuteBeginTransaction(cmd, cnx);
+        }
+
+        public void CommitTransaction()
+        {
+            UtilDA.ExecuteCommit(cmd, cnx);
+        }
+
+        public void RollbackTransaction()
+        {
+            UtilDA.ExecuteRollback(cmd, cnx);
+        }
     }
 }

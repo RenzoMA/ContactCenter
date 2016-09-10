@@ -36,6 +36,8 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblTituloTeatro = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.dtpFechaObraFin = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // metroComboBox1
@@ -52,7 +54,7 @@
             this.cboTeatro.FontSize = MetroFramework.MetroLinkSize.Small;
             this.cboTeatro.FormattingEnabled = true;
             this.cboTeatro.ItemHeight = 19;
-            this.cboTeatro.Location = new System.Drawing.Point(119, 80);
+            this.cboTeatro.Location = new System.Drawing.Point(139, 84);
             this.cboTeatro.Name = "cboTeatro";
             this.cboTeatro.Size = new System.Drawing.Size(170, 25);
             this.cboTeatro.TabIndex = 5;
@@ -63,15 +65,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ContactCenterGUI.Teatros.Reportes.rptReservas.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(24, 151);
+            this.reportViewer1.Location = new System.Drawing.Point(24, 184);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1252, 487);
+            this.reportViewer1.Size = new System.Drawing.Size(1252, 454);
             this.reportViewer1.TabIndex = 6;
             // 
             // dtpFechaObra
             // 
             this.dtpFechaObra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaObra.Location = new System.Drawing.Point(119, 111);
+            this.dtpFechaObra.Location = new System.Drawing.Point(139, 115);
             this.dtpFechaObra.Name = "dtpFechaObra";
             this.dtpFechaObra.Size = new System.Drawing.Size(170, 20);
             this.dtpFechaObra.TabIndex = 7;
@@ -79,7 +81,7 @@
             // materialRaisedButton1
             // 
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(325, 84);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(345, 88);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -113,15 +115,39 @@
             this.materialLabel1.Location = new System.Drawing.Point(37, 111);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(53, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(94, 19);
             this.materialLabel1.TabIndex = 12;
-            this.materialLabel1.Text = "Fecha:";
+            this.materialLabel1.Text = "Fecha inicio:";
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(37, 137);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(74, 19);
+            this.materialLabel2.TabIndex = 14;
+            this.materialLabel2.Text = "Fecha fin:";
+            // 
+            // dtpFechaObraFin
+            // 
+            this.dtpFechaObraFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaObraFin.Location = new System.Drawing.Point(139, 141);
+            this.dtpFechaObraFin.Name = "dtpFechaObraFin";
+            this.dtpFechaObraFin.Size = new System.Drawing.Size(170, 20);
+            this.dtpFechaObraFin.TabIndex = 13;
             // 
             // RptReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1288, 650);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.dtpFechaObraFin);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.lblTituloTeatro);
             this.Controls.Add(this.materialRaisedButton1);
@@ -149,5 +175,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private MaterialSkin.Controls.MaterialLabel lblTituloTeatro;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.DateTimePicker dtpFechaObraFin;
     }
 }

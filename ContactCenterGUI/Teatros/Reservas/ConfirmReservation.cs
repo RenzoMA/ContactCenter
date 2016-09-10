@@ -26,7 +26,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         private Form frmTeatro;
         private Reserva reserva;
 
-        public List<AsientoPrecio> listaAsientoPrecio { get; set; }
+        public List<AsientoZona> listaAsientoPrecio { get; set; }
         public List<DetalleReserva> listaDetalle = new List<DetalleReserva>();
         public DetalleReserva detalle;
         public Single precioTotal;
@@ -51,25 +51,25 @@ namespace ContactCenterGUI.Teatros.Reservas
             frmTeatro = form;
             frmTeatro.Visible = false;
         }
-        public Single CalcularPrecio(List<AsientoPrecio> lista)
+        public Single CalcularPrecio(List<AsientoZona> lista)
         {
             Single single = 0;
-            foreach (AsientoPrecio obj in lista)
+            foreach (AsientoZona obj in lista)
             {
-                single += obj.Precio;
+                single += obj.Zona.Precio;
             }
             return single;
         }
-        public string GenerarAsiento(List<AsientoPrecio> lista)
+        public string GenerarAsiento(List<AsientoZona> lista)
         {
             dgvDetalleAsientos.Rows.Clear();
             int contador = 0;
             string result = "";
-            foreach (AsientoPrecio obj in lista)
+            foreach (AsientoZona obj in lista)
             {
                 contador++;
-                result += obj.Fila + " - " +obj.Descripcion + ", ";
-                dgvDetalleAsientos.Rows.Add(obj.Zona.Descripcion, obj.Fila, obj.Descripcion);
+                result += "F: "+obj.Asiento.Fila + " - A: " +obj.Asiento.Descripcion + ", ";
+                dgvDetalleAsientos.Rows.Add(obj.Zona.Nombre, obj.Asiento.Fila, obj.Asiento.Descripcion);
                 
             }
             result = result.Substring(0, result.Length - 1);
@@ -99,11 +99,12 @@ namespace ContactCenterGUI.Teatros.Reservas
         private void AsociarEntidadesReserva()
         {
             reserva.ListaDetalles = null;
-            foreach (AsientoPrecio ap in listaAsientoPrecio)
+            foreach (AsientoZona ap in listaAsientoPrecio)
             {
                 detalle = new DetalleReserva();
-                detalle.Asiento = ap;
-                detalle.Precio = ap.Precio;
+                detalle.Asiento = ap.Asiento;
+                detalle.Precio = ap.Zona.Precio;
+                detalle.NombreZona = ap.Zona.Nombre;
                 listaDetalle.Add(detalle);
             }
             reserva.Asientos = asientos;
@@ -283,15 +284,15 @@ namespace ContactCenterGUI.Teatros.Reservas
                     {
                         case "M":
 
-                            foreach (AsientoPrecio ap in listaAsientoPrecio)
+                            foreach (AsientoZona ap in listaAsientoPrecio)
                             {
-                                ap.Precio = promocion.Descuento * ap.Precio;
+                                ap.Zona.Precio = promocion.Descuento * ap.Zona.Precio;
                             }
                             break;
                         case "R":
-                            foreach (AsientoPrecio ap in listaAsientoPrecio)
+                            foreach (AsientoZona ap in listaAsientoPrecio)
                             {
-                                ap.Precio = promocion.Descuento;
+                                ap.Zona.Precio = promocion.Descuento;
                             }
                             break;
                     }
@@ -317,7 +318,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         {
             span = span.Subtract(TimeSpan.Parse("00:00:01"));
             lblTiempo.Text = span.ToString();
-            if (span.Hours == 0 && span.Minutes == 0 && span.Seconds == 0)
+            if (span.Hours == 0 && span.Minutes == 0 && span.Seconds <= 0)
             {
                 this.Close();
             }

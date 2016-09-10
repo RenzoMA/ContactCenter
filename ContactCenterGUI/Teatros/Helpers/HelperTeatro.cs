@@ -22,12 +22,14 @@ namespace ContactCenterGUI.Teatros.Helpers
         private static Reserva reservaTemp;
         private static Form formTemp;
         private static List<Asiento> lOcupados;
-        private static List<AsientoPrecio> lAsientoTotal;
+        private static List<AsientoZona> lAsientoTotal;
         private static IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
-        private static List<AsientoPrecio> asientosReserva;
+        private static List<AsientoZona> asientosReserva;
         private static Timer timer;
         private static TimeSpan span;
         private static int contador;
+        private static int limitMinutesTime = 15;
+        private static int limitSecondsTime = 30;
 
         private static IEnumerable<Control> GetAll(Control control, Type type)
         {
@@ -38,7 +40,7 @@ namespace ContactCenterGUI.Teatros.Helpers
                                       .Where(c => c.GetType() == type);
         }
 
-        private static void PintarAsiento(Button btn, AsientoPrecio asiento)
+        private static void PintarAsiento(Button btn, AsientoZona asiento)
         {
             string estado = asiento.Disponible;
             switch (estado)
@@ -49,7 +51,8 @@ namespace ContactCenterGUI.Teatros.Helpers
                     btn.Text = "X";
                     break;
                 case "S":
-                    btn.Text = asiento.Descripcion;
+                    btn.Text = asiento.Asiento.Descripcion;
+                    btn.BackColor = System.Drawing.Color.FromArgb(asiento.Zona.R, asiento.Zona.G, asiento.Zona.B);
                     break;
             }
             btn.Tag = asiento;
@@ -69,10 +72,17 @@ namespace ContactCenterGUI.Teatros.Helpers
             btn.BackColor = System.Drawing.Color.Red;
             btn.Enabled = false;
         }
-        private static void CruzarBotonData(List<AsientoPrecio> lAsientoTotal, Form form)
+        private static void CruzarBotonData(List<AsientoZona> lAsientoTotal, Form form)
         {
             int contador = 0;
-            foreach (Button btn in GetAll(form,typeof(Button)))
+            List<Control> listaBotonAsiento = GetAll(form, typeof(Button)).Where(tx => tx.Name.Substring(0, 1) == "A").ToList();
+            if (listaBotonAsiento.Count != lAsientoTotal.Count)
+            {
+                MessageBox.Show("No se han configurado todos los asientos para la obra","Verificar",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                form.Close();
+                return;
+            }
+            foreach (Button btn in listaBotonAsiento)
             {
                 
                 int IdAsiento;
@@ -80,14 +90,14 @@ namespace ContactCenterGUI.Teatros.Helpers
                 if (isNumber)
                 {
                     contador++;
-                    AsientoPrecio asiento = lAsientoTotal.Where(tx => tx.IdAsiento == IdAsiento).FirstOrDefault();
+                    AsientoZona asiento = lAsientoTotal.Where(tx => tx.Asiento.IdAsiento == IdAsiento).FirstOrDefault();
                     if (asiento != null)
                     {
                         PintarAsiento(btn, asiento);
                     }
                     else
                     {
-                        MessageBox.Show("Asiento no encontrado en la BD "+IdAsiento);
+                        MessageBox.Show("Asiento no encontrado en la BD "+IdAsiento, "Verifique que todas las zonas tengan una tarifa");
                     }
                 }
             }
@@ -171,8 +181,8 @@ namespace ContactCenterGUI.Teatros.Helpers
         {
             
 
-            span = new TimeSpan(0, 15, 0);
-            asientosReserva = new List<AsientoPrecio>();
+            span = new TimeSpan(0, limitMinutesTime, limitSecondsTime);
+            asientosReserva = new List<AsientoZona>();
             tokenTemp = GenerarToken();
             reservaTemp = reserva;
             formTemp = form;
@@ -201,12 +211,12 @@ namespace ContactCenterGUI.Teatros.Helpers
                 Animacion.HideLoader(form);
             }
         }
-        private static List<AsientoPrecio> Clonar(List<AsientoPrecio> lista)
+        private static List<AsientoZona> Clonar(List<AsientoZona> lista)
         {
-            List<AsientoPrecio> listaClonar = new List<AsientoPrecio>();
-            foreach (AsientoPrecio asiento in lista)
+            List<AsientoZona> listaClonar = new List<AsientoZona>();
+            foreach (AsientoZona asiento in lista)
             {
-                listaClonar.Add(new AsientoPrecio(asiento));
+                listaClonar.Add(new AsientoZona(asiento));
             }
             return listaClonar;
         }
@@ -221,7 +231,7 @@ namespace ContactCenterGUI.Teatros.Helpers
                 info.listaAsientoPrecio.ForEach(ap => {
                     lAsientoTotal.ForEach(a =>
                     {
-                        if (a.IdAsiento == ap.IdAsiento)
+                        if (a.Asiento.IdAsiento == ap.Asiento.IdAsiento)
                         {
                             ap.Zona = a.Zona;
                         }
@@ -236,12 +246,12 @@ namespace ContactCenterGUI.Teatros.Helpers
 
         }
 
-        private async static void ReservarAsiento(Button btnAsiento, AsientoPrecio asiento)
+        private async static void ReservarAsiento(Button btnAsiento, AsientoZona asiento)
         {
             Animacion.ShowLoader(formTemp);
             if (asiento.EstadoTemporal == "" || asiento.EstadoTemporal == null)
             {
-                Boolean exito = await servicio.InserAsientoTemporalAsync(reservaTemp.Funcion.IdFuncion, asiento.IdAsiento, reservaTemp.FechaReserva, tokenTemp);
+                Boolean exito = await servicio.InserAsientoTemporalAsync(reservaTemp.Funcion.IdFuncion, asiento.Asiento.IdAsiento, reservaTemp.FechaReserva, tokenTemp);
                 if (exito)
                 {
                     asiento.ColorTemporal = btnAsiento.BackColor;
@@ -257,7 +267,7 @@ namespace ContactCenterGUI.Teatros.Helpers
             }
             else
             {
-                Boolean exito = await servicio.EliminarAsientoTemporalAsync(reservaTemp.Funcion.IdFuncion, asiento.IdAsiento, reservaTemp.FechaReserva, tokenTemp);
+                Boolean exito = await servicio.EliminarAsientoTemporalAsync(reservaTemp.Funcion.IdFuncion, asiento.Asiento.IdAsiento, reservaTemp.FechaReserva, tokenTemp);
                 if (exito)
                 {
                     asiento.EstadoTemporal = "";
@@ -272,7 +282,7 @@ namespace ContactCenterGUI.Teatros.Helpers
         private static void ReservarAsientoClick(object sender, EventArgs e)
         {
             Button btnAsiento = (Button)sender;
-            AsientoPrecio asiento = (AsientoPrecio)btnAsiento.Tag;
+            AsientoZona asiento = (AsientoZona)btnAsiento.Tag;
             ReservarAsiento(btnAsiento, asiento);
             
         }

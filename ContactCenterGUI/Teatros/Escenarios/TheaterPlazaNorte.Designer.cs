@@ -35,10 +35,18 @@
             this.btnContinuar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblTituloTeatro = new MaterialSkin.Controls.MaterialLabel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnAtras = new System.Windows.Forms.PictureBox();
             this.btnMiminizar = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Label();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.pnvp = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
@@ -298,6 +306,7 @@
             this.A219 = new System.Windows.Forms.Button();
             this.A218 = new System.Windows.Forms.Button();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.pnvm = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.materialLabel49 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel47 = new MaterialSkin.Controls.MaterialLabel();
@@ -669,22 +678,11 @@
             this.A461 = new System.Windows.Forms.Button();
             this.A460 = new System.Windows.Forms.Button();
             this.timerTeatro = new System.Windows.Forms.Timer(this.components);
-            this.pnvp = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAtras = new System.Windows.Forms.PictureBox();
-            this.pnvm = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.metroTabPage2.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnvp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -692,8 +690,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnvm)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -756,6 +756,21 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1280, 27);
             this.panel3.TabIndex = 2;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
+            this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.btnAtras.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.btnAtras.Location = new System.Drawing.Point(1210, 5);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(16, 18);
+            this.btnAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtras.TabIndex = 15;
+            this.btnAtras.TabStop = false;
             // 
             // btnMiminizar
             // 
@@ -1069,6 +1084,78 @@
             this.metroTabPage1.Text = "Parte Delantera";
             this.metroTabPage1.VerticalScrollbar = true;
             this.metroTabPage1.VerticalScrollbarBarColor = true;
+            // 
+            // pnvp
+            // 
+            this.pnvp.BackColor = System.Drawing.Color.Transparent;
+            this.pnvp.Image = global::ContactCenterGUI.Properties.Resources.ic_picture_in_picture_black_24dp_1x;
+            this.pnvp.Location = new System.Drawing.Point(315, 17);
+            this.pnvp.Name = "pnvp";
+            this.pnvp.Size = new System.Drawing.Size(35, 32);
+            this.pnvp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pnvp.TabIndex = 2792;
+            this.pnvp.TabStop = false;
+            this.pnvp.Click += new System.EventHandler(this.pnvp_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::ContactCenterGUI.Properties.Resources.hospital31;
+            this.pictureBox6.Location = new System.Drawing.Point(1084, 131);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox6.TabIndex = 1670;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::ContactCenterGUI.Properties.Resources.hospital31;
+            this.pictureBox5.Location = new System.Drawing.Point(1054, 131);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox5.TabIndex = 1669;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::ContactCenterGUI.Properties.Resources.hospital31;
+            this.pictureBox4.Location = new System.Drawing.Point(1018, 131);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox4.TabIndex = 1668;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::ContactCenterGUI.Properties.Resources.hospital31;
+            this.pictureBox3.Location = new System.Drawing.Point(99, 131);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 1667;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::ContactCenterGUI.Properties.Resources.hospital31;
+            this.pictureBox2.Location = new System.Drawing.Point(66, 131);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 1666;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.hospital31;
+            this.pictureBox1.Location = new System.Drawing.Point(33, 131);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 1665;
+            this.pictureBox1.TabStop = false;
             // 
             // materialLabel13
             // 
@@ -4111,6 +4198,18 @@
             this.metroTabPage2.Text = "Parte Trasera";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             // 
+            // pnvm
+            // 
+            this.pnvm.BackColor = System.Drawing.Color.Transparent;
+            this.pnvm.Image = global::ContactCenterGUI.Properties.Resources.ic_picture_in_picture_black_24dp_1x;
+            this.pnvm.Location = new System.Drawing.Point(267, 0);
+            this.pnvm.Name = "pnvm";
+            this.pnvm.Size = new System.Drawing.Size(35, 32);
+            this.pnvm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pnvm.TabIndex = 2793;
+            this.pnvm.TabStop = false;
+            this.pnvm.Click += new System.EventHandler(this.pnvm_Click);
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.materialLabel49);
@@ -4123,12 +4222,12 @@
             // 
             this.materialLabel49.AutoSize = true;
             this.materialLabel49.Depth = 0;
-            this.materialLabel49.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel49.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel49.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel49.Location = new System.Drawing.Point(213, 5);
             this.materialLabel49.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel49.Name = "materialLabel49";
-            this.materialLabel49.Size = new System.Drawing.Size(159, 18);
+            this.materialLabel49.Size = new System.Drawing.Size(150, 19);
             this.materialLabel49.TabIndex = 0;
             this.materialLabel49.Text = "ESCENARIO TEATRO";
             // 
@@ -7913,102 +8012,6 @@
             this.A460.Text = "7";
             this.A460.UseVisualStyleBackColor = false;
             // 
-            // pnvp
-            // 
-            this.pnvp.BackColor = System.Drawing.Color.Transparent;
-            this.pnvp.Image = global::ContactCenterGUI.Properties.Resources.ic_picture_in_picture_black_24dp_1x;
-            this.pnvp.Location = new System.Drawing.Point(315, 17);
-            this.pnvp.Name = "pnvp";
-            this.pnvp.Size = new System.Drawing.Size(35, 32);
-            this.pnvp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pnvp.TabIndex = 2792;
-            this.pnvp.TabStop = false;
-            this.pnvp.Click += new System.EventHandler(this.pnvp_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::ContactCenterGUI.Properties.Resources.hospital31;
-            this.pictureBox6.Location = new System.Drawing.Point(1084, 131);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox6.TabIndex = 1670;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::ContactCenterGUI.Properties.Resources.hospital31;
-            this.pictureBox5.Location = new System.Drawing.Point(1054, 131);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox5.TabIndex = 1669;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::ContactCenterGUI.Properties.Resources.hospital31;
-            this.pictureBox4.Location = new System.Drawing.Point(1018, 131);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 1668;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::ContactCenterGUI.Properties.Resources.hospital31;
-            this.pictureBox3.Location = new System.Drawing.Point(99, 131);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 1667;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::ContactCenterGUI.Properties.Resources.hospital31;
-            this.pictureBox2.Location = new System.Drawing.Point(66, 131);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 1666;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.hospital31;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 131);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1665;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.btnAtras.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
-            this.btnAtras.Location = new System.Drawing.Point(1210, 5);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(16, 18);
-            this.btnAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAtras.TabIndex = 15;
-            this.btnAtras.TabStop = false;
-            // 
-            // pnvm
-            // 
-            this.pnvm.BackColor = System.Drawing.Color.Transparent;
-            this.pnvm.Image = global::ContactCenterGUI.Properties.Resources.ic_picture_in_picture_black_24dp_1x;
-            this.pnvm.Location = new System.Drawing.Point(267, 0);
-            this.pnvm.Name = "pnvm";
-            this.pnvm.Size = new System.Drawing.Size(35, 32);
-            this.pnvm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pnvm.TabIndex = 2793;
-            this.pnvm.TabStop = false;
-            this.pnvm.Click += new System.EventHandler(this.pnvm_Click);
-            // 
             // TheaterPlazaNorte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -8028,15 +8031,10 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).EndInit();
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.metroTabPage2.ResumeLayout(false);
-            this.metroTabPage2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnvp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -8044,8 +8042,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.metroTabPage2.ResumeLayout(false);
+            this.metroTabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnvm)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

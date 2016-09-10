@@ -11,7 +11,6 @@ using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
-using ContactCenterBE.CC.TH.Entidades.TarifaBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 using ContactCenterBE.CC.Entidades.RolBE;
@@ -21,14 +20,25 @@ namespace ContactCenterServices.ServicioTeatro
 {
     public interface IServiceTeatro : IDisposable
     {
+        bool CargaMasiva(string path);
         bool EliminarAsientoTemporalAntiguo();
         Task<List<Asiento>> ListarAsientoDisponibleAsync(int idObra, int idFuncion, DateTime FechaObra,string token);
-        Task<List<AsientoPrecio>> listarAsientoTeatroAsync(int idObra);
+        Task<List<AsientoZona>> listarAsientoTeatroAsync(int idObra);
+        Task<bool> CargaMasivaAsync(string path);
         List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime FechaObra, string token);
         List<Teatro> ListarTeatros();
         Task<List<Teatro>> ListarTeatrosAsync();
         List<Obra> ListarObraTeatro(int idTeatro);
+        List<Obra> ComboManGetListaTeatro(int idTeatro);
         List<Funcion> ListarFuncionDiaObra(int dia, int idObra);
+        List<Asiento> ListAsientoNoAsignado(int idObra, int idTeatro);
+        bool ActualizarZona(Zona zona);
+
+        bool EliminarAsientoDisponible(string asientos, int idZona);
+        bool InsertarAsientoZona(List<Asiento> listaAsientos, Zona zona);
+        Task<bool> InsertarAsientoZonaAsync(List<Asiento> listaAsientos, Zona zona);
+        bool InsertarZona(Zona zona);
+        Task<bool> InsertarZonaAsync(Zona zona);
 
         //OBRA
         bool InsertarObra(Obra obra);
@@ -37,6 +47,7 @@ namespace ContactCenterServices.ServicioTeatro
         IList<Obra> ListarObras();
         Obra BuscarObra(int id);
         Obra BuscarObraPorNombre(string name);
+        List<Obra> ComboListarObraByTeatro(int idTeatro);
         List<Obra> ListarObraByTeatro(int idTeatro);
 
         //ASIENTO
@@ -63,21 +74,19 @@ namespace ContactCenterServices.ServicioTeatro
         List<TipoPromocion> GetListaTipoPromocionSeleccionable();
         List<TipoPromocion> GetListaTipoPromocion();
 
-        List<Reserva> ReporteReservas(int idTeatro, DateTime fecha);
+        List<Reserva> ReporteReservas(int idTeatro, DateTime fecha, DateTime fechaFin);
         List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fechaInicio,DateTime fechaFin);
         bool CancelarReserva(int idReserva);
-        List<Zona> ListZonaByTeatro(int IdTeatro);
-        List<Asiento> ListAsientoByZona(int IdZona);
-        bool UpdateAsientoDisponible(string asientos, string estado);
+        List<Zona> ComboListZonaByObra(int IdObra);
+        List<Zona> ListZonaByObra(int IdObra);
+        List<AsientoZona> ListAsientoByZona(int IdZona);
+        bool UpdateAsientoDisponible(string asientos, string estado, int idZona);
 
         //Tarifa
 
-        List<TarifaView> GetListaByTeatroObra(int IdObra);
-
-        bool InsertarTarifa(Tarifa tarifa);
         List<Funcion> ListarFuncionByObra(int idObra);
         List<Funcion> ListarFuncionByObraGrilla(int idObra);
-        bool Uptade(Tarifa tarifa);
+
 
         List<Promocion> ListarPromocionByFuncion(int idFuncion);
         bool UpdatePromocion(Promocion datos);

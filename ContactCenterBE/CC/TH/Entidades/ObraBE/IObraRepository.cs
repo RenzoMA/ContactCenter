@@ -12,5 +12,6 @@ namespace ContactCenterBE.CC.TH.Entidades.ObraBE
         List<Obra> GetListaTeatro(int idTeatro);
         Obra GetByName(string name);
         List<Obra> ListarObraByTeatro(int idTeatro);
+        List<Obra> ComboManGetListaTeatro(int idTeatro);
     }
 }

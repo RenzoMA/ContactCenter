@@ -105,5 +105,20 @@ namespace ContactCenterDA.Repositories.CC
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, estado, fechaMod, usuarioMod, idRol);
         }
+
+        public void BeginTransaction()
+        {
+            UtilDA.ExecuteBeginTransaction(cmd, cnx);
+        }
+
+        public void CommitTransaction()
+        {
+            UtilDA.ExecuteCommit(cmd, cnx);
+        }
+
+        public void RollbackTransaction()
+        {
+            UtilDA.ExecuteRollback(cmd, cnx);
+        }
     }
 }

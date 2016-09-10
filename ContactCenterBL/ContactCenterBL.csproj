@@ -21,6 +21,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,6 +32,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LinqToExcel, Version=1.10.1.0, Culture=neutral, PublicKeyToken=9c8ea65a58f03f1f, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel_x64.1.10.1\lib\LinqToExcel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel_x64.1.10.1\lib\Remotion.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel_x64.1.10.1\lib\Remotion.Data.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion.Interfaces, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel_x64.1.10.1\lib\Remotion.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -54,7 +75,6 @@
     <Compile Include="BusinessInterfaces\CC\TH\IObraService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\IPromocionService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\IReservaService.cs" />
-    <Compile Include="BusinessInterfaces\CC\TH\ITarifaService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\ITeatroService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\ITipoPromocionService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\IZonaService.cs" />
@@ -69,13 +89,14 @@
     <Compile Include="BusinessServices\CC\TH\ObraService.cs" />
     <Compile Include="BusinessServices\CC\TH\PromocionService.cs" />
     <Compile Include="BusinessServices\CC\TH\ReservaService.cs" />
-    <Compile Include="BusinessServices\CC\TH\TarifaService.cs" />
     <Compile Include="BusinessServices\CC\TH\TeatroService.cs" />
     <Compile Include="BusinessServices\CC\TH\TipoPromocionService.cs" />
     <Compile Include="BusinessServices\CC\TH\ZonaService.cs" />
     <Compile Include="BusinessServices\CC\UsuarioService.cs" />
     <Compile Include="Helper\MailHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtilExcel\ExcelHelper.cs" />
+    <Compile Include="UtilExcel\ExcelModelMasivo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContactCenterBE\ContactCenterBE.csproj">
@@ -93,6 +114,10 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

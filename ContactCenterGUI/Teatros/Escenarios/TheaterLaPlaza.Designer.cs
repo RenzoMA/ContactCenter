@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TheaterLaPlaza));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTiempo = new System.Windows.Forms.Label();
             this.btnContinuar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAtras = new System.Windows.Forms.PictureBox();
             this.btnMiminizar = new System.Windows.Forms.Label();
@@ -277,7 +278,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
             this.timerTeatro = new System.Windows.Forms.Timer(this.components);
-            this.lblTiempo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).BeginInit();
             this.panel5.SuspendLayout();
@@ -301,6 +301,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 65);
             this.panel1.TabIndex = 2;
+            // 
+            // lblTiempo
+            // 
+            this.lblTiempo.AutoSize = true;
+            this.lblTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempo.ForeColor = System.Drawing.Color.White;
+            this.lblTiempo.Location = new System.Drawing.Point(666, 35);
+            this.lblTiempo.Name = "lblTiempo";
+            this.lblTiempo.Size = new System.Drawing.Size(0, 20);
+            this.lblTiempo.TabIndex = 1913;
             // 
             // btnContinuar
             // 
@@ -372,6 +382,9 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1280, 27);
             this.panel3.TabIndex = 2;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
+            this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
             // panel5
             // 
@@ -2822,16 +2835,6 @@
             this.materialLabel19.Size = new System.Drawing.Size(64, 19);
             this.materialLabel19.TabIndex = 0;
             this.materialLabel19.Text = "SALIDA ";
-            // 
-            // lblTiempo
-            // 
-            this.lblTiempo.AutoSize = true;
-            this.lblTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempo.ForeColor = System.Drawing.Color.White;
-            this.lblTiempo.Location = new System.Drawing.Point(666, 35);
-            this.lblTiempo.Name = "lblTiempo";
-            this.lblTiempo.Size = new System.Drawing.Size(0, 20);
-            this.lblTiempo.TabIndex = 1913;
             // 
             // TheaterLaPlaza
             // 

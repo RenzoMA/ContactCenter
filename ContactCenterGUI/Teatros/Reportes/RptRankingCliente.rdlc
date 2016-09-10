@@ -19,8 +19,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.34224cm</Top>
-        <Left>23.75771cm</Left>
+        <Top>3.89502cm</Top>
+        <Left>1.11531cm</Left>
         <Height>0.6cm</Height>
         <Width>3.36021cm</Width>
         <Style>
@@ -50,8 +50,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>3.11863cm</Top>
-        <Left>23.75771cm</Left>
+        <Top>4.70669cm</Top>
+        <Left>1.11531cm</Left>
         <Height>0.6cm</Height>
         <Width>3.36021cm</Width>
         <ZIndex>1</ZIndex>
@@ -85,75 +85,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>0.93457cm</Top>
-        <Left>11.12069cm</Left>
+        <Top>1.16015cm</Top>
+        <Left>1.11531cm</Left>
         <Height>0.97042cm</Height>
         <Width>8.12618cm</Width>
         <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="fechaInicio">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!fechaInicio.Value</Value>
-                <Style>
-                  <Format>d</Format>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>fechaInicio</rd:DefaultName>
-        <Top>2.30696cm</Top>
-        <Left>3.17183cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="fechaFin">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!fechaFin.Value</Value>
-                <Style>
-                  <Format>d</Format>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>fechaFin</rd:DefaultName>
-        <Top>3.08335cm</Top>
-        <Left>3.17183cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
-        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -171,8 +107,14 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Desde:</Value>
+                <Value>Desde: </Value>
                 <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!fechaInicio.Value</Value>
+                <Style>
+                  <Format>d</Format>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -180,10 +122,10 @@
         </Paragraphs>
         <rd:DefaultName>Textbox40</rd:DefaultName>
         <Top>2.30696cm</Top>
-        <Left>1.08162cm</Left>
+        <Left>1.11531cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.23cm</Width>
-        <ZIndex>5</ZIndex>
+        <Width>3.92152cm</Width>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -201,8 +143,14 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Hasta:</Value>
+                <Value>Hasta: </Value>
                 <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!fechaFin.Value</Value>
+                <Style>
+                  <Format>d</Format>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -212,8 +160,8 @@
         <Top>3.11863cm</Top>
         <Left>1.08162cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.23cm</Width>
-        <ZIndex>6</ZIndex>
+        <Width>3.95521cm</Width>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -652,11 +600,11 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>5.94995cm</Top>
+        <Top>5.7912cm</Top>
         <Left>1.11531cm</Left>
         <Height>1.8cm</Height>
         <Width>27.03193cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
