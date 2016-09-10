@@ -15,6 +15,7 @@ using ContactCenterBE.CC.TH.Entidades.TarifaBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 using ContactCenterBE.CC.Entidades.RolBE;
+using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
 
 namespace ContactCenterServices.ServicioTeatro
 {
@@ -84,5 +85,7 @@ namespace ContactCenterServices.ServicioTeatro
 
         List<RankingCliente> ObtenerRankingCliente(DateTime fechaInicio, DateTime fechaFin);
         List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin);
+
+        
     }
 }

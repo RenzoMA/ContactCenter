@@ -20,6 +20,7 @@ using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.Entidades.RolBE;
 using ContactCenterBE.CC.TH.Entidades.TarifaBE;
+using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
 
 namespace ContactCenterServices.ServicioTeatro
 {
@@ -36,6 +37,7 @@ namespace ContactCenterServices.ServicioTeatro
         private ITipoPromocionService _tipoPromocionService;
         private IZonaService _zonaService;
         private ITarifaService _tarifaService;
+        private ILogEmailService _logEmailService;
 
         public ServiceTeatro(
             IAsientoService asientoService,
@@ -49,7 +51,8 @@ namespace ContactCenterServices.ServicioTeatro
             IPromocionService promocionService,
             ITipoPromocionService tipoPromocionService,
             IZonaService zonaService,
-            ITarifaService tarifaService)
+            ITarifaService tarifaService,
+            ILogEmailService logEmailService)
         {
             _clienteService = clienteService;
             _asientoService = asientoService;
@@ -61,6 +64,7 @@ namespace ContactCenterServices.ServicioTeatro
             _tipoPromocionService = tipoPromocionService;
             _zonaService = zonaService;
             _tarifaService = tarifaService;
+            _logEmailService = logEmailService;
         }
 
         public void Dispose()
