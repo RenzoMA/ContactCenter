@@ -62,6 +62,7 @@ namespace ContactCenterGUI.Teatros.Helpers
         private async static void EliminarSeparadas(string token)
         {
             Animacion.ShowLoader(formTemp);
+            timer.Dispose();// Limpia timer
             await servicio.EliminarAsientoTemporalTotalAsync(token);
             Animacion.HideLoader(formTemp);
             formTemp.Close();
