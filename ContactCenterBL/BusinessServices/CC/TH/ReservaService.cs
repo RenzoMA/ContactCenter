@@ -12,9 +12,12 @@ using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
+using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
 using ContactCenterBL.UtilExcel;
-
+using ContactCenterBL.Helper;
+using ContactCenterCommon;
 namespace ContactCenterBL.BusinessServices.CC.TH
+
 {
     public class ReservaService : IReservaService
     {
@@ -26,6 +29,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         private readonly IPromocionRepository promocionRepository;
         private readonly ITeatroRepository teatroRepository;
         private readonly IAsientoRepository asientoRepository;
+        private readonly ILogEmailRepository logEmailRepository;
 
         public ReservaService(IReservaRepository _reservaRepository,
                               IClienteRepository _clienteRepository,
@@ -34,7 +38,8 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                               IUsuarioRepository _usuarioRepository,
                               IPromocionRepository _promocionRepository,
                               ITeatroRepository _teatroRepository,
-                              IAsientoRepository _asientoRepository)
+                              IAsientoRepository _asientoRepository,
+                              ILogEmailRepository _logEmailRepository)
         {
             reservaRepository = _reservaRepository;
             clienteRepository = _clienteRepository;
@@ -44,11 +49,14 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             promocionRepository = _promocionRepository;
             teatroRepository = _teatroRepository;
             asientoRepository = _asientoRepository;
+            logEmailRepository = _logEmailRepository;
         }
 
         public bool InsertarReserva(Reserva reserva,Cliente cliente)
         {
+            List<string> email;
             Cliente tempCliente = clienteRepository.GetByTelefono(cliente.Telefono);
+
             if (tempCliente == null)
             {
                cliente.IdCliente = clienteRepository.GetNewIdCliente(cliente);
@@ -60,7 +68,17 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             }
             reserva.Cliente = cliente;
 
-            return reservaRepository.Insert(reserva);
+            if (reservaRepository.Insert(reserva))
+            {
+                email = reserva.Cliente.Correo.Split(',').ToList();
+                MailHelper.SendMail(email, new List<String>(), Enumerables.MailAction.TeatroConfirmacionReserva, logEmailRepository, reserva, null);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         public List<Reserva> ReporteReservas(int idTeatro, DateTime fecha,DateTime fechaFin)

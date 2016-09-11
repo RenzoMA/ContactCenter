@@ -18,7 +18,7 @@ namespace ContactCenterBL.Helper
 {
     public static class MailHelper
     {
-        public static void SendMail(IList<string> mailAdresses,IList<string> ccAddresses, Enumerables.MailAction action, ILogEmailRepository logEmailRepository,Reserva reserva, byte[] attachment = null)
+        public static void SendMail(IList<string> mailAdresses, IList<string> ccAddresses, Enumerables.MailAction action, ILogEmailRepository logEmailRepository, Reserva reserva, byte[] attachment = null)
         {
             try
             {
@@ -29,16 +29,15 @@ namespace ContactCenterBL.Helper
                 var mailPassword = ConfigurationManager.AppSettings["mailPassword"];
                 var smtp = ConfigurationManager.AppSettings["smtp"];
                 var mailDisplayName = ConfigurationManager.AppSettings["mailDisplayName"];
-                var systemUrl = ConfigurationManager.AppSettings["systemUrl"];
+                var port = ConfigurationManager.AppSettings["port"];
                 #endregion
 
                 #region Create SMTP
                 smtpClient.Host = smtp;
-                smtpClient.Port = 587;
+                smtpClient.Port = Convert.ToInt16(port);
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.Credentials = new NetworkCredential(mailAccount, mailPassword);
-                smtpClient.EnableSsl = true;
                 #endregion Create SMTP
 
                 #region Create Mail an recievers
@@ -59,15 +58,15 @@ namespace ContactCenterBL.Helper
 
                 string htmlBody;
                 string subject;
-                var codGestion = string.Empty;
-                var nombre = string.Empty;
-                var idGestion = string.Empty;
-                var urlGestion = string.Empty;
-                var nomCategoria = string.Empty;
-                var fechaIngreso = string.Empty;
-                var nombreUsuario = string.Empty;
-                var mailUsuario = string.Empty;
-                var descSubTipo = string.Empty;
+                var nombre = reserva.Cliente.Nombre + reserva.Cliente.ApellidoPaterno + reserva.Cliente.ApellidoPaterno;
+                var obra = reserva.Obra.Nombre;
+                var fecha = reserva.FechaReserva;
+                var teatro = reserva.Obra.Teatro.Nombre;
+                var hora = reserva.Horario;
+                //var totalObras
+                //var zona = reserva.Obra.
+                var ubicacion = reserva.Asientos;
+                var precio = reserva.PrecioTotal;
 
                 #endregion Create Mail Variables
 
@@ -82,7 +81,16 @@ namespace ContactCenterBL.Helper
                 {
                     case Enumerables.MailAction.TeatroConfirmacionReserva:
                         htmlBody = Constantes.Mails.TeatroConfirmacionReserva;
-                        htmlBody = string.Format(htmlBody, nombre, descSubTipo, fechaIngreso, codGestion, nomCategoria);
+                        htmlBody = htmlBody.Replace("%Nombre", nombre);
+                        htmlBody = htmlBody.Replace("%Obra", obra);
+                        htmlBody = htmlBody.Replace("%Fecha", fecha.ToShortDateString());
+                        htmlBody = htmlBody.Replace("%Obra", obra);
+                        htmlBody = htmlBody.Replace("%Teatro", teatro);
+                        //htmlBody = htmlBody.Replace("%Zona", zona);
+                        //htmlBody = htmlBody.Replace("%Zona", zona);
+                        htmlBody = htmlBody.Replace("%Ubicacion", ubicacion);
+                        htmlBody = htmlBody.Replace("%Precio", precio.ToString());
+
                         break;
 
                     default:
@@ -97,7 +105,6 @@ namespace ContactCenterBL.Helper
                 {
                     case Enumerables.MailAction.TeatroConfirmacionReserva:
                         subject = Constantes.Subjects.TeatroConfirmacionReserva;
-                        subject = string.Format(subject, codGestion);
                         break;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(action), action, null);
@@ -109,16 +116,16 @@ namespace ContactCenterBL.Helper
 
                 var rootFolder = AppDomain.CurrentDomain.BaseDirectory;
                 var logopath = Path.Combine(rootFolder, "MailImages/logo.png");
-                var iconpath = Path.Combine(rootFolder, "MailImages/tree-icon.png");
+                //var iconpath = Path.Combine(rootFolder, "MailImages/tree-icon.png");
 
                 #endregion Get Mail Body embedded images paths
 
                 #region Set embedded images mail id
                 var logo = new LinkedResource(logopath, MediaTypeNames.Image.Jpeg);
-                var treeicon = new LinkedResource(iconpath, MediaTypeNames.Image.Jpeg);
+                //var treeicon = new LinkedResource(iconpath, MediaTypeNames.Image.Jpeg);
 
                 logo.ContentId = "logo";
-                treeicon.ContentId = "tree-icon";
+                //treeicon.ContentId = "tree-icon";
 
                 #endregion
 
@@ -126,7 +133,7 @@ namespace ContactCenterBL.Helper
 
                 var html = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
                 html.LinkedResources.Add(logo);
-                html.LinkedResources.Add(treeicon);
+                //html.LinkedResources.Add(treeicon);
 
                 #endregion Set Body and Images
 
@@ -163,7 +170,7 @@ namespace ContactCenterBL.Helper
                     smtpClient.Dispose();
                     mail.Dispose();
                     logo.Dispose();
-                    treeicon.Dispose();
+                    //treeicon.Dispose();
                 };
 
                 #endregion Send Mail
