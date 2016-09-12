@@ -18,5 +18,6 @@ namespace ContactCenterBE.CC.TH.Entidades.ObraBE
         public string Descripcion { get; set; }
         public string Estado { get; set; }
         public Teatro Teatro { get; set; }
-}
+        public byte[] Image { get; set; }
+    }
 }

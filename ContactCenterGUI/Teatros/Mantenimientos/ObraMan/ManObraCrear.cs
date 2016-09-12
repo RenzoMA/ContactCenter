@@ -14,6 +14,9 @@ using Microsoft.Practices.Unity;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterServices;
+using ContactCenterGUI.CC.Helpers;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 {
@@ -43,6 +46,17 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
                 obra.Descripcion = txtDescripcionObra.Text;
                 obra.Estado = cboEstadoObra.SelectedIndex == 0 ? "A" : "I";
                 obra.Teatro = cboTeatroObra.SelectedItem as Teatro;
+
+                if (pcbImagen.Image != null)
+                {
+                    MemoryStream ms = new MemoryStream();
+                    pcbImagen.Image.Save(ms, ImageFormat.Jpeg);
+                    byte[] photo_aray = new byte[ms.Length];
+                    ms.Position = 0;
+                    ms.Read(photo_aray, 0, photo_aray.Length);
+                    obra.Image = photo_aray;
+                }
+
                 try { 
                 if (servicio.InsertarObra(obra) == true)
                 {
@@ -95,5 +109,14 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
             }
         }
 
+        private void btnCargarImagen_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "jpeg|*.jpg|bmp|*.bmp|all files|*.*";
+            DialogResult res = openFileDialog1.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                pcbImagen.Image = HelperForm.ResizeImage(Image.FromFile(openFileDialog1.FileName), 134, 194);
+            }
+        }
     }
 }
