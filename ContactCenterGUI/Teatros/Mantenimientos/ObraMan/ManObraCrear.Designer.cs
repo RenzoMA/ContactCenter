@@ -43,12 +43,14 @@
             this.dtpFecIniObra = new System.Windows.Forms.DateTimePicker();
             this.dtpFecFinObra = new System.Windows.Forms.DateTimePicker();
             this.gbDatosObra = new System.Windows.Forms.GroupBox();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.pcbImagen = new System.Windows.Forms.PictureBox();
             this.btnCargarImagen = new System.Windows.Forms.Button();
+            this.pcbImagen = new System.Windows.Forms.PictureBox();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbDatosObra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNomObra
@@ -191,7 +193,7 @@
             this.btnAceptarObra.Primary = true;
             this.btnAceptarObra.Size = new System.Drawing.Size(168, 40);
             this.btnAceptarObra.TabIndex = 12;
-            this.btnAceptarObra.Text = "Aceptar";
+            this.btnAceptarObra.Text = "Crear";
             this.btnAceptarObra.UseVisualStyleBackColor = true;
             this.btnAceptarObra.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
@@ -234,7 +236,26 @@
             this.gbDatosObra.Size = new System.Drawing.Size(444, 625);
             this.gbDatosObra.TabIndex = 16;
             this.gbDatosObra.TabStop = false;
-            this.gbDatosObra.Text = "Datos Obra";
+            this.gbDatosObra.Text = "Datos";
+            // 
+            // btnCargarImagen
+            // 
+            this.btnCargarImagen.Location = new System.Drawing.Point(389, 585);
+            this.btnCargarImagen.Name = "btnCargarImagen";
+            this.btnCargarImagen.Size = new System.Drawing.Size(25, 23);
+            this.btnCargarImagen.TabIndex = 63;
+            this.btnCargarImagen.Text = "...";
+            this.btnCargarImagen.UseVisualStyleBackColor = true;
+            this.btnCargarImagen.Click += new System.EventHandler(this.btnCargarImagen_Click);
+            // 
+            // pcbImagen
+            // 
+            this.pcbImagen.Location = new System.Drawing.Point(173, 394);
+            this.pcbImagen.Name = "pcbImagen";
+            this.pcbImagen.Size = new System.Drawing.Size(241, 185);
+            this.pcbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbImagen.TabIndex = 62;
+            this.pcbImagen.TabStop = false;
             // 
             // materialLabel1
             // 
@@ -250,34 +271,28 @@
             this.materialLabel1.TabIndex = 16;
             this.materialLabel1.Text = "Imagen:";
             // 
-            // pcbImagen
-            // 
-            this.pcbImagen.Location = new System.Drawing.Point(173, 394);
-            this.pcbImagen.Name = "pcbImagen";
-            this.pcbImagen.Size = new System.Drawing.Size(241, 185);
-            this.pcbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbImagen.TabIndex = 62;
-            this.pcbImagen.TabStop = false;
-            // 
-            // btnCargarImagen
-            // 
-            this.btnCargarImagen.Location = new System.Drawing.Point(389, 585);
-            this.btnCargarImagen.Name = "btnCargarImagen";
-            this.btnCargarImagen.Size = new System.Drawing.Size(25, 23);
-            this.btnCargarImagen.TabIndex = 63;
-            this.btnCargarImagen.Text = "...";
-            this.btnCargarImagen.UseVisualStyleBackColor = true;
-            this.btnCargarImagen.Click += new System.EventHandler(this.btnCargarImagen_Click);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox1.Location = new System.Drawing.Point(410, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // ManObraCrear
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 754);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gbDatosObra);
             this.Controls.Add(this.btnAceptarObra);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -290,6 +305,7 @@
             this.gbDatosObra.ResumeLayout(false);
             this.gbDatosObra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -314,5 +330,6 @@
         private System.Windows.Forms.PictureBox pcbImagen;
         private System.Windows.Forms.Button btnCargarImagen;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

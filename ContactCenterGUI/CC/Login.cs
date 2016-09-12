@@ -41,7 +41,7 @@ namespace ContactCenterGUI.CC
         {
             //lblMensaje.Text = "Contraseña incorrecta";
             //lblMensaje.ForeColor = Color.Red;
-            MessageBox.Show("Contraseña incorrecta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Usuario o contraseña incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public Login()

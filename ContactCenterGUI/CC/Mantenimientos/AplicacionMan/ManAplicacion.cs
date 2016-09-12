@@ -52,5 +52,10 @@ namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
         {
             EnlazarGrilla();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

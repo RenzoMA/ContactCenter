@@ -136,6 +136,7 @@ namespace ContactCenterGUI.Teatros.Reservas
             txtCorreo.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
             txtTelefono.KeyPress += new KeyPressEventHandler(HelperControl.EditTextNumber);
             txtCorreo.Validating += new CancelEventHandler(HelperControl.ValidEmail);
+            txtDNI.KeyPress += new KeyPressEventHandler(HelperControl.EditTextNumber);
         }
 
         private void PerInfoTheater_FormClosing(object sender, FormClosingEventArgs e)
@@ -321,6 +322,23 @@ namespace ContactCenterGUI.Teatros.Reservas
             if (span.Hours == 0 && span.Minutes == 0 && span.Seconds <= 0)
             {
                 this.Close();
+            }
+        }
+
+    
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Seguro que desea salir? \nLos datos de la reserva se perderán", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+
+            }
+            else
+            {
+
             }
         }
     }

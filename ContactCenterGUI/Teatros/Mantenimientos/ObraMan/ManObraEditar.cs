@@ -124,5 +124,10 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
                 pcbImagen.Image = HelperForm.ResizeImage(Image.FromFile(openFileDialog1.FileName), 134, 194);
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -219,5 +219,10 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
         {
             EnlazarDataGrid();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

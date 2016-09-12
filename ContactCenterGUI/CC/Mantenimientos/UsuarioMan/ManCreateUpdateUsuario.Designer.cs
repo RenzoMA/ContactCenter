@@ -55,8 +55,10 @@
             this.lblEstado = new MaterialSkin.Controls.MaterialLabel();
             this.txtLogin = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblLogin = new MaterialSkin.Controls.MaterialLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -410,12 +412,25 @@
             this.lblLogin.TabIndex = 36;
             this.lblLogin.Text = "Login:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox1.Location = new System.Drawing.Point(380, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // ManCreateUpdateUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(456, 706);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.cboEstado);
@@ -451,6 +466,7 @@
             this.Load += new System.EventHandler(this.ManCreateUpdateUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,5 +500,6 @@
         private MaterialSkin.Controls.MaterialLabel lblEstado;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtLogin;
         private MaterialSkin.Controls.MaterialLabel lblLogin;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

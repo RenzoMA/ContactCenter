@@ -107,5 +107,10 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
                 MessageBox.Show("Completar todos los campos", "Aviso");
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
