@@ -134,9 +134,13 @@ namespace ContactCenterGUI.CC
             return true;
         }
 
-        private void Login_Load(object sender, EventArgs e)
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if (Convert.ToString(e.KeyChar) == "\r")
+            {
+                IniciarSesion();
+            }
         }
     }
 }

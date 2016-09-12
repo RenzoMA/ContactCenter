@@ -350,6 +350,12 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Helpers\HelperTeatro.cs" />
+    <Compile Include="Teatros\Reservas\ReportesTeatro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Reservas\ReportesTeatro.Designer.cs">
+      <DependentUpon>ReportesTeatro.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CC\Loader.resx">
       <DependentUpon>Loader.cs</DependentUpon>
     </EmbeddedResource>
@@ -464,6 +470,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reservas\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Reservas\ReportesTeatro.resx">
+      <DependentUpon>ReportesTeatro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
