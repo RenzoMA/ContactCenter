@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManObraEditar));
             this.gbDatosObra = new System.Windows.Forms.GroupBox();
+            this.btnCargarImagen = new System.Windows.Forms.Button();
+            this.pcbImagen = new System.Windows.Forms.PictureBox();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtNomObra = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dtpFecFinObra = new System.Windows.Forms.DateTimePicker();
             this.lblNomObra = new MaterialSkin.Controls.MaterialLabel();
             this.dtpFecIniObra = new System.Windows.Forms.DateTimePicker();
@@ -42,13 +46,17 @@
             this.lblEstadoObra = new MaterialSkin.Controls.MaterialLabel();
             this.cboEstadoObra = new MetroFramework.Controls.MetroComboBox();
             this.btnAceptarObra = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtNomObra = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.gbDatosObra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // gbDatosObra
             // 
             this.gbDatosObra.BackColor = System.Drawing.Color.White;
+            this.gbDatosObra.Controls.Add(this.btnCargarImagen);
+            this.gbDatosObra.Controls.Add(this.pcbImagen);
+            this.gbDatosObra.Controls.Add(this.materialLabel1);
             this.gbDatosObra.Controls.Add(this.txtNomObra);
             this.gbDatosObra.Controls.Add(this.dtpFecFinObra);
             this.gbDatosObra.Controls.Add(this.lblNomObra);
@@ -63,10 +71,61 @@
             this.gbDatosObra.Controls.Add(this.cboEstadoObra);
             this.gbDatosObra.Location = new System.Drawing.Point(12, 77);
             this.gbDatosObra.Name = "gbDatosObra";
-            this.gbDatosObra.Size = new System.Drawing.Size(444, 411);
+            this.gbDatosObra.Size = new System.Drawing.Size(444, 619);
             this.gbDatosObra.TabIndex = 18;
             this.gbDatosObra.TabStop = false;
             this.gbDatosObra.Text = "Datos Obra";
+            // 
+            // btnCargarImagen
+            // 
+            this.btnCargarImagen.Location = new System.Drawing.Point(388, 585);
+            this.btnCargarImagen.Name = "btnCargarImagen";
+            this.btnCargarImagen.Size = new System.Drawing.Size(25, 23);
+            this.btnCargarImagen.TabIndex = 66;
+            this.btnCargarImagen.Text = "...";
+            this.btnCargarImagen.UseVisualStyleBackColor = true;
+            this.btnCargarImagen.Click += new System.EventHandler(this.btnCargarImagen_Click);
+            // 
+            // pcbImagen
+            // 
+            this.pcbImagen.Location = new System.Drawing.Point(172, 394);
+            this.pcbImagen.Name = "pcbImagen";
+            this.pcbImagen.Size = new System.Drawing.Size(241, 185);
+            this.pcbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbImagen.TabIndex = 65;
+            this.pcbImagen.TabStop = false;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(15, 394);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(62, 19);
+            this.materialLabel1.TabIndex = 64;
+            this.materialLabel1.Text = "Imagen:";
+            // 
+            // txtNomObra
+            // 
+            this.txtNomObra.BackColor = System.Drawing.Color.White;
+            this.txtNomObra.Depth = 0;
+            this.txtNomObra.Hint = "";
+            this.txtNomObra.Location = new System.Drawing.Point(173, 32);
+            this.txtNomObra.MaxLength = 32767;
+            this.txtNomObra.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNomObra.Name = "txtNomObra";
+            this.txtNomObra.PasswordChar = '\0';
+            this.txtNomObra.SelectedText = "";
+            this.txtNomObra.SelectionLength = 0;
+            this.txtNomObra.SelectionStart = 0;
+            this.txtNomObra.Size = new System.Drawing.Size(241, 23);
+            this.txtNomObra.TabIndex = 16;
+            this.txtNomObra.TabStop = false;
+            this.txtNomObra.UseSystemPasswordChar = false;
             // 
             // dtpFecFinObra
             // 
@@ -200,7 +259,7 @@
             // btnAceptarObra
             // 
             this.btnAceptarObra.Depth = 0;
-            this.btnAceptarObra.Location = new System.Drawing.Point(303, 495);
+            this.btnAceptarObra.Location = new System.Drawing.Point(303, 702);
             this.btnAceptarObra.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAceptarObra.Name = "btnAceptarObra";
             this.btnAceptarObra.Primary = true;
@@ -210,29 +269,15 @@
             this.btnAceptarObra.UseVisualStyleBackColor = true;
             this.btnAceptarObra.Click += new System.EventHandler(this.btnAceptarObra_Click);
             // 
-            // txtNomObra
+            // openFileDialog1
             // 
-            this.txtNomObra.BackColor = System.Drawing.Color.White;
-            this.txtNomObra.Depth = 0;
-            this.txtNomObra.Hint = "";
-            this.txtNomObra.Location = new System.Drawing.Point(173, 32);
-            this.txtNomObra.MaxLength = 32767;
-            this.txtNomObra.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtNomObra.Name = "txtNomObra";
-            this.txtNomObra.PasswordChar = '\0';
-            this.txtNomObra.SelectedText = "";
-            this.txtNomObra.SelectionLength = 0;
-            this.txtNomObra.SelectionStart = 0;
-            this.txtNomObra.Size = new System.Drawing.Size(241, 23);
-            this.txtNomObra.TabIndex = 16;
-            this.txtNomObra.TabStop = false;
-            this.txtNomObra.UseSystemPasswordChar = false;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // ManObraEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 547);
+            this.ClientSize = new System.Drawing.Size(483, 754);
             this.Controls.Add(this.gbDatosObra);
             this.Controls.Add(this.btnAceptarObra);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -243,6 +288,7 @@
             this.Load += new System.EventHandler(this.ManObraEditar_Load);
             this.gbDatosObra.ResumeLayout(false);
             this.gbDatosObra.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbImagen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -263,5 +309,9 @@
         private MetroFramework.Controls.MetroComboBox cboEstadoObra;
         private MaterialSkin.Controls.MaterialRaisedButton btnAceptarObra;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNomObra;
+        private System.Windows.Forms.Button btnCargarImagen;
+        private System.Windows.Forms.PictureBox pcbImagen;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
