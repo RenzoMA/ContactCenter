@@ -32,14 +32,16 @@
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboTeatro2 = new System.Windows.Forms.ComboBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.dtpFechaObraFin = new System.Windows.Forms.DateTimePicker();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.lblTituloTeatro = new MaterialSkin.Controls.MaterialLabel();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dtpFechaObra = new System.Windows.Forms.DateTimePicker();
-            this.cboTeatro = new MetroFramework.Controls.MetroComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroComboBox1
@@ -59,25 +61,34 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ContactCenterGUI.Teatros.Reportes.rptReservas.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(24, 184);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1252, 454);
+            this.reportViewer1.Size = new System.Drawing.Size(872, 454);
             this.reportViewer1.TabIndex = 6;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.cboTeatro2);
             this.groupBox1.Controls.Add(this.materialLabel2);
             this.groupBox1.Controls.Add(this.dtpFechaObraFin);
             this.groupBox1.Controls.Add(this.materialLabel1);
             this.groupBox1.Controls.Add(this.lblTituloTeatro);
             this.groupBox1.Controls.Add(this.materialRaisedButton1);
             this.groupBox1.Controls.Add(this.dtpFechaObra);
-            this.groupBox1.Controls.Add(this.cboTeatro);
             this.groupBox1.Location = new System.Drawing.Point(24, 73);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1252, 100);
+            this.groupBox1.Size = new System.Drawing.Size(872, 100);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
+            // 
+            // cboTeatro2
+            // 
+            this.cboTeatro2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTeatro2.FormattingEnabled = true;
+            this.cboTeatro2.Location = new System.Drawing.Point(170, 14);
+            this.cboTeatro2.Name = "cboTeatro2";
+            this.cboTeatro2.Size = new System.Drawing.Size(170, 21);
+            this.cboTeatro2.TabIndex = 22;
             // 
             // materialLabel2
             // 
@@ -140,6 +151,7 @@
             this.materialRaisedButton1.TabIndex = 17;
             this.materialRaisedButton1.Text = "Generar";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click_1);
             // 
             // dtpFechaObra
             // 
@@ -149,21 +161,24 @@
             this.dtpFechaObra.Size = new System.Drawing.Size(170, 20);
             this.dtpFechaObra.TabIndex = 16;
             // 
-            // cboTeatro
+            // pictureBox1
             // 
-            this.cboTeatro.FontSize = MetroFramework.MetroLinkSize.Small;
-            this.cboTeatro.FormattingEnabled = true;
-            this.cboTeatro.ItemHeight = 19;
-            this.cboTeatro.Location = new System.Drawing.Point(170, 16);
-            this.cboTeatro.Name = "cboTeatro";
-            this.cboTeatro.Size = new System.Drawing.Size(170, 25);
-            this.cboTeatro.TabIndex = 15;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox1.Location = new System.Drawing.Point(838, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // RptReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1288, 650);
+            this.ClientSize = new System.Drawing.Size(908, 650);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -175,6 +190,7 @@
             this.Load += new System.EventHandler(this.rptReservas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,6 +206,7 @@
         private MaterialSkin.Controls.MaterialLabel lblTituloTeatro;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.DateTimePicker dtpFechaObra;
-        private MetroFramework.Controls.MetroComboBox cboTeatro;
+        private System.Windows.Forms.ComboBox cboTeatro2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -2,69 +2,6 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Textbox Name="Textbox5">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>="Fecha: " &amp; Today()</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>3.89502cm</Top>
-        <Left>1.11531cm</Left>
-        <Height>0.6cm</Height>
-        <Width>3.36021cm</Width>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox8">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>="Hora: "&amp;TimeOfDay()</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>4.70669cm</Top>
-        <Left>1.11531cm</Left>
-        <Height>0.6cm</Height>
-        <Width>3.36021cm</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="Textbox13">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -86,10 +23,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
         <Top>1.16015cm</Top>
-        <Left>1.11531cm</Left>
+        <Left>5.31795cm</Left>
         <Height>0.97042cm</Height>
         <Width>8.12618cm</Width>
-        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -108,7 +44,9 @@
             <TextRuns>
               <TextRun>
                 <Value>Desde: </Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value>=Parameters!fechaInicio.Value</Value>
@@ -121,11 +59,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox40</rd:DefaultName>
-        <Top>2.30696cm</Top>
+        <Top>3.11863cm</Top>
         <Left>1.11531cm</Left>
         <Height>0.6cm</Height>
         <Width>3.92152cm</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -143,7 +81,13 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Hasta: </Value>
+                <Value>Hasta:</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
                 <Style />
               </TextRun>
               <TextRun>
@@ -157,11 +101,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox40</rd:DefaultName>
-        <Top>3.11863cm</Top>
+        <Top>3.9303cm</Top>
         <Left>1.08162cm</Left>
         <Height>0.6cm</Height>
         <Width>3.95521cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -176,7 +120,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.84286cm</Width>
+              <Width>2.20244cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -305,7 +249,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>7.72969cm</Size>
+                <Size>4.45878cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox195">
                     <CanGrow>true</CanGrow>
@@ -343,7 +287,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>7.72969cm</Size>
+                    <Size>4.87542cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox197">
                         <CanGrow>true</CanGrow>
@@ -381,7 +325,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>7.72969cm</Size>
+                        <Size>5.11841cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox199">
                             <CanGrow>true</CanGrow>
@@ -438,7 +382,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>7.72969cm</Size>
+                <Size>4.45878cm</Size>
                 <CellContents>
                   <Textbox Name="Nombre2">
                     <CanGrow>true</CanGrow>
@@ -477,7 +421,7 @@
                     </GroupExpressions>
                   </Group>
                   <TablixHeader>
-                    <Size>7.72969cm</Size>
+                    <Size>4.87542cm</Size>
                     <CellContents>
                       <Textbox Name="Correo1">
                         <CanGrow>true</CanGrow>
@@ -516,7 +460,7 @@
                         </GroupExpressions>
                       </Group>
                       <TablixHeader>
-                        <Size>7.72969cm</Size>
+                        <Size>5.11841cm</Size>
                         <CellContents>
                           <Textbox Name="NombreObra1">
                             <CanGrow>true</CanGrow>
@@ -556,7 +500,7 @@
                 </TablixMember>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>15.45938cm</Size>
+                    <Size>9.99383cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox257">
                         <CanGrow>true</CanGrow>
@@ -601,10 +545,10 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>5.7912cm</Top>
-        <Left>1.11531cm</Left>
+        <Left>0.57805cm</Left>
         <Height>1.8cm</Height>
-        <Width>27.03193cm</Width>
-        <ZIndex>5</ZIndex>
+        <Width>16.65505cm</Width>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -612,17 +556,166 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>5.8125in</Height>
+    <Height>13cm</Height>
     <Style />
   </Body>
-  <Width>11.52926in</Width>
+  <Width>17.48776cm</Width>
   <Page>
+    <PageHeader>
+      <Height>2.54cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox15">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Fecha: " &amp; Today()</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox15</rd:DefaultName>
+          <Top>0.56416cm</Top>
+          <Left>12.75716cm</Left>
+          <Height>0.6cm</Height>
+          <Width>3.61125cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox16">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Hora: "&amp;TimeOfDay()</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox16</rd:DefaultName>
+          <Top>1.37584cm</Top>
+          <Left>12.75716cm</Left>
+          <Height>0.6cm</Height>
+          <Width>3.61125cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Sistema Contact Center</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>1.09334cm</Top>
+          <Left>1.11531cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.51625cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>2.54cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Página" &amp; Globals!PageNumber &amp; " de " &amp; Globals!TotalPages</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.6525cm</Top>
+          <Left>14.40567cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <LeftMargin>1cm</LeftMargin>
+    <RightMargin>1cm</RightMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

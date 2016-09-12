@@ -33,12 +33,17 @@ namespace ContactCenterGUI.Teatros.Reportes
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnGenerar_Click_1(object sender, EventArgs e)
+        {
             try
             {
                 fechaInicio = dtpFechaInicio.Value.Date;
                 fechaFin = dtpFechaFin.Value.Date;
                 List<RankingCliente> listaRankingCliente;
-                
+
                 using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
                     listaRankingCliente = servicio.ObtenerRankingCliente(fechaInicio, fechaFin);
@@ -55,8 +60,8 @@ namespace ContactCenterGUI.Teatros.Reportes
                 //reportViewer1.LocalReport.ReportEmbeddedResource = "MadScienceGUI.reportPago.rdlc";
 
                 List<ReportParameter> parametros = new List<ReportParameter>();
-                parametros.Add(new ReportParameter("fechaInicio", ""+fechaInicio));
-                parametros.Add(new ReportParameter("fechaFin", ""+fechaFin));
+                parametros.Add(new ReportParameter("fechaInicio", "" + fechaInicio));
+                parametros.Add(new ReportParameter("fechaFin", "" + fechaFin));
                 //Añado parametros al reportviewer
                 this.reportViewer1.LocalReport.SetParameters(parametros);
                 reportViewer1.RefreshReport();
@@ -67,6 +72,11 @@ namespace ContactCenterGUI.Teatros.Reportes
             {
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

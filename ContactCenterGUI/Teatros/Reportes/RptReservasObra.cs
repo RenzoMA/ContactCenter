@@ -32,11 +32,21 @@ namespace ContactCenterGUI.Teatros.Reportes
         
         private void btnGenRep_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void RptReservasObra_Load(object sender, EventArgs e)
+        {
+            this.rptcro.RefreshReport();
+        }
+
+        private void btnGenRep_Click_1(object sender, EventArgs e)
+        {
             try
             {
                 fechaInicio = dtpFechaReservaI.Value.Date;
                 fechaFin = dtpFechaReservaF.Value.Date;
-               
+
                 List<ReservaObra> listaReservaObra;
 
                 using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
@@ -69,9 +79,9 @@ namespace ContactCenterGUI.Teatros.Reportes
             }
         }
 
-        private void RptReservasObra_Load(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.rptcro.RefreshReport();
+            this.Close();
         }
     }
 }

@@ -38,8 +38,10 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnGenerar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.RankingClienteBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // RankingClienteBindingSource
@@ -57,7 +59,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ContactCenterGUI.Teatros.Reportes.RptRankingCliente.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 157);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1235, 419);
+            this.reportViewer1.Size = new System.Drawing.Size(811, 419);
             this.reportViewer1.TabIndex = 14;
             // 
             // groupBox1
@@ -70,7 +72,7 @@
             this.groupBox1.Controls.Add(this.dtpFechaInicio);
             this.groupBox1.Location = new System.Drawing.Point(12, 68);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1235, 83);
+            this.groupBox1.Size = new System.Drawing.Size(811, 83);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -122,6 +124,7 @@
             this.btnGenerar.TabIndex = 22;
             this.btnGenerar.Text = "Generar";
             this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click_1);
             // 
             // dtpFechaInicio
             // 
@@ -131,20 +134,36 @@
             this.dtpFechaInicio.Size = new System.Drawing.Size(170, 20);
             this.dtpFechaInicio.TabIndex = 21;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox1.Location = new System.Drawing.Point(760, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // RptRankingCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 588);
+            this.ClientSize = new System.Drawing.Size(832, 588);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
+            this.MaximizeBox = false;
             this.Name = "RptRankingCliente";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ranking Cliente";
             this.Load += new System.EventHandler(this.RptRankingCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RankingClienteBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -158,5 +177,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialRaisedButton btnGenerar;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

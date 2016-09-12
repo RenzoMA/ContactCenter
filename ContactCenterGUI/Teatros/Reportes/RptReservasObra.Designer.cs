@@ -38,8 +38,10 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnGenRep = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dtpFechaReservaI = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.reservaObraBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // reservaObraBindingSource
@@ -122,6 +124,7 @@
             this.btnGenRep.TabIndex = 21;
             this.btnGenRep.Text = "Generar";
             this.btnGenRep.UseVisualStyleBackColor = true;
+            this.btnGenRep.Click += new System.EventHandler(this.btnGenRep_Click_1);
             // 
             // dtpFechaReservaI
             // 
@@ -131,11 +134,24 @@
             this.dtpFechaReservaI.Size = new System.Drawing.Size(170, 20);
             this.dtpFechaReservaI.TabIndex = 20;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox1.Location = new System.Drawing.Point(754, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // RptReservasObra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 650);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rptcro);
             this.MaximizeBox = false;
@@ -147,6 +163,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.reservaObraBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -160,5 +177,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialRaisedButton btnGenRep;
         private System.Windows.Forms.DateTimePicker dtpFechaReservaI;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
