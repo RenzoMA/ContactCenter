@@ -58,6 +58,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                 objObra.UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]);
                 objObra.FechaModificacion = DataConvert.ToDateTime(dtr["O.FechaMod"]);
                 objObra.UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]);
+                objObra.Image = DataConvert.ToByteArrayNull(dtr["Imagen"]);
             }
             UtilDA.Close(cnx);
             return objObra;
@@ -91,8 +92,9 @@ namespace ContactCenterDA.Repositories.CC.TH
                         FechaCreacion = DataConvert.ToDateTime(dtr["O.FechaCrea"]),
                         UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]),
                         FechaModificacion = DataConvert.ToDateTime(dtr["O.FechaMod"]),
-                        UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"])
-                    };
+                        UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]),
+                        Image = DataConvert.ToByteArrayNull(dtr["Imagen"])
+                };
                     ListaObra.Add(obra);
                 }
             }
@@ -137,7 +139,8 @@ namespace ContactCenterDA.Repositories.CC.TH
                             UsuarioModificacion = DataConvert.ToString(dtr["T.UserMod"])
                         },
                         UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]),
-                        UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"])
+                        UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]),
+                        Image = DataConvert.ToByteArrayNull(dtr["Imagen"])
                     };
                     lObra.Add(obra);
                 }
@@ -185,7 +188,8 @@ namespace ContactCenterDA.Repositories.CC.TH
                             UsuarioModificacion = DataConvert.ToString(dtr["T.UserMod"])
                         },
                         UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]),
-                        UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"])
+                        UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]),
+                        Image = DataConvert.ToByteArrayNull(dtr["Imagen"])
                     };
                     lObra.Add(obra);
                 }
@@ -198,8 +202,8 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Insert(Obra datos)
         {
-            String sql = "INSERT INTO TH_OBRA(Nombre, FechaInicio, FechaFin, Descripcion, Estado, IdTeatro, FechaCrea, UserCrea) " +
-                        "VALUES(@nombre, @fechaini, @fechafin, @descripcion, @estado, @idTeatro, @fechaCrea, @userCrea)";
+            String sql = "INSERT INTO TH_OBRA(Nombre, FechaInicio, FechaFin, Descripcion, Estado, IdTeatro, FechaCrea, UserCrea, Imagen) " +
+                        "VALUES(@nombre, @fechaini, @fechafin, @descripcion, @estado, @idTeatro, @fechaCrea, @userCrea, @imagen)";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter fechaini = UtilDA.SetParameters("@fechaini", OleDbType.Date, datos.FechaInicio);
@@ -209,13 +213,14 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter idTeatro = UtilDA.SetParameters("@idTeatro", OleDbType.Integer, datos.Teatro.IdTeatro);
             OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter usuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
+            OleDbParameter pImagen = UtilDA.SetParameters("@imagen", OleDbType.VarBinary, datos.Image);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, fechaini, fechafin, descripcion, estado, idTeatro, fechaCreacion, usuarioCrea);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, fechaini, fechafin, descripcion, estado, idTeatro, fechaCreacion, usuarioCrea, pImagen);
         }
 
         public bool Update(Obra datos)
         {
-            String sql = "UPDATE TH_OBRA SET Nombre = @nombre, FechaInicio = @fechaini, FechaFin = @fechafin, Descripcion = @descripcion, Estado = @estado, IdTeatro = @idteatro, FechaMod = @fechaMod, UserMod = @usuarioMod WHERE IdObra = @idobra";
+            String sql = "UPDATE TH_OBRA SET Nombre = @nombre, FechaInicio = @fechaini, FechaFin = @fechafin, Descripcion = @descripcion, Estado = @estado, IdTeatro = @idteatro, FechaMod = @fechaMod, UserMod = @usuarioMod, Imagen = @imagen WHERE IdObra = @idobra";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter fechaini = UtilDA.SetParameters("@fechaini", OleDbType.Date, datos.FechaInicio);
@@ -225,8 +230,10 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter idteatro = UtilDA.SetParameters("@idteatro", OleDbType.Integer, datos.Teatro.IdTeatro);
             OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
+            OleDbParameter pImagen = UtilDA.SetParameters("@imagen", OleDbType.VarBinary, datos.Image);
             OleDbParameter idObra = UtilDA.SetParameters("@idobra", OleDbType.Integer, datos.IdObra);
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, fechaini, fechafin, descripcion, estado, idteatro, fechaMod, usuarioMod, idObra);
+            
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, fechaini, fechafin, descripcion, estado, idteatro, fechaMod, usuarioMod, pImagen, idObra);
         }
 
         public Obra GetbyName(string name)
@@ -257,6 +264,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                 objObra.UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]);
                 objObra.FechaModificacion = DataConvert.ToDateTime(dtr["O.FechaMod"]);
                 objObra.UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]);
+                objObra.Image = DataConvert.ToByteArrayNull(dtr["Imagen"]);
             }
             UtilDA.Close(cnx);
             return objObra;
@@ -297,7 +305,8 @@ namespace ContactCenterDA.Repositories.CC.TH
                     FechaCreacion = DataConvert.ToDateTime(dtr["O.FechaCrea"]),
                     UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]),
                     FechaModificacion = DataConvert.ToDateTime(dtr["O.FechaMod"]),
-                    UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"])
+                    UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]),
+                    Image = DataConvert.ToByteArrayNull(dtr["Imagen"])
                 };
                     ListaObra.Add(obra);
                 }

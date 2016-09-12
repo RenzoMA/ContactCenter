@@ -15,6 +15,8 @@ using ContactCenterServices.ServicioTeatro;
 using Microsoft.Practices.Unity;
 using ContactCenterGUI.CC.Helpers;
 using ContactCenterServices;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 {
@@ -46,6 +48,11 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
             cboTeatroObra.DisplayMember = "Nombre";
             cboTeatroObra.SelectedItem = FindTeatro(obra.Teatro.IdTeatro);
             txtDescripcionObra.Text = obra.Descripcion;
+            if (obra.Image != null)
+            {
+                MemoryStream ms = new MemoryStream(obra.Image);
+                pcbImagen.Image = Image.FromStream(ms);
+            }
         }
 
         private Teatro FindTeatro(int idTeatro)
@@ -61,7 +68,16 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
             obra.Descripcion = txtDescripcionObra.Text;
             obra.Estado = cboEstadoObra.SelectedIndex == 0 ? "A" : "I";
             obra.Teatro = cboTeatroObra.SelectedItem as Teatro;
-            
+            if (pcbImagen.Image != null)
+            {
+                MemoryStream ms = new MemoryStream();
+                pcbImagen.Image.Save(ms, ImageFormat.Jpeg);
+                byte[] photo_aray = new byte[ms.Length];
+                ms.Position = 0;
+                ms.Read(photo_aray, 0, photo_aray.Length);
+                obra.Image = photo_aray;
+            }
+
         }
 
         private bool ValidarDatos()
@@ -99,6 +115,14 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
             }
         }
 
-       
+        private void btnCargarImagen_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "jpeg|*.jpg|bmp|*.bmp|all files|*.*";
+            DialogResult res = openFileDialog1.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                pcbImagen.Image = HelperForm.ResizeImage(Image.FromFile(openFileDialog1.FileName), 134, 194);
+            }
+        }
     }
 }

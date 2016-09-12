@@ -114,17 +114,17 @@ namespace ContactCenterBL.Helper
 
                 #region Get Mail Body embedded images paths
 
-                var rootFolder = AppDomain.CurrentDomain.BaseDirectory;
-                var logopath = Path.Combine(rootFolder, "MailImages/logo.png");
+                //var rootFolder = AppDomain.CurrentDomain.BaseDirectory;
+                //var logopath = Path.Combine(rootFolder, "MailImages/logo.png");
                 //var iconpath = Path.Combine(rootFolder, "MailImages/tree-icon.png");
 
                 #endregion Get Mail Body embedded images paths
 
                 #region Set embedded images mail id
-                var logo = new LinkedResource(logopath, MediaTypeNames.Image.Jpeg);
+               // var logo = new LinkedResource(logopath, MediaTypeNames.Image.Jpeg);
                 //var treeicon = new LinkedResource(iconpath, MediaTypeNames.Image.Jpeg);
 
-                logo.ContentId = "logo";
+                //logo.ContentId = "logo";
                 //treeicon.ContentId = "tree-icon";
 
                 #endregion
@@ -132,7 +132,7 @@ namespace ContactCenterBL.Helper
                 #region Set Body and Images
 
                 var html = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
-                html.LinkedResources.Add(logo);
+                //html.LinkedResources.Add(logo);
                 //html.LinkedResources.Add(treeicon);
 
                 #endregion Set Body and Images
@@ -166,10 +166,10 @@ namespace ContactCenterBL.Helper
                         logEmail.Estado = "FALLO";
                         logEmail.Descripcion = e.Error.InnerException.Message;
                     }
-                    logEmailRepository.Insert(logEmail);
+                    //logEmailRepository.Insert(logEmail);
                     smtpClient.Dispose();
                     mail.Dispose();
-                    logo.Dispose();
+                    //logo.Dispose();
                     //treeicon.Dispose();
                 };
 
