@@ -156,17 +156,19 @@ namespace ContactCenterBL.Helper
                     logEmail.CorreoDestino = string.Join(",", mailAdresses.Select(x => x.ToString()).ToArray());
                     logEmail.CorreoDestinoCC = string.Join(",", ccAddresses.Select(x => x.ToString()).ToArray());
                     logEmail.Estado = "OK";
+                    logEmail.FechaEnvio = DateTime.Now;
                     logEmail.FechaCreacion = DateTime.Now;
                     logEmail.UsuarioCreacion = Sesion.usuario.Login;
                     logEmail.Mensaje = htmlBody;
                     logEmail.Reserva = reserva;
+                    logEmail.Intento = 1;
 
                     if (e.Error != null)
                     {
                         logEmail.Estado = "FALLO";
                         logEmail.Descripcion = e.Error.InnerException.Message;
                     }
-                    //logEmailRepository.Insert(logEmail);
+                    logEmailRepository.Insert(logEmail);
                     smtpClient.Dispose();
                     mail.Dispose();
                     //logo.Dispose();

@@ -140,7 +140,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                         },
                         UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]),
                         UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]),
-                        Image = DataConvert.ToByteArrayNull(dtr["Imagen"])
+                        //Image = DataConvert.ToByteArrayNull(dtr["Imagen"])
                     };
                     lObra.Add(obra);
                 }
@@ -189,7 +189,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                         },
                         UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]),
                         UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]),
-                        Image = DataConvert.ToByteArrayNull(dtr["Imagen"])
+                        //Image = DataConvert.ToByteArrayNull(dtr["Imagen"])
                     };
                     lObra.Add(obra);
                 }
@@ -306,8 +306,9 @@ namespace ContactCenterDA.Repositories.CC.TH
                     UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]),
                     FechaModificacion = DataConvert.ToDateTime(dtr["O.FechaMod"]),
                     UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]),
-                    Image = DataConvert.ToByteArrayNull(dtr["Imagen"])
-                };
+                     Image = DataConvert.ToByteArrayNull(dtr["Imagen"])
+                    };
+
                     ListaObra.Add(obra);
                 }
             }

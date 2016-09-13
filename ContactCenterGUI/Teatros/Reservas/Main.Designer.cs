@@ -39,6 +39,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnGenerarFile = new MaterialSkin.Controls.MaterialRaisedButton();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.btnBandejaSalida = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,11 +150,24 @@
             this.btnGenerarFile.UseVisualStyleBackColor = true;
             this.btnGenerarFile.Click += new System.EventHandler(this.btnGenerarFile_Click);
             // 
+            // btnBandejaSalida
+            // 
+            this.btnBandejaSalida.Depth = 0;
+            this.btnBandejaSalida.Location = new System.Drawing.Point(47, 477);
+            this.btnBandejaSalida.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBandejaSalida.Name = "btnBandejaSalida";
+            this.btnBandejaSalida.Primary = true;
+            this.btnBandejaSalida.Size = new System.Drawing.Size(244, 45);
+            this.btnBandejaSalida.TabIndex = 19;
+            this.btnBandejaSalida.Text = "BANDEJA DE SALIDA";
+            this.btnBandejaSalida.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 482);
+            this.ClientSize = new System.Drawing.Size(338, 534);
+            this.Controls.Add(this.btnBandejaSalida);
             this.Controls.Add(this.btnGenerarFile);
             this.Controls.Add(this.btnCargaMasiva);
             this.Controls.Add(this.materialRaisedButton2);
@@ -168,6 +182,7 @@
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aplicación Teatro";
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -185,5 +200,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private MaterialSkin.Controls.MaterialRaisedButton btnGenerarFile;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnBandejaSalida;
     }
 }
