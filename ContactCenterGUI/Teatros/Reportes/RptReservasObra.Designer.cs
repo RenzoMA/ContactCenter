@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reservaObraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rptcro = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -53,13 +53,13 @@
             this.rptcro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.reservaObraBindingSource;
-            this.rptcro.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.reservaObraBindingSource;
+            this.rptcro.LocalReport.DataSources.Add(reportDataSource2);
             this.rptcro.LocalReport.ReportEmbeddedResource = "ContactCenterGUI.Teatros.Reportes.RptReservasObra.rdlc";
-            this.rptcro.Location = new System.Drawing.Point(40, 190);
+            this.rptcro.Location = new System.Drawing.Point(12, 190);
             this.rptcro.Name = "rptcro";
-            this.rptcro.Size = new System.Drawing.Size(712, 448);
+            this.rptcro.Size = new System.Drawing.Size(801, 448);
             this.rptcro.TabIndex = 20;
             // 
             // groupBox1
@@ -70,9 +70,9 @@
             this.groupBox1.Controls.Add(this.materialLabel1);
             this.groupBox1.Controls.Add(this.btnGenRep);
             this.groupBox1.Controls.Add(this.dtpFechaReservaI);
-            this.groupBox1.Location = new System.Drawing.Point(40, 83);
+            this.groupBox1.Location = new System.Drawing.Point(12, 83);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(712, 100);
+            this.groupBox1.Size = new System.Drawing.Size(801, 100);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -116,7 +116,7 @@
             // btnGenRep
             // 
             this.btnGenRep.Depth = 0;
-            this.btnGenRep.Location = new System.Drawing.Point(436, 27);
+            this.btnGenRep.Location = new System.Drawing.Point(455, 36);
             this.btnGenRep.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGenRep.Name = "btnGenRep";
             this.btnGenRep.Primary = true;

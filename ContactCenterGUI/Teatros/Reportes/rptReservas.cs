@@ -99,5 +99,10 @@ namespace ContactCenterGUI.Teatros.Reportes
         {
             this.Close();
         }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -119,35 +119,39 @@ namespace ContactCenterGUI.Teatros.Escenarios
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            vistaPlatea();
+            Image i = ContactCenterGUI.Properties.Resources.PJ_PLATEA_1;
+            vistaPlatea(i);
         }
 
-        private void vistaPlatea() {
-            Image i = ContactCenterGUI.Properties.Resources.PJ_PLATEA;
+        private void vistaPlatea(Image img) {
+            Image i = img;
             Vista frm = new Vista(i);
             frm.Show();
         }
 
-        private void vistaMezzanine()
+        private void vistaMezzanine(Image img)
         {
-            Image i = ContactCenterGUI.Properties.Resources.PJ_MEZZANINE;
+            Image i = img;
             Vista frm = new Vista(i);
             frm.Show();
         }
 
         private void vpb_Click(object sender, EventArgs e)
         {
-            vistaPlatea();
+            Image i = ContactCenterGUI.Properties.Resources.PJ_PLATEA_2;
+            vistaPlatea(i);
         }
 
         private void vma_Click(object sender, EventArgs e)
         {
-            vistaMezzanine();
+            Image i = ContactCenterGUI.Properties.Resources.PJ_MEZZANINE_1;
+            vistaPlatea(i);
         }
 
         private void vmb_Click(object sender, EventArgs e)
         {
-            vistaMezzanine();
+            Image i = ContactCenterGUI.Properties.Resources.PJ_MEZZANINE_2;
+            vistaPlatea(i);
         }
 
         private void panel3_MouseDown(object sender, MouseEventArgs e)
@@ -171,5 +175,14 @@ namespace ContactCenterGUI.Teatros.Escenarios
         {
             mouseDown = false;
         }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+
+          
+
+        }
+
+       
     }
 }

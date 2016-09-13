@@ -48,7 +48,7 @@
             // pop
             // 
             this.pop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pop.Image = global::ContactCenterGUI.Properties.Resources.PJ_PLATEA;
+
             this.pop.Location = new System.Drawing.Point(0, 0);
             this.pop.Name = "pop";
             this.pop.Size = new System.Drawing.Size(850, 450);
