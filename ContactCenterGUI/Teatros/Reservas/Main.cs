@@ -154,5 +154,13 @@ namespace ContactCenterGUI.Teatros.Reservas
         {
 
         }
+
+        private void btnBandejaSalida_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SentEmail frmSentEmail = new SentEmail();
+            frmSentEmail.ShowDialog();
+            this.Show();
+        }
     }
 }

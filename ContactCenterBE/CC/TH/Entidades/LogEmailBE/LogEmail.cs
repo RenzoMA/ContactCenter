@@ -18,7 +18,6 @@ namespace ContactCenterBE.CC.TH.Entidades.LogEmailBE
         public string Asunto { get; set; }
         public string Estado { get; set; }
         public string Descripcion { get; set; }
-        public Reserva Reserva { get; set; }
         public int Intento { get;  set;} 
     }
 }

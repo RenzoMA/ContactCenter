@@ -67,11 +67,12 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                 clienteRepository.Update(cliente);
             }
             reserva.Cliente = cliente;
-
+            
             if (reservaRepository.Insert(reserva))
             {
                 email = reserva.Cliente.Correo.Split(',').ToList();
                 MailHelper.SendMail(email, new List<String>(), Enumerables.MailAction.TeatroConfirmacionReserva, logEmailRepository, reserva, null);
+
                 return true;
             }
             else

@@ -101,6 +101,7 @@
             this.ClientSize = new System.Drawing.Size(725, 569);
             this.Controls.Add(this.dgvEmail);
             this.Name = "SentEmail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bandeja de salida";
             this.Load += new System.EventHandler(this.SentEmail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmail)).EndInit();
