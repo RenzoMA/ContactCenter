@@ -104,5 +104,6 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ZonaMan
         {
             this.Close();
         }
+
     }
 }

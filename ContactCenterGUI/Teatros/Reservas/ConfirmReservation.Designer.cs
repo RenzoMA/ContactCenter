@@ -611,7 +611,7 @@
             this.lblTiempo.BackColor = System.Drawing.Color.Transparent;
             this.lblTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTiempo.ForeColor = System.Drawing.Color.White;
-            this.lblTiempo.Location = new System.Drawing.Point(634, 32);
+            this.lblTiempo.Location = new System.Drawing.Point(533, 32);
             this.lblTiempo.Name = "lblTiempo";
             this.lblTiempo.Size = new System.Drawing.Size(0, 20);
             this.lblTiempo.TabIndex = 1914;

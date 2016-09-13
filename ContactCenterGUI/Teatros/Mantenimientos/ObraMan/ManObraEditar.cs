@@ -62,10 +62,10 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 
         private void CapturarDatos()
         {
-            obra.Nombre = txtNomObra.Text;
+            obra.Nombre = txtNomObra.Text.ToUpper().Trim();
             obra.FechaInicio = dtpFecIniObra.Value.Date;
             obra.FechaFin = dtpFecFinObra.Value.Date;
-            obra.Descripcion = txtDescripcionObra.Text;
+            obra.Descripcion = txtDescripcionObra.Text.ToUpper().Trim();
             obra.Estado = cboEstadoObra.SelectedIndex == 0 ? "A" : "I";
             obra.Teatro = cboTeatroObra.SelectedItem as Teatro;
             if (pcbImagen.Image != null)
