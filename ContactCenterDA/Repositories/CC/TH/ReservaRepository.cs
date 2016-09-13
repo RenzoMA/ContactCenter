@@ -195,7 +195,12 @@ namespace ContactCenterDA.Repositories.CC.TH
                         },
                         NombrePromocion = DataConvert.ToString(dtr["NombrePromocion"]),
                         Asientos = DataConvert.ToString(dtr["Asientos"]),
-                        PrecioTotal = DataConvert.ToSingle(dtr["PrecioTotal"])
+                        PrecioTotal = DataConvert.ToSingle(dtr["PrecioTotal"]),
+                        FechaCreacion = DataConvert.ToDateTime(dtr["R.FechaCrea"]),
+                        UsuarioCreacion = DataConvert.ToString(dtr["R.UserCrea"]),
+                        FechaModificacion = DataConvert.ToDateTime(dtr["R.FechaMod"]),
+                        UsuarioModificacion = DataConvert.ToString(dtr["R.UserMod"])
+                        
                     };
                     listaReserva.Add(reserva);
                 }
@@ -211,7 +216,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             string sql = "UPDATE TH_RESERVA SET IdEstadoReserva = 2,FechaMod = @fechaMod, UserMod = @userMod WHERE IdReserva = @idReserva";
 
 
-            OleDbParameter pFechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Today);
+            OleDbParameter pFechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter pUserMod = UtilDA.SetParameters("@userMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter pIdReserva = UtilDA.SetParameters("@idReserva", OleDbType.Integer, idReserva);
 

@@ -39,19 +39,24 @@
             this.txtTelefono = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.dgvResult = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Cancelar = new System.Windows.Forms.DataGridViewImageColumn();
             this.IdReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Obra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asientos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Promocion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.UsuarioCrea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UsuarioMod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaMod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -183,13 +188,18 @@
             this.IdReserva,
             this.EstadoReserva,
             this.NombreCliente,
+            this.Telefono,
+            this.FechaReserva,
+            this.Horario,
             this.Obra,
             this.Asientos,
-            this.Horario,
-            this.FechaReserva,
             this.PrecioTotal,
-            this.Telefono,
-            this.Correo});
+            this.Promocion,
+            this.Correo,
+            this.UsuarioCrea,
+            this.FechaCreacion,
+            this.UsuarioMod,
+            this.FechaMod});
             this.dgvResult.GridColor = System.Drawing.Color.White;
             this.dgvResult.Location = new System.Drawing.Point(12, 212);
             this.dgvResult.Name = "dgvResult";
@@ -199,6 +209,28 @@
             this.dgvResult.Size = new System.Drawing.Size(1245, 335);
             this.dgvResult.TabIndex = 1;
             this.dgvResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResult_CellContentClick);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Cancelar";
+            this.dataGridViewImageColumn1.Image = global::ContactCenterGUI.Properties.Resources.cancel_256;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn1.Width = 25;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox1.Location = new System.Drawing.Point(1196, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Cancelar
             // 
@@ -223,6 +255,7 @@
             this.EstadoReserva.HeaderText = "Estado";
             this.EstadoReserva.Name = "EstadoReserva";
             this.EstadoReserva.ReadOnly = true;
+            this.EstadoReserva.Width = 80;
             // 
             // NombreCliente
             // 
@@ -231,6 +264,29 @@
             this.NombreCliente.Name = "NombreCliente";
             this.NombreCliente.ReadOnly = true;
             this.NombreCliente.Width = 250;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            this.Telefono.Width = 80;
+            // 
+            // FechaReserva
+            // 
+            this.FechaReserva.DataPropertyName = "FechaReserva";
+            this.FechaReserva.HeaderText = "Fecha Reserva";
+            this.FechaReserva.Name = "FechaReserva";
+            this.FechaReserva.ReadOnly = true;
+            this.FechaReserva.Width = 80;
+            // 
+            // Horario
+            // 
+            this.Horario.DataPropertyName = "Horario";
+            this.Horario.HeaderText = "Horario";
+            this.Horario.Name = "Horario";
+            this.Horario.ReadOnly = true;
             // 
             // Obra
             // 
@@ -248,37 +304,20 @@
             this.Asientos.ReadOnly = true;
             this.Asientos.Width = 150;
             // 
-            // Horario
-            // 
-            this.Horario.DataPropertyName = "Horario";
-            this.Horario.HeaderText = "Horario";
-            this.Horario.Name = "Horario";
-            this.Horario.ReadOnly = true;
-            this.Horario.Width = 150;
-            // 
-            // FechaReserva
-            // 
-            this.FechaReserva.DataPropertyName = "FechaReserva";
-            this.FechaReserva.HeaderText = "Fecha Reserva";
-            this.FechaReserva.Name = "FechaReserva";
-            this.FechaReserva.ReadOnly = true;
-            this.FechaReserva.Width = 150;
-            // 
             // PrecioTotal
             // 
             this.PrecioTotal.DataPropertyName = "PrecioTotal";
-            this.PrecioTotal.HeaderText = "PrecioTotal";
+            this.PrecioTotal.HeaderText = "Precio";
             this.PrecioTotal.Name = "PrecioTotal";
             this.PrecioTotal.ReadOnly = true;
-            this.PrecioTotal.Width = 80;
+            this.PrecioTotal.Width = 50;
             // 
-            // Telefono
+            // Promocion
             // 
-            this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            this.Telefono.Width = 150;
+            this.Promocion.DataPropertyName = "NombrePromocion";
+            this.Promocion.HeaderText = "Promocion";
+            this.Promocion.Name = "Promocion";
+            this.Promocion.ReadOnly = true;
             // 
             // Correo
             // 
@@ -288,27 +327,33 @@
             this.Correo.ReadOnly = true;
             this.Correo.Width = 200;
             // 
-            // dataGridViewImageColumn1
+            // UsuarioCrea
             // 
-            this.dataGridViewImageColumn1.HeaderText = "Cancelar";
-            this.dataGridViewImageColumn1.Image = global::ContactCenterGUI.Properties.Resources.cancel_256;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewImageColumn1.Width = 25;
+            this.UsuarioCrea.DataPropertyName = "UsuarioCreacion";
+            this.UsuarioCrea.HeaderText = "Usuario Creación";
+            this.UsuarioCrea.Name = "UsuarioCrea";
+            this.UsuarioCrea.ReadOnly = true;
             // 
-            // pictureBox1
+            // FechaCreacion
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
-            this.pictureBox1.Location = new System.Drawing.Point(1196, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.FechaCreacion.DataPropertyName = "FechaCreacion";
+            this.FechaCreacion.HeaderText = "Fecha Creacion";
+            this.FechaCreacion.Name = "FechaCreacion";
+            this.FechaCreacion.ReadOnly = true;
+            // 
+            // UsuarioMod
+            // 
+            this.UsuarioMod.DataPropertyName = "UsuarioModificacion";
+            this.UsuarioMod.HeaderText = "Usuario Modificación";
+            this.UsuarioMod.Name = "UsuarioMod";
+            this.UsuarioMod.ReadOnly = true;
+            // 
+            // FechaMod
+            // 
+            this.FechaMod.DataPropertyName = "FechaModificacion";
+            this.FechaMod.HeaderText = "Fecha Modificacion";
+            this.FechaMod.Name = "FechaMod";
+            this.FechaMod.ReadOnly = true;
             // 
             // FindReservation
             // 
@@ -344,17 +389,22 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewImageColumn Cancelar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdReserva;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoReserva;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaReserva;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Horario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Obra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Asientos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Horario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaReserva;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Promocion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioCrea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCreacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioMod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaMod;
     }
 }
