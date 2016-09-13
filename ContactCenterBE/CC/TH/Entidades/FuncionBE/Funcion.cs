@@ -19,13 +19,13 @@ namespace ContactCenterBE.CC.TH.Entidades.FuncionBE
                 {
                     switch (Dia)
                     {
-                        case 0: return "Lunes -" + Horario;
-                        case 1: return "Martes -" + Horario;
-                        case 2: return "Miércoles -" + Horario;
-                        case 3: return "Jueves -" + Horario;
-                        case 4: return "Viernes -" + Horario;
-                        case 5: return "Sabado -" + Horario;
-                        case 6: return "Domingo -" + Horario;
+                        case 0: return "Lunes - " + Horario;
+                        case 1: return "Martes - " + Horario;
+                        case 2: return "Miércoles - " + Horario;
+                        case 3: return "Jueves - " + Horario;
+                        case 4: return "Viernes - " + Horario;
+                        case 5: return "Sabado - " + Horario;
+                        case 6: return "Domingo - " + Horario;
                         default: return "";
                     }
                 }

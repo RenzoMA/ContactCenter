@@ -59,7 +59,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
         {
             Obra obra = cboObra.SelectedItem as Obra;
             cboFuncion.DataSource = servicio.ListarFuncionByObra(obra.IdObra);
-            cboFuncion.DisplayMember = "Horario";
+            cboFuncion.DisplayMember = "HorarioDia";
         }
 
         private void cboTeatro_SelectionChangeCommitted(object sender, EventArgs e)
