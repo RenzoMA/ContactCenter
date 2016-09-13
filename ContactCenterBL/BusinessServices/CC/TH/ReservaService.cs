@@ -82,9 +82,9 @@ namespace ContactCenterBL.BusinessServices.CC.TH
 
         }
 
-        public List<Reserva> ReporteReservas(int idTeatro, DateTime fecha,DateTime fechaFin)
+        public List<DetalleReserva> ReporteReservas(int idTeatro, DateTime fecha,DateTime fechaFin)
         {
-            return reservaRepository.ReporteReservas(idTeatro, fecha, fechaFin);
+            return reservaRepository.ReporteReservasDetallado(idTeatro, fecha, fechaFin);
         }
 
         public List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fechaInicio,DateTime fechaFin)
@@ -197,6 +197,8 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                 detalle.UsuarioCreacion = lista[x].UsuarioRegistro;
                 detalle.Estado = "A";
                 detalle.Precio = lista[x].Precio;
+                detalle.NombreFila = asiento.Fila;
+                detalle.NombreAsiento = asiento.Descripcion;
                 listaDetalle.Add(detalle);
 
                 if (x < lista.Count-1)//saltar ultima vuelta
@@ -256,18 +258,26 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                     throw new Exception("Usuario no encontrado en la fila: " + (x + 2));
                 }
 
-                reserva.Promocion = promocionRepository.GetLista().FirstOrDefault(pr => pr.Descripcion.ToUpper().Trim() == lista[x].Promocion.ToUpper().Trim());
+                if (lista[x].Promocion != null)
+                {
+                    reserva.Promocion = promocionRepository.GetLista().FirstOrDefault(pr => pr.Descripcion.ToUpper().Trim() == lista[x].Promocion.ToUpper().Trim());
+                    if (reserva.Promocion == null)
+                    {
+                        throw new Exception("Promocion no encontrada en la fila: " + (x + 2));
+                    }
+                }
 
                 Reserva reservaExiste = reservaRepository.ReservaExiste(lista[x].FechaReserva, reserva.Funcion.IdFuncion, reserva.Cliente.IdCliente);
                 if (reservaExiste != null)
                 {
                     throw new Exception("Reserva ya se encuentra registrada en la fila: " + (x + 2));
                 }
-
+                
                 string asientos = "";
                 listaAsientos.ForEach(tx => {
-                    asientos += "F: " + lista[x].Fila + " - A: " + lista[x].Asiento + ", ";
+                    asientos += lista[x].Zona +" / " + lista[x].Fila + " / " + lista[x].Asiento + "\n";
                 });
+                asientos = asientos.Substring(0, asientos.Length - 2);
                 reserva.Asientos = asientos;
                 reserva.PrecioTotal = precio;
                 reserva.NombrePromocion = lista[x].Promocion;

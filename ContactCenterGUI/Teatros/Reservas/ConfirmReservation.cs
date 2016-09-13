@@ -68,11 +68,11 @@ namespace ContactCenterGUI.Teatros.Reservas
             foreach (AsientoZona obj in lista)
             {
                 contador++;
-                result += "F: "+obj.Asiento.Fila + " - A: " +obj.Asiento.Descripcion + ", ";
+                result += obj.Zona.Nombre+" / "+obj.Asiento.Fila + " / " +obj.Asiento.Descripcion + "\n";
                 dgvDetalleAsientos.Rows.Add(obj.Zona.Nombre, obj.Asiento.Fila, obj.Asiento.Descripcion);
                 
             }
-            result = result.Substring(0, result.Length - 1);
+            result = result.Substring(0, result.Length - 2);
             return result;
         }
 
@@ -105,6 +105,8 @@ namespace ContactCenterGUI.Teatros.Reservas
                 detalle.Asiento = ap.Asiento;
                 detalle.Precio = ap.Zona.Precio;
                 detalle.NombreZona = ap.Zona.Nombre;
+                detalle.NombreFila = ap.Asiento.Fila;
+                detalle.NombreAsiento = ap.Asiento.Descripcion;
                 listaDetalle.Add(detalle);
             }
             reserva.Asientos = asientos;
