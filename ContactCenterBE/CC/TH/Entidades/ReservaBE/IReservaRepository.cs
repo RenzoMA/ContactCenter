@@ -16,6 +16,7 @@ namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
         List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin);
         bool InsertMasivo(List<Reserva> listaReserva);
         Reserva ReservaExiste(DateTime fechaReserva, int idFuncion, int idCliente);
+        List<DetalleReserva> ReporteReservasDetallado(int idTeatro, DateTime fechaInicio, DateTime fechaFin);
 
     }
 }

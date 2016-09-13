@@ -63,7 +63,7 @@ namespace ContactCenterGUI.Teatros.Reportes
                 fechaObra = dtpFechaObra.Value.Date;
                 fechaObraFin = dtpFechaObraFin.Value.Date.AddDays(1);
                 teatro = cboTeatro2.SelectedItem as Teatro;
-                List<Reserva> lista = new List<Reserva>();
+                List<DetalleReserva> lista = new List<DetalleReserva>();
                 using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
                     lista = servicio.ReporteReservas(teatro.IdTeatro, fechaObra, fechaObraFin);
@@ -73,7 +73,7 @@ namespace ContactCenterGUI.Teatros.Reportes
 
                 reportViewer1.LocalReport.DataSources.Clear();
 
-                ReportDataSource Reporte = new ReportDataSource("DataSetReserva", lista);
+                ReportDataSource Reporte = new ReportDataSource("DataSetDetalleReserva", lista);
 
                 reportViewer1.LocalReport.DataSources.Add(Reporte);
 
@@ -82,6 +82,7 @@ namespace ContactCenterGUI.Teatros.Reportes
                 List<ReportParameter> parametros = new List<ReportParameter>();
                 parametros.Add(new ReportParameter("NombreTeatro", "" + teatro.Nombre));
                 parametros.Add(new ReportParameter("FechaObra", "" + fechaObra));
+                parametros.Add(new ReportParameter("FechaFin", "" + fechaObraFin));
                 //Añado parametros al reportviewer
                 this.reportViewer1.LocalReport.SetParameters(parametros);
                 reportViewer1.RefreshReport();

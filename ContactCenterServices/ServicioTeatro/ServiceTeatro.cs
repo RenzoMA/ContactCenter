@@ -262,7 +262,7 @@ namespace ContactCenterServices.ServicioTeatro
             return _tipoPromocionService.GetListaSeleccionable();
         }
 
-        public List<Reserva> ReporteReservas(int idTeatro, DateTime fecha, DateTime fechaFin)
+        public List<DetalleReserva> ReporteReservas(int idTeatro, DateTime fecha, DateTime fechaFin)
         {
             return _reservaService.ReporteReservas(idTeatro, fecha, fechaFin);
         }

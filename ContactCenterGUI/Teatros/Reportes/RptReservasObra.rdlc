@@ -419,7 +419,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=Parameters!FechaIni.Value</Value>
-                    <Style />
+                    <Style>
+                      <Format>dd/MM/yyyy</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -449,7 +451,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=Parameters!FechaFin.Value</Value>
-                    <Style />
+                    <Style>
+                      <Format>dd/MM/yyyy</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />

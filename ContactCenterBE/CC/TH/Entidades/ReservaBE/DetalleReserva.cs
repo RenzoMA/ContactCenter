@@ -16,6 +16,9 @@ namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
         public string Estado { get; set; }
         public Asiento Asiento { get; set; }
         public String NombreZona { get; set; }
+        public Reserva Reserva { get; set; }
+        public String NombreAsiento { get; set; }
+        public String NombreFila { get; set; }
 
     }
 }

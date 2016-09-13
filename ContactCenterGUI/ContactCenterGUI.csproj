@@ -477,6 +477,7 @@
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\ContactCenterBE.CC.TH.Entidades.ClienteBE.RankingCliente.datasource" />
+    <None Include="Properties\DataSources\ContactCenterBE.CC.TH.Entidades.ReservaBE.DetalleReserva.datasource" />
     <None Include="Properties\DataSources\ContactCenterBE.CC.TH.Entidades.ReservaBE.Reserva.datasource" />
     <None Include="Properties\DataSources\ContactCenterBE.CC.TH.Entidades.ReservaBE.ReservaObra.datasource" />
     <None Include="Properties\DataSources\ContactCenterServices.ServiceContactCenter.datasource" />
@@ -534,17 +535,13 @@
     <None Include="Resources\delete.png" />
     <None Include="Resources\ic_menu_add.png" />
     <None Include="Resources\cancel-256.png" />
-    <None Include="Resources\loading2.gif" />
-    <None Include="Resources\loading3.gif" />
     <None Include="Resources\krieger2_2.png" />
     <None Include="Resources\loading5.gif" />
     <None Include="Resources\left-arrow2.png" />
     <None Include="Resources\left-arrow1.png" />
     <None Include="Resources\left-arrow.png" />
     <None Include="Resources\atrás-galería-3.png" />
-    <None Include="Resources\splash.gif" />
     <None Include="Resources\hospital31.png" />
-    <None Include="Resources\loading8.gif" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

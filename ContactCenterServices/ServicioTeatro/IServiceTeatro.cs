@@ -74,7 +74,7 @@ namespace ContactCenterServices.ServicioTeatro
         List<TipoPromocion> GetListaTipoPromocionSeleccionable();
         List<TipoPromocion> GetListaTipoPromocion();
 
-        List<Reserva> ReporteReservas(int idTeatro, DateTime fecha, DateTime fechaFin);
+        List<DetalleReserva> ReporteReservas(int idTeatro, DateTime fecha, DateTime fechaFin);
         List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fechaInicio,DateTime fechaFin);
         bool CancelarReserva(int idReserva);
         List<Zona> ComboListZonaByObra(int IdObra);

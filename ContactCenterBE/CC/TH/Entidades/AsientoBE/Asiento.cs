@@ -14,7 +14,6 @@ namespace ContactCenterBE.CC.TH.Entidades.AsientoBE
         public int IdAsiento { get; set; }
         public string Descripcion { get; set; }
         public string Fila { get; set; }
-        public string DescripcionFila { get { return "Fila: "+ Fila +" - "+ "Asiento: "+Descripcion; } }
         public Teatro Teatro { get; set; }
         public string EstadoTemporal { get; set; }
         public Color ColorTemporal { get; set; }
