@@ -160,7 +160,6 @@ namespace ContactCenterBL.Helper
                     logEmail.FechaCreacion = DateTime.Now;
                     logEmail.UsuarioCreacion = Sesion.usuario.Login;
                     logEmail.Mensaje = htmlBody;
-                    logEmail.Reserva = reserva;
                     logEmail.Intento = 1;
 
                     if (e.Error != null)
@@ -168,143 +167,12 @@ namespace ContactCenterBL.Helper
                         logEmail.Estado = "FALLO";
                         logEmail.Descripcion = e.Error.InnerException.Message;
                     }
+                    logEmail.Descripcion = String.Empty;
                     logEmailRepository.Insert(logEmail);
                     smtpClient.Dispose();
                     mail.Dispose();
                     //logo.Dispose();
                     //treeicon.Dispose();
-                };
-
-                #endregion Send Mail
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-        public static void ResendEmail(LogEmail logEmail, ILogEmailRepository logEmailRepository)
-        {
-            try
-            {
-
-                #region Get Config Variables
-                var smtpClient = new SmtpClient();
-                var mailAccount = ConfigurationManager.AppSettings["mailAccount"];
-                var mailPassword = ConfigurationManager.AppSettings["mailPassword"];
-                var smtp = ConfigurationManager.AppSettings["smtp"];
-                var mailDisplayName = ConfigurationManager.AppSettings["mailDisplayName"];
-                var systemUrl = ConfigurationManager.AppSettings["systemUrl"];
-                #endregion
-
-                #region Create SMTP
-                smtpClient.Host = smtp;
-                smtpClient.Port = 587;
-                smtpClient.UseDefaultCredentials = false;
-                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtpClient.Credentials = new NetworkCredential(mailAccount, mailPassword);
-                smtpClient.EnableSsl = true;
-                #endregion Create SMTP
-
-                #region Create Mail an recievers
-                var mail = new MailMessage();
-                mail.From = new MailAddress(mailAccount, mailDisplayName);
-
-                string[] mailAdresses = logEmail.CorreoDestino.Split(',');
-                foreach (var mailDirection in mailAdresses.Where(x => !string.IsNullOrEmpty(x)))
-                {
-                    mail.To.Add(new MailAddress(mailDirection));
-                }
-
-                string[] ccAddresses = logEmail.CorreoDestinoCC.Split(',');
-                foreach (var mailCC in ccAddresses.Where(x => !string.IsNullOrEmpty(x)))
-                {
-                    mail.CC.Add(new MailAddress(mailCC));
-                }
-
-                #endregion
-
-                #region Create Mail Variables
-
-                string htmlBody;
-                string subject;
-
-
-                #endregion Create Mail Variables
-
-                #region Set Mail Variable Values
-
-
-                #endregion Set Mail Variable Values
-
-                #region Set Mail Body
-
-                htmlBody = logEmail.Mensaje;
-
-
-                #endregion Set Mail Body
-
-                #region Set Mail Subject
-
-                subject = logEmail.Asunto;
-
-                #endregion Set Mail Subject
-
-                #region Get Mail Body embedded images paths
-
-                var rootFolder = AppDomain.CurrentDomain.BaseDirectory;
-                var logopath = Path.Combine(rootFolder, "MailImages/logo.png");
-                var iconpath = Path.Combine(rootFolder, "MailImages/tree-icon.png");
-
-                #endregion Get Mail Body embedded images paths
-
-                #region Set embedded images mail id
-
-                var logo = new LinkedResource(logopath, MediaTypeNames.Image.Jpeg);
-                var treeicon = new LinkedResource(iconpath, MediaTypeNames.Image.Jpeg);
-
-                logo.ContentId = "logo";
-                treeicon.ContentId = "tree-icon";
-
-                #endregion
-
-                #region Set Body and Images
-
-                var html = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
-                html.LinkedResources.Add(logo);
-                html.LinkedResources.Add(treeicon);
-
-                #endregion Set Body and Images
-
-                #region Set values to mail
-
-                mail.Subject = subject;
-                mail.IsBodyHtml = true;
-                mail.AlternateViews.Add(html);
-
-                #endregion Set values to mail
-
-                #region Send Mail
-
-                smtpClient.SendAsync(mail, null);
-
-                smtpClient.SendCompleted += (s, e) =>
-                {
-                    if (e.Error != null)
-                    {
-                        logEmail.Estado = "FALLO";
-                        logEmail.Descripcion = e.Error.InnerException.Message;
-                    }
-                    else
-                    {
-                        logEmail.Estado = "OK";
-                        logEmail.Descripcion = "";
-                    }
-                    logEmailRepository.Update(logEmail);
-                    smtpClient.Dispose();
-                    mail.Dispose();
-                    logo.Dispose();
-                    treeicon.Dispose();
                 };
 
                 #endregion Send Mail

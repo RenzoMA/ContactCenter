@@ -33,10 +33,9 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Insert(LogEmail datos)
         {
-            String sql = "INSERT INTO TH_LOG_EMAIL(IdReserva, CorreoDestino, CorreoDestinoCC, FechaEnvio, Mensaje, Asunto, Estado, Descripcion,FechaCrea,UserCrea,Intento) " +
-                         "VALUES(@idReserva, @correoDestino, @correoDestinoCC, @fechaEnvio, @mensaje, @asunto, @estado, @descripcion, @fechaCrea, @userCrea, @intento)";
+            String sql = "INSERT INTO TH_LOG_EMAIL(CorreoDestino, CorreoDestinoCC, FechaEnvio, Mensaje, Asunto, Estado, Descripcion,FechaCrea,UserCrea,Intento) " +
+                         "VALUES(@correoDestino, @correoDestinoCC, @fechaEnvio, @mensaje, @asunto, @estado, @descripcion, @fechaCrea, @userCrea, @intento)";
 
-            OleDbParameter idReserva = UtilDA.SetParameters("@idReserva", OleDbType.Integer, datos.Reserva.IdReserva);
             OleDbParameter correoDestino = UtilDA.SetParameters("@correoDestino", OleDbType.VarChar, datos.CorreoDestino);
             OleDbParameter correoDestinoCC = UtilDA.SetParameters("@correoDestinoCC", OleDbType.VarChar, datos.CorreoDestinoCC);
             OleDbParameter fechaEnvio = UtilDA.SetParameters("@fechaEnvio", OleDbType.Date, datos.FechaEnvio);
@@ -48,7 +47,8 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter usuarioCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter intento = UtilDA.SetParameters("@intento", OleDbType.Integer, datos.Intento);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, idReserva, correoDestino, correoDestinoCC, fechaEnvio, mensaje, asunto, estado, descripcion, fechaCreacion, usuarioCrea, intento);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, correoDestino, correoDestinoCC, fechaEnvio, mensaje, asunto, estado, descripcion, fechaCreacion, usuarioCrea, intento);
+            
         }
 
         public bool Update(LogEmail datos)

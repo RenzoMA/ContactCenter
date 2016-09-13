@@ -20,11 +20,6 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             logEmailRepository = _logEmailRepository;
         }
 
-        public void ResendEmail(LogEmail logEmail)
-        {
-            MailHelper.ResendEmail(logEmail , logEmailRepository);
-        }
-
         public void SendMail(IList<string> mailAdresses, IList<string> ccAddresses, Enumerables.MailAction action, Reserva reserva, byte[] attachment = null)
         {
             MailHelper.SendMail(mailAdresses, ccAddresses, action, logEmailRepository, reserva, attachment);
