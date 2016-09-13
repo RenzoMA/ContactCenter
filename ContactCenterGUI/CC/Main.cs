@@ -145,10 +145,7 @@ namespace ContactCenterGUI.CC
 
             if (result == DialogResult.Yes)
             {
-                this.Hide();
-                Login login = new Login();
-                login.ShowDialog();
-                
+                this.Close();
             }
             else 
             {

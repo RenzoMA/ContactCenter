@@ -47,7 +47,7 @@ namespace ContactCenterGUI.Teatros.Reportes
         private void rptReservas_Load(object sender, EventArgs e)
         {
             PopulateCombobox();
-            this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)

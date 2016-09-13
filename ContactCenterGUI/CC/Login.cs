@@ -94,7 +94,9 @@ namespace ContactCenterGUI.CC
                     this.Hide();
                     Main main = new Main();
                     main.ShowDialog();
-                    this.Close();
+                    this.txtPassword.Text = "";
+                    this.txtUser.Text = "";
+                    this.Show();
                 }
                 else
                 {

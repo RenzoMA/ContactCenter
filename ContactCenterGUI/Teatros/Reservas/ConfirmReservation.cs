@@ -269,12 +269,35 @@ namespace ContactCenterGUI.Teatros.Reservas
                 cboPromocion.DisplayMember = "Descripcion";
             }
         }
-        private void cboTipoPromocion_SelectionChangeCommitted(object sender, EventArgs e)
+
+        private void timerConfirmacion_Tick(object sender, EventArgs e)
         {
-            EnlazarDetallePromocion();
+            span = span.Subtract(TimeSpan.Parse("00:00:01"));
+            lblTiempo.Text = span.ToString();
+            if (span.Hours == 0 && span.Minutes == 0 && span.Seconds <= 0)
+            {
+                this.Close();
+            }
         }
 
-        private void btnAplicarDescuento_Click(object sender, EventArgs e)
+    
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Seguro que desea salir? \nLos datos de la reserva se perderán", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void btnAplicarDescuento_Click_1(object sender, EventArgs e)
         {
             if (!AplicoPromocion)
             {
@@ -315,31 +338,9 @@ namespace ContactCenterGUI.Teatros.Reservas
             }
         }
 
-        private void timerConfirmacion_Tick(object sender, EventArgs e)
+        private void cboTipoPromocion_SelectionChangeCommitted_1(object sender, EventArgs e)
         {
-            span = span.Subtract(TimeSpan.Parse("00:00:01"));
-            lblTiempo.Text = span.ToString();
-            if (span.Hours == 0 && span.Minutes == 0 && span.Seconds <= 0)
-            {
-                this.Close();
-            }
-        }
-
-    
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("¿Seguro que desea salir? \nLos datos de la reserva se perderán", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-
-            }
-            else
-            {
-
-            }
+            EnlazarDetallePromocion();
         }
     }
 }

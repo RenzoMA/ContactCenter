@@ -37,7 +37,7 @@ namespace ContactCenterGUI.Teatros.Reportes
 
         private void RptReservasObra_Load(object sender, EventArgs e)
         {
-            this.rptcro.RefreshReport();
+            //this.rptcro.RefreshReport();
         }
 
         private void btnGenRep_Click_1(object sender, EventArgs e)

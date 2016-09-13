@@ -28,7 +28,7 @@ namespace ContactCenterGUI.Teatros.Reportes
 
         private void RptRankingCliente_Load(object sender, EventArgs e)
         {
-            this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
