@@ -57,6 +57,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
                     obra.Image = photo_aray;
                 }
 
+
                 try { 
                 if (servicio.InsertarObra(obra) == true)
                 {
