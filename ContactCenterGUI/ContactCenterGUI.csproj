@@ -172,6 +172,11 @@
     <Compile Include="CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.Designer.cs">
       <DependentUpon>ManAplicacionEditar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Escenarios\Vista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,11 +355,11 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Helpers\HelperTeatro.cs" />
-    <Compile Include="Teatros\Reservas\SentEmails.cs">
+    <Compile Include="Teatros\Reservas\ReportesTeatro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\Reservas\SentEmails.Designer.cs">
-      <DependentUpon>SentEmails.cs</DependentUpon>
+    <Compile Include="Teatros\Reservas\ReportesTeatro.Designer.cs">
+      <DependentUpon>ReportesTeatro.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CC\Loader.resx">
       <DependentUpon>Loader.cs</DependentUpon>
@@ -454,14 +459,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Teatros\Escenarios\TheaterPirandello.resx">
       <DependentUpon>TheaterPirandello.cs</DependentUpon>
     </EmbeddedResource>
@@ -471,8 +471,8 @@
     <EmbeddedResource Include="Teatros\Reservas\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\Reservas\SentEmails.resx">
-      <DependentUpon>SentEmails.cs</DependentUpon>
+    <EmbeddedResource Include="Teatros\Reservas\ReportesTeatro.resx">
+      <DependentUpon>ReportesTeatro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
@@ -521,6 +521,7 @@
   <ItemGroup>
     <Content Include="cc.ico" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\loaderkd.gif" />
     <None Include="Resources\PN_PLATEA1.jpg" />
     <None Include="Resources\PN_MEZZANINE.jpg" />
     <None Include="Resources\PIRANDELLO_PLATEA.jpg" />

@@ -40,6 +40,8 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.cboEstado = new MetroFramework.Controls.MetroComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnActualizar
@@ -51,7 +53,7 @@
             this.btnActualizar.Primary = true;
             this.btnActualizar.Size = new System.Drawing.Size(168, 40);
             this.btnActualizar.TabIndex = 32;
-            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.Text = "Editar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
@@ -82,9 +84,9 @@
             this.materialLabel3.Location = new System.Drawing.Point(22, 242);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(60, 19);
+            this.materialLabel3.Size = new System.Drawing.Size(64, 19);
             this.materialLabel3.TabIndex = 30;
-            this.materialLabel3.Text = "Horario";
+            this.materialLabel3.Text = "Horario:";
             // 
             // cboDia
             // 
@@ -114,9 +116,9 @@
             this.Día.Location = new System.Drawing.Point(22, 196);
             this.Día.MouseState = MaterialSkin.MouseState.HOVER;
             this.Día.Name = "Día";
-            this.Día.Size = new System.Drawing.Size(31, 19);
+            this.Día.Size = new System.Drawing.Size(35, 19);
             this.Día.TabIndex = 28;
-            this.Día.Text = "Día";
+            this.Día.Text = "Día:";
             // 
             // materialLabel4
             // 
@@ -128,9 +130,9 @@
             this.materialLabel4.Location = new System.Drawing.Point(22, 99);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(53, 19);
+            this.materialLabel4.Size = new System.Drawing.Size(57, 19);
             this.materialLabel4.TabIndex = 27;
-            this.materialLabel4.Text = "Teatro";
+            this.materialLabel4.Text = "Teatro:";
             // 
             // cboTeatro
             // 
@@ -160,9 +162,9 @@
             this.materialLabel1.Location = new System.Drawing.Point(22, 148);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(40, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(44, 19);
             this.materialLabel1.TabIndex = 24;
-            this.materialLabel1.Text = "Obra";
+            this.materialLabel1.Text = "Obra:";
             // 
             // materialLabel2
             // 
@@ -174,9 +176,9 @@
             this.materialLabel2.Location = new System.Drawing.Point(22, 291);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(56, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(60, 19);
             this.materialLabel2.TabIndex = 33;
-            this.materialLabel2.Text = "Estado";
+            this.materialLabel2.Text = "Estado:";
             // 
             // cboEstado
             // 
@@ -190,11 +192,24 @@
             this.cboEstado.Size = new System.Drawing.Size(177, 29);
             this.cboEstado.TabIndex = 34;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox1.Location = new System.Drawing.Point(276, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 35;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // ManFuncionEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 387);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cboEstado);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.btnActualizar);
@@ -213,6 +228,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar función";
             this.Load += new System.EventHandler(this.ManFuncionEdit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,5 +247,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MetroFramework.Controls.MetroComboBox cboEstado;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

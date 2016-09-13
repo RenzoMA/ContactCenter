@@ -85,5 +85,9 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

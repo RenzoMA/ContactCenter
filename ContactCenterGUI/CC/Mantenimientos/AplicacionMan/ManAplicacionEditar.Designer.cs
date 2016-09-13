@@ -38,7 +38,9 @@
             this.pcbImagen = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnCargarImagen = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialRaisedButton1
@@ -155,11 +157,24 @@
             this.btnCargarImagen.UseVisualStyleBackColor = true;
             this.btnCargarImagen.Click += new System.EventHandler(this.btnCargarImagen_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox1.Location = new System.Drawing.Point(393, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 63;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // ManAplicacionEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(466, 393);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCargarImagen);
             this.Controls.Add(this.pcbImagen);
             this.Controls.Add(this.materialLabel3);
@@ -176,6 +191,7 @@
             this.Text = "Editar aplicación";
             this.Load += new System.EventHandler(this.ManAplicacionEditar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +207,6 @@
         private System.Windows.Forms.PictureBox pcbImagen;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnCargarImagen;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -30,14 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RptReservas));
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.cboTeatro = new MetroFramework.Controls.MetroComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dtpFechaObra = new System.Windows.Forms.DateTimePicker();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.lblTituloTeatro = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboTeatro2 = new System.Windows.Forms.ComboBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.dtpFechaObraFin = new System.Windows.Forms.DateTimePicker();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblTituloTeatro = new MaterialSkin.Controls.MaterialLabel();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.dtpFechaObra = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroComboBox1
@@ -49,16 +53,6 @@
             this.metroComboBox1.Size = new System.Drawing.Size(170, 29);
             this.metroComboBox1.TabIndex = 4;
             // 
-            // cboTeatro
-            // 
-            this.cboTeatro.FontSize = MetroFramework.MetroLinkSize.Small;
-            this.cboTeatro.FormattingEnabled = true;
-            this.cboTeatro.ItemHeight = 19;
-            this.cboTeatro.Location = new System.Drawing.Point(139, 84);
-            this.cboTeatro.Name = "cboTeatro";
-            this.cboTeatro.Size = new System.Drawing.Size(170, 25);
-            this.cboTeatro.TabIndex = 5;
-            // 
             // reportViewer1
             // 
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -67,57 +61,34 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ContactCenterGUI.Teatros.Reportes.rptReservas.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(24, 184);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1252, 454);
+            this.reportViewer1.Size = new System.Drawing.Size(872, 454);
             this.reportViewer1.TabIndex = 6;
             // 
-            // dtpFechaObra
+            // groupBox1
             // 
-            this.dtpFechaObra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaObra.Location = new System.Drawing.Point(139, 115);
-            this.dtpFechaObra.Name = "dtpFechaObra";
-            this.dtpFechaObra.Size = new System.Drawing.Size(170, 20);
-            this.dtpFechaObra.TabIndex = 7;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.cboTeatro2);
+            this.groupBox1.Controls.Add(this.materialLabel2);
+            this.groupBox1.Controls.Add(this.dtpFechaObraFin);
+            this.groupBox1.Controls.Add(this.materialLabel1);
+            this.groupBox1.Controls.Add(this.lblTituloTeatro);
+            this.groupBox1.Controls.Add(this.materialRaisedButton1);
+            this.groupBox1.Controls.Add(this.dtpFechaObra);
+            this.groupBox1.Location = new System.Drawing.Point(24, 73);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(872, 100);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros";
             // 
-            // materialRaisedButton1
+            // cboTeatro2
             // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(345, 88);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(168, 40);
-            this.materialRaisedButton1.TabIndex = 10;
-            this.materialRaisedButton1.Text = "Generar";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
-            // 
-            // lblTituloTeatro
-            // 
-            this.lblTituloTeatro.AutoSize = true;
-            this.lblTituloTeatro.BackColor = System.Drawing.Color.Transparent;
-            this.lblTituloTeatro.Depth = 0;
-            this.lblTituloTeatro.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblTituloTeatro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTituloTeatro.Location = new System.Drawing.Point(37, 84);
-            this.lblTituloTeatro.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblTituloTeatro.Name = "lblTituloTeatro";
-            this.lblTituloTeatro.Size = new System.Drawing.Size(57, 19);
-            this.lblTituloTeatro.TabIndex = 11;
-            this.lblTituloTeatro.Text = "Teatro:";
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(37, 111);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(94, 19);
-            this.materialLabel1.TabIndex = 12;
-            this.materialLabel1.Text = "Fecha inicio:";
+            this.cboTeatro2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTeatro2.FormattingEnabled = true;
+            this.cboTeatro2.Location = new System.Drawing.Point(170, 14);
+            this.cboTeatro2.Name = "cboTeatro2";
+            this.cboTeatro2.Size = new System.Drawing.Size(170, 21);
+            this.cboTeatro2.TabIndex = 22;
             // 
             // materialLabel2
             // 
@@ -126,34 +97,90 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(37, 137);
+            this.materialLabel2.Location = new System.Drawing.Point(68, 69);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(74, 19);
-            this.materialLabel2.TabIndex = 14;
+            this.materialLabel2.TabIndex = 21;
             this.materialLabel2.Text = "Fecha fin:";
             // 
             // dtpFechaObraFin
             // 
             this.dtpFechaObraFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaObraFin.Location = new System.Drawing.Point(139, 141);
+            this.dtpFechaObraFin.Location = new System.Drawing.Point(170, 73);
             this.dtpFechaObraFin.Name = "dtpFechaObraFin";
             this.dtpFechaObraFin.Size = new System.Drawing.Size(170, 20);
-            this.dtpFechaObraFin.TabIndex = 13;
+            this.dtpFechaObraFin.TabIndex = 20;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(68, 43);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(94, 19);
+            this.materialLabel1.TabIndex = 19;
+            this.materialLabel1.Text = "Fecha inicio:";
+            // 
+            // lblTituloTeatro
+            // 
+            this.lblTituloTeatro.AutoSize = true;
+            this.lblTituloTeatro.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloTeatro.Depth = 0;
+            this.lblTituloTeatro.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblTituloTeatro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTituloTeatro.Location = new System.Drawing.Point(68, 16);
+            this.lblTituloTeatro.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblTituloTeatro.Name = "lblTituloTeatro";
+            this.lblTituloTeatro.Size = new System.Drawing.Size(57, 19);
+            this.lblTituloTeatro.TabIndex = 18;
+            this.lblTituloTeatro.Text = "Teatro:";
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(568, 33);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(168, 40);
+            this.materialRaisedButton1.TabIndex = 17;
+            this.materialRaisedButton1.Text = "Generar";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click_1);
+            // 
+            // dtpFechaObra
+            // 
+            this.dtpFechaObra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaObra.Location = new System.Drawing.Point(170, 47);
+            this.dtpFechaObra.Name = "dtpFechaObra";
+            this.dtpFechaObra.Size = new System.Drawing.Size(170, 20);
+            this.dtpFechaObra.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox1.Location = new System.Drawing.Point(838, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // RptReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1288, 650);
-            this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.dtpFechaObraFin);
-            this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.lblTituloTeatro);
-            this.Controls.Add(this.materialRaisedButton1);
-            this.Controls.Add(this.dtpFechaObra);
+            this.ClientSize = new System.Drawing.Size(908, 650);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
-            this.Controls.Add(this.cboTeatro);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RptReservas";
@@ -161,21 +188,25 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de reservas";
             this.Load += new System.EventHandler(this.rptReservas_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroComboBox cboTeatro;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.DateTimePicker dtpFechaObra;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
-        private MaterialSkin.Controls.MaterialLabel lblTituloTeatro;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.DateTimePicker dtpFechaObraFin;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel lblTituloTeatro;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private System.Windows.Forms.DateTimePicker dtpFechaObra;
+        private System.Windows.Forms.ComboBox cboTeatro2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

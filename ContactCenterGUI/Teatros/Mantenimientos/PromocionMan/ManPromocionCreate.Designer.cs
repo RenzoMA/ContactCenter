@@ -48,6 +48,8 @@
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.cboObra = new MetroFramework.Controls.MetroComboBox();
             this.cboTeatro = new MetroFramework.Controls.MetroComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpFechaFin
@@ -293,11 +295,24 @@
             this.cboTeatro.TabIndex = 68;
             this.cboTeatro.SelectionChangeCommitted += new System.EventHandler(this.cboTeatro_SelectionChangeCommitted);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox1.Location = new System.Drawing.Point(380, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 74;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // ManPromocionCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 500);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.cboFuncion);
             this.Controls.Add(this.materialLabel8);
@@ -324,6 +339,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Promoción";
             this.Load += new System.EventHandler(this.ManPromocionCreate_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,5 +366,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
         private MetroFramework.Controls.MetroComboBox cboObra;
         private MetroFramework.Controls.MetroComboBox cboTeatro;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

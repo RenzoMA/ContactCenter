@@ -33,8 +33,8 @@ namespace ContactCenterGUI.Teatros.Reportes
             {
                 try
                 {
-                    cboTeatro.DataSource = servicio.ListarTeatros();
-                    cboTeatro.DisplayMember = "Nombre";
+                    cboTeatro2.DataSource = servicio.ListarTeatros();
+                    cboTeatro2.DisplayMember = "Nombre";
                 }
                 catch (Exception ex)
                 {
@@ -47,20 +47,26 @@ namespace ContactCenterGUI.Teatros.Reportes
         private void rptReservas_Load(object sender, EventArgs e)
         {
             PopulateCombobox();
-            this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+          
+
+        }
+
+        private void materialRaisedButton1_Click_1(object sender, EventArgs e)
         {
             try
             {
                 fechaObra = dtpFechaObra.Value.Date;
                 fechaObraFin = dtpFechaObraFin.Value.Date.AddDays(1);
-                teatro = cboTeatro.SelectedItem as Teatro;
+                teatro = cboTeatro2.SelectedItem as Teatro;
                 List<Reserva> lista = new List<Reserva>();
                 using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
-                    lista = servicio.ReporteReservas(teatro.IdTeatro, fechaObra,fechaObraFin);
+                    lista = servicio.ReporteReservas(teatro.IdTeatro, fechaObra, fechaObraFin);
                 }
 
                 reportViewer1.ProcessingMode = ProcessingMode.Local;
@@ -86,7 +92,11 @@ namespace ContactCenterGUI.Teatros.Reportes
             {
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

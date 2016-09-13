@@ -137,5 +137,20 @@ namespace ContactCenterGUI.CC
             this.Controls.Add(lbl);
             CoordSiguienteElemento(positionX, positionY);
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+            DialogResult result = MessageBox.Show("¿Seguro que desea salir?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else 
+            {
+
+            }
+        }
     }
 }

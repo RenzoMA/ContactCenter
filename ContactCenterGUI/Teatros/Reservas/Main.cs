@@ -43,26 +43,34 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         private void btnGenerarReporte_Click(object sender, EventArgs e)
         {
-            RptReservas rptRes = new RptReservas();
-            rptRes.ShowDialog();
+            this.Hide();
+            ReportesTeatro rptTeatro = new ReportesTeatro();
+            rptTeatro.ShowDialog();
+            this.Show();
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FindReservation findReservation = new FindReservation();
             findReservation.ShowDialog();
+            this.Show();
         }
 
         private void btnReporteCliente_Click(object sender, EventArgs e)
         {
+            this.Hide();
             RptRankingCliente rptRankingCliente = new RptRankingCliente();
             rptRankingCliente.ShowDialog();
+            this.Show();
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             RptReservasObra rptReservaObra = new RptReservasObra();
             rptReservaObra.ShowDialog();
+            this.Show();
         }
 
         private void btnCargaMasiva_Click(object sender, EventArgs e)
@@ -142,9 +150,6 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         }
 
-        private void Main_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

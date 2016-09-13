@@ -41,8 +41,10 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevaObra = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbFiltroObra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbFiltroObra
@@ -170,15 +172,28 @@
             this.btnNuevaObra.Primary = true;
             this.btnNuevaObra.Size = new System.Drawing.Size(168, 40);
             this.btnNuevaObra.TabIndex = 14;
-            this.btnNuevaObra.Text = "Nueva Obra";
+            this.btnNuevaObra.Text = "Nuevo";
             this.btnNuevaObra.UseVisualStyleBackColor = true;
             this.btnNuevaObra.Click += new System.EventHandler(this.btnNuevaObra_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox1.Location = new System.Drawing.Point(623, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ManObra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 595);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnNuevaObra);
             this.Controls.Add(this.dgvObras);
             this.Controls.Add(this.gbFiltroObra);
@@ -191,6 +206,7 @@
             this.gbFiltroObra.ResumeLayout(false);
             this.gbFiltroObra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -209,5 +225,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

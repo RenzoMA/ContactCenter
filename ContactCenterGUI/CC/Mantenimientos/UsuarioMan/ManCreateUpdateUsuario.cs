@@ -281,5 +281,10 @@ namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
                 EnlazarListaPermiso();
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

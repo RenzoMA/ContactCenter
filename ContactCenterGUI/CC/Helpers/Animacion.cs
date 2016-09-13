@@ -21,7 +21,7 @@ namespace ContactCenterGUI.CC.Helpers
                 int coordenadaY = form.Height / 2;
 
                 pictureBox = new PictureBox();
-                pictureBox.Image = Properties.Resources.loading;
+                pictureBox.Image = Properties.Resources.loaderkd;
                 pictureBox.BackColor = Color.Transparent;
                 pictureBox.Location = new Point(coordenadaX - loaderWidth/2, coordenadaY - loaderHeight/2);
                 pictureBox.Name = "loader";

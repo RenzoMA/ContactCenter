@@ -37,6 +37,8 @@
             this.lblZona = new System.Windows.Forms.Label();
             this.lblObra = new System.Windows.Forms.Label();
             this.lblTeatro = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lstAsientos
@@ -118,11 +120,24 @@
             this.lblTeatro.Size = new System.Drawing.Size(0, 13);
             this.lblTeatro.TabIndex = 19;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox1.Location = new System.Drawing.Point(270, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // ManAsientoZona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 470);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblZona);
             this.Controls.Add(this.lblObra);
             this.Controls.Add(this.lblTeatro);
@@ -132,10 +147,13 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lstAsientos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ManAsientoZona";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ASIGNAR ASIENTOS POR ZONA";
             this.Load += new System.EventHandler(this.ManAsientoZona_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,5 +169,6 @@
         private System.Windows.Forms.Label lblZona;
         private System.Windows.Forms.Label lblObra;
         private System.Windows.Forms.Label lblTeatro;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

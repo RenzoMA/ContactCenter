@@ -41,7 +41,7 @@ namespace ContactCenterGUI.CC
         {
             //lblMensaje.Text = "Contraseña incorrecta";
             //lblMensaje.ForeColor = Color.Red;
-            MessageBox.Show("Contraseña incorrecta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Usuario o contraseña incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public Login()
@@ -94,7 +94,9 @@ namespace ContactCenterGUI.CC
                     this.Hide();
                     Main main = new Main();
                     main.ShowDialog();
-                    this.Close();
+                    this.txtPassword.Text = "";
+                    this.txtUser.Text = "";
+                    this.Show();
                 }
                 else
                 {
@@ -134,9 +136,13 @@ namespace ContactCenterGUI.CC
             return true;
         }
 
-        private void Login_Load(object sender, EventArgs e)
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if (Convert.ToString(e.KeyChar) == "\r")
+            {
+                IniciarSesion();
+            }
         }
     }
 }

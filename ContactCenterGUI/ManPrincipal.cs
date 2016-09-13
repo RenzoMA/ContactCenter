@@ -90,5 +90,10 @@ namespace ContactCenterGUI
                 this.Show();
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

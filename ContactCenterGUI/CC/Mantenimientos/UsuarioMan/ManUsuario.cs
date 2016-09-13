@@ -62,5 +62,10 @@ namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

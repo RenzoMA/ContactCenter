@@ -44,8 +44,10 @@
             this.cboObra = new MetroFramework.Controls.MetroComboBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnCrear = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncion)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvFuncion
@@ -140,7 +142,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Depth = 0;
-            this.btnBuscar.Location = new System.Drawing.Point(469, 19);
+            this.btnBuscar.Location = new System.Drawing.Point(461, 48);
             this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Primary = true;
@@ -160,9 +162,9 @@
             this.materialLabel4.Location = new System.Drawing.Point(35, 36);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(53, 19);
+            this.materialLabel4.Size = new System.Drawing.Size(57, 19);
             this.materialLabel4.TabIndex = 14;
-            this.materialLabel4.Text = "Teatro";
+            this.materialLabel4.Text = "Teatro:";
             // 
             // cboTeatro
             // 
@@ -193,9 +195,9 @@
             this.materialLabel1.Location = new System.Drawing.Point(35, 85);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(40, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(44, 19);
             this.materialLabel1.TabIndex = 10;
-            this.materialLabel1.Text = "Obra";
+            this.materialLabel1.Text = "Obra:";
             // 
             // btnCrear
             // 
@@ -206,15 +208,28 @@
             this.btnCrear.Primary = true;
             this.btnCrear.Size = new System.Drawing.Size(168, 40);
             this.btnCrear.TabIndex = 16;
-            this.btnCrear.Text = "Crear";
+            this.btnCrear.Text = "Nuevo";
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox1.Location = new System.Drawing.Point(608, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ManFuncion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 573);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvFuncion);
@@ -228,6 +243,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncion)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -249,5 +265,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Horario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

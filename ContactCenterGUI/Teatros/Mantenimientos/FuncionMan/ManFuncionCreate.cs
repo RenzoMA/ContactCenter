@@ -147,5 +147,10 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
             cboDia.DropDownStyle = ComboBoxStyle.DropDown;
             cboDia.Text = "Seleccione día";
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

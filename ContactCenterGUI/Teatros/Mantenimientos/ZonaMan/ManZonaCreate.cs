@@ -174,5 +174,10 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ZonaMan
                 MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
