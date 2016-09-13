@@ -361,6 +361,12 @@
     <Compile Include="Teatros\Reservas\ReportesTeatro.Designer.cs">
       <DependentUpon>ReportesTeatro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Reservas\SentEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Reservas\SentEmail.Designer.cs">
+      <DependentUpon>SentEmail.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CC\Loader.resx">
       <DependentUpon>Loader.cs</DependentUpon>
     </EmbeddedResource>
@@ -473,6 +479,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reservas\ReportesTeatro.resx">
       <DependentUpon>ReportesTeatro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Reservas\SentEmail.resx">
+      <DependentUpon>SentEmail.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
