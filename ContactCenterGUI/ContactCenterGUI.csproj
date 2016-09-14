@@ -315,6 +315,12 @@
     <Compile Include="Teatros\Escenarios\TheaterLaPlaza.Designer.cs">
       <DependentUpon>TheaterLaPlaza.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Reservas\FowardEmails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Reservas\FowardEmails.Designer.cs">
+      <DependentUpon>FowardEmails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Reservas\NewReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -454,6 +460,9 @@
     <EmbeddedResource Include="Teatros\Escenarios\TheaterLaPlaza.resx">
       <DependentUpon>TheaterLaPlaza.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Reservas\FowardEmails.resx">
+      <DependentUpon>FowardEmails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reservas\NewReservation.resx">
       <DependentUpon>NewReservation.cs</DependentUpon>
     </EmbeddedResource>
@@ -531,6 +540,8 @@
   <ItemGroup>
     <Content Include="cc.ico" />
     <Content Include="MetroFramework.txt" />
+    <Content Include="Resources\-forward-icon.png" />
+    <Content Include="Resources\mensaje.png" />
     <None Include="Resources\PIRANDELLO_PLATEA_2.jpg" />
     <None Include="Resources\PIRANDELLO_PLATEA_1.jpg" />
     <None Include="Resources\PIRANDELLO_MEZZANINE_2.jpg" />

@@ -30,12 +30,13 @@
         {
             this.dgvEmail = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.IdLogEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Intento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Reenviar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Mensaje = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +56,7 @@
             this.FechaInicio,
             this.Intento,
             this.Estado,
-            this.Reenviar});
+            this.Mensaje});
             this.dgvEmail.Location = new System.Drawing.Point(12, 134);
             this.dgvEmail.Name = "dgvEmail";
             this.dgvEmail.ReadOnly = true;
@@ -63,6 +64,7 @@
             this.dgvEmail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmail.Size = new System.Drawing.Size(701, 423);
             this.dgvEmail.TabIndex = 14;
+            this.dgvEmail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmail_CellContentClick);
             // 
             // pictureBox1
             // 
@@ -75,6 +77,13 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Reenviar";
+            this.dataGridViewImageColumn1.Image = global::ContactCenterGUI.Properties.Resources._forward_icon;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 140;
             // 
             // IdLogEmail
             // 
@@ -112,12 +121,13 @@
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
-            // Reenviar
+            // Mensaje
             // 
-            this.Reenviar.HeaderText = "Reenviar";
-            this.Reenviar.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
-            this.Reenviar.Name = "Reenviar";
-            this.Reenviar.ReadOnly = true;
+            this.Mensaje.HeaderText = "Mensaje";
+            this.Mensaje.Image = global::ContactCenterGUI.Properties.Resources.mensaje;
+            this.Mensaje.Name = "Mensaje";
+            this.Mensaje.ReadOnly = true;
+            this.Mensaje.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // SentEmail
             // 
@@ -142,11 +152,12 @@
 
         private System.Windows.Forms.DataGridView dgvEmail;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdLogEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaFin;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Intento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewImageColumn Reenviar;
+        private System.Windows.Forms.DataGridViewImageColumn Mensaje;
     }
 }

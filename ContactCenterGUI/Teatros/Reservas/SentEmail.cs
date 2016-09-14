@@ -46,5 +46,15 @@ namespace ContactCenterGUI.Teatros.Reservas
         {
             this.Close();
         }
+
+        private void dgvEmail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 5)
+            {
+                LogEmail logEmail = (LogEmail)dgvEmail.CurrentRow.DataBoundItem;
+                FowardEmails fowardEmail = new FowardEmails(logEmail);
+                fowardEmail.ShowDialog();
+            }
+        }
     }
 }

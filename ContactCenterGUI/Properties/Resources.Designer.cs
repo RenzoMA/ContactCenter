@@ -63,6 +63,16 @@ namespace ContactCenterGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _forward_icon {
+            get {
+                object obj = ResourceManager.GetObject("-forward-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap atrás_galería_3 {
             get {
                 object obj = ResourceManager.GetObject("atrás-galería-3", resourceCulture);
@@ -226,6 +236,16 @@ namespace ContactCenterGUI.Properties {
         internal static System.Drawing.Bitmap logo_oficial_2 {
             get {
                 object obj = ResourceManager.GetObject("logo_oficial_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mensaje {
+            get {
+                object obj = ResourceManager.GetObject("mensaje", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

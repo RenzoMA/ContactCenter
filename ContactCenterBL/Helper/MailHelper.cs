@@ -58,7 +58,7 @@ namespace ContactCenterBL.Helper
 
                 string htmlBody;
                 string subject;
-                var nombre = reserva.Cliente.Nombre + reserva.Cliente.ApellidoPaterno + reserva.Cliente.ApellidoPaterno;
+                var nombre = reserva.Cliente.Nombre + " " + reserva.Cliente.ApellidoPaterno + " " + reserva.Cliente.Apellidomaterno;
                 var obra = reserva.Obra.Nombre;
                 var fecha = reserva.FechaReserva;
                 var teatro = reserva.Obra.Teatro.Nombre;
