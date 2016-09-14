@@ -16,6 +16,8 @@ using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
 using ContactCenterBL.UtilExcel;
 using ContactCenterBL.Helper;
 using ContactCenterCommon;
+
+
 namespace ContactCenterBL.BusinessServices.CC.TH
 
 {
@@ -54,7 +56,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
 
         public bool InsertarReserva(Reserva reserva,Cliente cliente)
         {
-            List<string> email;
+            
             Cliente tempCliente = clienteRepository.GetByTelefono(cliente.Telefono);
 
             if (tempCliente == null)
@@ -70,8 +72,12 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             
             if (reservaRepository.Insert(reserva))
             {
-                email = reserva.Cliente.Correo.Split(',').ToList();
-                MailHelper.SendMail(email, new List<String>(), Enumerables.MailAction.TeatroConfirmacionReserva, logEmailRepository, reserva, null);
+                List<string> email;
+                email = reserva.Cliente.Correo.Replace(';',',').Split(',').ToList();
+                List<string> emailCC;
+                emailCC = Sesion.aplicacion.Correo.Replace(';', ',').Split(',').ToList();
+
+                MailHelper.SendMail(email, emailCC, Enumerables.MailAction.TeatroConfirmacionReserva, logEmailRepository, reserva, null);
 
                 return true;
             }

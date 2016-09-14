@@ -69,14 +69,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTiempo = new System.Windows.Forms.Label();
             this.timerConfirmacion = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnLogin = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleAsientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -612,7 +611,7 @@
             this.lblTiempo.BackColor = System.Drawing.Color.Transparent;
             this.lblTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTiempo.ForeColor = System.Drawing.Color.White;
-            this.lblTiempo.Location = new System.Drawing.Point(634, 32);
+            this.lblTiempo.Location = new System.Drawing.Point(533, 32);
             this.lblTiempo.Name = "lblTiempo";
             this.lblTiempo.Size = new System.Drawing.Size(0, 20);
             this.lblTiempo.TabIndex = 1914;
@@ -621,35 +620,24 @@
             // 
             this.timerConfirmacion.Tick += new System.EventHandler(this.timerConfirmacion_Tick);
             // 
-            // pictureBox3
+            // pictureBox2
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.pictureBox3.Location = new System.Drawing.Point(1098, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(26, 21);
-            this.pictureBox3.TabIndex = 1916;
-            this.pictureBox3.TabStop = false;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Depth = 0;
-            this.btnLogin.Location = new System.Drawing.Point(1006, 27);
-            this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Primary = true;
-            this.btnLogin.Size = new System.Drawing.Size(118, 33);
-            this.btnLogin.TabIndex = 1917;
-            this.btnLogin.Text = "Salir";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox2.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox2.Location = new System.Drawing.Point(1099, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1918;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // ConfirmReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 607);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblTiempo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
@@ -670,7 +658,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleAsientos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -711,13 +699,12 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel12;
         private System.Windows.Forms.Label lblTiempo;
         private System.Windows.Forms.Timer timerConfirmacion;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private MaterialSkin.Controls.MaterialRaisedButton btnLogin;
         private System.Windows.Forms.GroupBox groupBox3;
         private MaterialSkin.Controls.MaterialRaisedButton btnAplicarDescuento;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MetroFramework.Controls.MetroComboBox cboPromocion;
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
         private MetroFramework.Controls.MetroComboBox cboTipoPromocion;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

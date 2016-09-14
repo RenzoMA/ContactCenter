@@ -286,17 +286,7 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Seguro que desea salir? \nLos datos de la reserva se perderán", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-
-            }
-            else
-            {
-
-            }
+          
         }
 
         private void btnAplicarDescuento_Click_1(object sender, EventArgs e)
@@ -343,6 +333,13 @@ namespace ContactCenterGUI.Teatros.Reservas
         private void cboTipoPromocion_SelectionChangeCommitted_1(object sender, EventArgs e)
         {
             EnlazarDetallePromocion();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            validaSalida = 1;
+            frmTeatro.Visible = true;
+            this.Close();
         }
     }
 }

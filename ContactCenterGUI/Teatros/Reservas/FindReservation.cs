@@ -11,6 +11,7 @@ using MaterialSkin.Controls;
 using Microsoft.Practices.Unity;
 using ContactCenterServices.ServicioTeatro;
 using ContactCenterServices;
+using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 
 namespace ContactCenterGUI.Teatros.Reservas
 {
@@ -58,25 +59,32 @@ namespace ContactCenterGUI.Teatros.Reservas
         {
             if (e.ColumnIndex == 0)
             {
-                int codigoReserva = Convert.ToInt16(dgvResult.Rows[e.RowIndex].Cells["IdReserva"].Value.ToString());
-                DialogResult dialog = MessageBox.Show("¿Seguro de cancelar la reserva?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialog == DialogResult.Yes)
+                Reserva reserva = (Reserva)dgvResult.CurrentRow.DataBoundItem;
+                if (reserva.EstadoReserva.IdEstadoReserva == 2)
                 {
-                    try
+                    MessageBox.Show("La reserva ya se encuentra anulada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                if (reserva.EstadoReserva.IdEstadoReserva == 1)
+                {
+                    DialogResult dialog = MessageBox.Show("¿Seguro de cancelar la reserva?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialog == DialogResult.Yes)
                     {
-                        if (servicio.CancelarReserva(codigoReserva))
+                        try
                         {
-                            MessageBox.Show("Reserva cancelada correctamente", "Aviso");
-                            Enlazar();
+                            if (servicio.CancelarReserva(reserva.IdReserva))
+                            {
+                                MessageBox.Show("Reserva cancelada correctamente", "Aviso");
+                                Enlazar();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("Ocurrio un error", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -85,6 +93,16 @@ namespace ContactCenterGUI.Teatros.Reservas
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvResult_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            Reserva reserva = (Reserva)dgvResult.Rows[e.RowIndex].DataBoundItem;
+            //MessageBox.Show(reserva.IdReserva.ToString());
+            if (reserva.EstadoReserva.IdEstadoReserva == 2)
+            {
+                dgvResult.Rows[e.RowIndex].Cells[e.ColumnIndex].Style = new DataGridViewCellStyle { ForeColor = Color.Red, BackColor = Color.White };
+            }
         }
     }
 }

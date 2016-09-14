@@ -531,6 +531,14 @@
   <ItemGroup>
     <Content Include="cc.ico" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\PIRANDELLO_PLATEA_2.jpg" />
+    <None Include="Resources\PIRANDELLO_PLATEA_1.jpg" />
+    <None Include="Resources\PIRANDELLO_MEZZANINE_2.jpg" />
+    <None Include="Resources\PIRANDELLO_MEZZANINE_1.jpg" />
+    <None Include="Resources\PJ_PLATEA_2.jpg" />
+    <None Include="Resources\PJ_PLATEA_1.jpg" />
+    <None Include="Resources\PJ_MEZZANINE_2.jpg" />
+    <None Include="Resources\PJ_MEZZANINE_1.jpg" />
     <None Include="Resources\loaderkd.gif" />
     <None Include="Resources\PN_PLATEA1.jpg" />
     <None Include="Resources\PN_MEZZANINE.jpg" />

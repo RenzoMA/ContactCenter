@@ -113,9 +113,6 @@ namespace ContactCenterGUI.Teatros.Helpers
             MaterialRaisedButton btnContinue = (MaterialRaisedButton)GetAll(formTemp, typeof(MaterialRaisedButton)).Where(a => a.Name == "btnContinuar").FirstOrDefault();
             btnContinue.MouseClick += new MouseEventHandler(ConfirmarReserva);
 
-            PictureBox pcBack = (PictureBox)GetAll(formTemp, typeof(PictureBox)).Where(x => x.Name == "btnAtras").FirstOrDefault();
-            pcBack.MouseClick += new MouseEventHandler(CancelarAsientoTotal);
-
             Label btnClose = (Label)GetAll(formTemp, typeof(Label)).Where(d => d.Name == "btnCerrar").FirstOrDefault();
             btnClose.MouseClick += new MouseEventHandler(CancelarAsientoTotal);
 

@@ -47,21 +47,26 @@ namespace ContactCenterGUI.CC.Helpers
 
             String expresion;
             expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            if (Regex.IsMatch(email, expresion))
+            if (email.ToUpper().Trim().Equals(String.Empty))
+            {}
+            else
             {
-                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                if (Regex.IsMatch(email, expresion))
                 {
+                    if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                    {
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese correo correctamente");
+                        e.Cancel = true;
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Ingrese correo correctamente");
                     e.Cancel = true;
                 }
-            }
-            else
-            {
-                MessageBox.Show("Ingrese correo correctamente");
-                e.Cancel = true;
             }
         }
     }

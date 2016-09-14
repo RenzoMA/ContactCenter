@@ -224,7 +224,6 @@ namespace ContactCenterServices.ServicioTeatro
                 obj = _clienteService.GetClienteByTelefono(telefono);
             });
             return obj;
-
         }
 
         public bool InsertarFuncion(Funcion funcion)
