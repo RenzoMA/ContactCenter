@@ -161,13 +161,13 @@ namespace ContactCenterBL.Helper
                     logEmail.UsuarioCreacion = Sesion.usuario.Login;
                     logEmail.Mensaje = htmlBody;
                     logEmail.Intento = 1;
-
+                    logEmail.Descripcion = String.Empty;
                     if (e.Error != null)
                     {
                         logEmail.Estado = "FALLO";
                         logEmail.Descripcion = e.Error.InnerException.Message;
                     }
-                    logEmail.Descripcion = String.Empty;
+                    
                     logEmailRepository.Insert(logEmail);
                     smtpClient.Dispose();
                     mail.Dispose();
