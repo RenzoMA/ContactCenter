@@ -84,7 +84,10 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
         {
             if (txtDescripcionObra.Text.ToUpper().Trim().Equals(string.Empty))
                 return false;
-            
+
+            if (pcbImagen.Image == null)
+                return false;
+
             return true;
 
         }

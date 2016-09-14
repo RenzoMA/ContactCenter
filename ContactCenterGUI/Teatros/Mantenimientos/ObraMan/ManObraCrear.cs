@@ -93,6 +93,8 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
                 return false;
             if (cboTeatroObra.SelectedIndex == 0)
                 return false;
+            if (pcbImagen.Image == null)
+                return false;
 
             return true;
 
