@@ -9,11 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
+using ContactCenterServices;
+using ContactCenterGUI.CC.Helpers;
+using Microsoft.Practices.Unity;
+using System.IO;
+using System.Drawing.Imaging;
+using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
+using ContactCenterServices.ServicioTeatro;
+
 
 namespace ContactCenterGUI.Teatros.Reservas
 {
     public partial class SentEmail : MaterialForm
     {
+        IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
+
         public SentEmail()
         {
             InitializeComponent();
@@ -21,7 +31,15 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         private void SentEmail_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                dgvEmail.AutoGenerateColumns = false;
+                dgvEmail.DataSource = servicio.ListarEmail();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

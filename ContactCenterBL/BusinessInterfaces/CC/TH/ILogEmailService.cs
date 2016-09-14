@@ -13,5 +13,10 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
     {
         void SendMail(IList<string> mailAdresses, IList<string> ccAddresses, Enumerables.MailAction action, Reserva reserva, byte[] attachment = null);
 
+        LogEmail GetById(int id);
+        IList<LogEmail> GetLista();
+        bool Insert(LogEmail datos);
+        bool Update(LogEmail datos);
+
     }
 }

@@ -20,9 +20,29 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             logEmailRepository = _logEmailRepository;
         }
 
+        public LogEmail GetById(int id)
+        {
+            return logEmailRepository.GetById(id);
+        }
+
+        public IList<LogEmail> GetLista()
+        {
+            return logEmailRepository.GetLista();
+        }
+
+        public bool Insert(LogEmail datos)
+        {
+            return logEmailRepository.Insert(datos);
+        }
+
         public void SendMail(IList<string> mailAdresses, IList<string> ccAddresses, Enumerables.MailAction action, Reserva reserva, byte[] attachment = null)
         {
             MailHelper.SendMail(mailAdresses, ccAddresses, action, logEmailRepository, reserva, attachment);
+        }
+
+        public bool Update(LogEmail datos)
+        {
+            return logEmailRepository.Update(datos);
         }
     }
 }

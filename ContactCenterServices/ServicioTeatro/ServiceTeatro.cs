@@ -19,6 +19,7 @@ using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.Entidades.RolBE;
+using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
 
 namespace ContactCenterServices.ServicioTeatro
 {
@@ -34,6 +35,7 @@ namespace ContactCenterServices.ServicioTeatro
         private IPromocionService _promocionService;
         private ITipoPromocionService _tipoPromocionService;
         private IZonaService _zonaService;
+        private ILogEmailService _emailService;
 
         public ServiceTeatro(
             IAsientoService asientoService,
@@ -46,7 +48,8 @@ namespace ContactCenterServices.ServicioTeatro
             IClienteService clienteService,
             IPromocionService promocionService,
             ITipoPromocionService tipoPromocionService,
-            IZonaService zonaService)
+            IZonaService zonaService,
+            ILogEmailService emailService)
         {
             _clienteService = clienteService;
             _asientoService = asientoService;
@@ -57,6 +60,7 @@ namespace ContactCenterServices.ServicioTeatro
             _reservaService = reservaService;
             _tipoPromocionService = tipoPromocionService;
             _zonaService = zonaService;
+            _emailService = emailService;
         }
 
         public void Dispose()
@@ -404,6 +408,23 @@ namespace ContactCenterServices.ServicioTeatro
                 obj = _reservaService.CargaMasiva(path);
             });
             return obj;
+        }
+
+        //Email
+
+        public bool UpdateLogEmail(LogEmail datos)
+        {
+            return _emailService.Update(datos);
+        }
+
+        public IList<LogEmail> ListarEmail()
+        {
+            return _emailService.GetLista();
+        }
+
+        public LogEmail BuscarEmail(int id)
+        {
+            return _emailService.GetById(id);
         }
     }
 }

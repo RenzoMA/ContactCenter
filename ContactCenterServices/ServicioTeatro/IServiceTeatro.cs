@@ -95,6 +95,10 @@ namespace ContactCenterServices.ServicioTeatro
         List<RankingCliente> ObtenerRankingCliente(DateTime fechaInicio, DateTime fechaFin);
         List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin);
 
+        //LogEmail
+        bool UpdateLogEmail(LogEmail datos);
+        IList<LogEmail> ListarEmail();
+        LogEmail BuscarEmail(int id);
         
     }
 }
