@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEmail = new System.Windows.Forms.DataGridView();
             this.IdLogEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +38,8 @@
             this.Error = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Intento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mensaje = new System.Windows.Forms.DataGridViewImageColumn();
+            this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UsuarioCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -46,8 +48,6 @@
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnBorrarFiltros = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UsuarioCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -90,25 +90,6 @@
             this.dgvEmail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmail_CellContentClick);
             this.dgvEmail.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvEmail_CellFormatting);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
-            this.pictureBox1.Location = new System.Drawing.Point(920, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Reenviar";
-            this.dataGridViewImageColumn1.Image = global::ContactCenterGUI.Properties.Resources._forward_icon;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 140;
-            // 
             // IdLogEmail
             // 
             this.IdLogEmail.DataPropertyName = "IdLogEmail";
@@ -137,11 +118,6 @@
             this.UsuarioModificacion.HeaderText = "Usuario Modificacion";
             this.UsuarioModificacion.Name = "UsuarioModificacion";
             this.UsuarioModificacion.ReadOnly = true;
-            this.UsuarioModificacion.Width = 120;
-            this.Intento.DataPropertyName = "Intento";
-            this.Intento.HeaderText = "Intentos";
-            this.Intento.Name = "Intento";
-            this.Intento.ReadOnly = true;
             // 
             // Estado
             // 
@@ -163,7 +139,6 @@
             this.Intento.HeaderText = "Intentos";
             this.Intento.Name = "Intento";
             this.Intento.ReadOnly = true;
-            this.Intento.Width = 50;
             // 
             // Mensaje
             // 
@@ -173,11 +148,25 @@
             this.Mensaje.ReadOnly = true;
             this.Mensaje.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // FechaCreacion
+            // 
+            this.FechaCreacion.DataPropertyName = "FechaCreacion";
+            this.FechaCreacion.HeaderText = "Fecha Creacion";
+            this.FechaCreacion.Name = "FechaCreacion";
+            this.FechaCreacion.ReadOnly = true;
+            // 
+            // UsuarioCreacion
+            // 
+            this.UsuarioCreacion.DataPropertyName = "UsuarioCreacion";
+            this.UsuarioCreacion.HeaderText = "Usuario Creacion";
+            this.UsuarioCreacion.Name = "UsuarioCreacion";
+            this.UsuarioCreacion.ReadOnly = true;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
-            this.pictureBox1.Location = new System.Drawing.Point(650, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(920, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(16, 18);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -261,22 +250,6 @@
             this.btnBorrarFiltros.Text = "Borrar filtros";
             this.btnBorrarFiltros.UseVisualStyleBackColor = true;
             this.btnBorrarFiltros.Click += new System.EventHandler(this.btnBorrarFiltros_Click);
-            // 
-            // FechaCreacion
-            // 
-            this.FechaCreacion.DataPropertyName = "FechaCreacion";
-            this.FechaCreacion.HeaderText = "Fecha Creacion";
-            this.FechaCreacion.Name = "FechaCreacion";
-            this.FechaCreacion.ReadOnly = true;
-            this.FechaCreacion.Width = 120;
-            // 
-            // UsuarioCreacion
-            // 
-            this.UsuarioCreacion.DataPropertyName = "UsuarioCreacion";
-            this.UsuarioCreacion.HeaderText = "Usuario Creacion";
-            this.UsuarioCreacion.Name = "UsuarioCreacion";
-            this.UsuarioCreacion.ReadOnly = true;
-            this.UsuarioCreacion.Width = 120;
             // 
             // SentEmail
             // 

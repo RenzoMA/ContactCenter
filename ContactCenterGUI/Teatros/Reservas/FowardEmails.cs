@@ -71,8 +71,26 @@ namespace ContactCenterGUI.Teatros.Reservas
         }
         private void btnReenviar_Click(object sender, EventArgs e)
         {
-            CapturarDatos();
-            ReenviarCorreo();
+            if (ValidarDatos())
+            {
+                CapturarDatos();
+                ReenviarCorreo();
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los campos", "Aviso",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private bool ValidarDatos()
+        {
+            if (txtAsunto.Text.Trim().Equals(String.Empty))
+                return false;
+            if (txtCorreoDestino.Text.Trim().Equals(String.Empty))
+                return false;
+            if (txtCorreoDestinoCC.Text.Trim().Equals(String.Empty))
+                return false;
+            return true;
         }
 
         public void CapturarDatos()

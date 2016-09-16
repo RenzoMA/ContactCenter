@@ -162,7 +162,8 @@ namespace ContactCenterDA.Repositories.CC.TH
                         FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]),
                         UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]),
                         FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]),
-                        UsuarioModificacion = DataConvert.ToString(dtr["UserMod"])
+                        UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]),
+                        IdObra = DataConvert.ToInt(dtr["IdObra"])
                     };
                     ListaLogEmail.Add(objLogEmail);
                 }
