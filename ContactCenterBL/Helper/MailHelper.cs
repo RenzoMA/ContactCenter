@@ -13,13 +13,20 @@ using ContactCenterCommon;
 using System.ComponentModel;
 using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
+using System.Drawing;
+using ContactCenterBE.CC.TH.Entidades.ObraBE;
+using System.Windows.Forms;
 
 namespace ContactCenterBL.Helper
 {
     public static class MailHelper
     {
+        
+
         public static void SendMail(IList<string> mailAdresses, IList<string> ccAddresses, Enumerables.MailAction action, ILogEmailRepository logEmailRepository, Reserva reserva, byte[] attachment = null)
         {
+            ContactCenterDA.Repositories.CC.TH.ObraRepository  obraRepository = new ContactCenterDA.Repositories.CC.TH.ObraRepository() ;
+            
             try
             {
                 var smtpClient = new SmtpClient();
@@ -63,8 +70,8 @@ namespace ContactCenterBL.Helper
                 var fecha = reserva.FechaReserva;
                 var teatro = reserva.Obra.Teatro.Nombre;
                 var hora = reserva.Horario;
-                //var totalObras
-                //var zona = reserva.Obra.
+                var totalObras = reserva.Asientos.Count();
+                //var zona = reserva.Obra.Teatro.
                 var ubicacion = reserva.Asientos;
                 var precio = reserva.PrecioTotal;
 
@@ -86,8 +93,8 @@ namespace ContactCenterBL.Helper
                         htmlBody = htmlBody.Replace("%Fecha", fecha.ToShortDateString());
                         htmlBody = htmlBody.Replace("%Obra", obra);
                         htmlBody = htmlBody.Replace("%Teatro", teatro);
-                        //htmlBody = htmlBody.Replace("%Zona", zona);
-                        //htmlBody = htmlBody.Replace("%Zona", zona);
+                        htmlBody = htmlBody.Replace("%Total", totalObras.ToString());
+                        //htmlBody = htmlBody.Replace("%Ubicacion", zona);
                         htmlBody = htmlBody.Replace("%Ubicacion", ubicacion);
                         htmlBody = htmlBody.Replace("%Precio", precio.ToString());
 
@@ -114,26 +121,24 @@ namespace ContactCenterBL.Helper
 
                 #region Get Mail Body embedded images paths
 
-                //var rootFolder = AppDomain.CurrentDomain.BaseDirectory;
-                //var logopath = Path.Combine(rootFolder, "MailImages/logo.png");
-                //var iconpath = Path.Combine(rootFolder, "MailImages/tree-icon.png");
 
+               Byte[] ba = obraRepository.GetImage(reserva.Obra.IdObra);
+               MemoryStream ms = new MemoryStream(ba);
+                
                 #endregion Get Mail Body embedded images paths
 
                 #region Set embedded images mail id
-               // var logo = new LinkedResource(logopath, MediaTypeNames.Image.Jpeg);
-                //var treeicon = new LinkedResource(iconpath, MediaTypeNames.Image.Jpeg);
+                   
+                var logo = new LinkedResource(ms, MediaTypeNames.Image.Jpeg);
 
-                //logo.ContentId = "logo";
-                //treeicon.ContentId = "tree-icon";
+                logo.ContentId = "%Imagen";
 
                 #endregion
 
                 #region Set Body and Images
 
                 var html = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
-                //html.LinkedResources.Add(logo);
-                //html.LinkedResources.Add(treeicon);
+                html.LinkedResources.Add(logo);
 
                 #endregion Set Body and Images
 
@@ -147,7 +152,7 @@ namespace ContactCenterBL.Helper
 
                 #region Send Mail
 
-                smtpClient.SendAsync(mail, null);
+               smtpClient.SendAsync(mail, null);
 
                 smtpClient.SendCompleted += (s, e) =>
                 {
@@ -166,8 +171,9 @@ namespace ContactCenterBL.Helper
                     {
                         logEmail.Estado = "FALLO";
                         logEmail.Descripcion = e.Error.InnerException.Message;
+
                     }
-                    
+
                     logEmailRepository.Insert(logEmail);
                     smtpClient.Dispose();
                     mail.Dispose();
@@ -180,7 +186,7 @@ namespace ContactCenterBL.Helper
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                MessageBox.Show("No se envió el correo. Error " + "\n" + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
