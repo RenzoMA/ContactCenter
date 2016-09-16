@@ -24,11 +24,13 @@ namespace ContactCenterGUI.Teatros.Reservas
     {
         IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
         DateTime fechaInicio, fechaFin;
+        List<LogEmail> listaCorreoFecha;
 
         public SentEmail()
         {
             InitializeComponent();
-            
+            fechaInicio = dtpFechaInicio.Value.Date;
+            fechaFin = dtpFechaFin.Value.Date.AddDays(1).AddSeconds(-1);
         }
 
         private void SentEmail_Load(object sender, EventArgs e)
@@ -36,7 +38,7 @@ namespace ContactCenterGUI.Teatros.Reservas
             try
             {
                 dgvEmail.AutoGenerateColumns = false;
-                dgvEmail.DataSource = servicio.ListarEmail();
+                EnlazarGrilla();
             }
             catch (Exception ex)
             {
@@ -51,24 +53,28 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         private void dgvEmail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 6)
+            if(e.ColumnIndex == 7)
             {
                 LogEmail logEmail = (LogEmail)dgvEmail.CurrentRow.DataBoundItem;
                 FowardEmails fowardEmail = new FowardEmails(logEmail);
                 fowardEmail.ShowDialog();
+                EnlazarGrilla();
             }
         }
 
         private void dgvEmail_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             LogEmail logEmail = (LogEmail)dgvEmail.Rows[e.RowIndex].DataBoundItem;
-            //MessageBox.Show(reserva.IdReserva.ToString());
             if (logEmail.Estado == "FALLO")
             {
                 dgvEmail.Rows[e.RowIndex].Cells[e.ColumnIndex].Style = new DataGridViewCellStyle { ForeColor = Color.Red, BackColor = Color.White };
             }
         }
-
+        private void EnlazarGrilla()
+        {
+            listaCorreoFecha = servicio.ListaCorreoFechas(fechaInicio, fechaFin);
+            dgvEmail.DataSource = listaCorreoFecha;
+        }
         private void btnBorrarFiltros_Click(object sender, EventArgs e)
         {
             dgvEmail.DataSource = servicio.ListarEmail();
@@ -77,17 +83,14 @@ namespace ContactCenterGUI.Teatros.Reservas
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             fechaInicio = dtpFechaInicio.Value.Date;
-            fechaFin = dtpFechaFin.Value.Date;
-            List<LogEmail> listaCorreoFecha;
-
+            fechaFin = dtpFechaFin.Value.Date.AddDays(1).AddSeconds(-1);
             if(fechaInicio > fechaFin)
             {
                 MessageBox.Show("Seleccionar una rango de fechas válidas", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                listaCorreoFecha = servicio.ListaCorreoFechas(fechaInicio, fechaFin);
-                dgvEmail.DataSource = listaCorreoFecha;
+                EnlazarGrilla();
             }
         }
     }

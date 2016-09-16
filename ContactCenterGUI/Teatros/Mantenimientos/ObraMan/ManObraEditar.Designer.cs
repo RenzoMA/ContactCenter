@@ -73,14 +73,14 @@
             this.gbDatosObra.Controls.Add(this.cboEstadoObra);
             this.gbDatosObra.Location = new System.Drawing.Point(12, 77);
             this.gbDatosObra.Name = "gbDatosObra";
-            this.gbDatosObra.Size = new System.Drawing.Size(444, 619);
+            this.gbDatosObra.Size = new System.Drawing.Size(444, 758);
             this.gbDatosObra.TabIndex = 18;
             this.gbDatosObra.TabStop = false;
             this.gbDatosObra.Text = "Datos";
             // 
             // btnCargarImagen
             // 
-            this.btnCargarImagen.Location = new System.Drawing.Point(388, 585);
+            this.btnCargarImagen.Location = new System.Drawing.Point(387, 720);
             this.btnCargarImagen.Name = "btnCargarImagen";
             this.btnCargarImagen.Size = new System.Drawing.Size(25, 23);
             this.btnCargarImagen.TabIndex = 66;
@@ -92,7 +92,7 @@
             // 
             this.pcbImagen.Location = new System.Drawing.Point(172, 394);
             this.pcbImagen.Name = "pcbImagen";
-            this.pcbImagen.Size = new System.Drawing.Size(241, 185);
+            this.pcbImagen.Size = new System.Drawing.Size(240, 320);
             this.pcbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbImagen.TabIndex = 65;
             this.pcbImagen.TabStop = false;
@@ -261,7 +261,7 @@
             // btnAceptarObra
             // 
             this.btnAceptarObra.Depth = 0;
-            this.btnAceptarObra.Location = new System.Drawing.Point(303, 702);
+            this.btnAceptarObra.Location = new System.Drawing.Point(303, 841);
             this.btnAceptarObra.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAceptarObra.Name = "btnAceptarObra";
             this.btnAceptarObra.Primary = true;
@@ -291,7 +291,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 754);
+            this.ClientSize = new System.Drawing.Size(483, 893);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gbDatosObra);
             this.Controls.Add(this.btnAceptarObra);
