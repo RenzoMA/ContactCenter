@@ -46,7 +46,7 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         private void btnReenviar_Click(object sender, EventArgs e)
         {
-            servicio.ReenviarCorreo(txtCorreoDestino.Text.Trim(),txtCorreoDestinoCC.Text.Trim(),webBrowser1.DocumentText,txtAsunto.Text);
+            servicio.ReenviarCorreo(txtCorreoDestino.Text.Trim(),txtCorreoDestinoCC.Text.Trim(),webBrowser1.DocumentText,txtAsunto.Text, logEmail);
         }
     }
 }

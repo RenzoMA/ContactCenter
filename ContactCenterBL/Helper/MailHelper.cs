@@ -219,7 +219,7 @@ namespace ContactCenterBL.Helper
             }
         }
 
-        public static void SendMail(IList<string> mailAdresses, IList<string> ccAddresses, string originalHtml,string originalSubject, ILogEmailRepository logEmailRepository, byte[] attachment = null)
+        public static void SendMail(IList<string> mailAdresses, IList<string> ccAddresses, string originalHtml,string originalSubject, ILogEmailRepository logEmailRepository, byte[] attachment, LogEmail logEmail)
         {
             ContactCenterDA.Repositories.CC.TH.ObraRepository obraRepository = new ContactCenterDA.Repositories.CC.TH.ObraRepository();
             try
@@ -278,10 +278,6 @@ namespace ContactCenterBL.Helper
 
                 #region Get Mail Body embedded images paths
 
-
-
-
-
                 #endregion Get Mail Body embedded images paths
 
                 #region Set embedded images mail id
@@ -309,16 +305,16 @@ namespace ContactCenterBL.Helper
 
                 smtpClient.SendCompleted += (s, e) =>
                 {
-                    LogEmail logEmail = new LogEmail();
+                    //LogEmail logEmail = new LogEmail();
                     logEmail.Asunto = subject;
                     logEmail.CorreoDestino = string.Join(",", mailAdresses.Select(x => x.ToString()).ToArray());
                     logEmail.CorreoDestinoCC = string.Join(",", ccAddresses.Select(x => x.ToString()).ToArray());
                     logEmail.Estado = "OK";
                     logEmail.FechaEnvio = DateTime.Now;
-                    logEmail.FechaCreacion = DateTime.Now;
-                    logEmail.UsuarioCreacion = Sesion.usuario.Login;
+                    logEmail.FechaModificacion = DateTime.Now;
+                    logEmail.UsuarioModificacion = Sesion.usuario.Login;
                     logEmail.Mensaje = htmlBody;
-                    logEmail.Intento = 1;
+                    logEmail.Intento = logEmail.Intento + 1;
                     logEmail.Descripcion = String.Empty;
                     if (e.Error != null)
                     {
@@ -327,7 +323,7 @@ namespace ContactCenterBL.Helper
 
                     }
 
-                    logEmailRepository.Insert(logEmail);
+                    logEmailRepository.Update(logEmail);
                     smtpClient.Dispose();
                     mail.Dispose();
                 };
@@ -337,8 +333,21 @@ namespace ContactCenterBL.Helper
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se envió el correo. Error " + "\n" + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logEmail.CorreoDestino = string.Join(",", mailAdresses.Select(x => x.ToString()).ToArray());
+                logEmail.CorreoDestinoCC = string.Join(",", ccAddresses.Select(x => x.ToString()).ToArray());
+                logEmail.Estado = "OK";
+                logEmail.FechaEnvio = DateTime.Now;
+                logEmail.FechaCreacion = DateTime.Now;
+                logEmail.UsuarioCreacion = Sesion.usuario.Login;
+                logEmail.Intento = logEmail.Intento + 1;
+                logEmail.Estado = "FALLO";
+                logEmail.Descripcion = ex.Message;
+
+                logEmailRepository.Update(logEmail);
+
+                MessageBox.Show("No se reenvió el correo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
         }
     }
 }

@@ -113,18 +113,19 @@ namespace ContactCenterDA.Repositories.CC.TH
         public bool Update(LogEmail datos)
         {
             String sql = "UPDATE TH_LOG_EMAIL SET CorreoDestino = @correoDestino, CorreoDestinoCC = @correoDestinoCC, Estado = @estado, Intento = @intento, " + 
-                         "FechaEnvio = @fechaEnvio, Descripcion = @descripcion, FechaMod = @fechaMod, UserMod = @usuarioMod";
+                         "FechaEnvio = @fechaEnvio, Descripcion = @descripcion, FechaMod = @fechaMod, UserMod = @usuarioMod WHERE IDLOGEMAIL = @idLog ";
 
             OleDbParameter correoDestino = UtilDA.SetParameters("@correoDestino", OleDbType.VarChar, datos.CorreoDestino);
             OleDbParameter correoDestinoCC = UtilDA.SetParameters("@correoDestinoCC", OleDbType.VarChar, datos.CorreoDestinoCC);
-            OleDbParameter fechaEnvio = UtilDA.SetParameters("@fechaEnvio", OleDbType.Date, datos.FechaEnvio);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
             OleDbParameter intento = UtilDA.SetParameters("@intento", OleDbType.Integer, datos.Intento);
+            OleDbParameter fechaEnvio = UtilDA.SetParameters("@fechaEnvio", OleDbType.Date, datos.FechaEnvio);
             OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
-            OleDbParameter fechaMod = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
-            OleDbParameter usuarioMod = UtilDA.SetParameters("@intento", OleDbType.Integer, datos.Intento);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@userCrea", OleDbType.Date, DateTime.Now);
+            OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
+            OleDbParameter idLog = UtilDA.SetParameters("@idLog", OleDbType.Integer, datos.IdLog);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, correoDestino, correoDestinoCC, fechaEnvio, estado, intento, descripcion, fechaMod, usuarioMod);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, correoDestino, correoDestinoCC, estado, intento,fechaEnvio, descripcion, fechaMod, usuarioMod,idLog);
         }
     }
 }

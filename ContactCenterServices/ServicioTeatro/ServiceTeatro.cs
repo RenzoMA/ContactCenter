@@ -427,9 +427,9 @@ namespace ContactCenterServices.ServicioTeatro
             return _emailService.GetById(id);
         }
 
-        public bool ReenviarCorreo(string v1, string v2, string documentText, string v3)
+        public bool ReenviarCorreo(string v1, string v2, string documentText, string v3, LogEmail logEmail)
         {
-            return _emailService.ReenviarCorreo(v1, v2, documentText, v3);
+            return _emailService.ReenviarCorreo(v1, v2, documentText, v3, logEmail);
         }
     }
 }
