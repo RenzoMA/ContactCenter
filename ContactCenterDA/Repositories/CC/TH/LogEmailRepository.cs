@@ -55,7 +55,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public IList<LogEmail> GetLista()
         {
-            String sql = "SELECT * FROM TH_LOG_EMAIL";
+            String sql = "SELECT * FROM TH_LOG_EMAIL ORDER BY FECHACREA DESC";
 
             LogEmail objLogEmail = null;
             List<LogEmail> ListaLogEmail = new List<LogEmail>();

@@ -15,6 +15,7 @@ using ContactCenterBE.CC.Entidades.AplicacionBE;
 using ContactCenterBE.CC.Entidades.RolBE;
 using ContactCenterGUI.CC.Helpers;
 using ContactCenterServices;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
 {
@@ -31,6 +32,7 @@ namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
             InitializeComponent();
             this.isCreating = isCreating;
             this.usuario = usuario;
+            
         }
         private bool ValidarContraseñas()
         {

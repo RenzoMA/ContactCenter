@@ -18,6 +18,7 @@ using ContactCenterGUI.CC.Helpers;
 using ContactCenterGUI.Teatros.Helpers;
 using Microsoft.Practices.Unity;
 using ContactCenterServices;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Reservas
 {
@@ -27,7 +28,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         private Reserva reserva;
 
         public List<AsientoZona> listaAsientoPrecio { get; set; }
-        public List<DetalleReserva> listaDetalle = new List<DetalleReserva>();
+        public List<DetalleReserva> listaDetalle;
         public DetalleReserva detalle;
         public Single precioTotal;
         public Cliente cliente;
@@ -36,10 +37,18 @@ namespace ContactCenterGUI.Teatros.Reservas
         private String asientos;
         private TimeSpan span;
 
+        public static string Telefono = "";
+        public static string Nombre = "";
+        public static string ApellidoPaterno = "";
+        public static string ApellidoMaterno = "";
+        public static string Correo = "";
+        public static string DNI = "";
+
 
         public ConfirmReservation()
         {
             InitializeComponent();
+            
         }
         public ConfirmReservation(Form form,Reserva _reserva,TimeSpan timespan)
         {
@@ -50,6 +59,14 @@ namespace ContactCenterGUI.Teatros.Reservas
             reserva = _reserva;
             frmTeatro = form;
             frmTeatro.Visible = false;
+            pictureBox1.BackColor = ConstanteColor.GetPrimaryColor();
+            txtTelefono.Text = Telefono;
+            txtNombre.Text = Nombre;
+            txtDNI.Text = DNI;
+            txtCorreo.Text = Correo;
+            txtApePat.Text = ApellidoPaterno;
+            txtApeMat.Text = ApellidoMaterno;
+
         }
         public Single CalcularPrecio(List<AsientoZona> lista)
         {
@@ -98,6 +115,7 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         private void AsociarEntidadesReserva()
         {
+            listaDetalle = new List<DetalleReserva>();
             reserva.ListaDetalles = null;
             foreach (AsientoZona ap in listaAsientoPrecio)
             {
@@ -218,7 +236,7 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         private void txtTelefono_Leave(object sender, EventArgs e)
         {
-            ObtenerCliente();
+            //ObtenerCliente();
         }
         private async void ObtenerCliente()
         {
@@ -339,7 +357,21 @@ namespace ContactCenterGUI.Teatros.Reservas
         {
             validaSalida = 1;
             frmTeatro.Visible = true;
+            Nombre = txtNombre.Text.ToUpper().Trim();
+            ApellidoMaterno = txtApeMat.Text.ToUpper().Trim();
+            ApellidoPaterno = txtApePat.Text.ToUpper().Trim();
+            Telefono = txtTelefono.Text.ToUpper().Trim();
+            Correo = txtCorreo.Text.ToUpper().Trim();
+            DNI = txtDNI.Text.ToUpper().Trim();
             this.Close();
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                ObtenerCliente();
+            }
         }
     }
 }

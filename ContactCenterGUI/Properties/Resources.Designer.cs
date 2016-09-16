@@ -233,6 +233,16 @@ namespace ContactCenterGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LOGO_LA_PLAZA_Y_PRODUCTORES {
+            get {
+                object obj = ResourceManager.GetObject("LOGO-LA-PLAZA-Y-PRODUCTORES", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_oficial_2 {
             get {
                 object obj = ResourceManager.GetObject("logo_oficial_2", resourceCulture);

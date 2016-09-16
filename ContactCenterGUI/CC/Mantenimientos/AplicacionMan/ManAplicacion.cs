@@ -13,7 +13,7 @@ using ContactCenterServices;
 using MaterialSkin.Animations;
 using Microsoft.Practices.Unity;
 using ContactCenterBE.CC.Entidades.AplicacionBE;
-
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
 {
@@ -24,6 +24,7 @@ namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
         {
             InitializeComponent();
             dgbAplicacion.AutoGenerateColumns = false;
+            
         }
 
         private void EnlazarGrilla()

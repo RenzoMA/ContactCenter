@@ -17,6 +17,6 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
         IList<LogEmail> GetLista();
         bool Insert(LogEmail datos);
         bool Update(LogEmail datos);
-
+        bool ReenviarCorreo(string v1, string v2, string documentText, string v3);
     }
 }

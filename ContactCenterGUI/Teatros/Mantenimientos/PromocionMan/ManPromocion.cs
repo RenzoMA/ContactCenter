@@ -16,6 +16,7 @@ using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterServices.ServicioTeatro;
 using ContactCenterServices;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
 {
@@ -25,6 +26,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
         public ManPromocion()
         {
             InitializeComponent();
+            
         }
 
         private void ManFuncion_Load(object sender, EventArgs e)

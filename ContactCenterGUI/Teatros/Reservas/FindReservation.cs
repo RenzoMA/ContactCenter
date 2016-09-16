@@ -12,6 +12,7 @@ using Microsoft.Practices.Unity;
 using ContactCenterServices.ServicioTeatro;
 using ContactCenterServices;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Reservas
 {
@@ -26,6 +27,7 @@ namespace ContactCenterGUI.Teatros.Reservas
             InitializeComponent();
             dgvResult.AutoGenerateColumns = false;
             dtpFechaFin.Value = DateTime.Now.AddMonths(1);
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

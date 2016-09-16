@@ -16,6 +16,7 @@ using Microsoft.Practices.Unity;
 using ContactCenterGUI.CC.Helpers;
 using System.Globalization;
 using System.Threading;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
 {
@@ -28,6 +29,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
         {
             this.promocion = promocion;
             InitializeComponent();
+            
         }
         private void LoadData()
         {

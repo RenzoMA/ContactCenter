@@ -18,6 +18,7 @@ using ContactCenterServices.ServicioTeatro;
 using System.Threading;
 using System.Globalization;
 using ContactCenterServices;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
 {
@@ -27,6 +28,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
         public ManPromocionCreate()
         {
             InitializeComponent();
+            
         }
         private void LoadComboTeatro()
         {

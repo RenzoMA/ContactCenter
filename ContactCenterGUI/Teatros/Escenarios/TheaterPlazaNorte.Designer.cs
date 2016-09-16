@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TheaterPlazaNorte));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlSecundary = new System.Windows.Forms.Panel();
             this.lblTiempo = new System.Windows.Forms.Label();
             this.btnContinuar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblTituloTeatro = new MaterialSkin.Controls.MaterialLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.btnMiminizar = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Label();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
@@ -677,8 +677,8 @@
             this.A461 = new System.Windows.Forms.Button();
             this.A460 = new System.Windows.Forms.Button();
             this.timerTeatro = new System.Windows.Forms.Timer(this.components);
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlSecundary.SuspendLayout();
+            this.pnlPrincipal.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnvp)).BeginInit();
@@ -694,18 +694,18 @@
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlSecundary
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.panel1.Controls.Add(this.lblTiempo);
-            this.panel1.Controls.Add(this.btnContinuar);
-            this.panel1.Controls.Add(this.lblTituloTeatro);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1280, 65);
-            this.panel1.TabIndex = 2;
+            this.pnlSecundary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(121)))), ((int)(((byte)(180)))));
+            this.pnlSecundary.Controls.Add(this.lblTiempo);
+            this.pnlSecundary.Controls.Add(this.btnContinuar);
+            this.pnlSecundary.Controls.Add(this.lblTituloTeatro);
+            this.pnlSecundary.Controls.Add(this.pnlPrincipal);
+            this.pnlSecundary.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSecundary.Location = new System.Drawing.Point(0, 0);
+            this.pnlSecundary.Name = "pnlSecundary";
+            this.pnlSecundary.Size = new System.Drawing.Size(1280, 65);
+            this.pnlSecundary.TabIndex = 2;
             // 
             // lblTiempo
             // 
@@ -743,19 +743,19 @@
             this.lblTituloTeatro.TabIndex = 0;
             this.lblTituloTeatro.Text = "Teatro Plaza Norte";
             // 
-            // panel3
+            // pnlPrincipal
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.panel3.Controls.Add(this.btnMiminizar);
-            this.panel3.Controls.Add(this.btnCerrar);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1280, 27);
-            this.panel3.TabIndex = 2;
-            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
-            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
-            this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
+            this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(87)))), ((int)(((byte)(154)))));
+            this.pnlPrincipal.Controls.Add(this.btnMiminizar);
+            this.pnlPrincipal.Controls.Add(this.btnCerrar);
+            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.pnlPrincipal.Name = "pnlPrincipal";
+            this.pnlPrincipal.Size = new System.Drawing.Size(1280, 27);
+            this.pnlPrincipal.TabIndex = 2;
+            this.pnlPrincipal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            this.pnlPrincipal.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
+            this.pnlPrincipal.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
             // btnMiminizar
             // 
@@ -763,7 +763,7 @@
             this.btnMiminizar.AutoSize = true;
             this.btnMiminizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
             this.btnMiminizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
-            this.btnMiminizar.Location = new System.Drawing.Point(1233, 5);
+            this.btnMiminizar.Location = new System.Drawing.Point(1233, 7);
             this.btnMiminizar.Name = "btnMiminizar";
             this.btnMiminizar.Size = new System.Drawing.Size(13, 13);
             this.btnMiminizar.TabIndex = 3;
@@ -8004,7 +8004,7 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1280, 772);
             this.Controls.Add(this.metroTabControl1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlSecundary);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "TheaterPlazaNorte";
@@ -8012,10 +8012,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PlazaNorteTheater";
             this.Load += new System.EventHandler(this.PlazaNorteTheater_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnlSecundary.ResumeLayout(false);
+            this.pnlSecundary.PerformLayout();
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlPrincipal.PerformLayout();
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
@@ -8039,8 +8039,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlSecundary;
+        private System.Windows.Forms.Panel pnlPrincipal;
         private MaterialSkin.Controls.MaterialLabel lblTituloTeatro;
         private MetroFramework.Controls.MetroTabControl metroTabControl1;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEmail = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -36,6 +37,7 @@
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Intento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Error = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mensaje = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -46,7 +48,6 @@
             this.dgvEmail.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvEmail.AllowUserToAddRows = false;
             this.dgvEmail.AllowUserToDeleteRows = false;
-            this.dgvEmail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmail.BackgroundColor = System.Drawing.Color.White;
             this.dgvEmail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvEmail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -56,7 +57,16 @@
             this.FechaInicio,
             this.Intento,
             this.Estado,
+            this.Error,
             this.Mensaje});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmail.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEmail.Location = new System.Drawing.Point(12, 134);
             this.dgvEmail.Name = "dgvEmail";
             this.dgvEmail.ReadOnly = true;
@@ -65,10 +75,11 @@
             this.dgvEmail.Size = new System.Drawing.Size(701, 423);
             this.dgvEmail.TabIndex = 14;
             this.dgvEmail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmail_CellContentClick);
+            this.dgvEmail.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvEmail_CellFormatting);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
             this.pictureBox1.Location = new System.Drawing.Point(650, 2);
             this.pictureBox1.Name = "pictureBox1";
@@ -99,6 +110,7 @@
             this.FechaFin.HeaderText = "Destino";
             this.FechaFin.Name = "FechaFin";
             this.FechaFin.ReadOnly = true;
+            this.FechaFin.Width = 160;
             // 
             // FechaInicio
             // 
@@ -106,6 +118,7 @@
             this.FechaInicio.HeaderText = "Fecha de envío";
             this.FechaInicio.Name = "FechaInicio";
             this.FechaInicio.ReadOnly = true;
+            this.FechaInicio.Width = 140;
             // 
             // Intento
             // 
@@ -113,6 +126,7 @@
             this.Intento.HeaderText = "Intentos";
             this.Intento.Name = "Intento";
             this.Intento.ReadOnly = true;
+            this.Intento.Width = 50;
             // 
             // Estado
             // 
@@ -120,6 +134,14 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
+            this.Estado.Width = 80;
+            // 
+            // Error
+            // 
+            this.Error.DataPropertyName = "Descripcion";
+            this.Error.HeaderText = "Error";
+            this.Error.Name = "Error";
+            this.Error.ReadOnly = true;
             // 
             // Mensaje
             // 
@@ -128,6 +150,7 @@
             this.Mensaje.Name = "Mensaje";
             this.Mensaje.ReadOnly = true;
             this.Mensaje.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Mensaje.Width = 50;
             // 
             // SentEmail
             // 
@@ -158,6 +181,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Intento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Error;
         private System.Windows.Forms.DataGridViewImageColumn Mensaje;
     }
 }

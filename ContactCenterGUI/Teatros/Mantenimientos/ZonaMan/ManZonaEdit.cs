@@ -14,6 +14,7 @@ using MaterialSkin.Controls;
 using ContactCenterServices;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterGUI.CC.Helpers;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.ZonaMan
 {
@@ -26,6 +27,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ZonaMan
             this.zona = zona;
             SetEvents();
             FillData();
+            
 
         }
         public void SetEvents()

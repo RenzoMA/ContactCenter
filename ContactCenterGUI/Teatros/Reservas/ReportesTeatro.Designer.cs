@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportesTeatro));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGenerarReporte = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnReporteCliente = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -37,7 +38,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
             this.pictureBox1.Location = new System.Drawing.Point(265, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -95,6 +96,7 @@
             this.Controls.Add(this.btnReporteCliente);
             this.Controls.Add(this.btnGenerarReporte);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ReportesTeatro";
             this.Sizable = false;

@@ -15,6 +15,7 @@ using Microsoft.Reporting.WinForms;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterServices;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Reportes
 {
@@ -26,6 +27,7 @@ namespace ContactCenterGUI.Teatros.Reportes
         public RptReservas()
         {
             InitializeComponent();
+            
         }
         private void PopulateCombobox()
         {
@@ -61,12 +63,12 @@ namespace ContactCenterGUI.Teatros.Reportes
             try
             {
                 fechaObra = dtpFechaObra.Value.Date;
-                fechaObraFin = dtpFechaObraFin.Value.Date.AddDays(1);
+                fechaObraFin = dtpFechaObraFin.Value.Date;
                 teatro = cboTeatro2.SelectedItem as Teatro;
                 List<DetalleReserva> lista = new List<DetalleReserva>();
                 using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
-                    lista = servicio.ReporteReservas(teatro.IdTeatro, fechaObra, fechaObraFin);
+                    lista = servicio.ReporteReservas(teatro.IdTeatro, fechaObra, fechaObraFin.AddDays(1).AddSeconds(-1));
                 }
 
                 reportViewer1.ProcessingMode = ProcessingMode.Local;

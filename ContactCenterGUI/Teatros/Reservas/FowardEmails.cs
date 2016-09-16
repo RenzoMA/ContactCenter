@@ -43,5 +43,10 @@ namespace ContactCenterGUI.Teatros.Reservas
             txtCorreoDestinoCC.Text = logEmail.CorreoDestinoCC;
             webBrowser1.DocumentText = logEmail.Mensaje;
         }
+
+        private void btnReenviar_Click(object sender, EventArgs e)
+        {
+            servicio.ReenviarCorreo(txtCorreoDestino.Text.Trim(),txtCorreoDestinoCC.Text.Trim(),webBrowser1.DocumentText,txtAsunto.Text);
+        }
     }
 }

@@ -122,7 +122,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
             this.pictureBox1.Location = new System.Drawing.Point(270, 2);
             this.pictureBox1.Name = "pictureBox1";

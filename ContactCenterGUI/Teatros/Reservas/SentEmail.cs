@@ -16,7 +16,7 @@ using System.IO;
 using System.Drawing.Imaging;
 using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
 using ContactCenterServices.ServicioTeatro;
-
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Reservas
 {
@@ -27,6 +27,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         public SentEmail()
         {
             InitializeComponent();
+            
         }
 
         private void SentEmail_Load(object sender, EventArgs e)
@@ -49,11 +50,21 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         private void dgvEmail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 5)
+            if(e.ColumnIndex == 6)
             {
                 LogEmail logEmail = (LogEmail)dgvEmail.CurrentRow.DataBoundItem;
                 FowardEmails fowardEmail = new FowardEmails(logEmail);
                 fowardEmail.ShowDialog();
+            }
+        }
+
+        private void dgvEmail_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            LogEmail logEmail = (LogEmail)dgvEmail.Rows[e.RowIndex].DataBoundItem;
+            //MessageBox.Show(reserva.IdReserva.ToString());
+            if (logEmail.Estado == "FALLO")
+            {
+                dgvEmail.Rows[e.RowIndex].Cells[e.ColumnIndex].Style = new DataGridViewCellStyle { ForeColor = Color.Red, BackColor = Color.White };
             }
         }
     }

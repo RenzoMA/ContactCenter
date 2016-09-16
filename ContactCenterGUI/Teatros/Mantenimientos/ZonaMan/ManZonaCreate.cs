@@ -16,7 +16,7 @@ using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterGUI.CC.Helpers;
-
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.ZonaMan
 {
@@ -37,6 +37,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ZonaMan
             Color color = Color.FromArgb(r, g, b);
             txtDisplayColor.BackColor = color;
             txtPrecioZona.KeyPress += HelperControl.EditTextDecimal;
+            
         }
         private async void CargarTeatros()
         {

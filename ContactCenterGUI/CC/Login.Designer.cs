@@ -35,9 +35,11 @@
             this.txtUser = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.ep1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblMensaje = new MaterialSkin.Controls.MaterialLabel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ep1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +47,7 @@
             // btnLogin
             // 
             this.btnLogin.Depth = 0;
-            this.btnLogin.Location = new System.Drawing.Point(171, 419);
+            this.btnLogin.Location = new System.Drawing.Point(117, 368);
             this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Primary = true;
@@ -59,7 +61,7 @@
             // 
             this.txtPassword.Depth = 0;
             this.txtPassword.Hint = "Contraseña";
-            this.txtPassword.Location = new System.Drawing.Point(101, 259);
+            this.txtPassword.Location = new System.Drawing.Point(118, 306);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPassword.Name = "txtPassword";
@@ -77,7 +79,7 @@
             // 
             this.txtUser.Depth = 0;
             this.txtUser.Hint = "Usuario";
-            this.txtUser.Location = new System.Drawing.Point(101, 196);
+            this.txtUser.Location = new System.Drawing.Point(118, 243);
             this.txtUser.MaxLength = 32767;
             this.txtUser.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtUser.Name = "txtUser";
@@ -98,18 +100,29 @@
             // 
             this.lblMensaje.AutoSize = true;
             this.lblMensaje.Depth = 0;
-            this.lblMensaje.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblMensaje.Location = new System.Drawing.Point(97, 307);
+            this.lblMensaje.Location = new System.Drawing.Point(114, 307);
             this.lblMensaje.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(0, 19);
+            this.lblMensaje.Size = new System.Drawing.Size(0, 18);
             this.lblMensaje.TabIndex = 10;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::ContactCenterGUI.Properties.Resources.LOGO_LA_PLAZA_Y_PRODUCTORES;
+            this.pictureBox3.Location = new System.Drawing.Point(12, 74);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(353, 139);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ContactCenterGUI.Properties.Resources.padlock;
-            this.pictureBox2.Location = new System.Drawing.Point(47, 260);
+            this.pictureBox2.Location = new System.Drawing.Point(64, 307);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(24, 22);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -119,7 +132,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(47, 197);
+            this.pictureBox1.Location = new System.Drawing.Point(64, 244);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 22);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -130,7 +143,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 469);
+            this.ClientSize = new System.Drawing.Size(377, 445);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
@@ -144,6 +158,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             ((System.ComponentModel.ISupportInitialize)(this.ep1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -160,5 +175,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider ep1;
         private MaterialSkin.Controls.MaterialLabel lblMensaje;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

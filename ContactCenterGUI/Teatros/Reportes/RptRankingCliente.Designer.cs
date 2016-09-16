@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.RankingClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RptRankingCliente));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -39,14 +39,11 @@
             this.btnGenerar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.RankingClienteBindingSource)).BeginInit();
+            this.RankingClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RankingClienteBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // RankingClienteBindingSource
-            // 
-            this.RankingClienteBindingSource.DataSource = typeof(ContactCenterBE.CC.TH.Entidades.ClienteBE.RankingCliente);
             // 
             // reportViewer1
             // 
@@ -59,7 +56,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ContactCenterGUI.Teatros.Reportes.RptRankingCliente.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 157);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(811, 419);
+            this.reportViewer1.Size = new System.Drawing.Size(774, 419);
             this.reportViewer1.TabIndex = 14;
             // 
             // groupBox1
@@ -72,7 +69,7 @@
             this.groupBox1.Controls.Add(this.dtpFechaInicio);
             this.groupBox1.Location = new System.Drawing.Point(12, 68);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(811, 83);
+            this.groupBox1.Size = new System.Drawing.Size(774, 83);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -82,12 +79,12 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(58, 45);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(77, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(77, 18);
             this.materialLabel2.TabIndex = 25;
             this.materialLabel2.Text = "Fecha Fin:";
             // 
@@ -104,19 +101,19 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(58, 19);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(94, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(91, 18);
             this.materialLabel1.TabIndex = 23;
             this.materialLabel1.Text = "Fecha Inicio:";
             // 
             // btnGenerar
             // 
             this.btnGenerar.Depth = 0;
-            this.btnGenerar.Location = new System.Drawing.Point(584, 19);
+            this.btnGenerar.Location = new System.Drawing.Point(536, 19);
             this.btnGenerar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Primary = true;
@@ -136,9 +133,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
-            this.pictureBox1.Location = new System.Drawing.Point(760, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(727, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(16, 18);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -146,24 +143,29 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // RankingClienteBindingSource
+            // 
+            this.RankingClienteBindingSource.DataSource = typeof(ContactCenterBE.CC.TH.Entidades.ClienteBE.RankingCliente);
+            // 
             // RptRankingCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 588);
+            this.ClientSize = new System.Drawing.Size(802, 588);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RptRankingCliente";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ranking Cliente";
             this.Load += new System.EventHandler(this.RptRankingCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.RankingClienteBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RankingClienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

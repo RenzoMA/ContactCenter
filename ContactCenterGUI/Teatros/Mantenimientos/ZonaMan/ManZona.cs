@@ -16,6 +16,7 @@ using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterGUI.CC.Helpers;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.ZonaMan
 {
@@ -31,6 +32,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ZonaMan
         {
             InitializeComponent();
             dgvTarifa.AutoGenerateColumns = false;
+            
         }
         private async void CargarTeatros()
         {

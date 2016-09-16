@@ -15,6 +15,7 @@ using Microsoft.Reporting.WinForms;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterServices;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Reportes
 {
@@ -27,6 +28,7 @@ namespace ContactCenterGUI.Teatros.Reportes
         public RptReservasObra()
         {
             InitializeComponent();
+            
         }
 
         

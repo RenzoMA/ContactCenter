@@ -20,7 +20,7 @@ using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using System.Globalization;
 using ContactCenterGUI.CC.Helpers;
 using ContactCenterServices;
-
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Reservas
 {
@@ -44,6 +44,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         public NewReservation()
         {
             InitializeComponent();
+            
         }
 
         private void NewTheater_Load(object sender, EventArgs e)
@@ -70,7 +71,12 @@ namespace ContactCenterGUI.Teatros.Reservas
                 {
                     MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+                ConfirmReservation.ApellidoMaterno = "";
+                ConfirmReservation.ApellidoPaterno = "";
+                ConfirmReservation.Correo = "";
+                ConfirmReservation.DNI = "";
+                ConfirmReservation.Nombre = "";
+                ConfirmReservation.Telefono = "";
                 HelperForm.changeForm(funcion.Obra.Teatro.frmTeatro, "Teatros", true, this, reserva);
             }
             else
