@@ -348,6 +348,5 @@ namespace ContactCenterBL.Helper
                 MessageBox.Show("No se reenvió el correo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        }
     }
 }
