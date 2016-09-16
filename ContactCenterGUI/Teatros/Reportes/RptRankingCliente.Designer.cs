@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RptRankingCliente));
+            this.RankingClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -39,11 +40,14 @@
             this.btnGenerar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.RankingClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.RankingClienteBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RankingClienteBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // RankingClienteBindingSource
+            // 
+            this.RankingClienteBindingSource.DataSource = typeof(ContactCenterBE.CC.TH.Entidades.ClienteBE.RankingCliente);
             // 
             // reportViewer1
             // 
@@ -79,12 +83,12 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(58, 45);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(77, 18);
+            this.materialLabel2.Size = new System.Drawing.Size(77, 19);
             this.materialLabel2.TabIndex = 25;
             this.materialLabel2.Text = "Fecha Fin:";
             // 
@@ -101,12 +105,12 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(58, 19);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(91, 18);
+            this.materialLabel1.Size = new System.Drawing.Size(94, 19);
             this.materialLabel1.TabIndex = 23;
             this.materialLabel1.Text = "Fecha Inicio:";
             // 
@@ -143,10 +147,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // RankingClienteBindingSource
-            // 
-            this.RankingClienteBindingSource.DataSource = typeof(ContactCenterBE.CC.TH.Entidades.ClienteBE.RankingCliente);
-            // 
             // RptRankingCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,10 +162,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ranking Cliente";
             this.Load += new System.EventHandler(this.RptRankingCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.RankingClienteBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RankingClienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -171,7 +171,9 @@
             this.Controls.Add(this.txtCorreoDestinoCC);
             this.Controls.Add(this.txtCorreoDestino);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FowardEmails";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mensaje";
             this.Load += new System.EventHandler(this.FowardEmailcs_Load);

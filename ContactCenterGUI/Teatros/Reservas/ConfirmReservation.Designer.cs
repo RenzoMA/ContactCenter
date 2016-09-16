@@ -63,12 +63,12 @@
             this.lblFecha = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.dgvDetalleAsientos = new System.Windows.Forms.DataGridView();
-            this.lblTiempo = new System.Windows.Forms.Label();
-            this.timerConfirmacion = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Zona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fila = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTiempo = new System.Windows.Forms.Label();
+            this.timerConfirmacion = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -571,6 +571,27 @@
             this.dgvDetalleAsientos.Size = new System.Drawing.Size(314, 212);
             this.dgvDetalleAsientos.TabIndex = 28;
             // 
+            // Zona
+            // 
+            this.Zona.HeaderText = "Zona";
+            this.Zona.Name = "Zona";
+            this.Zona.ReadOnly = true;
+            this.Zona.Width = 215;
+            // 
+            // Fila
+            // 
+            this.Fila.HeaderText = "Fila";
+            this.Fila.Name = "Fila";
+            this.Fila.ReadOnly = true;
+            this.Fila.Width = 45;
+            // 
+            // Asiento
+            // 
+            this.Asiento.HeaderText = "Asiento";
+            this.Asiento.Name = "Asiento";
+            this.Asiento.ReadOnly = true;
+            this.Asiento.Width = 50;
+            // 
             // lblTiempo
             // 
             this.lblTiempo.AutoSize = true;
@@ -597,27 +618,6 @@
             this.pictureBox1.TabIndex = 1918;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // Zona
-            // 
-            this.Zona.HeaderText = "Zona";
-            this.Zona.Name = "Zona";
-            this.Zona.ReadOnly = true;
-            this.Zona.Width = 215;
-            // 
-            // Fila
-            // 
-            this.Fila.HeaderText = "Fila";
-            this.Fila.Name = "Fila";
-            this.Fila.ReadOnly = true;
-            this.Fila.Width = 45;
-            // 
-            // Asiento
-            // 
-            this.Asiento.HeaderText = "Asiento";
-            this.Asiento.Name = "Asiento";
-            this.Asiento.ReadOnly = true;
-            this.Asiento.Width = 50;
             // 
             // ConfirmReservation
             // 

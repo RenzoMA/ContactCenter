@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vista));
             this.label1 = new System.Windows.Forms.Label();
             this.pop = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pop)).BeginInit();
@@ -48,7 +49,6 @@
             // pop
             // 
             this.pop.Dock = System.Windows.Forms.DockStyle.Fill;
-
             this.pop.Location = new System.Drawing.Point(0, 0);
             this.pop.Name = "pop";
             this.pop.Size = new System.Drawing.Size(850, 450);
@@ -64,6 +64,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Vista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vista";
