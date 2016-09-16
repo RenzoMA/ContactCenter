@@ -431,5 +431,10 @@ namespace ContactCenterServices.ServicioTeatro
         {
             return _emailService.ReenviarCorreo(v1, v2, documentText, v3, logEmail);
         }
+
+        public List<LogEmail> ListaCorreoFechas(DateTime fechaIni, DateTime fechaFin)
+        {
+            return _emailService.GetCorreoFechas(fechaIni, fechaFin);
+        }
     }
 }

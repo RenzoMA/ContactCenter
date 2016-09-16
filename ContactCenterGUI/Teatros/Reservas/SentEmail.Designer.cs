@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEmail = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.IdLogEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +37,14 @@
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Error = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mensaje = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnBorrarFiltros = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,6 +54,7 @@
             this.dgvEmail.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvEmail.AllowUserToAddRows = false;
             this.dgvEmail.AllowUserToDeleteRows = false;
+            this.dgvEmail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmail.BackgroundColor = System.Drawing.Color.White;
             this.dgvEmail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvEmail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -59,23 +66,74 @@
             this.Estado,
             this.Error,
             this.Mensaje});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmail.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvEmail.Location = new System.Drawing.Point(12, 134);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmail.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEmail.Location = new System.Drawing.Point(12, 152);
             this.dgvEmail.Name = "dgvEmail";
             this.dgvEmail.ReadOnly = true;
             this.dgvEmail.RowHeadersVisible = false;
             this.dgvEmail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmail.Size = new System.Drawing.Size(701, 423);
+            this.dgvEmail.Size = new System.Drawing.Size(701, 405);
             this.dgvEmail.TabIndex = 14;
             this.dgvEmail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmail_CellContentClick);
             this.dgvEmail.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvEmail_CellFormatting);
+            // 
+            // IdLogEmail
+            // 
+            this.IdLogEmail.DataPropertyName = "IdLogEmail";
+            this.IdLogEmail.HeaderText = "IdEmail";
+            this.IdLogEmail.Name = "IdLogEmail";
+            this.IdLogEmail.ReadOnly = true;
+            this.IdLogEmail.Visible = false;
+            // 
+            // FechaFin
+            // 
+            this.FechaFin.DataPropertyName = "CorreoDestino";
+            this.FechaFin.HeaderText = "Destino";
+            this.FechaFin.Name = "FechaFin";
+            this.FechaFin.ReadOnly = true;
+            // 
+            // FechaInicio
+            // 
+            this.FechaInicio.DataPropertyName = "FechaEnvio";
+            this.FechaInicio.HeaderText = "Fecha de envío";
+            this.FechaInicio.Name = "FechaInicio";
+            this.FechaInicio.ReadOnly = true;
+            // 
+            // Intento
+            // 
+            this.Intento.DataPropertyName = "Intento";
+            this.Intento.HeaderText = "Intentos";
+            this.Intento.Name = "Intento";
+            this.Intento.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Error
+            // 
+            this.Error.DataPropertyName = "Descripcion";
+            this.Error.HeaderText = "Error";
+            this.Error.Name = "Error";
+            this.Error.ReadOnly = true;
+            // 
+            // Mensaje
+            // 
+            this.Mensaje.HeaderText = "Mensaje";
+            this.Mensaje.Image = global::ContactCenterGUI.Properties.Resources.mensaje;
+            this.Mensaje.Name = "Mensaje";
+            this.Mensaje.ReadOnly = true;
+            this.Mensaje.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // pictureBox1
             // 
@@ -96,67 +154,87 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 140;
             // 
-            // IdLogEmail
+            // materialLabel2
             // 
-            this.IdLogEmail.DataPropertyName = "IdLogEmail";
-            this.IdLogEmail.HeaderText = "IdEmail";
-            this.IdLogEmail.Name = "IdLogEmail";
-            this.IdLogEmail.ReadOnly = true;
-            this.IdLogEmail.Visible = false;
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(12, 109);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(77, 19);
+            this.materialLabel2.TabIndex = 29;
+            this.materialLabel2.Text = "Fecha Fin:";
             // 
-            // FechaFin
+            // dtpFechaFin
             // 
-            this.FechaFin.DataPropertyName = "CorreoDestino";
-            this.FechaFin.HeaderText = "Destino";
-            this.FechaFin.Name = "FechaFin";
-            this.FechaFin.ReadOnly = true;
-            this.FechaFin.Width = 160;
+            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFin.Location = new System.Drawing.Point(112, 109);
+            this.dtpFechaFin.Name = "dtpFechaFin";
+            this.dtpFechaFin.Size = new System.Drawing.Size(170, 20);
+            this.dtpFechaFin.TabIndex = 28;
             // 
-            // FechaInicio
+            // materialLabel1
             // 
-            this.FechaInicio.DataPropertyName = "FechaEnvio";
-            this.FechaInicio.HeaderText = "Fecha de envío";
-            this.FechaInicio.Name = "FechaInicio";
-            this.FechaInicio.ReadOnly = true;
-            this.FechaInicio.Width = 140;
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(12, 83);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(94, 19);
+            this.materialLabel1.TabIndex = 27;
+            this.materialLabel1.Text = "Fecha Inicio:";
             // 
-            // Intento
+            // dtpFechaInicio
             // 
-            this.Intento.DataPropertyName = "Intento";
-            this.Intento.HeaderText = "Intentos";
-            this.Intento.Name = "Intento";
-            this.Intento.ReadOnly = true;
-            this.Intento.Width = 50;
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(112, 83);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(170, 20);
+            this.dtpFechaInicio.TabIndex = 26;
             // 
-            // Estado
+            // btnBuscar
             // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Width = 80;
+            this.btnBuscar.Depth = 0;
+            this.btnBuscar.Location = new System.Drawing.Point(315, 83);
+            this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Primary = true;
+            this.btnBuscar.Size = new System.Drawing.Size(168, 40);
+            this.btnBuscar.TabIndex = 30;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // Error
+            // btnBorrarFiltros
             // 
-            this.Error.DataPropertyName = "Descripcion";
-            this.Error.HeaderText = "Error";
-            this.Error.Name = "Error";
-            this.Error.ReadOnly = true;
-            // 
-            // Mensaje
-            // 
-            this.Mensaje.HeaderText = "Mensaje";
-            this.Mensaje.Image = global::ContactCenterGUI.Properties.Resources.mensaje;
-            this.Mensaje.Name = "Mensaje";
-            this.Mensaje.ReadOnly = true;
-            this.Mensaje.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Mensaje.Width = 50;
+            this.btnBorrarFiltros.Depth = 0;
+            this.btnBorrarFiltros.Location = new System.Drawing.Point(498, 83);
+            this.btnBorrarFiltros.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBorrarFiltros.Name = "btnBorrarFiltros";
+            this.btnBorrarFiltros.Primary = true;
+            this.btnBorrarFiltros.Size = new System.Drawing.Size(215, 40);
+            this.btnBorrarFiltros.TabIndex = 31;
+            this.btnBorrarFiltros.Text = "Borrar filtros";
+            this.btnBorrarFiltros.UseVisualStyleBackColor = true;
+            this.btnBorrarFiltros.Click += new System.EventHandler(this.btnBorrarFiltros_Click);
             // 
             // SentEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 569);
+            this.Controls.Add(this.btnBorrarFiltros);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.dtpFechaFin);
+            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.dtpFechaInicio);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvEmail);
             this.MaximizeBox = false;
@@ -168,6 +246,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -183,5 +262,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Error;
         private System.Windows.Forms.DataGridViewImageColumn Mensaje;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.DateTimePicker dtpFechaFin;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
+        private MaterialSkin.Controls.MaterialRaisedButton btnBuscar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnBorrarFiltros;
     }
 }
