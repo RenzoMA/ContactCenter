@@ -101,6 +101,6 @@ namespace ContactCenterServices.ServicioTeatro
         bool UpdateLogEmail(LogEmail datos);
         IList<LogEmail> ListarEmail();
         LogEmail BuscarEmail(int id);
-        
+        List<LogEmail> ListaCorreoFechas(DateTime fechaIni, DateTime fechaFin);
     }
 }

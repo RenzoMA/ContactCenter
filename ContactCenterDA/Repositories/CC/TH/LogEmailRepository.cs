@@ -8,6 +8,7 @@ using System.Data.OleDb;
 using System.Data;
 using ContactCenterDA.Common;
 using ContactCenterCommon;
+using ContactCenterBE.Base;
 
 namespace ContactCenterDA.Repositories.CC.TH
 {
@@ -54,14 +55,18 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         }
 
-        public IList<LogEmail> GetLista()
+        public List<LogEmail> GetCorreoFechas(DateTime fechaInicio, DateTime fechaFin)
         {
-            String sql = "SELECT * FROM TH_LOG_EMAIL ORDER BY FECHACREA DESC";
+            String sql = "SELECT * FROM TH_LOG_EMAIL WHERE FechaCrea BETWEEN  @fechaInicio AND @fechaFin ORDER BY FECHACREA DESC";
+
+            OleDbParameter pFecha = UtilDA.SetParameters("@fechaInicio", OleDbType.Date, fechaInicio);
+            OleDbParameter pFechaFin = UtilDA.SetParameters("@fechaFin", OleDbType.Date, fechaFin);
 
             LogEmail objLogEmail = null;
+
             List<LogEmail> ListaLogEmail = new List<LogEmail>();
 
-            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx))
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pFecha, pFechaFin))
             {
                 while (dtr.Read())
                 {
@@ -89,7 +94,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 
             UtilDA.Close(cnx);
             return ListaLogEmail;
-       }
+        }
 
 
         public bool Insert(LogEmail datos)
@@ -129,6 +134,42 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter idLog = UtilDA.SetParameters("@idLog", OleDbType.Integer, datos.IdLog);
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, correoDestino, correoDestinoCC, estado, intento,fechaEnvio, descripcion, fechaMod, usuarioMod,idLog);
+        }
+
+        public IList<LogEmail> GetLista()
+        {
+            String sql = "SELECT * FROM TH_LOG_EMAIL ORDER BY FECHACREA DESC";
+
+            LogEmail objLogEmail = null;
+            List<LogEmail> ListaLogEmail = new List<LogEmail>();
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx))
+            {
+                while (dtr.Read())
+                {
+                    objLogEmail = new LogEmail()
+                    {
+
+                        IdLog = DataConvert.ToInt(dtr["IdLogEmail"]),
+                        CorreoDestino = DataConvert.ToString(dtr["CorreoDestino"]),
+                        CorreoDestinoCC = DataConvert.ToString(dtr["CorreoDestinoCC"]),
+                        FechaEnvio = DataConvert.ToDateTime(dtr["FechaEnvio"]),
+                        Mensaje = DataConvert.ToString(dtr["Mensaje"]),
+                        Asunto = DataConvert.ToString(dtr["Asunto"]),
+                        Estado = DataConvert.ToString(dtr["Estado"]),
+                        Descripcion = DataConvert.ToString(dtr["Descripcion"]),
+                        Intento = DataConvert.ToInt(dtr["Intento"]),
+                        FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]),
+                        UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]),
+                        FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]),
+                        UsuarioModificacion = DataConvert.ToString(dtr["UserMod"])
+                    };
+                    ListaLogEmail.Add(objLogEmail);
+                }
+            }
+
+            UtilDA.Close(cnx);
+            return ListaLogEmail;
         }
     }
 }

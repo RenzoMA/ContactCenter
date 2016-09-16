@@ -10,6 +10,6 @@ namespace ContactCenterBE.CC.TH.Entidades.LogEmailBE
 {
     public interface ILogEmailRepository : IBaseRepository<LogEmail>
     {
-        
+        List<LogEmail> GetCorreoFechas(DateTime fechaIni, DateTime fechaFin);
     }
 }

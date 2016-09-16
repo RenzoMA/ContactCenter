@@ -25,6 +25,11 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             return logEmailRepository.GetById(id);
         }
 
+        public List<LogEmail> GetCorreoFechas(DateTime fechaInic, DateTime fechaFin)
+        {
+            return logEmailRepository.GetCorreoFechas(fechaInic, fechaFin);
+        }
+
         public IList<LogEmail> GetLista()
         {
             return logEmailRepository.GetLista();

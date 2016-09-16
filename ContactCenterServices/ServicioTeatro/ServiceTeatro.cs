@@ -441,5 +441,10 @@ namespace ContactCenterServices.ServicioTeatro
         {
             return _obraService.GetImage(id);
         }
+
+        public List<LogEmail> ListaCorreoFechas(DateTime fechaIni, DateTime fechaFin)
+        {
+            return _emailService.GetCorreoFechas(fechaIni, fechaFin);
+        }
     }
 }

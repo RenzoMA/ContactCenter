@@ -23,6 +23,7 @@ namespace ContactCenterGUI.Teatros.Reservas
     public partial class SentEmail : MaterialForm
     {
         IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
+        DateTime fechaInicio, fechaFin;
 
         public SentEmail()
         {
@@ -65,6 +66,28 @@ namespace ContactCenterGUI.Teatros.Reservas
             if (logEmail.Estado == "FALLO")
             {
                 dgvEmail.Rows[e.RowIndex].Cells[e.ColumnIndex].Style = new DataGridViewCellStyle { ForeColor = Color.Red, BackColor = Color.White };
+            }
+        }
+
+        private void btnBorrarFiltros_Click(object sender, EventArgs e)
+        {
+            dgvEmail.DataSource = servicio.ListarEmail();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            fechaInicio = dtpFechaInicio.Value.Date;
+            fechaFin = dtpFechaFin.Value.Date;
+            List<LogEmail> listaCorreoFecha;
+
+            if(fechaInicio > fechaFin)
+            {
+                MessageBox.Show("Seleccionar una rango de fechas válidas", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                listaCorreoFecha = servicio.ListaCorreoFechas(fechaInicio, fechaFin);
+                dgvEmail.DataSource = listaCorreoFecha;
             }
         }
     }
