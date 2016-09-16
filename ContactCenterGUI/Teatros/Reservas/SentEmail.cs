@@ -50,7 +50,7 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         private void dgvEmail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 5)
+            if(e.ColumnIndex == 6)
             {
                 LogEmail logEmail = (LogEmail)dgvEmail.CurrentRow.DataBoundItem;
                 FowardEmails fowardEmail = new FowardEmails(logEmail);
