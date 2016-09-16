@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FowardEmails));
             this.txtCorreoDestino = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtCorreoDestinoCC = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -169,6 +170,7 @@
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.txtCorreoDestinoCC);
             this.Controls.Add(this.txtCorreoDestino);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FowardEmails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mensaje";
