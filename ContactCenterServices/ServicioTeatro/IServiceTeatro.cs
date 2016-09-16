@@ -29,6 +29,7 @@ namespace ContactCenterServices.ServicioTeatro
         List<Teatro> ListarTeatros();
         Task<List<Teatro>> ListarTeatrosAsync();
         List<Obra> ListarObraTeatro(int idTeatro);
+        bool ReenviarCorreo(string v1, string v2, string documentText, string v3);
         List<Obra> ComboManGetListaTeatro(int idTeatro);
         List<Funcion> ListarFuncionDiaObra(int dia, int idObra);
         List<Asiento> ListAsientoNoAsignado(int idObra, int idTeatro);
