@@ -132,14 +132,18 @@ namespace ContactCenterBL.Helper
                 #region Set embedded images mail id
                    
                 var logo = new LinkedResource(ms, MediaTypeNames.Image.Jpeg);
+                
 
-                logo.ContentId = "%Imagen";
+                logo.ContentId = "ImagenObra";
+                //logo.TransferEncoding = TransferEncoding.Base64;
 
                 #endregion
 
                 #region Set Body and Images
 
                 var html = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
+                //html.TransferEncoding = TransferEncoding.Base64;
+
                 html.LinkedResources.Add(logo);
 
                 #endregion Set Body and Images
@@ -281,7 +285,7 @@ namespace ContactCenterBL.Helper
 
                 var logo = new LinkedResource(ms, MediaTypeNames.Image.Jpeg);
 
-                logo.ContentId = "%Imagen";
+                logo.ContentId = "ImagenObra";
 
                 #endregion
 

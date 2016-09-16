@@ -10,7 +10,7 @@ namespace ContactCenterCommon
     {
         public static class Mails
         {
-            public const string TeatroConfirmacionReserva = "	 <!DOCTYPE html>	" +
+            public const string TeatroConfirmacionReserva = @"	 <!DOCTYPE html>	" +
 "	<html lang='ES'>	" +
 
 "	<head>	" +
@@ -40,8 +40,8 @@ namespace ContactCenterCommon
 "	                <p style='text-align: center;'> Precio            		: 	%Precio</p>	" +
 "	            </div>	" +
 "		" +
-"	            <div style='width:50%'>	" +
-"	                <img src='cid:%Imagen'>	" +
+"	            <div style='width:30%'>	" +
+"	                <img src='cid:ImagenObra' alt='obra' />	" +
 "	            </div>	" +
 "		" +
 "	        </div>	" +
