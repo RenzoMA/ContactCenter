@@ -19,5 +19,6 @@ namespace ContactCenterBE.CC.TH.Entidades.LogEmailBE
         public string Estado { get; set; }
         public string Descripcion { get; set; }
         public int Intento { get;  set;} 
+        public int IdObra { get; set; }
     }
 }

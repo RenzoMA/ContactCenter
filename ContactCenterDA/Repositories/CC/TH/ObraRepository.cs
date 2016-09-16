@@ -139,8 +139,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                             UsuarioModificacion = DataConvert.ToString(dtr["T.UserMod"])
                         },
                         UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]),
-                        UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]),
-                        //Image = DataConvert.ToByteArrayNull(dtr["Imagen"])
+                        UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"])
                     };
                     lObra.Add(obra);
                 }

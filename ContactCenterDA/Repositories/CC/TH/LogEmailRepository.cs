@@ -45,6 +45,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                 objLogEmail.UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]);
                 objLogEmail.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
                 objLogEmail.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
+                objLogEmail.IdObra = DataConvert.ToInt(dtr["IdObra"]);
             }
 
             UtilDA.Close(cnx);
@@ -79,7 +80,8 @@ namespace ContactCenterDA.Repositories.CC.TH
                     FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]),
                     UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]),
                     FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]),
-                    UsuarioModificacion = DataConvert.ToString(dtr["UserMod"])
+                    UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]),
+                    IdObra = DataConvert.ToInt(dtr["IdObra"])
                 };
                 ListaLogEmail.Add(objLogEmail);
             }
@@ -92,8 +94,8 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Insert(LogEmail datos)
         {
-            String sql = "INSERT INTO TH_LOG_EMAIL(CorreoDestino, CorreoDestinoCC, FechaEnvio, Mensaje, Asunto, Estado, Descripcion,FechaCrea,UserCrea,Intento) " +
-                         "VALUES(@correoDestino, @correoDestinoCC, @fechaEnvio, @mensaje, @asunto, @estado, @descripcion, @fechaCrea, @userCrea, @intento)";
+            String sql = "INSERT INTO TH_LOG_EMAIL(CorreoDestino, CorreoDestinoCC, FechaEnvio, Mensaje, Asunto, Estado, Descripcion,FechaCrea,UserCrea,Intento,IdObra) " +
+                         "VALUES(@correoDestino, @correoDestinoCC, @fechaEnvio, @mensaje, @asunto, @estado, @descripcion, @fechaCrea, @userCrea, @intento,@idObra)";
 
             OleDbParameter correoDestino = UtilDA.SetParameters("@correoDestino", OleDbType.VarChar, datos.CorreoDestino);
             OleDbParameter correoDestinoCC = UtilDA.SetParameters("@correoDestinoCC", OleDbType.VarChar, datos.CorreoDestinoCC);
@@ -105,8 +107,9 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter usuarioCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter intento = UtilDA.SetParameters("@intento", OleDbType.Integer, datos.Intento);
+            OleDbParameter idobra = UtilDA.SetParameters("@idObra", OleDbType.Integer, datos.IdObra);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, correoDestino, correoDestinoCC, fechaEnvio, mensaje, asunto, estado, descripcion, fechaCreacion, usuarioCrea, intento);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, correoDestino, correoDestinoCC, fechaEnvio, mensaje, asunto, estado, descripcion, fechaCreacion, usuarioCrea, intento, idobra);
             
         }
 

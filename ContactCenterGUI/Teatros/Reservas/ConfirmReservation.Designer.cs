@@ -63,12 +63,12 @@
             this.lblFecha = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.dgvDetalleAsientos = new System.Windows.Forms.DataGridView();
-            this.Zona = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fila = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Asiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTiempo = new System.Windows.Forms.Label();
             this.timerConfirmacion = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Zona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fila = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Asiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -142,7 +142,7 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(19, 27);
+            this.materialLabel5.Location = new System.Drawing.Point(18, 66);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(57, 19);
@@ -156,7 +156,7 @@
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel6.Location = new System.Drawing.Point(19, 62);
+            this.materialLabel6.Location = new System.Drawing.Point(19, 33);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(44, 19);
@@ -251,7 +251,7 @@
             this.lblTeatro.Depth = 0;
             this.lblTeatro.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblTeatro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTeatro.Location = new System.Drawing.Point(127, 27);
+            this.lblTeatro.Location = new System.Drawing.Point(126, 66);
             this.lblTeatro.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTeatro.Name = "lblTeatro";
             this.lblTeatro.Size = new System.Drawing.Size(125, 19);
@@ -265,7 +265,7 @@
             this.lblObra.Depth = 0;
             this.lblObra.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblObra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblObra.Location = new System.Drawing.Point(127, 62);
+            this.lblObra.Location = new System.Drawing.Point(127, 33);
             this.lblObra.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblObra.Name = "lblObra";
             this.lblObra.Size = new System.Drawing.Size(54, 19);
@@ -507,14 +507,14 @@
             this.groupBox2.Controls.Add(this.lblFecha);
             this.groupBox2.Controls.Add(this.materialLabel12);
             this.groupBox2.Controls.Add(this.dgvDetalleAsientos);
+            this.groupBox2.Controls.Add(this.materialLabel6);
             this.groupBox2.Controls.Add(this.materialRaisedButton1);
+            this.groupBox2.Controls.Add(this.lblObra);
             this.groupBox2.Controls.Add(this.lblTeatro);
             this.groupBox2.Controls.Add(this.materialLabel5);
             this.groupBox2.Controls.Add(this.lblPrecio);
-            this.groupBox2.Controls.Add(this.materialLabel6);
             this.groupBox2.Controls.Add(this.materialLabel11);
             this.groupBox2.Controls.Add(this.materialLabel7);
-            this.groupBox2.Controls.Add(this.lblObra);
             this.groupBox2.Controls.Add(this.materialLabel15);
             this.groupBox2.Controls.Add(this.lblFuncion);
             this.groupBox2.Location = new System.Drawing.Point(640, 91);
@@ -563,34 +563,13 @@
             this.Zona,
             this.Fila,
             this.Asiento});
-            this.dgvDetalleAsientos.Location = new System.Drawing.Point(130, 201);
+            this.dgvDetalleAsientos.Location = new System.Drawing.Point(131, 201);
             this.dgvDetalleAsientos.Name = "dgvDetalleAsientos";
             this.dgvDetalleAsientos.ReadOnly = true;
             this.dgvDetalleAsientos.RowHeadersVisible = false;
             this.dgvDetalleAsientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalleAsientos.Size = new System.Drawing.Size(284, 212);
+            this.dgvDetalleAsientos.Size = new System.Drawing.Size(314, 212);
             this.dgvDetalleAsientos.TabIndex = 28;
-            // 
-            // Zona
-            // 
-            this.Zona.HeaderText = "Zona";
-            this.Zona.Name = "Zona";
-            this.Zona.ReadOnly = true;
-            this.Zona.Width = 160;
-            // 
-            // Fila
-            // 
-            this.Fila.HeaderText = "Fila";
-            this.Fila.Name = "Fila";
-            this.Fila.ReadOnly = true;
-            this.Fila.Width = 35;
-            // 
-            // Asiento
-            // 
-            this.Asiento.HeaderText = "Asiento";
-            this.Asiento.Name = "Asiento";
-            this.Asiento.ReadOnly = true;
-            this.Asiento.Width = 50;
             // 
             // lblTiempo
             // 
@@ -618,6 +597,27 @@
             this.pictureBox1.TabIndex = 1918;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // Zona
+            // 
+            this.Zona.HeaderText = "Zona";
+            this.Zona.Name = "Zona";
+            this.Zona.ReadOnly = true;
+            this.Zona.Width = 215;
+            // 
+            // Fila
+            // 
+            this.Fila.HeaderText = "Fila";
+            this.Fila.Name = "Fila";
+            this.Fila.ReadOnly = true;
+            this.Fila.Width = 45;
+            // 
+            // Asiento
+            // 
+            this.Asiento.HeaderText = "Asiento";
+            this.Asiento.Name = "Asiento";
+            this.Asiento.ReadOnly = true;
+            this.Asiento.Width = 50;
             // 
             // ConfirmReservation
             // 
@@ -676,9 +676,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvDetalleAsientos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Zona;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fila;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Asiento;
         private MaterialSkin.Controls.MaterialLabel lblFecha;
         private MaterialSkin.Controls.MaterialLabel materialLabel12;
         private System.Windows.Forms.Label lblTiempo;
@@ -690,5 +687,8 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
         private MetroFramework.Controls.MetroComboBox cboTipoPromocion;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Zona;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fila;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Asiento;
     }
 }

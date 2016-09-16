@@ -187,7 +187,7 @@
             // btnAceptarObra
             // 
             this.btnAceptarObra.Depth = 0;
-            this.btnAceptarObra.Location = new System.Drawing.Point(303, 702);
+            this.btnAceptarObra.Location = new System.Drawing.Point(288, 774);
             this.btnAceptarObra.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAceptarObra.Name = "btnAceptarObra";
             this.btnAceptarObra.Primary = true;
@@ -233,14 +233,14 @@
             this.gbDatosObra.Controls.Add(this.cboEstadoObra);
             this.gbDatosObra.Location = new System.Drawing.Point(12, 71);
             this.gbDatosObra.Name = "gbDatosObra";
-            this.gbDatosObra.Size = new System.Drawing.Size(444, 625);
+            this.gbDatosObra.Size = new System.Drawing.Size(444, 697);
             this.gbDatosObra.TabIndex = 16;
             this.gbDatosObra.TabStop = false;
             this.gbDatosObra.Text = "Datos";
             // 
             // btnCargarImagen
             // 
-            this.btnCargarImagen.Location = new System.Drawing.Point(389, 585);
+            this.btnCargarImagen.Location = new System.Drawing.Point(363, 666);
             this.btnCargarImagen.Name = "btnCargarImagen";
             this.btnCargarImagen.Size = new System.Drawing.Size(25, 23);
             this.btnCargarImagen.TabIndex = 63;
@@ -251,9 +251,9 @@
             // pcbImagen
             // 
             this.pcbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pcbImagen.Location = new System.Drawing.Point(173, 394);
+            this.pcbImagen.Location = new System.Drawing.Point(188, 394);
             this.pcbImagen.Name = "pcbImagen";
-            this.pcbImagen.Size = new System.Drawing.Size(241, 185);
+            this.pcbImagen.Size = new System.Drawing.Size(200, 266);
             this.pcbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbImagen.TabIndex = 62;
             this.pcbImagen.TabStop = false;
@@ -280,7 +280,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
-            this.pictureBox1.Location = new System.Drawing.Point(410, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(404, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(16, 18);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -292,7 +292,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 754);
+            this.ClientSize = new System.Drawing.Size(475, 826);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gbDatosObra);
             this.Controls.Add(this.btnAceptarObra);

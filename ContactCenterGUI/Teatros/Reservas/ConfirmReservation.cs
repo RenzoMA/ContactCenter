@@ -19,6 +19,7 @@ using ContactCenterGUI.Teatros.Helpers;
 using Microsoft.Practices.Unity;
 using ContactCenterServices;
 using ContactCenterGUI.CC.Constantes;
+using System.IO;
 
 namespace ContactCenterGUI.Teatros.Reservas
 {

@@ -126,7 +126,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
             DialogResult res = openFileDialog1.ShowDialog();
             if (res == DialogResult.OK)
             {
-                pcbImagen.Image = HelperForm.ResizeImage(Image.FromFile(openFileDialog1.FileName), 134, 194);
+                pcbImagen.Image = HelperForm.ResizeImage(Image.FromFile(openFileDialog1.FileName), 240, 320);
             }
         }
 

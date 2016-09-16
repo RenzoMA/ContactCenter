@@ -427,9 +427,19 @@ namespace ContactCenterServices.ServicioTeatro
             return _emailService.GetById(id);
         }
 
-        public bool ReenviarCorreo(string v1, string v2, string documentText, string v3, LogEmail logEmail)
+        public async Task<bool> ReenviarCorreo(string v1, string v2, string documentText, string v3, LogEmail logEmail)
         {
-            return _emailService.ReenviarCorreo(v1, v2, documentText, v3, logEmail);
+            bool obj = false;
+            await Task.Run(() =>
+            {
+                obj = _emailService.ReenviarCorreo(v1, v2, documentText, v3, logEmail);
+            });
+            return obj;
+        }
+
+        public byte[] GetObraImage(int id)
+        {
+            return _obraService.GetImage(id);
         }
     }
 }

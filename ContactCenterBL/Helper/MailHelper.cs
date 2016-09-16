@@ -38,6 +38,8 @@ namespace ContactCenterBL.Helper
                 var smtp = ConfigurationManager.AppSettings["smtp"];
                 var mailDisplayName = ConfigurationManager.AppSettings["mailDisplayName"];
                 var port = ConfigurationManager.AppSettings["port"];
+                var sslEnabled = Convert.ToBoolean(ConfigurationManager.AppSettings["sslEnabled"]);
+
                 #endregion
 
                 #region Create SMTP
@@ -46,6 +48,7 @@ namespace ContactCenterBL.Helper
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.Credentials = new NetworkCredential(mailAccount, mailPassword);
+                smtpClient.EnableSsl = sslEnabled;
                 #endregion Create SMTP
 
                 #region Create Mail an recievers
@@ -53,11 +56,11 @@ namespace ContactCenterBL.Helper
                 mail.From = new MailAddress(mailAccount, mailDisplayName);
                 foreach (var mailDirection in mailAdresses.Where(x => !string.IsNullOrEmpty(x)))
                 {
-                    mail.To.Add(new MailAddress(mailDirection));
+                    mail.To.Add(new MailAddress(mailDirection.ToLower()));
                 }
                 foreach (var mailCC in ccAddresses.Where(x => !string.IsNullOrEmpty(x)))
                 {
-                    mail.CC.Add(new MailAddress(mailCC));
+                    mail.CC.Add(new MailAddress(mailCC.ToLower()));
                 }
 
                 #endregion
@@ -160,6 +163,7 @@ namespace ContactCenterBL.Helper
                     logEmail.CorreoDestino = string.Join(",", mailAdresses.Select(x => x.ToString()).ToArray());
                     logEmail.CorreoDestinoCC = string.Join(",", ccAddresses.Select(x => x.ToString()).ToArray());
                     logEmail.Estado = "OK";
+                    logEmail.IdObra = reserva.Obra.IdObra;
                     logEmail.FechaEnvio = DateTime.Now;
                     logEmail.FechaCreacion = DateTime.Now;
                     logEmail.UsuarioCreacion = Sesion.usuario.Login;
@@ -185,8 +189,7 @@ namespace ContactCenterBL.Helper
                     }
                     smtpClient.Dispose();
                     mail.Dispose();
-                    //logo.Dispose();
-                    //treeicon.Dispose();
+                    logo.Dispose();
                 };
 
                 #endregion Send Mail
@@ -200,6 +203,7 @@ namespace ContactCenterBL.Helper
                 logEmail.CorreoDestino = string.Join(",", mailAdresses.Select(x => x.ToString()).ToArray());
                 logEmail.CorreoDestinoCC = string.Join(",", ccAddresses.Select(x => x.ToString()).ToArray());
                 logEmail.Estado = "OK";
+                logEmail.IdObra = reserva.Obra.IdObra;
                 logEmail.FechaEnvio = DateTime.Now;
                 logEmail.FechaCreacion = DateTime.Now;
                 logEmail.UsuarioCreacion = Sesion.usuario.Login;
@@ -219,7 +223,7 @@ namespace ContactCenterBL.Helper
             }
         }
 
-        public static void SendMail(IList<string> mailAdresses, IList<string> ccAddresses, string originalHtml,string originalSubject, ILogEmailRepository logEmailRepository, byte[] attachment, LogEmail logEmail)
+        public static bool SendMail(IList<string> mailAdresses, IList<string> ccAddresses, string originalHtml,string originalSubject, ILogEmailRepository logEmailRepository, byte[] attachment, LogEmail logEmail)
         {
             ContactCenterDA.Repositories.CC.TH.ObraRepository obraRepository = new ContactCenterDA.Repositories.CC.TH.ObraRepository();
             try
@@ -232,6 +236,7 @@ namespace ContactCenterBL.Helper
                 var smtp = ConfigurationManager.AppSettings["smtp"];
                 var mailDisplayName = ConfigurationManager.AppSettings["mailDisplayName"];
                 var port = ConfigurationManager.AppSettings["port"];
+                var sslEnabled = Convert.ToBoolean(ConfigurationManager.AppSettings["sslEnabled"]);
                 #endregion
 
                 #region Create SMTP
@@ -240,6 +245,7 @@ namespace ContactCenterBL.Helper
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.Credentials = new NetworkCredential(mailAccount, mailPassword);
+                smtpClient.EnableSsl = sslEnabled;
                 #endregion Create SMTP
 
                 #region Create Mail an recievers
@@ -247,11 +253,11 @@ namespace ContactCenterBL.Helper
                 mail.From = new MailAddress(mailAccount, mailDisplayName);
                 foreach (var mailDirection in mailAdresses.Where(x => !string.IsNullOrEmpty(x)))
                 {
-                    mail.To.Add(new MailAddress(mailDirection));
+                    mail.To.Add(new MailAddress(mailDirection.ToLower()));
                 }
                 foreach (var mailCC in ccAddresses.Where(x => !string.IsNullOrEmpty(x)))
                 {
-                    mail.CC.Add(new MailAddress(mailCC));
+                    mail.CC.Add(new MailAddress(mailCC.ToLower()));
                 }
 
                 #endregion
@@ -263,33 +269,28 @@ namespace ContactCenterBL.Helper
 
                 #endregion Create Mail Variables
 
-                #region Set Mail Variable Values
-
-
-                #endregion Set Mail Variable Values
-
-                #region Set Mail Body
-
-                #endregion Set Mail Body
-
-                #region Set Mail Subject
-
-                #endregion Set Mail Subject
 
                 #region Get Mail Body embedded images paths
+
+                Byte[] ba = obraRepository.GetImage(logEmail.IdObra);
+                MemoryStream ms = new MemoryStream(ba);
 
                 #endregion Get Mail Body embedded images paths
 
                 #region Set embedded images mail id
 
+                var logo = new LinkedResource(ms, MediaTypeNames.Image.Jpeg);
+
+                logo.ContentId = "%Imagen";
 
                 #endregion
 
                 #region Set Body and Images
 
                 var html = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
+                html.LinkedResources.Add(logo);
 
-                #endregion Set Body and Images
+                #endregion Get Mail Body embedded images paths
 
                 #region Set values to mail
 
@@ -301,33 +302,22 @@ namespace ContactCenterBL.Helper
 
                 #region Send Mail
 
-                smtpClient.SendAsync(mail, null);
-
-                smtpClient.SendCompleted += (s, e) =>
-                {
-                    //LogEmail logEmail = new LogEmail();
-                    logEmail.Asunto = subject;
-                    logEmail.CorreoDestino = string.Join(",", mailAdresses.Select(x => x.ToString()).ToArray());
-                    logEmail.CorreoDestinoCC = string.Join(",", ccAddresses.Select(x => x.ToString()).ToArray());
-                    logEmail.Estado = "OK";
-                    logEmail.FechaEnvio = DateTime.Now;
-                    logEmail.FechaModificacion = DateTime.Now;
-                    logEmail.UsuarioModificacion = Sesion.usuario.Login;
-                    logEmail.Mensaje = htmlBody;
-                    logEmail.Intento = logEmail.Intento + 1;
-                    logEmail.Descripcion = String.Empty;
-                    if (e.Error != null)
-                    {
-                        logEmail.Estado = "FALLO";
-                        logEmail.Descripcion = e.Error.InnerException.Message;
-
-                    }
-
-                    logEmailRepository.Update(logEmail);
-                    smtpClient.Dispose();
-                    mail.Dispose();
-                };
-
+                smtpClient.Send(mail);
+                logEmail.Asunto = subject;
+                logEmail.CorreoDestino = string.Join(",", mailAdresses.Select(x => x.ToString()).ToArray());
+                logEmail.CorreoDestinoCC = string.Join(",", ccAddresses.Select(x => x.ToString()).ToArray());
+                logEmail.Estado = "OK";
+                logEmail.FechaEnvio = DateTime.Now;
+                logEmail.FechaModificacion = DateTime.Now;
+                logEmail.UsuarioModificacion = Sesion.usuario.Login;
+                logEmail.Mensaje = htmlBody;
+                logEmail.Intento = logEmail.Intento + 1;
+                logEmail.Descripcion = String.Empty;
+                logEmailRepository.Update(logEmail);
+                smtpClient.Dispose();
+                mail.Dispose();
+                logo.Dispose();
+                return true;
                 #endregion Send Mail
 
             }
@@ -335,17 +325,14 @@ namespace ContactCenterBL.Helper
             {
                 logEmail.CorreoDestino = string.Join(",", mailAdresses.Select(x => x.ToString()).ToArray());
                 logEmail.CorreoDestinoCC = string.Join(",", ccAddresses.Select(x => x.ToString()).ToArray());
-                logEmail.Estado = "OK";
                 logEmail.FechaEnvio = DateTime.Now;
-                logEmail.FechaCreacion = DateTime.Now;
-                logEmail.UsuarioCreacion = Sesion.usuario.Login;
+                logEmail.FechaModificacion = DateTime.Now;
+                logEmail.UsuarioModificacion = Sesion.usuario.Login;
                 logEmail.Intento = logEmail.Intento + 1;
                 logEmail.Estado = "FALLO";
                 logEmail.Descripcion = ex.Message;
-
                 logEmailRepository.Update(logEmail);
-
-                MessageBox.Show("No se reenvió el correo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
     }

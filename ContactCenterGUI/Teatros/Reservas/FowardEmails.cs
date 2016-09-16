@@ -24,11 +24,13 @@ namespace ContactCenterGUI.Teatros.Reservas
     {
         private IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
         private LogEmail logEmail;
+        private string completeHtml;
         
 
         public FowardEmails(LogEmail logEmail)
         {
             this.logEmail = logEmail;
+            completeHtml = logEmail.Mensaje;
             InitializeComponent();
         }
 
@@ -41,12 +43,52 @@ namespace ContactCenterGUI.Teatros.Reservas
         {
             txtCorreoDestino.Text = logEmail.CorreoDestino;
             txtCorreoDestinoCC.Text = logEmail.CorreoDestinoCC;
+            txtAsunto.Text = logEmail.Asunto;
             webBrowser1.DocumentText = logEmail.Mensaje;
         }
-
+        private async void ReenviarCorreo()
+        {
+            try
+            {
+                Animacion.ShowLoader(this);
+                IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
+                bool resultado = await servicio.ReenviarCorreo(txtCorreoDestino.Text.Trim(), txtCorreoDestinoCC.Text.Trim(), completeHtml, txtAsunto.Text, logEmail);
+                Animacion.HideLoader(this);
+                if (resultado)
+                {
+                    MessageBox.Show("Correo reenviado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error enviando el correo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void btnReenviar_Click(object sender, EventArgs e)
         {
-            servicio.ReenviarCorreo(txtCorreoDestino.Text.Trim(),txtCorreoDestinoCC.Text.Trim(),webBrowser1.DocumentText,txtAsunto.Text, logEmail);
+            CapturarDatos();
+            ReenviarCorreo();
+        }
+
+        public void CapturarDatos()
+        {
+            logEmail.Asunto = txtAsunto.Text.ToUpper().Trim();
+        }
+        private string ReadImageInBase64()
+        {
+            byte[] imagen = servicio.GetObraImage(logEmail.IdObra);
+            return Convert.ToBase64String(imagen);
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            string pathImage = ReadImageInBase64();
+            webBrowser1.Document.Images[0].OuterHtml = "<img src='data:image/png;base64," + pathImage + "'>";
         }
     }
 }

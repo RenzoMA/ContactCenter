@@ -42,8 +42,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             List<string> emailCC;
             emailCC = v2.Replace(';', ',').Split(',').ToList();
             
-            MailHelper.SendMail(email, emailCC, documentText, v3, logEmailRepository, null, logEmail);
-            return true;
+            return MailHelper.SendMail(email, emailCC, documentText, v3, logEmailRepository, null, logEmail);
         }
 
         public void SendMail(IList<string> mailAdresses, IList<string> ccAddresses, Enumerables.MailAction action, Reserva reserva, byte[] attachment = null)
