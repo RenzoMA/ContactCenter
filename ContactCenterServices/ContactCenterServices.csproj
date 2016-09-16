@@ -77,6 +77,10 @@
       <Project>{f241c18d-8d15-4650-aa86-fecc1e4024c2}</Project>
       <Name>ContactCenterBL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ContactCenterCommon\ContactCenterCommon.csproj">
+      <Project>{53DECD57-C35A-4780-8A55-245E366FA6A1}</Project>
+      <Name>ContactCenterCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ContactCenterDA\ContactCenterDA.csproj">
       <Project>{0924a9a2-121b-4fd1-9426-bac9048bf5f3}</Project>
       <Name>ContactCenterDA</Name>
