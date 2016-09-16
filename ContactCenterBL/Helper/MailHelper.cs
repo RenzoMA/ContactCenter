@@ -26,7 +26,8 @@ namespace ContactCenterBL.Helper
         public static void SendMail(IList<string> mailAdresses, IList<string> ccAddresses, Enumerables.MailAction action, ILogEmailRepository logEmailRepository, Reserva reserva, byte[] attachment = null)
         {
             ContactCenterDA.Repositories.CC.TH.ObraRepository  obraRepository = new ContactCenterDA.Repositories.CC.TH.ObraRepository() ;
-            
+            string htmlBody = "";
+            string subject = "";
             try
             {
                 var smtpClient = new SmtpClient();
@@ -63,8 +64,7 @@ namespace ContactCenterBL.Helper
 
                 #region Create Mail Variables
 
-                string htmlBody;
-                string subject;
+                
                 var nombre = reserva.Cliente.Nombre + " " + reserva.Cliente.ApellidoPaterno + " " + reserva.Cliente.Apellidomaterno;
                 var obra = reserva.Obra.Nombre;
                 var fecha = reserva.FechaReserva;
@@ -74,7 +74,6 @@ namespace ContactCenterBL.Helper
                 //var zona = reserva.Obra.Teatro.
                 var ubicacion = reserva.Asientos;
                 var precio = reserva.PrecioTotal;
-
                 #endregion Create Mail Variables
 
                 #region Set Mail Variable Values
@@ -175,6 +174,15 @@ namespace ContactCenterBL.Helper
                     }
 
                     logEmailRepository.Insert(logEmail);
+                    if (e.Error != null)
+                    {
+                        MessageBox.Show("No se envió el correo\n\n" +
+                                        "Cliente: \n"+nombre + "\n" +
+                                        "Obra: \n"+obra + "\n" +
+                                        "Fecha Reserva: \n" + reserva.FechaReserva.ToShortDateString() + "\n" +
+                                        "Correo: \n" + reserva.Cliente.Correo +"\n\n" +
+                                        "Error: \n"+ e.Error.InnerException.Message, "Error enviando email", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     smtpClient.Dispose();
                     mail.Dispose();
                     //logo.Dispose();
@@ -186,14 +194,34 @@ namespace ContactCenterBL.Helper
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se envió el correo. Error " + "\n" + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                LogEmail logEmail = new LogEmail();
+                logEmail.Asunto = subject;
+                logEmail.CorreoDestino = string.Join(",", mailAdresses.Select(x => x.ToString()).ToArray());
+                logEmail.CorreoDestinoCC = string.Join(",", ccAddresses.Select(x => x.ToString()).ToArray());
+                logEmail.Estado = "OK";
+                logEmail.FechaEnvio = DateTime.Now;
+                logEmail.FechaCreacion = DateTime.Now;
+                logEmail.UsuarioCreacion = Sesion.usuario.Login;
+                logEmail.Mensaje = htmlBody;
+                logEmail.Intento = 1;
+                logEmail.Estado = "FALLO";
+                logEmail.Descripcion = ex.Message;
+
+                logEmailRepository.Insert(logEmail);
+
+                MessageBox.Show("No se envió el correo\n\n" +
+                                        "Cliente: \n" + reserva.Cliente.Nombre+" "+reserva.Cliente.ApellidoPaterno+" "+reserva.Cliente.Apellidomaterno + "\n" +
+                                        "Obra: \n" + reserva.Obra.Nombre + "\n" +
+                                        "Fecha Reserva: \n" + reserva.FechaReserva.ToShortDateString() + "\n" +
+                                        "Correo: \n" + reserva.Cliente.Correo + "\n\n" +
+                                        "Error: \n" + ex.Message, "Error enviando email", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         public static void SendMail(IList<string> mailAdresses, IList<string> ccAddresses, string originalHtml,string originalSubject, ILogEmailRepository logEmailRepository, byte[] attachment = null)
         {
             ContactCenterDA.Repositories.CC.TH.ObraRepository obraRepository = new ContactCenterDA.Repositories.CC.TH.ObraRepository();
-
             try
             {
                 var smtpClient = new SmtpClient();
