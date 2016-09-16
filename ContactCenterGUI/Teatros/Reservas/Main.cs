@@ -17,6 +17,7 @@ using Microsoft.Practices.Unity;
 using ContactCenterServices;
 using System.IO;
 using OfficeOpenXml;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Reservas
 {
@@ -25,6 +26,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         public Main()
         {
             InitializeComponent();
+            //
         }
 
         private void btnNuevoRegistro_Click(object sender, EventArgs e)

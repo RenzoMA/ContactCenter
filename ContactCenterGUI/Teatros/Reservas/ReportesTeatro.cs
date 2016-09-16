@@ -16,6 +16,7 @@ using ContactCenterGUI.Teatros.Helpers;
 using ContactCenterCommon;
 using ContactCenterGUI.CC.Helpers;
 using ContactCenterServices;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Reservas
 {
@@ -24,6 +25,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         public ReportesTeatro()
         {
             InitializeComponent();
+            
         }
 
         private void btnGenerarReporte_Click(object sender, EventArgs e)

@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TheaterLaPlaza));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlSecundary = new System.Windows.Forms.Panel();
             this.lblTiempo = new System.Windows.Forms.Label();
             this.btnContinuar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnMiminizar = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Label();
             this.lblTituloTeatro = new MaterialSkin.Controls.MaterialLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.A16 = new System.Windows.Forms.Button();
@@ -277,30 +277,27 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
             this.timerTeatro = new System.Windows.Forms.Timer(this.components);
-            this.btnAtras = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlSecundary.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlSecundary
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.panel1.Controls.Add(this.lblTiempo);
-            this.panel1.Controls.Add(this.btnContinuar);
-            this.panel1.Controls.Add(this.btnMiminizar);
-            this.panel1.Controls.Add(this.btnCerrar);
-            this.panel1.Controls.Add(this.lblTituloTeatro);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1280, 65);
-            this.panel1.TabIndex = 2;
+            this.pnlSecundary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(121)))), ((int)(((byte)(180)))));
+            this.pnlSecundary.Controls.Add(this.lblTiempo);
+            this.pnlSecundary.Controls.Add(this.btnContinuar);
+            this.pnlSecundary.Controls.Add(this.btnMiminizar);
+            this.pnlSecundary.Controls.Add(this.btnCerrar);
+            this.pnlSecundary.Controls.Add(this.lblTituloTeatro);
+            this.pnlSecundary.Controls.Add(this.pnlPrincipal);
+            this.pnlSecundary.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSecundary.Location = new System.Drawing.Point(0, 0);
+            this.pnlSecundary.Name = "pnlSecundary";
+            this.pnlSecundary.Size = new System.Drawing.Size(1280, 65);
+            this.pnlSecundary.TabIndex = 2;
             // 
             // lblTiempo
             // 
@@ -331,7 +328,7 @@
             this.btnMiminizar.AutoSize = true;
             this.btnMiminizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
             this.btnMiminizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(193)))), ((int)(((byte)(215)))));
-            this.btnMiminizar.Location = new System.Drawing.Point(1233, 5);
+            this.btnMiminizar.Location = new System.Drawing.Point(1233, 7);
             this.btnMiminizar.Name = "btnMiminizar";
             this.btnMiminizar.Size = new System.Drawing.Size(13, 13);
             this.btnMiminizar.TabIndex = 17;
@@ -362,18 +359,17 @@
             this.lblTituloTeatro.TabIndex = 0;
             this.lblTituloTeatro.Text = "Teatro La Plaza";
             // 
-            // panel3
+            // pnlPrincipal
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.panel3.Controls.Add(this.btnAtras);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1280, 27);
-            this.panel3.TabIndex = 2;
-            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
-            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
-            this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
+            this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(87)))), ((int)(((byte)(154)))));
+            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.pnlPrincipal.Name = "pnlPrincipal";
+            this.pnlPrincipal.Size = new System.Drawing.Size(1280, 27);
+            this.pnlPrincipal.TabIndex = 2;
+            this.pnlPrincipal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            this.pnlPrincipal.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
+            this.pnlPrincipal.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
             // panel5
             // 
@@ -2825,17 +2821,6 @@
             this.materialLabel19.TabIndex = 0;
             this.materialLabel19.Text = "SALIDA ";
             // 
-            // btnAtras
-            // 
-            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(87)))), ((int)(((byte)(155)))));
-            this.btnAtras.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
-            this.btnAtras.Location = new System.Drawing.Point(1211, 5);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(16, 18);
-            this.btnAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAtras.TabIndex = 27;
-            this.btnAtras.TabStop = false;
-            // 
             // TheaterLaPlaza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3077,7 +3062,7 @@
             this.Controls.Add(this.A15);
             this.Controls.Add(this.A16);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlSecundary);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "TheaterLaPlaza";
@@ -3085,9 +3070,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CallaoTheater";
             this.Load += new System.EventHandler(this.CallaoTheater_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.pnlSecundary.ResumeLayout(false);
+            this.pnlSecundary.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -3096,7 +3080,6 @@
             this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3104,8 +3087,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlSecundary;
+        private System.Windows.Forms.Panel pnlPrincipal;
         private System.Windows.Forms.Panel panel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.Button A16;
@@ -3351,6 +3334,5 @@
         private System.Windows.Forms.Label btnCerrar;
         private System.Windows.Forms.Timer timerTeatro;
         private System.Windows.Forms.Label lblTiempo;
-        private System.Windows.Forms.PictureBox btnAtras;
     }
 }

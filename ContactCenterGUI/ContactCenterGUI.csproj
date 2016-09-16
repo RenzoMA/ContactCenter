@@ -139,6 +139,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CC\Constantes\ConstanteColor.cs" />
     <Compile Include="CC\Loader.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -541,6 +542,7 @@
     <Content Include="cc.ico" />
     <Content Include="MetroFramework.txt" />
     <Content Include="Resources\-forward-icon.png" />
+    <None Include="Resources\LOGO-LA-PLAZA-Y-PRODUCTORES.png" />
     <Content Include="Resources\mensaje.png" />
     <None Include="Resources\PIRANDELLO_PLATEA_2.jpg" />
     <None Include="Resources\PIRANDELLO_PLATEA_1.jpg" />

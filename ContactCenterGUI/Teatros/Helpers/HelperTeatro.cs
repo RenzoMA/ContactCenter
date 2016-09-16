@@ -13,6 +13,8 @@ using ContactCenterGUI.Teatros.Reservas;
 using MaterialSkin.Controls;
 using ContactCenterGUI.CC.Helpers;
 using ContactCenterServices;
+using ContactCenterGUI.CC.Constantes;
+using System.Drawing;
 
 namespace ContactCenterGUI.Teatros.Helpers
 {
@@ -115,9 +117,18 @@ namespace ContactCenterGUI.Teatros.Helpers
 
             Label btnClose = (Label)GetAll(formTemp, typeof(Label)).Where(d => d.Name == "btnCerrar").FirstOrDefault();
             btnClose.MouseClick += new MouseEventHandler(CancelarAsientoTotal);
+            btnClose.BackColor = ConstanteColor.GetPrimaryColor();
+
 
             Label btnMiminizar = (Label)GetAll(formTemp, typeof(Label)).Where(d => d.Name == "btnMiminizar").FirstOrDefault();
             btnMiminizar.MouseClick += new MouseEventHandler(MiminizarTeatro);
+            btnMiminizar.BackColor = ConstanteColor.GetPrimaryColor();
+
+            Panel pnlPrincipal = (Panel)GetAll(formTemp, typeof(Panel)).Where(d => d.Name == "pnlPrincipal").FirstOrDefault();
+            pnlPrincipal.BackColor = ConstanteColor.GetPrimaryColor();
+
+            Panel pnlSecundary = (Panel)GetAll(formTemp, typeof(Panel)).Where(d => d.Name == "pnlSecundary").FirstOrDefault();
+            pnlSecundary.BackColor = ConstanteColor.GetSecundaryColor();
 
             MaterialLabel tituloX = (MaterialLabel)GetAll(formTemp, typeof(MaterialLabel)).Where(d => d.Name == "lblTituloTeatro").FirstOrDefault();
             tituloX.ForeColor = System.Drawing.Color.White;

@@ -16,6 +16,7 @@ using Microsoft.Practices.Unity;
 using MaterialSkin.Animations;
 using ContactCenterGUI.CC.Helpers;
 using ContactCenterServices;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 {
@@ -34,6 +35,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
         public ManFuncion()
         {
             InitializeComponent();
+            
         }
 
         private void ManFuncion_Load(object sender, EventArgs e)

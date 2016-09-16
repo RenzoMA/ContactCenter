@@ -16,6 +16,7 @@ using System.Drawing.Imaging;
 using ContactCenterServices.ServicioContactCenter;
 using ContactCenterServices;
 using Microsoft.Practices.Unity;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
 {
@@ -27,6 +28,7 @@ namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
         {
             InitializeComponent();
             this.aplicacion = aplicacion;
+            
         }
 
         private void PopularCampos()

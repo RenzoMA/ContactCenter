@@ -14,6 +14,7 @@ using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterServices;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
 {
@@ -27,6 +28,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
         public ManAsiento()
         {
             InitializeComponent();
+            
         }
 
         private void ManAsiento_Load(object sender, EventArgs e)

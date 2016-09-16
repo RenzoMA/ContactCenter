@@ -17,6 +17,7 @@ using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterGUI.CC.Helpers;
 using ContactCenterServices;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 {
@@ -34,6 +35,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
         public ManFuncionCreate()
         {
             InitializeComponent();
+            
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

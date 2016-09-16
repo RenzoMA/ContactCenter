@@ -16,7 +16,7 @@ using System.IO;
 using System.Drawing.Imaging;
 using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
 using ContactCenterServices.ServicioTeatro;
-
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Reservas
 {
@@ -27,6 +27,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         public SentEmail()
         {
             InitializeComponent();
+            
         }
 
         private void SentEmail_Load(object sender, EventArgs e)

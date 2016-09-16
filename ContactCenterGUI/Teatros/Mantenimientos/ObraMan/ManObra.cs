@@ -14,6 +14,7 @@ using Microsoft.Practices.Unity;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterServices;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 {
@@ -23,6 +24,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
         public ManObra()
         {
             InitializeComponent();
+            
         }
 
 

@@ -12,6 +12,7 @@ using ContactCenterServices.ServicioContactCenter;
 using Microsoft.Practices.Unity;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
 using ContactCenterServices;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
 {
@@ -23,6 +24,7 @@ namespace ContactCenterGUI.CC.Mantenimientos.UsuarioMan
         {
             InitializeComponent();
             dgvUsuarios.AutoGenerateColumns = false;
+            
         }
         private void capturarDatos()
         {

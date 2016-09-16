@@ -17,6 +17,7 @@ using ContactCenterServices;
 using ContactCenterGUI.CC.Helpers;
 using System.IO;
 using System.Drawing.Imaging;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 {
@@ -27,6 +28,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
         public ManObraCrear()
         {
             InitializeComponent();
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

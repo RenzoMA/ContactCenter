@@ -17,6 +17,7 @@ using ContactCenterGUI.CC.Helpers;
 using ContactCenterServices;
 using System.IO;
 using System.Drawing.Imaging;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
 {
@@ -30,6 +31,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
         {
             this.obra = obra;
             InitializeComponent();
+            
         }
 
         private void ManObraEditar_Load(object sender, EventArgs e)

@@ -13,6 +13,7 @@ using ContactCenterServices.ServicioTeatro;
 using ContactCenterServices;
 using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 using Microsoft.Reporting.WinForms;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Reportes
 {
@@ -24,6 +25,7 @@ namespace ContactCenterGUI.Teatros.Reportes
         public RptRankingCliente()
         {
             InitializeComponent();
+            
         }
 
         private void RptRankingCliente_Load(object sender, EventArgs e)

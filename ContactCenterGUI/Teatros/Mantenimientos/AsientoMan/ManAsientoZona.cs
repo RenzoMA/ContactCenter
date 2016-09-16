@@ -16,6 +16,7 @@ using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterServices;
 using ContactCenterServices.ServicioTeatro;
 using ContactCenterGUI.CC.Helpers;
+using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
 {
@@ -31,6 +32,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
             this.teatro = teatro;
             this.obra = obra;
             this.zona = zona;
+            
         }
         private void AsignarNombres()
         {
