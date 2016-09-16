@@ -57,5 +57,15 @@ namespace ContactCenterGUI.Teatros.Reservas
                 fowardEmail.ShowDialog();
             }
         }
+
+        private void dgvEmail_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            LogEmail logEmail = (LogEmail)dgvEmail.Rows[e.RowIndex].DataBoundItem;
+            //MessageBox.Show(reserva.IdReserva.ToString());
+            if (logEmail.Estado == "FALLO")
+            {
+                dgvEmail.Rows[e.RowIndex].Cells[e.ColumnIndex].Style = new DataGridViewCellStyle { ForeColor = Color.Red, BackColor = Color.White };
+            }
+        }
     }
 }
