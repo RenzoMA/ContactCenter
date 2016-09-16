@@ -93,5 +93,10 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         public bool Update(Obra obra) {
             return _obraRepository.Update(obra);
         }
+
+        public byte[] GetImage(int id)
+        {
+            return _obraRepository.GetImage(id);
+        }
     }
 }

@@ -19,5 +19,6 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
         List<Obra> ListarObraByTeatro(int idTeatro);
         List<Obra> ComboListarObraByTeatro(int idTeatro);
         List<Obra> ComboManGetListaTeatro(int idTeatro);
+        byte[] GetImage(int id);
     }
 }

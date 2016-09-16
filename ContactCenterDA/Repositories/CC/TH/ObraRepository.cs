@@ -66,7 +66,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public IList<Obra> GetLista()
         {
-            
+
             String sql = "SELECT * FROM TH_OBRA O INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO";
             Obra obra = null;
             List<Obra> ListaObra = new List<Obra>();
@@ -94,7 +94,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                         FechaModificacion = DataConvert.ToDateTime(dtr["O.FechaMod"]),
                         UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]),
                         Image = DataConvert.ToByteArrayNull(dtr["Imagen"])
-                };
+                    };
                     ListaObra.Add(obra);
                 }
             }
@@ -162,7 +162,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter pIdTeatro = UtilDA.SetParameters("@IdTeatro", OleDbType.Integer, idTeatro);
             OleDbParameter pFechaActual = UtilDA.SetParameters("@fechaActual", OleDbType.Date, DateTime.Today);
 
-            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pIdTeatro,pFechaActual))
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pIdTeatro, pFechaActual))
             {
                 while (dtr.Read())
                 {
@@ -193,7 +193,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                     };
                     lObra.Add(obra);
                 }
-                
+
             }
             UtilDA.Close(cnx);
             return lObra;
@@ -232,7 +232,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter usuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter pImagen = UtilDA.SetParameters("@imagen", OleDbType.VarBinary, datos.Image);
             OleDbParameter idObra = UtilDA.SetParameters("@idobra", OleDbType.Integer, datos.IdObra);
-            
+
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, fechaini, fechafin, descripcion, estado, idteatro, fechaMod, usuarioMod, pImagen, idObra);
         }
 
@@ -287,26 +287,26 @@ namespace ContactCenterDA.Repositories.CC.TH
             {
                 while (dtr.Read())
                 {
-                     obra = new Obra()
+                    obra = new Obra()
                     {
-                    IdObra = DataConvert.ToInt(dtr["IdObra"]),
-                    Nombre = DataConvert.ToString(dtr["O.Nombre"]),
-                    FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]),
-                    FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]),
-                    Descripcion = DataConvert.ToString(dtr["Descripcion"]),
-                    Estado = DataConvert.ToString(dtr["O.Estado"]),
-                    Teatro = new Teatro()
-                    {
-                        IdTeatro = DataConvert.ToInt(dtr["T.IdTeatro"]),
-                        Nombre = DataConvert.ToString(dtr["T.Nombre"]),
-                        Estado = DataConvert.ToString(dtr["T.Estado"]),
-                        frmTeatro = DataConvert.ToString(dtr["frmTeatro"])
-                    },
-                    FechaCreacion = DataConvert.ToDateTime(dtr["O.FechaCrea"]),
-                    UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]),
-                    FechaModificacion = DataConvert.ToDateTime(dtr["O.FechaMod"]),
-                    UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]),
-                     Image = DataConvert.ToByteArrayNull(dtr["Imagen"])
+                        IdObra = DataConvert.ToInt(dtr["IdObra"]),
+                        Nombre = DataConvert.ToString(dtr["O.Nombre"]),
+                        FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]),
+                        FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]),
+                        Descripcion = DataConvert.ToString(dtr["Descripcion"]),
+                        Estado = DataConvert.ToString(dtr["O.Estado"]),
+                        Teatro = new Teatro()
+                        {
+                            IdTeatro = DataConvert.ToInt(dtr["T.IdTeatro"]),
+                            Nombre = DataConvert.ToString(dtr["T.Nombre"]),
+                            Estado = DataConvert.ToString(dtr["T.Estado"]),
+                            frmTeatro = DataConvert.ToString(dtr["frmTeatro"])
+                        },
+                        FechaCreacion = DataConvert.ToDateTime(dtr["O.FechaCrea"]),
+                        UsuarioCreacion = DataConvert.ToString(dtr["O.UserCrea"]),
+                        FechaModificacion = DataConvert.ToDateTime(dtr["O.FechaMod"]),
+                        UsuarioModificacion = DataConvert.ToString(dtr["O.UserMod"]),
+                        Image = DataConvert.ToByteArrayNull(dtr["Imagen"])
                     };
 
                     ListaObra.Add(obra);
@@ -314,6 +314,26 @@ namespace ContactCenterDA.Repositories.CC.TH
             }
             UtilDA.Close(cnx);
             return ListaObra;
+        }
+
+        public byte[] GetImage(int id)
+        {
+            String sql = "SELECT IMAGEN FROM TH_OBRA WHERE IDOBRA = @codigo";
+            Obra objObra = null;
+            OleDbParameter codigo = UtilDA.SetParameters("@codigo", OleDbType.Integer, id);
+
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, codigo))
+            {
+                while (dtr.Read())
+                {
+                    objObra = new Obra();
+                    objObra.Image = DataConvert.ToByteArrayNull(dtr["Imagen"]);
+                }
+            }
+
+            UtilDA.Close(cnx);
+
+            return objObra.Image;
         }
     }
 }
