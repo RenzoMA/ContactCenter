@@ -350,7 +350,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             List<DetalleReserva> listaDetalle = new List<DetalleReserva>();
             DetalleReserva detalle = null;
             //string sql = "SELECT * FROM (((TH_RESERVA R INNER JOIN TH_OBRA O ON O.IDOBRA = R.IDOBRA) INNER JOIN TH_FUNCION F ON F.IDFUNCION = R.IDFUNCION) INNER JOIN TH_CLIENTE C ON C.IDCLIENTE = R.IDCLIENTE) INNER JOIN TH_TEATRO T ON T.IDTEATRO = O.IDTEATRO WHERE T.IDTEATRO = @IdTeatro AND IdEstadoReserva = 1 AND R.FechaReserva between @FechaReserva and @fechaFin ORDER BY C.Nombre ASC";
-            string sql = "SELECT * FROM ((TH_DETALLE_RESERVA DR INNER JOIN TH_RESERVA R ON R.IDRESERVA = DR.IDRESERVA) INNER JOIN TH_OBRA O ON O.IDOBRA = R.IDOBRA) INNER JOIN TH_CLIENTE C ON C.IDCLIENTE = R.IDCLIENTE WHERE R.IDESTADORESERVA = 1  AND O.IDTEATRO = @IdTeatro AND R.FechaReserva between @FechaReserva and @fechaFin ORDER BY C.ApePaterno, C.ApeMaterno, C.Nombre;";
+            string sql = "SELECT * FROM ((TH_DETALLE_RESERVA DR INNER JOIN TH_RESERVA R ON R.IDRESERVA = DR.IDRESERVA) INNER JOIN TH_OBRA O ON O.IDOBRA = R.IDOBRA) INNER JOIN TH_CLIENTE C ON C.IDCLIENTE = R.IDCLIENTE WHERE R.IDESTADORESERVA = 1  AND O.IDTEATRO = @IdTeatro AND R.FechaReserva between @FechaReserva and @fechaFin ORDER BY R.FechaReserva,C.ApePaterno, C.ApeMaterno, C.Nombre ;";
 
             OleDbParameter pIdTeatro = UtilDA.SetParameters("@IdTeatro", OleDbType.Integer, idTeatro);
             OleDbParameter pFecha = UtilDA.SetParameters("@FechaReserva", OleDbType.Date, fechaInicio);

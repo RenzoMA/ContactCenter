@@ -28,7 +28,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         private Reserva reserva;
 
         public List<AsientoZona> listaAsientoPrecio { get; set; }
-        public List<DetalleReserva> listaDetalle = new List<DetalleReserva>();
+        public List<DetalleReserva> listaDetalle;
         public DetalleReserva detalle;
         public Single precioTotal;
         public Cliente cliente;
@@ -115,6 +115,7 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         private void AsociarEntidadesReserva()
         {
+            listaDetalle = new List<DetalleReserva>();
             reserva.ListaDetalles = null;
             foreach (AsientoZona ap in listaAsientoPrecio)
             {
