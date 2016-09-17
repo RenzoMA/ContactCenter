@@ -16,6 +16,7 @@ using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using System.Drawing;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using System.Windows.Forms;
+using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 
 namespace ContactCenterBL.Helper
 {
@@ -28,6 +29,7 @@ namespace ContactCenterBL.Helper
             ContactCenterDA.Repositories.CC.TH.ObraRepository  obraRepository = new ContactCenterDA.Repositories.CC.TH.ObraRepository() ;
             string htmlBody = "";
             string subject = "";
+
             try
             {
                 var smtpClient = new SmtpClient();
@@ -73,10 +75,19 @@ namespace ContactCenterBL.Helper
                 var fecha = reserva.FechaReserva;
                 var teatro = reserva.Obra.Teatro.Nombre;
                 var hora = reserva.Horario;
-                var totalObras = reserva.Asientos.Count();
-                //var zona = reserva.Obra.Teatro.
+                var totalObras = reserva.ListaDetalles.Count();
                 var ubicacion = reserva.Asientos;
                 var precio = reserva.PrecioTotal;
+                
+                
+                //List<string> resultado;
+
+                //for( int i=0; i < reserva.ListaDetalles.Count(); i++)
+                //{
+                //    resultado = reserva.Asientos.Split('/').ToList();
+                //    //aqui es donde creo que debo añadir las filas a la tabla del html
+                //}
+
                 #endregion Create Mail Variables
 
                 #region Set Mail Variable Values
@@ -95,11 +106,17 @@ namespace ContactCenterBL.Helper
                         htmlBody = htmlBody.Replace("%Fecha", fecha.ToShortDateString());
                         htmlBody = htmlBody.Replace("%Obra", obra);
                         htmlBody = htmlBody.Replace("%Teatro", teatro);
+                        htmlBody = htmlBody.Replace("%Hora", hora);
                         htmlBody = htmlBody.Replace("%Total", totalObras.ToString());
-                        //htmlBody = htmlBody.Replace("%Ubicacion", zona);
                         htmlBody = htmlBody.Replace("%Ubicacion", ubicacion);
                         htmlBody = htmlBody.Replace("%Precio", precio.ToString());
 
+                        string detalle = "";
+                        foreach (DetalleReserva detalleRes in reserva.ListaDetalles)
+                        {
+                            detalle += "<tr><td>"+detalleRes.NombreZona+ "</td><td>" + detalleRes.NombreFila + "</td><td>" + detalleRes.NombreAsiento + "</td></tr>";
+                        }
+                        htmlBody = htmlBody.Replace("varDetalle", detalle);//try it
                         break;
 
                     default:

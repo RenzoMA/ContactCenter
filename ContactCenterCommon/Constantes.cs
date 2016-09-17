@@ -12,7 +12,6 @@ namespace ContactCenterCommon
         {
             public const string TeatroConfirmacionReserva =@"	<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'> " +
 "   <html xmlns='http://www.w3.org/1999/xhtml'>     " +
-
 "   <head>      " +
 "       <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />       " +
 "       <title>mail</title>     " +
@@ -21,7 +20,7 @@ namespace ContactCenterCommon
 "   </head>     " +
 
 "   <body>      " +
-"     <table width:'100%' style='margin:auto; text-align:center;  font-family: sans-serif;'>        " +
+"     <table width:'100%' style='margin:auto; text-align:center;  font-family: sans-serif; border: 1px solid black';>        " +
 
 "       <tr style='width:100%; background-color:black;'>        " +
 "           <td colspan='2' style='width:100%; font-size: 30px; color:white; padding:10px;'>TU RESERVA HA SIDO CONFIRMADA</td>      " +
@@ -31,10 +30,10 @@ namespace ContactCenterCommon
 "           <td id='p1' style='width: 100%; padding:10px;'>      " +
 "               <table width:'100%'>        " +
 "                   <tr>        " +
-"                       <td style ='font-size:19px;  font-weight: bold;'> %Nombre </td>        " +
+"                       <td style ='font-size:19px;  font-weight: bold; align-content:center'> %Nombre </td>        " +
 "                   </tr>       " +
 "                   <tr>        " +
-"                       <td>Ha realizado una reserva para la obra <b> %Obra  </b> el <b> %Fecha  </b> en el teatro <b> %Teatro </b> a las <b> %Hora </b> </td>     " +
+"                       <td>Ha realizado una reserva para la obra <b> %Obra  </b> el <b> %Fecha  </b> en el teatro <b style='color:red;'> %Teatro </b> para la función de la(s) <b> %Hora </b> horas </td>     " +
 "                   </tr>       " +
 "                   <tr>        " +
 "                       <td>    " +
@@ -44,15 +43,19 @@ namespace ContactCenterCommon
 "                                   <td style='font-weight: bold;'>:</td>    " +
 "                                   <td> %Total </td>       " +
 "                               </tr>       " +
-//"                               <tr>        " +
-//"                                   <td> Zona </td>     " +
-//"                                   <td>:</td>      " +
-//"                                   <td> %Zona </td>        " +
-//"                               </tr>       " +
 "                               <tr>        " +
 "                                   <td style='font-weight: bold;'> Ubicaciones </td> " +
 "                                   <td style='font-weight: bold;'>:</td>      " +
-"                                   <td> %Ubicacion </td>       " +
+"                                   <td>  " +
+"                                    <table border = 1px solid black >       " +
+"                                       <tr>        "+
+"                                       <th> Zona </th>"+
+"                                       <th> Fila </th>" +
+"                                       <th> Asiento </th>" +
+"                                       </tr>        " +
+                                            "varDetalle"+
+"                                    </table>       " +
+"                                   </td>       " +
 "                               </tr>       " +
 "                               <tr>        " +
 "                                   <td style='font-weight: bold;'> Precio </td>       " +
@@ -84,7 +87,6 @@ namespace ContactCenterCommon
 "           </table>        " +
 "       </tr>       " +
 " </body>   " +
-
  "</html>   ";
         }
 
