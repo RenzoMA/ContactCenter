@@ -212,8 +212,10 @@ namespace ContactCenterGUI.Teatros.Reservas
         }
         private async void ProcesarReserva(Cliente cliente)
         {
+            materialRaisedButton1.Enabled = false;
             try
             {
+               
                 Animacion.ShowLoader(this);
                 IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
                 bool resultado = await servicio.InsertarReservaAsync(reserva, cliente);
@@ -233,6 +235,7 @@ namespace ContactCenterGUI.Teatros.Reservas
             {
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            materialRaisedButton1.Enabled = true;
         }
 
         private void txtTelefono_Leave(object sender, EventArgs e)

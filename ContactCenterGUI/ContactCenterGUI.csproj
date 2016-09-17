@@ -28,10 +28,10 @@
     <ProductName>ContactCenter</ProductName>
     <PublisherName>Krieger Lab</PublisherName>
     <SuiteName>Krieger Lab</SuiteName>
-    <MinimumRequiredVersion>1.0.0.44</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.47</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.html</WebPage>
-    <ApplicationRevision>45</ApplicationRevision>
+    <ApplicationRevision>48</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SentEmail));
             this.dgvEmail = new System.Windows.Forms.DataGridView();
             this.IdLogEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -264,6 +265,7 @@
             this.Controls.Add(this.dtpFechaInicio);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvEmail);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "SentEmail";
             this.Sizable = false;
