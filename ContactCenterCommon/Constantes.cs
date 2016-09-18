@@ -47,8 +47,9 @@ namespace ContactCenterCommon
 "                                   <td style='font-weight: bold;'> Ubicaciones </td> " +
 "                                   <td style='font-weight: bold;'>:</td>      " +
 "                                   <td>  " +
-"                                    <table border = 1px solid black >       " +
-"                                       <tr>        "+
+"                                    <table border = 2px single black style = 'border-spacing: 5px; border-spacing: 3px' " +
+"                [if gte mso 15] border = 2px single black style = 'border-spacing: 5px; border-spacing: 3px' [endif]>       " +
+"                                       <tr style = 'background-color: black;  color: white;'>        " +
 "                                       <th> Zona </th>"+
 "                                       <th> Fila </th>" +
 "                                       <th> Asiento </th>" +

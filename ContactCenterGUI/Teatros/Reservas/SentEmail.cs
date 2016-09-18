@@ -25,6 +25,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
         DateTime fechaInicio, fechaFin;
         List<LogEmail> listaCorreoFecha;
+        bool proceso = true;
 
         public SentEmail()
         {
@@ -53,12 +54,17 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         private void dgvEmail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 7)
+            if (proceso)
             {
-                LogEmail logEmail = (LogEmail)dgvEmail.CurrentRow.DataBoundItem;
-                FowardEmails fowardEmail = new FowardEmails(logEmail);
-                fowardEmail.ShowDialog();
-                EnlazarGrilla();
+                proceso = false;
+                if (e.ColumnIndex == 7)
+                {
+                    LogEmail logEmail = (LogEmail)dgvEmail.CurrentRow.DataBoundItem;
+                    FowardEmails fowardEmail = new FowardEmails(logEmail);
+                    fowardEmail.ShowDialog();
+                    EnlazarGrilla();
+                }
+                proceso = true;
             }
         }
 

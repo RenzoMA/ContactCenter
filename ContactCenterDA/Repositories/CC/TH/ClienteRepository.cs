@@ -174,7 +174,7 @@ namespace ContactCenterDA.Repositories.CC.TH
         {
             List<RankingCliente> listaCliente = new List<RankingCliente>();
 
-            String sql = "SELECT (C.Nombre +' ' + C.ApePaterno+' ' +C.ApeMaterno) as NombreCliente , C.Correo, O.Nombre,COUNT(1) AS Cantidad FROM (TH_CLIENTE C INNER JOIN TH_RESERVA R ON R.IDCLIENTE = C.IDCLIENTE) INNER JOIN TH_OBRA O ON O.IDOBRA = R.IDOBRA WHERE R.IDESTADORESERVA <> 2 AND R.FECHARESERVA BETWEEN @fechaInicio and @fechaFin GROUP BY C.Nombre, C.ApePaterno, C.ApeMaterno, C.Correo, O.Nombre ORDER BY COUNT(1) DESC";
+            String sql = "SELECT R.NombreCliente as NombreCliente , C.Correo, O.Nombre,COUNT(1) AS Cantidad FROM (TH_CLIENTE C INNER JOIN TH_RESERVA R ON R.IDCLIENTE = C.IDCLIENTE) INNER JOIN TH_OBRA O ON O.IDOBRA = R.IDOBRA WHERE R.IDESTADORESERVA <> 2 AND R.FECHARESERVA BETWEEN @fechaInicio and @fechaFin GROUP BY R.NombreCliente, C.Correo, O.Nombre ORDER BY COUNT(1) DESC";
 
             OleDbParameter pFechaInicio = UtilDA.SetParameters("@fechaInicio", OleDbType.Date, fechaInicio);
             OleDbParameter pFechaFin = UtilDA.SetParameters("@fechaFin", OleDbType.Date, fechaFin);

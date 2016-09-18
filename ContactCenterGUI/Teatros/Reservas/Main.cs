@@ -23,6 +23,7 @@ namespace ContactCenterGUI.Teatros.Reservas
 {
     public partial class Main : MaterialForm
     {
+        bool proceso = true;
         public Main()
         {
             InitializeComponent();
@@ -77,13 +78,19 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         private void btnCargaMasiva_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "Excel Files|*.xlsx;";
-            openFileDialog1.FileName = "";
-            DialogResult result = openFileDialog1.ShowDialog();
-            if (result == DialogResult.OK)
+            if (proceso)
             {
-                string file = openFileDialog1.FileName;
-                RealizarCargaMasiva(file);
+                proceso = false;
+                openFileDialog1.Dispose();
+                openFileDialog1.Filter = "Excel Files|*.xlsx;";
+                openFileDialog1.FileName = "";
+                DialogResult result = openFileDialog1.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    string file = openFileDialog1.FileName;
+                    RealizarCargaMasiva(file);
+                }
+                proceso = true;
             }
         }
         private async void RealizarCargaMasiva(String path)

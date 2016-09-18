@@ -98,5 +98,17 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         {
             return _obraRepository.GetImage(id);
         }
+
+        public List<Obra> ListarObraTeatroCombo(int idTeatro)
+        {
+            List<Obra> listaObra = _obraRepository.GetLista().Where(tx => tx.Teatro.IdTeatro == idTeatro).ToList();
+            Obra obra = new Obra()
+            {
+                IdObra = 0,
+                Nombre = "Seleccione obra"
+            };
+            listaObra.Insert(0, obra);
+            return listaObra;
+        }
     }
 }

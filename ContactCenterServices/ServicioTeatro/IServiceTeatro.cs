@@ -20,6 +20,8 @@ namespace ContactCenterServices.ServicioTeatro
 {
     public interface IServiceTeatro : IDisposable
     {
+
+        List<Obra> ListarObraTeatroCombo(int idTeatro);
         bool CargaMasiva(string path);
         bool EliminarAsientoTemporalAntiguo();
         Task<List<Asiento>> ListarAsientoDisponibleAsync(int idObra, int idFuncion, DateTime FechaObra,string token);

@@ -78,15 +78,7 @@ namespace ContactCenterBL.Helper
                 var totalObras = reserva.ListaDetalles.Count();
                 var ubicacion = reserva.Asientos;
                 var precio = reserva.PrecioTotal;
-                
-                
-                //List<string> resultado;
-
-                //for( int i=0; i < reserva.ListaDetalles.Count(); i++)
-                //{
-                //    resultado = reserva.Asientos.Split('/').ToList();
-                //    //aqui es donde creo que debo añadir las filas a la tabla del html
-                //}
+       
 
                 #endregion Create Mail Variables
 
@@ -103,7 +95,7 @@ namespace ContactCenterBL.Helper
                         htmlBody = Constantes.Mails.TeatroConfirmacionReserva;
                         htmlBody = htmlBody.Replace("%Nombre", nombre);
                         htmlBody = htmlBody.Replace("%Obra", obra);
-                        htmlBody = htmlBody.Replace("%Fecha", fecha.ToShortDateString());
+                        htmlBody = htmlBody.Replace("%Fecha", fecha.ToString("dd/MM/yy"));
                         htmlBody = htmlBody.Replace("%Obra", obra);
                         htmlBody = htmlBody.Replace("%Teatro", teatro);
                         htmlBody = htmlBody.Replace("%Hora", hora);
@@ -116,7 +108,7 @@ namespace ContactCenterBL.Helper
                         {
                             detalle += "<tr><td>"+detalleRes.NombreZona+ "</td><td>" + detalleRes.NombreFila + "</td><td>" + detalleRes.NombreAsiento + "</td></tr>";
                         }
-                        htmlBody = htmlBody.Replace("varDetalle", detalle);//try it
+                        htmlBody = htmlBody.Replace("varDetalle", detalle);
                         break;
 
                     default:

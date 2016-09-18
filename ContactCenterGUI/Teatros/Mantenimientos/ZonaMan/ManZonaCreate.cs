@@ -65,7 +65,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ZonaMan
                 teatro = cboTeatro.SelectedItem as Teatro;
                 using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
-                    listaObra = servicio.ListarObraTeatro(teatro.IdTeatro);
+                    listaObra = servicio.ListarObraTeatroCombo(teatro.IdTeatro);
                     cboObra.DataSource = listaObra;
                     cboObra.DisplayMember = "Nombre";
                 }

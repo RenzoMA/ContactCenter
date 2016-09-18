@@ -68,6 +68,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
                 using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
                 {
                     Animacion.ShowLoader(this);
+                    btnAgregar.Enabled = false;
                     exito = await servicio.InsertarAsientoZonaAsync(lista,zona);
                     Animacion.HideLoader(this);
                     if (exito)
@@ -85,6 +86,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
             {
                 MessageBox.Show("Ocurrió un error " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            btnAgregar.Enabled = true;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

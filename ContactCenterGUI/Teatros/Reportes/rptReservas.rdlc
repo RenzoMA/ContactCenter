@@ -586,7 +586,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Reserva.Value.Cliente.Nombre</Value>
+                              <Value>=Fields!Reserva.Value.NombreCliente</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>

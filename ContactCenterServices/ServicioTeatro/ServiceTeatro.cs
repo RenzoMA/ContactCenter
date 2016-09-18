@@ -446,5 +446,10 @@ namespace ContactCenterServices.ServicioTeatro
         {
             return _emailService.GetCorreoFechas(fechaIni, fechaFin);
         }
+
+        public List<Obra> ListarObraTeatroCombo(int idTeatro)
+        {
+            return _obraService.ListarObraTeatroCombo(idTeatro);
+        }
     }
 }
