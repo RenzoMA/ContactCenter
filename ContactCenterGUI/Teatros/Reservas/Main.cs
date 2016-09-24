@@ -17,6 +17,7 @@ using Microsoft.Practices.Unity;
 using ContactCenterServices;
 using System.IO;
 using OfficeOpenXml;
+using System.Globalization;
 using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Reservas
@@ -153,6 +154,21 @@ namespace ContactCenterGUI.Teatros.Reservas
                 ws.Cells["M1"].Value = "CORREO";
                 ws.Cells["N1"].Value = "USUARIO REGISTRO";
                 ws.Cells["A1:N1"].Style.Font.Bold = true;
+                ws.Cells["A1:A100"].Style.Numberformat.Format = "@";
+                ws.Cells["B1:B100"].Style.Numberformat.Format = "@";
+                ws.Cells["C1:C100"].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
+                ws.Cells["D1:D100"].Style.Numberformat.Format = "@";
+                ws.Cells["E1:E100"].Style.Numberformat.Format = "@";
+                ws.Cells["F1:F100"].Style.Numberformat.Format = "@";
+                ws.Cells["G1:G100"].Style.Numberformat.Format = "@";
+                ws.Cells["H1:H100"].Style.Numberformat.Format = "@";
+                ws.Cells["I1:I100"].Style.Numberformat.Format = "@";
+                ws.Cells["J1:J100"].Style.Numberformat.Format = "@";
+                ws.Cells["K1:K100"].Style.Numberformat.Format = "@";
+                ws.Cells["L1:L100"].Style.Numberformat.Format = "@";
+                ws.Cells["M1:M100"].Style.Numberformat.Format = "@";
+                ws.Cells["N1:N100"].Style.Numberformat.Format = "@";
+
                 pck.Save();
                 System.Diagnostics.Process.Start(saveFileDialog1.FileName);
             }
