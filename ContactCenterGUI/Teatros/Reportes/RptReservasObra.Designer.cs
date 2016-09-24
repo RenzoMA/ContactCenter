@@ -62,6 +62,7 @@
             this.rptcro.Name = "rptcro";
             this.rptcro.Size = new System.Drawing.Size(801, 448);
             this.rptcro.TabIndex = 20;
+            this.rptcro.RenderingComplete += new Microsoft.Reporting.WinForms.RenderingCompleteEventHandler(this.rptcro_RenderingComplete);
             // 
             // groupBox1
             // 

@@ -451,5 +451,37 @@ namespace ContactCenterServices.ServicioTeatro
         {
             return _obraService.ListarObraTeatroCombo(idTeatro);
         }
+
+        public async Task<List<RankingCliente>> ObtenerRankingClienteAsync(DateTime fechaInicio, DateTime fechaFin)
+        {
+            List<RankingCliente> lista = null;
+            await Task.Run(() =>
+            {
+                lista = _clienteService.ObtenerRankingCliente(fechaInicio, fechaFin);
+            });
+            return lista;
+        }
+
+        public async Task<List<DetalleReserva>> ReporteReservasAsync(int idTeatro, DateTime fecha, DateTime fechaFin)
+        {
+            List<DetalleReserva> lista = null;
+            await Task.Run(() =>
+            {
+                lista = _reservaService.ReporteReservas(idTeatro, fecha, fechaFin);
+            });
+            return lista;
+
+        }
+
+        public async Task<List<ReservaObra>> ReporteReservaObraAsync(DateTime fechaInicio, DateTime fechaFin)
+        {
+            List<ReservaObra> lista = null;
+            await Task.Run(() =>
+            {
+                lista = _reservaService.ReporteReservaObra(fechaInicio, fechaFin);
+            }
+            );
+            return lista;
+        }
     }
 }

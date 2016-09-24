@@ -14,6 +14,7 @@ using ContactCenterServices;
 using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 using Microsoft.Reporting.WinForms;
 using ContactCenterGUI.CC.Constantes;
+using ContactCenterGUI.CC.Helpers;
 
 namespace ContactCenterGUI.Teatros.Reportes
 {
@@ -21,64 +22,63 @@ namespace ContactCenterGUI.Teatros.Reportes
     {
         private DateTime fechaInicio;
         private DateTime fechaFin;
+        private bool isProcessing = false;
 
         public RptRankingCliente()
         {
             InitializeComponent();
             
         }
-
-        private void RptRankingCliente_Load(object sender, EventArgs e)
+        private async void btnGenerar_Click_1(object sender, EventArgs e)
         {
-            //this.reportViewer1.RefreshReport();
-        }
-
-        private void btnGenerar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnGenerar_Click_1(object sender, EventArgs e)
-        {
-            try
+            if (!isProcessing)
             {
-                fechaInicio = dtpFechaInicio.Value.Date;
-                fechaFin = dtpFechaFin.Value.Date;
-                List<RankingCliente> listaRankingCliente;
-
-                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
+                try
                 {
-                    listaRankingCliente = servicio.ObtenerRankingCliente(fechaInicio, fechaFin);
+                    
+                    isProcessing = true;
+                    fechaInicio = dtpFechaInicio.Value.Date;
+                    fechaFin = dtpFechaFin.Value.Date;
+                    List<RankingCliente> listaRankingCliente;
+
+                    using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
+                    {
+                        
+                        listaRankingCliente = await servicio.ObtenerRankingClienteAsync(fechaInicio, fechaFin);
+                    }
+                    reportViewer1.ProcessingMode = ProcessingMode.Local;
+                    reportViewer1.LocalReport.DataSources.Clear();
+                    ReportDataSource Reporte = new ReportDataSource("DataSet1", listaRankingCliente);
+                    reportViewer1.LocalReport.DataSources.Add(Reporte);
+                    List<ReportParameter> parametros = new List<ReportParameter>();
+                    parametros.Add(new ReportParameter("fechaInicio", "" + fechaInicio));
+                    parametros.Add(new ReportParameter("fechaFin", "" + fechaFin));
+                    //Añado parametros al reportviewer
+                    this.reportViewer1.LocalReport.SetParameters(parametros);
+
+                    reportViewer1.RefreshReport();
+
+                    reportViewer1.Focus();
                 }
-
-                reportViewer1.ProcessingMode = ProcessingMode.Local;
-
-                reportViewer1.LocalReport.DataSources.Clear();
-
-                ReportDataSource Reporte = new ReportDataSource("DataSet1", listaRankingCliente);
-
-                reportViewer1.LocalReport.DataSources.Add(Reporte);
-
-                //reportViewer1.LocalReport.ReportEmbeddedResource = "MadScienceGUI.reportPago.rdlc";
-
-                List<ReportParameter> parametros = new List<ReportParameter>();
-                parametros.Add(new ReportParameter("fechaInicio", "" + fechaInicio));
-                parametros.Add(new ReportParameter("fechaFin", "" + fechaFin));
-                //Añado parametros al reportviewer
-                this.reportViewer1.LocalReport.SetParameters(parametros);
-                reportViewer1.RefreshReport();
-
-                reportViewer1.Focus();
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Reporte en ejecución", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void reportViewer1_RenderingComplete(object sender, RenderingCompleteEventArgs e)
+        {
+            isProcessing = false;
         }
     }
 }

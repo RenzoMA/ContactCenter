@@ -79,6 +79,7 @@ namespace ContactCenterServices.ServicioTeatro
         List<TipoPromocion> GetListaTipoPromocion();
 
         List<DetalleReserva> ReporteReservas(int idTeatro, DateTime fecha, DateTime fechaFin);
+        Task<List<DetalleReserva>> ReporteReservasAsync(int idTeatro, DateTime fecha, DateTime fechaFin);
         List<BusquedaReserva> BuscarByNamePhoneDate(string nombrePhone, DateTime fechaInicio,DateTime fechaFin);
         bool CancelarReserva(int idReserva);
         List<Zona> ComboListZonaByObra(int IdObra);
@@ -97,8 +98,9 @@ namespace ContactCenterServices.ServicioTeatro
         bool InsertPromocion(Promocion datos);
 
         List<RankingCliente> ObtenerRankingCliente(DateTime fechaInicio, DateTime fechaFin);
+        Task<List<RankingCliente>> ObtenerRankingClienteAsync(DateTime fechaInicio, DateTime fechaFin);
         List<ReservaObra> ReporteReservaObra(DateTime fechaInicio, DateTime fechaFin);
-
+        Task<List<ReservaObra>> ReporteReservaObraAsync(DateTime fechaInicio, DateTime fechaFin);
         //LogEmail
         bool UpdateLogEmail(LogEmail datos);
         IList<LogEmail> ListarEmail();

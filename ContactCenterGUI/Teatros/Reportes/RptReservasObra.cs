@@ -24,7 +24,7 @@ namespace ContactCenterGUI.Teatros.Reportes
 
         private DateTime fechaInicio;
         private DateTime fechaFin;
-        
+        private bool isProcessing = false;
         public RptReservasObra()
         {
             InitializeComponent();
@@ -42,48 +42,61 @@ namespace ContactCenterGUI.Teatros.Reportes
             //this.rptcro.RefreshReport();
         }
 
-        private void btnGenRep_Click_1(object sender, EventArgs e)
+        private async void btnGenRep_Click_1(object sender, EventArgs e)
         {
-            try
+            if (!isProcessing)
             {
-                fechaInicio = dtpFechaReservaI.Value.Date;
-                fechaFin = dtpFechaReservaF.Value.Date;
-
-                List<ReservaObra> listaReservaObra;
-
-                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
+                try
                 {
-                    listaReservaObra = servicio.ReporteReservaObra(fechaInicio, fechaFin);
+                    isProcessing = true;
+                    fechaInicio = dtpFechaReservaI.Value.Date;
+                    fechaFin = dtpFechaReservaF.Value.Date;
+
+                    List<ReservaObra> listaReservaObra;
+
+                    using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
+                    {
+                        listaReservaObra = await servicio.ReporteReservaObraAsync(fechaInicio, fechaFin);
+                    }
+
+                    rptcro.ProcessingMode = ProcessingMode.Local;
+
+                    rptcro.LocalReport.DataSources.Clear();
+
+                    ReportDataSource Reporte = new ReportDataSource("DataSet1", listaReservaObra);
+
+                    rptcro.LocalReport.DataSources.Add(Reporte);
+
+                    //reportViewer1.LocalReport.ReportEmbeddedResource = "MadScienceGUI.reportPago.rdlc";
+
+                    List<ReportParameter> parametros = new List<ReportParameter>();
+                    parametros.Add(new ReportParameter("FechaIni", "" + fechaInicio));
+                    parametros.Add(new ReportParameter("FechaFin", "" + fechaFin));
+                    //Añado parametros al reportviewer
+                    this.rptcro.LocalReport.SetParameters(parametros);
+                    rptcro.RefreshReport();
+
+                    rptcro.Focus();
                 }
-
-                rptcro.ProcessingMode = ProcessingMode.Local;
-
-                rptcro.LocalReport.DataSources.Clear();
-
-                ReportDataSource Reporte = new ReportDataSource("DataSet1", listaReservaObra);
-
-                rptcro.LocalReport.DataSources.Add(Reporte);
-
-                //reportViewer1.LocalReport.ReportEmbeddedResource = "MadScienceGUI.reportPago.rdlc";
-
-                List<ReportParameter> parametros = new List<ReportParameter>();
-                parametros.Add(new ReportParameter("FechaIni", "" + fechaInicio));
-                parametros.Add(new ReportParameter("FechaFin", "" + fechaFin));
-                //Añado parametros al reportviewer
-                this.rptcro.LocalReport.SetParameters(parametros);
-                rptcro.RefreshReport();
-
-                rptcro.Focus();
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El reporte esta procesando", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void rptcro_RenderingComplete(object sender, RenderingCompleteEventArgs e)
+        {
+            isProcessing = false;
         }
     }
 }

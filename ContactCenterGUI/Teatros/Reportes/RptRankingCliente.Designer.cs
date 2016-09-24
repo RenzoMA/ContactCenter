@@ -62,6 +62,7 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(774, 419);
             this.reportViewer1.TabIndex = 14;
+            this.reportViewer1.RenderingComplete += new Microsoft.Reporting.WinForms.RenderingCompleteEventHandler(this.reportViewer1_RenderingComplete);
             // 
             // groupBox1
             // 
@@ -161,7 +162,6 @@
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ranking Cliente";
-            this.Load += new System.EventHandler(this.RptRankingCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RankingClienteBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

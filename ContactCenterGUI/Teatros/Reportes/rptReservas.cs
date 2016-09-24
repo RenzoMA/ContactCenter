@@ -24,6 +24,7 @@ namespace ContactCenterGUI.Teatros.Reportes
         private Teatro teatro;
         private DateTime fechaObra;
         private DateTime fechaObraFin;
+        private bool isProcessing = false;
         public RptReservas()
         {
             InitializeComponent();
@@ -54,57 +55,64 @@ namespace ContactCenterGUI.Teatros.Reportes
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-          
-
+         
         }
-
-        private void materialRaisedButton1_Click_1(object sender, EventArgs e)
+        
+        private async void materialRaisedButton1_Click_1(object sender, EventArgs e)
         {
-            try
+            if (!isProcessing)
             {
-                fechaObra = dtpFechaObra.Value.Date;
-                fechaObraFin = dtpFechaObraFin.Value.Date;
-                teatro = cboTeatro2.SelectedItem as Teatro;
-                List<DetalleReserva> lista = new List<DetalleReserva>();
-                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
+                try
                 {
-                    lista = servicio.ReporteReservas(teatro.IdTeatro, fechaObra, fechaObraFin.AddDays(1).AddSeconds(-1));
+                    isProcessing = true;
+                    fechaObra = dtpFechaObra.Value.Date;
+                    fechaObraFin = dtpFechaObraFin.Value.Date;
+                    teatro = cboTeatro2.SelectedItem as Teatro;
+                    List<DetalleReserva> lista = new List<DetalleReserva>();
+                    using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
+                    {
+                        lista = await servicio.ReporteReservasAsync(teatro.IdTeatro, fechaObra, fechaObraFin.AddDays(1).AddSeconds(-1));
+                    }
+
+                    reportViewer1.ProcessingMode = ProcessingMode.Local;
+
+                    reportViewer1.LocalReport.DataSources.Clear();
+
+                    ReportDataSource Reporte = new ReportDataSource("DataSetDetalleReserva", lista);
+
+                    reportViewer1.LocalReport.DataSources.Add(Reporte);
+
+                    //reportViewer1.LocalReport.ReportEmbeddedResource = "MadScienceGUI.reportPago.rdlc";
+
+                    List<ReportParameter> parametros = new List<ReportParameter>();
+                    parametros.Add(new ReportParameter("NombreTeatro", "" + teatro.Nombre));
+                    parametros.Add(new ReportParameter("FechaObra", "" + fechaObra));
+                    parametros.Add(new ReportParameter("FechaFin", "" + fechaObraFin));
+                    //Añado parametros al reportviewer
+                    this.reportViewer1.LocalReport.SetParameters(parametros);
+                    reportViewer1.RefreshReport();
+
+                    reportViewer1.Focus();
                 }
-
-                reportViewer1.ProcessingMode = ProcessingMode.Local;
-
-                reportViewer1.LocalReport.DataSources.Clear();
-
-                ReportDataSource Reporte = new ReportDataSource("DataSetDetalleReserva", lista);
-
-                reportViewer1.LocalReport.DataSources.Add(Reporte);
-
-                //reportViewer1.LocalReport.ReportEmbeddedResource = "MadScienceGUI.reportPago.rdlc";
-
-                List<ReportParameter> parametros = new List<ReportParameter>();
-                parametros.Add(new ReportParameter("NombreTeatro", "" + teatro.Nombre));
-                parametros.Add(new ReportParameter("FechaObra", "" + fechaObra));
-                parametros.Add(new ReportParameter("FechaFin", "" + fechaObraFin));
-                //Añado parametros al reportviewer
-                this.reportViewer1.LocalReport.SetParameters(parametros);
-                reportViewer1.RefreshReport();
-
-                reportViewer1.Focus();
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El reporte se esta ejecutando", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void reportViewer1_RenderingComplete(object sender, RenderingCompleteEventArgs e)
+        {
+            isProcessing = false;
         }
     }
 }

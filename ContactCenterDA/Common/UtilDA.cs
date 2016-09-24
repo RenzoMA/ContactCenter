@@ -15,7 +15,9 @@ namespace ContactCenterDA.Common
 {
     static class UtilDA
     {
-        
+
+        private static int commandTimeout = 90;
+
         /// <summary>
         /// Metodo de extension para obtener la cadena de conexión.
         /// </summary>
@@ -131,8 +133,9 @@ namespace ContactCenterDA.Common
                 {
                     oleDbCommand.Connection = oleDbConnection;
                     oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
+                    oleDbCommand.CommandTimeout = 90;
                 }
-
+                oleDbCommand.CommandTimeout = commandTimeout;
                 oleDbCommand.Parameters.Clear();
                 foreach (OleDbParameter parameter in parameters)
                 {
@@ -172,6 +175,7 @@ namespace ContactCenterDA.Common
             try
             {
                 oleDbCommand.Connection = oleDbConnection;
+                oleDbCommand.CommandTimeout = commandTimeout;
                 oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
                 oleDbCommand.Parameters.Clear();
                 oleDbConnection.Open();
@@ -203,9 +207,9 @@ namespace ContactCenterDA.Common
                 {
                     oleDbCommand.Connection = oleDbConnection;
                     oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
+                    oleDbCommand.CommandTimeout = commandTimeout;
                 }
                 oleDbCommand.Parameters.Clear();
-
                 foreach (OleDbParameter parameter in parameters)
                 {
                     oleDbCommand.Parameters.Add(parameter);
@@ -313,6 +317,7 @@ namespace ContactCenterDA.Common
                     oleDbCommand = new OleDbCommand();
                     oleDbConnection = new OleDbConnection();
                     oleDbCommand.Connection = oleDbConnection;
+                    oleDbCommand.CommandTimeout = 90;
                     oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
                 }
                 oleDbCommand.Parameters.Clear();
@@ -368,6 +373,7 @@ namespace ContactCenterDA.Common
             {
                 oleDbCommand.Connection = oleDbConnection;
                 oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
+                oleDbCommand.CommandTimeout = 90;
                 oleDbCommand.Parameters.Clear();
 
                 foreach (OleDbParameter parameter in parameters)
@@ -421,6 +427,7 @@ namespace ContactCenterDA.Common
                 oleDbCommand.Connection = oleDbConnection;
                 oleDbConnection.ConnectionString = oleDbConnection.GetConexion();
                 oleDbCommand.Parameters.Clear();
+                oleDbCommand.CommandTimeout = 90;
 
                 foreach (OleDbParameter parameter in parameters)
                 {
