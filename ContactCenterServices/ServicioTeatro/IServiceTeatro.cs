@@ -106,5 +106,6 @@ namespace ContactCenterServices.ServicioTeatro
         IList<LogEmail> ListarEmail();
         LogEmail BuscarEmail(int id);
         List<LogEmail> ListaCorreoFechas(DateTime fechaIni, DateTime fechaFin);
+        List<Promocion> ListPromocionByObra(int idObra);
     }
 }

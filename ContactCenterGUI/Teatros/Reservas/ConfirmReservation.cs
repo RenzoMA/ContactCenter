@@ -318,22 +318,8 @@ namespace ContactCenterGUI.Teatros.Reservas
                 Promocion promocion = cboPromocion.SelectedItem as Promocion;
                 if (promocion != null)
                 {
-                    switch (promocion.TipoDescuento)
-                    {
-                        case "M":
 
-                            foreach (AsientoZona ap in listaAsientoPrecio)
-                            {
-                                ap.Zona.Precio = promocion.Descuento * ap.Zona.Precio;
-                            }
-                            break;
-                        case "R":
-                            foreach (AsientoZona ap in listaAsientoPrecio)
-                            {
-                                ap.Zona.Precio = promocion.Descuento;
-                            }
-                            break;
-                    }
+                    //asociar nuevos precios
                     PopularDatosReserva();
                     AsociarEntidadesReserva();
                     reserva.Promocion = promocion;

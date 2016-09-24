@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManPromocion));
             this.btnCrear = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.cboFuncion = new MetroFramework.Controls.MetroComboBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.cboObra = new MetroFramework.Controls.MetroComboBox();
             this.cboTeatro = new MetroFramework.Controls.MetroComboBox();
             this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dgvPromociones = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserCrea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPromociones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -56,7 +56,7 @@
             // btnCrear
             // 
             this.btnCrear.Depth = 0;
-            this.btnCrear.Location = new System.Drawing.Point(605, 549);
+            this.btnCrear.Location = new System.Drawing.Point(594, 549);
             this.btnCrear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Primary = true;
@@ -69,8 +69,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.materialLabel2);
-            this.groupBox1.Controls.Add(this.cboFuncion);
             this.groupBox1.Controls.Add(this.materialLabel1);
             this.groupBox1.Controls.Add(this.materialLabel5);
             this.groupBox1.Controls.Add(this.cboObra);
@@ -78,33 +76,10 @@
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Location = new System.Drawing.Point(12, 73);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(750, 148);
+            this.groupBox1.Size = new System.Drawing.Size(750, 109);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(22, 98);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(66, 19);
-            this.materialLabel2.TabIndex = 16;
-            this.materialLabel2.Text = "Función:";
-            // 
-            // cboFuncion
-            // 
-            this.cboFuncion.FormattingEnabled = true;
-            this.cboFuncion.ItemHeight = 23;
-            this.cboFuncion.Location = new System.Drawing.Point(102, 90);
-            this.cboFuncion.Name = "cboFuncion";
-            this.cboFuncion.Size = new System.Drawing.Size(241, 29);
-            this.cboFuncion.TabIndex = 15;
             // 
             // materialLabel1
             // 
@@ -142,7 +117,6 @@
             this.cboObra.Name = "cboObra";
             this.cboObra.Size = new System.Drawing.Size(241, 29);
             this.cboObra.TabIndex = 13;
-            this.cboObra.SelectionChangeCommitted += new System.EventHandler(this.cboObra_SelectionChangeCommitted);
             // 
             // cboTeatro
             // 
@@ -176,71 +150,20 @@
             this.dgvPromociones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPromociones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar,
+            this.Descripcion,
             this.FechaInicio,
             this.FechaFin,
-            this.Descripcion,
-            this.TipoDescuento,
-            this.Descuento,
-            this.Estado});
-            this.dgvPromociones.Location = new System.Drawing.Point(12, 240);
+            this.Estado,
+            this.FechaCreacion,
+            this.UserCrea});
+            this.dgvPromociones.Location = new System.Drawing.Point(12, 188);
             this.dgvPromociones.Name = "dgvPromociones";
             this.dgvPromociones.ReadOnly = true;
             this.dgvPromociones.RowHeadersVisible = false;
             this.dgvPromociones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPromociones.Size = new System.Drawing.Size(750, 303);
+            this.dgvPromociones.Size = new System.Drawing.Size(750, 355);
             this.dgvPromociones.TabIndex = 10;
             this.dgvPromociones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPromociones_CellContentClick);
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 45;
-            // 
-            // FechaInicio
-            // 
-            this.FechaInicio.DataPropertyName = "FechaInicio";
-            this.FechaInicio.HeaderText = "FechaInicio";
-            this.FechaInicio.Name = "FechaInicio";
-            this.FechaInicio.ReadOnly = true;
-            // 
-            // FechaFin
-            // 
-            this.FechaFin.DataPropertyName = "FechaFin";
-            this.FechaFin.HeaderText = "FechaFin";
-            this.FechaFin.Name = "FechaFin";
-            this.FechaFin.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 200;
-            // 
-            // TipoDescuento
-            // 
-            this.TipoDescuento.DataPropertyName = "TipoDescuento";
-            this.TipoDescuento.HeaderText = "TipoDescuento";
-            this.TipoDescuento.Name = "TipoDescuento";
-            this.TipoDescuento.ReadOnly = true;
-            // 
-            // Descuento
-            // 
-            this.Descuento.DataPropertyName = "Descuento";
-            this.Descuento.HeaderText = "Descuento";
-            this.Descuento.Name = "Descuento";
-            this.Descuento.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
             // 
             // dataGridViewImageColumn1
             // 
@@ -262,6 +185,66 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::ContactCenterGUI.Properties.Resources.ic_menu_edit;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 45;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 160;
+            // 
+            // FechaInicio
+            // 
+            this.FechaInicio.DataPropertyName = "FechaInicio";
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.FechaInicio.DefaultCellStyle = dataGridViewCellStyle1;
+            this.FechaInicio.HeaderText = "Fecha Inicio";
+            this.FechaInicio.Name = "FechaInicio";
+            this.FechaInicio.ReadOnly = true;
+            // 
+            // FechaFin
+            // 
+            this.FechaFin.DataPropertyName = "FechaFin";
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.FechaFin.DefaultCellStyle = dataGridViewCellStyle2;
+            this.FechaFin.HeaderText = "Fecha Fin";
+            this.FechaFin.Name = "FechaFin";
+            this.FechaFin.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 80;
+            // 
+            // FechaCreacion
+            // 
+            this.FechaCreacion.DataPropertyName = "FechaCreacion";
+            this.FechaCreacion.HeaderText = "Fecha Creacion";
+            this.FechaCreacion.Name = "FechaCreacion";
+            this.FechaCreacion.ReadOnly = true;
+            this.FechaCreacion.Width = 120;
+            // 
+            // UserCrea
+            // 
+            this.UserCrea.DataPropertyName = "UsuarioCreacion";
+            this.UserCrea.HeaderText = "Usuario Creacion";
+            this.UserCrea.Name = "UserCrea";
+            this.UserCrea.ReadOnly = true;
+            this.UserCrea.Width = 120;
             // 
             // ManPromocion
             // 
@@ -296,17 +279,15 @@
         private System.Windows.Forms.DataGridView dgvPromociones;
         private MetroFramework.Controls.MetroComboBox cboObra;
         private MetroFramework.Controls.MetroComboBox cboTeatro;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MetroFramework.Controls.MetroComboBox cboFuncion;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaFin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDescuento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCreacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserCrea;
     }
 }

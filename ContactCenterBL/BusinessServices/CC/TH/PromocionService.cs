@@ -25,7 +25,6 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         {
             List<Promocion> listaPromocion = promocionRepository.ListarPromocionByFuncion(idFuncion);
             listaPromocion.ForEach(tx => {
-                tx.TipoDescuento = tx.TipoDescuento == "M"? "Multiplica" : "Reemplaza";
                 tx.Estado = tx.Estado == "A" ? "Activo" : "Inactivo";
             });
             return listaPromocion;
@@ -34,6 +33,11 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         public List<Promocion> ListByFuncionTipoPromo(int idFuncion, int idTipoPromocion)
         {
             return promocionRepository.ListByFuncionTipoPromo(idFuncion, idTipoPromocion);
+        }
+
+        public List<Promocion> ListPromocionByObra(int idObra)
+        {
+            return promocionRepository.ListPromocionByObra(idObra);
         }
 
         public bool Update(Promocion datos)

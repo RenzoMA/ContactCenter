@@ -11,5 +11,6 @@ namespace ContactCenterBE.CC.TH.Entidades.PromocionBE
     {
         List<Promocion> ListByFuncionTipoPromo(int idFuncion, int idTipoPromocion);
         List<Promocion> ListarPromocionByFuncion(int idFuncion);
+        List<Promocion> ListPromocionByObra(int idObra);
     }
 }

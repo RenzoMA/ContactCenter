@@ -483,5 +483,10 @@ namespace ContactCenterServices.ServicioTeatro
             );
             return lista;
         }
+
+        public List<Promocion> ListPromocionByObra(int idObra)
+        {
+            return _promocionService.ListPromocionByObra(idObra);
+        }
     }
 }

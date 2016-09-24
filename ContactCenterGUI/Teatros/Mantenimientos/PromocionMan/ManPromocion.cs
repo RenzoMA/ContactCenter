@@ -51,17 +51,10 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
             Teatro teatro = cboTeatro.SelectedItem as Teatro;
             cboObra.DataSource = servicio.ListarObraTeatro(teatro.IdTeatro);
             cboObra.DisplayMember = "Nombre";
-            LoadComboFuncion();
         }
         private void ConfigurarGrilla()
         {
             dgvPromociones.AutoGenerateColumns = false;
-        }
-        private void LoadComboFuncion()
-        {
-            Obra obra = cboObra.SelectedItem as Obra;
-            cboFuncion.DataSource = servicio.ListarFuncionByObra(obra.IdObra);
-            cboFuncion.DisplayMember = "HorarioDia";
         }
 
         private void cboTeatro_SelectionChangeCommitted(object sender, EventArgs e)
@@ -69,10 +62,6 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
             LoadComboObra();
         }
 
-        private void cboObra_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            LoadComboFuncion();
-        }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -80,9 +69,9 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
         }
         private void EnlazarGrilla()
         {
-            try { 
-            Funcion funcion = cboFuncion.SelectedItem as Funcion;
-            dgvPromociones.DataSource = servicio.ListarPromocionByFuncion(funcion.IdFuncion);
+            try {
+                Obra obra = cboObra.SelectedItem as Obra;
+                dgvPromociones.DataSource = servicio.ListPromocionByObra(obra.IdObra);
             }
             catch (Exception ex)
             {

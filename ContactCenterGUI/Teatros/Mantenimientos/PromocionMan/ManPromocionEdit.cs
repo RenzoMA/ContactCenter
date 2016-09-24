@@ -34,9 +34,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
         private void LoadData()
         {
             txtDescripcion.Text = promocion.Descripcion;
-            txtDescuento.Text = promocion.Descuento.ToString();
             cboEstado.SelectedIndex = promocion.Estado == "Activo"? 0:1;
-            cboTipoDescuento.SelectedIndex = promocion.TipoDescuento == "Multiplica" ? 0 : 1;
             dtpFechaFin.Value = promocion.FechaFin;
             dtpFechaInicio.Value = promocion.FechaInicio;
             try { 
@@ -66,11 +64,9 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
         private void CapturarDatos()
         {
             promocion.Descripcion = txtDescripcion.Text.ToUpper().Trim();
-            promocion.Descuento = Convert.ToSingle(txtDescuento.Text);
             promocion.Estado = cboEstado.SelectedIndex == 0 ? "A" : "I";
             promocion.FechaFin = dtpFechaFin.Value.Date;
             promocion.FechaInicio = dtpFechaInicio.Value.Date;
-            promocion.TipoDescuento = cboTipoDescuento.SelectedIndex == 0 ? "M" : "R";
             promocion.TipoPromocion = cboTipoPromocion.SelectedItem as TipoPromocion;
         }
         private bool ValidarDatos()
