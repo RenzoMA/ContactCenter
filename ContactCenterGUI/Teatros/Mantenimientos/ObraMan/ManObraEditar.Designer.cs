@@ -261,7 +261,7 @@
             // btnAceptarObra
             // 
             this.btnAceptarObra.Depth = 0;
-            this.btnAceptarObra.Location = new System.Drawing.Point(303, 841);
+            this.btnAceptarObra.Location = new System.Drawing.Point(288, 841);
             this.btnAceptarObra.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAceptarObra.Name = "btnAceptarObra";
             this.btnAceptarObra.Primary = true;
@@ -291,7 +291,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 890);
+            this.ClientSize = new System.Drawing.Size(477, 890);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gbDatosObra);
             this.Controls.Add(this.btnAceptarObra);

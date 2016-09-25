@@ -9,7 +9,7 @@ namespace ContactCenterBL.BusinessInterfaces.CC.TH
 {
     public interface IPromocionService
     {
-        List<Promocion> ListByFuncionTipoPromo(int idFuncion, int idTipoPromocion);
+        List<Promocion> ListByFuncionTipoPromo(int idFuncion, int idTipoPromocion, string zonas);
         List<Promocion> ListarPromocionByFuncion(int idFuncion);
         List<Promocion> ListPromocionByObra(int idObra);
         bool Update(Promocion datos);

@@ -9,8 +9,9 @@ namespace ContactCenterBE.CC.TH.Entidades.PromocionBE
 {
     public interface IPromocionRepository : IBaseRepository<Promocion>
     {
-        List<Promocion> ListByFuncionTipoPromo(int idFuncion, int idTipoPromocion);
+        List<Promocion> ListByFuncionTipoPromo(int idFuncion, int idTipoPromo, string zonas);
         List<Promocion> ListarPromocionByFuncion(int idFuncion);
         List<Promocion> ListPromocionByObra(int idObra);
+        List<PromocionZona> ListPromocionZonaByFuncionZona(int idFuncion, string zonas);
     }
 }

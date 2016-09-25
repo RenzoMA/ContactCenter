@@ -24,7 +24,6 @@ namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
         public Funcion Funcion { get; set; }
         public Cliente Cliente { get; set; }
         public Usuario Usuario { get; set; }
-        public Promocion Promocion { get; set; }
         public List<DetalleReserva> ListaDetalles { get; set; }
         public Single PrecioTotal { get; set; }
         public String Asientos { get; set; }

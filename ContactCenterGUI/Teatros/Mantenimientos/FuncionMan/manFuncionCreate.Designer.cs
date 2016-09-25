@@ -155,7 +155,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Depth = 0;
-            this.btnAceptar.Location = new System.Drawing.Point(126, 292);
+            this.btnAceptar.Location = new System.Drawing.Point(114, 288);
             this.btnAceptar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Primary = true;

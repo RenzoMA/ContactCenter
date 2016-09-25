@@ -143,39 +143,128 @@ namespace ContactCenterDA.Repositories.CC.TH
                     }
                 }
                 UtilDA.ExecuteCommit(cmd, cnx);
+                return true;
             }
             catch
             {
                 UtilDA.ExecuteRollback(cmd, cnx);
+                return false;
             }
-            return true;
 
         }
 
         public bool Update(Promocion datos)
         {
-            String sql = "UPDATE TH_PROMOCION SET Descripcion = @descripciom, Estado = @estado, FechaInicio = @fechaInicio, FechaFin = @fechaFin, IdTipoPromocion = @idTipoPromocion, " +
-                        " FechaMod = @fechaMod, UserMod = @userMod WHERE IdPromocion = @idPromocion";
 
-            OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
-            OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
-            OleDbParameter fechaInicio = UtilDA.SetParameters("@fechInicio", OleDbType.Date, datos.FechaInicio);
-            OleDbParameter fechaFin = UtilDA.SetParameters("@fechaFin", OleDbType.Date, datos.FechaFin);
-            OleDbParameter idTipoPromocion = UtilDA.SetParameters("@idTipoPromocion", OleDbType.Integer, datos.TipoPromocion.IdTipoPromocion);
-            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter userMod = UtilDA.SetParameters("@userMod", OleDbType.VarChar, datos.UsuarioCreacion);
-            OleDbParameter idPromocion = UtilDA.SetParameters("@idPromocion", OleDbType.Integer, datos.IdPromocion);
+            try
+            {
+                String sql = "UPDATE TH_PROMOCION SET Descripcion = @descripciom, Estado = @estado, FechaInicio = @fechaInicio, FechaFin = @fechaFin, IdTipoPromocion = @idTipoPromocion, " +
+                            " FechaMod = @fechaMod, UserMod = @userMod WHERE IdPromocion = @idPromocion";
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, descripcion, estado, fechaInicio, fechaFin, idTipoPromocion, fechaMod, userMod, idPromocion);
+                OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
+                OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
+                OleDbParameter fechaInicio = UtilDA.SetParameters("@fechInicio", OleDbType.Date, datos.FechaInicio);
+                OleDbParameter fechaFin = UtilDA.SetParameters("@fechaFin", OleDbType.Date, datos.FechaFin);
+                OleDbParameter idTipoPromocion = UtilDA.SetParameters("@idTipoPromocion", OleDbType.Integer, datos.TipoPromocion.IdTipoPromocion);
+                OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
+                OleDbParameter userMod = UtilDA.SetParameters("@userMod", OleDbType.VarChar, Sesion.usuario.Login);
+                OleDbParameter idPromocion = UtilDA.SetParameters("@idPromocion", OleDbType.Integer, datos.IdPromocion);
+                UtilDA.ExecuteBeginTransaction(cmd, cnx);
+                if (!UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, true, descripcion, estado, fechaInicio, fechaFin, idTipoPromocion, fechaMod, userMod, idPromocion))
+                {
+                    UtilDA.ExecuteRollback(cmd, cnx);
+                    return false;
+                }
+
+                String SQLDeletePromoZona = "DELETE FROM TH_PROMOCION_ZONA WHERE IDPROMOCION = @idPromocion";
+                OleDbParameter pIdPromo = UtilDA.SetParameters("@idPromocion", OleDbType.Integer, datos.IdPromocion);
+
+                if (!UtilDA.ExecuteNonQuery(cmd, CommandType.Text, SQLDeletePromoZona, cnx, true, pIdPromo))
+                {
+                    UtilDA.ExecuteRollback(cmd, cnx);
+                    return false;
+                }
+
+                String SQLDeletePromoFuncion = "DELETE FROM TH_PROMOCION_FUNCION WHERE IDPROMOCION = @idPromocion";
+                OleDbParameter pIdPromoFuncion = UtilDA.SetParameters("@idPromocion", OleDbType.Integer, datos.IdPromocion);
+
+                if (!UtilDA.ExecuteNonQuery(cmd, CommandType.Text, SQLDeletePromoFuncion, cnx, true, pIdPromoFuncion))
+                {
+                    UtilDA.ExecuteRollback(cmd, cnx);
+                    return false;
+                }
+
+
+                foreach (PromocionZona pzona in datos.PromocionZonas)
+                {
+                    string sqlZona = "INSERT INTO TH_PROMOCION_ZONA (IDPROMOCION, IDZONA, PRECIO) VALUES (@idPromocion, @idZona, @precio)";
+                    OleDbParameter pIdPromocion = UtilDA.SetParameters("@idPromocion", OleDbType.Integer, datos.IdPromocion);
+                    OleDbParameter pIdZona = UtilDA.SetParameters("@idZona", OleDbType.Integer, pzona.Zona.IdZona);
+                    OleDbParameter pPrecio = UtilDA.SetParameters("@precio", OleDbType.Single, pzona.Precio);
+                    if (!UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sqlZona, cnx, true, pIdPromocion, pIdZona, pPrecio))
+                    {
+                        UtilDA.ExecuteRollback(cmd, cnx);
+                        return false;
+                    }
+                }
+
+                foreach (PromocionFuncion pfuncion in datos.PromocionFunciones)
+                {
+                    string sqlFuncion = "INSERT INTO TH_PROMOCION_FUNCION (IdPromocion, IdFuncion) values (@idPromocion, @idFuncion)";
+                    OleDbParameter pIdpromocion = UtilDA.SetParameters("@idPromocion", OleDbType.Integer, datos.IdPromocion);
+                    OleDbParameter pIdFuncion = UtilDA.SetParameters("@idFuncion", OleDbType.Integer, pfuncion.Funcion.IdFuncion);
+                    if (!UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sqlFuncion, cnx, true, pIdpromocion, pIdFuncion))
+                    {
+                        UtilDA.ExecuteRollback(cmd, cnx);
+                        return false;
+                    }
+                }
+                UtilDA.ExecuteCommit(cmd, cnx);
+                return true;
+            }
+            catch
+            {
+                UtilDA.ExecuteRollback(cmd, cnx);
+                return false;
+            }
+
 
         }
-
-        public List<Promocion> ListByFuncionTipoPromo(int idFuncion, int idTipoPromo)
+        public List<PromocionZona> ListPromocionZonaByFuncionZona(int idFuncion, string zonas)
         {
-            string SQL = "SELECT* FROM (TH_PROMOCION P INNER JOIN TH_FUNCION F ON F.IDFUNCION = P.IDFUNCION) INNER JOIN TH_TIPO_PROMOCION TP ON TP.IDTIPOPROMOCION = P.IDTIPOPROMOCION WHERE P.IDFUNCION = @IdFuncion AND P.Estado = 'A' AND P.IDTIPOPROMOCION = @IdTipoPromocion AND @FechaActual BETWEEN FechaInicio and FechaFin";
-
-            OleDbParameter pIdfuncion = UtilDA.SetParameters("@IdFuncion", OleDbType.Integer, idFuncion);
-            OleDbParameter pIdTipoPromo = UtilDA.SetParameters("@IdTipoPromocion", OleDbType.Integer, idTipoPromo);
+            string sql = "SELECT * FROM TH_PROMOCION_ZONA PZ INNER JOIN TH_ZONA Z ON Z.IDZONA = PZ.IDZONA WHERE PZ.IDPROMOCION IN (SELECT IDPROMOCION FROM TH_PROMOCION_FUNCION WHERE IDFUNCION = @idFuncion) AND PZ.IDZONA IN (@zonas)";
+            sql = sql.Replace("@zonas", zonas);
+            OleDbParameter pIdFuncion = UtilDA.SetParameters("@idFuncion", OleDbType.Integer, idFuncion);
+            List<PromocionZona> listPromocionZona = new List<PromocionZona>();
+            PromocionZona promocionZona;
+            using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, pIdFuncion))
+            {
+                while (dtr.Read())
+                {
+                    promocionZona = new PromocionZona()
+                    {
+                        Promocion = new Promocion()
+                        {
+                            IdPromocion = DataConvert.ToInt(dtr["IdPromocion"])
+                        },
+                        Precio = DataConvert.ToInt(dtr["PZ.Precio"]),
+                        Zona = new Zona()
+                        {
+                            IdZona = DataConvert.ToInt(dtr["Z.IdZona"])
+                        }
+                    };
+                    listPromocionZona.Add(promocionZona);
+                }
+            }
+            UtilDA.Close(cnx);
+            return listPromocionZona;
+        }
+        public List<Promocion> ListByFuncionTipoPromo(int idFuncion, int idTipoPromo,string zonas)
+        {
+            string SQL = "SELECT * FROM TH_PROMOCION WHERE IDPROMOCION IN (SELECT PZ.IDPROMOCION FROM TH_PROMOCION_ZONA PZ INNER JOIN TH_PROMOCION_FUNCION PF ON PF.IDPROMOCION = PZ.IDPROMOCION WHERE PF.IDFUNCION = @idFuncion AND PZ.IDZONA IN (@zonas)) AND IDTIPOPROMOCION = @idTipoPromocion AND ESTADO = 'A' AND (@fechaActual BETWEEN FechaInicio AND FechaFin)";
+            SQL = SQL.Replace("@zonas", zonas);
+            OleDbParameter pIdfuncion = UtilDA.SetParameters("@idFuncion", OleDbType.Integer, idFuncion);
+            OleDbParameter pIdTipoPromo = UtilDA.SetParameters("@idTipoPromocion", OleDbType.Integer, idTipoPromo);
             OleDbParameter pFechaActual = UtilDA.SetParameters("@FechaActual", OleDbType.Date, DateTime.Today);
             Promocion promocion = null;
             List<Promocion> ListaPromocion = new List<Promocion>();
@@ -187,14 +276,14 @@ namespace ContactCenterDA.Repositories.CC.TH
                     promocion = new Promocion()
                     {
                         IdPromocion = DataConvert.ToInt(dtr["IdPromocion"]),
-                        Descripcion = DataConvert.ToString(dtr["P.Descripcion"]),
-                        Estado = DataConvert.ToString(dtr["P.Estado"]),
+                        Descripcion = DataConvert.ToString(dtr["Descripcion"]),
+                        Estado = DataConvert.ToString(dtr["Estado"]),
                         FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]),
                         FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]),
-                        FechaCreacion = DataConvert.ToDateTime(dtr["P.FechaCrea"]),
-                        UsuarioCreacion = DataConvert.ToString(dtr["P.UserCrea"]),
-                        FechaModificacion = DataConvert.ToDateTime(dtr["P.FechaMod"]),
-                        UsuarioModificacion = DataConvert.ToString(dtr["P.UserMod"])
+                        FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]),
+                        UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]),
+                        FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]),
+                        UsuarioModificacion = DataConvert.ToString(dtr["UserMod"])
                     };
                     ListaPromocion.Add(promocion);
                 }
@@ -246,7 +335,7 @@ namespace ContactCenterDA.Repositories.CC.TH
         {
             OleDbCommand cmd2 = new OleDbCommand();
             OleDbCommand cmd3 = new OleDbCommand();
-            string sql = "SELECT * FROM TH_PROMOCION WHERE IDPROMOCION IN (SELECT PZ.IDPROMOCION FROM TH_PROMOCION_ZONA PZ INNER JOIN TH_ZONA Z ON Z.IDZONA = PZ.IDZONA WHERE Z.IDOBRA = @idObra)";
+            string sql = "SELECT * FROM TH_PROMOCION P INNER JOIN TH_TIPO_PROMOCION TP ON TP.IDTIPOPROMOCION = P.IDTIPOPROMOCION WHERE IDPROMOCION IN (SELECT PZ.IDPROMOCION FROM TH_PROMOCION_ZONA PZ INNER JOIN TH_ZONA Z ON Z.IDZONA = PZ.IDZONA WHERE Z.IDOBRA = @idObra)";
             OleDbParameter pIdObra = UtilDA.SetParameters("@idObra", OleDbType.Integer, idObra);
             Promocion promocion = null;
             PromocionZona promocionZona = null;
@@ -261,12 +350,19 @@ namespace ContactCenterDA.Repositories.CC.TH
                     promocion = new Promocion()
                     {
                         IdPromocion = DataConvert.ToInt(dtr["IdPromocion"]),
-                        Descripcion = DataConvert.ToString(dtr["Descripcion"]),
-                        Estado = DataConvert.ToString(dtr["Estado"]),
+                        Descripcion = DataConvert.ToString(dtr["P.Descripcion"]),
+                        Estado = DataConvert.ToString(dtr["P.Estado"]),
                         FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]),
                         FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]),
-                        FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]),
-                        UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"])
+                        FechaCreacion = DataConvert.ToDateTime(dtr["P.FechaCrea"]),
+                        UsuarioCreacion = DataConvert.ToString(dtr["P.UserCrea"]),
+                        TipoPromocion = new TipoPromocion()
+                        {
+                            IdTipoPromocion = DataConvert.ToInt(dtr["TP.IdTipoPromocion"]),
+                            Descripcion = DataConvert.ToString(dtr["TP.Descripcion"]),
+                            Estado = DataConvert.ToString(dtr["TP.FechaCrea"]),
+                            UsuarioCreacion = DataConvert.ToString(dtr["TP.UserCrea"])
+                        }
                     };
                     listaZona = new List<PromocionZona>();
                     string SQLZONA = "SELECT PZ.PRECIO,Z.IDZONA,Z.NOMBRE,Z.DESCRIPCION,Z.ESTADO,O.IdObra,O.Nombre FROM (TH_PROMOCION_ZONA PZ INNER JOIN TH_ZONA Z ON Z.IDZONA = PZ.IDZONA) INNER JOIN TH_OBRA O ON O.IDOBRA = Z.IDOBRA  WHERE PZ.idpromocion = @idPromocion";
@@ -325,8 +421,6 @@ namespace ContactCenterDA.Repositories.CC.TH
             }
 
             UtilDA.Close(cnx);
-
-
             return ListaPromocion;
         }
     }

@@ -18,9 +18,11 @@ namespace ContactCenterBE.CC.TH.Entidades.AsientoBE
         public string AsientoFila { get { return Asiento.Fila; } }
         public Zona Zona { get; set; }
         public string Disponible { get; set; }
+        public string NombrePromocion { get; set; }
 
         public string EstadoTemporal { get; set; }
         public Color ColorTemporal { get; set; }
+        public bool PromocionAplicada { get; set; }
 
         public AsientoZona(AsientoZona asientoZona)
         {
@@ -30,6 +32,7 @@ namespace ContactCenterBE.CC.TH.Entidades.AsientoBE
             this.Zona = asientoZona.Zona;
             this.Disponible = asientoZona.Disponible;
             this.EstadoTemporal = asientoZona.EstadoTemporal;
+            this.PromocionAplicada = false;
         }
         public AsientoZona() { }
     }

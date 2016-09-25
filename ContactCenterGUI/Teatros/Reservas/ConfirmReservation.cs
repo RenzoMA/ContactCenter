@@ -12,6 +12,7 @@ using MaterialSkin.Controls;
 using ContactCenterBE.CC.TH.Entidades.AsientoBE;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
+using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 using ContactCenterServices.ServicioTeatro;
 using ContactCenterGUI.CC.Helpers;
@@ -32,11 +33,11 @@ namespace ContactCenterGUI.Teatros.Reservas
         public List<DetalleReserva> listaDetalle;
         public DetalleReserva detalle;
         public Single precioTotal;
-        public Cliente cliente;
         public int validaSalida = 0;
-        private Boolean AplicoPromocion = false;
         private String asientos;
         private TimeSpan span;
+        private List<int> idZonas;
+        private string promociones = "";
 
         public static string Telefono = "";
         public static string Nombre = "";
@@ -45,66 +46,107 @@ namespace ContactCenterGUI.Teatros.Reservas
         public static string Correo = "";
         public static string DNI = "";
 
-
-        public ConfirmReservation()
-        {
-            InitializeComponent();
-            
-        }
+       
         public ConfirmReservation(Form form,Reserva _reserva,TimeSpan timespan)
         {
             InitializeComponent();
+            InitTimer(timespan);
+            SetStyles();
+            LoadData(form, _reserva);
+        }
+
+        public void InitTimer(TimeSpan timeSpan)
+        {
             timerConfirmacion.Enabled = true;
             timerConfirmacion.Interval = 1000;
-            span = timespan.Subtract(TimeSpan.Parse("00:00:01"));
+            span = timeSpan.Subtract(TimeSpan.Parse("00:00:01"));
+        }
+        public void SetStyles()
+        {
+            btnRegresar.BackColor = ConstanteColor.GetPrimaryColor();
+        }
+        public void LoadData(Form form, Reserva _reserva)
+        {
+            idZonas = new List<int>();
             reserva = _reserva;
             frmTeatro = form;
             frmTeatro.Visible = false;
-            pictureBox1.BackColor = ConstanteColor.GetPrimaryColor();
             txtTelefono.Text = Telefono;
             txtNombre.Text = Nombre;
             txtDNI.Text = DNI;
             txtCorreo.Text = Correo;
             txtApePat.Text = ApellidoPaterno;
             txtApeMat.Text = ApellidoMaterno;
-
         }
-        public Single CalcularPrecio(List<AsientoZona> lista)
+
+
+        public Single CalcularPrecio()
         {
             Single single = 0;
-            foreach (AsientoZona obj in lista)
+            foreach (AsientoZona obj in listaAsientoPrecio)
             {
                 single += obj.Zona.Precio;
             }
             return single;
         }
-        public string GenerarAsiento(List<AsientoZona> lista)
+
+        /// <summary>
+        /// Fill seats data
+        /// </summary>
+        /// <param name="lista"></param>
+        /// <returns></returns>
+        public string GenerarAsiento()
         {
             dgvDetalleAsientos.Rows.Clear();
-            int contador = 0;
             string result = "";
-            foreach (AsientoZona obj in lista)
+            foreach (AsientoZona obj in listaAsientoPrecio)
             {
-                contador++;
                 result += obj.Zona.Nombre+" / "+obj.Asiento.Fila + " / " +obj.Asiento.Descripcion + "\n";
                 dgvDetalleAsientos.Rows.Add(obj.Zona.Nombre, obj.Asiento.Fila, obj.Asiento.Descripcion);
-                
             }
-            result = result.Substring(0, result.Length - 2);
+            int index = result.LastIndexOf('\n');
+            result = result.Substring(0, index);
+            return result;
+            
+        }
+
+        /// <summary>
+        /// String represents each sector
+        /// </summary>
+        /// <returns></returns>
+        public string GenerarZona()
+        {
+            string result = "";
+            foreach (AsientoZona obj in listaAsientoPrecio)
+            {
+                result += obj.Zona.IdZona + ",";
+            }
+            int index = result.LastIndexOf(',');
+            result = result.Substring(0, index);
             return result;
         }
 
+        /// <summary>
+        /// Fill data 
+        /// </summary>
         private void PopularDatosReserva()
         {
-            precioTotal = CalcularPrecio(listaAsientoPrecio);
+            precioTotal = CalcularPrecio();
             lblPrecio.Text = "S/. " + precioTotal.ToString();
-            asientos = GenerarAsiento(listaAsientoPrecio);
+            asientos = GenerarAsiento();
             lblObra.Text = reserva.Obra.Nombre;
             lblFuncion.Text = reserva.Funcion.Horario;
             lblTeatro.Text = reserva.Obra.Teatro.Nombre;
             lblFecha.Text = reserva.FechaReserva.ToShortDateString();
             
         }
+
+
+        /// <summary>
+        /// Load Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PerInfoTheater_Load(object sender, EventArgs e)
         {
             SetEventos();
@@ -114,6 +156,9 @@ namespace ContactCenterGUI.Teatros.Reservas
             
         }
 
+        /// <summary>
+        /// Set reservation details
+        /// </summary>
         private void AsociarEntidadesReserva()
         {
             listaDetalle = new List<DetalleReserva>();
@@ -126,12 +171,17 @@ namespace ContactCenterGUI.Teatros.Reservas
                 detalle.NombreZona = ap.Zona.Nombre;
                 detalle.NombreFila = ap.Asiento.Fila;
                 detalle.NombreAsiento = ap.Asiento.Descripcion;
+                detalle.NombrePromocion = ap.NombrePromocion;
                 listaDetalle.Add(detalle);
             }
             reserva.Asientos = asientos;
             reserva.ListaDetalles = listaDetalle;
             reserva.PrecioTotal = precioTotal;
         }
+
+        /// <summary>
+        /// fill data por tipopromocion
+        /// </summary>
         private void LoadCombos()
         {
             try
@@ -149,17 +199,12 @@ namespace ContactCenterGUI.Teatros.Reservas
             }
 
         }
-        private void SetEventos()
-        {
-            txtNombre.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
-            txtApeMat.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
-            txtApePat.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
-            txtCorreo.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
-            txtTelefono.KeyPress += new KeyPressEventHandler(HelperControl.EditTextNumber);
-            txtCorreo.Validating += new CancelEventHandler(HelperControl.ValidEmail);
-            txtDNI.KeyPress += new KeyPressEventHandler(HelperControl.EditTextNumber);
-        }
-
+      
+        /// <summary>
+        /// Close and cancel reservation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PerInfoTheater_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (validaSalida == 0)
@@ -169,6 +214,11 @@ namespace ContactCenterGUI.Teatros.Reservas
             }
         }
 
+
+        /// <summary>
+        /// Validate fields
+        /// </summary>
+        /// <returns></returns>
         private bool ValidarCampos()
         {
             if (txtApeMat.Text.Trim().Equals(String.Empty))
@@ -185,11 +235,26 @@ namespace ContactCenterGUI.Teatros.Reservas
             return true;
         }
 
-        private void materialRaisedButton1_Click(object sender, EventArgs e)
+
+
+        /// <summary>
+        /// fires reservations events
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnReservar_Click(object sender, EventArgs e)
         {
+            if (promociones.IndexOf(',') != -1)
+            {
+                int index = promociones.LastIndexOf(',');
+                promociones = promociones.Substring(0, index);
+            }
+            reserva.NombrePromocion = promociones;
+
             if (ValidarCampos())
             {
-                AsociarClienteReserva();
+                Cliente cliente = CapturarDataCliente();
+                ProcesarReserva(cliente);
             }
             else
             {
@@ -197,9 +262,15 @@ namespace ContactCenterGUI.Teatros.Reservas
             }
             
         }
-        public void AsociarClienteReserva()
+
+
+        /// <summary>
+        /// Sets Data for the client
+        /// </summary>
+        /// <returns></returns>
+        public Cliente CapturarDataCliente()
         {
-            cliente = new Cliente()
+            Cliente cliente = new Cliente()
             {
                 Apellidomaterno = txtApeMat.Text.ToUpper().Trim(),
                 ApellidoPaterno = txtApePat.Text.ToUpper().Trim(),
@@ -208,18 +279,40 @@ namespace ContactCenterGUI.Teatros.Reservas
                 Telefono = txtTelefono.Text.ToUpper().Trim(),
                 DNI = txtDNI.Text.ToUpper().Trim()
             };
-            ProcesarReserva(cliente);
+            return cliente;
         }
+
+
+        /// <summary>
+        /// Enable controls
+        /// </summary>
+        private void EnableControls()
+        {
+            btnReservar.Enabled = true;
+        }
+
+        /// <summary>
+        /// Disable controls
+        /// </summary>
+        private void DisableControls()
+        {
+            btnReservar.Enabled = false;
+        }
+
+        /// <summary>
+        /// Save Reservation to database
+        /// </summary>
+        /// <param name="cliente"></param>
         private async void ProcesarReserva(Cliente cliente)
         {
-            materialRaisedButton1.Enabled = false;
+            DisableControls();
+            Animacion.ShowLoader(this);
             try
             {
-               
-                Animacion.ShowLoader(this);
+                
                 IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
                 bool resultado = await servicio.InsertarReservaAsync(reserva, cliente);
-                Animacion.HideLoader(this);
+                
                 if (resultado)
                 {
                     MessageBox.Show("Reserva realizada correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -235,23 +328,36 @@ namespace ContactCenterGUI.Teatros.Reservas
             {
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            materialRaisedButton1.Enabled = true;
+            EnableControls();
+            Animacion.HideLoader(this);
         }
 
-        private void txtTelefono_Leave(object sender, EventArgs e)
+        /// <summary>
+        /// Clear fields
+        /// </summary>
+        private void ClearFields()
         {
-            //ObtenerCliente();
+            txtApeMat.Text = "";
+            txtApePat.Text = "";
+            txtCorreo.Text = "";
+            txtNombre.Text = "";
+            txtDNI.Text = "";
         }
+
+        /// <summary>
+        /// Get client from database
+        /// </summary>
         private async void ObtenerCliente()
         {
+            Animacion.ShowLoader(this);
             try
             {
                 string telefono = txtTelefono.Text.ToUpper().Trim();
                 if (telefono != "")
                 {
                     IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
-                    Animacion.ShowLoader(this);
-                    cliente = await servicio.GetClienteByTelefonoAsync(telefono);
+                    
+                    Cliente cliente = await servicio.GetClienteByTelefonoAsync(telefono);
                     if (cliente != null)
                     {
                         txtApeMat.Text = cliente.Apellidomaterno;
@@ -263,37 +369,47 @@ namespace ContactCenterGUI.Teatros.Reservas
                     }
                     else
                     {
-                        txtApeMat.Text = "";
-                        txtApePat.Text = "";
-                        txtCorreo.Text = "";
-                        txtNombre.Text = "";
-                        txtDNI.Text = "";
+                        ClearFields();
                     }
-                    Animacion.HideLoader(this);
+                    
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            Animacion.HideLoader(this);
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Get Discounts
+        /// </summary>
+        private async void EnlazarDetallePromocion()
         {
-            validaSalida = 1;
-            frmTeatro.Visible = true;
-            this.Close();
-        }
-        private void EnlazarDetallePromocion()
-        {
-            using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
+            Animacion.ShowLoader(this);
+            try
             {
-                TipoPromocion tipoPromocion = cboTipoPromocion.SelectedItem as TipoPromocion;
-                cboPromocion.DataSource = servicio.ListPromocionByFuncionTipoPromo(reserva.Funcion.IdFuncion, tipoPromocion.IdTipoPromocion);
-                cboPromocion.DisplayMember = "Descripcion";
+                using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
+                {
+                    TipoPromocion tipoPromocion = cboTipoPromocion.SelectedItem as TipoPromocion;
+                    
+                    cboPromocion.DataSource = await servicio.ListPromocionByFuncionTipoPromoAsync(reserva.Funcion.IdFuncion, tipoPromocion.IdTipoPromocion, GenerarZona());
+                    cboPromocion.DisplayMember = "Descripcion";
+                    
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            Animacion.HideLoader(this);
         }
 
+        /// <summary>
+        /// Timer for reservation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timerConfirmacion_Tick(object sender, EventArgs e)
         {
             span = span.Subtract(TimeSpan.Parse("00:00:01"));
@@ -304,64 +420,129 @@ namespace ContactCenterGUI.Teatros.Reservas
             }
         }
 
-    
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Apply discount
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAplicarDescuento_Click(object sender, EventArgs e)
         {
-          
-        }
-
-        private void btnAplicarDescuento_Click_1(object sender, EventArgs e)
-        {
-            if (!AplicoPromocion)
+            Promocion promocion = cboPromocion.SelectedItem as Promocion;
+            
+            if (promocion != null)
             {
-                Promocion promocion = cboPromocion.SelectedItem as Promocion;
-                if (promocion != null)
+                bool aplicoPromocion = false;
+                foreach (AsientoZona az in listaAsientoPrecio)
                 {
+                    if (!az.PromocionAplicada)
+                    {
+                        PromocionZona pzona = promocion.PromocionZonas.Where(tx => tx.Zona.IdZona == az.Zona.IdZona).FirstOrDefault();
+                        if (pzona != null)
+                        {
+                            aplicoPromocion = true;
+                            az.Zona.Precio = pzona.Precio;
+                            az.PromocionAplicada = true;
+                            az.NombrePromocion = promocion.Descripcion;
+                            //Filtrar zonas con promocion para cadena en cabecera reserva
+                            if (idZonas.IndexOf(az.Zona.IdZona) == -1)
+                            {
+                                idZonas.Add(az.Zona.IdZona);
+                                promociones += promocion.Descripcion + ",";
+                            }
+                        }
+                    }
+                }
+                
 
-                    //asociar nuevos precios
+                
+                if (aplicoPromocion)
+                {
                     PopularDatosReserva();
                     AsociarEntidadesReserva();
-                    reserva.Promocion = promocion;
-                    reserva.NombrePromocion = promocion.Descripcion;
-                    AplicoPromocion = true;
                     MessageBox.Show("Descuento aplicado correctamente", "Aviso");
                 }
                 else
                 {
-                    MessageBox.Show("Debe seleccionar un descuento", "Aviso");
+                    MessageBox.Show("No se encontraron mas descuentos que aplicar", "Aviso");
                 }
             }
+
             else
             {
-                MessageBox.Show("Ya aplico un descuento", "Aviso");
+                MessageBox.Show("Debe seleccionar un descuento", "Aviso");
             }
         }
 
-        private void cboTipoPromocion_SelectionChangeCommitted_1(object sender, EventArgs e)
+        /// <summary>
+        /// Save static data
+        /// </summary>
+        private void SetData()
         {
-            EnlazarDetallePromocion();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            validaSalida = 1;
-            frmTeatro.Visible = true;
             Nombre = txtNombre.Text.ToUpper().Trim();
             ApellidoMaterno = txtApeMat.Text.ToUpper().Trim();
             ApellidoPaterno = txtApePat.Text.ToUpper().Trim();
             Telefono = txtTelefono.Text.ToUpper().Trim();
             Correo = txtCorreo.Text.ToUpper().Trim();
             DNI = txtDNI.Text.ToUpper().Trim();
+        }
+
+        /// <summary>
+        /// Shows teather form
+        /// </summary>
+        private void ShowTeatro()
+        {
+            frmTeatro.Visible = true;
+        }
+
+        /// <summary>
+        /// Back to teather screen
+        /// </summary>
+        /// <param name="sender">Control</param>
+        /// <param name="e">Event</param>
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            validaSalida = 1;
+            SetData();
+            ShowTeatro();
             this.Close();
         }
 
+        /// <summary>
+        /// Fires when element is selected
+        /// </summary>
+        /// <param name="sender">Control</param>
+        /// <param name="e">Event</param>
+        private void cboTipoPromocion_SelectionChangeCommitted_1(object sender, EventArgs e)
+        {
+            EnlazarDetallePromocion();
+        }
+
+        /// <summary>
+        /// KeyPress event txtTelefono
+        /// </summary>
+        /// <param name="sender">Control</param>
+        /// <param name="e">Event</param>
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
             {
                 ObtenerCliente();
             }
+        }
+
+        /// <summary>
+        /// Control events
+        /// </summary>
+        private void SetEventos()
+        {
+            txtNombre.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
+            txtApeMat.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
+            txtApePat.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
+            txtCorreo.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
+            txtTelefono.KeyPress += new KeyPressEventHandler(HelperControl.EditTextNumber);
+            txtCorreo.Validating += new CancelEventHandler(HelperControl.ValidEmail);
+            txtDNI.KeyPress += new KeyPressEventHandler(HelperControl.EditTextNumber);
         }
     }
 }

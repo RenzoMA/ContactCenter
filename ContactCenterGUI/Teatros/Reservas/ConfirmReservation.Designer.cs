@@ -44,7 +44,7 @@
             this.lblTeatro = new MaterialSkin.Controls.MaterialLabel();
             this.lblObra = new MaterialSkin.Controls.MaterialLabel();
             this.lblFuncion = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnReservar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtCorreo = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
@@ -68,12 +68,12 @@
             this.Asiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTiempo = new System.Windows.Forms.Label();
             this.timerConfirmacion = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnRegresar = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleAsientos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -242,7 +242,6 @@
             this.txtTelefono.TabStop = false;
             this.txtTelefono.UseSystemPasswordChar = false;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
-            this.txtTelefono.Leave += new System.EventHandler(this.txtTelefono_Leave);
             // 
             // lblTeatro
             // 
@@ -286,18 +285,18 @@
             this.lblFuncion.TabIndex = 18;
             this.lblFuncion.Text = "5:00pm - 7:00pm";
             // 
-            // materialRaisedButton1
+            // btnReservar
             // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(277, 422);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(168, 40);
-            this.materialRaisedButton1.TabIndex = 7;
-            this.materialRaisedButton1.Text = "Reservar";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+            this.btnReservar.Depth = 0;
+            this.btnReservar.Location = new System.Drawing.Point(277, 417);
+            this.btnReservar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnReservar.Name = "btnReservar";
+            this.btnReservar.Primary = true;
+            this.btnReservar.Size = new System.Drawing.Size(168, 40);
+            this.btnReservar.TabIndex = 7;
+            this.btnReservar.Text = "Reservar";
+            this.btnReservar.UseVisualStyleBackColor = true;
+            this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
             // 
             // txtCorreo
             // 
@@ -444,7 +443,7 @@
             // btnAplicarDescuento
             // 
             this.btnAplicarDescuento.Depth = 0;
-            this.btnAplicarDescuento.Location = new System.Drawing.Point(436, 38);
+            this.btnAplicarDescuento.Location = new System.Drawing.Point(436, 56);
             this.btnAplicarDescuento.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAplicarDescuento.Name = "btnAplicarDescuento";
             this.btnAplicarDescuento.Primary = true;
@@ -452,7 +451,7 @@
             this.btnAplicarDescuento.TabIndex = 36;
             this.btnAplicarDescuento.Text = "Aplicar";
             this.btnAplicarDescuento.UseVisualStyleBackColor = true;
-            this.btnAplicarDescuento.Click += new System.EventHandler(this.btnAplicarDescuento_Click_1);
+            this.btnAplicarDescuento.Click += new System.EventHandler(this.btnAplicarDescuento_Click);
             // 
             // materialLabel3
             // 
@@ -508,7 +507,7 @@
             this.groupBox2.Controls.Add(this.materialLabel12);
             this.groupBox2.Controls.Add(this.dgvDetalleAsientos);
             this.groupBox2.Controls.Add(this.materialLabel6);
-            this.groupBox2.Controls.Add(this.materialRaisedButton1);
+            this.groupBox2.Controls.Add(this.btnReservar);
             this.groupBox2.Controls.Add(this.lblObra);
             this.groupBox2.Controls.Add(this.lblTeatro);
             this.groupBox2.Controls.Add(this.materialLabel5);
@@ -576,7 +575,7 @@
             this.Zona.HeaderText = "Zona";
             this.Zona.Name = "Zona";
             this.Zona.ReadOnly = true;
-            this.Zona.Width = 215;
+            this.Zona.Width = 205;
             // 
             // Fila
             // 
@@ -607,24 +606,24 @@
             // 
             this.timerConfirmacion.Tick += new System.EventHandler(this.timerConfirmacion_Tick);
             // 
-            // pictureBox1
+            // btnRegresar
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
-            this.pictureBox1.Location = new System.Drawing.Point(1099, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1918;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.btnRegresar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegresar.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.btnRegresar.Location = new System.Drawing.Point(1099, 2);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(16, 18);
+            this.btnRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRegresar.TabIndex = 1918;
+            this.btnRegresar.TabStop = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // ConfirmReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 607);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.lblTiempo);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -643,7 +642,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleAsientos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -665,7 +664,7 @@
         private MaterialSkin.Controls.MaterialLabel lblTeatro;
         private MaterialSkin.Controls.MaterialLabel lblObra;
         private MaterialSkin.Controls.MaterialLabel lblFuncion;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnReservar;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCorreo;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
         private MaterialSkin.Controls.MaterialLabel materialLabel15;
@@ -686,7 +685,7 @@
         private MetroFramework.Controls.MetroComboBox cboPromocion;
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
         private MetroFramework.Controls.MetroComboBox cboTipoPromocion;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnRegresar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Zona;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fila;
         private System.Windows.Forms.DataGridViewTextBoxColumn Asiento;

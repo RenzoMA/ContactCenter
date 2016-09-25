@@ -255,9 +255,9 @@ namespace ContactCenterServices.ServicioTeatro
             throw new NotImplementedException();
         }
 
-        public List<Promocion> ListPromocionByFuncionTipoPromo(int idFuncion, int idTipoPromocion)
+        public List<Promocion> ListPromocionByFuncionTipoPromo(int idFuncion, int idTipoPromocion,string zonas)
         {
-            return _promocionService.ListByFuncionTipoPromo(idFuncion, idTipoPromocion);
+            return _promocionService.ListByFuncionTipoPromo(idFuncion, idTipoPromocion,zonas);
         }
 
         public List<TipoPromocion> GetListaTipoPromocionSeleccionable()
@@ -487,6 +487,26 @@ namespace ContactCenterServices.ServicioTeatro
         public List<Promocion> ListPromocionByObra(int idObra)
         {
             return _promocionService.ListPromocionByObra(idObra);
+        }
+
+        public async Task<List<Promocion>> ListPromocionByObraAsync(int idObra)
+        {
+            List<Promocion> lista = null;
+            await Task.Run(() =>
+            {
+                lista = _promocionService.ListPromocionByObra(idObra);
+            });
+            return lista;
+        }
+
+        public async Task<List<Promocion>> ListPromocionByFuncionTipoPromoAsync(int idFuncion, int idTipoPromocion, string zonas)
+        {
+            List<Promocion> listaPromocion = null;
+            await Task.Run(() =>
+            {
+                listaPromocion = _promocionService.ListByFuncionTipoPromo(idFuncion, idTipoPromocion, zonas);
+            });
+            return listaPromocion;
         }
     }
 }

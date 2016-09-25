@@ -30,14 +30,25 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             return listaPromocion;
         }
 
-        public List<Promocion> ListByFuncionTipoPromo(int idFuncion, int idTipoPromocion)
+        public List<Promocion> ListByFuncionTipoPromo(int idFuncion, int idTipoPromocion, string zonas)
         {
-            return promocionRepository.ListByFuncionTipoPromo(idFuncion, idTipoPromocion);
+            List<Promocion> listaPromocion = promocionRepository.ListByFuncionTipoPromo(idFuncion, idTipoPromocion, zonas);
+            List<PromocionZona> listaPromocionZona = promocionRepository.ListPromocionZonaByFuncionZona(idFuncion, zonas);
+            foreach (Promocion pr in listaPromocion)
+            {
+                pr.PromocionZonas = listaPromocionZona.Where(tx => tx.Promocion.IdPromocion == pr.IdPromocion).ToList();
+            }
+            return listaPromocion;
         }
+
 
         public List<Promocion> ListPromocionByObra(int idObra)
         {
-            return promocionRepository.ListPromocionByObra(idObra);
+            List<Promocion> listaPromocion = promocionRepository.ListPromocionByObra(idObra);
+            listaPromocion.ForEach(tx => {
+                tx.Estado = tx.Estado == "A" ? "Activo" : "Inactivo";
+            });
+            return listaPromocion;
         }
 
         public bool Update(Promocion datos)

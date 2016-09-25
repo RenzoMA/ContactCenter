@@ -79,7 +79,7 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Insert(TipoPromocion datos)
         {
-            String sql = "INSERT INTO TH_TIPOPROMOCION(Descripcion, Estado, FechaCrea, UserCrea) VALUES(@descripcion, @estado, @fechaCrea, @userCrea";
+            String sql = "INSERT INTO TH_TIPO_PROMOCION(Descripcion, Estado, FechaCrea, UserCrea) VALUES(@descripcion, @estado, @fechaCrea, @userCrea";
 
             OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
@@ -91,12 +91,12 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Update(TipoPromocion datos)
         {
-            String sql = "UPDATE TH_TIPOPROMOCION SET Descripcion = @descripcion, Estado = @estado, FechaMod = @fechaMod, UserMod = @userMod WHERE IDTIPOPROMOCION = @idTipoPromocion";
+            String sql = "UPDATE TH_TIPO_PROMOCION SET Descripcion = @descripcion, Estado = @estado, FechaMod = @fechaMod, UserMod = @userMod WHERE IDTIPOPROMOCION = @idTipoPromocion";
 
             OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
             OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
-            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter userMod = UtilDA.SetParameters("@userMod", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter userMod = UtilDA.SetParameters("@userMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter codigo = UtilDA.SetParameters("@idTipoPromocion", OleDbType.Integer, datos.IdTipoPromocion);
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, descripcion, estado, fechaMod, userMod, codigo);

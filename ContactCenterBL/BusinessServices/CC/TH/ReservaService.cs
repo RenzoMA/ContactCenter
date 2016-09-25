@@ -118,6 +118,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             List<Asiento> listaAsientos = new List<Asiento>();
             List<DetalleReserva> listaDetalle = new List<DetalleReserva>();
             List<Reserva> listaReservas = new List<Reserva>();
+            List<String> listaPromociones = new List<string>();
             Single precio = 0;
             for (int x = 0; x<lista.Count; x++)
             {
@@ -181,6 +182,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                 {
                     throw new Exception("Obra Reserva debe ser ingresado en la fila: " + (x + 2));
                 }
+               
 
                 Teatro teatro = teatroRepository.GetLista().FirstOrDefault(te => te.Nombre.ToUpper().Trim() == lista[x].Teatro.ToUpper().Trim());
                 if (teatro == null)
@@ -193,8 +195,9 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                 {
                     throw new Exception("Asiento no encontrado en la fila: " + (x + 2));
                 }
+                asiento.EstadoTemporal = lista[x].Zona;
                 listaAsientos.Add(asiento);
-
+                
 
                 detalle = new DetalleReserva();
                 detalle.Asiento = asiento;
@@ -205,6 +208,14 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                 detalle.Precio = lista[x].Precio;
                 detalle.NombreFila = asiento.Fila;
                 detalle.NombreAsiento = asiento.Descripcion;
+                if (lista[x].Promocion != null)
+                {
+                    detalle.NombrePromocion = lista[x].Promocion;
+                    if (!listaPromociones.Contains(lista[x].Promocion))
+                    {
+                        listaPromociones.Add(lista[x].Promocion);
+                    }
+                }
                 listaDetalle.Add(detalle);
 
                 if (x < lista.Count-1)//saltar ultima vuelta
@@ -264,14 +275,6 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                     throw new Exception("Usuario no encontrado en la fila: " + (x + 2));
                 }
 
-                if (lista[x].Promocion != null)
-                {
-                    reserva.Promocion = promocionRepository.GetLista().FirstOrDefault(pr => pr.Descripcion.ToUpper().Trim() == lista[x].Promocion.ToUpper().Trim());
-                    if (reserva.Promocion == null)
-                    {
-                        throw new Exception("Promocion no encontrada en la fila: " + (x + 2));
-                    }
-                }
 
                 Reserva reservaExiste = reservaRepository.ReservaExiste(lista[x].FechaReserva, reserva.Funcion.IdFuncion, reserva.Cliente.IdCliente);
                 if (reservaExiste != null)
@@ -281,12 +284,11 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                 
                 string asientos = "";
                 listaAsientos.ForEach(tx => {
-                    asientos += lista[x].Zona +" / " + lista[x].Fila + " / " + lista[x].Asiento + "\n";
+                    asientos += tx.EstadoTemporal +" / " + tx.Fila + " / " + tx.Descripcion + "\n";
                 });
-                asientos = asientos.Substring(0, asientos.Length - 2);
+                asientos = asientos.Substring(0, asientos.LastIndexOf("\n"));
                 reserva.Asientos = asientos;
                 reserva.PrecioTotal = precio;
-                reserva.NombrePromocion = lista[x].Promocion;
 
                 EstadoReserva estadoReserva = new EstadoReserva()
                 {
@@ -300,6 +302,18 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                 reserva.ListaDetalles = listaDetalle;
                 reserva.FechaReserva = lista[x].FechaReserva;
                 reserva.Horario = lista[x].Funcion;
+
+                string promociones = "";
+                listaPromociones.ForEach(tx => {
+                    promociones += tx+",";
+                });
+
+                if (promociones.IndexOf(',') != -1)
+                {
+                    promociones = promociones.Substring(0, promociones.LastIndexOf(','));
+                }
+
+                reserva.NombrePromocion = promociones;
                 #endregion
 
                 #region Inserts
@@ -309,6 +323,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                 #region Limpiar valores
                 listaDetalle = new List<DetalleReserva>();
                 listaAsientos = new List<Asiento>();
+                listaPromociones = new List<string>();
                 precio = 0;
                 #endregion
 

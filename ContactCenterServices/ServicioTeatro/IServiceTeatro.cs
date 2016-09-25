@@ -74,7 +74,8 @@ namespace ContactCenterServices.ServicioTeatro
         byte[] GetObraImage(int id);
 
         //PROMOCION
-        List<Promocion> ListPromocionByFuncionTipoPromo(int idFuncion, int idTipoPromocion);
+        List<Promocion> ListPromocionByFuncionTipoPromo(int idFuncion, int idTipoPromocion, string zonas);
+        Task<List<Promocion>> ListPromocionByFuncionTipoPromoAsync(int idFuncion, int idTipoPromocion, string zonas);
         List<TipoPromocion> GetListaTipoPromocionSeleccionable();
         List<TipoPromocion> GetListaTipoPromocion();
 
@@ -107,5 +108,6 @@ namespace ContactCenterServices.ServicioTeatro
         LogEmail BuscarEmail(int id);
         List<LogEmail> ListaCorreoFechas(DateTime fechaIni, DateTime fechaFin);
         List<Promocion> ListPromocionByObra(int idObra);
+        Task<List<Promocion>> ListPromocionByObraAsync(int idObra);
     }
 }

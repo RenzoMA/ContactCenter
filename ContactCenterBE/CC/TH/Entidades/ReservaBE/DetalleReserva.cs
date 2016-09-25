@@ -19,6 +19,7 @@ namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
         public Reserva Reserva { get; set; }
         public String NombreAsiento { get; set; }
         public String NombreFila { get; set; }
+        public String NombrePromocion { get; set; }
 
     }
 }

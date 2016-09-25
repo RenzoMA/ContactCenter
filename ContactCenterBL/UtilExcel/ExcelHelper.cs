@@ -32,7 +32,7 @@ namespace ContactCenterBL.UtilExcel
                              }
                              select item).ToList();
 
-            return resultado;
+            return resultado.Where(tx => tx.Teatro != null).ToList();
         }
     }
 }

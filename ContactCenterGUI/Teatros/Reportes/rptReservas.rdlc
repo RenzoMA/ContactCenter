@@ -189,7 +189,7 @@
               <Width>1.4274cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.4525cm</Width>
+              <Width>5.04cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.90238cm</Width>
@@ -463,14 +463,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox22">
+                    <Textbox Name="Textbox2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Promocion</Value>
+                              <Value>Promoción</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -482,7 +482,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox22</rd:DefaultName>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -818,14 +818,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Reserva3">
+                    <Textbox Name="NombrePromocion">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Reserva.Value.NombrePromocion</Value>
+                              <Value>=Fields!NombrePromocion.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -836,7 +836,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Reserva3</rd:DefaultName>
+                      <rd:DefaultName>NombrePromocion</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -951,7 +951,7 @@
         <Top>2.80114cm</Top>
         <Left>0.56599cm</Left>
         <Height>1.59688cm</Height>
-        <Width>27.10022cm</Width>
+        <Width>28.68772cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -963,7 +963,7 @@
     <Height>5.04166in</Height>
     <Style />
   </Body>
-  <Width>11.16469in</Width>
+  <Width>11.87646in</Width>
   <Page>
     <PageHeader>
       <Height>3.10444cm</Height>
@@ -1151,6 +1151,10 @@
         </Field>
         <Field Name="NombreFila">
           <DataField>NombreFila</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NombrePromocion">
+          <DataField>NombrePromocion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="NombreZona">

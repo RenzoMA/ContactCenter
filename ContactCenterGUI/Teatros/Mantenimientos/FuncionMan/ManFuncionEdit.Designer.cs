@@ -47,7 +47,7 @@
             // btnActualizar
             // 
             this.btnActualizar.Depth = 0;
-            this.btnActualizar.Location = new System.Drawing.Point(170, 336);
+            this.btnActualizar.Location = new System.Drawing.Point(124, 335);
             this.btnActualizar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Primary = true;
@@ -208,7 +208,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 387);
+            this.ClientSize = new System.Drawing.Size(312, 387);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cboEstado);
             this.Controls.Add(this.materialLabel2);

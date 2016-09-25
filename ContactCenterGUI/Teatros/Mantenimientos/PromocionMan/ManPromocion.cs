@@ -16,6 +16,7 @@ using ContactCenterBE.CC.TH.Entidades.FuncionBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterServices.ServicioTeatro;
 using ContactCenterServices;
+using ContactCenterGUI.CC.Helpers;
 using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
@@ -23,6 +24,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
     public partial class ManPromocion : MaterialForm
     {
         IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
+        private bool isProcessing = false;
         public ManPromocion()
         {
             InitializeComponent();
@@ -65,18 +67,25 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            EnlazarGrilla();
+            if (!isProcessing)
+            {
+                EnlazarGrilla();
+            }
         }
-        private void EnlazarGrilla()
+        private async void EnlazarGrilla()
         {
+            isProcessing = true;
+            Animacion.ShowLoader(this);
             try {
                 Obra obra = cboObra.SelectedItem as Obra;
-                dgvPromociones.DataSource = servicio.ListPromocionByObra(obra.IdObra);
+                dgvPromociones.DataSource = await servicio.ListPromocionByObraAsync(obra.IdObra);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            Animacion.HideLoader(this);
+            isProcessing = false;
         }
 
         private void dgvPromociones_CellContentClick(object sender, DataGridViewCellEventArgs e)
