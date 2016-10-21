@@ -15,6 +15,7 @@ using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 using ContactCenterBE.CC.Entidades.RolBE;
 using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
+using ContactCenterBE.CC.TH.Entidades.EmpresaBE;
 
 namespace ContactCenterServices.ServicioTeatro
 {
@@ -109,5 +110,9 @@ namespace ContactCenterServices.ServicioTeatro
         List<LogEmail> ListaCorreoFechas(DateTime fechaIni, DateTime fechaFin);
         List<Promocion> ListPromocionByObra(int idObra);
         Task<List<Promocion>> ListPromocionByObraAsync(int idObra);
+
+        Task<List<Empresa>> ListEmpresa(string filtro);
+        bool InsertEmpresa(Empresa empresa);
+        bool UpdateEmpresa(Empresa empresa);
     }
 }

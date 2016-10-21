@@ -196,6 +196,24 @@
     <Compile Include="Teatros\Mantenimientos\AsientoMan\ManAsientoZona.Designer.cs">
       <DependentUpon>ManAsientoZona.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Mantenimientos\Empresa\ManEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\Empresa\ManEmpresa.Designer.cs">
+      <DependentUpon>ManEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\Empresa\ManEmpresaCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\Empresa\ManEmpresaCreate.Designer.cs">
+      <DependentUpon>ManEmpresaCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\Empresa\ManEmpresaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\Empresa\ManEmpresaEdit.Designer.cs">
+      <DependentUpon>ManEmpresaEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -400,6 +418,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\AsientoMan\ManAsientoZona.resx">
       <DependentUpon>ManAsientoZona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\Empresa\ManEmpresa.resx">
+      <DependentUpon>ManEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\Empresa\ManEmpresaCreate.resx">
+      <DependentUpon>ManEmpresaCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\Empresa\ManEmpresaEdit.resx">
+      <DependentUpon>ManEmpresaEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\FuncionMan\ManFuncion.resx">
       <DependentUpon>ManFuncion.cs</DependentUpon>

@@ -49,7 +49,8 @@
     <Compile Include="CC\TH\Entidades\AsientoBE\AsientoZona.cs" />
     <Compile Include="CC\TH\Entidades\ClienteBE\Cliente.cs" />
     <Compile Include="CC\Entidades\AplicacionBE\IAplicacionRepository.cs" />
-    <Compile Include="CC\TH\Entidades\PromocionBE\IClienteRepository.cs" />
+    <Compile Include="CC\TH\Entidades\EmpresaBE\Empresa.cs" />
+    <Compile Include="CC\TH\Entidades\ClienteBE\IClienteRepository.cs" />
     <Compile Include="CC\Entidades\RolBE\IRolRepository.cs" />
     <Compile Include="CC\Entidades\UsuarioBE\IUsuarioRepository.cs" />
     <Compile Include="CC\Entidades\RolBE\Rol.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="CC\TH\Entidades\AsientoBE\Asiento.cs" />
     <Compile Include="CC\TH\Entidades\AsientoBE\IAsientoRepository.cs" />
     <Compile Include="CC\TH\Entidades\ClienteBE\RankingCliente.cs" />
+    <Compile Include="CC\TH\Entidades\EmpresaBE\IEmpresaRepository.cs" />
     <Compile Include="CC\TH\Entidades\FuncionBE\IFuncionRepository.cs" />
     <Compile Include="CC\TH\Entidades\LogEmailBE\ILogEmailRepository.cs" />
     <Compile Include="CC\TH\Entidades\ObraBE\IObraRepository.cs" />

@@ -15,6 +15,7 @@ using ContactCenterGUI.Teatros.Mantenimientos.FuncionMan;
 using ContactCenterGUI.Teatros.Mantenimientos.ObraMan;
 using ContactCenterGUI.Teatros.Mantenimientos.PromocionMan;
 using ContactCenterGUI.Teatros.Mantenimientos.ZonaMan;
+using ContactCenterGUI.Teatros.Mantenimientos.Empresa;
 using ContactCenterGUI.CC.Mantenimientos.UsuarioMan;
 
 namespace ContactCenterGUI
@@ -35,7 +36,7 @@ namespace ContactCenterGUI
         {
             if (metroComboBox1.SelectedIndex == 0)
             {
-                MessageBox.Show("Seleccione un mantenimiento", "ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Seleccione un mantenimiento", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (metroComboBox1.SelectedItem.ToString() == "Aplicación")
             {
@@ -60,7 +61,7 @@ namespace ContactCenterGUI
                 manUsuario.ShowDialog();
                 this.Show();
             }
-            else if(metroComboBox1.SelectedItem.ToString() == "Función")
+            else if (metroComboBox1.SelectedItem.ToString() == "Función")
             {
                 this.Hide();
                 ManFuncion manFuncion = new ManFuncion();
@@ -87,6 +88,13 @@ namespace ContactCenterGUI
                 this.Hide();
                 ManZona manfaremenu = new ManZona();
                 manfaremenu.ShowDialog();
+                this.Show();
+            }
+            else if (metroComboBox1.SelectedItem.ToString() == "Empresa")
+            {
+                this.Hide();
+                ManEmpresa manEmpresa = new ManEmpresa();
+                manEmpresa.ShowDialog();
                 this.Show();
             }
         }

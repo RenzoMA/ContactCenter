@@ -50,6 +50,7 @@
     <Compile Include="Repositories\CC\RolRepository.cs" />
     <Compile Include="Repositories\CC\TH\AsientoRepository.cs" />
     <Compile Include="Repositories\CC\TH\DetalleReservaRepository.cs" />
+    <Compile Include="Repositories\CC\TH\EmpresaRepository.cs" />
     <Compile Include="Repositories\CC\TH\EstadoReservaRepository.cs" />
     <Compile Include="Repositories\CC\TH\FuncionRepository.cs" />
     <Compile Include="Repositories\CC\TH\LogEmailRepository.cs" />

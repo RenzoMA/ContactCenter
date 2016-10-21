@@ -20,6 +20,7 @@ using ContactCenterBE.CC.TH.Entidades.PromocionBE;
 using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterBE.CC.Entidades.RolBE;
 using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
+using ContactCenterBE.CC.TH.Entidades.EmpresaBE;
 
 namespace ContactCenterServices.ServicioTeatro
 {
@@ -36,6 +37,7 @@ namespace ContactCenterServices.ServicioTeatro
         private ITipoPromocionService _tipoPromocionService;
         private IZonaService _zonaService;
         private ILogEmailService _emailService;
+        private IEmpresaService _empresaService;
 
         public ServiceTeatro(
             IAsientoService asientoService,
@@ -49,7 +51,8 @@ namespace ContactCenterServices.ServicioTeatro
             IPromocionService promocionService,
             ITipoPromocionService tipoPromocionService,
             IZonaService zonaService,
-            ILogEmailService emailService)
+            ILogEmailService emailService,
+            IEmpresaService empresaService)
         {
             _clienteService = clienteService;
             _asientoService = asientoService;
@@ -61,11 +64,22 @@ namespace ContactCenterServices.ServicioTeatro
             _tipoPromocionService = tipoPromocionService;
             _zonaService = zonaService;
             _emailService = emailService;
+            _empresaService = empresaService;
         }
 
         public void Dispose()
         {
+            _clienteService = null;
             _asientoService = null;
+            _teatroService = null;
+            _obraService = null;
+            _funcionService = null;
+            _promocionService = null;
+            _reservaService = null;
+            _tipoPromocionService = null;
+            _zonaService = null;
+            _emailService = null;
+            _empresaService = null;
         }
 
         public List<Asiento> ListarAsientoDisponible(int idObra, int idFuncion, DateTime FechaObra,string token)
@@ -507,6 +521,26 @@ namespace ContactCenterServices.ServicioTeatro
                 listaPromocion = _promocionService.ListByFuncionTipoPromo(idFuncion, idTipoPromocion, zonas);
             });
             return listaPromocion;
+        }
+
+        public async Task<List<Empresa>> ListEmpresa(string filtro)
+        {
+            List<Empresa> listaEmpresa = null;
+            await Task.Run(() =>
+            {
+                listaEmpresa = _empresaService.ListEmpresa(filtro);
+            });
+            return listaEmpresa;
+        }
+
+        public bool InsertEmpresa(Empresa empresa)
+        {
+            return _empresaService.InsertarEmpresa(empresa);
+        }
+
+        public bool UpdateEmpresa(Empresa empresa)
+        {
+            return _empresaService.ActualizarEmpresa(empresa);
         }
     }
 }
