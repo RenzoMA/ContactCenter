@@ -15,7 +15,7 @@ using ContactCenterGUI.Teatros.Mantenimientos.FuncionMan;
 using ContactCenterGUI.Teatros.Mantenimientos.ObraMan;
 using ContactCenterGUI.Teatros.Mantenimientos.PromocionMan;
 using ContactCenterGUI.Teatros.Mantenimientos.ZonaMan;
-using ContactCenterGUI.Teatros.Mantenimientos.Empresa;
+using ContactCenterGUI.Teatros.Mantenimientos.EmpresaMan;
 using ContactCenterGUI.CC.Mantenimientos.UsuarioMan;
 
 namespace ContactCenterGUI

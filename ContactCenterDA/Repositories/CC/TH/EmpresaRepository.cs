@@ -94,8 +94,8 @@ namespace ContactCenterDA.Repositories.CC.TH
             OleDbParameter pCortesias = UtilDA.SetParameters("@Cortesias", OleDbType.Boolean, datos.Cortesias);
             OleDbParameter pCantidadCortesias = UtilDA.SetParameters("@CantidadCortesias", OleDbType.Integer, datos.CantidadCorteisas);
             OleDbParameter pEstado = UtilDA.SetParameters("@Estado", OleDbType.VarChar, datos.Estado);
-            OleDbParameter pFechaCrea = UtilDA.SetParameters("@FechaCrea", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter pUserCrea = UtilDA.SetParameters("@UserCrea", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter pFechaCrea = UtilDA.SetParameters("@FechaCrea", OleDbType.Date, DateTime.Now);
+            OleDbParameter pUserCrea = UtilDA.SetParameters("@UserCrea", OleDbType.VarChar, Sesion.usuario.Login);
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, pNombre, pCortesias, pCantidadCortesias, pEstado, pFechaCrea, pUserCrea);
 
@@ -103,13 +103,13 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Update(Empresa datos)
         {
-            string sql = "UPDATE TH_EMPRESA SET Nombre = @Nombre, Cortesias = @Cortesias = CantidadCortesias = @CantidadCortesias, Estado = @Estado, FechaMod = @FechaMod, UserMod = @UserMod WHERE IdEmpresa = @IdEmpresa";
+            string sql = "UPDATE TH_EMPRESA SET Nombre = @Nombre, Cortesias = @Cortesias, CantidadCortesias = @CantidadCortesias, Estado = @Estado, FechaMod = @FechaMod, UserMod = @UserMod WHERE IdEmpresa = @IdEmpresa";
             OleDbParameter pNombre = UtilDA.SetParameters("@Nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter pCortesias = UtilDA.SetParameters("@Cortesias", OleDbType.Boolean, datos.Cortesias);
             OleDbParameter pCantidadCortesias = UtilDA.SetParameters("@CantidadCortesias", OleDbType.Integer, datos.CantidadCorteisas);
             OleDbParameter pEstado = UtilDA.SetParameters("@Estado", OleDbType.VarChar, datos.Estado);
-            OleDbParameter pFechaCrea = UtilDA.SetParameters("@FechaMod", OleDbType.Date, datos.FechaCreacion);
-            OleDbParameter pUserCrea = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, datos.UsuarioCreacion);
+            OleDbParameter pFechaCrea = UtilDA.SetParameters("@FechaMod", OleDbType.Date, DateTime.Now);
+            OleDbParameter pUserCrea = UtilDA.SetParameters("@UserMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter pIdEmpresa = UtilDA.SetParameters("@IdEmpresa", OleDbType.Integer, datos.IdEmpresa);
 
             return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, pNombre, pCortesias, pCantidadCortesias, pEstado, pFechaCrea, pUserCrea, pIdEmpresa);

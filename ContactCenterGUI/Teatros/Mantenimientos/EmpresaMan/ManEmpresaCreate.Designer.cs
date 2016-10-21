@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI.Teatros.Mantenimientos.Empresa
+﻿namespace ContactCenterGUI.Teatros.Mantenimientos.EmpresaMan
 {
     partial class ManEmpresaCreate
     {

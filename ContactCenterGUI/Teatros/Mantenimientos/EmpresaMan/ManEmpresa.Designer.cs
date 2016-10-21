@@ -1,4 +1,4 @@
-﻿namespace ContactCenterGUI.Teatros.Mantenimientos.Empresa
+﻿namespace ContactCenterGUI.Teatros.Mantenimientos.EmpresaMan
 {
     partial class ManEmpresa
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEmpresa = new System.Windows.Forms.DataGridView();
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.pre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +64,7 @@
             this.dgvEmpresa.RowHeadersVisible = false;
             this.dgvEmpresa.Size = new System.Drawing.Size(720, 347);
             this.dgvEmpresa.TabIndex = 20;
+            this.dgvEmpresa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpresa_CellContentClick);
             // 
             // edit
             // 
@@ -84,9 +85,9 @@
             // FechaCreacion
             // 
             this.FechaCreacion.DataPropertyName = "FechaCreacion";
-            dataGridViewCellStyle1.Format = "G";
-            dataGridViewCellStyle1.NullValue = null;
-            this.FechaCreacion.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "G";
+            dataGridViewCellStyle2.NullValue = null;
+            this.FechaCreacion.DefaultCellStyle = dataGridViewCellStyle2;
             this.FechaCreacion.HeaderText = "Fecha Creacion";
             this.FechaCreacion.Name = "FechaCreacion";
             this.FechaCreacion.ReadOnly = true;

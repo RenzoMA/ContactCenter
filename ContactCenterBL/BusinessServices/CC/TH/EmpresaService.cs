@@ -16,9 +16,9 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             empresaRepository = _empresaRepository;
         }
 
-        public bool ActualizarEmpresa(Empresa zona)
+        public bool ActualizarEmpresa(Empresa empresa)
         {
-            throw new NotImplementedException();
+            return empresaRepository.Update(empresa);
         }
 
         public bool EliminarEmpresa(int codigo)

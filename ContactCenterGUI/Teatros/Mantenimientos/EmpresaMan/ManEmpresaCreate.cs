@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 
-namespace ContactCenterGUI.Teatros.Mantenimientos.Empresa
+namespace ContactCenterGUI.Teatros.Mantenimientos.EmpresaMan
 {
     public partial class ManEmpresaCreate : MaterialForm
     {

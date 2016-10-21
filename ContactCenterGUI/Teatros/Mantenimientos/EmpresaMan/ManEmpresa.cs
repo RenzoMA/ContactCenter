@@ -19,7 +19,7 @@ using ContactCenterBE.CC.TH.Entidades.ZonaBE;
 using ContactCenterGUI.CC.Helpers;
 using ContactCenterGUI.CC.Constantes;
 
-namespace ContactCenterGUI.Teatros.Mantenimientos.Empresa
+namespace ContactCenterGUI.Teatros.Mantenimientos.EmpresaMan
 {
     public partial class ManEmpresa : MaterialForm
     {
@@ -40,6 +40,16 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.Empresa
             using (IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>())
             {
                 dgvEmpresa.DataSource = await servicio.ListEmpresa(txtNombreEmpresa.Text);
+            }
+        }
+
+        private void dgvEmpresa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                Empresa empresa = (Empresa)dgvEmpresa.CurrentRow.DataBoundItem;
+                ManEmpresaEdit manEmpresaEdit = new ManEmpresaEdit(empresa);
+                manEmpresaEdit.ShowDialog();
             }
         }
     }
