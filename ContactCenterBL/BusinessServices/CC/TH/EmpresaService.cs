@@ -46,7 +46,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
 
         public bool InsertarEmpresa(Empresa zona)
         {
-            throw new NotImplementedException();
+            return empresaRepository.Insert(zona);
         }
     }
 }

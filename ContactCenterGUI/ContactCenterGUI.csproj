@@ -304,6 +304,12 @@
     <Compile Include="Teatros\Reportes\RptReservasObra.Designer.cs">
       <DependentUpon>RptReservasObra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Reservas\FindEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Reservas\FindEmpresa.Designer.cs">
+      <DependentUpon>FindEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Reservas\FindReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -478,6 +484,9 @@
     <EmbeddedResource Include="Teatros\Reportes\RptReservasObra.resx">
       <DependentUpon>RptReservasObra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Reservas\FindEmpresa.resx">
+      <DependentUpon>FindEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reservas\FindReservation.resx">
       <DependentUpon>FindReservation.cs</DependentUpon>
     </EmbeddedResource>
@@ -571,6 +580,8 @@
     <Content Include="MetroFramework.txt" />
     <Content Include="Resources\-forward-icon.png" />
     <None Include="Resources\LOGO-LA-PLAZA-Y-PRODUCTORES.png" />
+    <None Include="Resources\lup1a1.png" />
+    <None Include="Resources\eliminar.png" />
     <Content Include="Resources\mensaje.png" />
     <None Include="Resources\PIRANDELLO_PLATEA_2.jpg" />
     <None Include="Resources\PIRANDELLO_PLATEA_1.jpg" />

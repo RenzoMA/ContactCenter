@@ -36,6 +36,8 @@ namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
             txtAplicacion.Text = aplicacion.Nombre;
             txtAplicacion.Enabled = false;
             txtCorreo.Text = aplicacion.Correo;
+            txtCorreoNotificacion.Text = aplicacion.CorreoNotificacion;
+            txtPasswordCorreo.Text = aplicacion.Contraseña;
             if (aplicacion.Image != null)
             {
                 MemoryStream ms = new MemoryStream(aplicacion.Image);

@@ -145,9 +145,6 @@
   <data name="PIRANDELLO_PLATEA_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PIRANDELLO_PLATEA_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mensaje" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mensaje.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="krieger2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\krieger2_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,8 +160,14 @@
   <data name="teatro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\teatro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="-forward-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\-forward-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="left-arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\left-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LOGO-LA-PLAZA-Y-PRODUCTORES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO-LA-PLAZA-Y-PRODUCTORES.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PJ_PLATEA_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PJ_PLATEA_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,8 +178,8 @@
   <data name="PJ_MEZZANINE_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PJ_MEZZANINE_2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="-forward-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\-forward-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mensaje" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mensaje.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,7 +217,10 @@
   <data name="left-arrow11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\left-arrow1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LOGO-LA-PLAZA-Y-PRODUCTORES" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGO-LA-PLAZA-Y-PRODUCTORES.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lup1a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lup1a1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

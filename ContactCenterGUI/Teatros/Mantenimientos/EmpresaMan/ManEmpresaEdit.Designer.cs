@@ -34,12 +34,16 @@
             this.btnEditar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.txtNombreEmpresa = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.cboEstado = new System.Windows.Forms.ComboBox();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.materialLabel1);
+            this.groupBox1.Controls.Add(this.cboEstado);
             this.groupBox1.Controls.Add(this.txtCortesias);
             this.groupBox1.Controls.Add(this.chkCortesia);
             this.groupBox1.Controls.Add(this.btnEditar);
@@ -47,7 +51,7 @@
             this.groupBox1.Controls.Add(this.txtNombreEmpresa);
             this.groupBox1.Location = new System.Drawing.Point(12, 78);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(489, 186);
+            this.groupBox1.Size = new System.Drawing.Size(489, 232);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
@@ -85,7 +89,7 @@
             // btnEditar
             // 
             this.btnEditar.Depth = 0;
-            this.btnEditar.Location = new System.Drawing.Point(157, 116);
+            this.btnEditar.Location = new System.Drawing.Point(157, 175);
             this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Primary = true;
@@ -126,11 +130,37 @@
             this.txtNombreEmpresa.TabStop = false;
             this.txtNombreEmpresa.UseSystemPasswordChar = false;
             // 
+            // cboEstado
+            // 
+            this.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstado.FormattingEnabled = true;
+            this.cboEstado.Items.AddRange(new object[] {
+            "ACTIVO",
+            "INACTIVO"});
+            this.cboEstado.Location = new System.Drawing.Point(142, 104);
+            this.cboEstado.Name = "cboEstado";
+            this.cboEstado.Size = new System.Drawing.Size(183, 21);
+            this.cboEstado.TabIndex = 31;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.BackColor = System.Drawing.Color.White;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(35, 103);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(60, 19);
+            this.materialLabel1.TabIndex = 32;
+            this.materialLabel1.Text = "Estado:";
+            // 
             // ManEmpresaEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 301);
+            this.ClientSize = new System.Drawing.Size(528, 340);
             this.Controls.Add(this.groupBox1);
             this.Name = "ManEmpresaEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -150,5 +180,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnEditar;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreEmpresa;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.ComboBox cboEstado;
     }
 }

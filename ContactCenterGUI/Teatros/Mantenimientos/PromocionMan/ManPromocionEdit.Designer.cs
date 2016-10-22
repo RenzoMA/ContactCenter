@@ -54,6 +54,7 @@
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.cboEstado = new MetroFramework.Controls.MetroComboBox();
             this.txtObra = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.chkRequiereEmpresa = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZonas)).BeginInit();
@@ -354,11 +355,23 @@
             this.txtObra.TabStop = false;
             this.txtObra.UseSystemPasswordChar = false;
             // 
+            // chkRequiereEmpresa
+            // 
+            this.chkRequiereEmpresa.AutoSize = true;
+            this.chkRequiereEmpresa.BackColor = System.Drawing.Color.White;
+            this.chkRequiereEmpresa.Location = new System.Drawing.Point(574, 123);
+            this.chkRequiereEmpresa.Name = "chkRequiereEmpresa";
+            this.chkRequiereEmpresa.Size = new System.Drawing.Size(113, 17);
+            this.chkRequiereEmpresa.TabIndex = 100;
+            this.chkRequiereEmpresa.Text = "Requiere Empresa";
+            this.chkRequiereEmpresa.UseVisualStyleBackColor = false;
+            // 
             // ManPromocionEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 503);
+            this.Controls.Add(this.chkRequiereEmpresa);
             this.Controls.Add(this.txtObra);
             this.Controls.Add(this.materialLabel7);
             this.Controls.Add(this.cboEstado);
@@ -418,5 +431,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Sel;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreZona;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.CheckBox chkRequiereEmpresa;
     }
 }

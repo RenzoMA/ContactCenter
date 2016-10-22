@@ -19,6 +19,7 @@ namespace ContactCenterBE.CC.TH.Entidades.PromocionBE
         public TipoPromocion TipoPromocion { get; set; }
         public List<PromocionZona> PromocionZonas { get; set; }
         public List<PromocionFuncion> PromocionFunciones { get; set; }
+        public bool RequiereEmpresa { get; set; }
 
     }
 }

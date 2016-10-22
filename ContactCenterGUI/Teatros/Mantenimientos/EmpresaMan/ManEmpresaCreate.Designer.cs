@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCortesias = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnCrear = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.txtNombreZona = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.txtCortesias = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +52,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
+            // txtCortesias
+            // 
+            this.txtCortesias.Depth = 0;
+            this.txtCortesias.Hint = "";
+            this.txtCortesias.Location = new System.Drawing.Point(142, 64);
+            this.txtCortesias.MaxLength = 40;
+            this.txtCortesias.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtCortesias.Name = "txtCortesias";
+            this.txtCortesias.PasswordChar = '\0';
+            this.txtCortesias.SelectedText = "";
+            this.txtCortesias.SelectionLength = 0;
+            this.txtCortesias.SelectionStart = 0;
+            this.txtCortesias.Size = new System.Drawing.Size(74, 23);
+            this.txtCortesias.TabIndex = 30;
+            this.txtCortesias.TabStop = false;
+            this.txtCortesias.UseSystemPasswordChar = false;
+            this.txtCortesias.Visible = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(39, 66);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(94, 21);
+            this.checkBox1.TabIndex = 29;
+            this.checkBox1.Text = "Cortesias:";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // btnCrear
             // 
             this.btnCrear.Depth = 0;
@@ -63,6 +93,7 @@
             this.btnCrear.TabIndex = 7;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // materialLabel3
             // 
@@ -94,36 +125,6 @@
             this.txtNombreZona.TabIndex = 3;
             this.txtNombreZona.TabStop = false;
             this.txtNombreZona.UseSystemPasswordChar = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(39, 66);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(94, 21);
-            this.checkBox1.TabIndex = 29;
-            this.checkBox1.Text = "Cortesias:";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // txtCortesias
-            // 
-            this.txtCortesias.Depth = 0;
-            this.txtCortesias.Hint = "";
-            this.txtCortesias.Location = new System.Drawing.Point(142, 64);
-            this.txtCortesias.MaxLength = 40;
-            this.txtCortesias.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtCortesias.Name = "txtCortesias";
-            this.txtCortesias.PasswordChar = '\0';
-            this.txtCortesias.SelectedText = "";
-            this.txtCortesias.SelectionLength = 0;
-            this.txtCortesias.SelectionStart = 0;
-            this.txtCortesias.Size = new System.Drawing.Size(74, 23);
-            this.txtCortesias.TabIndex = 30;
-            this.txtCortesias.TabStop = false;
-            this.txtCortesias.UseSystemPasswordChar = false;
-            this.txtCortesias.Visible = false;
             // 
             // ManEmpresaCreate
             // 

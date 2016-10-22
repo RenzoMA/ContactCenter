@@ -11,6 +11,21 @@ namespace ContactCenterBE.CC.TH.Entidades.ZonaBE
 {
     public class Zona : BaseEntity
     {
+        public Zona() { }
+        public Zona(Zona zona)
+        {
+            this.IdZona = zona.IdZona;
+            this.Nombre = zona.Nombre;
+            this.Descripcion = zona.Descripcion;
+            this.Estado = zona.Estado;
+            this.Obra = zona.Obra;
+            this.Precio = zona.Precio;
+            this.R = zona.R;
+            this.G = zona.G;
+            this.B = zona.B;
+            this.AsientoZona = zona.AsientoZona;
+        }
+
         public int IdZona { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }

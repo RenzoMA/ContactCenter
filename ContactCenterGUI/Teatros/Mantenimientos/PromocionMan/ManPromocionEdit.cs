@@ -53,6 +53,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
             cboEstado.SelectedIndex = promocion.Estado == "Activo" ? 0 : 1;
             dtpFechaInicio.Value = promocion.FechaInicio;
             dtpFechaFin.Value = promocion.FechaFin;
+            chkRequiereEmpresa.Checked = promocion.RequiereEmpresa;
 
             listZona = servicio.ListZonaByObra(promocion.PromocionZonas[0].Zona.Obra.IdObra);
             listFuncion = servicio.ListarFuncionByObraGrilla(promocion.PromocionZonas[0].Zona.Obra.IdObra);
@@ -209,6 +210,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
             promocion.FechaFin = dtpFechaFin.Value.Date;
             promocion.FechaInicio = dtpFechaInicio.Value.Date;
             promocion.TipoPromocion = cboTipoPromocion.SelectedValue as TipoPromocion;
+            promocion.RequiereEmpresa = chkRequiereEmpresa.Checked;
             promocion.PromocionFunciones = listaPromocionFuncion;
             promocion.PromocionZonas = listaPromocionZona;
         }

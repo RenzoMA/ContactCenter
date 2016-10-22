@@ -29,7 +29,7 @@ namespace ContactCenterBE.CC.TH.Entidades.AsientoBE
             this.IdAsientoZona = asientoZona.IdAsientoZona;
             this.IdAsiento = asientoZona.IdAsiento;
             this.Asiento = asientoZona.Asiento;
-            this.Zona = asientoZona.Zona;
+            this.Zona = new Zona(asientoZona.Zona);
             this.Disponible = asientoZona.Disponible;
             this.EstadoTemporal = asientoZona.EstadoTemporal;
             this.PromocionAplicada = false;
