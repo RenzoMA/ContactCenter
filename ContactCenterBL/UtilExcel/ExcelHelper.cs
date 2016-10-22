@@ -23,6 +23,7 @@ namespace ContactCenterBL.UtilExcel
                                  Fila = row["FILA"].Cast<string>(),
                                  Asiento = row["ASIENTO"].Cast<string>(),
                                  Promocion = row["PROMOCION"].Cast<string>(),
+                                 Empresa = row["EMPRESA"].Cast<string>(),
                                  Precio = row["PRECIO"].Cast<Single>(),
                                  Telefono = row["TELEFONO"].Cast<string>(),
                                  Nombre = row["NOMBRE"].Cast<string>(),

@@ -13,6 +13,7 @@ using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.Entidades.UsuarioBE;
 using ContactCenterBE.CC.TH.Entidades.ObraBE;
 using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
+using ContactCenterBE.CC.TH.Entidades.EmpresaBE;
 using ContactCenterBL.UtilExcel;
 using ContactCenterBL.Helper;
 using ContactCenterCommon;
@@ -32,6 +33,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
         private readonly ITeatroRepository teatroRepository;
         private readonly IAsientoRepository asientoRepository;
         private readonly ILogEmailRepository logEmailRepository;
+        private readonly IEmpresaRepository empresaRepository;
 
         public ReservaService(IReservaRepository _reservaRepository,
                               IClienteRepository _clienteRepository,
@@ -41,7 +43,8 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                               IPromocionRepository _promocionRepository,
                               ITeatroRepository _teatroRepository,
                               IAsientoRepository _asientoRepository,
-                              ILogEmailRepository _logEmailRepository)
+                              ILogEmailRepository _logEmailRepository,
+                              IEmpresaRepository _empresaRepository)
         {
             reservaRepository = _reservaRepository;
             clienteRepository = _clienteRepository;
@@ -52,6 +55,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
             teatroRepository = _teatroRepository;
             asientoRepository = _asientoRepository;
             logEmailRepository = _logEmailRepository;
+            empresaRepository = _empresaRepository;
         }
 
         public bool InsertarReserva(Reserva reserva,Cliente cliente)
@@ -273,6 +277,24 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                     throw new Exception("Usuario no encontrado en la fila: " + (x + 2));
                 }
 
+                if (!String.IsNullOrEmpty(lista[x].Empresa))
+                {
+                    
+                    Empresa objEmpresa = empresaRepository.GetLista().Where(tx => tx.Nombre.ToLower().Equals(lista[x].Empresa.ToLower())).FirstOrDefault();
+                    if (objEmpresa == null)
+                    {
+                        throw new Exception("Empresa no encontrado en la fila: " + (x + 2));
+                    }
+                    else
+                    {
+                        reserva.Empresa = objEmpresa.Nombre;
+                    }
+                }
+                else
+                {
+                    reserva.Empresa = "";
+                }
+
 
                 Reserva reservaExiste = reservaRepository.ReservaExiste(lista[x].FechaReserva, reserva.Funcion.IdFuncion, reserva.Cliente.IdCliente);
                 if (reservaExiste != null)
@@ -280,6 +302,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                     throw new Exception("Reserva ya se encuentra registrada en la fila: " + (x + 2));
                 }
                 
+
                 string asientos = "";
                 listaAsientos.ForEach(tx => {
                     asientos += tx.EstadoTemporal +" / " + tx.Fila + " / " + tx.Descripcion + "\n";
@@ -295,6 +318,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                     Estado = "A"
                 };
                 reserva.EstadoReserva = estadoReserva;
+                
                 reserva.FechaCreacion = DateTime.Now;
                 reserva.UsuarioCreacion = lista[x].UsuarioRegistro;
                 reserva.ListaDetalles = listaDetalle;

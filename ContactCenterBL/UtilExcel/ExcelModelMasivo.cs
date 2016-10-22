@@ -16,6 +16,7 @@ namespace ContactCenterBL.UtilExcel
         public string Fila { get; set; }
         public string Asiento { get; set; }
         public string Promocion { get; set; }
+        public string Empresa { get; set; }
         public Single Precio { get; set; }
         public string Telefono { get; set; }
         public string Nombre { get; set; }

@@ -41,8 +41,8 @@
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.fun = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncion)).BeginInit();
@@ -61,8 +61,8 @@
             this.Editar,
             this.Eliminar,
             this.fun,
+            this.DiaCodigo,
             this.Dia,
-            this.nombre,
             this.Horario,
             this.Estado});
             this.dgvFuncion.Location = new System.Drawing.Point(13, 227);
@@ -196,19 +196,19 @@
             this.fun.ReadOnly = true;
             this.fun.Visible = false;
             // 
+            // DiaCodigo
+            // 
+            this.DiaCodigo.DataPropertyName = "Dia";
+            this.DiaCodigo.HeaderText = "Día";
+            this.DiaCodigo.Name = "DiaCodigo";
+            this.DiaCodigo.ReadOnly = true;
+            this.DiaCodigo.Visible = false;
+            // 
             // Dia
             // 
-            this.Dia.DataPropertyName = "Dia";
-            this.Dia.HeaderText = "Día";
+            this.Dia.HeaderText = "Dia";
             this.Dia.Name = "Dia";
             this.Dia.ReadOnly = true;
-            this.Dia.Visible = false;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Día";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
             // 
             // Horario
             // 
@@ -262,8 +262,8 @@
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn fun;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Horario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }

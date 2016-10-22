@@ -147,13 +147,14 @@ namespace ContactCenterGUI.Teatros.Reservas
                 ws.Cells["F1"].Value = "FILA";
                 ws.Cells["G1"].Value = "ASIENTO";
                 ws.Cells["H1"].Value = "PROMOCION";
-                ws.Cells["I1"].Value = "PRECIO";
-                ws.Cells["J1"].Value = "TELEFONO";
-                ws.Cells["K1"].Value = "NOMBRE";
-                ws.Cells["L1"].Value = "APELLIDOS";
-                ws.Cells["M1"].Value = "CORREO";
-                ws.Cells["N1"].Value = "USUARIO REGISTRO";
-                ws.Cells["A1:N1"].Style.Font.Bold = true;
+                ws.Cells["I1"].Value = "EMPRESA";
+                ws.Cells["J1"].Value = "PRECIO";
+                ws.Cells["K1"].Value = "TELEFONO";
+                ws.Cells["L1"].Value = "NOMBRE";
+                ws.Cells["M1"].Value = "APELLIDOS";
+                ws.Cells["N1"].Value = "CORREO";
+                ws.Cells["O1"].Value = "USUARIO REGISTRO";
+                ws.Cells["A1:O1"].Style.Font.Bold = true;
                 ws.Cells["A1:A100"].Style.Numberformat.Format = "@";
                 ws.Cells["B1:B100"].Style.Numberformat.Format = "@";
                 ws.Cells["C1:C100"].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
@@ -168,6 +169,7 @@ namespace ContactCenterGUI.Teatros.Reservas
                 ws.Cells["L1:L100"].Style.Numberformat.Format = "@";
                 ws.Cells["M1:M100"].Style.Numberformat.Format = "@";
                 ws.Cells["N1:N100"].Style.Numberformat.Format = "@";
+                ws.Cells["O1:O100"].Style.Numberformat.Format = "@";
 
                 pck.Save();
                 System.Diagnostics.Process.Start(saveFileDialog1.FileName);

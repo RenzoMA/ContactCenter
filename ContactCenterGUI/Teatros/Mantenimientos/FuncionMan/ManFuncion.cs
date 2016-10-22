@@ -123,7 +123,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.FuncionMan
 
                             String nombre = diasNombre.ElementAt(indice);
 
-                            row.Cells[6].Value = nombre;
+                            row.Cells[4].Value = nombre;
                         }
                     }
                 }
