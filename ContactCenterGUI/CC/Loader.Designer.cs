@@ -50,10 +50,10 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(196)))), ((int)(((byte)(252)))));
-            this.pictureBox2.Image = global::ContactCenterGUI.Properties.Resources.logo_oficial_2;
-            this.pictureBox2.Location = new System.Drawing.Point(313, 336);
+            this.pictureBox2.Image = global::ContactCenterGUI.Properties.Resources.Logo;
+            this.pictureBox2.Location = new System.Drawing.Point(414, 332);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(218, 96);
+            this.pictureBox2.Size = new System.Drawing.Size(117, 112);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
