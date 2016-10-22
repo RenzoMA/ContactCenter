@@ -153,6 +153,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
                     FechaFin = dtpFechaFin.Value.Date,
                     FechaInicio = dtpFechaInicio.Value.Date,
                     TipoPromocion = cboTipoPromocion.SelectedItem as TipoPromocion,
+                    RequiereEmpresa = chkRequiereEmpresa.Checked,
                     PromocionFunciones = listaPromocionFuncion,
                     PromocionZonas = listaPromocionZona
                 };

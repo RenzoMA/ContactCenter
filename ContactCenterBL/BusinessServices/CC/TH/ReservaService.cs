@@ -241,8 +241,7 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                         Nombre = lista[x].Nombre,
                         Telefono = lista[x].Telefono,
                         ApellidoPaterno = lista[x].Apellidos,
-                        Apellidomaterno = "",
-                        DNI = ""
+                        Apellidomaterno = ""
                     };
                     int idCliente = clienteRepository.GetNewIdCliente(newCliente);
                 }
@@ -252,7 +251,6 @@ namespace ContactCenterBL.BusinessServices.CC.TH
                     tempCliente.Nombre = lista[x].Nombre;
                     tempCliente.Telefono = lista[x].Telefono;
                     tempCliente.ApellidoPaterno = lista[x].Apellidos;
-                    tempCliente.DNI = "";
                     tempCliente.Apellidomaterno = "";
                     clienteRepository.Update(tempCliente);
                 }

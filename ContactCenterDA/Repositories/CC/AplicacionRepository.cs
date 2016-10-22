@@ -51,6 +51,8 @@ namespace ContactCenterDA.Repositories.CC
                     objAplicacion.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
                     objAplicacion.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
                     objAplicacion.Image = DataConvert.ToByteArrayNull(dtr["Imagen"]);
+                    objAplicacion.CorreoNotificacion = DataConvert.ToString(dtr["CorreoNotificacion"]);
+                    objAplicacion.Contraseña = DataConvert.ToString(dtr["Contraseña"]);
 
                 }
             }
@@ -79,6 +81,8 @@ namespace ContactCenterDA.Repositories.CC
                     objAplicacion.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
                     objAplicacion.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
                     objAplicacion.Image = DataConvert.ToByteArrayNull(dtr["Imagen"]);
+                    objAplicacion.CorreoNotificacion = DataConvert.ToString(dtr["CorreoNotificacion"]);
+                    objAplicacion.Contraseña = DataConvert.ToString(dtr["Contraseña"]);
                     listaAplicacion.Add(objAplicacion);
                 }
             }
@@ -88,8 +92,8 @@ namespace ContactCenterDA.Repositories.CC
 
         public bool Insert(Aplicacion datos)
         {
-            String sql = "INSERT INTO CC_APLICACION(Nombre, Version, Estado, Correo, FechaCrea, UserCrea,FormInicio) " +
-                                       "VALUES(@nombre,@version,@estado,@correo,@fechaCrea,@usuarioCrea,@formInicio)";
+            String sql = "INSERT INTO CC_APLICACION(Nombre, Version, Estado, Correo, FechaCrea, UserCrea,FormInicio,CorreoNotificacion,Contraseña) " +
+                                       "VALUES(@nombre,@version,@estado,@correo,@fechaCrea,@usuarioCrea,@formInicio,@CorreoNotificacion,@Contraseña)";
 
             OleDbParameter nombre = UtilDA.SetParameters("@nombre", OleDbType.VarChar, datos.Nombre);
             OleDbParameter version = UtilDA.SetParameters("@version", OleDbType.VarChar, datos.Version);
@@ -98,29 +102,33 @@ namespace ContactCenterDA.Repositories.CC
             OleDbParameter fechaCreacion = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
             OleDbParameter UsuarioCrea = UtilDA.SetParameters("@usuarioCrea", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter formInicio = UtilDA.SetParameters("@formInicio", OleDbType.VarChar, datos.FormInicio);
+            OleDbParameter pCorreoNotificacion = UtilDA.SetParameters("@formInicio", OleDbType.VarChar, datos.CorreoNotificacion);
+            OleDbParameter pContraseña = UtilDA.SetParameters("@formInicio", OleDbType.VarChar, datos.Contraseña);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, version, estado, correo, fechaCreacion, UsuarioCrea, formInicio);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, nombre, version, estado, correo, fechaCreacion, UsuarioCrea, formInicio, pCorreoNotificacion,pContraseña);
         }
 
         public bool Update(Aplicacion datos)
         {
             String sql = "UPDATE CC_APLICACION SET Correo = @correo,Imagen = @Imagen," +
-                                        "FechaMod = @fechaMod, UserMod = @usuarioMod WHERE IdAplicacion = @idAplicacion";
+                                        "FechaMod = @fechaMod, UserMod = @usuarioMod,CorreoNotificacion = @CorreoNotificacion, Contraseña = @Contraseña WHERE IdAplicacion = @idAplicacion";
 
             OleDbParameter correo = UtilDA.SetParameters("@correo", OleDbType.VarChar, datos.Correo);
             OleDbParameter fechaModificacion = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
             OleDbParameter UsuarioMod = UtilDA.SetParameters("@usuarioMod", OleDbType.VarChar, Sesion.usuario.Login);
             OleDbParameter idAplicacion = UtilDA.SetParameters("@idAplicacion", OleDbType.Integer, datos.IdAplicacion);
             OleDbParameter pImagen = UtilDA.SetParameters("@Imagen", OleDbType.VarBinary, datos.Image);
+            OleDbParameter pCorreoNotificacion = UtilDA.SetParameters("@formInicio", OleDbType.VarChar, datos.CorreoNotificacion);
+            OleDbParameter pContraseña = UtilDA.SetParameters("@formInicio", OleDbType.VarChar, datos.Contraseña);
 
-            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, correo, pImagen, fechaModificacion, UsuarioMod, idAplicacion);
+            return UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, false, correo, pImagen, fechaModificacion, UsuarioMod, pCorreoNotificacion, pContraseña, idAplicacion);
 
         }
 
         public List<Aplicacion> ListarAplicacionUsuario(Usuario usuario)
         {
             List<Aplicacion> listaAplicacion = new List<Aplicacion>();
-            String sql = "SELECT A.IdAplicacion, A.Nombre, A.Version, A.Estado, A.Correo, A.FechaCrea, A.UserCrea, A.UserMod, A.FechaMod, A.FormInicio, Imagen FROM CC_USUARIO_APLICACION UA INNER JOIN CC_APLICACION A ON A.IDAPLICACION = UA.IDAPLICACION WHERE UA.IDUSUARIO = @IDUSUARIO";
+            String sql = "SELECT * FROM CC_USUARIO_APLICACION UA INNER JOIN CC_APLICACION A ON A.IDAPLICACION = UA.IDAPLICACION WHERE UA.IDUSUARIO = @IDUSUARIO";
             OleDbParameter idUsuario = UtilDA.SetParameters("@IDUSUARIO", OleDbType.VarChar, usuario.IdUsuario);
 
             using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx, idUsuario))
@@ -128,17 +136,19 @@ namespace ContactCenterDA.Repositories.CC
                 while (dtr.Read())
                 {
                     Aplicacion objAplicacion = new Aplicacion();
-                    objAplicacion.IdAplicacion = DataConvert.ToInt(dtr["IdAplicacion"]);
+                    objAplicacion.IdAplicacion = DataConvert.ToInt(dtr["A.IdAplicacion"]);
                     objAplicacion.Nombre = DataConvert.ToString(dtr["Nombre"]);
                     objAplicacion.Version = DataConvert.ToString(dtr["Version"]);
                     objAplicacion.Estado = DataConvert.ToString(dtr["Estado"]);
                     objAplicacion.Correo = DataConvert.ToString(dtr["Correo"]);
-                    objAplicacion.FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]);
-                    objAplicacion.UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]);
-                    objAplicacion.FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]);
-                    objAplicacion.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
+                    objAplicacion.FechaCreacion = DataConvert.ToDateTime(dtr["A.FechaCrea"]);
+                    objAplicacion.UsuarioCreacion = DataConvert.ToString(dtr["A.UserCrea"]);
+                    objAplicacion.FechaModificacion = DataConvert.ToDateTime(dtr["A.FechaMod"]);
+                    objAplicacion.UsuarioModificacion = DataConvert.ToString(dtr["A.UserMod"]);
                     objAplicacion.FormInicio = DataConvert.ToString(dtr["FormInicio"]);
                     objAplicacion.Image = DataConvert.ToByteArrayNull(dtr["Imagen"]);
+                    objAplicacion.CorreoNotificacion = DataConvert.ToString(dtr["CorreoNotificacion"]);
+                    objAplicacion.Contraseña = DataConvert.ToString(dtr["Contraseña"]);
                     listaAplicacion.Add(objAplicacion);
                 }
             }

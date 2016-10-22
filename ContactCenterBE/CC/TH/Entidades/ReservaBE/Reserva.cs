@@ -28,5 +28,6 @@ namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
         public Single PrecioTotal { get; set; }
         public String Asientos { get; set; }
         public String NombreCliente { get; set; }
+        public String Empresa { get; set; }
     }
 }

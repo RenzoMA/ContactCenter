@@ -123,6 +123,16 @@ namespace ContactCenterGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eliminar {
+            get {
+                object obj = ResourceManager.GetObject("eliminar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hospital31 {
             get {
                 object obj = ResourceManager.GetObject("hospital31", resourceCulture);
@@ -276,6 +286,16 @@ namespace ContactCenterGUI.Properties {
         internal static System.Drawing.Bitmap logo_oficial_2 {
             get {
                 object obj = ResourceManager.GetObject("logo_oficial_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lup1a {
+            get {
+                object obj = ResourceManager.GetObject("lup1a", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

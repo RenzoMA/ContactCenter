@@ -71,6 +71,7 @@
     <Compile Include="BusinessInterfaces\CC\IUsuarioService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\IAsientoService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\IDetalleReservaService.cs" />
+    <Compile Include="BusinessInterfaces\CC\TH\IEmpresaService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\IEstadoReservaService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\IFuncionService.cs" />
     <Compile Include="BusinessInterfaces\CC\TH\ILogEmailService.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="BusinessServices\CC\RolService.cs" />
     <Compile Include="BusinessServices\CC\TH\AsientoService.cs" />
     <Compile Include="BusinessServices\CC\TH\DetalleReservaService.cs" />
+    <Compile Include="BusinessServices\CC\TH\EmpresaService.cs" />
     <Compile Include="BusinessServices\CC\TH\EstadoReservaService.cs" />
     <Compile Include="BusinessServices\CC\TH\FuncionService.cs" />
     <Compile Include="BusinessServices\CC\TH\LogEmailService.cs" />

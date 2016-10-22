@@ -49,6 +49,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             objPromocion.Estado = DataConvert.ToString(dtr["P.Estado"]);
             objPromocion.FechaInicio = DataConvert.ToDateTime(dtr["P.FechaInicio"]);
             objPromocion.FechaFin = DataConvert.ToDateTime(dtr["P.FechaFin"]);
+            objPromocion.RequiereEmpresa = DataConvert.ToBool(dtr["RequiereEmpresa"]);
             objPromocion.TipoPromocion = new TipoPromocion()
             {
                 IdTipoPromocion = DataConvert.ToInt(dtr["TP.IdTipoPromocion"]),
@@ -68,7 +69,7 @@ namespace ContactCenterDA.Repositories.CC.TH
         {
             List<Promocion> listaPromocion = new List<Promocion>();
 
-            String sql = "SELECT * FROM (TH_PROMOCION P INNER JOIN TH_FUNCION F ON F.IDFUNCION = P.IDFUNCION) INNER JOIN TH_TIPO_PROMOCION TP ON TP.IDTIPOPROMOCION = P.IDTIPOPROMOCION ";
+            String sql = "SELECT * FROM (TH_PROMOCION P INNER JOIN TH_FUNCION F ON F.IDFUNCION = P.IDFUNCION) INNER JOIN TH_TIPO_PROMOCION TP ON TP.IDTIPOPROMOCION = P.IDTIPOPROMOCION WHERE TP.ESTADO NOT IN ('E') ";
 
             using (var dtr = UtilDA.ExecuteReader(cmd, CommandType.Text, sql, cnx))
             {
@@ -80,6 +81,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                     objPromocion.Estado = DataConvert.ToString(dtr["P.Estado"]);
                     objPromocion.FechaInicio = DataConvert.ToDateTime(dtr["FechaInicio"]);
                     objPromocion.FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]);
+                    objPromocion.RequiereEmpresa = DataConvert.ToBool(dtr["RequiereEmpresa"]);
                     objPromocion.TipoPromocion = new TipoPromocion()
                     {
                         IdTipoPromocion = DataConvert.ToInt(dtr["TP.IdTipoPromocion"]),
@@ -101,8 +103,8 @@ namespace ContactCenterDA.Repositories.CC.TH
         {
             try
             {
-                String sql = "INSERT INTO TH_PROMOCION(Descripcion, Estado, FechaInicio, FechaFin, IdTipoPromocion, FechaCrea, UserCrea) " +
-                            "VALUES(@descripcion, @estado, @fechaInicio, @fechaFin, @idTipoPromocion, @fechaCrea, @userCrea)";
+                String sql = "INSERT INTO TH_PROMOCION(Descripcion, Estado, FechaInicio, FechaFin, IdTipoPromocion, FechaCrea, UserCrea,RequiereEmpresa) " +
+                            "VALUES(@descripcion, @estado, @fechaInicio, @fechaFin, @idTipoPromocion, @fechaCrea, @userCrea,@requiereEmpresa)";
 
                 OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
                 OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, "A");
@@ -111,8 +113,9 @@ namespace ContactCenterDA.Repositories.CC.TH
                 OleDbParameter idTipoPromocion = UtilDA.SetParameters("@idTipoPromocion", OleDbType.Integer, datos.TipoPromocion.IdTipoPromocion);
                 OleDbParameter fechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
                 OleDbParameter userCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
+                OleDbParameter pRequiereEmpresa = UtilDA.SetParameters("@requiereEmpresa", OleDbType.Boolean, datos.RequiereEmpresa);
                 UtilDA.ExecuteBeginTransaction(cmd, cnx);
-                int idPromocion = UtilDA.ExecuteNonQueryGetId(cmd, CommandType.Text, sql, cnx, true, descripcion, estado, fechaInicio, fechaFin, idTipoPromocion, fechaCrea, userCrea);
+                int idPromocion = UtilDA.ExecuteNonQueryGetId(cmd, CommandType.Text, sql, cnx, true, descripcion, estado, fechaInicio, fechaFin, idTipoPromocion, fechaCrea, userCrea, pRequiereEmpresa);
                 if (idPromocion == 0)
                 {
                     UtilDA.ExecuteRollback(cmd, cnx);
@@ -159,7 +162,7 @@ namespace ContactCenterDA.Repositories.CC.TH
             try
             {
                 String sql = "UPDATE TH_PROMOCION SET Descripcion = @descripciom, Estado = @estado, FechaInicio = @fechaInicio, FechaFin = @fechaFin, IdTipoPromocion = @idTipoPromocion, " +
-                            " FechaMod = @fechaMod, UserMod = @userMod WHERE IdPromocion = @idPromocion";
+                            " FechaMod = @fechaMod, UserMod = @userMod, RequiereEmpresa = @requiereEmpresa WHERE IdPromocion = @idPromocion";
 
                 OleDbParameter descripcion = UtilDA.SetParameters("@descripcion", OleDbType.VarChar, datos.Descripcion);
                 OleDbParameter estado = UtilDA.SetParameters("@estado", OleDbType.VarChar, datos.Estado);
@@ -168,9 +171,11 @@ namespace ContactCenterDA.Repositories.CC.TH
                 OleDbParameter idTipoPromocion = UtilDA.SetParameters("@idTipoPromocion", OleDbType.Integer, datos.TipoPromocion.IdTipoPromocion);
                 OleDbParameter fechaMod = UtilDA.SetParameters("@fechaMod", OleDbType.Date, DateTime.Now);
                 OleDbParameter userMod = UtilDA.SetParameters("@userMod", OleDbType.VarChar, Sesion.usuario.Login);
+                OleDbParameter pRequiereEmpresa = UtilDA.SetParameters("@requiereEmpresa", OleDbType.Boolean, datos.RequiereEmpresa);
                 OleDbParameter idPromocion = UtilDA.SetParameters("@idPromocion", OleDbType.Integer, datos.IdPromocion);
+                
                 UtilDA.ExecuteBeginTransaction(cmd, cnx);
-                if (!UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, true, descripcion, estado, fechaInicio, fechaFin, idTipoPromocion, fechaMod, userMod, idPromocion))
+                if (!UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sql, cnx, true, descripcion, estado, fechaInicio, fechaFin, idTipoPromocion, fechaMod, userMod, pRequiereEmpresa, idPromocion))
                 {
                     UtilDA.ExecuteRollback(cmd, cnx);
                     return false;
@@ -283,7 +288,8 @@ namespace ContactCenterDA.Repositories.CC.TH
                         FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]),
                         UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]),
                         FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]),
-                        UsuarioModificacion = DataConvert.ToString(dtr["UserMod"])
+                        UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]),
+                        RequiereEmpresa = DataConvert.ToBool(dtr["RequiereEmpresa"])
                     };
                     ListaPromocion.Add(promocion);
                 }
@@ -316,6 +322,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                         UsuarioCreacion = DataConvert.ToString(dtr["P.UserCrea"]),
                         FechaModificacion = DataConvert.ToDateTime(dtr["P.FechaMod"]),
                         UsuarioModificacion = DataConvert.ToString(dtr["P.UserMod"]),
+                        RequiereEmpresa = DataConvert.ToBool(dtr["RequiereEmpresa"]),
                         TipoPromocion = new TipoPromocion()
                         {
                             IdTipoPromocion = DataConvert.ToInt(dtr["TP.IdTipoPromocion"]),
@@ -356,6 +363,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                         FechaFin = DataConvert.ToDateTime(dtr["FechaFin"]),
                         FechaCreacion = DataConvert.ToDateTime(dtr["P.FechaCrea"]),
                         UsuarioCreacion = DataConvert.ToString(dtr["P.UserCrea"]),
+                        RequiereEmpresa = DataConvert.ToBool(dtr["RequiereEmpresa"]),
                         TipoPromocion = new TipoPromocion()
                         {
                             IdTipoPromocion = DataConvert.ToInt(dtr["TP.IdTipoPromocion"]),

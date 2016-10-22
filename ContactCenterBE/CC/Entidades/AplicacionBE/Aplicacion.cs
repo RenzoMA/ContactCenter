@@ -16,6 +16,8 @@ namespace ContactCenterBE.CC.Entidades.AplicacionBE
         public string Correo { get; set; }
         public string Estado { get; set; }
         public string FormInicio { get; set; }
+        public string CorreoNotificacion { get; set; }
+        public string Contraseña { get; set; }
         public byte[] Image { get; set; }
     }
 }

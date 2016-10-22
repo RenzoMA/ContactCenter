@@ -35,8 +35,21 @@ namespace ContactCenterBL.Helper
                 var smtpClient = new SmtpClient();
 
                 #region Get Config Variables
-                var mailAccount = ConfigurationManager.AppSettings["mailAccount"];
-                var mailPassword = ConfigurationManager.AppSettings["mailPassword"];
+                String correo = "";
+                String password = "";
+                if (Sesion.aplicacion.CorreoNotificacion.Equals(String.Empty))
+                {
+                    correo = ConfigurationManager.AppSettings["mailAccount"];
+                    password = ConfigurationManager.AppSettings["mailPassword"];
+                }
+                else
+                {
+                    correo = Sesion.aplicacion.CorreoNotificacion;
+                    password = Sesion.aplicacion.Contraseña;
+                }
+                var mailAccount = correo;
+                var mailPassword = password;
+
                 var smtp = ConfigurationManager.AppSettings["smtp"];
                 var mailDisplayName = ConfigurationManager.AppSettings["mailDisplayName"];
                 var port = ConfigurationManager.AppSettings["port"];
@@ -211,7 +224,14 @@ namespace ContactCenterBL.Helper
                     if (e.Error != null)
                     {
                         logEmail.Estado = "FALLO";
-                        logEmail.Descripcion = e.Error.InnerException.Message;
+                        if (e.Error.InnerException != null)
+                        {
+                            logEmail.Descripcion = e.Error.InnerException.Message;
+                        }
+                        else
+                        {
+                            logEmail.Descripcion = e.Error.Message;
+                        }
 
                     }
 
@@ -223,7 +243,7 @@ namespace ContactCenterBL.Helper
                                         "Obra: \n"+obra + "\n" +
                                         "Fecha Reserva: \n" + reserva.FechaReserva.ToShortDateString() + "\n" +
                                         "Correo: \n" + reserva.Cliente.Correo +"\n\n" +
-                                        "Error: \n"+ e.Error.InnerException.Message, "Error enviando email", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        "Error: \n"+ e.Error.Message, "Error enviando email", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     smtpClient.Dispose();
                     mail.Dispose();
@@ -269,8 +289,20 @@ namespace ContactCenterBL.Helper
                 var smtpClient = new SmtpClient();
 
                 #region Get Config Variables
-                var mailAccount = ConfigurationManager.AppSettings["mailAccount"];
-                var mailPassword = ConfigurationManager.AppSettings["mailPassword"];
+                String correo = "";
+                String password = "";
+                if (Sesion.aplicacion.CorreoNotificacion.Equals(String.Empty))
+                {
+                    correo = ConfigurationManager.AppSettings["mailAccount"];
+                    password = ConfigurationManager.AppSettings["mailPassword"];
+                }
+                else
+                {
+                    correo = Sesion.aplicacion.CorreoNotificacion;
+                    password = Sesion.aplicacion.Contraseña;
+                }
+                var mailAccount = correo;
+                var mailPassword = password;
                 var smtp = ConfigurationManager.AppSettings["smtp"];
                 var mailDisplayName = ConfigurationManager.AppSettings["mailDisplayName"];
                 var port = ConfigurationManager.AppSettings["port"];

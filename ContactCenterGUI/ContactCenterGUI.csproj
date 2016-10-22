@@ -196,6 +196,24 @@
     <Compile Include="Teatros\Mantenimientos\AsientoMan\ManAsientoZona.Designer.cs">
       <DependentUpon>ManAsientoZona.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Mantenimientos\EmpresaMan\ManEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\EmpresaMan\ManEmpresa.Designer.cs">
+      <DependentUpon>ManEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\EmpresaMan\ManEmpresaCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\EmpresaMan\ManEmpresaCreate.Designer.cs">
+      <DependentUpon>ManEmpresaCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\EmpresaMan\ManEmpresaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Mantenimientos\EmpresaMan\ManEmpresaEdit.Designer.cs">
+      <DependentUpon>ManEmpresaEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Mantenimientos\FuncionMan\ManFuncion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +303,12 @@
     </Compile>
     <Compile Include="Teatros\Reportes\RptReservasObra.Designer.cs">
       <DependentUpon>RptReservasObra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teatros\Reservas\FindEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Reservas\FindEmpresa.Designer.cs">
+      <DependentUpon>FindEmpresa.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Reservas\FindReservation.cs">
       <SubType>Form</SubType>
@@ -401,6 +425,15 @@
     <EmbeddedResource Include="Teatros\Mantenimientos\AsientoMan\ManAsientoZona.resx">
       <DependentUpon>ManAsientoZona.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\EmpresaMan\ManEmpresa.resx">
+      <DependentUpon>ManEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\EmpresaMan\ManEmpresaCreate.resx">
+      <DependentUpon>ManEmpresaCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Mantenimientos\EmpresaMan\ManEmpresaEdit.resx">
+      <DependentUpon>ManEmpresaEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\FuncionMan\ManFuncion.resx">
       <DependentUpon>ManFuncion.cs</DependentUpon>
     </EmbeddedResource>
@@ -450,6 +483,9 @@
     <EmbeddedResource Include="Teatros\Reportes\RptReservasObra.rdlc" />
     <EmbeddedResource Include="Teatros\Reportes\RptReservasObra.resx">
       <DependentUpon>RptReservasObra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Reservas\FindEmpresa.resx">
+      <DependentUpon>FindEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reservas\FindReservation.resx">
       <DependentUpon>FindReservation.cs</DependentUpon>
@@ -544,9 +580,8 @@
     <Content Include="MetroFramework.txt" />
     <Content Include="Resources\-forward-icon.png" />
     <None Include="Resources\LOGO-LA-PLAZA-Y-PRODUCTORES.png" />
-    <None Include="Resources\cabecera_correo.png" />
-    <None Include="Resources\cabecera_correo2.jpg" />
-    <None Include="Resources\Logo.png" />
+    <None Include="Resources\lup1a1.png" />
+    <None Include="Resources\eliminar.png" />
     <Content Include="Resources\mensaje.png" />
     <None Include="Resources\PIRANDELLO_PLATEA_2.jpg" />
     <None Include="Resources\PIRANDELLO_PLATEA_1.jpg" />

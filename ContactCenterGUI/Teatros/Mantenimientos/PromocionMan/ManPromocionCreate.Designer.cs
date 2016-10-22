@@ -44,16 +44,17 @@
             this.cboTeatro = new MetroFramework.Controls.MetroComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvZonas = new System.Windows.Forms.DataGridView();
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.IdZona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.NombreZona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.dgvFunciones = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SelF = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chkRequiereEmpresa = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZonas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).BeginInit();
@@ -251,6 +252,33 @@
             this.dgvZonas.TabIndex = 75;
             this.dgvZonas.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvZonas_EditingControlShowing);
             // 
+            // IdZona
+            // 
+            this.IdZona.DataPropertyName = "IdZona";
+            this.IdZona.HeaderText = "IdZona";
+            this.IdZona.Name = "IdZona";
+            this.IdZona.Visible = false;
+            // 
+            // Sel
+            // 
+            this.Sel.HeaderText = "Sel";
+            this.Sel.Name = "Sel";
+            this.Sel.Width = 35;
+            // 
+            // NombreZona
+            // 
+            this.NombreZona.DataPropertyName = "Nombre";
+            this.NombreZona.HeaderText = "Zona";
+            this.NombreZona.Name = "NombreZona";
+            this.NombreZona.ReadOnly = true;
+            this.NombreZona.Width = 170;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.Width = 90;
+            // 
             // materialLabel5
             // 
             this.materialLabel5.AutoSize = true;
@@ -278,33 +306,6 @@
             this.materialLabel6.Size = new System.Drawing.Size(82, 19);
             this.materialLabel6.TabIndex = 78;
             this.materialLabel6.Text = "Funciones:";
-            // 
-            // IdZona
-            // 
-            this.IdZona.DataPropertyName = "IdZona";
-            this.IdZona.HeaderText = "IdZona";
-            this.IdZona.Name = "IdZona";
-            this.IdZona.Visible = false;
-            // 
-            // Sel
-            // 
-            this.Sel.HeaderText = "Sel";
-            this.Sel.Name = "Sel";
-            this.Sel.Width = 35;
-            // 
-            // NombreZona
-            // 
-            this.NombreZona.DataPropertyName = "Nombre";
-            this.NombreZona.HeaderText = "Zona";
-            this.NombreZona.Name = "NombreZona";
-            this.NombreZona.ReadOnly = true;
-            this.NombreZona.Width = 170;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.Width = 90;
             // 
             // dgvFunciones
             // 
@@ -343,11 +344,23 @@
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 190;
             // 
+            // chkRequiereEmpresa
+            // 
+            this.chkRequiereEmpresa.AutoSize = true;
+            this.chkRequiereEmpresa.BackColor = System.Drawing.Color.White;
+            this.chkRequiereEmpresa.Location = new System.Drawing.Point(582, 92);
+            this.chkRequiereEmpresa.Name = "chkRequiereEmpresa";
+            this.chkRequiereEmpresa.Size = new System.Drawing.Size(113, 17);
+            this.chkRequiereEmpresa.TabIndex = 80;
+            this.chkRequiereEmpresa.Text = "Requiere Empresa";
+            this.chkRequiereEmpresa.UseVisualStyleBackColor = false;
+            // 
             // ManPromocionCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(842, 600);
+            this.Controls.Add(this.chkRequiereEmpresa);
             this.Controls.Add(this.dgvFunciones);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.materialLabel5);
@@ -408,5 +421,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn SelF;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.CheckBox chkRequiereEmpresa;
     }
 }

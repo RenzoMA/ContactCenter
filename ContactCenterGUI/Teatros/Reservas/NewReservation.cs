@@ -74,7 +74,6 @@ namespace ContactCenterGUI.Teatros.Reservas
                 ConfirmReservation.ApellidoMaterno = "";
                 ConfirmReservation.ApellidoPaterno = "";
                 ConfirmReservation.Correo = "";
-                ConfirmReservation.DNI = "";
                 ConfirmReservation.Nombre = "";
                 ConfirmReservation.Telefono = "";
                 HelperForm.changeForm(funcion.Obra.Teatro.frmTeatro, "Teatros", true, this, reserva);
