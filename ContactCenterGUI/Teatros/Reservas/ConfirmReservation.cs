@@ -113,7 +113,7 @@ namespace ContactCenterGUI.Teatros.Reservas
             foreach (AsientoZona obj in listaAsientoPrecioTemp)
             {
                 result += obj.Zona.Nombre+" / "+obj.Asiento.Fila + " / " +obj.Asiento.Descripcion + "\n";
-                dgvDetalleAsientos.Rows.Add(obj.Zona.Nombre, obj.Asiento.Fila, obj.Asiento.Descripcion);
+                dgvDetalleAsientos.Rows.Add(obj.Zona.Nombre, obj.Asiento.Fila, obj.Asiento.Descripcion, obj.Zona.Precio);
             }
             int index = result.LastIndexOf('\n');
             result = result.Substring(0, index);
