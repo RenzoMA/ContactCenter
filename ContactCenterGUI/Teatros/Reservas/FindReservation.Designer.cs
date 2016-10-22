@@ -52,6 +52,7 @@
             this.Obra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asientos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Promocion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UsuarioCrea = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -195,6 +196,7 @@
             this.Obra,
             this.Asientos,
             this.PrecioTotal,
+            this.Empresa,
             this.Promocion,
             this.Correo,
             this.UsuarioCrea,
@@ -322,6 +324,14 @@
             this.PrecioTotal.ReadOnly = true;
             this.PrecioTotal.Width = 50;
             // 
+            // Empresa
+            // 
+            this.Empresa.DataPropertyName = "Empresa";
+            this.Empresa.HeaderText = "Empresa";
+            this.Empresa.Name = "Empresa";
+            this.Empresa.ReadOnly = true;
+            this.Empresa.Width = 200;
+            // 
             // Promocion
             // 
             this.Promocion.DataPropertyName = "NombrePromocion";
@@ -410,6 +420,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Obra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Asientos;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Empresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Promocion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioCrea;
