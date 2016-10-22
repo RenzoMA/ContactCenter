@@ -481,17 +481,25 @@ namespace ContactCenterGUI.Teatros.Reservas
                     {
                         if (promocion.IdPromocion == -1)
                         {
-                            aplicoPromocion = true;
-                            az.Zona.Precio = 0;
-                            az.PromocionAplicada = true;
-                            az.NombrePromocion = promocion.Descripcion;
-                            //Filtrar zonas con promocion para cadena en cabecera reserva
-                            if (idZonas.IndexOf(az.Zona.IdZona) == -1)
+                            if (empresa.Cortesias)
                             {
-                                idZonas.Add(az.Zona.IdZona);
-                                promociones += promocion.Descripcion + ",";
+                                aplicoPromocion = true;
+                                az.Zona.Precio = 0;
+                                az.PromocionAplicada = true;
+                                az.NombrePromocion = promocion.Descripcion;
+                                //Filtrar zonas con promocion para cadena en cabecera reserva
+                                if (idZonas.IndexOf(az.Zona.IdZona) == -1)
+                                {
+                                    idZonas.Add(az.Zona.IdZona);
+                                    promociones += promocion.Descripcion + ",";
+                                }
+                                aplicoPromocionGeneral = true;
                             }
-                            aplicoPromocionGeneral = true;
+                            else
+                            {
+                                MessageBox.Show("La empresa seleccionada no acepta cortesias","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                                return;
+                            }
                         }
                         else
                         {
