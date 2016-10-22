@@ -41,7 +41,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         private TimeSpan span;
         private List<int> idZonas;
         private string promociones = "";
-        private bool aplicoPromocion = false;
+        private bool aplicoPromocionGeneral = false;
 
         public static string Telefono = "";
         public static string Nombre = "";
@@ -266,6 +266,7 @@ namespace ContactCenterGUI.Teatros.Reservas
             if (empresa != null)
             {
                 reserva.Empresa = empresa.Nombre;
+                reserva.IdEmpresa = empresa.IdEmpresa;
             }
             else
             {
@@ -490,7 +491,7 @@ namespace ContactCenterGUI.Teatros.Reservas
                                 idZonas.Add(az.Zona.IdZona);
                                 promociones += promocion.Descripcion + ",";
                             }
-                            aplicoPromocion = true;
+                            aplicoPromocionGeneral = true;
                         }
                         else
                         {
@@ -507,7 +508,7 @@ namespace ContactCenterGUI.Teatros.Reservas
                                     idZonas.Add(az.Zona.IdZona);
                                     promociones += promocion.Descripcion + ",";
                                 }
-                                aplicoPromocion = true;
+                                aplicoPromocionGeneral = true;
                             }
                         }
                     }
@@ -616,7 +617,7 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!aplicoPromocion)
+            if (!aplicoPromocionGeneral)
             {
                 empresa = null;
                 txtNombreEmpresa.Text = "";

@@ -105,6 +105,11 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
                 MessageBox.Show("Complete la descripción", "Aviso");
                 return false;
             }
+            if (txtDescripcion.Text.ToUpper().Trim().Equals("CORTESIA"))
+            {
+                MessageBox.Show("El nombre no puede ser CORTESIA", "Aviso");
+                return false;
+            }
 
             listaPromocionZona = new List<PromocionZona>();
             listaPromocionFuncion = new List<PromocionFuncion>();

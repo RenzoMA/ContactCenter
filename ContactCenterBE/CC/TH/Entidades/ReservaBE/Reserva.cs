@@ -29,5 +29,6 @@ namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
         public String Asientos { get; set; }
         public String NombreCliente { get; set; }
         public String Empresa { get; set; }
+        public int IdEmpresa { get; set; }
     }
 }

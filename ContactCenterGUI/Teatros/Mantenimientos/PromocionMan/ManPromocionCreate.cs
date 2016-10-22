@@ -72,6 +72,11 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
         {
             if (txtDescripcion.Text.ToUpper().Trim().Equals(String.Empty))
                 return false;
+            if (txtDescripcion.Text.Trim().ToUpper().Equals("CORTESIA"))
+            {
+                MessageBox.Show("El nombre no puede ser CORTESIA", "Aviso");
+                return false;
+            }
             return true;
         }
         private void Init()
