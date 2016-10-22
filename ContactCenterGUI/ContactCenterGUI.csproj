@@ -310,10 +310,10 @@
     <Compile Include="Teatros\Reservas\FindEmpresa.Designer.cs">
       <DependentUpon>FindEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\Reservas\FindReservation.cs">
+    <Compile Include="Teatros\Consultas\FindReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\Reservas\FindReservation.Designer.cs">
+    <Compile Include="Teatros\Consultas\FindReservation.Designer.cs">
       <DependentUpon>FindReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocion.cs">
@@ -340,10 +340,10 @@
     <Compile Include="Teatros\Escenarios\TheaterLaPlaza.Designer.cs">
       <DependentUpon>TheaterLaPlaza.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\Reservas\FowardEmails.cs">
+    <Compile Include="Teatros\BandejaCorreos\FowardEmails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\Reservas\FowardEmails.Designer.cs">
+    <Compile Include="Teatros\BandejaCorreos\FowardEmails.Designer.cs">
       <DependentUpon>FowardEmails.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Reservas\NewReservation.cs">
@@ -392,10 +392,10 @@
     <Compile Include="Teatros\Reservas\ReportesTeatro.Designer.cs">
       <DependentUpon>ReportesTeatro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teatros\Reservas\SentEmail.cs">
+    <Compile Include="Teatros\BandejaCorreos\SentEmail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teatros\Reservas\SentEmail.Designer.cs">
+    <Compile Include="Teatros\BandejaCorreos\SentEmail.Designer.cs">
       <DependentUpon>SentEmail.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CC\Loader.resx">
@@ -487,7 +487,7 @@
     <EmbeddedResource Include="Teatros\Reservas\FindEmpresa.resx">
       <DependentUpon>FindEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\Reservas\FindReservation.resx">
+    <EmbeddedResource Include="Teatros\Consultas\FindReservation.resx">
       <DependentUpon>FindReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reportes\rptReservas.rdlc" />
@@ -497,7 +497,7 @@
     <EmbeddedResource Include="Teatros\Escenarios\TheaterLaPlaza.resx">
       <DependentUpon>TheaterLaPlaza.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\Reservas\FowardEmails.resx">
+    <EmbeddedResource Include="Teatros\BandejaCorreos\FowardEmails.resx">
       <DependentUpon>FowardEmails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reservas\NewReservation.resx">
@@ -526,7 +526,7 @@
     <EmbeddedResource Include="Teatros\Reservas\ReportesTeatro.resx">
       <DependentUpon>ReportesTeatro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teatros\Reservas\SentEmail.resx">
+    <EmbeddedResource Include="Teatros\BandejaCorreos\SentEmail.resx">
       <DependentUpon>SentEmail.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
