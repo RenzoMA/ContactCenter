@@ -10,7 +10,7 @@ namespace ContactCenterCommon
     {
         public static class Mails
         {
-            public const string TeatroConfirmacionReserva =@"	<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'> " +
+            public const string TeatroConfirmacionReserva = @"<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'> " +
 "   <html xmlns='http://www.w3.org/1999/xhtml'>     " +
 "   <head>      " +
 "       <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />       " +
@@ -20,34 +20,42 @@ namespace ContactCenterCommon
 "   </head>     " +
 
 "   <body>      " +
-"     <table width:'100%' style='margin:auto; text-align:center;  font-family: sans-serif; border: 1px solid black';>        " +
-
-"       <tr style='width:100%; background-color:black;'>        " +
-"           <td colspan='2' style='width:100%; font-size: 30px; color:white; padding:10px;'>TU RESERVA HA SIDO CONFIRMADA</td>      " +
+"     <table  style='width:100%;margin:auto;text-align:center;font-family:sans-serif;padding:0;min-width:450px;max-width:600px;'>		" +
+"       <tr style='width:100%;'>        " +
+"           <td colspan='2' style='width:100%;'>      " +
+"                <img style='width:100%; min-width:450px;max-width:600px; display:block; border=0;' src='http://www.kriegerdev.com/IMG/cabecera_correo2.jpg'>        " +
+"           </td>   "+
 "       </tr>       " +
-
-"       <tr style='width:100%'>     " +
-"           <td id='p1' style='width: 100%; padding:10px;'>      " +
-"               <table width:'100%'>        " +
+"       <tr style='width:100%;'>     " +
+"           <td style='width: 100%; padding:10px;'>      " +
+"               <table  style='width:100%;text-align:center;'>        " +
 "                   <tr>        " +
-"                       <td style ='font-size:19px;  font-weight: bold; align-content:center'> %Nombre </td>        " +
+"                       <td style ='font-size:19px;font-weight:bold;'> %Nombre </td>        " +
 "                   </tr>       " +
 "                   <tr>        " +
-"                       <td>Ha realizado una reserva para la obra <b> %Obra  </b> el <b> %Fecha  </b> en el teatro <b style='color:red;'> %Teatro </b> para la función de la(s) <b> %Hora </b> horas </td>     " +
+"                       <td>Ha realizado una reserva para la obra <b> %Obra  </b> el <b> %Fecha  </b> </td>     " +
+"                   </tr>       " +
+"                   <tr>        " +
+"                       <td>en el Teatro <b> %Teatro </b> a las <b> %Hora </b> Hora </td>     " +
+"                   </tr>       " +
+"                   <tr>        " +
 "                   </tr>       " +
 "                   <tr>        " +
 "                       <td>    " +
-"                           <table style = 'margin:auto;'>     " +
+"                           <table style='margin:auto;'>     " +
 "                               <tr>        " +
-"                                   <td style='font-weight: bold;'> Total de Reservas </td>        " +
-"                                   <td style='font-weight: bold;'>:</td>    " +
+"                                   <td style= 'text-align:right;'> Total de reservas </td>        " +
+"                                   <td>:</td>    " +
+"                                   <td></td>    " +
+"                                   <td></td>    " +
 "                                   <td> %Total </td>       " +
 "                               </tr>       " +
-"                               <tr>        " +
-"                                   <td style='font-weight: bold;'> Ubicaciones </td> " +
-"                                   <td style='font-weight: bold;'>:</td>      " +
+"								varDetalle	"+
+/*"                               <tr>        " +
+"                                   <td> Ubicaciones </td> " +
+"                                   <td>:</td>      " +
 "                                   <td>  " +
-"                                    <table border = 2px single black style = 'border-spacing: 5px; border-spacing: 3px' " +
+ "                                    <table border = 2px single black style = 'border-spacing: 5px; border-spacing: 3px' " +
 "                [if gte mso 15] border = 2px single black style = 'border-spacing: 5px; border-spacing: 3px' [endif]>       " +
 "                                       <tr style = 'background-color: black;  color: white;'>        " +
 "                                       <th> Zona </th>"+
@@ -55,12 +63,14 @@ namespace ContactCenterCommon
 "                                       <th> Asiento </th>" +
 "                                       </tr>        " +
                                             "varDetalle"+
-"                                    </table>       " +
+"                                    </table>       " + 
 "                                   </td>       " +
-"                               </tr>       " +
+"                               </tr>       " + */
 "                               <tr>        " +
-"                                   <td style='font-weight: bold;'> Precio </td>       " +
-"                                   <td style='font-weight: bold;'>:</td>      " +
+"                                   <td style= 'text-align:right;'> Monto total </td>       " +
+"                                   <td>:</td>      " +
+"                                   <td></td>    " +
+"                                   <td></td>    " +
 "                                   <td> %Precio </td>      " +
 "                               </tr>       " +
 "                           </table>        " +
@@ -68,27 +78,34 @@ namespace ContactCenterCommon
 "                   </tr>       " +
 "               </table> " +
 "           </td> " +
-//"           <td id='p2' style='width: 40%;'>        " +
-//"               <img src= 'cid:ImagenObra'>     " +
-//"           </td>       " +
 "       </tr>     " +
-"       <tr style='width:100%; margin:auto;'>      " +
+"       <tr style='width:100%;margin:auto;'>      " +
 "           <td>        " +
-"               <img src= 'cid:ImagenObra'>      " +
+"               <img src= 'cid: ImagenObra' style='width:100%; min-width:450px;max-width:600px; display:block; border=0; '>      " +
 "           </td>       " +
 "       </tr>       " +
-"       <tr style='width:100%;'>        " +
-"           <table style='margin:auto; text-align:center;  font-family: sans-serif; padding:10px; color:gray;'>        " +
+"       <tr style='width:100%; background-color:black;'>        " +
+"         <td>        "+
+"           <table style='margin:auto;text-align:center;font-family: sans-serif;padding:10px;color:white;'>        " +
 "               <tr> " +
-"                   <td style='font-size:20px;'> GRACIAS POR LLAMARNOS, NO OLVIDES LLEGAR UNA HORA ANTES DE LA FUNCIÓN PARA HACER EFECTIVA TU RESERVA.</td>     " +
+"                   <td style='font-size:12px;'> GRACIAS POR LLAMARNOS, NO OLVIDES LLEGAR UNA HORA ANTES DE LA FUNCIÓN PARA HACER EFECTIVA TU RESERVA.</td>     " +
 "               </tr>       " +
 "               <tr>        " +
-"                   <td style ='font-size:19px;  font-weight: bold;'> ¡QUÉ TE DIVIERTAS! </td>      " +
+"                   <td style ='font-size:15px;  font-weight: bold;'> ¡QUÉ TE DIVIERTAS! </td>      " +
 "               </tr>       " +
 "           </table>        " +
+"         </td>        "+
 "       </tr>       " +
+"        <tr>   "+
+"            <td style='padding:5px;'>        "+
+"                <p style='text-align:justify; font-size:11px; color:gray;'>    "+
+"            LA RESERVA SÓLO SERÁ VÁLIDA HASTA UNA HORA ANTES DEL INICIO DE LA FUNCIÓN, PASADA ESTA HORA SE LIBERARÁN LOS ESPACIOS.EN CASO DE INCUMPLIMIENTO DE SU RESERVA, EL TEATRO LA PLAZA Y LOS PRODUCTORES SE RESERVAN EL DERECHO DE VOLVER A RESERVAR, SALVO PREVIA COMUNICACIÓN AL 505 0550 ANTES DE LA FUNCIÓN.    "+
+"            </p>    "+
+"            </td>    "+
+"        </tr>        "+
+"    </table>        "+
 " </body>   " +
- "</html>   ";
+"</html>   ";
         }
 
         public static class Subjects

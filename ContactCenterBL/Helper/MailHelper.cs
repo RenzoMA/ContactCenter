@@ -103,11 +103,27 @@ namespace ContactCenterBL.Helper
                         htmlBody = htmlBody.Replace("%Ubicacion", ubicacion);
                         htmlBody = htmlBody.Replace("%Precio", precio.ToString());
 
-                        string detalle = "";
-                        foreach (DetalleReserva detalleRes in reserva.ListaDetalles)
+                        List<String> zonas = new List<String>();
+                        foreach (DetalleReserva detalleRes in reserva.ListaDetalles.OrderBy(tx => tx.NombreZona).ToList())
                         {
-                            detalle += "<tr><td>"+detalleRes.NombreZona+ "</td><td>" + detalleRes.NombreFila + "</td><td>" + detalleRes.NombreAsiento + "</td></tr>";
+                            if (!zonas.Contains(detalleRes.NombreZona)) 
+                            {
+                                zonas.Add(detalleRes.NombreZona);
+                            }
                         }
+
+                        string detalle = "";
+                        string filAsiento = "";
+                        foreach (String nomZona in zonas)
+                        {
+                            foreach (DetalleReserva detalleRes2 in reserva.ListaDetalles.Where(tx => tx.NombreZona == nomZona))
+                            {
+                                filAsiento += detalleRes2.NombreFila + " / " + detalleRes2.NombreAsiento + ", ";
+                            }
+                            detalle += "<tr><td>Sector</td><td>:</td><td></td><td></td><td>" + nomZona + "</td></tr><tr><td>Ubicaciones</td><td>:</td><td></td><td></td><td>" + filAsiento + "</td></tr>";
+                            filAsiento = "";
+                        }
+
                         htmlBody = htmlBody.Replace("varDetalle", detalle);
                         break;
 
@@ -135,16 +151,23 @@ namespace ContactCenterBL.Helper
 
                Byte[] ba = obraRepository.GetImage(reserva.Obra.IdObra);
                MemoryStream ms = new MemoryStream(ba);
-                
+
+                //agregando imagen cabereca
+                var rootFolder2 = AppDomain.CurrentDomain.BaseDirectory;
+                var logopath2 = Path.Combine("../../Resources/cabecera_correo2.png");
+
                 #endregion Get Mail Body embedded images paths
 
                 #region Set embedded images mail id
-                   
-                var logo = new LinkedResource(ms, MediaTypeNames.Image.Jpeg);
-                
 
+                //agregando cabecera
+                var cabecera = new LinkedResource(logopath2, MediaTypeNames.Image.Jpeg);
+                cabecera.ContentId = "%Cabecera";
+               // cabecera.TransferEncoding = TransferEncoding.Base64;
+
+                var logo = new LinkedResource(ms, MediaTypeNames.Image.Jpeg);
                 logo.ContentId = "ImagenObra";
-                //logo.TransferEncoding = TransferEncoding.Base64;
+               // logo.TransferEncoding = TransferEncoding.Base64;
 
                 #endregion
 
@@ -152,8 +175,10 @@ namespace ContactCenterBL.Helper
 
                 var html = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
                 //html.TransferEncoding = TransferEncoding.Base64;
-
                 html.LinkedResources.Add(logo);
+                //cabecera
+                html.LinkedResources.Add(cabecera);
+
 
                 #endregion Set Body and Images
 
@@ -288,12 +313,18 @@ namespace ContactCenterBL.Helper
                 Byte[] ba = obraRepository.GetImage(logEmail.IdObra);
                 MemoryStream ms = new MemoryStream(ba);
 
+                //agregando imagen cabereca
+                var rootFolder2 = AppDomain.CurrentDomain.BaseDirectory;
+                var logopath2 = Path.Combine("../../Resources/cabecera_correo2.png");
                 #endregion Get Mail Body embedded images paths
 
                 #region Set embedded images mail id
-
+                //agregando cabecera
+                var cabecera = new LinkedResource(logopath2, MediaTypeNames.Image.Jpeg);
+                cabecera.ContentId = "%Cabecera";
+                //cabecera.TransferEncoding = TransferEncoding.Base64;
                 var logo = new LinkedResource(ms, MediaTypeNames.Image.Jpeg);
-
+                //logo.TransferEncoding = TransferEncoding.Base64;
                 logo.ContentId = "ImagenObra";
 
                 #endregion
@@ -302,6 +333,8 @@ namespace ContactCenterBL.Helper
 
                 var html = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
                 html.LinkedResources.Add(logo);
+                //cabecera
+                html.LinkedResources.Add(cabecera);
 
                 #endregion Get Mail Body embedded images paths
 

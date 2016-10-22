@@ -83,6 +83,26 @@ namespace ContactCenterGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cabecera_correo {
+            get {
+                object obj = ResourceManager.GetObject("cabecera_correo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cabecera_correo2 {
+            get {
+                object obj = ResourceManager.GetObject("cabecera_correo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel_256 {
             get {
                 object obj = ResourceManager.GetObject("cancel-256", resourceCulture);
@@ -226,6 +246,16 @@ namespace ContactCenterGUI.Properties {
         internal static System.Drawing.Bitmap loading5 {
             get {
                 object obj = ResourceManager.GetObject("loading5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo {
+            get {
+                object obj = ResourceManager.GetObject("Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

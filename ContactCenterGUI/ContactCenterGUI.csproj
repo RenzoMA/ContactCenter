@@ -544,6 +544,9 @@
     <Content Include="MetroFramework.txt" />
     <Content Include="Resources\-forward-icon.png" />
     <None Include="Resources\LOGO-LA-PLAZA-Y-PRODUCTORES.png" />
+    <None Include="Resources\cabecera_correo.png" />
+    <None Include="Resources\cabecera_correo2.jpg" />
+    <None Include="Resources\Logo.png" />
     <Content Include="Resources\mensaje.png" />
     <None Include="Resources\PIRANDELLO_PLATEA_2.jpg" />
     <None Include="Resources\PIRANDELLO_PLATEA_1.jpg" />
