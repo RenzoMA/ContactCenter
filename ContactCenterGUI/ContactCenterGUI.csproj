@@ -13,9 +13,9 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\AtoVader\Desktop\cc_17\</PublishUrl>
+    <PublishUrl>\\DESKTOP-NTJ2GEE\ContactCenter\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
+    <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -23,15 +23,15 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>\\192.168.233.2\Msj CallCenter\BarraCTI\ContactCenter\Publicado\</UpdateUrl>
+    <UpdateUrl>\\DESKTOP-NTJ2GEE\ContactCenter\</UpdateUrl>
     <TargetCulture>es-PE</TargetCulture>
     <ProductName>ContactCenter</ProductName>
     <PublisherName>Krieger Lab</PublisherName>
     <SuiteName>Krieger Lab</SuiteName>
-    <MinimumRequiredVersion>1.0.0.55</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.62</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.html</WebPage>
-    <ApplicationRevision>56</ApplicationRevision>
+    <ApplicationRevision>63</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -582,6 +582,9 @@
     <None Include="Resources\LOGO-LA-PLAZA-Y-PRODUCTORES.png" />
     <None Include="Resources\lup1a1.png" />
     <None Include="Resources\eliminar.png" />
+    <Resource Include="Resources\cabecera_correo2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Resources\mensaje.png" />
     <None Include="Resources\PIRANDELLO_PLATEA_2.jpg" />
     <None Include="Resources\PIRANDELLO_PLATEA_1.jpg" />

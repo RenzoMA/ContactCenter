@@ -53,6 +53,7 @@
     <Compile Include="Repositories\CC\TH\EmpresaRepository.cs" />
     <Compile Include="Repositories\CC\TH\EstadoReservaRepository.cs" />
     <Compile Include="Repositories\CC\TH\FuncionRepository.cs" />
+    <Compile Include="Repositories\CC\LogBackupRepository.cs" />
     <Compile Include="Repositories\CC\TH\LogEmailRepository.cs" />
     <Compile Include="Repositories\CC\TH\ObraRepository.cs" />
     <Compile Include="Repositories\CC\TH\PromocionRepository.cs" />

@@ -74,10 +74,10 @@ namespace ContactCenterDA.Repositories.CC
                     objRol.UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]);
                     listaRol.Add(objRol);
                 }
-                UtilDA.Close(cnx);
-                return listaRol;
             }
-            
+            UtilDA.Close(cnx);
+            return listaRol;
+
         }
 
         public bool Insert(Rol datos)

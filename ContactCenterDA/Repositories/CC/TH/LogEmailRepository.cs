@@ -73,24 +73,24 @@ namespace ContactCenterDA.Repositories.CC.TH
                     objLogEmail = new LogEmail()
                     {
 
-                    IdLog = DataConvert.ToInt(dtr["IdLogEmail"]),
-                    CorreoDestino = DataConvert.ToString(dtr["CorreoDestino"]),
-                    CorreoDestinoCC = DataConvert.ToString(dtr["CorreoDestinoCC"]),
-                    FechaEnvio = DataConvert.ToDateTime(dtr["FechaEnvio"]),
-                    Mensaje = DataConvert.ToString(dtr["Mensaje"]),
-                    Asunto = DataConvert.ToString(dtr["Asunto"]),
-                    Estado = DataConvert.ToString(dtr["Estado"]),
-                    Descripcion = DataConvert.ToString(dtr["Descripcion"]),
-                    Intento = DataConvert.ToInt(dtr["Intento"]),
-                    FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]),
-                    UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]),
-                    FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]),
-                    UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]),
-                    IdObra = DataConvert.ToInt(dtr["IdObra"])
-                };
-                ListaLogEmail.Add(objLogEmail);
+                        IdLog = DataConvert.ToInt(dtr["IdLogEmail"]),
+                        CorreoDestino = DataConvert.ToString(dtr["CorreoDestino"]),
+                        CorreoDestinoCC = DataConvert.ToString(dtr["CorreoDestinoCC"]),
+                        FechaEnvio = DataConvert.ToDateTime(dtr["FechaEnvio"]),
+                        Mensaje = DataConvert.ToString(dtr["Mensaje"]),
+                        Asunto = DataConvert.ToString(dtr["Asunto"]),
+                        Estado = DataConvert.ToString(dtr["Estado"]),
+                        Descripcion = DataConvert.ToString(dtr["Descripcion"]),
+                        Intento = DataConvert.ToInt(dtr["Intento"]),
+                        FechaCreacion = DataConvert.ToDateTime(dtr["FechaCrea"]),
+                        UsuarioCreacion = DataConvert.ToString(dtr["UserCrea"]),
+                        FechaModificacion = DataConvert.ToDateTime(dtr["FechaMod"]),
+                        UsuarioModificacion = DataConvert.ToString(dtr["UserMod"]),
+                        IdObra = DataConvert.ToInt(dtr["IdObra"])
+                    };
+                    ListaLogEmail.Add(objLogEmail);
+                }
             }
-        }
 
             UtilDA.Close(cnx);
             return ListaLogEmail;
