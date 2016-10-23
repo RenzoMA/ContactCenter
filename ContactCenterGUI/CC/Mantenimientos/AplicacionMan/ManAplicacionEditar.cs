@@ -68,6 +68,8 @@ namespace ContactCenterGUI.CC.Mantenimientos.AplicacionMan
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             aplicacion.Correo = txtCorreo.Text.ToUpper().Trim();
+            aplicacion.CorreoNotificacion = txtCorreoNotificacion.Text.Trim();
+            aplicacion.Contraseña = txtPasswordCorreo.Text;
             if (pcbImagen.Image != null)
             {
                 MemoryStream ms = new MemoryStream();

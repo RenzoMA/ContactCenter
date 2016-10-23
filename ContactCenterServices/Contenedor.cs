@@ -18,6 +18,7 @@ using ContactCenterDA.Repositories.CC;
 using ContactCenterBE.CC.TH.Entidades.LogEmailBE;
 using ContactCenterBE.CC.TH.Entidades.TeatroBE;
 using ContactCenterBE.CC.TH.Entidades.FuncionBE;
+using ContactCenterBE.CC.Entidades.LogBackup;
 using ContactCenterBE.CC.TH.Entidades.ReservaBE;
 using ContactCenterBE.CC.TH.Entidades.ClienteBE;
 using ContactCenterBE.CC.TH.Entidades.PromocionBE;
@@ -71,6 +72,7 @@ namespace ContactCenterServices
             current.RegisterType<IZonaRepository, ZonaRepository>();
             current.RegisterType<IRolRepository, RolRepository>();
             current.RegisterType<IEmpresaRepository, EmpresaRepository>();
+            current.RegisterType<ILogBackupRepository, LogBackupRepository>();
         }
     }
 }

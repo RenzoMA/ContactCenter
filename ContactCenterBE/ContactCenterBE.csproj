@@ -46,6 +46,8 @@
     <Compile Include="Base\IBaseRepository.cs" />
     <Compile Include="CC\Entidades\AplicacionBE\Aplicacion.cs" />
     <Compile Include="Base\BaseEntity.cs" />
+    <Compile Include="CC\Entidades\LogBackup\ILogBackupRepository.cs" />
+    <Compile Include="CC\Entidades\LogBackup\LogBackup.cs" />
     <Compile Include="CC\TH\Entidades\AsientoBE\AsientoZona.cs" />
     <Compile Include="CC\TH\Entidades\ClienteBE\Cliente.cs" />
     <Compile Include="CC\Entidades\AplicacionBE\IAplicacionRepository.cs" />
