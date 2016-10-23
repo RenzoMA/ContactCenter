@@ -582,6 +582,7 @@
     <None Include="Resources\LOGO-LA-PLAZA-Y-PRODUCTORES.png" />
     <None Include="Resources\lup1a1.png" />
     <None Include="Resources\eliminar.png" />
+    <None Include="Resources\Logo1.png" />
     <Content Include="Resources\mensaje.png" />
     <None Include="Resources\PIRANDELLO_PLATEA_2.jpg" />
     <None Include="Resources\PIRANDELLO_PLATEA_1.jpg" />
