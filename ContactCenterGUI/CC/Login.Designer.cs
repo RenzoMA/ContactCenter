@@ -112,10 +112,10 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::ContactCenterGUI.Properties.Resources.LOGO_LA_PLAZA_Y_PRODUCTORES;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 74);
+            this.pictureBox3.Location = new System.Drawing.Point(54, 92);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(353, 139);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox3.Size = new System.Drawing.Size(251, 117);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 

@@ -23,13 +23,13 @@ namespace ContactCenterCommon
 "     <table  style='width:100%;margin:auto;text-align:center;font-family:sans-serif;padding:0;min-width:450px;max-width:600px;'>		" +
 "       <tr style='width:100%;'>        " +
 "           <td colspan='2' style='width:100%;'>      " +
-"                <img style='width:100%; min-width:450px;max-width:600px; display:block; border=0;' src='http://www.kriegerdev.com/IMG/cabecera_correo2.jpg'>        " +
-"           </td>   "+
+"                <img style='width:100%; min-width:450px;max-width:600px; display:block; border=0;' src='cid:Cabecera'>        " +
+"           </td>   " +
 "       </tr>       " +
 "       <tr style='width:100%;'>     " +
 "           <td style='width: 100%; padding:10px;'>      " +
 "               <table  style='width:100%;text-align:center;'>        " +
-"                   <tr>        " +
+"                   <tr >        " +
 "                       <td style ='font-size:19px;font-weight:bold;'> %Nombre </td>        " +
 "                   </tr>       " +
 "                   <tr>        " +
@@ -39,6 +39,10 @@ namespace ContactCenterCommon
 "                       <td>en el Teatro <b> %Teatro </b> a las <b> %Hora </b> Hora </td>     " +
 "                   </tr>       " +
 "                   <tr>        " +
+"                       <td>  </td>     " +
+"                   </tr>       " +
+"                   <tr>        " +
+"                       <td>  </td>     " +
 "                   </tr>       " +
 "                   <tr>        " +
 "                       <td>    " +
@@ -48,30 +52,15 @@ namespace ContactCenterCommon
 "                                   <td>:</td>    " +
 "                                   <td></td>    " +
 "                                   <td></td>    " +
-"                                   <td> %Total </td>       " +
+"                                   <td style= 'text-align:left;'> %Total </td>       " +
 "                               </tr>       " +
-"								varDetalle	"+
-/*"                               <tr>        " +
-"                                   <td> Ubicaciones </td> " +
-"                                   <td>:</td>      " +
-"                                   <td>  " +
- "                                    <table border = 2px single black style = 'border-spacing: 5px; border-spacing: 3px' " +
-"                [if gte mso 15] border = 2px single black style = 'border-spacing: 5px; border-spacing: 3px' [endif]>       " +
-"                                       <tr style = 'background-color: black;  color: white;'>        " +
-"                                       <th> Zona </th>"+
-"                                       <th> Fila </th>" +
-"                                       <th> Asiento </th>" +
-"                                       </tr>        " +
-                                            "varDetalle"+
-"                                    </table>       " + 
-"                                   </td>       " +
-"                               </tr>       " + */
+"								varDetalle	" +
 "                               <tr>        " +
 "                                   <td style= 'text-align:right;'> Monto total </td>       " +
 "                                   <td>:</td>      " +
 "                                   <td></td>    " +
 "                                   <td></td>    " +
-"                                   <td> %Precio </td>      " +
+"                                   <td style= 'text-align:left;'> %Precio </td>      " +
 "                               </tr>       " +
 "                           </table>        " +
 "                       </td>       " +
@@ -80,12 +69,12 @@ namespace ContactCenterCommon
 "           </td> " +
 "       </tr>     " +
 "       <tr style='width:100%;margin:auto;'>      " +
-"           <td>        " +
-"               <img src= 'cid: ImagenObra' style='width:100%; min-width:450px;max-width:600px; display:block; border=0; '>      " +
+"           <td style='width: 100%;'>        " +
+"               <img src= 'cid:ImagenObra' style='width:100%; min-width:450px;max-width:600px; display:block; border=0;'>      " +
 "           </td>       " +
 "       </tr>       " +
 "       <tr style='width:100%; background-color:black;'>        " +
-"         <td>        "+
+"         <td style='width: 100%;'>        " +
 "           <table style='margin:auto;text-align:center;font-family: sans-serif;padding:10px;color:white;'>        " +
 "               <tr> " +
 "                   <td style='font-size:12px;'> GRACIAS POR LLAMARNOS, NO OLVIDES LLEGAR UNA HORA ANTES DE LA FUNCIÓN PARA HACER EFECTIVA TU RESERVA.</td>     " +
@@ -94,16 +83,16 @@ namespace ContactCenterCommon
 "                   <td style ='font-size:15px;  font-weight: bold;'> ¡QUÉ TE DIVIERTAS! </td>      " +
 "               </tr>       " +
 "           </table>        " +
-"         </td>        "+
+"         </td>        " +
 "       </tr>       " +
-"        <tr>   "+
-"            <td style='padding:5px;'>        "+
-"                <p style='text-align:justify; font-size:11px; color:gray;'>    "+
-"            LA RESERVA SÓLO SERÁ VÁLIDA HASTA UNA HORA ANTES DEL INICIO DE LA FUNCIÓN, PASADA ESTA HORA SE LIBERARÁN LOS ESPACIOS.EN CASO DE INCUMPLIMIENTO DE SU RESERVA, EL TEATRO LA PLAZA Y LOS PRODUCTORES SE RESERVAN EL DERECHO DE VOLVER A RESERVAR, SALVO PREVIA COMUNICACIÓN AL 505 0550 ANTES DE LA FUNCIÓN.    "+
-"            </p>    "+
-"            </td>    "+
-"        </tr>        "+
-"    </table>        "+
+"        <tr>   " +
+"            <td style='padding:5px;'>        " +
+"                <p style='text-align:justify; font-size:11px; color:gray;'>    " +
+"           LA RESERVA SÓLO SERÁ VALIDA HASTA UNA HORA ANTES DE LA FUNCIÓN, PASADA ESTA HORA SE PROCEDERÁ A LIBERAR LOS ESPACIOS RESERVADOS. ESTA RESERVA ESTÁ BASADA EN LA CONFIANZA, POR LO QUE EL TEATRO LA PLAZA Y LOS PRODUCTORES SE RESERVAN EL DERECHO DE VOLVER A RESERVAR EN CASO NO ASISTA A LA RESERVA PROGRAMADA.    " +
+"            </p>    " +
+"            </td>    " +
+"        </tr>        " +
+"    </table>        " +
 " </body>   " +
 "</html>   ";
         }
