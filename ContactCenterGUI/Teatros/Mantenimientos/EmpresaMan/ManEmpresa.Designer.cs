@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManEmpresa));
             this.dgvEmpresa = new System.Windows.Forms.DataGridView();
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.pre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,9 +86,9 @@
             // FechaCreacion
             // 
             this.FechaCreacion.DataPropertyName = "FechaCreacion";
-            dataGridViewCellStyle2.Format = "G";
-            dataGridViewCellStyle2.NullValue = null;
-            this.FechaCreacion.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "G";
+            dataGridViewCellStyle1.NullValue = null;
+            this.FechaCreacion.DefaultCellStyle = dataGridViewCellStyle1;
             this.FechaCreacion.HeaderText = "Fecha Creacion";
             this.FechaCreacion.Name = "FechaCreacion";
             this.FechaCreacion.ReadOnly = true;
@@ -195,6 +196,7 @@
             this.Controls.Add(this.dgvEmpresa);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManEmpresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empresas";

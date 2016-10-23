@@ -10,7 +10,7 @@ namespace ContactCenterBE.CC.TH.Entidades.ReservaBE
     {
         public string nombreObra { get { return Obra.Nombre; } }
         public string estadoReserva { get { return EstadoReserva.Nombre; } }
-        public string Correo { get { return Cliente.Correo; } }
+        public string Correo { get { return CorreoCliente; } }
         public string Telefono { get { return Cliente.Telefono; } }
     }
 }

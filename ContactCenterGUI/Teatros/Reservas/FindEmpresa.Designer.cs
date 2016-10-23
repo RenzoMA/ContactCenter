@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindEmpresa));
             this.lstEmpresas = new System.Windows.Forms.ListBox();
             this.btnAplicarDescuento = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -109,6 +110,7 @@
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.btnAplicarDescuento);
             this.Controls.Add(this.lstEmpresas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FindEmpresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccione Empresa";

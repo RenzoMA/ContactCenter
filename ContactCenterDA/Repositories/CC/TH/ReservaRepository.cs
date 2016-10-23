@@ -35,96 +35,105 @@ namespace ContactCenterDA.Repositories.CC.TH
 
         public bool Insert(Reserva datos)
         {
-                string sql = "INSERT INTO TH_RESERVA (FECHARESERVA,HORARIO,idEstadoReserva,idObra,idFuncion,idCliente,idUsuario,NombrePromocion,FechaCrea,userCrea,PrecioTotal,Asientos,NombreCliente,Empresa) " +
-                             "values(@fechaReserva,@horario,@idEstadoReserva,@idObra,@idFuncion,@idCliente,@idUsuario,@nombrePromocion,@fechaCrea,@userCrea,@PrecioTotal,@Asientos,@NombreCliente,@Empresa)";
+            string sql = "INSERT INTO TH_RESERVA (FECHARESERVA,HORARIO,idEstadoReserva,idObra,idFuncion,idCliente,idUsuario,NombrePromocion,FechaCrea,userCrea,PrecioTotal,Asientos,NombreCliente,Empresa,CorreoCliente) " +
+                            "values(@fechaReserva,@horario,@idEstadoReserva,@idObra,@idFuncion,@idCliente,@idUsuario,@nombrePromocion,@fechaCrea,@userCrea,@PrecioTotal,@Asientos,@NombreCliente,@Empresa,@CorreoCliente)";
 
-                OleDbParameter pFechaReserva = UtilDA.SetParameters("@fechaReserva", OleDbType.Date, datos.FechaReserva);
-                OleDbParameter pHorario = UtilDA.SetParameters("@horario", OleDbType.VarChar, datos.Horario);
-                OleDbParameter pEstadoReserva = UtilDA.SetParameters("@idEstadoReserva", OleDbType.Integer, 1);
-                OleDbParameter pIdObra = UtilDA.SetParameters("@idObra", OleDbType.Integer, datos.Funcion.Obra.IdObra);
-                OleDbParameter pIdFuncion = UtilDA.SetParameters("@idFuncion", OleDbType.Integer, datos.Funcion.IdFuncion);
-                OleDbParameter pIdCliente = UtilDA.SetParameters("@idCliente", OleDbType.VarChar, datos.Cliente.IdCliente);
-                OleDbParameter pIdUsuario = UtilDA.SetParameters("@idUsuario", OleDbType.Integer, datos.Usuario.IdUsuario);
-                OleDbParameter pNombrePromo = UtilDA.SetParameters("@nombrePromocion", OleDbType.VarChar, DataConvert.ToString(datos.NombrePromocion));
-                OleDbParameter pFechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
-                OleDbParameter pUserCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
-                OleDbParameter pTotal = UtilDA.SetParameters("@PrecioTotal", OleDbType.Single, datos.PrecioTotal);
-                OleDbParameter pAsientos = UtilDA.SetParameters("@Asientos", OleDbType.VarChar, datos.Asientos);
-                OleDbParameter pNombreCliente = UtilDA.SetParameters("@NombreCliente", OleDbType.VarChar, datos.Cliente.ApellidoPaterno + " " + datos.Cliente.Apellidomaterno + " " + datos.Cliente.Nombre);
-                OleDbParameter pEmpresa = UtilDA.SetParameters("@Empresa", OleDbType.VarChar, datos.Empresa);
+            OleDbParameter pFechaReserva = UtilDA.SetParameters("@fechaReserva", OleDbType.Date, datos.FechaReserva);
+            OleDbParameter pHorario = UtilDA.SetParameters("@horario", OleDbType.VarChar, datos.Horario);
+            OleDbParameter pEstadoReserva = UtilDA.SetParameters("@idEstadoReserva", OleDbType.Integer, 1);
+            OleDbParameter pIdObra = UtilDA.SetParameters("@idObra", OleDbType.Integer, datos.Funcion.Obra.IdObra);
+            OleDbParameter pIdFuncion = UtilDA.SetParameters("@idFuncion", OleDbType.Integer, datos.Funcion.IdFuncion);
+            OleDbParameter pIdCliente = UtilDA.SetParameters("@idCliente", OleDbType.VarChar, datos.Cliente.IdCliente);
+            OleDbParameter pIdUsuario = UtilDA.SetParameters("@idUsuario", OleDbType.Integer, datos.Usuario.IdUsuario);
+            OleDbParameter pNombrePromo = UtilDA.SetParameters("@nombrePromocion", OleDbType.VarChar, DataConvert.ToString(datos.NombrePromocion));
+            OleDbParameter pFechaCrea = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
+            OleDbParameter pUserCrea = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
+            OleDbParameter pTotal = UtilDA.SetParameters("@PrecioTotal", OleDbType.Single, datos.PrecioTotal);
+            OleDbParameter pAsientos = UtilDA.SetParameters("@Asientos", OleDbType.VarChar, datos.Asientos);
+            OleDbParameter pNombreCliente = UtilDA.SetParameters("@NombreCliente", OleDbType.VarChar, datos.Cliente.ApellidoPaterno + " " + datos.Cliente.Apellidomaterno + " " + datos.Cliente.Nombre);
+            OleDbParameter pEmpresa = UtilDA.SetParameters("@Empresa", OleDbType.VarChar, datos.Empresa);
+            OleDbParameter pCorreoCliente = UtilDA.SetParameters("@CorreoCliente", OleDbType.VarChar, datos.Cliente.Correo);
 
-                string asientos = "";
-                datos.ListaDetalles.ForEach(tx =>
+            string asientos = "";
+            datos.ListaDetalles.ForEach(tx =>
+            {
+                asientos += tx.Asiento.IdAsiento + ",";
+            });
+            asientos = asientos.Substring(0, asientos.Length - 1);
+
+            String ValidaRegistroAsientos = "SELECT R.IDRESERVA FROM TH_RESERVA R INNER JOIN TH_DETALLE_RESERVA DR ON DR.IDRESERVA = R.IDRESERVA WHERE R.IDESTADORESERVA = 1 AND R.FECHARESERVA = @fechaReserva AND R.IDFUNCION = @idFuncion AND DR.IDASIENTO IN (" + asientos + ")";
+
+            UtilDA.ExecuteBeginTransaction(cmd, cnx);
+
+            using (var dtr = UtilDA.ExecuteSubReader(cmd, CommandType.Text, ValidaRegistroAsientos, cnx, pFechaReserva, pIdFuncion))
+            {
+                if (dtr.HasRows)
                 {
-                    asientos += tx.Asiento.IdAsiento + ",";
-                });
-                asientos = asientos.Substring(0, asientos.Length - 1);
-
-                String ValidaRegistroAsientos = "SELECT R.IDRESERVA FROM TH_RESERVA R INNER JOIN TH_DETALLE_RESERVA DR ON DR.IDRESERVA = R.IDRESERVA WHERE R.IDESTADORESERVA = 1 AND R.FECHARESERVA = @fechaReserva AND R.IDFUNCION = @idFuncion AND DR.IDASIENTO IN (" + asientos + ")";
-
-                UtilDA.ExecuteBeginTransaction(cmd, cnx);
-
-                using (var dtr = UtilDA.ExecuteSubReader(cmd, CommandType.Text, ValidaRegistroAsientos, cnx, pFechaReserva, pIdFuncion))
-                {
-                    if (dtr.HasRows)
-                    {
-                        dtr.Close();
-                        UtilDA.ExecuteRollback(cmd, cnx);
-                        return false;
-                    }
+                    dtr.Close();
+                    UtilDA.ExecuteRollback(cmd, cnx);
+                    return false;
                 }
+            }
 
-                int id = UtilDA.ExecuteNonQueryGetId(cmd, CommandType.Text, sql, cnx, true, pFechaReserva, pHorario, pEstadoReserva, pIdObra, pIdFuncion, pIdCliente,
-                    pIdUsuario, pNombrePromo, pFechaCrea, pUserCrea, pTotal, pAsientos, pNombreCliente, pEmpresa);
+            int id = UtilDA.ExecuteNonQueryGetId(cmd, CommandType.Text, sql, cnx, true, pFechaReserva, pHorario, pEstadoReserva, pIdObra, pIdFuncion, pIdCliente,
+                pIdUsuario, pNombrePromo, pFechaCrea, pUserCrea, pTotal, pAsientos, pNombreCliente, pEmpresa, pCorreoCliente);
 
-                string sqlDetalle = "INSERT INTO TH_DETALLE_RESERVA (idReserva,Precio,Estado,idAsiento,FechaCrea,UserCrea,NombreZona,NombreFila,NombreAsiento,NombrePromocion) " +
-                                    "VALUES (@idReserva,@precio,@estado,@idAsiento,@fechaCrea,@userCrea,@NombreZona,@NombreFila,@NombreAsiento,@NombrePromocion)";
+            string sqlDetalle = "INSERT INTO TH_DETALLE_RESERVA (idReserva,Precio,Estado,idAsiento,FechaCrea,UserCrea,NombreZona,NombreFila,NombreAsiento,NombrePromocion) " +
+                                "VALUES (@idReserva,@precio,@estado,@idAsiento,@fechaCrea,@userCrea,@NombreZona,@NombreFila,@NombreAsiento,@NombrePromocion)";
 
-                OleDbParameter pIdEmpresa = UtilDA.SetParameters("@idEmpresa", OleDbType.Integer, datos.IdEmpresa);
-                string sqlCantidadCortesiaRestante = "SELECT CantidadCortesias FROM TH_EMPRESA WHERE IdEmpresa = @idEmpresa";
+            OleDbParameter pIdEmpresa = UtilDA.SetParameters("@idEmpresa", OleDbType.Integer, datos.IdEmpresa);
+            string sqlCantidadCortesiaRestante = "SELECT CantidadCortesias FROM TH_EMPRESA WHERE IdEmpresa = @idEmpresa";
+
+
             int cantidadCortesiasRestante = 0;
-                using (var dtr = UtilDA.ExecuteSubReader(cmd, CommandType.Text, sqlCantidadCortesiaRestante, cnx, pIdEmpresa))
+            using (var dtr = UtilDA.ExecuteSubReader(cmd, CommandType.Text, sqlCantidadCortesiaRestante, cnx, pIdEmpresa))
+            {
+                if (dtr.HasRows)
                 {
-                    if (dtr.HasRows)
-                    {
-                        dtr.Read();
-                        cantidadCortesiasRestante = DataConvert.ToInt(dtr["CantidadCortesias"]);
-                    }
+                    dtr.Read();
+                    cantidadCortesiasRestante = DataConvert.ToInt(dtr["CantidadCortesias"]);
+                }
+            }
+            if (datos.ListaDetalles.Where(tx => tx.NombrePromocion == "CORTESIA").ToList().Count > cantidadCortesiasRestante)
+            {
+                UtilDA.ExecuteRollback(cmd, cnx);
+                throw new Exception("La empresa " + datos.Empresa + " no tiene suficientes cortesias para procesar la reserva\n\n  Cantidad Cortesias restante: " + cantidadCortesiasRestante + "\n Cantidad de Asientos en reserva: " + datos.ListaDetalles.Count);
+            }
+
+
+            string sqlDisminuirCortesia = "UPDATE TH_EMPRESA SET CantidadCortesias = CantidadCortesias - 1 WHERE IdEmpresa = @idEmpresa";
+
+            foreach (DetalleReserva det in datos.ListaDetalles)
+            {
+                OleDbParameter pIdReserva = UtilDA.SetParameters("@idReserva", OleDbType.Integer, id);
+                OleDbParameter pPrecio = UtilDA.SetParameters("@precio", OleDbType.Single, det.Precio);
+                OleDbParameter pEstado = UtilDA.SetParameters("@estado", OleDbType.VarChar, "A");
+                OleDbParameter pIdAsiento = UtilDA.SetParameters("@idAsiento", OleDbType.Integer, det.Asiento.IdAsiento);
+                OleDbParameter pFechaCrea2 = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
+                OleDbParameter pUserCrea2 = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
+                OleDbParameter pNombreZona = UtilDA.SetParameters("@NombreZona", OleDbType.VarChar, det.NombreZona);
+                OleDbParameter pNombreFila = UtilDA.SetParameters("@NombreFila", OleDbType.VarChar, det.NombreFila);
+                OleDbParameter pNombreAsiento = UtilDA.SetParameters("@NombreAsiento", OleDbType.VarChar, det.NombreAsiento);
+                OleDbParameter pNombrePromocion = UtilDA.SetParameters("@NombrePromocion", OleDbType.VarChar, DataConvert.ToString(det.NombrePromocion));
+
+                if (!UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sqlDetalle, cnx, true, pIdReserva, pPrecio, pEstado, pIdAsiento, pFechaCrea2, pUserCrea2, pNombreZona, pNombreFila, pNombreAsiento, pNombrePromocion))
+                {
+                    UtilDA.ExecuteRollback(cmd, cnx);
+                    return false;
                 }
 
-                string sqlDisminuirCortesia = "UPDATE TH_EMPRESA SET CantidadCortesias = CantidadCortesias - 1 WHERE IdEmpresa = @idEmpresa";
-
-                foreach (DetalleReserva det in datos.ListaDetalles)
+                if (det.NombrePromocion == "CORTESIA")
                 {
-                    OleDbParameter pIdReserva = UtilDA.SetParameters("@idReserva", OleDbType.Integer, id);
-                    OleDbParameter pPrecio = UtilDA.SetParameters("@precio", OleDbType.Single, det.Precio);
-                    OleDbParameter pEstado = UtilDA.SetParameters("@estado", OleDbType.VarChar, "A");
-                    OleDbParameter pIdAsiento = UtilDA.SetParameters("@idAsiento", OleDbType.Integer, det.Asiento.IdAsiento);
-                    OleDbParameter pFechaCrea2 = UtilDA.SetParameters("@fechaCrea", OleDbType.Date, DateTime.Now);
-                    OleDbParameter pUserCrea2 = UtilDA.SetParameters("@userCrea", OleDbType.VarChar, Sesion.usuario.Login);
-                    OleDbParameter pNombreZona = UtilDA.SetParameters("@NombreZona", OleDbType.VarChar, det.NombreZona);
-                    OleDbParameter pNombreFila = UtilDA.SetParameters("@NombreFila", OleDbType.VarChar, det.NombreFila);
-                    OleDbParameter pNombreAsiento = UtilDA.SetParameters("@NombreAsiento", OleDbType.VarChar, det.NombreAsiento);
-                    OleDbParameter pNombrePromocion = UtilDA.SetParameters("@NombrePromocion", OleDbType.VarChar, DataConvert.ToString(det.NombrePromocion));
-
-                    if (!UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sqlDetalle, cnx, true, pIdReserva, pPrecio, pEstado, pIdAsiento, pFechaCrea2, pUserCrea2, pNombreZona, pNombreFila, pNombreAsiento, pNombrePromocion))
+                    
+                    if (!UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sqlDisminuirCortesia, cnx, true, pIdEmpresa))
                     {
                         UtilDA.ExecuteRollback(cmd, cnx);
-                        return false;
-                    }
-
-                    if (det.NombrePromocion == "CORTESIA")
-                    {
-                        
-                        if (!UtilDA.ExecuteNonQuery(cmd, CommandType.Text, sqlDisminuirCortesia, cnx, true, pIdEmpresa))
-                        {
-                            UtilDA.ExecuteRollback(cmd, cnx);
-                            throw new Exception("La empresa " + datos.Empresa + " no tiene suficientes cortesias para procesar la reserva\n\n  Cantidad Cortesias restante: "+ cantidadCortesiasRestante+"\n Cantidad de Asientos en reserva: "+datos.ListaDetalles.Count);
-                        }
+                        throw new Exception("La empresa " + datos.Empresa + " no tiene suficientes cortesias para procesar la reserva\n\n  Cantidad Cortesias restante: "+ cantidadCortesiasRestante+"\n Cantidad de Asientos en reserva: "+datos.ListaDetalles.Count);
                     }
                 }
-                UtilDA.ExecuteCommit(cmd, cnx);
-                return true;
+            }
+            UtilDA.ExecuteCommit(cmd, cnx);
+            return true;
         }
 
         public bool Update(Reserva datos)
@@ -201,6 +210,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                         Horario = DataConvert.ToString(dtr["Horario"]),
                         NombreCliente = DataConvert.ToString(dtr["NombreCliente"]),
                         Empresa = DataConvert.ToString(dtr["Empresa"]),
+                        CorreoCliente = DataConvert.ToString(dtr["CorreoCliente"]),
                         EstadoReserva = new EstadoReserva()
                         {
                             IdEstadoReserva = DataConvert.ToInt(dtr["ER.IdEstadoReserva"]),
@@ -285,8 +295,8 @@ namespace ContactCenterDA.Repositories.CC.TH
             UtilDA.ExecuteBeginTransaction(cmd, cnx);
             foreach (Reserva datos in listaReserva)
             {
-                string sql = "INSERT INTO TH_RESERVA (FECHARESERVA,HORARIO,idEstadoReserva,idObra,idFuncion,idCliente,idUsuario,NombrePromocion,FechaCrea,userCrea,PrecioTotal,Asientos,NombreCliente,Empresa) " +
-                             "values(@fechaReserva,@horario,@idEstadoReserva,@idObra,@idFuncion,@idCliente,@idUsuario,@nombrePromocion,@fechaCrea,@userCrea,@PrecioTotal,@Asientos,@NombreCliente,@Empresa)";
+                string sql = "INSERT INTO TH_RESERVA (FECHARESERVA,HORARIO,idEstadoReserva,idObra,idFuncion,idCliente,idUsuario,NombrePromocion,FechaCrea,userCrea,PrecioTotal,Asientos,NombreCliente,Empresa,CorreoCliente) " +
+                             "values(@fechaReserva,@horario,@idEstadoReserva,@idObra,@idFuncion,@idCliente,@idUsuario,@nombrePromocion,@fechaCrea,@userCrea,@PrecioTotal,@Asientos,@NombreCliente,@Empresa,@CorreoCliente)";
 
                 OleDbParameter pFechaReserva = UtilDA.SetParameters("@fechaReserva", OleDbType.Date, datos.FechaReserva);
                 OleDbParameter pHorario = UtilDA.SetParameters("@horario", OleDbType.VarChar, datos.Horario);
@@ -302,6 +312,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                 OleDbParameter pAsientos = UtilDA.SetParameters("@Asientos", OleDbType.VarChar, datos.Asientos);
                 OleDbParameter pNombreCliente = UtilDA.SetParameters("@NombreCliente", OleDbType.VarChar, datos.Cliente.ApellidoPaterno + " " + datos.Cliente.Apellidomaterno + " " + datos.Cliente.Nombre);
                 OleDbParameter pEmpresa = UtilDA.SetParameters("@Empresa", OleDbType.VarChar, datos.Empresa);
+                OleDbParameter pCorreoCliente = UtilDA.SetParameters("@CorreoCliente", OleDbType.VarChar, datos.Cliente.Correo);
 
                 string asientos = "";
                 datos.ListaDetalles.ForEach(tx =>
@@ -325,7 +336,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                 }
 
                 int id = UtilDA.ExecuteNonQueryGetId(cmd, CommandType.Text, sql, cnx, true, pFechaReserva, pHorario, pEstadoReserva, pIdObra, pIdFuncion, pIdCliente,
-                    pIdUsuario, pNombrePromo, pFechaCrea, pUserCrea, pTotal, pAsientos, pNombreCliente, pEmpresa);
+                    pIdUsuario, pNombrePromo, pFechaCrea, pUserCrea, pTotal, pAsientos, pNombreCliente, pEmpresa, pCorreoCliente);
 
                 string sqlDetalle = "INSERT INTO TH_DETALLE_RESERVA (idReserva,Precio,Estado,idAsiento,FechaCrea,UserCrea,NombreZona,NombreFila,NombreAsiento,NombrePromocion) " +
                                     "VALUES (@idReserva,@precio,@estado,@idAsiento,@fechaCrea,@userCrea,@NombreZona,@NombreFila,@NombreAsiento,@NombrePromocion)";
