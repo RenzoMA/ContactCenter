@@ -109,7 +109,7 @@ namespace ContactCenterGUI.Teatros.Reservas
             byte[] imageArray = System.IO.File.ReadAllBytes(@"../../Resources/cabecera_correo2.jpg");
             string base64ImageRepresentation = Convert.ToBase64String(imageArray);
             webBrowser1.Document.Images[1].OuterHtml = "<img style='width=100%;' src='data:image/png;base64," + pathImage + "'>";
-            webBrowser1.Document.Images[0].OuterHtml = "<img style='width=100%; height:250px;' src='data:image/jpeg;base64," + base64ImageRepresentation + "'>";
+            webBrowser1.Document.Images[0].OuterHtml = "<img style='width=100%;' src='data:image/jpeg;base64," + base64ImageRepresentation + "'>";
         }
     }
 }

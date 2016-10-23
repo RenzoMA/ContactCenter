@@ -70,7 +70,7 @@ namespace ContactCenterCommon
 "       </tr>     " +
 "       <tr style='width:100%;margin:auto;'>      " +
 "           <td style='width: 100%;'>        " +
-"               <img src= 'cid:ImagenObra' style='width:100%; min-width:450px;max-width:600px; display:block; border=0;'>      " +
+"               <img style='width:100%; min-width:450px;' src= 'cid:ImagenObra'>      " +
 "           </td>       " +
 "       </tr>       " +
 "       <tr style='width:100%; background-color:black;'>        " +
