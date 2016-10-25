@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="left-arrow1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\left-arrow1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="loaderkd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loaderkd.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_picture_in_picture_black_24dp_1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_picture_in_picture_black_24dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,23 +127,14 @@
   <data name="hospital31" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hospital31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PJ_MEZZANINE_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PJ_MEZZANINE_2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="left-arrow2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\left-arrow2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PN_MEZZANINE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PN_MEZZANINE.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PJ_MEZZANINE_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PJ_MEZZANINE_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="loaderkd" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loaderkd.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="left-arrow12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\left-arrow1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="padlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\padlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PJ_PLATEA_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PJ_PLATEA_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,8 +148,11 @@
   <data name="ic_menu_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_menu_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="left-arrow12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left-arrow1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="teatro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\teatro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,11 +169,17 @@
   <data name="PJ_PLATEA_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PJ_PLATEA_2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="loading5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loading5.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PN_PLATEA1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PN_PLATEA1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PIRANDELLO_MEZZANINE_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PIRANDELLO_MEZZANINE_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="padlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\padlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PIRANDELLO_PLATEA_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PIRANDELLO_PLATEA_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="krieger2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\krieger2_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,14 +187,17 @@
   <data name="left-arrow11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\left-arrow1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PN_PLATEA1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PN_PLATEA1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mensaje" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mensaje.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PJ_MEZZANINE_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PJ_MEZZANINE_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PN_MEZZANINE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PN_MEZZANINE.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_menu_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_menu_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,17 +205,17 @@
   <data name="logo_oficial_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_oficial_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loading5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loading5.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PIRANDELLO_PLATEA_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PIRANDELLO_PLATEA_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PJ_MEZZANINE_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PJ_MEZZANINE_2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="left-arrow1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left-arrow1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lup1a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lup1a1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cancel-256" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancel-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,7 +226,7 @@
   <data name="PIRANDELLO_PLATEA_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PIRANDELLO_PLATEA_2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cabecera_correo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cabecera_correo2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -103,11 +103,26 @@ namespace ContactCenterGUI.Teatros.Reservas
             return Convert.ToBase64String(imagen);
         }
 
+        private static byte[] Convertir_Imagen_Bytes(Image img)
+        {
+            string sTemp = Path.GetTempFileName();
+            FileStream fs = new FileStream(sTemp, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            img.Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg);
+            fs.Position = 0;
+
+            int imgLength = Convert.ToInt32(fs.Length);
+            byte[] bytes = new byte[imgLength];
+            fs.Read(bytes, 0, imgLength);
+            fs.Close();
+            return bytes;
+        }
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             string pathImage = ReadImageInBase64();
-            byte[] imageArray = System.IO.File.ReadAllBytes(@"../../Resources/cabecera_correo2.jpg");
-            string base64ImageRepresentation = Convert.ToBase64String(imageArray);
+            //byte[] imageArray = System.IO.File.ReadAllBytes(@"../../Resources/cabecera_correo2.jpg");
+            Image imgCabe = ContactCenterGUI.Properties.Resources.cabecera_correo2;
+            byte[] imageArray2 = Convertir_Imagen_Bytes(imgCabe);
+            string base64ImageRepresentation = Convert.ToBase64String(imageArray2);
             webBrowser1.Document.Images[1].OuterHtml = "<img style='width=100%;' src='data:image/png;base64," + pathImage + "'>";
             webBrowser1.Document.Images[0].OuterHtml = "<img style='width=100%; height:250px;' src='data:image/jpeg;base64," + base64ImageRepresentation + "'>";
         }

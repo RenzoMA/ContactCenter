@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Reflection;
 using System.Configuration;
 using System.Globalization;
 using System.Net;
@@ -168,13 +169,18 @@ namespace ContactCenterBL.Helper
 
                Byte[] ba = obraRepository.GetImage(reserva.Obra.IdObra);
                MemoryStream ms = new MemoryStream(ba);
-               var cabeceraImgPath = Path.Combine("../../Resources/cabecera_correo2.jpg");
+                //var cabeceraImgPath = Path.Combine("../../Resources/cabecera_correo2.jpg");
+                //var rootFolder = AppDomain.CurrentDomain.BaseDirectory;
+                //var cabepath = Path.Combine(rootFolder, "../../Resources/cabecera_correo2.jpg");
+                Image ImageCabe = ContactCenterBL.Properties.Resources.cabecera_correo2;
+                Byte[] imageCabeByte = Convertir_Imagen_Bytes(ImageCabe);
+                MemoryStream ca = new MemoryStream(imageCabeByte);
 
                 #endregion Get Mail Body embedded images paths
 
                 #region Set embedded images mail id
 
-                var cabecera = new LinkedResource(cabeceraImgPath, MediaTypeNames.Image.Jpeg);
+                var cabecera = new LinkedResource(ca, MediaTypeNames.Image.Jpeg);
                 cabecera.ContentId = "Cabecera";
                 //cabecera.TransferEncoding = TransferEncoding.Base64;
 
@@ -342,12 +348,16 @@ namespace ContactCenterBL.Helper
 
                 Byte[] ba = obraRepository.GetImage(logEmail.IdObra);
                 MemoryStream ms = new MemoryStream(ba);
-                var cabeceraImgPath = Path.Combine("../../Resources/cabecera_correo2.jpg");
-
+                //var cabeceraImgPath = Path.Combine("../../Resources/cabecera_correo2.jpg");
+                //var rootFolder = AppDomain.CurrentDomain.BaseDirectory;
+                //var cabepath = Path.Combine(rootFolder, "../../Resources/cabecera_correo2.jpg");
+                Image ImageCabe = ContactCenterBL.Properties.Resources.cabecera_correo2;
+                Byte[] imageCabeByte = Convertir_Imagen_Bytes(ImageCabe);
+                MemoryStream ca = new MemoryStream(imageCabeByte);
                 #endregion Get Mail Body embedded images paths
 
                 #region Set embedded images mail id
-                var cabecera = new LinkedResource(cabeceraImgPath, MediaTypeNames.Image.Jpeg);
+                var cabecera = new LinkedResource(ca, MediaTypeNames.Image.Jpeg);
                 cabecera.ContentId = "Cabecera";
                 //cabecera.TransferEncoding = TransferEncoding.Base64;
                 var logo = new LinkedResource(ms, MediaTypeNames.Image.Jpeg);
@@ -415,5 +425,20 @@ namespace ContactCenterBL.Helper
                 return false;
             }
         }
+
+        private static byte[] Convertir_Imagen_Bytes(Image img)
+        {
+            string sTemp = Path.GetTempFileName();
+            FileStream fs = new FileStream(sTemp, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            img.Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg);
+            fs.Position = 0;
+
+            int imgLength = Convert.ToInt32(fs.Length);
+            byte[] bytes = new byte[imgLength];
+            fs.Read(bytes, 0, imgLength);
+            fs.Close();
+            return bytes;
+        }
+
     }
 }
