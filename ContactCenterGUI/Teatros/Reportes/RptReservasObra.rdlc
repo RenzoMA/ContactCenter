@@ -30,6 +30,10 @@
           <DataField>Cliente</DataField>
           <rd:TypeName>ContactCenterBE.CC.TH.Entidades.ClienteBE.Cliente</rd:TypeName>
         </Field>
+        <Field Name="Empresa">
+          <DataField>Empresa</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="EstadoReserva">
           <DataField>EstadoReserva</DataField>
           <rd:TypeName>ContactCenterBE.CC.TH.Entidades.ReservaBE.EstadoReserva</rd:TypeName>
@@ -54,9 +58,17 @@
           <DataField>Horario</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="IdEmpresa">
+          <DataField>IdEmpresa</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="IdReserva">
           <DataField>IdReserva</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="NombreCliente">
+          <DataField>NombreCliente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="NombreObra">
           <DataField>NombreObra</DataField>
@@ -73,10 +85,6 @@
         <Field Name="PrecioTotal">
           <DataField>PrecioTotal</DataField>
           <rd:TypeName>System.Single</rd:TypeName>
-        </Field>
-        <Field Name="Promocion">
-          <DataField>Promocion</DataField>
-          <rd:TypeName>ContactCenterBE.CC.TH.Entidades.PromocionBE.Promocion</rd:TypeName>
         </Field>
         <Field Name="Usuario">
           <DataField>Usuario</DataField>

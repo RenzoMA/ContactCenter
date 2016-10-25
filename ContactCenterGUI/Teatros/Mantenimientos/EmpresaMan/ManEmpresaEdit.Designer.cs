@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManEmpresaEdit));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.cboEstado = new System.Windows.Forms.ComboBox();
             this.txtCortesias = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.chkCortesia = new System.Windows.Forms.CheckBox();
             this.btnEditar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.txtNombreEmpresa = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.cboEstado = new System.Windows.Forms.ComboBox();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,32 @@
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.BackColor = System.Drawing.Color.White;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(35, 103);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(60, 19);
+            this.materialLabel1.TabIndex = 32;
+            this.materialLabel1.Text = "Estado:";
+            // 
+            // cboEstado
+            // 
+            this.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstado.FormattingEnabled = true;
+            this.cboEstado.Items.AddRange(new object[] {
+            "ACTIVO",
+            "INACTIVO"});
+            this.cboEstado.Location = new System.Drawing.Point(142, 104);
+            this.cboEstado.Name = "cboEstado";
+            this.cboEstado.Size = new System.Drawing.Size(183, 21);
+            this.cboEstado.TabIndex = 31;
             // 
             // txtCortesias
             // 
@@ -130,38 +157,13 @@
             this.txtNombreEmpresa.TabStop = false;
             this.txtNombreEmpresa.UseSystemPasswordChar = false;
             // 
-            // cboEstado
-            // 
-            this.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEstado.FormattingEnabled = true;
-            this.cboEstado.Items.AddRange(new object[] {
-            "ACTIVO",
-            "INACTIVO"});
-            this.cboEstado.Location = new System.Drawing.Point(142, 104);
-            this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(183, 21);
-            this.cboEstado.TabIndex = 31;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.BackColor = System.Drawing.Color.White;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(35, 103);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(60, 19);
-            this.materialLabel1.TabIndex = 32;
-            this.materialLabel1.Text = "Estado:";
-            // 
             // ManEmpresaEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(528, 340);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManEmpresaEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Empresa";

@@ -124,8 +124,11 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.ObraMan
                 Image image = Image.FromFile(openFileDialog1.FileName);
                 float width = image.Width;
                 float height = image.Height;
-                //pcbImagen.Image = HelperForm.ResizeImage(image, 240, 320);
-                pcbImagen.Image = image;
+
+                float aspect = height / width;
+                float newHeight = aspect * 699;
+                pcbImagen.Image = HelperForm.ResizeImage(image, 699, (int)newHeight);
+                //pcbImagen.Image = image;
             }
         }
 

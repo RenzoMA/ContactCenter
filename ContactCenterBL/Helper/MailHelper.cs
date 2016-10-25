@@ -83,10 +83,10 @@ namespace ContactCenterBL.Helper
 
                 #region Create Mail Variables
 
-                
+                System.Globalization.CultureInfo cultureinfo = new System.Globalization.CultureInfo("es-PE");
                 var nombre = reserva.Cliente.Nombre + " " + reserva.Cliente.ApellidoPaterno + " " + reserva.Cliente.Apellidomaterno;
                 var obra = reserva.Obra.Nombre;
-                var fecha = reserva.FechaReserva;
+                var fecha = reserva.FechaReserva.ToString("dd/MM/yyyy", cultureinfo);
                 var teatro = reserva.Obra.Teatro.Nombre;
                 var hora = reserva.Horario;
                 var totalObras = reserva.ListaDetalles.Count();
@@ -109,7 +109,7 @@ namespace ContactCenterBL.Helper
                         htmlBody = Constantes.Mails.TeatroConfirmacionReserva;
                         htmlBody = htmlBody.Replace("%Nombre", nombre);
                         htmlBody = htmlBody.Replace("%Obra", obra);
-                        htmlBody = htmlBody.Replace("%Fecha", fecha.ToString("dd/MM/yy"));
+                        htmlBody = htmlBody.Replace("%Fecha", fecha);
                         htmlBody = htmlBody.Replace("%Obra", obra);
                         htmlBody = htmlBody.Replace("%Teatro", teatro);
                         htmlBody = htmlBody.Replace("%Hora", hora);

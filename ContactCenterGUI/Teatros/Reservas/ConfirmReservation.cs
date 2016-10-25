@@ -257,6 +257,35 @@ namespace ContactCenterGUI.Teatros.Reservas
         /// <param name="e"></param>
         private void btnReservar_Click(object sender, EventArgs e)
         {
+            AsignarDatosReserva();
+            if(ValidarPromocionEmpresa())
+            {
+                if (ValidarCampos())
+                {
+                    Cliente cliente = CapturarDataCliente();
+                    ProcesarReserva(cliente);
+                }
+                else
+                {
+                    MessageBox.Show("Debe completar todos los campos", "Aviso");
+                }
+            }
+            
+
+        }
+
+        private bool ValidarPromocionEmpresa()
+        {
+            if (empresa != null && !aplicoPromocionGeneral)
+            {
+                MessageBox.Show("Al seleccionar una empresa tambien debe seleccionar una promoción", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            return true;
+        }
+
+        private void AsignarDatosReserva()
+        {
             if (promociones.IndexOf(',') != -1)
             {
                 int index = promociones.LastIndexOf(',');
@@ -272,17 +301,6 @@ namespace ContactCenterGUI.Teatros.Reservas
             {
                 reserva.Empresa = "";
             }
-
-            if (ValidarCampos())
-            {
-                Cliente cliente = CapturarDataCliente();
-                ProcesarReserva(cliente);
-            }
-            else
-            {
-                MessageBox.Show("Debe completar todos los campos", "Aviso");
-            }
-            
         }
 
 

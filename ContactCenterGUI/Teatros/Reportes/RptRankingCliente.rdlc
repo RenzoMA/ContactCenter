@@ -725,10 +725,6 @@
           <DataField>Correo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DNI">
-          <DataField>DNI</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="FechaCreacion">
           <DataField>FechaCreacion</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
