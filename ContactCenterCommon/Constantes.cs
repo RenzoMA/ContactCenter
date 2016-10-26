@@ -47,6 +47,7 @@ namespace ContactCenterCommon
 "                   <tr>        " +
 "                       <td>    " +
 "                           <table style='margin:auto;'>     " +
+"								varDetalle	" +
 "                               <tr>        " +
 "                                   <td style= 'text-align:right;'> Total de reservas </td>        " +
 "                                   <td>:</td>    " +
@@ -54,7 +55,6 @@ namespace ContactCenterCommon
 "                                   <td></td>    " +
 "                                   <td style= 'text-align:left;'> %Total </td>       " +
 "                               </tr>       " +
-"								varDetalle	" +
 "                               <tr>        " +
 "                                   <td style= 'text-align:right;'> Monto total </td>       " +
 "                                   <td>:</td>      " +
@@ -80,7 +80,7 @@ namespace ContactCenterCommon
 "                   <td style='font-size:12px;'> GRACIAS POR LLAMARNOS, NO OLVIDES LLEGAR UNA HORA ANTES DE LA FUNCIÓN PARA HACER EFECTIVA TU RESERVA.</td>     " +
 "               </tr>       " +
 "               <tr>        " +
-"                   <td style ='font-size:15px;  font-weight: bold;'> ¡QUÉ TE DIVIERTAS! </td>      " +
+"                   <td style ='font-size:15px;  font-weight: bold;'> ¡QUE TE DIVIERTAS! </td>      " +
 "               </tr>       " +
 "           </table>        " +
 "         </td>        " +
