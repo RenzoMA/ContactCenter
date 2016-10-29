@@ -55,7 +55,7 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.PromocionMan
         private void LoadComboObra()
         {
             Teatro teatro = cboTeatro.SelectedItem as Teatro;
-            cboObra.DataSource = servicio.ListarObraTeatro(teatro.IdTeatro);
+            cboObra.DataSource = servicio.ComboManGetListaTeatro(teatro.IdTeatro);
             cboObra.DisplayMember = "Nombre";
         }
         private void cboTeatro_SelectionChangeCommitted(object sender, EventArgs e)
