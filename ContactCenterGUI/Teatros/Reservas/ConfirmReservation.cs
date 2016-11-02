@@ -42,6 +42,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         private List<int> idZonas;
         private string promociones = "";
         private bool aplicoPromocionGeneral = false;
+        private bool aplico2x1 = false;
 
         public static string Telefono = "";
         public static string Nombre = "";
@@ -477,6 +478,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         private void btnAplicarDescuento_Click(object sender, EventArgs e)
         {
             Promocion promocion = cboPromocion.SelectedItem as Promocion;
+            string tipoPromo = cboTipoPromocion.Text;
             
             if (promocion != null)
             {
@@ -492,8 +494,13 @@ namespace ContactCenterGUI.Teatros.Reservas
                     return;
                 }
 
+
                 bool aplicoPromocion = false;
-                foreach (AsientoZona az in listaAsientoPrecioTemp)
+                int cantidad2x1Aplicado = 0;
+                int idZonaOrigen = 0;
+
+
+                foreach (AsientoZona az in listaAsientoPrecioTemp.OrderBy(tx=>tx.Zona.IdZona).ToList())
                 {
                     if (!az.PromocionAplicada)
                     {
@@ -515,8 +522,48 @@ namespace ContactCenterGUI.Teatros.Reservas
                             }
                             else
                             {
-                                MessageBox.Show("La empresa seleccionada no acepta cortesias","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                                MessageBox.Show("La empresa seleccionada no acepta cortesias", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 return;
+                            }
+                        }
+                        else if (tipoPromo == "2 X 1")
+                        {
+                            if (!aplico2x1)
+                            {
+                                PromocionZona pzona = promocion.PromocionZonas.Where(tx => tx.Zona.IdZona == az.Zona.IdZona).FirstOrDefault();
+                                if (pzona != null)
+                                {
+                                    if (idZonaOrigen == 0)
+                                    {
+                                        idZonaOrigen = az.Zona.IdZona;
+                                    }
+                                    else
+                                    {
+                                        if(idZonaOrigen != az.Zona.IdZona)
+                                        {
+                                            cantidad2x1Aplicado = 0;
+                                            idZonaOrigen = az.Zona.IdZona;
+                                        }
+                                    }
+                                    int cantidadAsientosZona = listaAsientoPrecioTemp.Where(tx => tx.Zona.IdZona == az.Zona.IdZona).Count();
+                                    double cantidadMaxima = cantidadAsientosZona / 2;
+
+                                    if (cantidadMaxima >= 1 && cantidad2x1Aplicado < cantidadMaxima * 2)
+                                    {
+                                        cantidad2x1Aplicado++;
+                                        aplicoPromocion = true;
+                                        az.Zona.Precio = pzona.Precio;
+                                        az.PromocionAplicada = true;
+                                        az.NombrePromocion = promocion.Descripcion;
+                                        //Filtrar zonas con promocion para cadena en cabecera reserva
+                                        if (idZonas.IndexOf(az.Zona.IdZona) == -1)
+                                        {
+                                            idZonas.Add(az.Zona.IdZona);
+                                            promociones += promocion.Descripcion + ",";
+                                        }
+                                        aplicoPromocionGeneral = true;
+                                    }
+                                }
                             }
                         }
                         else
@@ -524,6 +571,7 @@ namespace ContactCenterGUI.Teatros.Reservas
                             PromocionZona pzona = promocion.PromocionZonas.Where(tx => tx.Zona.IdZona == az.Zona.IdZona).FirstOrDefault();
                             if (pzona != null)
                             {
+
                                 aplicoPromocion = true;
                                 az.Zona.Precio = pzona.Precio;
                                 az.PromocionAplicada = true;
@@ -544,6 +592,10 @@ namespace ContactCenterGUI.Teatros.Reservas
                 
                 if (aplicoPromocion)
                 {
+                    if (tipoPromo == "2 X 1")
+                    {
+                        aplico2x1 = true;
+                    }
                     PopularDatosReserva();
                     AsociarEntidadesReserva();
                     MessageBox.Show("Descuento aplicado correctamente", "Aviso");

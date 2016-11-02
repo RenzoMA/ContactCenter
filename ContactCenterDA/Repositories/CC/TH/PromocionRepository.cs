@@ -252,7 +252,7 @@ namespace ContactCenterDA.Repositories.CC.TH
                         {
                             IdPromocion = DataConvert.ToInt(dtr["IdPromocion"])
                         },
-                        Precio = DataConvert.ToInt(dtr["PZ.Precio"]),
+                        Precio = DataConvert.ToSingle(dtr["PZ.Precio"]),
                         Zona = new Zona()
                         {
                             IdZona = DataConvert.ToInt(dtr["Z.IdZona"])
