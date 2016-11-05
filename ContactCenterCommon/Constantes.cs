@@ -36,7 +36,7 @@ namespace ContactCenterCommon
 "                       <td>Ha realizado una reserva para la obra <b> %Obra  </b> el <b> %Fecha  </b> </td>     " +
 "                   </tr>       " +
 "                   <tr>        " +
-"                       <td>en el Teatro <b> %Teatro </b> a las <b> %Hora </b> Hora </td>     " +
+"                       <td>en el Teatro <b> %Teatro </b> a las <b> %Hora </b> Horas </td>     " +
 "                   </tr>       " +
 "                   <tr>        " +
 "                       <td>  </td>     " +
