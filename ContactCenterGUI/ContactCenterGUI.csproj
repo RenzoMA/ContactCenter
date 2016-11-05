@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Gianfranco\Desktop\ccinstalador\</PublishUrl>
+    <PublishUrl>C:\Users\Usuario\Desktop\Aplicativo\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -28,10 +28,10 @@
     <ProductName>ContactCenter</ProductName>
     <PublisherName>Krieger Lab</PublisherName>
     <SuiteName>Krieger Lab</SuiteName>
-    <MinimumRequiredVersion>1.0.0.57</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.61</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.html</WebPage>
-    <ApplicationRevision>58</ApplicationRevision>
+    <ApplicationRevision>62</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

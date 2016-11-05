@@ -111,6 +111,7 @@
             this.Controls.Add(this.btnAplicarDescuento);
             this.Controls.Add(this.lstEmpresas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FindEmpresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccione Empresa";

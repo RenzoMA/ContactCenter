@@ -55,32 +55,39 @@ namespace ContactCenterGUI.Teatros.Reservas
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            funcion = metroComboBox3.SelectedValue as Funcion;
-            if (funcion.IdFuncion != 0)
+            if (FechaFuncion >= obra.FechaInicio && FechaFuncion <= obra.FechaFin)
             {
-                reserva.Horario = funcion.Horario;
-                reserva.FechaReserva = FechaFuncion;
-                reserva.Obra = obra;
-                reserva.Funcion = funcion;
-                reserva.Usuario = Sesion.usuario;
-                try
+                funcion = metroComboBox3.SelectedValue as Funcion;
+                if (funcion.IdFuncion != 0)
                 {
-                    servicio.EliminarAsientoTemporalAntiguo();
+                    reserva.Horario = funcion.Horario;
+                    reserva.FechaReserva = FechaFuncion;
+                    reserva.Obra = obra;
+                    reserva.Funcion = funcion;
+                    reserva.Usuario = Sesion.usuario;
+                    try
+                    {
+                        servicio.EliminarAsientoTemporalAntiguo();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    ConfirmReservation.ApellidoMaterno = "";
+                    ConfirmReservation.ApellidoPaterno = "";
+                    ConfirmReservation.Correo = "";
+                    ConfirmReservation.Nombre = "";
+                    ConfirmReservation.Telefono = "";
+                    HelperForm.changeForm(funcion.Obra.Teatro.frmTeatro, "Teatros", true, this, reserva);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Debe completar todos los datos");
                 }
-                ConfirmReservation.ApellidoMaterno = "";
-                ConfirmReservation.ApellidoPaterno = "";
-                ConfirmReservation.Correo = "";
-                ConfirmReservation.Nombre = "";
-                ConfirmReservation.Telefono = "";
-                HelperForm.changeForm(funcion.Obra.Teatro.frmTeatro, "Teatros", true, this, reserva);
             }
             else
             {
-                MessageBox.Show("Debe completar todos los datos");
+                MessageBox.Show("La obra solo es valida desde el " + obra.FechaInicio.ToShortDateString() + " hasta el " + obra.FechaFin.ToShortDateString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         
