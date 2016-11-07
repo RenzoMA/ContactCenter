@@ -97,13 +97,24 @@ namespace ContactCenterGUI.Teatros.Reservas
             this.Close();
         }
 
-        private void dgvResult_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+
+        private void dgvResult_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            Reserva reserva = (Reserva)dgvResult.Rows[e.RowIndex].DataBoundItem;
-            //MessageBox.Show(reserva.IdReserva.ToString());
-            if (reserva.EstadoReserva.IdEstadoReserva == 2)
+            DataGridViewCellStyle red = this.dgvResult.DefaultCellStyle.Clone();
+            red.ForeColor = Color.Red;
+            red.Font = new Font(red.Font, FontStyle.Bold);
+            red.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            foreach (DataGridViewRow dtr in dgvResult.Rows)
             {
-                dgvResult.Rows[e.RowIndex].Cells[e.ColumnIndex].Style = new DataGridViewCellStyle { ForeColor = Color.Red, BackColor = Color.White };
+                Reserva reservaXs = (Reserva)dtr.DataBoundItem;
+
+                if (reservaXs.EstadoReserva.IdEstadoReserva == 2)
+                {
+                    dtr.DefaultCellStyle = red;
+                    dtr.Cells["Cancelar"].Style = new DataGridViewCellStyle { Alignment = DataGridViewContentAlignment.MiddleCenter };
+                }
+
             }
         }
     }

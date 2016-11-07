@@ -68,14 +68,6 @@ namespace ContactCenterGUI.Teatros.Reservas
             }
         }
 
-        private void dgvEmail_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            LogEmail logEmail = (LogEmail)dgvEmail.Rows[e.RowIndex].DataBoundItem;
-            if (logEmail.Estado == "FALLO")
-            {
-                dgvEmail.Rows[e.RowIndex].Cells[e.ColumnIndex].Style = new DataGridViewCellStyle { ForeColor = Color.Red, BackColor = Color.White };
-            }
-        }
         private void EnlazarGrilla()
         {
             listaCorreoFecha = servicio.ListaCorreoFechas(fechaInicio, fechaFin);
@@ -84,6 +76,26 @@ namespace ContactCenterGUI.Teatros.Reservas
         private void btnBorrarFiltros_Click(object sender, EventArgs e)
         {
             dgvEmail.DataSource = servicio.ListarEmail();
+        }
+
+        private void dgvEmail_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            DataGridViewCellStyle red = this.dgvEmail.DefaultCellStyle.Clone();
+            red.ForeColor = Color.Red;
+            red.Font = new Font(red.Font, FontStyle.Bold);
+            red.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            foreach (DataGridViewRow dtr in dgvEmail.Rows)
+            {
+                LogEmail logEmail = (LogEmail)dtr.DataBoundItem;
+
+                if (logEmail.Estado == "FALLO")
+                {
+                    dtr.DefaultCellStyle = red;
+                    dtr.Cells["Mensaje"].Style = new DataGridViewCellStyle { Alignment = DataGridViewContentAlignment.MiddleCenter };
+                }
+
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

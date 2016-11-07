@@ -40,8 +40,6 @@
             this.txtTelefono = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.dgvResult = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Cancelar = new System.Windows.Forms.DataGridViewImageColumn();
             this.IdReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +57,8 @@
             this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UsuarioMod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaMod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -220,29 +220,7 @@
             this.dgvResult.Size = new System.Drawing.Size(1245, 335);
             this.dgvResult.TabIndex = 1;
             this.dgvResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResult_CellContentClick);
-            this.dgvResult.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvResult_CellFormatting);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Cancelar";
-            this.dataGridViewImageColumn1.Image = global::ContactCenterGUI.Properties.Resources.cancel_256;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewImageColumn1.Width = 25;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
-            this.pictureBox1.Location = new System.Drawing.Point(1196, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.dgvResult.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvResult_DataBindingComplete);
             // 
             // Cancelar
             // 
@@ -374,6 +352,28 @@
             this.FechaMod.HeaderText = "Fecha Modificacion";
             this.FechaMod.Name = "FechaMod";
             this.FechaMod.ReadOnly = true;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Cancelar";
+            this.dataGridViewImageColumn1.Image = global::ContactCenterGUI.Properties.Resources.cancel_256;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn1.Width = 25;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::ContactCenterGUI.Properties.Resources.left_arrow12;
+            this.pictureBox1.Location = new System.Drawing.Point(1196, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FindReservation
             // 

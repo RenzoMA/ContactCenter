@@ -89,7 +89,7 @@
             this.dgvEmail.Size = new System.Drawing.Size(968, 423);
             this.dgvEmail.TabIndex = 14;
             this.dgvEmail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmail_CellContentClick);
-            this.dgvEmail.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvEmail_CellFormatting);
+            this.dgvEmail.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvEmail_DataBindingComplete);
             // 
             // IdLogEmail
             // 
