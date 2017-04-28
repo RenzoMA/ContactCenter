@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Usuario\Desktop\Aplicativo\</PublishUrl>
+    <PublishUrl>D:\Aplicativo\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -31,7 +31,7 @@
     <MinimumRequiredVersion>1.0.0.61</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.html</WebPage>
-    <ApplicationRevision>62</ApplicationRevision>
+    <ApplicationRevision>64</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -139,38 +139,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CC\Constantes\ConstanteColor.cs" />
-    <Compile Include="CC\Loader.cs">
+    <Compile Include="Resources\CC\Constantes\ConstanteColor.cs" />
+    <Compile Include="Resources\CC\Loader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CC\Loader.Designer.cs">
+    <Compile Include="Resources\CC\Loader.Designer.cs">
       <DependentUpon>Loader.cs</DependentUpon>
     </Compile>
-    <Compile Include="CC\Login.cs">
+    <Compile Include="Resources\CC\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CC\Login.Designer.cs">
+    <Compile Include="Resources\CC\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="CC\Main.cs">
+    <Compile Include="Resources\CC\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CC\Main.Designer.cs">
+    <Compile Include="Resources\CC\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="CC\Helpers\HelperConexion.cs" />
-    <Compile Include="CC\Helpers\HelperControl.cs" />
-    <Compile Include="CC\Helpers\HelperForm.cs" />
-    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAplicacion.cs">
+    <Compile Include="Resources\CC\Helpers\HelperConexion.cs" />
+    <Compile Include="Resources\CC\Helpers\HelperControl.cs" />
+    <Compile Include="Resources\CC\Helpers\HelperForm.cs" />
+    <Compile Include="Resources\CC\Mantenimientos\AplicacionMan\ManAplicacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAplicacion.Designer.cs">
+    <Compile Include="Resources\CC\Mantenimientos\AplicacionMan\ManAplicacion.Designer.cs">
       <DependentUpon>ManAplicacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.cs">
+    <Compile Include="Resources\CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.Designer.cs">
+    <Compile Include="Resources\CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.Designer.cs">
       <DependentUpon>ManAplicacionEditar.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -256,16 +256,16 @@
     <Compile Include="Teatros\Mantenimientos\ObraMan\ManObraCrear.Designer.cs">
       <DependentUpon>ManObraCrear.cs</DependentUpon>
     </Compile>
-    <Compile Include="CC\Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.cs">
+    <Compile Include="Resources\CC\Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CC\Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.Designer.cs">
+    <Compile Include="Resources\CC\Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.Designer.cs">
       <DependentUpon>ManCreateUpdateUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="CC\Mantenimientos\UsuarioMan\ManUsuario.cs">
+    <Compile Include="Resources\CC\Mantenimientos\UsuarioMan\ManUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CC\Mantenimientos\UsuarioMan\ManUsuario.Designer.cs">
+    <Compile Include="Resources\CC\Mantenimientos\UsuarioMan\ManUsuario.Designer.cs">
       <DependentUpon>ManUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Teatros\Mantenimientos\PromocionMan\ManPromocionCreate.cs">
@@ -378,7 +378,7 @@
     <Compile Include="Teatros\Escenarios\TheaterPlazaNorte.Designer.cs">
       <DependentUpon>TheaterPlazaNorte.cs</DependentUpon>
     </Compile>
-    <Compile Include="CC\Helpers\Animacion.cs" />
+    <Compile Include="Resources\CC\Helpers\Animacion.cs" />
     <Compile Include="Teatros\Reservas\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -398,19 +398,19 @@
     <Compile Include="Teatros\BandejaCorreos\SentEmail.Designer.cs">
       <DependentUpon>SentEmail.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CC\Loader.resx">
+    <EmbeddedResource Include="Resources\CC\Loader.resx">
       <DependentUpon>Loader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CC\Login.resx">
+    <EmbeddedResource Include="Resources\CC\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CC\Main.resx">
+    <EmbeddedResource Include="Resources\CC\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CC\Mantenimientos\AplicacionMan\ManAplicacion.resx">
+    <EmbeddedResource Include="Resources\CC\Mantenimientos\AplicacionMan\ManAplicacion.resx">
       <DependentUpon>ManAplicacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.resx">
+    <EmbeddedResource Include="Resources\CC\Mantenimientos\AplicacionMan\ManAplicacionEditar.resx">
       <DependentUpon>ManAplicacionEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Escenarios\Vista.resx">
@@ -452,10 +452,10 @@
     <EmbeddedResource Include="Teatros\Mantenimientos\ObraMan\ManObraCrear.resx">
       <DependentUpon>ManObraCrear.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CC\Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.resx">
+    <EmbeddedResource Include="Resources\CC\Mantenimientos\UsuarioMan\ManCreateUpdateUsuario.resx">
       <DependentUpon>ManCreateUpdateUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CC\Mantenimientos\UsuarioMan\ManUsuario.resx">
+    <EmbeddedResource Include="Resources\CC\Mantenimientos\UsuarioMan\ManUsuario.resx">
       <DependentUpon>ManUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Mantenimientos\PromocionMan\ManPromocionCreate.resx">

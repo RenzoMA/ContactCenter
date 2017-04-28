@@ -55,6 +55,7 @@ namespace ContactCenterBL.Helper
                 var mailDisplayName = ConfigurationManager.AppSettings["mailDisplayName"];
                 var port = ConfigurationManager.AppSettings["port"];
                 var sslEnabled = Convert.ToBoolean(ConfigurationManager.AppSettings["sslEnabled"]);
+                var domain = ConfigurationManager.AppSettings["Domain"];
 
                 #endregion
 
@@ -63,7 +64,14 @@ namespace ContactCenterBL.Helper
                 smtpClient.Port = Convert.ToInt16(port);
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtpClient.Credentials = new NetworkCredential(mailAccount, mailPassword);
+                if(domain != null)
+                {
+                    smtpClient.Credentials = new NetworkCredential(mailAccount, mailPassword, domain);
+                }
+                else
+                {
+                    smtpClient.Credentials = new NetworkCredential(mailAccount, mailPassword);
+                }
                 smtpClient.EnableSsl = sslEnabled;
                 #endregion Create SMTP
 
@@ -311,6 +319,7 @@ namespace ContactCenterBL.Helper
                 var mailDisplayName = ConfigurationManager.AppSettings["mailDisplayName"];
                 var port = ConfigurationManager.AppSettings["port"];
                 var sslEnabled = Convert.ToBoolean(ConfigurationManager.AppSettings["sslEnabled"]);
+                var domain = ConfigurationManager.AppSettings["Domain"];
                 #endregion
 
                 #region Create SMTP
@@ -318,8 +327,16 @@ namespace ContactCenterBL.Helper
                 smtpClient.Port = Convert.ToInt16(port);
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtpClient.Credentials = new NetworkCredential(mailAccount, mailPassword);
+                if (domain != null)
+                {
+                    smtpClient.Credentials = new NetworkCredential(mailAccount, mailPassword, domain);
+                }
+                else
+                {
+                    smtpClient.Credentials = new NetworkCredential(mailAccount, mailPassword);
+                }
                 smtpClient.EnableSsl = sslEnabled;
+
                 #endregion Create SMTP
 
                 #region Create Mail an recievers
