@@ -29,6 +29,7 @@ namespace ContactCenterBL.Helper
         {
             ContactCenterDA.Repositories.CC.TH.ObraRepository  obraRepository = new ContactCenterDA.Repositories.CC.TH.ObraRepository() ;
             string htmlBody = "";
+            string htmlImageBody = "";
             string subject = "";
 
             try
@@ -91,10 +92,10 @@ namespace ContactCenterBL.Helper
 
                 #region Create Mail Variables
 
-                System.Globalization.CultureInfo cultureinfo = new System.Globalization.CultureInfo("es-PE");
+                //System.Globalization.CultureInfo cultureinfo = new System.Globalization.CultureInfo("es-PE");
                 var nombre = reserva.Cliente.Nombre + " " + reserva.Cliente.ApellidoPaterno + " " + reserva.Cliente.Apellidomaterno;
                 var obra = reserva.Obra.Nombre;
-                var fecha = reserva.FechaReserva.ToString("dd/MM/yyyy", cultureinfo);
+                var fecha = reserva.FechaReserva.ToString("dd/MM/yyyy"/*, cultureinfo*/);
                 var teatro = reserva.Obra.Teatro.Nombre;
                 var hora = reserva.Horario;
                 var totalObras = reserva.ListaDetalles.Count();
@@ -114,17 +115,25 @@ namespace ContactCenterBL.Helper
                 switch (action)
                 {
                     case Enumerables.MailAction.TeatroConfirmacionReserva:
-                        htmlBody = Constantes.Mails.TeatroConfirmacionReserva;
+                        htmlBody = ContactCenterBL.Properties.Resources.nuevomail;
                         htmlBody = htmlBody.Replace("%Nombre", nombre);
                         htmlBody = htmlBody.Replace("%Obra", obra);
                         htmlBody = htmlBody.Replace("%Fecha", fecha);
-                        htmlBody = htmlBody.Replace("%Obra", obra);
                         htmlBody = htmlBody.Replace("%Teatro", teatro);
-                        htmlBody = htmlBody.Replace("%Hora", hora);
+                        htmlBody = htmlBody.Replace("%Hora", fecha + " - " + hora);
                         htmlBody = htmlBody.Replace("%Total", totalObras.ToString());
                         htmlBody = htmlBody.Replace("%Ubicacion", ubicacion);
-                        htmlBody = htmlBody.Replace("%Precio", precio.ToString());
+                        htmlBody = htmlBody.Replace("%Precio", precio.ToString("#.00"));
 
+                        htmlImageBody = ContactCenterBL.Properties.Resources.detail;
+                        htmlImageBody = htmlImageBody.Replace("%Nombre", nombre);
+                        htmlImageBody = htmlImageBody.Replace("%Obra", obra);
+                        htmlImageBody = htmlImageBody.Replace("%Fecha", fecha);
+                        htmlImageBody = htmlImageBody.Replace("%Teatro", teatro);
+                        htmlImageBody = htmlImageBody.Replace("%Hora", fecha + " - " + hora);
+                        htmlImageBody = htmlImageBody.Replace("%Total", totalObras.ToString());
+                        htmlImageBody = htmlImageBody.Replace("%Ubicacion", ubicacion);
+                        htmlImageBody = htmlImageBody.Replace("%Precio", precio.ToString("#.00"));
 
                         List<String> zonas = new List<String>();
                         foreach (DetalleReserva detalleRes in reserva.ListaDetalles.OrderBy(tx => tx.NombreZona).ToList())
@@ -146,11 +155,13 @@ namespace ContactCenterBL.Helper
                                 
                             }
                             filAsiento = filAsiento.TrimEnd(',',' ');
-                            detalle += "<tr><td style= 'text-align:right;'>Sector</td><td>:</td><td></td><td></td><td style= 'text-align:left;'>" + nomZona + "</td></tr><tr><td style= 'text-align:right;' >Ubicaciones</td><td>:</td><td></td><td></td><td style= 'text-align:left;'>" + filAsiento + "</td></tr>";
+                            //detalle += "<tr><td style= 'text-align:right;'>Sector</td><td>:</td><td></td><td></td><td style= 'text-align:left;'>" + nomZona + "</td></tr><tr><td style= 'text-align:right;' >Ubicaciones</td><td>:</td><td></td><td></td><td style= 'text-align:left;'>" + filAsiento + "</td></tr>";
+                            detalle += $"<p style='margin-top:3%; margin-bottom: 2%'>ZONA: {nomZona}</p> <p style='margin-top:3%; margin-bottom: 2%'> UBICACIÓN: {filAsiento}</p>";
                             filAsiento = "";
                         }
 
                         htmlBody = htmlBody.Replace("varDetalle", detalle);
+                        htmlImageBody = htmlImageBody.Replace("varDetalle", detalle);
                         break;
 
                     default:
@@ -180,40 +191,95 @@ namespace ContactCenterBL.Helper
                 //var cabeceraImgPath = Path.Combine("../../Resources/cabecera_correo2.jpg");
                 //var rootFolder = AppDomain.CurrentDomain.BaseDirectory;
                 //var cabepath = Path.Combine(rootFolder, "../../Resources/cabecera_correo2.jpg");
-                Image ImageCabe = ContactCenterBL.Properties.Resources.cabecera_correo2;
+                Image ImageCabe = ContactCenterBL.Properties.Resources.cabecera;
                 Byte[] imageCabeByte = Convertir_Imagen_Bytes(ImageCabe);
                 MemoryStream ca = new MemoryStream(imageCabeByte);
+
+
+                Image image = Image.FromStream(ca);
+                Guid id = Guid.NewGuid();
+                image.Save($"C:\\BackupTeatro\\{id.ToString()}.jpg");
+                string path = $"C:\\BackupTeatro\\{id.ToString()}.jpg";
+
+
+                Image image2 = Image.FromStream(ms);
+                Guid id2 = Guid.NewGuid();
+                image2.Save($"C:\\BackupTeatro\\{id2.ToString()}.jpg");
+                string path2 = $"C:\\BackupTeatro\\{id2.ToString()}.jpg";
+
+                htmlBody = htmlBody.Replace("%Cabecera", path);
+                htmlBody = htmlBody.Replace("%ImagenObra", path2);
+
+                htmlImageBody = htmlImageBody.Replace("%Cabecera", path);
+                htmlImageBody = htmlImageBody.Replace("%ImagenObra", path2);
+
+
+                Image imageMail = TheArtOfDev.HtmlRenderer.WinForms.HtmlRender.RenderToImageGdiPlus(htmlImageBody);
+                //imageMail.Save($"C:\\BackupTeatro\\test2.jpg");
+                //Image imagex = Image.FromFile($"C:\\BackupTeatro\\test2.jpg");
+                Byte[] imageMailBytes = Convertir_Imagen_Bytes(imageMail);
+                MemoryStream imageMailMemoryStream = new MemoryStream(imageMailBytes);
+                //mail.Attachments.Add(new Attachment(imageMailMemoryStream, "Compra.jpg"));
+
+                
+
+
+                var imageMailLinked = new LinkedResource(imageMailMemoryStream, MediaTypeNames.Image.Jpeg);
+                imageMailLinked.ContentId = "obraimagen";
+
+                Byte[] pdfFile = PdfSharpConvert(htmlBody);
+                MemoryStream pdfStream = new MemoryStream(pdfFile);
+                mail.Attachments.Add(new Attachment(pdfStream, "Confirmación de compra.pdf"));
+
+                if (File.Exists(path2))
+                {
+                    File.Delete(path2);
+                }
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+
+                htmlBody = htmlBody.Replace($"C:\\BackupTeatro\\{id.ToString()}.jpg", "%Cabecera");
+                htmlBody = htmlBody.Replace($"C:\\BackupTeatro\\{id2.ToString()}.jpg", "%ImagenObra");
+                htmlImageBody = htmlImageBody.Replace($"C:\\BackupTeatro\\{id.ToString()}.jpg", "%Cabecera");
+                htmlImageBody = htmlImageBody.Replace($"C:\\BackupTeatro\\{id2.ToString()}.jpg", "%ImagenObra");
 
                 #endregion Get Mail Body embedded images paths
 
                 #region Set embedded images mail id
 
-                var cabecera = new LinkedResource(ca, MediaTypeNames.Image.Jpeg);
-                cabecera.ContentId = "Cabecera";
-                //cabecera.TransferEncoding = TransferEncoding.Base64;
+                //var cabecera = new LinkedResource(ca, MediaTypeNames.Image.Jpeg);
+                //cabecera.ContentId = "Cabecera";
+                ////cabecera.TransferEncoding = TransferEncoding.Base64;
 
-                var logo = new LinkedResource(ms, MediaTypeNames.Image.Jpeg);
-                logo.ContentId = "ImagenObra";
-                //logo.TransferEncoding = TransferEncoding.Base64;
+                //var logo = new LinkedResource(ms, MediaTypeNames.Image.Jpeg);
+                //logo.ContentId = "ImagenObra";
+                ////logo.TransferEncoding = TransferEncoding.Base64;
 
                 #endregion
 
                 #region Set Body and Images
 
-                var html = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
+                var newHtml = ContactCenterBL.Properties.Resources._base;
+
+                var html = AlternateView.CreateAlternateViewFromString(newHtml, null, MediaTypeNames.Text.Html);
                 //html.TransferEncoding = TransferEncoding.Base64;
-                html.LinkedResources.Add(logo);
-                html.LinkedResources.Add(cabecera);
+                html.LinkedResources.Add(imageMailLinked);
+                //html.LinkedResources.Add(cabecera);
 
                 #endregion Set Body and Images
 
                 #region Set values to mail
 
                 mail.Subject = subject;
+                mail.SubjectEncoding = Encoding.UTF8;
                 mail.IsBodyHtml = true;
                 mail.AlternateViews.Add(html);
 
                 #endregion Set values to mail
+
+                
 
                 #region Send Mail
 
@@ -228,6 +294,7 @@ namespace ContactCenterBL.Helper
                     logEmail.Estado = "OK";
                     logEmail.IdObra = reserva.Obra.IdObra;
                     logEmail.FechaEnvio = DateTime.Now;
+                    logEmail.MensajeImagen = htmlImageBody;
                     logEmail.FechaCreacion = DateTime.Now;
                     logEmail.UsuarioCreacion = Sesion.usuario.Login;
                     logEmail.Mensaje = htmlBody;
@@ -259,7 +326,7 @@ namespace ContactCenterBL.Helper
                     }
                     smtpClient.Dispose();
                     mail.Dispose();
-                    logo.Dispose();
+                    //logo.Dispose();
                 };
 
                 #endregion Send Mail
@@ -275,6 +342,7 @@ namespace ContactCenterBL.Helper
                 logEmail.Estado = "OK";
                 logEmail.IdObra = reserva.Obra.IdObra;
                 logEmail.FechaEnvio = DateTime.Now;
+                logEmail.MensajeImagen = htmlImageBody;
                 logEmail.FechaCreacion = DateTime.Now;
                 logEmail.UsuarioCreacion = Sesion.usuario.Login;
                 logEmail.Mensaje = htmlBody;
@@ -354,7 +422,6 @@ namespace ContactCenterBL.Helper
                 #endregion
 
                 #region Create Mail Variables
-
                 string htmlBody = originalHtml;
                 string subject = originalSubject;
 
@@ -365,10 +432,8 @@ namespace ContactCenterBL.Helper
 
                 Byte[] ba = obraRepository.GetImage(logEmail.IdObra);
                 MemoryStream ms = new MemoryStream(ba);
-                //var cabeceraImgPath = Path.Combine("../../Resources/cabecera_correo2.jpg");
-                //var rootFolder = AppDomain.CurrentDomain.BaseDirectory;
-                //var cabepath = Path.Combine(rootFolder, "../../Resources/cabecera_correo2.jpg");
-                Image ImageCabe = ContactCenterBL.Properties.Resources.cabecera_correo2;
+
+                Image ImageCabe = ContactCenterBL.Properties.Resources.cabecera;
                 Byte[] imageCabeByte = Convertir_Imagen_Bytes(ImageCabe);
                 MemoryStream ca = new MemoryStream(imageCabeByte);
                 #endregion Get Mail Body embedded images paths
@@ -381,14 +446,79 @@ namespace ContactCenterBL.Helper
                 //logo.TransferEncoding = TransferEncoding.Base64;
                 logo.ContentId = "ImagenObra";
 
+                var imageText = logEmail.MensajeImagen;
+
+                Image imageMail;
+                AlternateView html = null;
+                if (imageText.Equals(String.Empty)) // legacy emails
+                {
+                    html = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
+                    html.LinkedResources.Add(logo);
+                    html.LinkedResources.Add(cabecera);
+                }
+                else
+                {
+                    Image image = Image.FromStream(ca);
+                    Guid id = Guid.NewGuid();
+                    image.Save($"C:\\BackupTeatro\\{id.ToString()}.jpg");
+                    string path = $"C:\\BackupTeatro\\{id.ToString()}.jpg";
+
+
+                    Image image2 = Image.FromStream(ms);
+                    Guid id2 = Guid.NewGuid();
+                    image2.Save($"C:\\BackupTeatro\\{id2.ToString()}.jpg");
+                    string path2 = $"C:\\BackupTeatro\\{id2.ToString()}.jpg";
+
+                    htmlBody = htmlBody.Replace("%Cabecera", path);
+                    htmlBody = htmlBody.Replace("%ImagenObra", path2);
+                    imageText = imageText.Replace("%Cabecera", path);
+                    imageText = imageText.Replace("%ImagenObra", path2);
+
+                    imageMail = TheArtOfDev.HtmlRenderer.WinForms.HtmlRender.RenderToImageGdiPlus(imageText);
+                    //imageMail.Save($"C:\\BackupTeatro\\test2.jpg");
+                    //Image imagex = Image.FromFile($"C:\\BackupTeatro\\test2.jpg");
+                    Byte[] imageMailBytes = Convertir_Imagen_Bytes(imageMail);
+                    MemoryStream imageMailMemoryStream = new MemoryStream(imageMailBytes);
+                    var imageMailLinked = new LinkedResource(imageMailMemoryStream, MediaTypeNames.Image.Jpeg);
+                    imageMailLinked.ContentId = "obraimagen";
+                    Byte[] pdfFile = PdfSharpConvert(htmlBody);
+                    MemoryStream pdfStream = new MemoryStream(pdfFile);
+                    mail.Attachments.Add(new Attachment(pdfStream, "Confirmación de compra.pdf"));
+
+                    if (File.Exists(path2))
+                    {
+                        File.Delete(path2);
+                    }
+                    if (File.Exists(path))
+                    {
+                        File.Delete(path);
+                    }
+
+                    htmlBody = htmlBody.Replace($"C:\\BackupTeatro\\{id.ToString()}.jpg", "%Cabecera");
+                    htmlBody = htmlBody.Replace($"C:\\BackupTeatro\\{id2.ToString()}.jpg", "%ImagenObra");
+                    imageText = imageText.Replace($"C:\\BackupTeatro\\{id.ToString()}.jpg", "%Cabecera");
+                    imageText = imageText.Replace($"C:\\BackupTeatro\\{id2.ToString()}.jpg", "%ImagenObra");
+                    var newHtml = ContactCenterBL.Properties.Resources._base;
+                    html = AlternateView.CreateAlternateViewFromString(newHtml, null, MediaTypeNames.Text.Html);
+                    //html.TransferEncoding = TransferEncoding.Base64;
+                    html.LinkedResources.Add(imageMailLinked);
+                }
+
+                
+                
+
+                //mail.Attachments.Add(new Attachment(imageMailMemoryStream, "Compra.jpg"));
+
+
+                
+
+                
                 #endregion
 
                 #region Set Body and Images
 
-                var html = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
-                //html.TransferEncoding = TransferEncoding.Base64;
-                html.LinkedResources.Add(logo);
-                html.LinkedResources.Add(cabecera);
+                
+                //html.LinkedResources.Add(cabecera);
 
                 #endregion Get Mail Body embedded images paths
 
@@ -420,6 +550,7 @@ namespace ContactCenterBL.Helper
                 logEmail.Mensaje = htmlBody;
                 logEmail.Intento = logEmail.Intento + 1;
                 logEmail.Descripcion = String.Empty;
+                
                 logEmailRepository.Update(logEmail);
                 smtpClient.Dispose();
                 mail.Dispose();
@@ -455,6 +586,18 @@ namespace ContactCenterBL.Helper
             fs.Read(bytes, 0, imgLength);
             fs.Close();
             return bytes;
+        }
+
+        public static Byte[] PdfSharpConvert(String html)
+        {
+            Byte[] res = null;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                var pdf = TheArtOfDev.HtmlRenderer.PdfSharp.PdfGenerator.GeneratePdf(html,PdfSharp.PageSize.A4,margin: 0);
+                pdf.Save(ms);
+                res = ms.ToArray();
+            }
+            return res;
         }
 
     }

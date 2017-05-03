@@ -22,7 +22,7 @@ namespace ContactCenterBL.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace ContactCenterBL.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ContactCenterBL.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace ContactCenterBL.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,44 @@ namespace ContactCenterBL.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+        ///&lt;/head&gt;
+        ///&lt;body&gt;
+        ///    &lt;table border=&quot;0&quot;&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;
+        ///                &lt;img style=&quot;border:none&quot; src=&quot;cid:obraimagen&quot; /&gt;
+        ///            &lt;/td&gt;
+        ///        &lt;/tr&gt;
+        ///    &lt;/table&gt;
+        ///    
+        ///&lt;/body&gt;
+        ///&lt;/html&gt;
+        ///.
+        /// </summary>
+        public static string _base {
+            get {
+                return ResourceManager.GetString("_base", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cabecera_correo2 {
+        public static System.Drawing.Bitmap cabecera {
+            get {
+                object obj = ResourceManager.GetObject("cabecera", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap cabecera_correo2 {
             get {
                 object obj = ResourceManager.GetObject("cabecera_correo2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -71,9 +106,51 @@ namespace ContactCenterBL.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+        ///&lt;/head&gt;
+        ///&lt;body style=&quot;background-color:white;&quot;&gt;
+        ///    &lt;table id=&quot;min-width: 550px; max-width: 550px; width: 550px; font-family: Calibri; margin: 0 auto; border:12px solid red;&quot;&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;
+        ///                &lt;table  style=&quot;width:100%; margin-top:20px&quot;&gt;
+        ///                    &lt;tr&gt;
+        ///                        &lt;td style=&quot;width:18%&quot;&gt;&lt;/td&gt;
+        ///                        &lt;td style=&quot;width:64%; text-al [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string detail {
+            get {
+                return ResourceManager.GetString("detail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html style=&quot;background-color: white;&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+        ///&lt;/head&gt;
+        ///&lt;body&gt;
+        ///    &lt;table id=&quot;container&quot; style=&quot;min-width: 550px; max-width: 550px; width: 550px; font-family: Calibri; margin: 0 auto;&quot;&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td&gt;
+        ///                &lt;table  style=&quot;width:100%; margin-top:20px&quot;&gt;
+        ///                    &lt;tr&gt;
+        ///                        &lt;td style=&quot;width:18%&quot;&gt;&lt;/td&gt;
+        ///                        &lt;td style=&quot;width:64%; text-align: [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string nuevomail {
+            get {
+                return ResourceManager.GetString("nuevomail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string String1 {
+        public static string String1 {
             get {
                 return ResourceManager.GetString("String1", resourceCulture);
             }

@@ -15,6 +15,7 @@ namespace ContactCenterBE.CC.TH.Entidades.LogEmailBE
         public string CorreoDestinoCC { get; set; }
         public DateTime FechaEnvio { get; set; }
         public string Mensaje { get; set; }
+        public string MensajeImagen { get; set; }
         public string Asunto { get; set; }
         public string Estado { get; set; }
         public string Descripcion { get; set; }

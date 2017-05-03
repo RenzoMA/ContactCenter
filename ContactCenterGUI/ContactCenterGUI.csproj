@@ -92,6 +92,18 @@
     <Reference Include="EPPlus">
       <HintPath>..\libs\EPPlus.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlRenderer, Version=1.5.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.Core.1.5.0.5\lib\net45\HtmlRenderer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlRenderer.PdfSharp, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.PdfSharp.1.5.0.6\lib\net45\HtmlRenderer.PdfSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlRenderer.WinForms, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.WinForms.1.5.0.6\lib\net45\HtmlRenderer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MaterialSkin">
       <HintPath>..\libs\MaterialSkin.dll</HintPath>
     </Reference>
@@ -121,6 +133,14 @@
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -557,6 +577,10 @@
     <ProjectReference Include="..\ContactCenterBE\ContactCenterBE.csproj">
       <Project>{e4267e64-2e05-4ce7-8eca-3bb3081d3c6c}</Project>
       <Name>ContactCenterBE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ContactCenterBL\ContactCenterBL.csproj">
+      <Project>{f241c18d-8d15-4650-aa86-fecc1e4024c2}</Project>
+      <Name>ContactCenterBL</Name>
     </ProjectReference>
     <ProjectReference Include="..\ContactCenterCommon\ContactCenterCommon.csproj">
       <Project>{53decd57-c35a-4780-8a55-245e366fa6a1}</Project>

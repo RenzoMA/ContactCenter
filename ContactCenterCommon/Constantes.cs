@@ -99,7 +99,7 @@ namespace ContactCenterCommon
 
         public static class Subjects
         {
-            public const string TeatroConfirmacionReserva = "Confirmación de Reserva";
+            public const string TeatroConfirmacionReserva = "Confirmación de compra";
         }
     }
 }

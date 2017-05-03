@@ -120,11 +120,11 @@ namespace ContactCenterGUI.Teatros.Reservas
         {
             string pathImage = ReadImageInBase64();
             //byte[] imageArray = System.IO.File.ReadAllBytes(@"../../Resources/cabecera_correo2.jpg");
-            Image imgCabe = ContactCenterGUI.Properties.Resources.cabecera_correo2;
+            Image imgCabe = ContactCenterBL.Properties.Resources.cabecera;
             byte[] imageArray2 = Convertir_Imagen_Bytes(imgCabe);
             string base64ImageRepresentation = Convert.ToBase64String(imageArray2);
-            webBrowser1.Document.Images[1].OuterHtml = "<img style='width=100%;' src='data:image/png;base64," + pathImage + "'>";
-            webBrowser1.Document.Images[0].OuterHtml = "<img style='width=100%;' src='data:image/jpeg;base64," + base64ImageRepresentation + "'>";
+            webBrowser1.Document.Images[1].OuterHtml = "<img width='176px' src='data:image/png;base64," + pathImage + "'>";
+            webBrowser1.Document.Images[0].OuterHtml = "<img width='352px' src='data:image/jpeg;base64," + base64ImageRepresentation + "'>";
         }
     }
 }
