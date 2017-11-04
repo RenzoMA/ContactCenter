@@ -324,6 +324,12 @@
     <Compile Include="Teatros\Reportes\RptReservasObra.Designer.cs">
       <DependentUpon>RptReservasObra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teatros\Reservas\ClientDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teatros\Reservas\ClientDetail.Designer.cs">
+      <DependentUpon>ClientDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teatros\Reservas\FindEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -503,6 +509,9 @@
     <EmbeddedResource Include="Teatros\Reportes\RptReservasObra.rdlc" />
     <EmbeddedResource Include="Teatros\Reportes\RptReservasObra.resx">
       <DependentUpon>RptReservasObra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teatros\Reservas\ClientDetail.resx">
+      <DependentUpon>ClientDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teatros\Reservas\FindEmpresa.resx">
       <DependentUpon>FindEmpresa.cs</DependentUpon>

@@ -39,18 +39,19 @@ namespace ContactCenterGUI.Teatros.Reservas
         private List<Funcion> listaFuncion = null;
         private Funcion funcion = null;
 
-        private Reserva reserva = new Reserva();
+        private Reserva reserva;
 
-        public NewReservation()
+        public NewReservation(Reserva reserva)
         {
             InitializeComponent();
-            
+            this.reserva = reserva;
         }
 
         private void NewTheater_Load(object sender, EventArgs e)
         {
             InicializarVariables();
             CargarTeatros();
+            ConfirmReservation.previousForms.Add(this);
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
@@ -73,11 +74,7 @@ namespace ContactCenterGUI.Teatros.Reservas
                     {
                         MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    ConfirmReservation.ApellidoMaterno = "";
-                    ConfirmReservation.ApellidoPaterno = "";
                     ConfirmReservation.Correo = "";
-                    ConfirmReservation.Nombre = "";
-                    ConfirmReservation.Telefono = "";
                     HelperForm.changeForm(funcion.Obra.Teatro.frmTeatro, "Teatros", true, this, reserva);
                 }
                 else

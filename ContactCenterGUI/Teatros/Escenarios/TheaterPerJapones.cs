@@ -182,7 +182,5 @@ namespace ContactCenterGUI.Teatros.Escenarios
           
 
         }
-
-       
     }
 }
