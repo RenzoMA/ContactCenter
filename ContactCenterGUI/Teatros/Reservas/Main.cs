@@ -28,13 +28,12 @@ namespace ContactCenterGUI.Teatros.Reservas
         public Main()
         {
             InitializeComponent();
-            //
         }
 
         private void btnNuevoRegistro_Click(object sender, EventArgs e)
         {
             this.Hide();
-            NewReservation newtheater = new NewReservation();
+            ClientDetail newtheater = new ClientDetail();
             newtheater.ShowDialog();
             this.Show();
         }

@@ -43,12 +43,8 @@ namespace ContactCenterGUI.Teatros.Reservas
         private string promociones = "";
         private bool aplicoPromocionGeneral = false;
         private bool aplico2x1 = false;
-
-        public static string Telefono = "";
-        public static string Nombre = "";
-        public static string ApellidoPaterno = "";
-        public static string ApellidoMaterno = "";
         public static string Correo = "";
+        public static List<Form> previousForms = new List<Form>();
 
         private static List<AsientoZona> Clonar(List<AsientoZona> lista)
         {
@@ -84,11 +80,11 @@ namespace ContactCenterGUI.Teatros.Reservas
             reserva = _reserva;
             frmTeatro = form;
             frmTeatro.Visible = false;
-            txtTelefono.Text = Telefono;
-            txtNombre.Text = Nombre;
-            txtCorreo.Text = Correo;
-            txtApePat.Text = ApellidoPaterno;
-            txtApeMat.Text = ApellidoMaterno;
+            lblTelefono.Text = reserva.Cliente.Telefono;
+            lblNombre.Text = reserva.Cliente.Nombre;
+            txtCorreo.Text = reserva.Cliente.Correo;
+            lblApellidoPat.Text = reserva.Cliente.ApellidoPaterno;
+            lblApellidoMat.Text = reserva.Cliente.Apellidomaterno;
         }
 
 
@@ -235,17 +231,8 @@ namespace ContactCenterGUI.Teatros.Reservas
         /// <returns></returns>
         private bool ValidarCampos()
         {
-            if (txtApeMat.Text.Trim().Equals(String.Empty))
-                return false;
-            if (txtApePat.Text.Trim().Equals(String.Empty))
-                return false;
             if (txtCorreo.Text.Trim().Equals(String.Empty))
                 return false;
-            if (txtNombre.Text.Trim().Equals(String.Empty))
-                return false;
-            if (txtTelefono.Text.Trim().Equals(String.Empty))
-                return false;
-
             return true;
         }
 
@@ -311,15 +298,8 @@ namespace ContactCenterGUI.Teatros.Reservas
         /// <returns></returns>
         public Cliente CapturarDataCliente()
         {
-            Cliente cliente = new Cliente()
-            {
-                Apellidomaterno = txtApeMat.Text.ToUpper().Trim(),
-                ApellidoPaterno = txtApePat.Text.ToUpper().Trim(),
-                Correo = txtCorreo.Text.ToUpper().Trim(),
-                Nombre = txtNombre.Text.ToUpper().Trim(),
-                Telefono = txtTelefono.Text.ToUpper().Trim()
-            };
-            return cliente;
+            reserva.Cliente.Correo = txtCorreo.Text.ToUpper().Trim();
+            return reserva.Cliente;
         }
 
 
@@ -357,6 +337,7 @@ namespace ContactCenterGUI.Teatros.Reservas
                 {
                     MessageBox.Show("Reserva realizada correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmTeatro.Close();
+                    previousForms.ForEach(x=>x.Close());
                     this.Close();
                 }
                 else
@@ -369,54 +350,6 @@ namespace ContactCenterGUI.Teatros.Reservas
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             EnableControls();
-            Animacion.HideLoader(this);
-        }
-
-        /// <summary>
-        /// Clear fields
-        /// </summary>
-        private void ClearFields()
-        {
-            txtApeMat.Text = "";
-            txtApePat.Text = "";
-            txtCorreo.Text = "";
-            txtNombre.Text = "";
-            txtNombreEmpresa.Text = "";
-        }
-
-        /// <summary>
-        /// Get client from database
-        /// </summary>
-        private async void ObtenerCliente()
-        {
-            Animacion.ShowLoader(this);
-            try
-            {
-                string telefono = txtTelefono.Text.ToUpper().Trim();
-                if (telefono != "")
-                {
-                    IServiceTeatro servicio = Contenedor.current.Resolve<IServiceTeatro>();
-                    
-                    Cliente cliente = await servicio.GetClienteByTelefonoAsync(telefono);
-                    if (cliente != null)
-                    {
-                        txtApeMat.Text = cliente.Apellidomaterno;
-                        txtApePat.Text = cliente.ApellidoPaterno;
-                        txtCorreo.Text = cliente.Correo;
-                        txtNombre.Text = cliente.Nombre;
-                        txtTelefono.Text = cliente.Telefono;
-                    }
-                    else
-                    {
-                        ClearFields();
-                    }
-                    
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrió un error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             Animacion.HideLoader(this);
         }
 
@@ -617,10 +550,6 @@ namespace ContactCenterGUI.Teatros.Reservas
         /// </summary>
         private void SetData()
         {
-            Nombre = txtNombre.Text.ToUpper().Trim();
-            ApellidoMaterno = txtApeMat.Text.ToUpper().Trim();
-            ApellidoPaterno = txtApePat.Text.ToUpper().Trim();
-            Telefono = txtTelefono.Text.ToUpper().Trim();
             Correo = txtCorreo.Text.ToUpper().Trim();
         }
 
@@ -655,29 +584,13 @@ namespace ContactCenterGUI.Teatros.Reservas
             EnlazarDetallePromocion();
         }
 
-        /// <summary>
-        /// KeyPress event txtTelefono
-        /// </summary>
-        /// <param name="sender">Control</param>
-        /// <param name="e">Event</param>
-        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                ObtenerCliente();
-            }
-        }
 
         /// <summary>
         /// Control events
         /// </summary>
         private void SetEventos()
         {
-            txtNombre.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
-            txtApeMat.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
-            txtApePat.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
             txtCorreo.KeyPress += new KeyPressEventHandler(HelperControl.EditTextToUpper);
-            txtTelefono.KeyPress += new KeyPressEventHandler(HelperControl.EditTextNumber);
             txtCorreo.Validating += new CancelEventHandler(HelperControl.ValidEmail);
             txtNombreEmpresa.KeyPress += new KeyPressEventHandler(HelperControl.EditTextNumber);
         }
