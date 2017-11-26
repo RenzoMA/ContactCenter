@@ -50,6 +50,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsientos)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -116,6 +117,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.materialRaisedButton3);
             this.groupBox1.Controls.Add(this.materialRaisedButton1);
             this.groupBox1.Controls.Add(this.cboZona);
             this.groupBox1.Controls.Add(this.materialLabel2);
@@ -133,7 +135,7 @@
             // materialRaisedButton1
             // 
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(438, 54);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(438, 32);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -300,6 +302,19 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // materialRaisedButton3
+            // 
+            this.materialRaisedButton3.Depth = 0;
+            this.materialRaisedButton3.Location = new System.Drawing.Point(438, 78);
+            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton3.Name = "materialRaisedButton3";
+            this.materialRaisedButton3.Primary = true;
+            this.materialRaisedButton3.Size = new System.Drawing.Size(168, 40);
+            this.materialRaisedButton3.TabIndex = 18;
+            this.materialRaisedButton3.Text = "RESTRICCIÓNES";
+            this.materialRaisedButton3.UseVisualStyleBackColor = true;
+            this.materialRaisedButton3.Click += new System.EventHandler(this.materialRaisedButton3_Click);
+            // 
             // ManAsiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,5 +368,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Disponible;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
     }
 }

@@ -79,11 +79,6 @@ namespace ContactCenterGUI.Teatros.Reservas
             newtheater.ShowDialog();
             this.Show();
         }
-        public void CargarHilo()
-        {
-            avayaThread = new Thread(new ThreadStart(EscucharConexion));
-            avayaThread.Start();
-        }
         public void EscucharConexion()
         {
             try
@@ -266,7 +261,7 @@ namespace ContactCenterGUI.Teatros.Reservas
         {
         }
 
-        private async void Main_FormClosed(object sender, FormClosedEventArgs e)
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             //avayaListener.Stop();
             //avayaThread.Join();

@@ -226,5 +226,10 @@ namespace ContactCenterGUI.Teatros.Mantenimientos.AsientoMan
         {
             this.Close();
         }
+
+        private void materialRaisedButton3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
