@@ -28,6 +28,16 @@ namespace ContactCenterGUI.Teatros.Reservas
             ConfirmReservation.previousForms.Add(this);
         }
 
+        public ClientDetail(string telefono)
+        {
+            InitializeComponent();
+            setEventos();
+            ConfirmReservation.previousForms.RemoveAll(x => true);
+            ConfirmReservation.previousForms.Add(this);
+            txtTelefono.Text = telefono.ToUpper().Trim();
+            ObtenerCliente();
+        }
+
         private void btnReservar_Click(object sender, EventArgs e)
         {
             if (isValid())

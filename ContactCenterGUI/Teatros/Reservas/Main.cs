@@ -34,23 +34,34 @@ namespace ContactCenterGUI.Teatros.Reservas
         public Main()
         {
             InitializeComponent();
+            CargarHilo();
         }
         public void CargarHilo()
         {
-            avayaThread = new Thread(new ThreadStart(EscucharConexion));
+            avayaListener = new TcpListener(System.Net.IPAddress.Any,
+                Convert.ToInt32(ConfigurationManager.AppSettings["PuertoServer"]));
+            avayaListener.Server.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress,true); //a testear
+            avayaThread = new Thread(() => EscucharConexion(avayaListener)); // Modificado tambien
             avayaThread.Start();
         }
-        public void EscucharConexion()
+        public void EscucharConexion(TcpListener listener)
         {
             try
             {
-                avayaListener = new TcpListener(System.Net.IPAddress.Any,
-                    Convert.ToInt32(ConfigurationManager.AppSettings["PuertoServer"]));
+                //avayaListener = new TcpListener(System.Net.IPAddress.Any,
+                //    Convert.ToInt32(ConfigurationManager.AppSettings["PuertoServer"]));
                 avayaListener.Start();
-                do
+                while (true)
                 {
-                    var client = new ConexionAvaya(avayaListener.AcceptTcpClient());
-                } while (true);
+                    // Using test
+                    using (var clientTcp = avayaListener.AcceptTcpClient())
+                    {
+                        var client = new ConexionAvaya(clientTcp);
+                        client.LineReceived += ProcesarMensaje;
+                    }
+                    //var client = new ConexionAvaya(avayaListener.AcceptTcpClient());
+                    //client.LineReceived += ProcesarMensaje;
+                }
             }
             catch (Exception ex)
             {
@@ -58,7 +69,17 @@ namespace ContactCenterGUI.Teatros.Reservas
             }
         }
 
- 
+        private void ProcesarMensaje(ConexionAvaya conexionAvaya, string mensaje)
+        {
+            string[] arrayMessage = mensaje.Trim().Split((char)(45));
+            string telefonoCliente = arrayMessage[0];
+            string telefonoMarca = arrayMessage[1];
+            this.Hide();
+            ClientDetail newtheater = new ClientDetail(telefonoCliente);
+            newtheater.ShowDialog();
+            this.Show();
+        }
+
         private void btnNuevoRegistro_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -216,6 +237,16 @@ namespace ContactCenterGUI.Teatros.Reservas
             SentEmail frmSentEmail = new SentEmail();
             frmSentEmail.ShowDialog();
             this.Show();
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
+
+        private async void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //avayaListener.Stop();
+            //avayaThread.Join();
         }
     }
 }
