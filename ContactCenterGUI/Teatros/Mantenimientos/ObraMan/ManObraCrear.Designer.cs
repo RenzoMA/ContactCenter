@@ -187,7 +187,7 @@
             // btnAceptarObra
             // 
             this.btnAceptarObra.Depth = 0;
-            this.btnAceptarObra.Location = new System.Drawing.Point(288, 774);
+            this.btnAceptarObra.Location = new System.Drawing.Point(553, 338);
             this.btnAceptarObra.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAceptarObra.Name = "btnAceptarObra";
             this.btnAceptarObra.Primary = true;
@@ -218,6 +218,7 @@
             this.gbDatosObra.BackColor = System.Drawing.Color.White;
             this.gbDatosObra.Controls.Add(this.btnCargarImagen);
             this.gbDatosObra.Controls.Add(this.pcbImagen);
+            this.gbDatosObra.Controls.Add(this.btnAceptarObra);
             this.gbDatosObra.Controls.Add(this.materialLabel1);
             this.gbDatosObra.Controls.Add(this.txtNomObra);
             this.gbDatosObra.Controls.Add(this.dtpFecFinObra);
@@ -233,14 +234,14 @@
             this.gbDatosObra.Controls.Add(this.cboEstadoObra);
             this.gbDatosObra.Location = new System.Drawing.Point(12, 71);
             this.gbDatosObra.Name = "gbDatosObra";
-            this.gbDatosObra.Size = new System.Drawing.Size(444, 697);
+            this.gbDatosObra.Size = new System.Drawing.Size(756, 396);
             this.gbDatosObra.TabIndex = 16;
             this.gbDatosObra.TabStop = false;
             this.gbDatosObra.Text = "Datos";
             // 
             // btnCargarImagen
             // 
-            this.btnCargarImagen.Location = new System.Drawing.Point(363, 666);
+            this.btnCargarImagen.Location = new System.Drawing.Point(695, 278);
             this.btnCargarImagen.Name = "btnCargarImagen";
             this.btnCargarImagen.Size = new System.Drawing.Size(25, 23);
             this.btnCargarImagen.TabIndex = 63;
@@ -251,7 +252,7 @@
             // pcbImagen
             // 
             this.pcbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pcbImagen.Location = new System.Drawing.Point(188, 394);
+            this.pcbImagen.Location = new System.Drawing.Point(521, 36);
             this.pcbImagen.Name = "pcbImagen";
             this.pcbImagen.Size = new System.Drawing.Size(200, 266);
             this.pcbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -265,7 +266,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(16, 394);
+            this.materialLabel1.Location = new System.Drawing.Point(443, 36);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(62, 19);
@@ -292,10 +293,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 833);
+            this.ClientSize = new System.Drawing.Size(789, 486);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gbDatosObra);
-            this.Controls.Add(this.btnAceptarObra);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ManObraCrear";
