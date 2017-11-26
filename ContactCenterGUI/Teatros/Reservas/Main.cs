@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -18,6 +19,8 @@ using ContactCenterServices;
 using System.IO;
 using OfficeOpenXml;
 using System.Globalization;
+using System.Net.Sockets;
+using System.Threading;
 using ContactCenterGUI.CC.Constantes;
 
 namespace ContactCenterGUI.Teatros.Reservas
@@ -25,11 +28,37 @@ namespace ContactCenterGUI.Teatros.Reservas
     public partial class Main : MaterialForm
     {
         bool proceso = true;
+        private Thread avayaThread;
+        private TcpListener avayaListener;
+
         public Main()
         {
             InitializeComponent();
         }
+        public void CargarHilo()
+        {
+            avayaThread = new Thread(new ThreadStart(EscucharConexion));
+            avayaThread.Start();
+        }
+        public void EscucharConexion()
+        {
+            try
+            {
+                avayaListener = new TcpListener(System.Net.IPAddress.Any,
+                    Convert.ToInt32(ConfigurationManager.AppSettings["PuertoServer"]));
+                avayaListener.Start();
+                do
+                {
+                    var client = new ConexionAvaya(avayaListener.AcceptTcpClient());
+                } while (true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+ 
         private void btnNuevoRegistro_Click(object sender, EventArgs e)
         {
             this.Hide();
