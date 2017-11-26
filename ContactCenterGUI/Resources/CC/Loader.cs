@@ -15,15 +15,18 @@ namespace ContactCenterGUI.CC
 {
     public partial class Loader : Form
     {
+        private Form MainForm;
         private int intentos = 0;
+
         public Loader()
         {
             InitializeComponent();
+            MainForm = this;
         }
 
         private void Loader_Load(object sender, EventArgs e)
         {
-            StartLoader();
+            StartLoader(); 
         }
         public async void StartLoader()
         {
@@ -36,9 +39,11 @@ namespace ContactCenterGUI.CC
                     lblMensajeConexion.Text = "Conexión exitosa..";
                     await Task.Delay(1000);
                     this.Hide();
-                    Login login = new Login();
-                    login.ShowDialog();
-                    this.Close();
+                    MainForm.BeginInvoke((Action)delegate {
+                        Login login = new Login();
+                        login.ShowDialog();
+                        this.Close();
+                    });
                 }
                 else
                 {
